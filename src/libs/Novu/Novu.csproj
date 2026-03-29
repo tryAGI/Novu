@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup Label="Nuget">
+    <PackageId>tryAGI.Novu</PackageId>
     <Description>C# SDK based on Novu OpenAPI specification.</Description>
     <PackageTags>api;client;sdk;dotnet;swagger;openapi;specification;generated;nswag</PackageTags>
     <NoWarn>$(NoWarn);CS3002;CS3003;CS1591;CA1822</NoWarn>
