@@ -4,8 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// Target window for the redirection.<br/>
-    /// Default Value: _self
+    /// Target attribute for the redirect link
     /// </summary>
     public enum RedirectDtoTarget
     {

@@ -9,14 +9,14 @@ namespace Novu
     public sealed partial class RedirectDto
     {
         /// <summary>
-        /// URL for redirection. Must be a valid URL or start with / or {{ variable }}.
+        /// URL to redirect to
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string? Url { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Url { get; set; }
 
         /// <summary>
-        /// Target window for the redirection.<br/>
-        /// Default Value: _self
+        /// Target attribute for the redirect link
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.RedirectDtoTargetJsonConverter))]
@@ -32,20 +32,19 @@ namespace Novu
         /// Initializes a new instance of the <see cref="RedirectDto" /> class.
         /// </summary>
         /// <param name="url">
-        /// URL for redirection. Must be a valid URL or start with / or {{ variable }}.
+        /// URL to redirect to
         /// </param>
         /// <param name="target">
-        /// Target window for the redirection.<br/>
-        /// Default Value: _self
+        /// Target attribute for the redirect link
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RedirectDto(
-            string? url,
+            string url,
             global::Novu.RedirectDtoTarget? target)
         {
-            this.Url = url;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Target = target;
         }
 

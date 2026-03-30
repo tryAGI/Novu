@@ -257,6 +257,10 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.PreferenceLevelEnumNullableJsonConverter),
 
+            typeof(global::Novu.JsonConverters.RedirectDtoTargetJsonConverter),
+
+            typeof(global::Novu.JsonConverters.RedirectDtoTargetNullableJsonConverter),
+
             typeof(global::Novu.JsonConverters.ResourceTypeEnumJsonConverter),
 
             typeof(global::Novu.JsonConverters.ResourceTypeEnumNullableJsonConverter),
@@ -348,10 +352,6 @@ namespace Novu
             typeof(global::Novu.JsonConverters.HttpMethodEnumJsonConverter),
 
             typeof(global::Novu.JsonConverters.HttpMethodEnumNullableJsonConverter),
-
-            typeof(global::Novu.JsonConverters.RedirectDtoTargetJsonConverter),
-
-            typeof(global::Novu.JsonConverters.RedirectDtoTargetNullableJsonConverter),
 
             typeof(global::Novu.JsonConverters.WorkflowStatusEnumJsonConverter),
 
@@ -556,6 +556,18 @@ namespace Novu
             typeof(global::Novu.JsonConverters.SubscribersControllerListSubscriberTopicsOrderDirectionJsonConverter),
 
             typeof(global::Novu.JsonConverters.SubscribersControllerListSubscriberTopicsOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerGetSubscriberNotificationsSeverityItemJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerGetSubscriberNotificationsSeverityItemNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerCompleteNotificationActionActionTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerCompleteNotificationActionActionTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerRevertNotificationActionActionTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerRevertNotificationActionActionTypeNullableJsonConverter),
 
             typeof(global::Novu.JsonConverters.MessagesControllerDeleteMessagesByTransactionIdChannelJsonConverter),
 
@@ -980,6 +992,18 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TopicSubscriptionResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListTopicSubscriptionsResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.TopicSubscriptionResponseDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InboxSubscriberResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.RedirectDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.RedirectDtoTarget), TypeInfoPropertyName = "RedirectDtoTarget2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InboxActionDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.NotificationWorkflowDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InboxNotificationDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetSubscriberNotificationsResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.InboxNotificationDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetSubscriberNotificationsCountResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SnoozeSubscriberNotificationDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MarkSubscriberNotificationsAsSeenDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateAllSubscriberNotificationsDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UserResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ResourceTypeEnum), TypeInfoPropertyName = "ResourceTypeEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiComponentEnum), TypeInfoPropertyName = "UiComponentEnum2")]
@@ -1115,8 +1139,6 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestControlsMetadataResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestStepResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.RedirectDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.RedirectDtoTarget), TypeInfoPropertyName = "RedirectDtoTarget2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ActionDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InAppControlDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InAppControlsMetadataResponseDto))]
@@ -1337,6 +1359,10 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerSearchSubscribersOrderDirection), TypeInfoPropertyName = "SubscribersControllerSearchSubscribersOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerGetSubscriberPreferencesCriticality), TypeInfoPropertyName = "SubscribersControllerGetSubscriberPreferencesCriticality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerListSubscriberTopicsOrderDirection), TypeInfoPropertyName = "SubscribersControllerListSubscriberTopicsOrderDirection2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.SubscribersControllerGetSubscriberNotificationsSeverityItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerGetSubscriberNotificationsSeverityItem), TypeInfoPropertyName = "SubscribersControllerGetSubscriberNotificationsSeverityItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerCompleteNotificationActionActionType), TypeInfoPropertyName = "SubscribersControllerCompleteNotificationActionActionType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerRevertNotificationActionActionType), TypeInfoPropertyName = "SubscribersControllerRevertNotificationActionActionType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessagesControllerDeleteMessagesByTransactionIdChannel), TypeInfoPropertyName = "MessagesControllerDeleteMessagesByTransactionIdChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TopicsControllerListTopicsOrderDirection), TypeInfoPropertyName = "TopicsControllerListTopicsOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TopicsControllerListTopicSubscriptionsOrderDirection), TypeInfoPropertyName = "TopicsControllerListTopicSubscriptionsOrderDirection2")]
@@ -1387,6 +1413,9 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerBulkUpdateSubscriberPreferencesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.GetPreferencesResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerListSubscriberTopicsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerGetSubscriberNotificationsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerGetSubscriberNotificationsCountResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.GetSubscriberNotificationsCountResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerCreateResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerUpdateResponse))]
@@ -1482,6 +1511,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.SubscriberWorkflowPreferenceDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.BulkUpdateSubscriberPreferenceItemDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.TopicSubscriptionResponseDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.InboxNotificationDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AnyOf<string, double?, bool?, object, global::System.Collections.Generic.List<global::Novu.AnyOf<string, double?, bool?, object>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.WorkflowInfoDto>))]
@@ -1519,11 +1549,13 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.GetChannelEndpointResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<byte[]>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.ChannelTypeEnum>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.SubscribersControllerGetSubscriberNotificationsSeverityItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.WorkflowStatusEnum>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.EnvironmentResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.TriggerEventResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.IntegrationResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.GetPreferencesResponseDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.GetSubscriberNotificationsCountResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.EnvironmentVariableResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.GetEnvironmentTagsDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.WebhookResultDto>))]
