@@ -692,6 +692,7 @@ namespace Novu
             object data,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.UpdateContextRequestDto
             {
                 Data = data,

@@ -724,6 +724,7 @@ namespace Novu
             string? parentId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.CreateEnvironmentRequestDto
             {
                 Name = name,

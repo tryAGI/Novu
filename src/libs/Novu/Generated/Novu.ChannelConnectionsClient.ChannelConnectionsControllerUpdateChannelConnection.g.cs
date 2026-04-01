@@ -679,6 +679,7 @@ namespace Novu
             global::Novu.AuthDto auth,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.UpdateChannelConnectionRequestDto
             {
                 Workspace = workspace,

@@ -701,6 +701,7 @@ namespace Novu
             object? payload = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.MarkMessageActionAsSeenDto
             {
                 Status = status,

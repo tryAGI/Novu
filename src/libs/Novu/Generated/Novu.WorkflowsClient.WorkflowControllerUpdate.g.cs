@@ -725,6 +725,7 @@ namespace Novu
             global::Novu.SeverityLevelEnum? severity = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.UpdateWorkflowDto
             {
                 Name = name,

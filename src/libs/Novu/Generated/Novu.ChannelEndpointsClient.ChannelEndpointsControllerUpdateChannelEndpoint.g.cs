@@ -679,6 +679,7 @@ namespace Novu
             global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto> endpoint,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.UpdateChannelEndpointRequestDto
             {
                 Endpoint = endpoint,
