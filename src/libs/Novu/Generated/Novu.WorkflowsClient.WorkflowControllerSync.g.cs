@@ -679,6 +679,7 @@ namespace Novu
             string targetEnvironmentId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.SyncWorkflowDto
             {
                 TargetEnvironmentId = targetEnvironmentId,

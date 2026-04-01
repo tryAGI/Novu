@@ -696,6 +696,7 @@ namespace Novu
             global::System.Collections.Generic.IList<global::Novu.OneOf<string, global::Novu.WorkflowPreferenceRequestDto, global::Novu.GroupPreferenceFilterDto>>? preferences = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.CreateTopicSubscriptionsRequestDto
             {
                 Subscriptions = subscriptions,

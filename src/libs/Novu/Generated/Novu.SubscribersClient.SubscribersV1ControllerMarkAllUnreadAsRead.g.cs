@@ -683,6 +683,7 @@ namespace Novu
             global::Novu.OneOf<string, global::System.Collections.Generic.IList<string>>? feedIdentifier = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.MarkAllMessageAsRequestDto
             {
                 FeedIdentifier = feedIdentifier,

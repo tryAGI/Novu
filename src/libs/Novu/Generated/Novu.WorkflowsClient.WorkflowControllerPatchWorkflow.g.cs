@@ -703,6 +703,7 @@ namespace Novu
             bool? isTranslationEnabled = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.PatchWorkflowDto
             {
                 Active = active,

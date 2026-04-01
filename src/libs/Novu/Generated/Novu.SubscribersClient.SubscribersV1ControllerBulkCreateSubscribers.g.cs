@@ -673,6 +673,7 @@ namespace Novu
             global::System.Collections.Generic.IList<global::Novu.CreateSubscriberRequestDto> subscribers,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.BulkSubscriberCreateDto
             {
                 Subscribers = subscribers,

@@ -685,6 +685,7 @@ namespace Novu
             global::Novu.LayoutCreationSourceEnum? source = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.CreateLayoutDto
             {
                 LayoutId = layoutId,

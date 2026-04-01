@@ -691,6 +691,7 @@ namespace Novu
             global::Novu.PreviewPayloadDto? previewPayload = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.GeneratePreviewRequestDto
             {
                 ControlValues = controlValues,

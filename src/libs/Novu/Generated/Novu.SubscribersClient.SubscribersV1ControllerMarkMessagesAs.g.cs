@@ -681,6 +681,7 @@ namespace Novu
             global::Novu.MessageMarkAsRequestDtoMarkAs markAs,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Novu.MessageMarkAsRequestDto
             {
                 MessageId = messageId,
