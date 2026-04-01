@@ -682,7 +682,6 @@ namespace Novu
             global::System.Collections.Generic.IList<global::Novu.OneOf<string, global::Novu.DeleteTopicSubscriberIdentifierDto>>? subscriptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Novu.DeleteTopicSubscriptionsRequestDto
             {
                 Subscriptions = subscriptions,

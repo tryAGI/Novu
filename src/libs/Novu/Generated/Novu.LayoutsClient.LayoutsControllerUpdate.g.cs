@@ -688,7 +688,6 @@ namespace Novu
             global::Novu.LayoutControlValuesDto? controlValues = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Novu.UpdateLayoutDto
             {
                 Name = name,

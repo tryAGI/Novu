@@ -665,7 +665,6 @@ namespace Novu
         public async global::System.Threading.Tasks.Task<global::Novu.ChannelEndpointsControllerCreateChannelEndpointResponse> ChannelEndpointsControllerCreateChannelEndpointAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequest
             {
             };

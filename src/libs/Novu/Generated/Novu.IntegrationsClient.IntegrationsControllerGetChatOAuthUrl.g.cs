@@ -692,7 +692,6 @@ namespace Novu
             global::System.Collections.Generic.IList<string>? scope = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Novu.GenerateChatOauthUrlRequestDto
             {
                 SubscriberId = subscriberId,

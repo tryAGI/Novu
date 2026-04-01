@@ -676,7 +676,6 @@ namespace Novu
             global::System.Collections.Generic.IList<string>? contextKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Novu.MarkSubscriberNotificationsAsSeenDto
             {
                 NotificationIds = notificationIds,
