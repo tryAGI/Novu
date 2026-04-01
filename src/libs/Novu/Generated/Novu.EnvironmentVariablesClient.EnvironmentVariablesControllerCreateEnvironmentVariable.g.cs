@@ -681,7 +681,6 @@ namespace Novu
             global::System.Collections.Generic.IList<global::Novu.EnvironmentVariableValueDto>? values = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Novu.CreateEnvironmentVariableRequestDto
             {
                 Key = key,

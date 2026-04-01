@@ -689,7 +689,6 @@ namespace Novu
             global::Novu.BridgeConfigurationDto? bridge = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Novu.UpdateEnvironmentRequestDto
             {
                 Name = name,

@@ -677,7 +677,6 @@ namespace Novu
             bool isOnline,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Novu.UpdateSubscriberOnlineFlagRequestDto
             {
                 IsOnline = isOnline,
