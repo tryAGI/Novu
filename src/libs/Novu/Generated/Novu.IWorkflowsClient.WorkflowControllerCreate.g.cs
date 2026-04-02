@@ -19,6 +19,17 @@ namespace Novu
         /// Create a workflow<br/>
         /// Creates a new workflow in the Novu Cloud environment
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.WorkflowControllerCreateResponse>> WorkflowControllerCreateAsResponseAsync(
+
+            global::Novu.CreateWorkflowDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a workflow<br/>
+        /// Creates a new workflow in the Novu Cloud environment
+        /// </summary>
         /// <param name="name">
         /// Name of the workflow
         /// </param>

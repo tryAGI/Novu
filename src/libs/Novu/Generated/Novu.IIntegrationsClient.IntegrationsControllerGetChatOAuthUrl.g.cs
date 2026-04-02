@@ -23,6 +23,19 @@ namespace Novu
         ///     This URL allows subscribers to authorize the integration, enabling the system to send messages <br/>
         ///     through their chat workspace. The generated URL expires after 5 minutes.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerGetChatOAuthUrlResponse>> IntegrationsControllerGetChatOAuthUrlAsResponseAsync(
+
+            global::Novu.GenerateChatOauthUrlRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate chat OAuth URL<br/>
+        /// Generate an OAuth URL for chat integrations like Slack and MS Teams. <br/>
+        ///     This URL allows subscribers to authorize the integration, enabling the system to send messages <br/>
+        ///     through their chat workspace. The generated URL expires after 5 minutes.
+        /// </summary>
         /// <param name="subscriberId">
         /// The subscriber ID to link the channel connection to. For Slack: Required for incoming webhook endpoints, optional for workspace connections. For MS Teams: Optional. Admin consent is tenant-wide and can be associated with a subscriber for organizational purposes.<br/>
         /// Example: subscriber-123

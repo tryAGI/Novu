@@ -21,6 +21,18 @@ namespace Novu
         /// Create a new context with the specified type, id, and data. Returns 409 if context already exists.<br/>
         ///       **type** and **id** are required fields, **data** is optional, if the context already exists, it returns the 409 response
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.ContextsControllerCreateContextResponse>> ContextsControllerCreateContextAsResponseAsync(
+
+            global::Novu.CreateContextRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a context<br/>
+        /// Create a new context with the specified type, id, and data. Returns 409 if context already exists.<br/>
+        ///       **type** and **id** are required fields, **data** is optional, if the context already exists, it returns the 409 response
+        /// </summary>
         /// <param name="type">
         /// Context type (e.g., tenant, app, workspace). Must be lowercase alphanumeric with optional separators.<br/>
         /// Example: tenant

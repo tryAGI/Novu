@@ -56,6 +56,42 @@ namespace Novu
             global::System.Collections.Generic.IList<global::Novu.WorkflowStatusEnum>? status = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await WorkflowControllerSearchWorkflowsAsResponseAsync(
+                limit: limit,
+                offset: offset,
+                orderDirection: orderDirection,
+                orderBy: orderBy,
+                query: query,
+                tags: tags,
+                status: status,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List all workflows<br/>
+        /// Retrieves a list of workflows with optional filtering and pagination
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <param name="offset"></param>
+        /// <param name="orderDirection"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="query"></param>
+        /// <param name="tags"></param>
+        /// <param name="status"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.WorkflowControllerSearchWorkflowsResponse>> WorkflowControllerSearchWorkflowsAsResponseAsync(
+            double? limit = default,
+            double? offset = default,
+            global::Novu.DirectionEnum? orderDirection = default,
+            global::Novu.WorkflowResponseDtoSortField? orderBy = default,
+            string? query = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
+            global::System.Collections.Generic.IList<global::Novu.WorkflowStatusEnum>? status = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareWorkflowControllerSearchWorkflowsArguments(
@@ -630,9 +666,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.WorkflowControllerSearchWorkflowsResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.WorkflowControllerSearchWorkflowsResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.WorkflowControllerSearchWorkflowsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -661,9 +700,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.WorkflowControllerSearchWorkflowsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.WorkflowControllerSearchWorkflowsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.WorkflowControllerSearchWorkflowsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

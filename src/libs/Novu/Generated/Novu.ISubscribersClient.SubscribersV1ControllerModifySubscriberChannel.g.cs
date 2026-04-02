@@ -24,6 +24,20 @@ namespace Novu
         ///       **providerId** is required field. This API creates **deviceTokens** or appends to the existing ones.
         /// </summary>
         /// <param name="subscriberId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersV1ControllerModifySubscriberChannelResponse>> SubscribersV1ControllerModifySubscriberChannelAsResponseAsync(
+            string subscriberId,
+
+            global::Novu.UpdateSubscriberChannelRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Upsert provider credentials<br/>
+        /// Upsert credentials for a provider such as **slack** and **FCM**. <br/>
+        ///       **providerId** is required field. This API creates **deviceTokens** or appends to the existing ones.
+        /// </summary>
+        /// <param name="subscriberId"></param>
         /// <param name="providerId">
         /// The provider identifier for the credentials
         /// </param>

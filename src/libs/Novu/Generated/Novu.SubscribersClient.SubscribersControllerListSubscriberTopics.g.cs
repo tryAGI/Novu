@@ -65,6 +65,49 @@ namespace Novu
             global::System.Collections.Generic.IList<string>? contextKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await SubscribersControllerListSubscriberTopicsAsResponseAsync(
+                subscriberId: subscriberId,
+                after: after,
+                before: before,
+                limit: limit,
+                orderDirection: orderDirection,
+                orderBy: orderBy,
+                includeCursor: includeCursor,
+                key: key,
+                contextKeys: contextKeys,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Retrieve subscriber subscriptions<br/>
+        /// Retrieve subscriber's topic subscriptions by its unique key identifier **subscriberId**. <br/>
+        ///     Checkout all available filters in the query section.
+        /// </summary>
+        /// <param name="subscriberId"></param>
+        /// <param name="after"></param>
+        /// <param name="before"></param>
+        /// <param name="limit"></param>
+        /// <param name="orderDirection"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="includeCursor"></param>
+        /// <param name="key"></param>
+        /// <param name="contextKeys"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerListSubscriberTopicsResponse>> SubscribersControllerListSubscriberTopicsAsResponseAsync(
+            string subscriberId,
+            string? after = default,
+            string? before = default,
+            double? limit = default,
+            global::Novu.SubscribersControllerListSubscriberTopicsOrderDirection? orderDirection = default,
+            string? orderBy = default,
+            bool? includeCursor = default,
+            string? key = default,
+            global::System.Collections.Generic.IList<string>? contextKeys = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareSubscribersControllerListSubscriberTopicsArguments(
@@ -644,9 +687,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.SubscribersControllerListSubscriberTopicsResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.SubscribersControllerListSubscriberTopicsResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerListSubscriberTopicsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -675,9 +721,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.SubscribersControllerListSubscriberTopicsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.SubscribersControllerListSubscriberTopicsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerListSubscriberTopicsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

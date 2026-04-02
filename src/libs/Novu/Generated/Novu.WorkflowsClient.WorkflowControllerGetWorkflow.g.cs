@@ -36,6 +36,27 @@ namespace Novu
             string? environmentId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await WorkflowControllerGetWorkflowAsResponseAsync(
+                workflowId: workflowId,
+                environmentId: environmentId,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Retrieve a workflow<br/>
+        /// Fetches details of a specific workflow by its unique identifier **workflowId**
+        /// </summary>
+        /// <param name="workflowId"></param>
+        /// <param name="environmentId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.WorkflowControllerGetWorkflowResponse>> WorkflowControllerGetWorkflowAsResponseAsync(
+            string workflowId,
+            string? environmentId = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareWorkflowControllerGetWorkflowArguments(
@@ -594,9 +615,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.WorkflowControllerGetWorkflowResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.WorkflowControllerGetWorkflowResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.WorkflowControllerGetWorkflowResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -625,9 +649,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.WorkflowControllerGetWorkflowResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.WorkflowControllerGetWorkflowResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.WorkflowControllerGetWorkflowResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

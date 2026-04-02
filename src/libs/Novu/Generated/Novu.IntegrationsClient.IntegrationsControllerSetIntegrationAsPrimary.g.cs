@@ -34,6 +34,26 @@ namespace Novu
             string integrationId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await IntegrationsControllerSetIntegrationAsPrimaryAsResponseAsync(
+                integrationId: integrationId,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Update integration as primary<br/>
+        /// Update an integration as **primary** by its unique key identifier **integrationId**. <br/>
+        ///     This API will set the integration as primary for that channel in the current environment. <br/>
+        ///     Primary integration is used to deliver notification for sms and email channels in the workflow.
+        /// </summary>
+        /// <param name="integrationId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerSetIntegrationAsPrimaryResponse>> IntegrationsControllerSetIntegrationAsPrimaryAsResponseAsync(
+            string integrationId,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareIntegrationsControllerSetIntegrationAsPrimaryArguments(
@@ -582,9 +602,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.IntegrationsControllerSetIntegrationAsPrimaryResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.IntegrationsControllerSetIntegrationAsPrimaryResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerSetIntegrationAsPrimaryResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -613,9 +636,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.IntegrationsControllerSetIntegrationAsPrimaryResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.IntegrationsControllerSetIntegrationAsPrimaryResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerSetIntegrationAsPrimaryResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

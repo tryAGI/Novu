@@ -43,6 +43,34 @@ namespace Novu
             global::Novu.UpdateContextRequestDto request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ContextsControllerUpdateContextAsResponseAsync(
+                id: id,
+                type: type,
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Update a context<br/>
+        /// Update the data of an existing context.<br/>
+        ///       **type** and **id** are required fields, **data** is required. Only the data field is updated, the rest of the context is not affected.<br/>
+        ///       If the context does not exist, it returns the 404 response
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="type"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.ContextsControllerUpdateContextResponse>> ContextsControllerUpdateContextAsResponseAsync(
+            string id,
+            string type,
+
+            global::Novu.UpdateContextRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -608,9 +636,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.ContextsControllerUpdateContextResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.ContextsControllerUpdateContextResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.ContextsControllerUpdateContextResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -639,9 +670,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.ContextsControllerUpdateContextResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.ContextsControllerUpdateContextResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.ContextsControllerUpdateContextResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

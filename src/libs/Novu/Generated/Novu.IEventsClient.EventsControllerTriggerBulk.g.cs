@@ -23,6 +23,19 @@ namespace Novu
         ///       The bulk API is limited to 100 events per request.<br/>
         ///     
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.EventsControllerTriggerBulkResponse>> EventsControllerTriggerBulkAsResponseAsync(
+
+            global::Novu.BulkTriggerEventDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Bulk trigger event<br/>
+        ///       Using this endpoint you can trigger multiple events at once, to avoid multiple calls to the API.<br/>
+        ///       The bulk API is limited to 100 events per request.<br/>
+        ///     
+        /// </summary>
         /// <param name="events"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

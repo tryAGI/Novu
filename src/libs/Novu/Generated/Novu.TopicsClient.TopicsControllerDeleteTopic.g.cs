@@ -33,6 +33,25 @@ namespace Novu
             string topicKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await TopicsControllerDeleteTopicAsResponseAsync(
+                topicKey: topicKey,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Delete a topic<br/>
+        /// Delete a topic by its unique key identifier **topicKey**. <br/>
+        ///     This action is irreversible and will remove all subscriptions to the topic.
+        /// </summary>
+        /// <param name="topicKey"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.TopicsControllerDeleteTopicResponse>> TopicsControllerDeleteTopicAsResponseAsync(
+            string topicKey,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareTopicsControllerDeleteTopicArguments(
@@ -586,9 +605,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.TopicsControllerDeleteTopicResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.TopicsControllerDeleteTopicResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.TopicsControllerDeleteTopicResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -617,9 +639,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.TopicsControllerDeleteTopicResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.TopicsControllerDeleteTopicResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.TopicsControllerDeleteTopicResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

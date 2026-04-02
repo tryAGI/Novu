@@ -60,6 +60,47 @@ namespace Novu
             double? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await MessagesControllerGetMessagesAsResponseAsync(
+                channel: channel,
+                subscriberId: subscriberId,
+                transactionId: transactionId,
+                contextKeys: contextKeys,
+                page: page,
+                limit: limit,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List all messages<br/>
+        /// List all messages for the current environment. <br/>
+        ///     This API supports filtering by **channel**, **subscriberId**, and **transactionId**. <br/>
+        ///     This API returns a paginated list of messages.
+        /// </summary>
+        /// <param name="channel">
+        /// Channel type through which the message is sent
+        /// </param>
+        /// <param name="subscriberId"></param>
+        /// <param name="transactionId"></param>
+        /// <param name="contextKeys"></param>
+        /// <param name="page">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.MessagesResponseDto>> MessagesControllerGetMessagesAsResponseAsync(
+            global::Novu.ChannelTypeEnum? channel = default,
+            string? subscriberId = default,
+            global::System.Collections.Generic.IList<string>? transactionId = default,
+            global::System.Collections.Generic.IList<string>? contextKeys = default,
+            double? page = default,
+            double? limit = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareMessagesControllerGetMessagesArguments(
@@ -631,9 +672,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.MessagesResponseDto.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.MessagesResponseDto.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.MessagesResponseDto>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -662,9 +706,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.MessagesResponseDto.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.MessagesResponseDto.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.MessagesResponseDto>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

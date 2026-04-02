@@ -40,6 +40,30 @@ namespace Novu
             global::Novu.CreateTopicSubscriptionsRequestDto request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await TopicsControllerCreateTopicSubscriptionsAsResponseAsync(
+                topicKey: topicKey,
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Create topic subscriptions<br/>
+        /// This api will create subscription for subscriberIds for a topic. <br/>
+        ///       Its like subscribing to a common interest group. if topic does not exist, it will be created.
+        /// </summary>
+        /// <param name="topicKey"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.TopicsControllerCreateTopicSubscriptionsResponse>> TopicsControllerCreateTopicSubscriptionsAsResponseAsync(
+            string topicKey,
+
+            global::Novu.CreateTopicSubscriptionsRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -603,9 +627,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.TopicsControllerCreateTopicSubscriptionsResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.TopicsControllerCreateTopicSubscriptionsResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.TopicsControllerCreateTopicSubscriptionsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -634,9 +661,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.TopicsControllerCreateTopicSubscriptionsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.TopicsControllerCreateTopicSubscriptionsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.TopicsControllerCreateTopicSubscriptionsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

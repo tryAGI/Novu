@@ -34,6 +34,27 @@ namespace Novu
             global::Novu.BulkSubscriberCreateDto request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await SubscribersV1ControllerBulkCreateSubscribersAsResponseAsync(
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Bulk create subscribers<br/>
+        ///       Using this endpoint multiple subscribers can be created at once. The bulk API is limited to 500 subscribers per request.<br/>
+        ///     
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersV1ControllerBulkCreateSubscribersResponse>> SubscribersV1ControllerBulkCreateSubscribersAsResponseAsync(
+
+            global::Novu.BulkSubscriberCreateDto request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -595,9 +616,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.SubscribersV1ControllerBulkCreateSubscribersResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.SubscribersV1ControllerBulkCreateSubscribersResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersV1ControllerBulkCreateSubscribersResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -626,9 +650,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.SubscribersV1ControllerBulkCreateSubscribersResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.SubscribersV1ControllerBulkCreateSubscribersResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersV1ControllerBulkCreateSubscribersResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

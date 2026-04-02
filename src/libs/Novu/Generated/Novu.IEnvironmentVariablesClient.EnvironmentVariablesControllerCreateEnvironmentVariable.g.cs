@@ -19,6 +19,17 @@ namespace Novu
         /// Create environment variable<br/>
         /// Creates a new environment variable. Keys must be uppercase with underscores only (e.g. BASE_URL). Secret variables are encrypted at rest and masked in API responses.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.EnvironmentVariablesControllerCreateEnvironmentVariableResponse>> EnvironmentVariablesControllerCreateEnvironmentVariableAsResponseAsync(
+
+            global::Novu.CreateEnvironmentVariableRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create environment variable<br/>
+        /// Creates a new environment variable. Keys must be uppercase with underscores only (e.g. BASE_URL). Secret variables are encrypted at rest and masked in API responses.
+        /// </summary>
         /// <param name="key">
         /// Unique key for the variable. Must start with a letter and contain only letters, digits, and underscores.
         /// </param>

@@ -22,6 +22,19 @@ namespace Novu
         /// Update an existing channel endpoint by its unique identifier.
         /// </summary>
         /// <param name="identifier"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.ChannelEndpointsControllerUpdateChannelEndpointResponse>> ChannelEndpointsControllerUpdateChannelEndpointAsResponseAsync(
+            string identifier,
+
+            global::Novu.UpdateChannelEndpointRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a channel endpoint<br/>
+        /// Update an existing channel endpoint by its unique identifier.
+        /// </summary>
+        /// <param name="identifier"></param>
         /// <param name="endpoint">
         /// Updated endpoint data. The structure must match the existing channel endpoint type.
         /// </param>

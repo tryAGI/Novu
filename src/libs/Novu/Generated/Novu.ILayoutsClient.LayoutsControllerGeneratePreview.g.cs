@@ -22,6 +22,19 @@ namespace Novu
         /// Generates a preview for a layout by its unique identifier **layoutId**
         /// </summary>
         /// <param name="layoutId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.LayoutsControllerGeneratePreviewResponse>> LayoutsControllerGeneratePreviewAsResponseAsync(
+            string layoutId,
+
+            global::Novu.LayoutPreviewRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate layout preview<br/>
+        /// Generates a preview for a layout by its unique identifier **layoutId**
+        /// </summary>
+        /// <param name="layoutId"></param>
         /// <param name="controlValues">
         /// Optional control values for layout preview
         /// </param>

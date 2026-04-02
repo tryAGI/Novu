@@ -25,6 +25,21 @@ namespace Novu
         /// </summary>
         /// <param name="topicKey"></param>
         /// <param name="identifier"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.TopicsControllerUpdateTopicSubscriptionResponse>> TopicsControllerUpdateTopicSubscriptionAsResponseAsync(
+            string topicKey,
+            string identifier,
+
+            global::Novu.UpdateTopicSubscriptionRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a topic subscription<br/>
+        /// Update a subscription by its unique identifier for a topic. You can update the preferences and name associated with the subscription.
+        /// </summary>
+        /// <param name="topicKey"></param>
+        /// <param name="identifier"></param>
         /// <param name="name">
         /// The name of the subscription<br/>
         /// Example: My Subscription
