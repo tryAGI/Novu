@@ -106,7 +106,7 @@ namespace Novu
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Novu.ImportMasterJsonResponseDto.FromJson(__content, JsonSerializerContext) ??
+                        global::Novu.ImportMasterJsonResponseDto.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -137,7 +137,7 @@ namespace Novu
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Novu.ImportMasterJsonResponseDto.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::Novu.ImportMasterJsonResponseDto.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
