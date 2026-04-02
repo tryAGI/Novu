@@ -21,6 +21,18 @@ namespace Novu
         /// Trigger a broadcast event to all existing subscribers, could be used to send announcements, etc.<br/>
         ///       In the future could be used to trigger events to a subset of subscribers based on defined filters.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.EventsControllerBroadcastEventToAllResponse>> EventsControllerBroadcastEventToAllAsResponseAsync(
+
+            global::Novu.TriggerEventToAllRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Broadcast event to all<br/>
+        /// Trigger a broadcast event to all existing subscribers, could be used to send announcements, etc.<br/>
+        ///       In the future could be used to trigger events to a subset of subscribers based on defined filters.
+        /// </summary>
         /// <param name="name">
         /// The trigger identifier associated for the template you wish to send. This identifier can be found on the template page.
         /// </param>

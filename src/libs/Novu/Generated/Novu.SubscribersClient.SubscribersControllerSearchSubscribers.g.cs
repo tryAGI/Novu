@@ -69,6 +69,52 @@ namespace Novu
             string? subscriberId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await SubscribersControllerSearchSubscribersAsResponseAsync(
+                after: after,
+                before: before,
+                limit: limit,
+                orderDirection: orderDirection,
+                orderBy: orderBy,
+                includeCursor: includeCursor,
+                email: email,
+                name: name,
+                phone: phone,
+                subscriberId: subscriberId,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Search subscribers<br/>
+        /// Search subscribers by their **email**, **phone**, **subscriberId** and **name**. <br/>
+        ///     The search is case sensitive and supports pagination.Checkout all available filters in the query section.
+        /// </summary>
+        /// <param name="after"></param>
+        /// <param name="before"></param>
+        /// <param name="limit"></param>
+        /// <param name="orderDirection"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="includeCursor"></param>
+        /// <param name="email"></param>
+        /// <param name="name"></param>
+        /// <param name="phone"></param>
+        /// <param name="subscriberId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerSearchSubscribersResponse>> SubscribersControllerSearchSubscribersAsResponseAsync(
+            string? after = default,
+            string? before = default,
+            double? limit = default,
+            global::Novu.SubscribersControllerSearchSubscribersOrderDirection? orderDirection = default,
+            string? orderBy = default,
+            bool? includeCursor = default,
+            string? email = default,
+            string? name = default,
+            string? phone = default,
+            string? subscriberId = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareSubscribersControllerSearchSubscribersArguments(
@@ -652,9 +698,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.SubscribersControllerSearchSubscribersResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.SubscribersControllerSearchSubscribersResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerSearchSubscribersResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -683,9 +732,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.SubscribersControllerSearchSubscribersResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.SubscribersControllerSearchSubscribersResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerSearchSubscribersResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

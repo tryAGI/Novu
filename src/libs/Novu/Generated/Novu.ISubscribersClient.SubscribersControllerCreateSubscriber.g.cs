@@ -24,6 +24,20 @@ namespace Novu
         ///       **subscriberId** is a required field, rest other fields are optional, if the subscriber already exists, it will be updated
         /// </summary>
         /// <param name="failIfExists"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerCreateSubscriberResponse>> SubscribersControllerCreateSubscriberAsResponseAsync(
+
+            global::Novu.CreateSubscriberRequestDto request,
+            bool? failIfExists = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a subscriber<br/>
+        /// Create a subscriber with the subscriber attributes. <br/>
+        ///       **subscriberId** is a required field, rest other fields are optional, if the subscriber already exists, it will be updated
+        /// </summary>
+        /// <param name="failIfExists"></param>
         /// <param name="firstName">
         /// First name of the subscriber<br/>
         /// Example: John

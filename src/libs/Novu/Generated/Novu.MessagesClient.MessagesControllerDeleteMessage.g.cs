@@ -33,6 +33,25 @@ namespace Novu
             string messageId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await MessagesControllerDeleteMessageAsResponseAsync(
+                messageId: messageId,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Delete a message<br/>
+        /// Delete a message entity from the Novu platform by **messageId**. <br/>
+        ///     This action is irreversible. **messageId** is required and of mongodbId type.
+        /// </summary>
+        /// <param name="messageId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.MessagesControllerDeleteMessageResponse>> MessagesControllerDeleteMessageAsResponseAsync(
+            string messageId,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareMessagesControllerDeleteMessageArguments(
@@ -586,9 +605,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.MessagesControllerDeleteMessageResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.MessagesControllerDeleteMessageResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.MessagesControllerDeleteMessageResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -617,9 +639,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.MessagesControllerDeleteMessageResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.MessagesControllerDeleteMessageResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.MessagesControllerDeleteMessageResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

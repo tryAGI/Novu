@@ -22,6 +22,19 @@ namespace Novu
         /// Partially updates a workflow by its unique identifier **workflowId**
         /// </summary>
         /// <param name="workflowId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.WorkflowControllerPatchWorkflowResponse>> WorkflowControllerPatchWorkflowAsResponseAsync(
+            string workflowId,
+
+            global::Novu.PatchWorkflowDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a workflow<br/>
+        /// Partially updates a workflow by its unique identifier **workflowId**
+        /// </summary>
+        /// <param name="workflowId"></param>
         /// <param name="active">
         /// Activate or deactivate the workflow
         /// </param>

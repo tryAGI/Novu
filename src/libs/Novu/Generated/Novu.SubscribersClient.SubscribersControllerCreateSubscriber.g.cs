@@ -38,6 +38,30 @@ namespace Novu
             bool? failIfExists = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await SubscribersControllerCreateSubscriberAsResponseAsync(
+
+                request: request,
+                failIfExists: failIfExists,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Create a subscriber<br/>
+        /// Create a subscriber with the subscriber attributes. <br/>
+        ///       **subscriberId** is a required field, rest other fields are optional, if the subscriber already exists, it will be updated
+        /// </summary>
+        /// <param name="failIfExists"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerCreateSubscriberResponse>> SubscribersControllerCreateSubscriberAsResponseAsync(
+
+            global::Novu.CreateSubscriberRequestDto request,
+            bool? failIfExists = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -604,9 +628,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.SubscribersControllerCreateSubscriberResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.SubscribersControllerCreateSubscriberResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerCreateSubscriberResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -635,9 +662,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.SubscribersControllerCreateSubscriberResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.SubscribersControllerCreateSubscriberResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerCreateSubscriberResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

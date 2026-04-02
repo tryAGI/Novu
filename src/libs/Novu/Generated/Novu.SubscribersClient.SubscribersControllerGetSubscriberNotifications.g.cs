@@ -87,6 +87,66 @@ namespace Novu
             global::System.Collections.Generic.IList<string>? contextKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await SubscribersControllerGetSubscriberNotificationsAsResponseAsync(
+                subscriberId: subscriberId,
+                limit: limit,
+                after: after,
+                offset: offset,
+                tags: tags,
+                read: read,
+                archived: archived,
+                snoozed: snoozed,
+                seen: seen,
+                data: data,
+                severity: severity,
+                createdGte: createdGte,
+                createdLte: createdLte,
+                contextKeys: contextKeys,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Retrieve subscriber notifications<br/>
+        /// Retrieve in-app notifications for a subscriber by its unique key identifier **subscriberId**. <br/>
+        ///     Supports filtering by tags, read/archived/snoozed/seen state, data attributes, severity, date range, and context keys.
+        /// </summary>
+        /// <param name="subscriberId"></param>
+        /// <param name="limit">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="after"></param>
+        /// <param name="offset"></param>
+        /// <param name="tags"></param>
+        /// <param name="read"></param>
+        /// <param name="archived"></param>
+        /// <param name="snoozed"></param>
+        /// <param name="seen"></param>
+        /// <param name="data"></param>
+        /// <param name="severity"></param>
+        /// <param name="createdGte"></param>
+        /// <param name="createdLte"></param>
+        /// <param name="contextKeys"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerGetSubscriberNotificationsResponse>> SubscribersControllerGetSubscriberNotificationsAsResponseAsync(
+            string subscriberId,
+            double? limit = default,
+            string? after = default,
+            double? offset = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
+            bool? read = default,
+            bool? archived = default,
+            bool? snoozed = default,
+            bool? seen = default,
+            string? data = default,
+            global::System.Collections.Generic.IList<global::Novu.SubscribersControllerGetSubscriberNotificationsSeverityItem>? severity = default,
+            double? createdGte = default,
+            double? createdLte = default,
+            global::System.Collections.Generic.IList<string>? contextKeys = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareSubscribersControllerGetSubscriberNotificationsArguments(
@@ -681,9 +741,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.SubscribersControllerGetSubscriberNotificationsResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.SubscribersControllerGetSubscriberNotificationsResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerGetSubscriberNotificationsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -712,9 +775,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.SubscribersControllerGetSubscriberNotificationsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.SubscribersControllerGetSubscriberNotificationsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerGetSubscriberNotificationsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

@@ -35,6 +35,28 @@ namespace Novu
             global::Novu.GenerateChatOauthUrlRequestDto request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await IntegrationsControllerGetChatOAuthUrlAsResponseAsync(
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Generate chat OAuth URL<br/>
+        /// Generate an OAuth URL for chat integrations like Slack and MS Teams. <br/>
+        ///     This URL allows subscribers to authorize the integration, enabling the system to send messages <br/>
+        ///     through their chat workspace. The generated URL expires after 5 minutes.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerGetChatOAuthUrlResponse>> IntegrationsControllerGetChatOAuthUrlAsResponseAsync(
+
+            global::Novu.GenerateChatOauthUrlRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -596,9 +618,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.IntegrationsControllerGetChatOAuthUrlResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.IntegrationsControllerGetChatOAuthUrlResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerGetChatOAuthUrlResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -627,9 +652,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.IntegrationsControllerGetChatOAuthUrlResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.IntegrationsControllerGetChatOAuthUrlResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerGetChatOAuthUrlResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

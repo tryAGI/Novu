@@ -29,6 +29,22 @@ namespace Novu
         public async global::System.Threading.Tasks.Task<global::Novu.EnvironmentsControllerV1ListMyEnvironmentsResponse> EnvironmentsControllerV1ListMyEnvironmentsAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await EnvironmentsControllerV1ListMyEnvironmentsAsResponseAsync(
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List all environments<br/>
+        /// This API returns a list of environments for the current organization. <br/>
+        ///     Each environment contains its configuration, API keys (if user has access), and metadata.
+        /// </summary>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.EnvironmentsControllerV1ListMyEnvironmentsResponse>> EnvironmentsControllerV1ListMyEnvironmentsAsResponseAsync(
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareEnvironmentsControllerV1ListMyEnvironmentsArguments(
@@ -580,9 +596,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.EnvironmentsControllerV1ListMyEnvironmentsResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.EnvironmentsControllerV1ListMyEnvironmentsResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.EnvironmentsControllerV1ListMyEnvironmentsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -611,9 +630,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.EnvironmentsControllerV1ListMyEnvironmentsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.EnvironmentsControllerV1ListMyEnvironmentsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.EnvironmentsControllerV1ListMyEnvironmentsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

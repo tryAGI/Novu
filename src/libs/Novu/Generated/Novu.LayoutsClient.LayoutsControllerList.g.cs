@@ -48,6 +48,36 @@ namespace Novu
             string? query = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await LayoutsControllerListAsResponseAsync(
+                limit: limit,
+                offset: offset,
+                orderDirection: orderDirection,
+                orderBy: orderBy,
+                query: query,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List all layouts<br/>
+        /// Retrieves a list of layouts with optional filtering and pagination
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <param name="offset"></param>
+        /// <param name="orderDirection"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="query"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.LayoutsControllerListResponse>> LayoutsControllerListAsResponseAsync(
+            double? limit = default,
+            double? offset = default,
+            global::Novu.DirectionEnum? orderDirection = default,
+            global::Novu.LayoutResponseDtoSortField? orderBy = default,
+            string? query = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareLayoutsControllerListArguments(
@@ -616,9 +646,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.LayoutsControllerListResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.LayoutsControllerListResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.LayoutsControllerListResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -647,9 +680,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.LayoutsControllerListResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.LayoutsControllerListResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.LayoutsControllerListResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

@@ -62,6 +62,47 @@ namespace Novu
             string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await TopicsControllerListTopicsAsResponseAsync(
+                after: after,
+                before: before,
+                limit: limit,
+                orderDirection: orderDirection,
+                orderBy: orderBy,
+                includeCursor: includeCursor,
+                key: key,
+                name: name,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List all topics<br/>
+        /// This api returns a paginated list of topics.<br/>
+        ///     Topics can be filtered by **key**, **name**, or **includeCursor** to paginate through the list. <br/>
+        ///     Checkout all available filters in the query section.
+        /// </summary>
+        /// <param name="after"></param>
+        /// <param name="before"></param>
+        /// <param name="limit"></param>
+        /// <param name="orderDirection"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="includeCursor"></param>
+        /// <param name="key"></param>
+        /// <param name="name"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.TopicsControllerListTopicsResponse>> TopicsControllerListTopicsAsResponseAsync(
+            string? after = default,
+            string? before = default,
+            double? limit = default,
+            global::Novu.TopicsControllerListTopicsOrderDirection? orderDirection = default,
+            string? orderBy = default,
+            bool? includeCursor = default,
+            string? key = default,
+            string? name = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareTopicsControllerListTopicsArguments(
@@ -639,9 +680,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.TopicsControllerListTopicsResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.TopicsControllerListTopicsResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.TopicsControllerListTopicsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -670,9 +714,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.TopicsControllerListTopicsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.TopicsControllerListTopicsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.TopicsControllerListTopicsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

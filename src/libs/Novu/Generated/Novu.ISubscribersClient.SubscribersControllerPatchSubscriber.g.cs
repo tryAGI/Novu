@@ -24,6 +24,20 @@ namespace Novu
         ///     **subscriberId** is a required field, rest other fields are optional
         /// </summary>
         /// <param name="subscriberId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerPatchSubscriberResponse>> SubscribersControllerPatchSubscriberAsResponseAsync(
+            string subscriberId,
+
+            global::Novu.PatchSubscriberRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a subscriber<br/>
+        /// Update a subscriber by its unique key identifier **subscriberId**. <br/>
+        ///     **subscriberId** is a required field, rest other fields are optional
+        /// </summary>
+        /// <param name="subscriberId"></param>
         /// <param name="firstName">
         /// First name of the subscriber<br/>
         /// Example: John

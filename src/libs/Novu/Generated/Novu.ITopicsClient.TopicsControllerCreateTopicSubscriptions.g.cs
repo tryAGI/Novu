@@ -26,6 +26,20 @@ namespace Novu
         ///       Its like subscribing to a common interest group. if topic does not exist, it will be created.
         /// </summary>
         /// <param name="topicKey"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.TopicsControllerCreateTopicSubscriptionsResponse>> TopicsControllerCreateTopicSubscriptionsAsResponseAsync(
+            string topicKey,
+
+            global::Novu.CreateTopicSubscriptionsRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create topic subscriptions<br/>
+        /// This api will create subscription for subscriberIds for a topic. <br/>
+        ///       Its like subscribing to a common interest group. if topic does not exist, it will be created.
+        /// </summary>
+        /// <param name="topicKey"></param>
         /// <param name="subscriptions">
         /// List of subscriptions to subscribe to the topic (max: 100). Can be either a string array of subscriber IDs or an array of objects with identifier and subscriberId<br/>
         /// Example: [{"identifier":"subscriber-123-subscription-a","subscriberId":"subscriber-123"}, {"identifier":"subscriber-456-subscription-b","subscriberId":"subscriber-456"}]

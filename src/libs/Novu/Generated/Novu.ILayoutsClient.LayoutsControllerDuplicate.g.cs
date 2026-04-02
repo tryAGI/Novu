@@ -22,6 +22,19 @@ namespace Novu
         /// Duplicates a layout by its unique identifier **layoutId**. This will create a new layout with the content of the original layout.
         /// </summary>
         /// <param name="layoutId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.LayoutsControllerDuplicateResponse>> LayoutsControllerDuplicateAsResponseAsync(
+            string layoutId,
+
+            global::Novu.DuplicateLayoutDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Duplicate a layout<br/>
+        /// Duplicates a layout by its unique identifier **layoutId**. This will create a new layout with the content of the original layout.
+        /// </summary>
+        /// <param name="layoutId"></param>
         /// <param name="name">
         /// Name of the layout
         /// </param>

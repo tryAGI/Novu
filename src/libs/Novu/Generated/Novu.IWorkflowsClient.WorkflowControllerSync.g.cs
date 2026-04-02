@@ -22,6 +22,19 @@ namespace Novu
         /// Synchronizes a workflow to the target environment
         /// </summary>
         /// <param name="workflowId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.WorkflowControllerSyncResponse>> WorkflowControllerSyncAsResponseAsync(
+            string workflowId,
+
+            global::Novu.SyncWorkflowDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Sync a workflow<br/>
+        /// Synchronizes a workflow to the target environment
+        /// </summary>
+        /// <param name="workflowId"></param>
         /// <param name="targetEnvironmentId">
         /// Target environment identifier to sync the workflow to
         /// </param>

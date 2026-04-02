@@ -43,6 +43,33 @@ namespace Novu
             global::System.Collections.Generic.IList<string>? contextKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await SubscribersControllerGetSubscriberPreferencesAsResponseAsync(
+                subscriberId: subscriberId,
+                criticality: criticality,
+                contextKeys: contextKeys,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Retrieve subscriber preferences<br/>
+        /// Retrieve subscriber channel preferences by its unique key identifier **subscriberId**. <br/>
+        ///     This API returns all five channels preferences for all workflows and global preferences.
+        /// </summary>
+        /// <param name="subscriberId"></param>
+        /// <param name="criticality">
+        /// Default Value: nonCritical
+        /// </param>
+        /// <param name="contextKeys"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerGetSubscriberPreferencesResponse>> SubscribersControllerGetSubscriberPreferencesAsResponseAsync(
+            string subscriberId,
+            global::Novu.SubscribersControllerGetSubscriberPreferencesCriticality? criticality = default,
+            global::System.Collections.Generic.IList<string>? contextKeys = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareSubscribersControllerGetSubscriberPreferencesArguments(
@@ -604,9 +631,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.SubscribersControllerGetSubscriberPreferencesResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.SubscribersControllerGetSubscriberPreferencesResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerGetSubscriberPreferencesResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -635,9 +665,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.SubscribersControllerGetSubscriberPreferencesResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.SubscribersControllerGetSubscriberPreferencesResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerGetSubscriberPreferencesResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

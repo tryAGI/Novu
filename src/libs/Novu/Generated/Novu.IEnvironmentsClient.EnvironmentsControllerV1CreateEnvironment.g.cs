@@ -23,6 +23,19 @@ namespace Novu
         ///     Environments allow you to manage different stages of your application development lifecycle.<br/>
         ///     Each environment has its own set of API keys and configurations.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.EnvironmentsControllerV1CreateEnvironmentResponse>> EnvironmentsControllerV1CreateEnvironmentAsResponseAsync(
+
+            global::Novu.CreateEnvironmentRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create an environment<br/>
+        /// Creates a new environment within the current organization. <br/>
+        ///     Environments allow you to manage different stages of your application development lifecycle.<br/>
+        ///     Each environment has its own set of API keys and configurations.
+        /// </summary>
         /// <param name="name">
         /// Name of the environment to be created<br/>
         /// Example: Production Environment

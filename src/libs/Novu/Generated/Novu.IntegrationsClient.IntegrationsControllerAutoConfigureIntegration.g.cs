@@ -33,6 +33,25 @@ namespace Novu
             string integrationId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await IntegrationsControllerAutoConfigureIntegrationAsResponseAsync(
+                integrationId: integrationId,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Auto-configure an integration for inbound webhooks<br/>
+        /// Auto-configure an integration by its unique key identifier **integrationId** for inbound webhook support. <br/>
+        ///     This will automatically generate required webhook signing keys and configure webhook endpoints.
+        /// </summary>
+        /// <param name="integrationId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerAutoConfigureIntegrationResponse>> IntegrationsControllerAutoConfigureIntegrationAsResponseAsync(
+            string integrationId,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareIntegrationsControllerAutoConfigureIntegrationArguments(
@@ -581,9 +600,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.IntegrationsControllerAutoConfigureIntegrationResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.IntegrationsControllerAutoConfigureIntegrationResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerAutoConfigureIntegrationResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -612,9 +634,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.IntegrationsControllerAutoConfigureIntegrationResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.IntegrationsControllerAutoConfigureIntegrationResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerAutoConfigureIntegrationResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

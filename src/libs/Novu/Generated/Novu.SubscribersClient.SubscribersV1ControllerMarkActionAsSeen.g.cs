@@ -46,6 +46,36 @@ namespace Novu
             global::Novu.MarkMessageActionAsSeenDto request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await SubscribersV1ControllerMarkActionAsSeenAsResponseAsync(
+                messageId: messageId,
+                type: type,
+                subscriberId: subscriberId,
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Update notification action status<br/>
+        /// Update in-app (inbox) notification's action status by its unique key identifier **messageId** and type field **type**. <br/>
+        ///       **type** field can be **primary** or **secondary**
+        /// </summary>
+        /// <param name="messageId"></param>
+        /// <param name="type"></param>
+        /// <param name="subscriberId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse>> SubscribersV1ControllerMarkActionAsSeenAsResponseAsync(
+            string messageId,
+            object type,
+            string subscriberId,
+
+            global::Novu.MarkMessageActionAsSeenDto request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -613,9 +643,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -644,9 +677,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

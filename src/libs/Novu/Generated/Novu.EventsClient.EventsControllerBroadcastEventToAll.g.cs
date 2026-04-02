@@ -34,6 +34,27 @@ namespace Novu
             global::Novu.TriggerEventToAllRequestDto request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await EventsControllerBroadcastEventToAllAsResponseAsync(
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Broadcast event to all<br/>
+        /// Trigger a broadcast event to all existing subscribers, could be used to send announcements, etc.<br/>
+        ///       In the future could be used to trigger events to a subset of subscribers based on defined filters.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.EventsControllerBroadcastEventToAllResponse>> EventsControllerBroadcastEventToAllAsResponseAsync(
+
+            global::Novu.TriggerEventToAllRequestDto request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -595,9 +616,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.EventsControllerBroadcastEventToAllResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.EventsControllerBroadcastEventToAllResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.EventsControllerBroadcastEventToAllResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -626,9 +650,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.EventsControllerBroadcastEventToAllResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.EventsControllerBroadcastEventToAllResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.EventsControllerBroadcastEventToAllResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

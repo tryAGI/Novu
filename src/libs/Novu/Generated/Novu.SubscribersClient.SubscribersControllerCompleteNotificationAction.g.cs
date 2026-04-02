@@ -44,6 +44,33 @@ namespace Novu
             global::System.Collections.Generic.IList<string>? contextKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await SubscribersControllerCompleteNotificationActionAsResponseAsync(
+                subscriberId: subscriberId,
+                notificationId: notificationId,
+                actionType: actionType,
+                contextKeys: contextKeys,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Complete notification action<br/>
+        /// Mark a notification action (primary or secondary) as completed by its unique identifier **notificationId** and action type.
+        /// </summary>
+        /// <param name="subscriberId"></param>
+        /// <param name="notificationId"></param>
+        /// <param name="actionType"></param>
+        /// <param name="contextKeys"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.InboxNotificationDto>> SubscribersControllerCompleteNotificationActionAsResponseAsync(
+            string subscriberId,
+            string notificationId,
+            global::Novu.SubscribersControllerCompleteNotificationActionActionType actionType,
+            global::System.Collections.Generic.IList<string>? contextKeys = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareSubscribersControllerCompleteNotificationActionArguments(
@@ -606,9 +633,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.InboxNotificationDto.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.InboxNotificationDto.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.InboxNotificationDto>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -637,9 +667,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.InboxNotificationDto.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.InboxNotificationDto.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.InboxNotificationDto>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

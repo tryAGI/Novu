@@ -32,6 +32,24 @@ namespace Novu
             string identifier,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ChannelConnectionsControllerGetChannelConnectionByIdentifierAsResponseAsync(
+                identifier: identifier,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Retrieve a channel connection<br/>
+        /// Retrieve a specific channel connection by its unique identifier.
+        /// </summary>
+        /// <param name="identifier"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse>> ChannelConnectionsControllerGetChannelConnectionByIdentifierAsResponseAsync(
+            string identifier,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareChannelConnectionsControllerGetChannelConnectionByIdentifierArguments(
@@ -585,9 +603,12 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Novu.ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::Novu.ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -616,9 +637,12 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Novu.ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::Novu.ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::Novu.AutoSDKHttpResponse<global::Novu.ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

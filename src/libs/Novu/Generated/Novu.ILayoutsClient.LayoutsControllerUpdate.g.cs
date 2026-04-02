@@ -22,6 +22,19 @@ namespace Novu
         /// Updates the details of an existing layout, here **layoutId** is the identifier of the layout
         /// </summary>
         /// <param name="layoutId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.LayoutsControllerUpdateResponse>> LayoutsControllerUpdateAsResponseAsync(
+            string layoutId,
+
+            global::Novu.UpdateLayoutDto request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a layout<br/>
+        /// Updates the details of an existing layout, here **layoutId** is the identifier of the layout
+        /// </summary>
+        /// <param name="layoutId"></param>
         /// <param name="name">
         /// Name of the layout
         /// </param>
