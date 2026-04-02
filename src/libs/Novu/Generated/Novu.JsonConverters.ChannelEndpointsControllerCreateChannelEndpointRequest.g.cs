@@ -12,56 +12,41 @@ namespace Novu.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminator>(ref readerCopy, options);
 
             global::Novu.CreateSlackChannelEndpointDto? slackChannel = default;
             if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackChannel)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateSlackChannelEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateSlackChannelEndpointDto> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateSlackChannelEndpointDto)}");
-                slackChannel = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                slackChannel = global::System.Text.Json.JsonSerializer.Deserialize<global::Novu.CreateSlackChannelEndpointDto>(ref reader, options);
             }
             global::Novu.CreateSlackUserEndpointDto? slackUser = default;
             if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackUser)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateSlackUserEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateSlackUserEndpointDto> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateSlackUserEndpointDto)}");
-                slackUser = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                slackUser = global::System.Text.Json.JsonSerializer.Deserialize<global::Novu.CreateSlackUserEndpointDto>(ref reader, options);
             }
             global::Novu.CreateWebhookEndpointDto? webhook = default;
             if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.Webhook)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateWebhookEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateWebhookEndpointDto> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateWebhookEndpointDto)}");
-                webhook = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                webhook = global::System.Text.Json.JsonSerializer.Deserialize<global::Novu.CreateWebhookEndpointDto>(ref reader, options);
             }
             global::Novu.CreatePhoneEndpointDto? phone = default;
             if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.Phone)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreatePhoneEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreatePhoneEndpointDto> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreatePhoneEndpointDto)}");
-                phone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                phone = global::System.Text.Json.JsonSerializer.Deserialize<global::Novu.CreatePhoneEndpointDto>(ref reader, options);
             }
             global::Novu.CreateMsTeamsChannelEndpointDto? msTeamsChannel = default;
             if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsChannel)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateMsTeamsChannelEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateMsTeamsChannelEndpointDto> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateMsTeamsChannelEndpointDto)}");
-                msTeamsChannel = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                msTeamsChannel = global::System.Text.Json.JsonSerializer.Deserialize<global::Novu.CreateMsTeamsChannelEndpointDto>(ref reader, options);
             }
             global::Novu.CreateMsTeamsUserEndpointDto? msTeamsUser = default;
             if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsUser)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateMsTeamsUserEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateMsTeamsUserEndpointDto> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateMsTeamsUserEndpointDto)}");
-                msTeamsUser = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                msTeamsUser = global::System.Text.Json.JsonSerializer.Deserialize<global::Novu.CreateMsTeamsUserEndpointDto>(ref reader, options);
             }
 
             var __value = new global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequest(
@@ -88,44 +73,31 @@ namespace Novu.JsonConverters
             global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequest value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsSlackChannel)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateSlackChannelEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateSlackChannelEndpointDto?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateSlackChannelEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SlackChannel!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SlackChannel, typeof(global::Novu.CreateSlackChannelEndpointDto), options);
             }
             else if (value.IsSlackUser)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateSlackUserEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateSlackUserEndpointDto?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateSlackUserEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SlackUser!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SlackUser, typeof(global::Novu.CreateSlackUserEndpointDto), options);
             }
             else if (value.IsWebhook)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateWebhookEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateWebhookEndpointDto?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateWebhookEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Webhook!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Webhook, typeof(global::Novu.CreateWebhookEndpointDto), options);
             }
             else if (value.IsPhone)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreatePhoneEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreatePhoneEndpointDto?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreatePhoneEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phone, typeof(global::Novu.CreatePhoneEndpointDto), options);
             }
             else if (value.IsMsTeamsChannel)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateMsTeamsChannelEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateMsTeamsChannelEndpointDto?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateMsTeamsChannelEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MsTeamsChannel!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MsTeamsChannel, typeof(global::Novu.CreateMsTeamsChannelEndpointDto), options);
             }
             else if (value.IsMsTeamsUser)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateMsTeamsUserEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateMsTeamsUserEndpointDto?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateMsTeamsUserEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MsTeamsUser!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MsTeamsUser, typeof(global::Novu.CreateMsTeamsUserEndpointDto), options);
             }
         }
     }
