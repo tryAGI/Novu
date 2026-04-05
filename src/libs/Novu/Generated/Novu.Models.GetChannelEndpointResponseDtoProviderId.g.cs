@@ -64,6 +64,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        CmTelecom,
+        /// <summary>
+        /// 
+        /// </summary>
         Discord,
         /// <summary>
         /// 
@@ -348,6 +352,7 @@ namespace Novu
                 GetChannelEndpointResponseDtoProviderId.ChatWebhook => "chat-webhook",
                 GetChannelEndpointResponseDtoProviderId.Clickatell => "clickatell",
                 GetChannelEndpointResponseDtoProviderId.Clicksend => "clicksend",
+                GetChannelEndpointResponseDtoProviderId.CmTelecom => "cm-telecom",
                 GetChannelEndpointResponseDtoProviderId.Discord => "discord",
                 GetChannelEndpointResponseDtoProviderId.EazySms => "eazy-sms",
                 GetChannelEndpointResponseDtoProviderId.EmailWebhook => "email-webhook",
@@ -436,6 +441,7 @@ namespace Novu
                 "chat-webhook" => GetChannelEndpointResponseDtoProviderId.ChatWebhook,
                 "clickatell" => GetChannelEndpointResponseDtoProviderId.Clickatell,
                 "clicksend" => GetChannelEndpointResponseDtoProviderId.Clicksend,
+                "cm-telecom" => GetChannelEndpointResponseDtoProviderId.CmTelecom,
                 "discord" => GetChannelEndpointResponseDtoProviderId.Discord,
                 "eazy-sms" => GetChannelEndpointResponseDtoProviderId.EazySms,
                 "email-webhook" => GetChannelEndpointResponseDtoProviderId.EmailWebhook,

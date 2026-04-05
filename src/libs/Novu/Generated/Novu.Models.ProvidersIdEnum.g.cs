@@ -63,6 +63,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        CmTelecom,
+        /// <summary>
+        /// 
+        /// </summary>
         Discord,
         /// <summary>
         /// 
@@ -347,6 +351,7 @@ namespace Novu
                 ProvidersIdEnum.ChatWebhook => "chat-webhook",
                 ProvidersIdEnum.Clickatell => "clickatell",
                 ProvidersIdEnum.Clicksend => "clicksend",
+                ProvidersIdEnum.CmTelecom => "cm-telecom",
                 ProvidersIdEnum.Discord => "discord",
                 ProvidersIdEnum.EazySms => "eazy-sms",
                 ProvidersIdEnum.EmailWebhook => "email-webhook",
@@ -435,6 +440,7 @@ namespace Novu
                 "chat-webhook" => ProvidersIdEnum.ChatWebhook,
                 "clickatell" => ProvidersIdEnum.Clickatell,
                 "clicksend" => ProvidersIdEnum.Clicksend,
+                "cm-telecom" => ProvidersIdEnum.CmTelecom,
                 "discord" => ProvidersIdEnum.Discord,
                 "eazy-sms" => ProvidersIdEnum.EazySms,
                 "email-webhook" => ProvidersIdEnum.EmailWebhook,
