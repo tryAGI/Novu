@@ -102,13 +102,13 @@ namespace Novu
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::Novu.ErrorDto.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::Novu.ErrorDto.FromJson(__content_400, JsonSerializerContext);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::Novu.ErrorDto.FromJson(__content_400, JsonSerializerOptions);
+                        __value_400 = global::Novu.ErrorDto.FromJson(__content_400, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -140,13 +140,13 @@ namespace Novu
                     if (ReadResponseAsString)
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_401 = global::Novu.ErrorDto.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::Novu.ErrorDto.FromJson(__content_401, JsonSerializerContext);
                     }
                     else
                     {
                         __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_401 = global::Novu.ErrorDto.FromJson(__content_401, JsonSerializerOptions);
+                        __value_401 = global::Novu.ErrorDto.FromJson(__content_401, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -178,13 +178,13 @@ namespace Novu
                     if (ReadResponseAsString)
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::Novu.ErrorDto.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::Novu.ErrorDto.FromJson(__content_403, JsonSerializerContext);
                     }
                     else
                     {
                         __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_403 = global::Novu.ErrorDto.FromJson(__content_403, JsonSerializerOptions);
+                        __value_403 = global::Novu.ErrorDto.FromJson(__content_403, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -216,13 +216,13 @@ namespace Novu
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::Novu.ErrorDto.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::Novu.ErrorDto.FromJson(__content_404, JsonSerializerContext);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::Novu.ErrorDto.FromJson(__content_404, JsonSerializerOptions);
+                        __value_404 = global::Novu.ErrorDto.FromJson(__content_404, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -254,13 +254,13 @@ namespace Novu
                     if (ReadResponseAsString)
                     {
                         __content_405 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_405 = global::Novu.ErrorDto.FromJson(__content_405, JsonSerializerOptions);
+                        __value_405 = global::Novu.ErrorDto.FromJson(__content_405, JsonSerializerContext);
                     }
                     else
                     {
                         __content_405 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_405 = global::Novu.ErrorDto.FromJson(__content_405, JsonSerializerOptions);
+                        __value_405 = global::Novu.ErrorDto.FromJson(__content_405, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -292,13 +292,13 @@ namespace Novu
                     if (ReadResponseAsString)
                     {
                         __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_409 = global::Novu.ErrorDto.FromJson(__content_409, JsonSerializerOptions);
+                        __value_409 = global::Novu.ErrorDto.FromJson(__content_409, JsonSerializerContext);
                     }
                     else
                     {
                         __content_409 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_409 = global::Novu.ErrorDto.FromJson(__content_409, JsonSerializerOptions);
+                        __value_409 = global::Novu.ErrorDto.FromJson(__content_409, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -330,13 +330,13 @@ namespace Novu
                     if (ReadResponseAsString)
                     {
                         __content_413 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_413 = global::Novu.ErrorDto.FromJson(__content_413, JsonSerializerOptions);
+                        __value_413 = global::Novu.ErrorDto.FromJson(__content_413, JsonSerializerContext);
                     }
                     else
                     {
                         __content_413 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_413 = global::Novu.ErrorDto.FromJson(__content_413, JsonSerializerOptions);
+                        __value_413 = global::Novu.ErrorDto.FromJson(__content_413, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -368,13 +368,13 @@ namespace Novu
                     if (ReadResponseAsString)
                     {
                         __content_414 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_414 = global::Novu.ErrorDto.FromJson(__content_414, JsonSerializerOptions);
+                        __value_414 = global::Novu.ErrorDto.FromJson(__content_414, JsonSerializerContext);
                     }
                     else
                     {
                         __content_414 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_414 = global::Novu.ErrorDto.FromJson(__content_414, JsonSerializerOptions);
+                        __value_414 = global::Novu.ErrorDto.FromJson(__content_414, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -406,13 +406,13 @@ namespace Novu
                     if (ReadResponseAsString)
                     {
                         __content_415 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_415 = global::Novu.ErrorDto.FromJson(__content_415, JsonSerializerOptions);
+                        __value_415 = global::Novu.ErrorDto.FromJson(__content_415, JsonSerializerContext);
                     }
                     else
                     {
                         __content_415 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_415 = global::Novu.ErrorDto.FromJson(__content_415, JsonSerializerOptions);
+                        __value_415 = global::Novu.ErrorDto.FromJson(__content_415, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -444,13 +444,13 @@ namespace Novu
                     if (ReadResponseAsString)
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::Novu.ValidationErrorDto.FromJson(__content_422, JsonSerializerOptions);
+                        __value_422 = global::Novu.ValidationErrorDto.FromJson(__content_422, JsonSerializerContext);
                     }
                     else
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_422 = global::Novu.ValidationErrorDto.FromJson(__content_422, JsonSerializerOptions);
+                        __value_422 = global::Novu.ValidationErrorDto.FromJson(__content_422, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -482,13 +482,13 @@ namespace Novu
                     if (ReadResponseAsString)
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_429 = global::System.Text.Json.JsonSerializer.Deserialize<string?>(__content_429, JsonSerializerOptions);
+                        __value_429 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_429, typeof(string), JsonSerializerContext);
                     }
                     else
                     {
                         __content_429 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_429 = global::System.Text.Json.JsonSerializer.Deserialize<string?>(__content_429, JsonSerializerOptions);
+                        __value_429 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_429, typeof(string), JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -520,13 +520,13 @@ namespace Novu
                     if (ReadResponseAsString)
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::Novu.ErrorDto.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::Novu.ErrorDto.FromJson(__content_500, JsonSerializerContext);
                     }
                     else
                     {
                         __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_500 = global::Novu.ErrorDto.FromJson(__content_500, JsonSerializerOptions);
+                        __value_500 = global::Novu.ErrorDto.FromJson(__content_500, JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -558,13 +558,13 @@ namespace Novu
                     if (ReadResponseAsString)
                     {
                         __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_503 = global::System.Text.Json.JsonSerializer.Deserialize<string?>(__content_503, JsonSerializerOptions);
+                        __value_503 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_503, typeof(string), JsonSerializerContext);
                     }
                     else
                     {
                         __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_503 = global::System.Text.Json.JsonSerializer.Deserialize<string?>(__content_503, JsonSerializerOptions);
+                        __value_503 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_503, typeof(string), JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -607,7 +607,7 @@ namespace Novu
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<bool?>(__content, JsonSerializerOptions) ??
+                    var __value = (bool?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(bool?), JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                     return new global::Novu.AutoSDKHttpResponse<bool>(
                         statusCode: __response.StatusCode,
@@ -640,7 +640,7 @@ namespace Novu
 #endif
                     ).ConfigureAwait(false);
 
-                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<bool?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = (bool?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(bool?), JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                     return new global::Novu.AutoSDKHttpResponse<bool>(
                         statusCode: __response.StatusCode,
