@@ -5,7 +5,7 @@ namespace Novu
     public partial interface IEnvironmentVariablesClient
     {
         /// <summary>
-        /// Delete environment variable<br/>
+        /// Delete a variable<br/>
         /// Deletes an environment variable by id.
         /// </summary>
         /// <param name="variableId"></param>

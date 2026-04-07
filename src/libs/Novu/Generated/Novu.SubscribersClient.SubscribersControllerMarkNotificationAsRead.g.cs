@@ -26,8 +26,8 @@ namespace Novu
             ref string content);
 
         /// <summary>
-        /// Mark notification as read<br/>
-        /// Mark a specific notification as read by its unique identifier **notificationId**.
+        /// Mark a notification as read<br/>
+        /// Mark a specific in-app (inbox) notification as read by its unique identifier **notificationId**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>
@@ -50,8 +50,8 @@ namespace Novu
             return __response.Body;
         }
         /// <summary>
-        /// Mark notification as read<br/>
-        /// Mark a specific notification as read by its unique identifier **notificationId**.
+        /// Mark a notification as read<br/>
+        /// Mark a specific in-app (inbox) notification as read by its unique identifier **notificationId**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>

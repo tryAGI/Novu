@@ -5,8 +5,8 @@ namespace Novu
     public partial interface ISubscribersClient
     {
         /// <summary>
-        /// Unsnooze notification<br/>
-        /// Unsnooze a specific notification by its unique identifier **notificationId**.
+        /// Unsnooze a notification<br/>
+        /// Unsnooze a specific in-app (inbox) notification by its unique identifier **notificationId**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>
@@ -19,8 +19,8 @@ namespace Novu
             global::System.Collections.Generic.IList<string>? contextKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Unsnooze notification<br/>
-        /// Unsnooze a specific notification by its unique identifier **notificationId**.
+        /// Unsnooze a notification<br/>
+        /// Unsnooze a specific in-app (inbox) notification by its unique identifier **notificationId**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>

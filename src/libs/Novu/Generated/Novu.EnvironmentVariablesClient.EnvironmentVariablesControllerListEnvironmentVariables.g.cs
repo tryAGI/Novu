@@ -22,7 +22,7 @@ namespace Novu
             ref string content);
 
         /// <summary>
-        /// List environment variables<br/>
+        /// List all variables<br/>
         /// Returns all environment variables for the current organization. Secret values are masked.
         /// </summary>
         /// <param name="search"></param>
@@ -40,7 +40,7 @@ namespace Novu
             return __response.Body;
         }
         /// <summary>
-        /// List environment variables<br/>
+        /// List all variables<br/>
         /// Returns all environment variables for the current organization. Secret values are masked.
         /// </summary>
         /// <param name="search"></param>

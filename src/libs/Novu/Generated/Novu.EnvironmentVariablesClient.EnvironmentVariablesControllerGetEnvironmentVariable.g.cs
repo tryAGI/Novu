@@ -22,7 +22,7 @@ namespace Novu
             ref string content);
 
         /// <summary>
-        /// Get environment variable<br/>
+        /// Retrieve a variable<br/>
         /// Returns a single environment variable by id. Secret values are masked.
         /// </summary>
         /// <param name="variableId"></param>
@@ -40,7 +40,7 @@ namespace Novu
             return __response.Body;
         }
         /// <summary>
-        /// Get environment variable<br/>
+        /// Retrieve a variable<br/>
         /// Returns a single environment variable by id. Secret values are masked.
         /// </summary>
         /// <param name="variableId"></param>

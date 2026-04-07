@@ -5,8 +5,8 @@ namespace Novu
     public partial interface ISubscribersClient
     {
         /// <summary>
-        /// Snooze notification<br/>
-        /// Snooze a specific notification by its unique identifier **notificationId** until a specified time.
+        /// Snooze a notification<br/>
+        /// Snooze a specific in-app (inbox) notification by its unique identifier **notificationId** until a specified time.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>
@@ -22,8 +22,8 @@ namespace Novu
             global::System.Collections.Generic.IList<string>? contextKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Snooze notification<br/>
-        /// Snooze a specific notification by its unique identifier **notificationId** until a specified time.
+        /// Snooze a notification<br/>
+        /// Snooze a specific in-app (inbox) notification by its unique identifier **notificationId** until a specified time.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>
@@ -39,8 +39,8 @@ namespace Novu
             global::System.Collections.Generic.IList<string>? contextKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Snooze notification<br/>
-        /// Snooze a specific notification by its unique identifier **notificationId** until a specified time.
+        /// Snooze a notification<br/>
+        /// Snooze a specific in-app (inbox) notification by its unique identifier **notificationId** until a specified time.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>

@@ -17,7 +17,7 @@ namespace Novu
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Delete environment variable<br/>
+        /// Delete a variable<br/>
         /// Deletes an environment variable by id.
         /// </summary>
         /// <param name="variableId"></param>

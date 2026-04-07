@@ -5,7 +5,7 @@ namespace Novu
     public partial interface IEnvironmentVariablesClient
     {
         /// <summary>
-        /// Get environment variable<br/>
+        /// Retrieve a variable<br/>
         /// Returns a single environment variable by id. Secret values are masked.
         /// </summary>
         /// <param name="variableId"></param>
@@ -15,7 +15,7 @@ namespace Novu
             string variableId,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get environment variable<br/>
+        /// Retrieve a variable<br/>
         /// Returns a single environment variable by id. Secret values are masked.
         /// </summary>
         /// <param name="variableId"></param>

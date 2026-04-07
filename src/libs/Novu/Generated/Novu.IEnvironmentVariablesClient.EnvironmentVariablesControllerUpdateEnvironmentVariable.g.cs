@@ -5,7 +5,7 @@ namespace Novu
     public partial interface IEnvironmentVariablesClient
     {
         /// <summary>
-        /// Update environment variable<br/>
+        /// Update a variable<br/>
         /// Updates an existing environment variable. Providing values replaces all existing per-environment values.
         /// </summary>
         /// <param name="variableId"></param>
@@ -18,7 +18,7 @@ namespace Novu
             global::Novu.UpdateEnvironmentVariableRequestDto request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update environment variable<br/>
+        /// Update a variable<br/>
         /// Updates an existing environment variable. Providing values replaces all existing per-environment values.
         /// </summary>
         /// <param name="variableId"></param>
@@ -31,7 +31,7 @@ namespace Novu
             global::Novu.UpdateEnvironmentVariableRequestDto request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update environment variable<br/>
+        /// Update a variable<br/>
         /// Updates an existing environment variable. Providing values replaces all existing per-environment values.
         /// </summary>
         /// <param name="variableId"></param>

@@ -28,8 +28,8 @@ namespace Novu
             ref string content);
 
         /// <summary>
-        /// Revert notification action<br/>
-        /// Revert a notification action (primary or secondary) to pending state by its unique identifier **notificationId** and action type.
+        /// Revert a notification action<br/>
+        /// Revert a single in-app (inbox) notification's action (primary or secondary) to pending state by its unique identifier **notificationId** and action type **actionType**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>
@@ -55,8 +55,8 @@ namespace Novu
             return __response.Body;
         }
         /// <summary>
-        /// Revert notification action<br/>
-        /// Revert a notification action (primary or secondary) to pending state by its unique identifier **notificationId** and action type.
+        /// Revert a notification action<br/>
+        /// Revert a single in-app (inbox) notification's action (primary or secondary) to pending state by its unique identifier **notificationId** and action type **actionType**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>

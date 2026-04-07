@@ -20,7 +20,7 @@ namespace Novu
 
         /// <summary>
         /// Mark all notifications as read<br/>
-        /// Mark all notifications matching the specified filters as read. Supports context-based filtering.
+        /// Mark all in-app (inbox) notifications matching the specified filters as read. Supports context-based filtering.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="request"></param>
@@ -644,7 +644,7 @@ namespace Novu
         }
         /// <summary>
         /// Mark all notifications as read<br/>
-        /// Mark all notifications matching the specified filters as read. Supports context-based filtering.
+        /// Mark all in-app (inbox) notifications matching the specified filters as read. Supports context-based filtering.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="tags">

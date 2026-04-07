@@ -5,8 +5,8 @@ namespace Novu
     public partial interface ISubscribersClient
     {
         /// <summary>
-        /// Mark notification as read<br/>
-        /// Mark a specific notification as read by its unique identifier **notificationId**.
+        /// Mark a notification as read<br/>
+        /// Mark a specific in-app (inbox) notification as read by its unique identifier **notificationId**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>
@@ -19,8 +19,8 @@ namespace Novu
             global::System.Collections.Generic.IList<string>? contextKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Mark notification as read<br/>
-        /// Mark a specific notification as read by its unique identifier **notificationId**.
+        /// Mark a notification as read<br/>
+        /// Mark a specific in-app (inbox) notification as read by its unique identifier **notificationId**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>

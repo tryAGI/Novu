@@ -20,7 +20,7 @@ namespace Novu
 
         /// <summary>
         /// Delete all notifications<br/>
-        /// Delete all notifications matching the specified filters. Supports context-based filtering.
+        /// Permanently delete all in-app (inbox) notifications matching the specified filters. Supports context-based filtering.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="request"></param>
@@ -644,7 +644,7 @@ namespace Novu
         }
         /// <summary>
         /// Delete all notifications<br/>
-        /// Delete all notifications matching the specified filters. Supports context-based filtering.
+        /// Permanently delete all in-app (inbox) notifications matching the specified filters. Supports context-based filtering.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="tags">

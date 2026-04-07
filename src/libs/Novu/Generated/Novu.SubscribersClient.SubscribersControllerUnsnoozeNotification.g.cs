@@ -26,8 +26,8 @@ namespace Novu
             ref string content);
 
         /// <summary>
-        /// Unsnooze notification<br/>
-        /// Unsnooze a specific notification by its unique identifier **notificationId**.
+        /// Unsnooze a notification<br/>
+        /// Unsnooze a specific in-app (inbox) notification by its unique identifier **notificationId**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>
@@ -50,8 +50,8 @@ namespace Novu
             return __response.Body;
         }
         /// <summary>
-        /// Unsnooze notification<br/>
-        /// Unsnooze a specific notification by its unique identifier **notificationId**.
+        /// Unsnooze a notification<br/>
+        /// Unsnooze a specific in-app (inbox) notification by its unique identifier **notificationId**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>

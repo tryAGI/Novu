@@ -5,7 +5,7 @@ namespace Novu
     public partial interface IEnvironmentVariablesClient
     {
         /// <summary>
-        /// List environment variables<br/>
+        /// List all variables<br/>
         /// Returns all environment variables for the current organization. Secret values are masked.
         /// </summary>
         /// <param name="search"></param>
@@ -15,7 +15,7 @@ namespace Novu
             string? search = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List environment variables<br/>
+        /// List all variables<br/>
         /// Returns all environment variables for the current organization. Secret values are masked.
         /// </summary>
         /// <param name="search"></param>
