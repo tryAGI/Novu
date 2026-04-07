@@ -24,7 +24,7 @@ namespace Novu
             ref string content);
 
         /// <summary>
-        /// Update environment variable<br/>
+        /// Update a variable<br/>
         /// Updates an existing environment variable. Providing values replaces all existing per-environment values.
         /// </summary>
         /// <param name="variableId"></param>
@@ -47,7 +47,7 @@ namespace Novu
             return __response.Body;
         }
         /// <summary>
-        /// Update environment variable<br/>
+        /// Update a variable<br/>
         /// Updates an existing environment variable. Providing values replaces all existing per-environment values.
         /// </summary>
         /// <param name="variableId"></param>
@@ -688,7 +688,7 @@ namespace Novu
             }
         }
         /// <summary>
-        /// Update environment variable<br/>
+        /// Update a variable<br/>
         /// Updates an existing environment variable. Providing values replaces all existing per-environment values.
         /// </summary>
         /// <param name="variableId"></param>

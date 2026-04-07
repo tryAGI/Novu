@@ -26,8 +26,8 @@ namespace Novu
             ref string content);
 
         /// <summary>
-        /// Archive notification<br/>
-        /// Archive a specific notification by its unique identifier **notificationId**.
+        /// Archive a notification<br/>
+        /// Archive a specific in-app (inbox) notification by its unique identifier **notificationId**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>
@@ -50,8 +50,8 @@ namespace Novu
             return __response.Body;
         }
         /// <summary>
-        /// Archive notification<br/>
-        /// Archive a specific notification by its unique identifier **notificationId**.
+        /// Archive a notification<br/>
+        /// Archive a specific in-app (inbox) notification by its unique identifier **notificationId**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>

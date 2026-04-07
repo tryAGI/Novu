@@ -5,8 +5,8 @@ namespace Novu
     public partial interface IEnvironmentVariablesClient
     {
         /// <summary>
-        /// Get environment variable usage<br/>
-        /// Returns the workflows that reference this environment variable via {{env.KEY}} in their step controls.
+        /// Retrieve a variable usage<br/>
+        /// Returns the workflows that reference this environment variable via `{{env.KEY}}` in their step controls. **variableId** is required.
         /// </summary>
         /// <param name="variableId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -15,8 +15,8 @@ namespace Novu
             string variableId,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get environment variable usage<br/>
-        /// Returns the workflows that reference this environment variable via {{env.KEY}} in their step controls.
+        /// Retrieve a variable usage<br/>
+        /// Returns the workflows that reference this environment variable via `{{env.KEY}}` in their step controls. **variableId** is required.
         /// </summary>
         /// <param name="variableId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

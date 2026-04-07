@@ -5,8 +5,8 @@ namespace Novu
     public partial interface ISubscribersClient
     {
         /// <summary>
-        /// Complete notification action<br/>
-        /// Mark a notification action (primary or secondary) as completed by its unique identifier **notificationId** and action type.
+        /// Complete a notification action<br/>
+        /// Mark a single in-app (inbox) notification's action (primary or secondary) as completed by its unique identifier **notificationId** and action type **actionType**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>
@@ -21,8 +21,8 @@ namespace Novu
             global::System.Collections.Generic.IList<string>? contextKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Complete notification action<br/>
-        /// Mark a notification action (primary or secondary) as completed by its unique identifier **notificationId** and action type.
+        /// Complete a notification action<br/>
+        /// Mark a single in-app (inbox) notification's action (primary or secondary) as completed by its unique identifier **notificationId** and action type **actionType**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>

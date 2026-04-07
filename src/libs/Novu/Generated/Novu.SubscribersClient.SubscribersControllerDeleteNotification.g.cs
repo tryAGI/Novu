@@ -21,8 +21,8 @@ namespace Novu
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Delete notification<br/>
-        /// Delete a specific notification by its unique identifier **notificationId**.
+        /// Delete a notification<br/>
+        /// Delete a specific in-app (inbox) notification permanently by its unique identifier **notificationId**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>

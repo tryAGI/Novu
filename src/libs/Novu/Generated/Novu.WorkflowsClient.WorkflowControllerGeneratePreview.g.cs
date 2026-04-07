@@ -26,7 +26,7 @@ namespace Novu
             ref string content);
 
         /// <summary>
-        /// Generate step preview<br/>
+        /// Generate a step preview<br/>
         /// Generates a preview for a specific workflow step by its unique identifier **stepId**
         /// </summary>
         /// <param name="workflowId"></param>
@@ -52,7 +52,7 @@ namespace Novu
             return __response.Body;
         }
         /// <summary>
-        /// Generate step preview<br/>
+        /// Generate a step preview<br/>
         /// Generates a preview for a specific workflow step by its unique identifier **stepId**
         /// </summary>
         /// <param name="workflowId"></param>
@@ -702,7 +702,7 @@ namespace Novu
             }
         }
         /// <summary>
-        /// Generate step preview<br/>
+        /// Generate a step preview<br/>
         /// Generates a preview for a specific workflow step by its unique identifier **stepId**
         /// </summary>
         /// <param name="workflowId"></param>

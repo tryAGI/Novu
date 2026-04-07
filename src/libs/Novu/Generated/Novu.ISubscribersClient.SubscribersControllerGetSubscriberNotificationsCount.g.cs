@@ -6,8 +6,8 @@ namespace Novu
     {
         /// <summary>
         /// Retrieve subscriber notifications count<br/>
-        /// Retrieve count of notifications for a subscriber by its unique key identifier **subscriberId**. <br/>
-        ///     Supports multiple filters to count notifications by different criteria, including context keys.
+        /// Retrieve count of in-app (inbox) notifications for a subscriber by its unique key identifier **subscriberId**. <br/>
+        ///     Supports multiple filters to count in-app (inbox) notifications by different criteria, including context keys.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="filters"></param>
@@ -19,8 +19,8 @@ namespace Novu
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Retrieve subscriber notifications count<br/>
-        /// Retrieve count of notifications for a subscriber by its unique key identifier **subscriberId**. <br/>
-        ///     Supports multiple filters to count notifications by different criteria, including context keys.
+        /// Retrieve count of in-app (inbox) notifications for a subscriber by its unique key identifier **subscriberId**. <br/>
+        ///     Supports multiple filters to count in-app (inbox) notifications by different criteria, including context keys.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="filters"></param>

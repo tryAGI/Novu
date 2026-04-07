@@ -5,7 +5,7 @@ namespace Novu
     public partial interface IWorkflowsClient
     {
         /// <summary>
-        /// Generate step preview<br/>
+        /// Generate a step preview<br/>
         /// Generates a preview for a specific workflow step by its unique identifier **stepId**
         /// </summary>
         /// <param name="workflowId"></param>
@@ -20,7 +20,7 @@ namespace Novu
             global::Novu.GeneratePreviewRequestDto request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate step preview<br/>
+        /// Generate a step preview<br/>
         /// Generates a preview for a specific workflow step by its unique identifier **stepId**
         /// </summary>
         /// <param name="workflowId"></param>
@@ -35,7 +35,7 @@ namespace Novu
             global::Novu.GeneratePreviewRequestDto request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate step preview<br/>
+        /// Generate a step preview<br/>
         /// Generates a preview for a specific workflow step by its unique identifier **stepId**
         /// </summary>
         /// <param name="workflowId"></param>

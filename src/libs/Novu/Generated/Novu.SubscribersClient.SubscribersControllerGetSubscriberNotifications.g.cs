@@ -49,7 +49,7 @@ namespace Novu
 
         /// <summary>
         /// Retrieve subscriber notifications<br/>
-        /// Retrieve in-app notifications for a subscriber by its unique key identifier **subscriberId**. <br/>
+        /// Retrieve in-app (inbox) notifications for a subscriber by its unique key identifier **subscriberId**. <br/>
         ///     Supports filtering by tags, read/archived/snoozed/seen state, data attributes, severity, date range, and context keys.
         /// </summary>
         /// <param name="subscriberId"></param>
@@ -109,7 +109,7 @@ namespace Novu
         }
         /// <summary>
         /// Retrieve subscriber notifications<br/>
-        /// Retrieve in-app notifications for a subscriber by its unique key identifier **subscriberId**. <br/>
+        /// Retrieve in-app (inbox) notifications for a subscriber by its unique key identifier **subscriberId**. <br/>
         ///     Supports filtering by tags, read/archived/snoozed/seen state, data attributes, severity, date range, and context keys.
         /// </summary>
         /// <param name="subscriberId"></param>

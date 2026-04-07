@@ -6,7 +6,7 @@ namespace Novu
     {
         /// <summary>
         /// Archive all read notifications<br/>
-        /// Archive all read notifications matching the specified filters. Supports context-based filtering.
+        /// Archive all read in-app (inbox) notifications matching the specified filters. Supports context-based filtering.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="request"></param>
@@ -19,7 +19,7 @@ namespace Novu
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Archive all read notifications<br/>
-        /// Archive all read notifications matching the specified filters. Supports context-based filtering.
+        /// Archive all read in-app (inbox) notifications matching the specified filters. Supports context-based filtering.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="tags">

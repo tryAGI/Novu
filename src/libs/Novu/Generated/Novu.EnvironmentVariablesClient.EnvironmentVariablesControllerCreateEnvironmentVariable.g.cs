@@ -22,7 +22,7 @@ namespace Novu
             ref string content);
 
         /// <summary>
-        /// Create environment variable<br/>
+        /// Create a variable<br/>
         /// Creates a new environment variable. Keys must be uppercase with underscores only (e.g. BASE_URL). Secret variables are encrypted at rest and masked in API responses.
         /// </summary>
         /// <param name="request"></param>
@@ -42,7 +42,7 @@ namespace Novu
             return __response.Body;
         }
         /// <summary>
-        /// Create environment variable<br/>
+        /// Create a variable<br/>
         /// Creates a new environment variable. Keys must be uppercase with underscores only (e.g. BASE_URL). Secret variables are encrypted at rest and masked in API responses.
         /// </summary>
         /// <param name="request"></param>
@@ -684,7 +684,7 @@ namespace Novu
             }
         }
         /// <summary>
-        /// Create environment variable<br/>
+        /// Create a variable<br/>
         /// Creates a new environment variable. Keys must be uppercase with underscores only (e.g. BASE_URL). Secret variables are encrypted at rest and masked in API responses.
         /// </summary>
         /// <param name="key">

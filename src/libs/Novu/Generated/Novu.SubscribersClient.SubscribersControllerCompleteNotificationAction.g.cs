@@ -28,8 +28,8 @@ namespace Novu
             ref string content);
 
         /// <summary>
-        /// Complete notification action<br/>
-        /// Mark a notification action (primary or secondary) as completed by its unique identifier **notificationId** and action type.
+        /// Complete a notification action<br/>
+        /// Mark a single in-app (inbox) notification's action (primary or secondary) as completed by its unique identifier **notificationId** and action type **actionType**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>
@@ -55,8 +55,8 @@ namespace Novu
             return __response.Body;
         }
         /// <summary>
-        /// Complete notification action<br/>
-        /// Mark a notification action (primary or secondary) as completed by its unique identifier **notificationId** and action type.
+        /// Complete a notification action<br/>
+        /// Mark a single in-app (inbox) notification's action (primary or secondary) as completed by its unique identifier **notificationId** and action type **actionType**.
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="notificationId"></param>
