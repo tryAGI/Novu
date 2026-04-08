@@ -15,7 +15,6 @@ namespace Novu
         /// </param>
         /// <param name="after"></param>
         /// <param name="offset"></param>
-        /// <param name="tags"></param>
         /// <param name="read"></param>
         /// <param name="archived"></param>
         /// <param name="snoozed"></param>
@@ -32,7 +31,6 @@ namespace Novu
             double? limit = default,
             string? after = default,
             double? offset = default,
-            global::System.Collections.Generic.IList<string>? tags = default,
             bool? read = default,
             bool? archived = default,
             bool? snoozed = default,
@@ -54,7 +52,6 @@ namespace Novu
         /// </param>
         /// <param name="after"></param>
         /// <param name="offset"></param>
-        /// <param name="tags"></param>
         /// <param name="read"></param>
         /// <param name="archived"></param>
         /// <param name="snoozed"></param>
@@ -71,7 +68,6 @@ namespace Novu
             double? limit = default,
             string? after = default,
             double? offset = default,
-            global::System.Collections.Generic.IList<string>? tags = default,
             bool? read = default,
             bool? archived = default,
             bool? snoozed = default,

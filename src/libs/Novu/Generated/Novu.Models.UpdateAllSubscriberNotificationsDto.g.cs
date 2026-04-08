@@ -9,10 +9,10 @@ namespace Novu
     public sealed partial class UpdateAllSubscriberNotificationsDto
     {
         /// <summary>
-        /// Filter notifications by workflow tags
+        /// Filter notifications by workflow tags (OR for string[], or { and: [{ or: string[] }, ...] } for AND of OR-groups).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
-        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
+        public object? Tags { get; set; }
 
         /// <summary>
         /// Filter notifications by data attributes (JSON string)
@@ -36,7 +36,7 @@ namespace Novu
         /// Initializes a new instance of the <see cref="UpdateAllSubscriberNotificationsDto" /> class.
         /// </summary>
         /// <param name="tags">
-        /// Filter notifications by workflow tags
+        /// Filter notifications by workflow tags (OR for string[], or { and: [{ or: string[] }, ...] } for AND of OR-groups).
         /// </param>
         /// <param name="data">
         /// Filter notifications by data attributes (JSON string)
@@ -48,7 +48,7 @@ namespace Novu
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateAllSubscriberNotificationsDto(
-            global::System.Collections.Generic.IList<string>? tags,
+            object? tags,
             string? data,
             global::System.Collections.Generic.IList<string>? contextKeys)
         {

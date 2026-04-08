@@ -15,10 +15,10 @@ namespace Novu
         public global::System.Collections.Generic.IList<string>? NotificationIds { get; set; }
 
         /// <summary>
-        /// Filter notifications by workflow tags
+        /// Filter notifications by workflow tags (OR for string[], or { and: [{ or: string[] }, ...] } for AND of OR-groups).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
-        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
+        public object? Tags { get; set; }
 
         /// <summary>
         /// Filter notifications by data attributes (JSON string)
@@ -45,7 +45,7 @@ namespace Novu
         /// Specific notification IDs to mark as seen
         /// </param>
         /// <param name="tags">
-        /// Filter notifications by workflow tags
+        /// Filter notifications by workflow tags (OR for string[], or { and: [{ or: string[] }, ...] } for AND of OR-groups).
         /// </param>
         /// <param name="data">
         /// Filter notifications by data attributes (JSON string)
@@ -58,7 +58,7 @@ namespace Novu
 #endif
         public MarkSubscriberNotificationsAsSeenDto(
             global::System.Collections.Generic.IList<string>? notificationIds,
-            global::System.Collections.Generic.IList<string>? tags,
+            object? tags,
             string? data,
             global::System.Collections.Generic.IList<string>? contextKeys)
         {
