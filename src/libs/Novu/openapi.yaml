@@ -20757,18 +20757,6 @@
             }
           },
           {
-            "name": "tags",
-            "required": false,
-            "in": "query",
-            "description": "Filter by workflow tags",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
             "name": "read",
             "required": false,
             "in": "query",
@@ -21349,7 +21337,7 @@
             "required": true,
             "in": "query",
             "description": "Array of filter objects (max 30) to count notifications by different criteria",
-            "example": "[{\"read\":false,\"archived\":false},{\"tags\":[\"important\"]}]",
+            "example": "[{\"read\":false,\"archived\":false},{\"tags\":[\"important\"]},{\"tags\":{\"and\":[{\"or\":[\"a\",\"b\"]},{\"or\":[\"c\"]}]}}]",
             "schema": {
               "type": "string"
             }
@@ -60194,11 +60182,8 @@
             }
           },
           "tags": {
-            "description": "Filter notifications by workflow tags",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "object",
+            "description": "Filter notifications by workflow tags (OR for string[], or { and: [{ or: string[] }, ...] } for AND of OR-groups)."
           },
           "data": {
             "type": "string",
@@ -60217,11 +60202,8 @@
         "type": "object",
         "properties": {
           "tags": {
-            "description": "Filter notifications by workflow tags",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "object",
+            "description": "Filter notifications by workflow tags (OR for string[], or { and: [{ or: string[] }, ...] } for AND of OR-groups)."
           },
           "data": {
             "type": "string",

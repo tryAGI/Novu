@@ -651,7 +651,7 @@ namespace Novu
         /// Specific notification IDs to mark as seen
         /// </param>
         /// <param name="tags">
-        /// Filter notifications by workflow tags
+        /// Filter notifications by workflow tags (OR for string[], or { and: [{ or: string[] }, ...] } for AND of OR-groups).
         /// </param>
         /// <param name="data">
         /// Filter notifications by data attributes (JSON string)
@@ -664,7 +664,7 @@ namespace Novu
         public async global::System.Threading.Tasks.Task SubscribersControllerMarkNotificationsAsSeenAsync(
             string subscriberId,
             global::System.Collections.Generic.IList<string>? notificationIds = default,
-            global::System.Collections.Generic.IList<string>? tags = default,
+            object? tags = default,
             string? data = default,
             global::System.Collections.Generic.IList<string>? contextKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default)

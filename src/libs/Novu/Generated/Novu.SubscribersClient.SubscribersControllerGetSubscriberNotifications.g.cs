@@ -11,7 +11,6 @@ namespace Novu
             ref double? limit,
             ref string? after,
             ref double? offset,
-            global::System.Collections.Generic.IList<string>? tags,
             ref bool? read,
             ref bool? archived,
             ref bool? snoozed,
@@ -28,7 +27,6 @@ namespace Novu
             double? limit,
             string? after,
             double? offset,
-            global::System.Collections.Generic.IList<string>? tags,
             bool? read,
             bool? archived,
             bool? snoozed,
@@ -58,7 +56,6 @@ namespace Novu
         /// </param>
         /// <param name="after"></param>
         /// <param name="offset"></param>
-        /// <param name="tags"></param>
         /// <param name="read"></param>
         /// <param name="archived"></param>
         /// <param name="snoozed"></param>
@@ -75,7 +72,6 @@ namespace Novu
             double? limit = default,
             string? after = default,
             double? offset = default,
-            global::System.Collections.Generic.IList<string>? tags = default,
             bool? read = default,
             bool? archived = default,
             bool? snoozed = default,
@@ -92,7 +88,6 @@ namespace Novu
                 limit: limit,
                 after: after,
                 offset: offset,
-                tags: tags,
                 read: read,
                 archived: archived,
                 snoozed: snoozed,
@@ -118,7 +113,6 @@ namespace Novu
         /// </param>
         /// <param name="after"></param>
         /// <param name="offset"></param>
-        /// <param name="tags"></param>
         /// <param name="read"></param>
         /// <param name="archived"></param>
         /// <param name="snoozed"></param>
@@ -135,7 +129,6 @@ namespace Novu
             double? limit = default,
             string? after = default,
             double? offset = default,
-            global::System.Collections.Generic.IList<string>? tags = default,
             bool? read = default,
             bool? archived = default,
             bool? snoozed = default,
@@ -155,7 +148,6 @@ namespace Novu
                 limit: ref limit,
                 after: ref after,
                 offset: ref offset,
-                tags: tags,
                 read: ref read,
                 archived: ref archived,
                 snoozed: ref snoozed,
@@ -173,7 +165,6 @@ namespace Novu
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("after", after)
                 .AddOptionalParameter("offset", offset?.ToString())
-                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
                 .AddOptionalParameter("read", read?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("archived", archived?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("snoozed", snoozed?.ToString().ToLowerInvariant())
@@ -203,7 +194,6 @@ namespace Novu
                 limit: limit,
                 after: after,
                 offset: offset,
-                tags: tags,
                 read: read,
                 archived: archived,
                 snoozed: snoozed,
