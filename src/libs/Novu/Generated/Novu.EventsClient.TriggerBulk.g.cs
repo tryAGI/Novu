@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class EventsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_TriggerBulkSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_TriggerBulkSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_TriggerBulkSecurityRequirement0,
+            };
         partial void PrepareTriggerBulkArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Novu.BulkTriggerEventDto request);
@@ -65,9 +84,15 @@ namespace Novu
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_TriggerBulkSecurityRequirements,
+                operationName: "TriggerBulkAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: "/v1/events/trigger/bulk",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

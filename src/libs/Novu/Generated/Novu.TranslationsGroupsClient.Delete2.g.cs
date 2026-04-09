@@ -5,6 +5,40 @@ namespace Novu
 {
     public partial class TranslationsGroupsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_Delete2SecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_Delete2SecurityRequirement1 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_Delete2SecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_Delete2SecurityRequirement0,
+                s_Delete2SecurityRequirement1,
+            };
         partial void PrepareDelete2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::Novu.TranslationControllerDeleteTranslationGroupEndpointResourceType resourceType,
@@ -38,9 +72,15 @@ namespace Novu
                 resourceType: ref resourceType,
                 resourceId: ref resourceId);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_Delete2SecurityRequirements,
+                operationName: "Delete2Async");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/translations/{resourceType}/{resourceId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

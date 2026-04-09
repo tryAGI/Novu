@@ -5,6 +5,40 @@ namespace Novu
 {
     public partial class TranslationsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_CreateSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_CreateSecurityRequirement1 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_CreateSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_CreateSecurityRequirement0,
+                s_CreateSecurityRequirement1,
+            };
         partial void PrepareCreateArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Novu.CreateTranslationRequestDto request);
@@ -41,9 +75,15 @@ namespace Novu
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateSecurityRequirements,
+                operationName: "CreateAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: "/v2/translations",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

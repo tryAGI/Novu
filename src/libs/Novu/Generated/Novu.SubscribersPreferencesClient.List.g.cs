@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class SubscribersPreferencesClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_ListSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_ListSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_ListSecurityRequirement0,
+            };
         partial void PrepareListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string subscriberId,
@@ -78,13 +97,19 @@ namespace Novu
                 criticality: ref criticality,
                 contextKeys: contextKeys);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListSecurityRequirements,
+                operationName: "ListAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/subscribers/{subscriberId}/preferences",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("criticality", criticality?.ToValueString())
                 .AddOptionalParameter("contextKeys", contextKeys, delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

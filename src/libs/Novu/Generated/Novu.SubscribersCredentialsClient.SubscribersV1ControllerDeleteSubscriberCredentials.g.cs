@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class SubscribersCredentialsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_SubscribersV1ControllerDeleteSubscriberCredentialsSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_SubscribersV1ControllerDeleteSubscriberCredentialsSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_SubscribersV1ControllerDeleteSubscriberCredentialsSecurityRequirement0,
+            };
         partial void PrepareSubscribersV1ControllerDeleteSubscriberCredentialsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string subscriberId,
@@ -39,9 +58,15 @@ namespace Novu
                 subscriberId: ref subscriberId,
                 providerId: ref providerId);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SubscribersV1ControllerDeleteSubscriberCredentialsSecurityRequirements,
+                operationName: "SubscribersV1ControllerDeleteSubscriberCredentialsAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v1/subscribers/{subscriberId}/credentials/{providerId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

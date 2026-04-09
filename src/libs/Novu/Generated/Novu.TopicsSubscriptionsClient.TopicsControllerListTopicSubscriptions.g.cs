@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class TopicsSubscriptionsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_TopicsControllerListTopicSubscriptionsSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_TopicsControllerListTopicSubscriptionsSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_TopicsControllerListTopicSubscriptionsSecurityRequirement0,
+            };
         partial void PrepareTopicsControllerListTopicSubscriptionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string topicKey,
@@ -122,6 +141,12 @@ namespace Novu
                 subscriberId: ref subscriberId,
                 contextKeys: contextKeys);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_TopicsControllerListTopicSubscriptionsSecurityRequirements,
+                operationName: "TopicsControllerListTopicSubscriptionsAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/topics/{topicKey}/subscriptions",
                 baseUri: HttpClient.BaseAddress); 
@@ -134,7 +159,7 @@ namespace Novu
                 .AddOptionalParameter("includeCursor", includeCursor?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("subscriberId", subscriberId)
                 .AddOptionalParameter("contextKeys", contextKeys, delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

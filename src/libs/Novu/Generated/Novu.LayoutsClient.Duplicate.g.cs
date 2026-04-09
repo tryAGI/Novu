@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class LayoutsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_DuplicateSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_DuplicateSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_DuplicateSecurityRequirement0,
+            };
         partial void PrepareDuplicateArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string layoutId,
@@ -69,9 +88,15 @@ namespace Novu
                 layoutId: ref layoutId,
                 request: request);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DuplicateSecurityRequirements,
+                operationName: "DuplicateAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/layouts/{layoutId}/duplicate",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

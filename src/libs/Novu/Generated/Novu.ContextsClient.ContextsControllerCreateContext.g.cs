@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class ContextsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_ContextsControllerCreateContextSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_ContextsControllerCreateContextSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_ContextsControllerCreateContextSecurityRequirement0,
+            };
         partial void PrepareContextsControllerCreateContextArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Novu.CreateContextRequestDto request);
@@ -63,9 +82,15 @@ namespace Novu
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ContextsControllerCreateContextSecurityRequirements,
+                operationName: "ContextsControllerCreateContextAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: "/v2/contexts",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

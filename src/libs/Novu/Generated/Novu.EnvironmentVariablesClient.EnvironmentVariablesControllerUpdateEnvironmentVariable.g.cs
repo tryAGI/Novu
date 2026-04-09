@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class EnvironmentVariablesClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_EnvironmentVariablesControllerUpdateEnvironmentVariableSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_EnvironmentVariablesControllerUpdateEnvironmentVariableSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_EnvironmentVariablesControllerUpdateEnvironmentVariableSecurityRequirement0,
+            };
         partial void PrepareEnvironmentVariablesControllerUpdateEnvironmentVariableArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string variableId,
@@ -69,9 +88,15 @@ namespace Novu
                 variableId: ref variableId,
                 request: request);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_EnvironmentVariablesControllerUpdateEnvironmentVariableSecurityRequirements,
+                operationName: "EnvironmentVariablesControllerUpdateEnvironmentVariableAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v1/environment-variables/{variableId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),

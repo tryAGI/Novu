@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class SubscribersNotificationsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_FeedSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_FeedSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_FeedSecurityRequirement0,
+            };
         partial void PrepareFeedArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string subscriberId,
@@ -100,6 +119,12 @@ namespace Novu
                 seen: ref seen,
                 payload: ref payload);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_FeedSecurityRequirements,
+                operationName: "FeedAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v1/subscribers/{subscriberId}/notifications/feed",
                 baseUri: HttpClient.BaseAddress); 
@@ -109,7 +134,7 @@ namespace Novu
                 .AddOptionalParameter("read", read?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("seen", seen?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("payload", payload) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

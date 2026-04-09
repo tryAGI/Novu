@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class TopicsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_TopicsControllerDeleteTopicSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_TopicsControllerDeleteTopicSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_TopicsControllerDeleteTopicSecurityRequirement0,
+            };
         partial void PrepareTopicsControllerDeleteTopicArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string topicKey);
@@ -58,9 +77,15 @@ namespace Novu
                 httpClient: HttpClient,
                 topicKey: ref topicKey);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_TopicsControllerDeleteTopicSecurityRequirements,
+                operationName: "TopicsControllerDeleteTopicAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/topics/{topicKey}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

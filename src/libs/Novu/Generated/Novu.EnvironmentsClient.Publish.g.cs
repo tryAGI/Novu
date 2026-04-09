@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class EnvironmentsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_PublishSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_PublishSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_PublishSecurityRequirement0,
+            };
         partial void PreparePublishArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string targetEnvironmentId,
@@ -69,9 +88,15 @@ namespace Novu
                 targetEnvironmentId: ref targetEnvironmentId,
                 request: request);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PublishSecurityRequirements,
+                operationName: "PublishAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/environments/{targetEnvironmentId}/publish",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

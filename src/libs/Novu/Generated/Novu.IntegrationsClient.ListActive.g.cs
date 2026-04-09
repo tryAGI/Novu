@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class IntegrationsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_ListActiveSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_ListActiveSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_ListActiveSecurityRequirement0,
+            };
         partial void PrepareListActiveArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareListActiveRequest(
@@ -48,9 +67,15 @@ namespace Novu
             PrepareListActiveArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListActiveSecurityRequirements,
+                operationName: "ListActiveAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: "/v1/integrations/active",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

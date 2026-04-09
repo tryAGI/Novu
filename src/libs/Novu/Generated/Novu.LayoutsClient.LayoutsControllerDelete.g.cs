@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class LayoutsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_LayoutsControllerDeleteSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_LayoutsControllerDeleteSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_LayoutsControllerDeleteSecurityRequirement0,
+            };
         partial void PrepareLayoutsControllerDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string layoutId);
@@ -33,9 +52,15 @@ namespace Novu
                 httpClient: HttpClient,
                 layoutId: ref layoutId);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_LayoutsControllerDeleteSecurityRequirements,
+                operationName: "LayoutsControllerDeleteAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/layouts/{layoutId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

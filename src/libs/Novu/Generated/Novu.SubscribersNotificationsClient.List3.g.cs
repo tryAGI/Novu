@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class SubscribersNotificationsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_List3SecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_List3SecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_List3SecurityRequirement0,
+            };
         partial void PrepareList3Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string subscriberId,
@@ -158,6 +177,12 @@ namespace Novu
                 createdLte: ref createdLte,
                 contextKeys: contextKeys);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_List3SecurityRequirements,
+                operationName: "List3Async");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/subscribers/{subscriberId}/notifications",
                 baseUri: HttpClient.BaseAddress); 
@@ -174,7 +199,7 @@ namespace Novu
                 .AddOptionalParameter("createdGte", createdGte?.ToString())
                 .AddOptionalParameter("createdLte", createdLte?.ToString())
                 .AddOptionalParameter("contextKeys", contextKeys, delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

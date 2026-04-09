@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class NotificationsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_NotificationsControllerGetNotificationSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_NotificationsControllerGetNotificationSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_NotificationsControllerGetNotificationSecurityRequirement0,
+            };
         partial void PrepareNotificationsControllerGetNotificationArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string notificationId);
@@ -60,9 +79,15 @@ namespace Novu
                 httpClient: HttpClient,
                 notificationId: ref notificationId);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_NotificationsControllerGetNotificationSecurityRequirements,
+                operationName: "NotificationsControllerGetNotificationAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v1/notifications/{notificationId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

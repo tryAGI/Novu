@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class LayoutsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_LayoutsControllerListSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_LayoutsControllerListSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_LayoutsControllerListSecurityRequirement0,
+            };
         partial void PrepareLayoutsControllerListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref double? limit,
@@ -88,6 +107,12 @@ namespace Novu
                 orderBy: ref orderBy,
                 query: ref query);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_LayoutsControllerListSecurityRequirements,
+                operationName: "LayoutsControllerListAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: "/v2/layouts",
                 baseUri: HttpClient.BaseAddress); 
@@ -97,7 +122,7 @@ namespace Novu
                 .AddOptionalParameter("orderDirection", orderDirection?.ToValueString())
                 .AddOptionalParameter("orderBy", orderBy?.ToValueString())
                 .AddOptionalParameter("query", query) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

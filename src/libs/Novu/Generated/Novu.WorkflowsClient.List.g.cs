@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class WorkflowsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_ListSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_ListSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_ListSecurityRequirement0,
+            };
         partial void PrepareListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref double? limit,
@@ -104,6 +123,12 @@ namespace Novu
                 tags: tags,
                 status: status);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListSecurityRequirements,
+                operationName: "ListAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: "/v2/workflows",
                 baseUri: HttpClient.BaseAddress); 
@@ -115,7 +140,7 @@ namespace Novu
                 .AddOptionalParameter("query", query)
                 .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
                 .AddOptionalParameter("status", status, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

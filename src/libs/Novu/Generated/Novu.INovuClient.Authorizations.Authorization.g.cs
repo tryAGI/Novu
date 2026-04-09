@@ -8,6 +8,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+
         public void AuthorizeUsingAuthorization(
  );
     }
