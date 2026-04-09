@@ -101,9 +101,49 @@ namespace Novu
         public SubscribersClient Subscribers { get; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public SubscribersCredentialsClient SubscribersCredentials { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubscribersMessagesClient SubscribersMessages { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubscribersNotificationsClient SubscribersNotifications { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubscribersPreferencesClient SubscribersPreferences { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubscribersPropertiesClient SubscribersProperties { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubscribersTopicsClient SubscribersTopics { get; }
+
+        /// <summary>
         /// Topics are a way to group subscribers together so that they can be notified of events at once. A topic is identified by a custom key. This can be helpful for things like sending out marketing emails or notifying users of new features. Topics can also be used to send notifications to the subscribers who have been grouped together based on their interests, location, activities and much more.
         /// </summary>
         public TopicsClient Topics { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TopicsSubscribersClient TopicsSubscribers { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TopicsSubscriptionsClient TopicsSubscriptions { get; }
 
         /// <summary>
         /// Used to localize your notifications to different languages.
@@ -111,9 +151,29 @@ namespace Novu
         public TranslationsClient Translations { get; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public TranslationsGroupsClient TranslationsGroups { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TranslationsMasterClient TranslationsMaster { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TranslationsMaster2Client TranslationsMaster2 { get; }
+
+        /// <summary>
         /// All notifications are sent via a workflow. Each workflow acts as a container for the logic and blueprint that are associated with a type of notification in your system.
         /// </summary>
         public WorkflowsClient Workflows { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public WorkflowsStepsClient WorkflowsSteps { get; }
 
     }
 }

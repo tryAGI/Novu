@@ -15,7 +15,7 @@ namespace Novu
         /// <example>workflow_identifier</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public required string WorkflowId { get; set; }
 
         /// <summary>
         /// The payload object is used to pass additional custom information that could be <br/>
@@ -81,7 +81,7 @@ namespace Novu
         /// <summary>
         /// Initializes a new instance of the <see cref="TriggerEventRequestDto" /> class.
         /// </summary>
-        /// <param name="name">
+        /// <param name="workflowId">
         /// The trigger identifier of the workflow you wish to send. This identifier can be found on the workflow page.<br/>
         /// Example: workflow_identifier
         /// </param>
@@ -115,7 +115,7 @@ namespace Novu
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TriggerEventRequestDto(
-            string name,
+            string workflowId,
             global::Novu.OneOf<global::System.Collections.Generic.IList<global::Novu.OneOf<global::Novu.SubscriberPayloadDto, global::Novu.TopicPayloadDto, string>>, string, global::Novu.SubscriberPayloadDto, global::Novu.TopicPayloadDto> to,
             object? payload,
             global::Novu.TriggerOverrides? overrides,
@@ -124,7 +124,7 @@ namespace Novu
             global::Novu.OneOf<string, global::Novu.TenantPayloadDto>? tenant,
             object? context)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.WorkflowId = workflowId ?? throw new global::System.ArgumentNullException(nameof(workflowId));
             this.Payload = payload;
             this.Overrides = overrides;
             this.To = to;
