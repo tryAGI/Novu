@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class TopicsSubscriptionsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_GetSubscriptionSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_GetSubscriptionSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_GetSubscriptionSecurityRequirement0,
+            };
         partial void PrepareGetSubscriptionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string topicKey,
@@ -64,9 +83,15 @@ namespace Novu
                 topicKey: ref topicKey,
                 identifier: ref identifier);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetSubscriptionSecurityRequirements,
+                operationName: "GetSubscriptionAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/topics/{topicKey}/subscriptions/{identifier}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

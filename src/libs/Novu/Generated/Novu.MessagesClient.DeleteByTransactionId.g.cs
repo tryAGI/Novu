@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class MessagesClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_DeleteByTransactionIdSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_DeleteByTransactionIdSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_DeleteByTransactionIdSecurityRequirement0,
+            };
         partial void PrepareDeleteByTransactionIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::Novu.MessagesControllerDeleteMessagesByTransactionIdChannel? channel,
@@ -39,12 +58,18 @@ namespace Novu
                 channel: ref channel,
                 transactionId: ref transactionId);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteByTransactionIdSecurityRequirements,
+                operationName: "DeleteByTransactionIdAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v1/messages/transaction/{transactionId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("channel", channel?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

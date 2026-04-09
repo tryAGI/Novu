@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class SubscribersNotificationsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_UnsnoozeSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_UnsnoozeSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_UnsnoozeSecurityRequirement0,
+            };
         partial void PrepareUnsnoozeArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string subscriberId,
@@ -72,12 +91,18 @@ namespace Novu
                 notificationId: ref notificationId,
                 contextKeys: contextKeys);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UnsnoozeSecurityRequirements,
+                operationName: "UnsnoozeAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/subscribers/{subscriberId}/notifications/{notificationId}/unsnooze",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("contextKeys", contextKeys, delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),

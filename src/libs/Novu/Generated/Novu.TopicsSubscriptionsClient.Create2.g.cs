@@ -7,6 +7,25 @@ namespace Novu
 {
     public partial class TopicsSubscriptionsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_Create2SecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_Create2SecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_Create2SecurityRequirement0,
+            };
         partial void PrepareCreate2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string topicKey,
@@ -73,9 +92,15 @@ namespace Novu
                 topicKey: ref topicKey,
                 request: request);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_Create2SecurityRequirements,
+                operationName: "Create2Async");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/topics/{topicKey}/subscriptions",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class TopicsSubscriptionsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_Update2SecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_Update2SecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_Update2SecurityRequirement0,
+            };
         partial void PrepareUpdate2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string topicKey,
@@ -77,9 +96,15 @@ namespace Novu
                 identifier: ref identifier,
                 request: request);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_Update2SecurityRequirements,
+                operationName: "Update2Async");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/topics/{topicKey}/subscriptions/{identifier}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),

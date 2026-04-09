@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class EventsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_CancelSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_CancelSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_CancelSecurityRequirement0,
+            };
         partial void PrepareCancelArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string transactionId);
@@ -60,9 +79,15 @@ namespace Novu
                 httpClient: HttpClient,
                 transactionId: ref transactionId);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CancelSecurityRequirements,
+                operationName: "CancelAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v1/events/trigger/{transactionId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

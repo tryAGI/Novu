@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class EnvironmentVariablesClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_RetrieveSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_RetrieveSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_RetrieveSecurityRequirement0,
+            };
         partial void PrepareRetrieveArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string variableId);
@@ -56,9 +75,15 @@ namespace Novu
                 httpClient: HttpClient,
                 variableId: ref variableId);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_RetrieveSecurityRequirements,
+                operationName: "RetrieveAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v1/environment-variables/{variableId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

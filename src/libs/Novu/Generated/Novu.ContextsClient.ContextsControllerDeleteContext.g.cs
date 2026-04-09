@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class ContextsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_ContextsControllerDeleteContextSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_ContextsControllerDeleteContextSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_ContextsControllerDeleteContextSecurityRequirement0,
+            };
         partial void PrepareContextsControllerDeleteContextArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id,
@@ -39,9 +58,15 @@ namespace Novu
                 id: ref id,
                 type: ref type);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ContextsControllerDeleteContextSecurityRequirements,
+                operationName: "ContextsControllerDeleteContextAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/contexts/{type}/{id}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

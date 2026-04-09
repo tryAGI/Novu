@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class SubscribersNotificationsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_UnseenCountSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_UnseenCountSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_UnseenCountSecurityRequirement0,
+            };
         partial void PrepareUnseenCountArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string subscriberId,
@@ -80,13 +99,19 @@ namespace Novu
                 seen: ref seen,
                 limit: ref limit);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UnseenCountSecurityRequirements,
+                operationName: "UnseenCountAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v1/subscribers/{subscriberId}/notifications/unseen",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("seen", seen?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

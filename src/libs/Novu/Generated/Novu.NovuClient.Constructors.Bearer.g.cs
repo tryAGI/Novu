@@ -6,6 +6,7 @@ namespace Novu
     public sealed partial class NovuClient
     {
         /// <inheritdoc cref="NovuClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Novu.EndPointAuthorization}?, bool)"/>
+
         public NovuClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

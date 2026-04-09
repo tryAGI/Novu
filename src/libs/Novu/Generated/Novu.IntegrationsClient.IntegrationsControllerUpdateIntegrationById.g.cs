@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class IntegrationsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_IntegrationsControllerUpdateIntegrationByIdSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_IntegrationsControllerUpdateIntegrationByIdSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_IntegrationsControllerUpdateIntegrationByIdSecurityRequirement0,
+            };
         partial void PrepareIntegrationsControllerUpdateIntegrationByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string integrationId,
@@ -71,9 +90,15 @@ namespace Novu
                 integrationId: ref integrationId,
                 request: request);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_IntegrationsControllerUpdateIntegrationByIdSecurityRequirements,
+                operationName: "IntegrationsControllerUpdateIntegrationByIdAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v1/integrations/{integrationId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,

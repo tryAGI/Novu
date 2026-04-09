@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class EnvironmentVariablesClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_EnvironmentVariablesControllerListEnvironmentVariablesSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_EnvironmentVariablesControllerListEnvironmentVariablesSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_EnvironmentVariablesControllerListEnvironmentVariablesSecurityRequirement0,
+            };
         partial void PrepareEnvironmentVariablesControllerListEnvironmentVariablesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? search);
@@ -56,12 +75,18 @@ namespace Novu
                 httpClient: HttpClient,
                 search: ref search);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_EnvironmentVariablesControllerListEnvironmentVariablesSecurityRequirements,
+                operationName: "EnvironmentVariablesControllerListEnvironmentVariablesAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: "/v1/environment-variables",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("search", search) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class IntegrationsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_IntegrationsControllerAutoConfigureIntegrationSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_IntegrationsControllerAutoConfigureIntegrationSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_IntegrationsControllerAutoConfigureIntegrationSecurityRequirement0,
+            };
         partial void PrepareIntegrationsControllerAutoConfigureIntegrationArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string integrationId);
@@ -58,9 +77,15 @@ namespace Novu
                 httpClient: HttpClient,
                 integrationId: ref integrationId);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_IntegrationsControllerAutoConfigureIntegrationSecurityRequirements,
+                operationName: "IntegrationsControllerAutoConfigureIntegrationAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v1/integrations/{integrationId}/auto-configure",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

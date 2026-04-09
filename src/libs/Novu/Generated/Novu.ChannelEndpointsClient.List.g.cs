@@ -5,6 +5,40 @@ namespace Novu
 {
     public partial class ChannelEndpointsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_ListSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_ListSecurityRequirement1 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_ListSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_ListSecurityRequirement0,
+                s_ListSecurityRequirement1,
+            };
         partial void PrepareListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? after,
@@ -148,6 +182,12 @@ namespace Novu
                 integrationIdentifier: ref integrationIdentifier,
                 connectionIdentifier: ref connectionIdentifier);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListSecurityRequirements,
+                operationName: "ListAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: "/v1/channel-endpoints",
                 baseUri: HttpClient.BaseAddress); 
@@ -164,7 +204,7 @@ namespace Novu
                 .AddOptionalParameter("providerId", providerId?.ToValueString())
                 .AddOptionalParameter("integrationIdentifier", integrationIdentifier)
                 .AddOptionalParameter("connectionIdentifier", connectionIdentifier) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

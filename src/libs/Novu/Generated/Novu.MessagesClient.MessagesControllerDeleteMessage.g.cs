@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class MessagesClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_MessagesControllerDeleteMessageSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_MessagesControllerDeleteMessageSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_MessagesControllerDeleteMessageSecurityRequirement0,
+            };
         partial void PrepareMessagesControllerDeleteMessageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string messageId);
@@ -58,9 +77,15 @@ namespace Novu
                 httpClient: HttpClient,
                 messageId: ref messageId);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_MessagesControllerDeleteMessageSecurityRequirements,
+                operationName: "MessagesControllerDeleteMessageAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v1/messages/{messageId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

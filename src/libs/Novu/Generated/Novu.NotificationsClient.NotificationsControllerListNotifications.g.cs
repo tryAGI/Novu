@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class NotificationsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_NotificationsControllerListNotificationsSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_NotificationsControllerListNotificationsSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_NotificationsControllerListNotificationsSecurityRequirement0,
+            };
         partial void PrepareNotificationsControllerListNotificationsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<global::Novu.ChannelTypeEnum>? channels,
@@ -174,6 +193,12 @@ namespace Novu
                 after: ref after,
                 before: ref before);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_NotificationsControllerListNotificationsSecurityRequirements,
+                operationName: "NotificationsControllerListNotificationsAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: "/v1/notifications",
                 baseUri: HttpClient.BaseAddress); 
@@ -192,7 +217,7 @@ namespace Novu
                 .AddOptionalParameter("contextKeys", contextKeys, delimiter: ",", explode: true)
                 .AddOptionalParameter("after", after)
                 .AddOptionalParameter("before", before) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

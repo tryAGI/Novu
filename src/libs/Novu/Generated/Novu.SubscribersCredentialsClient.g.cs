@@ -12,7 +12,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.novu.co";
+        public const string DefaultBaseUrl = "https://api.novu.co/";
 
         private bool _disposeHttpClient = true;
 

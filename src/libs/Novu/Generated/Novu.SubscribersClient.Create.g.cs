@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class SubscribersClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_CreateSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_CreateSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_CreateSecurityRequirement0,
+            };
         partial void PrepareCreateArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? failIfExists,
@@ -71,12 +90,18 @@ namespace Novu
                 failIfExists: ref failIfExists,
                 request: request);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateSecurityRequirements,
+                operationName: "CreateAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: "/v2/subscribers",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("failIfExists", failIfExists?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

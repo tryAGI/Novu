@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class SubscribersCredentialsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_AppendSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_AppendSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_AppendSecurityRequirement0,
+            };
         partial void PrepareAppendArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string subscriberId,
@@ -71,9 +90,15 @@ namespace Novu
                 subscriberId: ref subscriberId,
                 request: request);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_AppendSecurityRequirements,
+                operationName: "AppendAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v1/subscribers/{subscriberId}/credentials",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),

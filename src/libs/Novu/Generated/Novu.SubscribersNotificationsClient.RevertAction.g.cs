@@ -5,6 +5,25 @@ namespace Novu
 {
     public partial class SubscribersNotificationsClient
     {
+
+
+        private static readonly global::Novu.EndPointSecurityRequirement s_RevertActionSecurityRequirement0 =
+            new global::Novu.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
+                {                    new global::Novu.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_RevertActionSecurityRequirements =
+            new global::Novu.EndPointSecurityRequirement[]
+            {                s_RevertActionSecurityRequirement0,
+            };
         partial void PrepareRevertActionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string subscriberId,
@@ -80,12 +99,18 @@ namespace Novu
                 actionType: ref actionType,
                 contextKeys: contextKeys);
 
+
+            var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_RevertActionSecurityRequirements,
+                operationName: "RevertActionAsync");
+
             var __pathBuilder = new global::Novu.PathBuilder(
                 path: $"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{actionType}/revert",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("contextKeys", contextKeys, delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
