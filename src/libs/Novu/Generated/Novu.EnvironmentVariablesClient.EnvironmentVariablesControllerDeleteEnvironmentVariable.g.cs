@@ -27,25 +27,25 @@ namespace Novu
             };
         partial void PrepareEnvironmentVariablesControllerDeleteEnvironmentVariableArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string variableId);
+            ref string variableKey);
         partial void PrepareEnvironmentVariablesControllerDeleteEnvironmentVariableRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string variableId);
+            string variableKey);
         partial void ProcessEnvironmentVariablesControllerDeleteEnvironmentVariableResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Delete a variable<br/>
-        /// Deletes an environment variable by id.
+        /// Delete environment variable<br/>
+        /// Deletes an environment variable by key.
         /// </summary>
-        /// <param name="variableId"></param>
+        /// <param name="variableKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         public async global::System.Threading.Tasks.Task EnvironmentVariablesControllerDeleteEnvironmentVariableAsync(
-            string variableId,
+            string variableKey,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -53,7 +53,7 @@ namespace Novu
                 client: HttpClient);
             PrepareEnvironmentVariablesControllerDeleteEnvironmentVariableArguments(
                 httpClient: HttpClient,
-                variableId: ref variableId);
+                variableKey: ref variableKey);
 
 
             var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
@@ -78,7 +78,7 @@ namespace Novu
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::Novu.PathBuilder(
-                                path: $"/v1/environment-variables/{variableId}",
+                                path: $"/v1/environment-variables/{variableKey}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Novu.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -103,7 +103,7 @@ namespace Novu
                 PrepareEnvironmentVariablesControllerDeleteEnvironmentVariableRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    variableId: variableId);
+                    variableKey: variableKey);
 
                 return __httpRequest;
             }
@@ -122,7 +122,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EnvironmentVariablesControllerDeleteEnvironmentVariable",
                                 methodName: "EnvironmentVariablesControllerDeleteEnvironmentVariableAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -149,7 +149,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EnvironmentVariablesControllerDeleteEnvironmentVariable",
                                 methodName: "EnvironmentVariablesControllerDeleteEnvironmentVariableAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -184,7 +184,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EnvironmentVariablesControllerDeleteEnvironmentVariable",
                                 methodName: "EnvironmentVariablesControllerDeleteEnvironmentVariableAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -231,7 +231,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EnvironmentVariablesControllerDeleteEnvironmentVariable",
                                 methodName: "EnvironmentVariablesControllerDeleteEnvironmentVariableAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -251,7 +251,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EnvironmentVariablesControllerDeleteEnvironmentVariable",
                                 methodName: "EnvironmentVariablesControllerDeleteEnvironmentVariableAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

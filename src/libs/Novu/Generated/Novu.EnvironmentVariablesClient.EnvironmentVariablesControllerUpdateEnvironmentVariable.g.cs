@@ -27,12 +27,12 @@ namespace Novu
             };
         partial void PrepareEnvironmentVariablesControllerUpdateEnvironmentVariableArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string variableId,
+            ref string variableKey,
             global::Novu.UpdateEnvironmentVariableRequestDto request);
         partial void PrepareEnvironmentVariablesControllerUpdateEnvironmentVariableRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string variableId,
+            string variableKey,
             global::Novu.UpdateEnvironmentVariableRequestDto request);
         partial void ProcessEnvironmentVariablesControllerUpdateEnvironmentVariableResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -47,20 +47,20 @@ namespace Novu
         /// Update a variable<br/>
         /// Updates an existing environment variable. Providing values replaces all existing per-environment values.
         /// </summary>
-        /// <param name="variableId"></param>
+        /// <param name="variableKey"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Novu.EnvironmentVariablesControllerUpdateEnvironmentVariableResponse> EnvironmentVariablesControllerUpdateEnvironmentVariableAsync(
-            string variableId,
+            string variableKey,
 
             global::Novu.UpdateEnvironmentVariableRequestDto request,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await EnvironmentVariablesControllerUpdateEnvironmentVariableAsResponseAsync(
-                variableId: variableId,
+                variableKey: variableKey,
 
                 request: request,
                 requestOptions: requestOptions,
@@ -73,13 +73,13 @@ namespace Novu
         /// Update a variable<br/>
         /// Updates an existing environment variable. Providing values replaces all existing per-environment values.
         /// </summary>
-        /// <param name="variableId"></param>
+        /// <param name="variableKey"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.EnvironmentVariablesControllerUpdateEnvironmentVariableResponse>> EnvironmentVariablesControllerUpdateEnvironmentVariableAsResponseAsync(
-            string variableId,
+            string variableKey,
 
             global::Novu.UpdateEnvironmentVariableRequestDto request,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
@@ -91,7 +91,7 @@ namespace Novu
                 client: HttpClient);
             PrepareEnvironmentVariablesControllerUpdateEnvironmentVariableArguments(
                 httpClient: HttpClient,
-                variableId: ref variableId,
+                variableKey: ref variableKey,
                 request: request);
 
 
@@ -117,7 +117,7 @@ namespace Novu
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::Novu.PathBuilder(
-                                path: $"/v1/environment-variables/{variableId}",
+                                path: $"/v1/environment-variables/{variableKey}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Novu.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -148,7 +148,7 @@ namespace Novu
                 PrepareEnvironmentVariablesControllerUpdateEnvironmentVariableRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    variableId: variableId,
+                    variableKey: variableKey,
                     request: request);
 
                 return __httpRequest;
@@ -168,7 +168,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EnvironmentVariablesControllerUpdateEnvironmentVariable",
                                 methodName: "EnvironmentVariablesControllerUpdateEnvironmentVariableAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -195,7 +195,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EnvironmentVariablesControllerUpdateEnvironmentVariable",
                                 methodName: "EnvironmentVariablesControllerUpdateEnvironmentVariableAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -230,7 +230,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EnvironmentVariablesControllerUpdateEnvironmentVariable",
                                 methodName: "EnvironmentVariablesControllerUpdateEnvironmentVariableAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -277,7 +277,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EnvironmentVariablesControllerUpdateEnvironmentVariable",
                                 methodName: "EnvironmentVariablesControllerUpdateEnvironmentVariableAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -297,7 +297,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EnvironmentVariablesControllerUpdateEnvironmentVariable",
                                 methodName: "EnvironmentVariablesControllerUpdateEnvironmentVariableAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -901,7 +901,7 @@ namespace Novu
         /// Update a variable<br/>
         /// Updates an existing environment variable. Providing values replaces all existing per-environment values.
         /// </summary>
-        /// <param name="variableId"></param>
+        /// <param name="variableKey"></param>
         /// <param name="key">
         /// Unique key for the variable. Must start with a letter and contain only letters, digits, and underscores.
         /// </param>
@@ -914,7 +914,7 @@ namespace Novu
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Novu.EnvironmentVariablesControllerUpdateEnvironmentVariableResponse> EnvironmentVariablesControllerUpdateEnvironmentVariableAsync(
-            string variableId,
+            string variableKey,
             string? key = default,
             global::Novu.UpdateEnvironmentVariableRequestDtoType? type = default,
             bool? isSecret = default,
@@ -931,7 +931,7 @@ namespace Novu
             };
 
             return await EnvironmentVariablesControllerUpdateEnvironmentVariableAsync(
-                variableId: variableId,
+                variableKey: variableKey,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

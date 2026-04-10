@@ -48,11 +48,6 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public ActivityClient Activity { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public ChannelConnectionsClient ChannelConnections { get; }
 
         /// <summary>
@@ -99,6 +94,11 @@ namespace Novu
         /// 
         /// </summary>
         public NotificationsClient Notifications { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ProviderActivitiesClient ProviderActivities { get; }
 
         /// <summary>
         /// A subscriber in Novu represents someone who should receive a message. A subscriber's profile information contains important attributes about the subscriber that will be used in messages (name, email). The subscriber object can contain other key-value pairs that can be used to further personalize your messages.

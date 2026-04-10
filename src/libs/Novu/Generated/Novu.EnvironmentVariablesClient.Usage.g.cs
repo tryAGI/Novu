@@ -27,11 +27,11 @@ namespace Novu
             };
         partial void PrepareUsageArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string variableId);
+            ref string variableKey);
         partial void PrepareUsageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string variableId);
+            string variableKey);
         partial void ProcessUsageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -45,17 +45,17 @@ namespace Novu
         /// Retrieve a variable usage<br/>
         /// Returns the workflows that reference this environment variable via `{{env.KEY}}` in their step controls. **variableId** is required.
         /// </summary>
-        /// <param name="variableId"></param>
+        /// <param name="variableKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Novu.EnvironmentVariablesControllerGetEnvironmentVariableUsageResponse> UsageAsync(
-            string variableId,
+            string variableKey,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await UsageAsResponseAsync(
-                variableId: variableId,
+                variableKey: variableKey,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -66,12 +66,12 @@ namespace Novu
         /// Retrieve a variable usage<br/>
         /// Returns the workflows that reference this environment variable via `{{env.KEY}}` in their step controls. **variableId** is required.
         /// </summary>
-        /// <param name="variableId"></param>
+        /// <param name="variableKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.EnvironmentVariablesControllerGetEnvironmentVariableUsageResponse>> UsageAsResponseAsync(
-            string variableId,
+            string variableKey,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -79,7 +79,7 @@ namespace Novu
                 client: HttpClient);
             PrepareUsageArguments(
                 httpClient: HttpClient,
-                variableId: ref variableId);
+                variableKey: ref variableKey);
 
 
             var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
@@ -104,7 +104,7 @@ namespace Novu
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::Novu.PathBuilder(
-                                path: $"/v1/environment-variables/{variableId}/usage",
+                                path: $"/v1/environment-variables/{variableKey}/usage",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Novu.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -129,7 +129,7 @@ namespace Novu
                 PrepareUsageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    variableId: variableId);
+                    variableKey: variableKey);
 
                 return __httpRequest;
             }
@@ -148,7 +148,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Usage",
                                 methodName: "UsageAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}/usage\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}/usage\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -175,7 +175,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Usage",
                                 methodName: "UsageAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}/usage\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}/usage\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -210,7 +210,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Usage",
                                 methodName: "UsageAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}/usage\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}/usage\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -257,7 +257,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Usage",
                                 methodName: "UsageAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}/usage\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}/usage\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -277,7 +277,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Usage",
                                 methodName: "UsageAsync",
-                                pathTemplate: "$\"/v1/environment-variables/{variableId}/usage\"",
+                                pathTemplate: "$\"/v1/environment-variables/{variableKey}/usage\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
