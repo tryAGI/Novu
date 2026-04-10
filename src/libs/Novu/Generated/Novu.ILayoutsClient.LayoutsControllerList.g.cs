@@ -13,6 +13,7 @@ namespace Novu
         /// <param name="orderDirection"></param>
         /// <param name="orderBy"></param>
         /// <param name="query"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.LayoutsControllerListResponse> LayoutsControllerListAsync(
@@ -21,6 +22,7 @@ namespace Novu
             global::Novu.DirectionEnum? orderDirection = default,
             global::Novu.LayoutResponseDtoSortField? orderBy = default,
             string? query = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List all layouts<br/>
@@ -31,6 +33,7 @@ namespace Novu
         /// <param name="orderDirection"></param>
         /// <param name="orderBy"></param>
         /// <param name="query"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.LayoutsControllerListResponse>> LayoutsControllerListAsResponseAsync(
@@ -39,6 +42,7 @@ namespace Novu
             global::Novu.DirectionEnum? orderDirection = default,
             global::Novu.LayoutResponseDtoSortField? orderBy = default,
             string? query = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

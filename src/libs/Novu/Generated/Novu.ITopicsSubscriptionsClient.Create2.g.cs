@@ -13,12 +13,14 @@ namespace Novu
         /// </summary>
         /// <param name="topicKey"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.TopicsControllerCreateTopicSubscriptionsResponse> Create2Async(
             string topicKey,
 
             global::Novu.CreateTopicSubscriptionsRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create topic subscriptions<br/>
@@ -27,12 +29,14 @@ namespace Novu
         /// </summary>
         /// <param name="topicKey"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.TopicsControllerCreateTopicSubscriptionsResponse>> Create2AsResponseAsync(
             string topicKey,
 
             global::Novu.CreateTopicSubscriptionsRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create topic subscriptions<br/>
@@ -53,6 +57,7 @@ namespace Novu
         /// The preferences of the topic. Can be a simple workflow ID string, workflow preference object, or group filter object<br/>
         /// Example: [{"workflowId":"workflow-123","condition":{"===":[{"var":"tier"},"premium"]}}]
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.TopicsControllerCreateTopicSubscriptionsResponse> Create2Async(
@@ -61,6 +66,7 @@ namespace Novu
             string? name = default,
             object? context = default,
             global::System.Collections.Generic.IList<global::Novu.OneOf<string, global::Novu.WorkflowPreferenceRequestDto, global::Novu.GroupPreferenceFilterDto>>? preferences = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

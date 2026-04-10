@@ -9,22 +9,26 @@ namespace Novu
         /// Creates a new environment variable. Keys must be uppercase with underscores only (e.g. BASE_URL). Secret variables are encrypted at rest and masked in API responses.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.EnvironmentVariablesControllerCreateEnvironmentVariableResponse> EnvironmentVariablesControllerCreateEnvironmentVariableAsync(
 
             global::Novu.CreateEnvironmentVariableRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a variable<br/>
         /// Creates a new environment variable. Keys must be uppercase with underscores only (e.g. BASE_URL). Secret variables are encrypted at rest and masked in API responses.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.EnvironmentVariablesControllerCreateEnvironmentVariableResponse>> EnvironmentVariablesControllerCreateEnvironmentVariableAsResponseAsync(
 
             global::Novu.CreateEnvironmentVariableRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a variable<br/>
@@ -40,6 +44,7 @@ namespace Novu
         /// Whether this variable is a secret (encrypted at rest, masked in responses)
         /// </param>
         /// <param name="values"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.EnvironmentVariablesControllerCreateEnvironmentVariableResponse> EnvironmentVariablesControllerCreateEnvironmentVariableAsync(
@@ -47,6 +52,7 @@ namespace Novu
             global::Novu.CreateEnvironmentVariableRequestDtoType? type = default,
             bool? isSecret = default,
             global::System.Collections.Generic.IList<global::Novu.EnvironmentVariableValueDto>? values = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -10,11 +10,13 @@ namespace Novu
         ///       In the future could be used to trigger events to a subset of subscribers based on defined filters.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.EventsControllerBroadcastEventToAllResponse> TriggerBroadcastAsync(
 
             global::Novu.TriggerEventToAllRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Broadcast event to all<br/>
@@ -22,11 +24,13 @@ namespace Novu
         ///       In the future could be used to trigger events to a subset of subscribers based on defined filters.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.EventsControllerBroadcastEventToAllResponse>> TriggerBroadcastAsResponseAsync(
 
             global::Novu.TriggerEventToAllRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Broadcast event to all<br/>
@@ -60,6 +64,7 @@ namespace Novu
         ///     
         /// </param>
         /// <param name="context"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.EventsControllerBroadcastEventToAllResponse> TriggerBroadcastAsync(
@@ -70,6 +75,7 @@ namespace Novu
             global::Novu.OneOf<string, global::Novu.SubscriberPayloadDto>? actor = default,
             global::Novu.OneOf<string, global::Novu.TenantPayloadDto>? tenant = default,
             object? context = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

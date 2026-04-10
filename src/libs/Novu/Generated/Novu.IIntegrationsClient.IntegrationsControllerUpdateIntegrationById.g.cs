@@ -11,12 +11,14 @@ namespace Novu
         /// </summary>
         /// <param name="integrationId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.IntegrationsControllerUpdateIntegrationByIdResponse> IntegrationsControllerUpdateIntegrationByIdAsync(
             string integrationId,
 
             global::Novu.UpdateIntegrationRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an integration<br/>
@@ -25,12 +27,14 @@ namespace Novu
         /// </summary>
         /// <param name="integrationId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerUpdateIntegrationByIdResponse>> IntegrationsControllerUpdateIntegrationByIdAsResponseAsync(
             string integrationId,
 
             global::Novu.UpdateIntegrationRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an integration<br/>
@@ -50,6 +54,7 @@ namespace Novu
         /// <param name="configurations">
         /// Configurations for the integration
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.IntegrationsControllerUpdateIntegrationByIdResponse> IntegrationsControllerUpdateIntegrationByIdAsync(
@@ -62,6 +67,7 @@ namespace Novu
             bool? check = default,
             global::System.Collections.Generic.IList<global::Novu.StepFilterDto>? conditions = default,
             object? configurations = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -9,22 +9,26 @@ namespace Novu
         /// Creates a new workflow in the Novu Cloud environment
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.WorkflowControllerCreateResponse> WorkflowControllerCreateAsync(
 
             global::Novu.CreateWorkflowDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a workflow<br/>
         /// Creates a new workflow in the Novu Cloud environment
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.WorkflowControllerCreateResponse>> WorkflowControllerCreateAsResponseAsync(
 
             global::Novu.CreateWorkflowDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a workflow<br/>
@@ -69,6 +73,7 @@ namespace Novu
         /// <param name="severity">
         /// Severity of the workflow
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.WorkflowControllerCreateResponse> WorkflowControllerCreateAsync(
@@ -84,6 +89,7 @@ namespace Novu
             global::Novu.WorkflowCreationSourceEnum? source = default,
             global::Novu.PreferencesRequestDto? preferences = default,
             global::Novu.SeverityLevelEnum? severity = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

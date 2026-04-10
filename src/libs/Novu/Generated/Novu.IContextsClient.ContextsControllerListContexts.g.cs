@@ -19,6 +19,7 @@ namespace Novu
         /// <param name="includeCursor"></param>
         /// <param name="id"></param>
         /// <param name="search"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.ContextsControllerListContextsResponse> ContextsControllerListContextsAsync(
@@ -30,6 +31,7 @@ namespace Novu
             bool? includeCursor = default,
             string? id = default,
             string? search = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List all contexts<br/>
@@ -46,6 +48,7 @@ namespace Novu
         /// <param name="includeCursor"></param>
         /// <param name="id"></param>
         /// <param name="search"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.ContextsControllerListContextsResponse>> ContextsControllerListContextsAsResponseAsync(
@@ -57,6 +60,7 @@ namespace Novu
             bool? includeCursor = default,
             string? id = default,
             string? search = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

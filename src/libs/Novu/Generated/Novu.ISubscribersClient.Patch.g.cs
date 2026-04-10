@@ -11,12 +11,14 @@ namespace Novu
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.SubscribersControllerPatchSubscriberResponse> PatchAsync(
             string subscriberId,
 
             global::Novu.PatchSubscriberRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a subscriber<br/>
@@ -25,12 +27,14 @@ namespace Novu
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerPatchSubscriberResponse>> PatchAsResponseAsync(
             string subscriberId,
 
             global::Novu.PatchSubscriberRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a subscriber<br/>
@@ -69,6 +73,7 @@ namespace Novu
         /// <param name="data">
         /// Additional custom data associated with the subscriber
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.SubscribersControllerPatchSubscriberResponse> PatchAsync(
@@ -81,6 +86,7 @@ namespace Novu
             string? locale = default,
             string? timezone = default,
             object? data = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

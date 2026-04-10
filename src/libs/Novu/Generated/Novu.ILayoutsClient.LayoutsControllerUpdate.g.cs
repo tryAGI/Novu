@@ -10,12 +10,14 @@ namespace Novu
         /// </summary>
         /// <param name="layoutId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.LayoutsControllerUpdateResponse> LayoutsControllerUpdateAsync(
             string layoutId,
 
             global::Novu.UpdateLayoutDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a layout<br/>
@@ -23,12 +25,14 @@ namespace Novu
         /// </summary>
         /// <param name="layoutId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.LayoutsControllerUpdateResponse>> LayoutsControllerUpdateAsResponseAsync(
             string layoutId,
 
             global::Novu.UpdateLayoutDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a layout<br/>
@@ -45,6 +49,7 @@ namespace Novu
         /// <param name="controlValues">
         /// Control values for the layout. Omit to leave unchanged, or set to null to clear stored control values.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.LayoutsControllerUpdateResponse> LayoutsControllerUpdateAsync(
@@ -52,6 +57,7 @@ namespace Novu
             string name,
             bool? isTranslationEnabled = default,
             global::Novu.LayoutControlValuesDto? controlValues = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
