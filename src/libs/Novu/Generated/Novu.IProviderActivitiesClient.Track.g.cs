@@ -2,10 +2,10 @@
 
 namespace Novu
 {
-    public partial interface IActivityClient
+    public partial interface IProviderActivitiesClient
     {
         /// <summary>
-        /// Track activity and engagement events<br/>
+        /// Track provider activity and engagement events<br/>
         /// Track activity and engagement events for a specific delivery provider
         /// </summary>
         /// <param name="environmentId"></param>
@@ -22,7 +22,7 @@ namespace Novu
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Track activity and engagement events<br/>
+        /// Track provider activity and engagement events<br/>
         /// Track activity and engagement events for a specific delivery provider
         /// </summary>
         /// <param name="environmentId"></param>

@@ -3,7 +3,7 @@
 
 namespace Novu
 {
-    public partial class ActivityClient
+    public partial class ProviderActivitiesClient
     {
 
 
@@ -46,7 +46,7 @@ namespace Novu
             ref string content);
 
         /// <summary>
-        /// Track activity and engagement events<br/>
+        /// Track provider activity and engagement events<br/>
         /// Track activity and engagement events for a specific delivery provider
         /// </summary>
         /// <param name="environmentId"></param>
@@ -400,7 +400,7 @@ namespace Novu
             }
         }
         /// <summary>
-        /// Track activity and engagement events<br/>
+        /// Track provider activity and engagement events<br/>
         /// Track activity and engagement events for a specific delivery provider
         /// </summary>
         /// <param name="environmentId"></param>
