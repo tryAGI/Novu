@@ -9,22 +9,26 @@ namespace Novu
         /// Create a new channel connection for a resource for given integration. Only one channel connection is allowed per resource and integration.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.ChannelConnectionsControllerCreateChannelConnectionResponse> CreateAsync(
 
             global::Novu.CreateChannelConnectionRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a channel connection<br/>
         /// Create a new channel connection for a resource for given integration. Only one channel connection is allowed per resource and integration.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.ChannelConnectionsControllerCreateChannelConnectionResponse>> CreateAsResponseAsync(
 
             global::Novu.CreateChannelConnectionRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a channel connection<br/>
@@ -45,6 +49,7 @@ namespace Novu
         /// </param>
         /// <param name="workspace"></param>
         /// <param name="auth"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.ChannelConnectionsControllerCreateChannelConnectionResponse> CreateAsync(
@@ -54,6 +59,7 @@ namespace Novu
             string? identifier = default,
             string? subscriberId = default,
             object? context = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

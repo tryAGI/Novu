@@ -11,6 +11,7 @@ namespace Novu
         /// <param name="workflowId"></param>
         /// <param name="stepId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.WorkflowControllerGeneratePreviewResponse> GeneratePreviewAsync(
@@ -18,6 +19,7 @@ namespace Novu
             string stepId,
 
             global::Novu.GeneratePreviewRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate a step preview<br/>
@@ -26,6 +28,7 @@ namespace Novu
         /// <param name="workflowId"></param>
         /// <param name="stepId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.WorkflowControllerGeneratePreviewResponse>> GeneratePreviewAsResponseAsync(
@@ -33,6 +36,7 @@ namespace Novu
             string stepId,
 
             global::Novu.GeneratePreviewRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate a step preview<br/>
@@ -46,6 +50,7 @@ namespace Novu
         /// <param name="previewPayload">
         /// Optional payload for preview generation
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.WorkflowControllerGeneratePreviewResponse> GeneratePreviewAsync(
@@ -53,6 +58,7 @@ namespace Novu
             string stepId,
             object? controlValues = default,
             global::Novu.PreviewPayloadDto? previewPayload = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

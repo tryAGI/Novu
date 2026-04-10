@@ -23,6 +23,7 @@ namespace Novu
             Authorizations.Add(new global::Novu.EndPointAuthorization
             {
                 Type = "",
+                SchemeId = "SecretKey",
                 Location = "",
                 Name = "",
                 Value = "",

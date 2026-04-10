@@ -11,11 +11,13 @@ namespace Novu
         ///     Each environment has its own set of API keys and configurations.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.EnvironmentsControllerV1CreateEnvironmentResponse> CreateAsync(
 
             global::Novu.CreateEnvironmentRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an environment<br/>
@@ -24,11 +26,13 @@ namespace Novu
         ///     Each environment has its own set of API keys and configurations.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.EnvironmentsControllerV1CreateEnvironmentResponse>> CreateAsResponseAsync(
 
             global::Novu.CreateEnvironmentRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an environment<br/>
@@ -48,12 +52,14 @@ namespace Novu
         /// Hex color code for the environment<br/>
         /// Example: #3498db
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.EnvironmentsControllerV1CreateEnvironmentResponse> CreateAsync(
             string name,
             string color,
             string? parentId = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

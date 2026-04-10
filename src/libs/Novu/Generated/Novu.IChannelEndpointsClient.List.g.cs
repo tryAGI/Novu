@@ -22,6 +22,7 @@ namespace Novu
         /// </param>
         /// <param name="integrationIdentifier"></param>
         /// <param name="connectionIdentifier"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.ChannelEndpointsControllerListChannelEndpointsResponse> ListAsync(
@@ -37,6 +38,7 @@ namespace Novu
             global::Novu.ProvidersIdEnum? providerId = default,
             string? integrationIdentifier = default,
             string? connectionIdentifier = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List all channel endpoints<br/>
@@ -56,6 +58,7 @@ namespace Novu
         /// </param>
         /// <param name="integrationIdentifier"></param>
         /// <param name="connectionIdentifier"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.ChannelEndpointsControllerListChannelEndpointsResponse>> ListAsResponseAsync(
@@ -71,6 +74,7 @@ namespace Novu
             global::Novu.ProvidersIdEnum? providerId = default,
             string? integrationIdentifier = default,
             string? connectionIdentifier = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

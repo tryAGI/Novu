@@ -9,11 +9,13 @@ namespace Novu
         /// Create a translation for a specific workflow and locale, if the translation already exists, it will be updated
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.TranslationResponseDto> CreateAsync(
 
             global::Novu.CreateTranslationRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a translation<br/>
@@ -34,6 +36,7 @@ namespace Novu
         /// Translation content as JSON object<br/>
         /// Example: {"welcome.title":"Welcome","welcome.message":"Hello there!"}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.TranslationResponseDto> CreateAsync(
@@ -41,6 +44,7 @@ namespace Novu
             global::Novu.CreateTranslationRequestDtoResourceType resourceType,
             string locale,
             object content,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

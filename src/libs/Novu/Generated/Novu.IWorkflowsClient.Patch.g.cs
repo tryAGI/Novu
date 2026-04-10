@@ -10,12 +10,14 @@ namespace Novu
         /// </summary>
         /// <param name="workflowId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.WorkflowControllerPatchWorkflowResponse> PatchAsync(
             string workflowId,
 
             global::Novu.PatchWorkflowDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a workflow<br/>
@@ -23,12 +25,14 @@ namespace Novu
         /// </summary>
         /// <param name="workflowId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.WorkflowControllerPatchWorkflowResponse>> PatchAsResponseAsync(
             string workflowId,
 
             global::Novu.PatchWorkflowDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a workflow<br/>
@@ -56,6 +60,7 @@ namespace Novu
         /// <param name="isTranslationEnabled">
         /// Enable or disable translations for this workflow
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.WorkflowControllerPatchWorkflowResponse> PatchAsync(
@@ -67,6 +72,7 @@ namespace Novu
             object? payloadSchema = default,
             bool? validatePayload = default,
             bool? isTranslationEnabled = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

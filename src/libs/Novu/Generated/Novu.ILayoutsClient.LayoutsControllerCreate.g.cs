@@ -9,22 +9,26 @@ namespace Novu
         /// Creates a new layout in the Novu Cloud environment
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.LayoutsControllerCreateResponse> LayoutsControllerCreateAsync(
 
             global::Novu.CreateLayoutDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a layout<br/>
         /// Creates a new layout in the Novu Cloud environment
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.LayoutsControllerCreateResponse>> LayoutsControllerCreateAsResponseAsync(
 
             global::Novu.CreateLayoutDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a layout<br/>
@@ -44,6 +48,7 @@ namespace Novu
         /// Source of layout creation<br/>
         /// Default Value: dashboard
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.LayoutsControllerCreateResponse> LayoutsControllerCreateAsync(
@@ -51,6 +56,7 @@ namespace Novu
             string name,
             bool? isTranslationEnabled = default,
             global::Novu.LayoutCreationSourceEnum? source = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

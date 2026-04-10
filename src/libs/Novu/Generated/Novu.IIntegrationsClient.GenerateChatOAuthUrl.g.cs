@@ -11,11 +11,13 @@ namespace Novu
         ///     through their chat workspace. The generated URL expires after 5 minutes.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.IntegrationsControllerGetChatOAuthUrlResponse> GenerateChatOAuthUrlAsync(
 
             global::Novu.GenerateChatOauthUrlRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate chat OAuth URL<br/>
@@ -24,11 +26,13 @@ namespace Novu
         ///     through their chat workspace. The generated URL expires after 5 minutes.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerGetChatOAuthUrlResponse>> GenerateChatOAuthUrlAsResponseAsync(
 
             global::Novu.GenerateChatOauthUrlRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate chat OAuth URL<br/>
@@ -52,6 +56,7 @@ namespace Novu
         /// **Slack only**: OAuth scopes to request during authorization. These define the permissions your Slack integration will have. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **MS Teams**: This parameter is ignored. MS Teams uses admin consent with pre-configured permissions in Azure AD. Note: The generated OAuth URL expires after 5 minutes.<br/>
         /// Example: [chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email, incoming-webhook]
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.IntegrationsControllerGetChatOAuthUrlResponse> GenerateChatOAuthUrlAsync(
@@ -60,6 +65,7 @@ namespace Novu
             string? connectionIdentifier = default,
             object? context = default,
             global::System.Collections.Generic.IList<string>? scope = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

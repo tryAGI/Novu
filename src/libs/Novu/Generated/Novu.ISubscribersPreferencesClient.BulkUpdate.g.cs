@@ -11,12 +11,14 @@ namespace Novu
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.SubscribersControllerBulkUpdateSubscriberPreferencesResponse> BulkUpdateAsync(
             string subscriberId,
 
             global::Novu.BulkUpdateSubscriberPreferencesDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Bulk update subscriber preferences<br/>
@@ -25,12 +27,14 @@ namespace Novu
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersControllerBulkUpdateSubscriberPreferencesResponse>> BulkUpdateAsResponseAsync(
             string subscriberId,
 
             global::Novu.BulkUpdateSubscriberPreferencesDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Bulk update subscriber preferences<br/>
@@ -42,12 +46,14 @@ namespace Novu
         /// Array of workflow preferences to update (maximum 100 items)
         /// </param>
         /// <param name="context"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.SubscribersControllerBulkUpdateSubscriberPreferencesResponse> BulkUpdateAsync(
             string subscriberId,
             global::System.Collections.Generic.IList<global::Novu.BulkUpdateSubscriberPreferenceItemDto> preferences,
             object? context = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

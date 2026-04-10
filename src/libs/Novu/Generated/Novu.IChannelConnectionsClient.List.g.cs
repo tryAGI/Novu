@@ -21,6 +21,7 @@ namespace Novu
         /// </param>
         /// <param name="integrationIdentifier"></param>
         /// <param name="contextKeys"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.ChannelConnectionsControllerListChannelConnectionsResponse> ListAsync(
@@ -35,6 +36,7 @@ namespace Novu
             global::Novu.ProvidersIdEnum? providerId = default,
             string? integrationIdentifier = default,
             global::System.Collections.Generic.IList<string>? contextKeys = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List all channel connections<br/>
@@ -53,6 +55,7 @@ namespace Novu
         /// </param>
         /// <param name="integrationIdentifier"></param>
         /// <param name="contextKeys"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.ChannelConnectionsControllerListChannelConnectionsResponse>> ListAsResponseAsync(
@@ -67,6 +70,7 @@ namespace Novu
             global::Novu.ProvidersIdEnum? providerId = default,
             string? integrationIdentifier = default,
             global::System.Collections.Generic.IList<string>? contextKeys = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

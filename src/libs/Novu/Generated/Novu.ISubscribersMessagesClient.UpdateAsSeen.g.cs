@@ -13,6 +13,7 @@ namespace Novu
         /// <param name="type"></param>
         /// <param name="subscriberId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse> UpdateAsSeenAsync(
@@ -21,6 +22,7 @@ namespace Novu
             string subscriberId,
 
             global::Novu.MarkMessageActionAsSeenDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update notification action status<br/>
@@ -31,6 +33,7 @@ namespace Novu
         /// <param name="type"></param>
         /// <param name="subscriberId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse>> UpdateAsSeenAsResponseAsync(
@@ -39,6 +42,7 @@ namespace Novu
             string subscriberId,
 
             global::Novu.MarkMessageActionAsSeenDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update notification action status<br/>
@@ -54,6 +58,7 @@ namespace Novu
         /// <param name="payload">
         /// Message action payload
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse> UpdateAsSeenAsync(
@@ -62,6 +67,7 @@ namespace Novu
             string subscriberId,
             global::Novu.MarkMessageActionAsSeenDtoStatus status,
             object? payload = default,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
