@@ -6,6 +6,19 @@ namespace Novu
     public partial class SubscribersNotificationsClient
     {
 
+        private static readonly global::Novu.AutoSDKServer[] s_UnseenCountServers = new global::Novu.AutoSDKServer[]
+        {            new global::Novu.AutoSDKServer(
+                id: "https-api-novu-co",
+                name: "api.novu.co",
+                url: "https://api.novu.co/",
+                description: ""),
+            new global::Novu.AutoSDKServer(
+                id: "https-eu-api-novu-co",
+                name: "eu.api.novu.co",
+                url: "https://eu.api.novu.co/",
+                description: ""),
+        };
+
 
         private static readonly global::Novu.EndPointSecurityRequirement s_UnseenCountSecurityRequirement0 =
             new global::Novu.EndPointSecurityRequirement
@@ -129,7 +142,9 @@ namespace Novu
             {
                             var __pathBuilder = new global::Novu.PathBuilder(
                                 path: $"/v1/subscribers/{subscriberId}/notifications/unseen",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_UnseenCountServers,
+                                defaultBaseUrl: "https://api.novu.co/")); 
                             __pathBuilder
                                 .AddOptionalParameter("seen", seen?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("limit", limit?.ToString()) 

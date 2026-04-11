@@ -6,6 +6,19 @@ namespace Novu
     public partial class WorkflowsClient
     {
 
+        private static readonly global::Novu.AutoSDKServer[] s_WorkflowControllerCreateServers = new global::Novu.AutoSDKServer[]
+        {            new global::Novu.AutoSDKServer(
+                id: "https-api-novu-co",
+                name: "api.novu.co",
+                url: "https://api.novu.co/",
+                description: ""),
+            new global::Novu.AutoSDKServer(
+                id: "https-eu-api-novu-co",
+                name: "eu.api.novu.co",
+                url: "https://eu.api.novu.co/",
+                description: ""),
+        };
+
 
         private static readonly global::Novu.EndPointSecurityRequirement s_WorkflowControllerCreateSecurityRequirement0 =
             new global::Novu.EndPointSecurityRequirement
@@ -110,7 +123,9 @@ namespace Novu
             {
                             var __pathBuilder = new global::Novu.PathBuilder(
                                 path: "/v2/workflows",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: ResolveBaseUri(
+                                servers: s_WorkflowControllerCreateServers,
+                                defaultBaseUrl: "https://api.novu.co/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::Novu.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
