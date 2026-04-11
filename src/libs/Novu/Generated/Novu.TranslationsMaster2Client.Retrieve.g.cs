@@ -6,6 +6,19 @@ namespace Novu
     public partial class TranslationsMaster2Client
     {
 
+        private static readonly global::Novu.AutoSDKServer[] s_RetrieveServers = new global::Novu.AutoSDKServer[]
+        {            new global::Novu.AutoSDKServer(
+                id: "https-api-novu-co",
+                name: "api.novu.co",
+                url: "https://api.novu.co/",
+                description: ""),
+            new global::Novu.AutoSDKServer(
+                id: "https-eu-api-novu-co",
+                name: "eu.api.novu.co",
+                url: "https://eu.api.novu.co/",
+                description: ""),
+        };
+
 
         private static readonly global::Novu.EndPointSecurityRequirement s_RetrieveSecurityRequirement0 =
             new global::Novu.EndPointSecurityRequirement
@@ -100,7 +113,9 @@ namespace Novu
             {
                             var __pathBuilder = new global::Novu.PathBuilder(
                                 path: "/v2/translations/master-json",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_RetrieveServers,
+                                defaultBaseUrl: "https://api.novu.co/")); 
                             __pathBuilder
                                 .AddOptionalParameter("locale", locale) 
                                 ;
