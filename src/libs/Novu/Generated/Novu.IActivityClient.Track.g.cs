@@ -2,7 +2,7 @@
 
 namespace Novu
 {
-    public partial interface IProviderActivitiesClient
+    public partial interface IActivityClient
     {
         /// <summary>
         /// Track provider activity and engagement events<br/>

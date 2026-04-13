@@ -46,6 +46,16 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public ActivityClient Activity => new ActivityClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChannelConnectionsClient ChannelConnections => new ChannelConnectionsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -137,16 +147,6 @@ namespace Novu
         /// 
         /// </summary>
         public NotificationsClient Notifications => new NotificationsClient(HttpClient, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ProviderActivitiesClient ProviderActivities => new ProviderActivitiesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,

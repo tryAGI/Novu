@@ -53755,7 +53755,7 @@
           }
         },
         "tags": [
-          "Provider Activities"
+          "Activity"
         ]
       }
     }
@@ -53763,7 +53763,7 @@
   "info": {
     "title": "Novu API",
     "description": "Novu REST API. Please see https://docs.novu.co/api-reference for more details.",
-    "version": "3.14.0",
+    "version": "3.15.0",
     "contact": {
       "name": "Novu Support",
       "url": "https://discord.gg/novu",
