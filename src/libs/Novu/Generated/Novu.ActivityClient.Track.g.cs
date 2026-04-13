@@ -3,7 +3,7 @@
 
 namespace Novu
 {
-    public partial class ProviderActivitiesClient
+    public partial class ActivityClient
     {
 
         private static readonly global::Novu.AutoSDKServer[] s_TrackServers = new global::Novu.AutoSDKServer[]
