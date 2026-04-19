@@ -57112,6 +57112,34 @@
             "items": {
               "type": "string"
             }
+          },
+          "userScope": {
+            "description": "**Slack only, link_user mode**: User-level OAuth scopes to request during authorization. Used when mode is \"link_user\" to identify the Slack user via \"Sign in with Slack\". If not specified, defaults to: identity.basic.",
+            "example": [
+              "identity.basic"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mode": {
+            "type": "string",
+            "description": "OAuth flow mode. Use \"connect\" (default) to create a workspace channel connection, or \"link_user\" to identify the subscriber's Slack user ID without creating a connection.",
+            "enum": [
+              "connect",
+              "link_user"
+            ],
+            "example": "link_user"
+          },
+          "connectionMode": {
+            "type": "string",
+            "description": "Connection mode that determines how the channel connection is scoped. Use \"subscriber\" (default) to associate the connection with a specific subscriber. Use \"shared\" to associate the connection with a context instead of a subscriber — subscriberId will not be stored on the connection.",
+            "enum": [
+              "subscriber",
+              "shared"
+            ],
+            "example": "shared"
           }
         },
         "required": [
@@ -60609,6 +60637,10 @@
           "name": {
             "type": "string",
             "description": "Name of the layout"
+          },
+          "layoutId": {
+            "type": "string",
+            "description": "Identifier for the duplicated layout. When omitted, it is derived from the name."
           },
           "isTranslationEnabled": {
             "type": "boolean",
@@ -64132,7 +64164,7 @@
           },
           "stepId": {
             "type": "string",
-            "pattern": "/^[a-zA-Z0-9]+(?:[-_.][a-zA-Z0-9]+)*$/",
+            "pattern": "SLUG_IDENTIFIER_REGEX",
             "description": "Unique identifier for the step"
           },
           "name": {
@@ -64169,7 +64201,7 @@
           },
           "stepId": {
             "type": "string",
-            "pattern": "/^[a-zA-Z0-9]+(?:[-_.][a-zA-Z0-9]+)*$/",
+            "pattern": "SLUG_IDENTIFIER_REGEX",
             "description": "Unique identifier for the step"
           },
           "name": {
@@ -64206,7 +64238,7 @@
           },
           "stepId": {
             "type": "string",
-            "pattern": "/^[a-zA-Z0-9]+(?:[-_.][a-zA-Z0-9]+)*$/",
+            "pattern": "SLUG_IDENTIFIER_REGEX",
             "description": "Unique identifier for the step"
           },
           "name": {
@@ -64243,7 +64275,7 @@
           },
           "stepId": {
             "type": "string",
-            "pattern": "/^[a-zA-Z0-9]+(?:[-_.][a-zA-Z0-9]+)*$/",
+            "pattern": "SLUG_IDENTIFIER_REGEX",
             "description": "Unique identifier for the step"
           },
           "name": {
@@ -64280,7 +64312,7 @@
           },
           "stepId": {
             "type": "string",
-            "pattern": "/^[a-zA-Z0-9]+(?:[-_.][a-zA-Z0-9]+)*$/",
+            "pattern": "SLUG_IDENTIFIER_REGEX",
             "description": "Unique identifier for the step"
           },
           "name": {
@@ -64317,7 +64349,7 @@
           },
           "stepId": {
             "type": "string",
-            "pattern": "/^[a-zA-Z0-9]+(?:[-_.][a-zA-Z0-9]+)*$/",
+            "pattern": "SLUG_IDENTIFIER_REGEX",
             "description": "Unique identifier for the step"
           },
           "name": {
@@ -64354,7 +64386,7 @@
           },
           "stepId": {
             "type": "string",
-            "pattern": "/^[a-zA-Z0-9]+(?:[-_.][a-zA-Z0-9]+)*$/",
+            "pattern": "SLUG_IDENTIFIER_REGEX",
             "description": "Unique identifier for the step"
           },
           "name": {
@@ -64391,7 +64423,7 @@
           },
           "stepId": {
             "type": "string",
-            "pattern": "/^[a-zA-Z0-9]+(?:[-_.][a-zA-Z0-9]+)*$/",
+            "pattern": "SLUG_IDENTIFIER_REGEX",
             "description": "Unique identifier for the step"
           },
           "name": {
@@ -64428,7 +64460,7 @@
           },
           "stepId": {
             "type": "string",
-            "pattern": "/^[a-zA-Z0-9]+(?:[-_.][a-zA-Z0-9]+)*$/",
+            "pattern": "SLUG_IDENTIFIER_REGEX",
             "description": "Unique identifier for the step"
           },
           "name": {
@@ -64465,7 +64497,7 @@
           },
           "stepId": {
             "type": "string",
-            "pattern": "/^[a-zA-Z0-9]+(?:[-_.][a-zA-Z0-9]+)*$/",
+            "pattern": "SLUG_IDENTIFIER_REGEX",
             "description": "Unique identifier for the step"
           },
           "name": {
@@ -64574,7 +64606,7 @@
           },
           "workflowId": {
             "type": "string",
-            "pattern": "/^[a-zA-Z0-9]+(?:[-_.][a-zA-Z0-9]+)*$/",
+            "pattern": "SLUG_IDENTIFIER_REGEX",
             "description": "Unique identifier for the workflow"
           },
           "steps": {
@@ -64938,7 +64970,7 @@
           },
           "workflowId": {
             "type": "string",
-            "pattern": "/^[a-zA-Z0-9]+(?:[-_.][a-zA-Z0-9]+)*$/",
+            "pattern": "SLUG_IDENTIFIER_REGEX",
             "description": "Custom workflow identifier for the duplicated workflow"
           },
           "tags": {
@@ -66244,6 +66276,15 @@
                 }
               ]
             }
+          },
+          "connectionMode": {
+            "type": "string",
+            "description": "Connection mode that determines how the channel connection is scoped. Use \"subscriber\" (default) to associate the connection with a specific subscriber. Use \"shared\" to associate the connection with a context instead of a subscriber — subscriberId will not be stored on the connection.",
+            "enum": [
+              "subscriber",
+              "shared"
+            ],
+            "example": "shared"
           },
           "integrationIdentifier": {
             "type": "string",

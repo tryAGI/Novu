@@ -43,6 +43,10 @@ namespace Novu
         /// Example: subscriber-123
         /// </param>
         /// <param name="context"></param>
+        /// <param name="connectionMode">
+        /// Connection mode that determines how the channel connection is scoped. Use "subscriber" (default) to associate the connection with a specific subscriber. Use "shared" to associate the connection with a context instead of a subscriber — subscriberId will not be stored on the connection.<br/>
+        /// Example: shared
+        /// </param>
         /// <param name="integrationIdentifier">
         /// The identifier of the integration to use for this channel connection.<br/>
         /// Example: slack-prod
@@ -59,6 +63,7 @@ namespace Novu
             string? identifier = default,
             string? subscriberId = default,
             object? context = default,
+            global::Novu.CreateChannelConnectionRequestDtoConnectionMode? connectionMode = default,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

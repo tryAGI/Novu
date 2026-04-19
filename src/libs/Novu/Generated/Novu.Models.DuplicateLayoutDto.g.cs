@@ -16,6 +16,12 @@ namespace Novu
         public required string Name { get; set; }
 
         /// <summary>
+        /// Identifier for the duplicated layout. When omitted, it is derived from the name.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("layoutId")]
+        public string? LayoutId { get; set; }
+
+        /// <summary>
         /// Enable or disable translations for this layout<br/>
         /// Default Value: false
         /// </summary>
@@ -34,6 +40,9 @@ namespace Novu
         /// <param name="name">
         /// Name of the layout
         /// </param>
+        /// <param name="layoutId">
+        /// Identifier for the duplicated layout. When omitted, it is derived from the name.
+        /// </param>
         /// <param name="isTranslationEnabled">
         /// Enable or disable translations for this layout<br/>
         /// Default Value: false
@@ -43,9 +52,11 @@ namespace Novu
 #endif
         public DuplicateLayoutDto(
             string name,
+            string? layoutId,
             bool? isTranslationEnabled)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.LayoutId = layoutId;
             this.IsTranslationEnabled = isTranslationEnabled;
         }
 
