@@ -31,6 +31,15 @@ namespace Novu
         public object? Context { get; set; }
 
         /// <summary>
+        /// Connection mode that determines how the channel connection is scoped. Use "subscriber" (default) to associate the connection with a specific subscriber. Use "shared" to associate the connection with a context instead of a subscriber — subscriberId will not be stored on the connection.<br/>
+        /// Example: shared
+        /// </summary>
+        /// <example>shared</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("connectionMode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.CreateChannelConnectionRequestDtoConnectionModeJsonConverter))]
+        public global::Novu.CreateChannelConnectionRequestDtoConnectionMode? ConnectionMode { get; set; }
+
+        /// <summary>
         /// The identifier of the integration to use for this channel connection.<br/>
         /// Example: slack-prod
         /// </summary>
@@ -77,6 +86,10 @@ namespace Novu
         /// Example: subscriber-123
         /// </param>
         /// <param name="context"></param>
+        /// <param name="connectionMode">
+        /// Connection mode that determines how the channel connection is scoped. Use "subscriber" (default) to associate the connection with a specific subscriber. Use "shared" to associate the connection with a context instead of a subscriber — subscriberId will not be stored on the connection.<br/>
+        /// Example: shared
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,11 +99,13 @@ namespace Novu
             global::Novu.AuthDto auth,
             string? identifier,
             string? subscriberId,
-            object? context)
+            object? context,
+            global::Novu.CreateChannelConnectionRequestDtoConnectionMode? connectionMode)
         {
             this.Identifier = identifier;
             this.SubscriberId = subscriberId;
             this.Context = context;
+            this.ConnectionMode = connectionMode;
             this.IntegrationIdentifier = integrationIdentifier ?? throw new global::System.ArgumentNullException(nameof(integrationIdentifier));
             this.Workspace = workspace ?? throw new global::System.ArgumentNullException(nameof(workspace));
             this.Auth = auth ?? throw new global::System.ArgumentNullException(nameof(auth));

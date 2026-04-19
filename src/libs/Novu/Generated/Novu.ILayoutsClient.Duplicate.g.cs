@@ -42,6 +42,9 @@ namespace Novu
         /// <param name="name">
         /// Name of the layout
         /// </param>
+        /// <param name="requestLayoutId">
+        /// Identifier for the duplicated layout. When omitted, it is derived from the name.
+        /// </param>
         /// <param name="isTranslationEnabled">
         /// Enable or disable translations for this layout<br/>
         /// Default Value: false
@@ -52,6 +55,7 @@ namespace Novu
         global::System.Threading.Tasks.Task<global::Novu.LayoutsControllerDuplicateResponse> DuplicateAsync(
             string layoutId,
             string name,
+            string? requestLayoutId = default,
             bool? isTranslationEnabled = default,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

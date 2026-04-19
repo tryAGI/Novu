@@ -149,6 +149,14 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.CreateIntegrationRequestDtoChannelNullableJsonConverter),
 
+            typeof(global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoModeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoModeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoConnectionModeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoConnectionModeNullableJsonConverter),
+
             typeof(global::Novu.JsonConverters.ChatOrPushProviderEnumJsonConverter),
 
             typeof(global::Novu.JsonConverters.ChatOrPushProviderEnumNullableJsonConverter),
@@ -432,6 +440,10 @@ namespace Novu
             typeof(global::Novu.JsonConverters.GetChannelConnectionResponseDtoProviderIdJsonConverter),
 
             typeof(global::Novu.JsonConverters.GetChannelConnectionResponseDtoProviderIdNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateChannelConnectionRequestDtoConnectionModeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateChannelConnectionRequestDtoConnectionModeNullableJsonConverter),
 
             typeof(global::Novu.JsonConverters.CreateSlackChannelEndpointDtoTypeJsonConverter),
 
@@ -874,6 +886,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateChatOauthUrlRequestDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.GenerateChatOauthUrlRequestDtoContext2>), TypeInfoPropertyName = "OneOfStringGenerateChatOauthUrlRequestDtoContext22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateChatOauthUrlRequestDtoContext2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateChatOauthUrlRequestDtoMode), TypeInfoPropertyName = "GenerateChatOauthUrlRequestDtoMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateChatOauthUrlRequestDtoConnectionMode), TypeInfoPropertyName = "GenerateChatOauthUrlRequestDtoConnectionMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetContextResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateContextRequestDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateContextRequestDto))]
@@ -1268,6 +1282,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateChannelConnectionRequestDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateChannelConnectionRequestDtoContext2>), TypeInfoPropertyName = "OneOfStringCreateChannelConnectionRequestDtoContext22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateChannelConnectionRequestDtoContext2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateChannelConnectionRequestDtoConnectionMode), TypeInfoPropertyName = "CreateChannelConnectionRequestDtoConnectionMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateChannelConnectionRequestDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SlackChannelEndpointDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateSlackChannelEndpointDto))]
