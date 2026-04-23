@@ -67668,6 +67668,127 @@
           "subscriberId"
         ]
       },
+      "WebhookInboundEmailDomainDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Domain ID"
+          },
+          "name": {
+            "type": "string",
+            "description": "Domain name"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      },
+      "WebhookInboundEmailRouteDto": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "Route address (local part of the email address)"
+          }
+        },
+        "required": [
+          "address"
+        ]
+      },
+      "WebhookInboundEmailAddressDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name"
+          },
+          "address": {
+            "type": "string",
+            "description": "Email address"
+          }
+        },
+        "required": [
+          "name",
+          "address"
+        ]
+      },
+      "WebhookInboundEmailMailDto": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "description": "Sender address info",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/WebhookInboundEmailAddressDto"
+              }
+            ]
+          },
+          "to": {
+            "description": "Recipient address info",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WebhookInboundEmailAddressDto"
+            }
+          },
+          "subject": {
+            "type": "string",
+            "description": "Email subject"
+          },
+          "html": {
+            "type": "string",
+            "description": "HTML body"
+          },
+          "text": {
+            "type": "string",
+            "description": "Plain text body"
+          },
+          "messageId": {
+            "type": "string",
+            "description": "Message ID header"
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "subject",
+          "messageId"
+        ]
+      },
+      "WebhookInboundEmailDto": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "description": "Domain that received the email",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/WebhookInboundEmailDomainDto"
+              }
+            ]
+          },
+          "route": {
+            "description": "Matched route info",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/WebhookInboundEmailRouteDto"
+              }
+            ]
+          },
+          "mail": {
+            "description": "Inbound email details",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/WebhookInboundEmailMailDto"
+              }
+            ]
+          }
+        },
+        "required": [
+          "domain",
+          "mail"
+        ]
+      },
       "WebhookMessageDtoWebhookPayloadWrapper": {
         "type": "object",
         "properties": {
@@ -67938,6 +68059,53 @@
             "type": "string",
             "enum": [
               "preference"
+            ],
+            "description": "The type of object the event relates to."
+          }
+        },
+        "required": [
+          "type",
+          "data",
+          "timestamp",
+          "environmentId",
+          "object"
+        ]
+      },
+      "WebhookInboundEmailDtoWebhookPayloadWrapper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the webhook event (evt_✱)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "email.received"
+            ],
+            "description": "The type of the webhook event."
+          },
+          "data": {
+            "description": "The actual event data payload.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/WebhookInboundEmailDto"
+              }
+            ]
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp of when the event occurred."
+          },
+          "environmentId": {
+            "type": "string",
+            "description": "The ID of the environment associated with the event."
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "email_inbound"
             ],
             "description": "The type of object the event relates to."
           }
@@ -68422,6 +68590,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/WebhookPreferenceDtoWebhookPayloadWrapper"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Acknowledges successful receipt of the webhook. No response body is expected."
+          }
+        },
+        "tags": [
+          "Webhooks"
+        ]
+      }
+    },
+    "email.received": {
+      "post": {
+        "summary": "Event: email.received",
+        "description": "This webhook is triggered when a `email_inbound` event (`email.received`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
+        "requestBody": {
+          "description": "Webhook payload for the `email.received` event.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookInboundEmailDtoWebhookPayloadWrapper"
               }
             }
           }

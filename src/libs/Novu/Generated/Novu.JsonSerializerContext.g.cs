@@ -545,6 +545,14 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.WebhookPreferenceDtoWebhookPayloadWrapperObjectNullableJsonConverter),
 
+            typeof(global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperObjectJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperObjectNullableJsonConverter),
+
             typeof(global::Novu.JsonConverters.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorTypeJsonConverter),
 
             typeof(global::Novu.JsonConverters.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorTypeNullableJsonConverter),
@@ -1343,6 +1351,12 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookUpdatedWorkflowDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookDeletedWorkflowDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookPreferenceDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailDomainDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailRouteDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailAddressDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailMailDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.WebhookInboundEmailAddressDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapper))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperType), TypeInfoPropertyName = "WebhookMessageDtoWebhookPayloadWrapperType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperObject), TypeInfoPropertyName = "WebhookMessageDtoWebhookPayloadWrapperObject2")]
@@ -1361,6 +1375,9 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapper))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperType), TypeInfoPropertyName = "WebhookPreferenceDtoWebhookPayloadWrapperType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperObject), TypeInfoPropertyName = "WebhookPreferenceDtoWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperType), TypeInfoPropertyName = "WebhookInboundEmailDtoWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperObject), TypeInfoPropertyName = "WebhookInboundEmailDtoWebhookPayloadWrapperObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequest), TypeInfoPropertyName = "ChannelEndpointsControllerCreateChannelEndpointRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType), TypeInfoPropertyName = "ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType2")]
@@ -1562,6 +1579,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.ResourceDiffResultDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.GetChannelConnectionResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.GetChannelEndpointResponseDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.WebhookInboundEmailAddressDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<byte[]>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.ChannelTypeEnum>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.SubscribersControllerGetSubscriberNotificationsSeverityItem>))]
