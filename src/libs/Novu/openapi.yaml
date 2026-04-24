@@ -55428,6 +55428,7 @@
           "sparkpost",
           "email-webhook",
           "braze",
+          "novu-email-agent",
           "nexmo",
           "plivo",
           "sms77",
@@ -56805,6 +56806,21 @@
             "type": "string"
           },
           "AppIOBaseUrl": {
+            "type": "string"
+          },
+          "signingSecret": {
+            "type": "string"
+          },
+          "replyDomain": {
+            "type": "string"
+          },
+          "outboundIntegrationId": {
+            "type": "string"
+          },
+          "inboundAddress": {
+            "type": "string"
+          },
+          "inboundDomain": {
             "type": "string"
           }
         }
@@ -66081,6 +66097,7 @@
               "sparkpost",
               "email-webhook",
               "braze",
+              "novu-email-agent",
               "nexmo",
               "plivo",
               "sms77",
@@ -66938,6 +66955,7 @@
               "sparkpost",
               "email-webhook",
               "braze",
+              "novu-email-agent",
               "nexmo",
               "plivo",
               "sms77",
