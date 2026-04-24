@@ -200,6 +200,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        NovuEmailAgent,
+        /// <summary>
+        /// 
+        /// </summary>
         NovuSlack,
         /// <summary>
         /// 
@@ -386,6 +390,7 @@ namespace Novu
                 GetChannelConnectionResponseDtoProviderId.Nodemailer => "nodemailer",
                 GetChannelConnectionResponseDtoProviderId.Novu => "novu",
                 GetChannelConnectionResponseDtoProviderId.NovuEmail => "novu-email",
+                GetChannelConnectionResponseDtoProviderId.NovuEmailAgent => "novu-email-agent",
                 GetChannelConnectionResponseDtoProviderId.NovuSlack => "novu-slack",
                 GetChannelConnectionResponseDtoProviderId.NovuSms => "novu-sms",
                 GetChannelConnectionResponseDtoProviderId.OneSignal => "one-signal",
@@ -475,6 +480,7 @@ namespace Novu
                 "nodemailer" => GetChannelConnectionResponseDtoProviderId.Nodemailer,
                 "novu" => GetChannelConnectionResponseDtoProviderId.Novu,
                 "novu-email" => GetChannelConnectionResponseDtoProviderId.NovuEmail,
+                "novu-email-agent" => GetChannelConnectionResponseDtoProviderId.NovuEmailAgent,
                 "novu-slack" => GetChannelConnectionResponseDtoProviderId.NovuSlack,
                 "novu-sms" => GetChannelConnectionResponseDtoProviderId.NovuSms,
                 "one-signal" => GetChannelConnectionResponseDtoProviderId.OneSignal,

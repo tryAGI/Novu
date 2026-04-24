@@ -199,6 +199,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        NovuEmailAgent,
+        /// <summary>
+        /// 
+        /// </summary>
         NovuSlack,
         /// <summary>
         /// 
@@ -385,6 +389,7 @@ namespace Novu
                 ProvidersIdEnum.Nodemailer => "nodemailer",
                 ProvidersIdEnum.Novu => "novu",
                 ProvidersIdEnum.NovuEmail => "novu-email",
+                ProvidersIdEnum.NovuEmailAgent => "novu-email-agent",
                 ProvidersIdEnum.NovuSlack => "novu-slack",
                 ProvidersIdEnum.NovuSms => "novu-sms",
                 ProvidersIdEnum.OneSignal => "one-signal",
@@ -474,6 +479,7 @@ namespace Novu
                 "nodemailer" => ProvidersIdEnum.Nodemailer,
                 "novu" => ProvidersIdEnum.Novu,
                 "novu-email" => ProvidersIdEnum.NovuEmail,
+                "novu-email-agent" => ProvidersIdEnum.NovuEmailAgent,
                 "novu-slack" => ProvidersIdEnum.NovuSlack,
                 "novu-sms" => ProvidersIdEnum.NovuSms,
                 "one-signal" => ProvidersIdEnum.OneSignal,

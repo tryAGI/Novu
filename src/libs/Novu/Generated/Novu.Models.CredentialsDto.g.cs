@@ -285,6 +285,36 @@ namespace Novu
         public string? AppIOBaseUrl { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("signingSecret")]
+        public string? SigningSecret { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("replyDomain")]
+        public string? ReplyDomain { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("outboundIntegrationId")]
+        public string? OutboundIntegrationId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inboundAddress")]
+        public string? InboundAddress { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inboundDomain")]
+        public string? InboundDomain { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -339,6 +369,11 @@ namespace Novu
         /// <param name="senderId"></param>
         /// <param name="tenantId"></param>
         /// <param name="appIOBaseUrl"></param>
+        /// <param name="signingSecret"></param>
+        /// <param name="replyDomain"></param>
+        /// <param name="outboundIntegrationId"></param>
+        /// <param name="inboundAddress"></param>
+        /// <param name="inboundDomain"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -388,7 +423,12 @@ namespace Novu
             string? appSid,
             string? senderId,
             string? tenantId,
-            string? appIOBaseUrl)
+            string? appIOBaseUrl,
+            string? signingSecret,
+            string? replyDomain,
+            string? outboundIntegrationId,
+            string? inboundAddress,
+            string? inboundDomain)
         {
             this.ApiKey = apiKey;
             this.User = user;
@@ -436,6 +476,11 @@ namespace Novu
             this.SenderId = senderId;
             this.TenantId = tenantId;
             this.AppIOBaseUrl = appIOBaseUrl;
+            this.SigningSecret = signingSecret;
+            this.ReplyDomain = replyDomain;
+            this.OutboundIntegrationId = outboundIntegrationId;
+            this.InboundAddress = inboundAddress;
+            this.InboundDomain = inboundDomain;
         }
 
         /// <summary>
