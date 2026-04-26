@@ -13665,6 +13665,7 @@
             "in": "query",
             "example": 0,
             "schema": {
+              "minimum": 0,
               "type": "number"
             }
           },
@@ -56811,16 +56812,7 @@
           "signingSecret": {
             "type": "string"
           },
-          "replyDomain": {
-            "type": "string"
-          },
           "outboundIntegrationId": {
-            "type": "string"
-          },
-          "inboundAddress": {
-            "type": "string"
-          },
-          "inboundDomain": {
             "type": "string"
           }
         }
@@ -63536,11 +63528,18 @@
             }
           },
           "body": {
-            "description": "Request body as key-value pairs",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/HttpRequestKeyValuePairDto"
-            }
+            "description": "Request body as a raw JSON string. Key-value arrays are supported for legacy workflows.",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/HttpRequestKeyValuePairDto"
+                }
+              }
+            ]
           },
           "responseBodySchema": {
             "type": "object",

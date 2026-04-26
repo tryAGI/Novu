@@ -30,10 +30,11 @@ namespace Novu
         public global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>? Headers { get; set; }
 
         /// <summary>
-        /// Request body as key-value pairs
+        /// Request body as a raw JSON string. Key-value arrays are supported for legacy workflows.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        public global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>? Body { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>>))]
+        public global::Novu.OneOf<string, global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>>? Body { get; set; }
 
         /// <summary>
         /// JSON schema to validate response body against
@@ -72,7 +73,7 @@ namespace Novu
         /// Request headers as key-value pairs
         /// </param>
         /// <param name="body">
-        /// Request body as key-value pairs
+        /// Request body as a raw JSON string. Key-value arrays are supported for legacy workflows.
         /// </param>
         /// <param name="responseBodySchema">
         /// JSON schema to validate response body against
@@ -90,7 +91,7 @@ namespace Novu
             global::Novu.HttpMethodEnum method,
             string url,
             global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>? headers,
-            global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>? body,
+            global::Novu.OneOf<string, global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>>? body,
             object? responseBodySchema,
             bool? enforceSchemaValidation,
             bool? continueOnFailure)
