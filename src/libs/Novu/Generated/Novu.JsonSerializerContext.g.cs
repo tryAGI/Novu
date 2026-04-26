@@ -707,6 +707,8 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.WorkflowPreferenceRequestDto, global::Novu.GroupPreferenceFilterDto>),
 
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>>),
+
             typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.InAppControlDto, object>),
 
             typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.EmailControlDto, object>),
@@ -1159,6 +1161,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestKeyValuePairDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestControlDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>>), TypeInfoPropertyName = "OneOfStringIListHttpRequestKeyValuePairDto2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestControlsMetadataResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestStepResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ActionDto))]
@@ -1564,6 +1567,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<global::Novu.StepIntegrationIssue>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepIntegrationIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.HttpRequestKeyValuePairDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::System.Collections.Generic.List<global::Novu.HttpRequestKeyValuePairDto>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepsItem2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepsItem3>))]
