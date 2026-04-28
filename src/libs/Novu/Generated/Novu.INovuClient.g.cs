@@ -87,6 +87,21 @@ namespace Novu
         public ContextsClient Contexts { get; }
 
         /// <summary>
+        /// Used to manage your inbound email domains.
+        /// </summary>
+        public DomainsClient Domains { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DomainsAutoConfigureClient DomainsAutoConfigure { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DomainsRoutesClient DomainsRoutes { get; }
+
+        /// <summary>
         /// 
         /// </summary>
         public EnvironmentVariablesClient EnvironmentVariables { get; }

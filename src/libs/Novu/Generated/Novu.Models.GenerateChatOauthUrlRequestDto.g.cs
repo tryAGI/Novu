@@ -72,6 +72,14 @@ namespace Novu
         public global::Novu.GenerateChatOauthUrlRequestDtoConnectionMode? ConnectionMode { get; set; }
 
         /// <summary>
+        /// When true, after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, this uses the authed_user.id already returned by oauth.v2.access — no extra redirect. For MS Teams, this triggers a second OAuth redirect for delegated user-identity consent. Defaults to false when omitted; the SlackConnectButton and MsTeamsConnectButton SDK components default this to true.<br/>
+        /// Example: true
+        /// </summary>
+        /// <example>true</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("autoLinkUser")]
+        public bool? AutoLinkUser { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -108,6 +116,10 @@ namespace Novu
         /// Connection mode that determines how the channel connection is scoped. Use "subscriber" (default) to associate the connection with a specific subscriber. Use "shared" to associate the connection with a context instead of a subscriber — subscriberId will not be stored on the connection.<br/>
         /// Example: shared
         /// </param>
+        /// <param name="autoLinkUser">
+        /// When true, after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, this uses the authed_user.id already returned by oauth.v2.access — no extra redirect. For MS Teams, this triggers a second OAuth redirect for delegated user-identity consent. Defaults to false when omitted; the SlackConnectButton and MsTeamsConnectButton SDK components default this to true.<br/>
+        /// Example: true
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -119,7 +131,8 @@ namespace Novu
             global::System.Collections.Generic.IList<string>? scope,
             global::System.Collections.Generic.IList<string>? userScope,
             global::Novu.GenerateChatOauthUrlRequestDtoMode? mode,
-            global::Novu.GenerateChatOauthUrlRequestDtoConnectionMode? connectionMode)
+            global::Novu.GenerateChatOauthUrlRequestDtoConnectionMode? connectionMode,
+            bool? autoLinkUser)
         {
             this.SubscriberId = subscriberId;
             this.IntegrationIdentifier = integrationIdentifier ?? throw new global::System.ArgumentNullException(nameof(integrationIdentifier));
@@ -129,6 +142,7 @@ namespace Novu
             this.UserScope = userScope;
             this.Mode = mode;
             this.ConnectionMode = connectionMode;
+            this.AutoLinkUser = autoLinkUser;
         }
 
         /// <summary>

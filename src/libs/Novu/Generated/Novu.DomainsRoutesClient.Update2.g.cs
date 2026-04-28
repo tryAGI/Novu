@@ -3,10 +3,10 @@
 
 namespace Novu
 {
-    public partial class IntegrationsClient
+    public partial class DomainsRoutesClient
     {
 
-        private static readonly global::Novu.AutoSDKServer[] s_GenerateChatOAuthUrlServers = new global::Novu.AutoSDKServer[]
+        private static readonly global::Novu.AutoSDKServer[] s_Update2Servers = new global::Novu.AutoSDKServer[]
         {            new global::Novu.AutoSDKServer(
                 id: "https-api-novu-co",
                 name: "api.novu.co",
@@ -20,7 +20,7 @@ namespace Novu
         };
 
 
-        private static readonly global::Novu.EndPointSecurityRequirement s_GenerateChatOAuthUrlSecurityRequirement0 =
+        private static readonly global::Novu.EndPointSecurityRequirement s_Update2SecurityRequirement0 =
             new global::Novu.EndPointSecurityRequirement
             {
                 Authorizations = new global::Novu.EndPointAuthorizationRequirement[]
@@ -34,43 +34,51 @@ namespace Novu
                     },
                 },
             };
-        private static readonly global::Novu.EndPointSecurityRequirement[] s_GenerateChatOAuthUrlSecurityRequirements =
+        private static readonly global::Novu.EndPointSecurityRequirement[] s_Update2SecurityRequirements =
             new global::Novu.EndPointSecurityRequirement[]
-            {                s_GenerateChatOAuthUrlSecurityRequirement0,
+            {                s_Update2SecurityRequirement0,
             };
-        partial void PrepareGenerateChatOAuthUrlArguments(
+        partial void PrepareUpdate2Arguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Novu.GenerateChatOauthUrlRequestDto request);
-        partial void PrepareGenerateChatOAuthUrlRequest(
+            ref string domain,
+            ref string address,
+            global::Novu.UpdateDomainRouteDto request);
+        partial void PrepareUpdate2Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Novu.GenerateChatOauthUrlRequestDto request);
-        partial void ProcessGenerateChatOAuthUrlResponse(
+            string domain,
+            string address,
+            global::Novu.UpdateDomainRouteDto request);
+        partial void ProcessUpdate2Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGenerateChatOAuthUrlResponseContent(
+        partial void ProcessUpdate2ResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Generate chat OAuth URL<br/>
-        /// Generate an OAuth URL for chat integrations like Slack and MS Teams. <br/>
-        ///     This URL allows subscribers to authorize the integration, enabling the system to send messages <br/>
-        ///     through their chat workspace. The generated URL expires after 5 minutes.
+        /// Update a route<br/>
+        /// Updates the destination of the route bound to `&lt;address&gt;@&lt;domain&gt;`. The address itself is the resource identity and cannot be changed; delete and recreate the route to rename it.
         /// </summary>
+        /// <param name="domain"></param>
+        /// <param name="address"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Novu.IntegrationsControllerGetChatOAuthUrlResponse> GenerateChatOAuthUrlAsync(
+        public async global::System.Threading.Tasks.Task<global::Novu.DomainsControllerUpdateDomainRouteResponse> Update2Async(
+            string domain,
+            string address,
 
-            global::Novu.GenerateChatOauthUrlRequestDto request,
+            global::Novu.UpdateDomainRouteDto request,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GenerateChatOAuthUrlAsResponseAsync(
+            var __response = await Update2AsResponseAsync(
+                domain: domain,
+                address: address,
 
                 request: request,
                 requestOptions: requestOptions,
@@ -80,18 +88,20 @@ namespace Novu
             return __response.Body;
         }
         /// <summary>
-        /// Generate chat OAuth URL<br/>
-        /// Generate an OAuth URL for chat integrations like Slack and MS Teams. <br/>
-        ///     This URL allows subscribers to authorize the integration, enabling the system to send messages <br/>
-        ///     through their chat workspace. The generated URL expires after 5 minutes.
+        /// Update a route<br/>
+        /// Updates the destination of the route bound to `&lt;address&gt;@&lt;domain&gt;`. The address itself is the resource identity and cannot be changed; delete and recreate the route to rename it.
         /// </summary>
+        /// <param name="domain"></param>
+        /// <param name="address"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerGetChatOAuthUrlResponse>> GenerateChatOAuthUrlAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.DomainsControllerUpdateDomainRouteResponse>> Update2AsResponseAsync(
+            string domain,
+            string address,
 
-            global::Novu.GenerateChatOauthUrlRequestDto request,
+            global::Novu.UpdateDomainRouteDto request,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -99,15 +109,17 @@ namespace Novu
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareGenerateChatOAuthUrlArguments(
+            PrepareUpdate2Arguments(
                 httpClient: HttpClient,
+                domain: ref domain,
+                address: ref address,
                 request: request);
 
 
             var __authorizations = global::Novu.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GenerateChatOAuthUrlSecurityRequirements,
-                operationName: "GenerateChatOAuthUrlAsync");
+                securityRequirements: s_Update2SecurityRequirements,
+                operationName: "Update2Async");
 
             using var __timeoutCancellationTokenSource = global::Novu.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -126,9 +138,9 @@ namespace Novu
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
                             var __pathBuilder = new global::Novu.PathBuilder(
-                                path: "/v1/integrations/chat/oauth",
+                                path: $"/v1/domains/{domain}/routes/{address}",
                                 baseUri: ResolveBaseUri(
-                                servers: s_GenerateChatOAuthUrlServers,
+                                servers: s_Update2Servers,
                                 defaultBaseUrl: "https://api.novu.co/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::Novu.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -136,7 +148,7 @@ namespace Novu
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: new global::System.Net.Http.HttpMethod("PATCH"),
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -156,9 +168,11 @@ namespace Novu
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGenerateChatOAuthUrlRequest(
+                PrepareUpdate2Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    domain: domain,
+                    address: address,
                     request: request);
 
                 return __httpRequest;
@@ -176,10 +190,10 @@ namespace Novu
                     await global::Novu.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GenerateChatOAuthUrl",
-                                methodName: "GenerateChatOAuthUrlAsync",
-                                pathTemplate: "\"/v1/integrations/chat/oauth\"",
-                                httpMethod: "POST",
+                                operationId: "Update2",
+                                methodName: "Update2Async",
+                                pathTemplate: "$\"/v1/domains/{domain}/routes/{address}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -203,10 +217,10 @@ namespace Novu
                         await global::Novu.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GenerateChatOAuthUrl",
-                                methodName: "GenerateChatOAuthUrlAsync",
-                                pathTemplate: "\"/v1/integrations/chat/oauth\"",
-                                httpMethod: "POST",
+                                operationId: "Update2",
+                                methodName: "Update2Async",
+                                pathTemplate: "$\"/v1/domains/{domain}/routes/{address}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -238,10 +252,10 @@ namespace Novu
                         await global::Novu.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GenerateChatOAuthUrl",
-                                methodName: "GenerateChatOAuthUrlAsync",
-                                pathTemplate: "\"/v1/integrations/chat/oauth\"",
-                                httpMethod: "POST",
+                                operationId: "Update2",
+                                methodName: "Update2Async",
+                                pathTemplate: "$\"/v1/domains/{domain}/routes/{address}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -277,7 +291,7 @@ namespace Novu
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGenerateChatOAuthUrlResponse(
+                ProcessUpdate2Response(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -285,10 +299,10 @@ namespace Novu
                     await global::Novu.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GenerateChatOAuthUrl",
-                                methodName: "GenerateChatOAuthUrlAsync",
-                                pathTemplate: "\"/v1/integrations/chat/oauth\"",
-                                httpMethod: "POST",
+                                operationId: "Update2",
+                                methodName: "Update2Async",
+                                pathTemplate: "$\"/v1/domains/{domain}/routes/{address}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -305,10 +319,10 @@ namespace Novu
                     await global::Novu.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GenerateChatOAuthUrl",
-                                methodName: "GenerateChatOAuthUrlAsync",
-                                pathTemplate: "\"/v1/integrations/chat/oauth\"",
-                                httpMethod: "POST",
+                                operationId: "Update2",
+                                methodName: "Update2Async",
+                                pathTemplate: "$\"/v1/domains/{domain}/routes/{address}\"",
+                                httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -827,7 +841,7 @@ namespace Novu
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGenerateChatOAuthUrlResponseContent(
+                                ProcessUpdate2ResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -836,9 +850,9 @@ namespace Novu
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Novu.IntegrationsControllerGetChatOAuthUrlResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Novu.DomainsControllerUpdateDomainRouteResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerGetChatOAuthUrlResponse>(
+                                    return new global::Novu.AutoSDKHttpResponse<global::Novu.DomainsControllerUpdateDomainRouteResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
                                         body: __value);
@@ -869,9 +883,9 @@ namespace Novu
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Novu.IntegrationsControllerGetChatOAuthUrlResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Novu.DomainsControllerUpdateDomainRouteResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerGetChatOAuthUrlResponse>(
+                                    return new global::Novu.AutoSDKHttpResponse<global::Novu.DomainsControllerUpdateDomainRouteResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Novu.AutoSDKHttpResponse.CreateHeaders(__response),
                                         body: __value);
@@ -913,67 +927,40 @@ namespace Novu
             }
         }
         /// <summary>
-        /// Generate chat OAuth URL<br/>
-        /// Generate an OAuth URL for chat integrations like Slack and MS Teams. <br/>
-        ///     This URL allows subscribers to authorize the integration, enabling the system to send messages <br/>
-        ///     through their chat workspace. The generated URL expires after 5 minutes.
+        /// Update a route<br/>
+        /// Updates the destination of the route bound to `&lt;address&gt;@&lt;domain&gt;`. The address itself is the resource identity and cannot be changed; delete and recreate the route to rename it.
         /// </summary>
-        /// <param name="subscriberId">
-        /// The subscriber ID to link the channel connection to. For Slack: Required for incoming webhook endpoints, optional for workspace connections. For MS Teams: Optional. Admin consent is tenant-wide and can be associated with a subscriber for organizational purposes.<br/>
-        /// Example: subscriber-123
+        /// <param name="domain"></param>
+        /// <param name="address"></param>
+        /// <param name="agentId">
+        /// Agent identifier; required when type is agent, ignored when type is webhook.
         /// </param>
-        /// <param name="integrationIdentifier">
-        /// Integration identifier
-        /// </param>
-        /// <param name="connectionIdentifier">
-        /// Identifier of the channel connection that will be created. It is generated automatically if not provided.<br/>
-        /// Example: slack-connection-abc123
-        /// </param>
-        /// <param name="context"></param>
-        /// <param name="scope">
-        /// **Slack only**: OAuth scopes to request during authorization. These define the permissions your Slack integration will have. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **MS Teams**: This parameter is ignored. MS Teams uses admin consent with pre-configured permissions in Azure AD. Note: The generated OAuth URL expires after 5 minutes.<br/>
-        /// Example: [chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email, incoming-webhook]
-        /// </param>
-        /// <param name="userScope">
-        /// **Slack only, link_user mode**: User-level OAuth scopes to request during authorization. Used when mode is "link_user" to identify the Slack user via "Sign in with Slack". If not specified, defaults to: identity.basic.<br/>
-        /// Example: [identity.basic]
-        /// </param>
-        /// <param name="mode">
-        /// OAuth flow mode. Use "connect" (default) to create a workspace channel connection, or "link_user" to identify the subscriber's Slack user ID without creating a connection.<br/>
-        /// Example: link_user
-        /// </param>
-        /// <param name="connectionMode">
-        /// Connection mode that determines how the channel connection is scoped. Use "subscriber" (default) to associate the connection with a specific subscriber. Use "shared" to associate the connection with a context instead of a subscriber — subscriberId will not be stored on the connection.<br/>
-        /// Example: shared
+        /// <param name="type"></param>
+        /// <param name="data">
+        /// Replaces route metadata when provided (max 10 keys, 500 characters total for keys+values).
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Novu.IntegrationsControllerGetChatOAuthUrlResponse> GenerateChatOAuthUrlAsync(
-            string integrationIdentifier,
-            string? subscriberId = default,
-            string? connectionIdentifier = default,
-            object? context = default,
-            global::System.Collections.Generic.IList<string>? scope = default,
-            global::System.Collections.Generic.IList<string>? userScope = default,
-            global::Novu.GenerateChatOauthUrlRequestDtoMode? mode = default,
-            global::Novu.GenerateChatOauthUrlRequestDtoConnectionMode? connectionMode = default,
+        public async global::System.Threading.Tasks.Task<global::Novu.DomainsControllerUpdateDomainRouteResponse> Update2Async(
+            string domain,
+            string address,
+            string? agentId = default,
+            global::Novu.UpdateDomainRouteDtoType? type = default,
+            global::System.Collections.Generic.Dictionary<string, string>? data = default,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Novu.GenerateChatOauthUrlRequestDto
+            var __request = new global::Novu.UpdateDomainRouteDto
             {
-                SubscriberId = subscriberId,
-                IntegrationIdentifier = integrationIdentifier,
-                ConnectionIdentifier = connectionIdentifier,
-                Context = context,
-                Scope = scope,
-                UserScope = userScope,
-                Mode = mode,
-                ConnectionMode = connectionMode,
+                AgentId = agentId,
+                Type = type,
+                Data = data,
             };
 
-            return await GenerateChatOAuthUrlAsync(
+            return await Update2Async(
+                domain: domain,
+                address: address,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
