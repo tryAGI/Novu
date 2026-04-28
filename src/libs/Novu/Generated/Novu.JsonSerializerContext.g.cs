@@ -141,6 +141,50 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.GetWorkflowRunResponseDtoSeverityNullableJsonConverter),
 
+            typeof(global::Novu.JsonConverters.DomainResponseDtoStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainResponseDtoStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticCheckDtoCodeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticCheckDtoCodeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticCheckDtoStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticCheckDtoStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticIssueDtoCodeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticIssueDtoCodeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticIssueDtoSeverityJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticIssueDtoSeverityNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainRouteResponseDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainRouteResponseDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainRouteDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainRouteDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.UpdateDomainRouteDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.UpdateDomainRouteDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TestDomainRouteResponseDtoDomainStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TestDomainRouteResponseDtoDomainStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TestDomainRouteResponseDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TestDomainRouteResponseDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainConnectStatusResponseDtoReasonCodeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainConnectStatusResponseDtoReasonCodeNullableJsonConverter),
+
             typeof(global::Novu.JsonConverters.IntegrationResponseDtoChannelJsonConverter),
 
             typeof(global::Novu.JsonConverters.IntegrationResponseDtoChannelNullableJsonConverter),
@@ -156,6 +200,10 @@ namespace Novu
             typeof(global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoConnectionModeJsonConverter),
 
             typeof(global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoConnectionModeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GenerateConnectOauthUrlRequestDtoConnectionModeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GenerateConnectOauthUrlRequestDtoConnectionModeNullableJsonConverter),
 
             typeof(global::Novu.JsonConverters.ChatOrPushProviderEnumJsonConverter),
 
@@ -561,6 +609,14 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeNullableJsonConverter),
 
+            typeof(global::Novu.JsonConverters.DomainsControllerListDomainsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainsControllerListDomainsOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainsControllerListDomainRoutesOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainsControllerListDomainRoutesOrderDirectionNullableJsonConverter),
+
             typeof(global::Novu.JsonConverters.ContextsControllerListContextsOrderDirectionJsonConverter),
 
             typeof(global::Novu.JsonConverters.ContextsControllerListContextsOrderDirectionNullableJsonConverter),
@@ -678,6 +734,10 @@ namespace Novu
             typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.TriggerEventToAllRequestDtoContext2>),
 
             typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.GenerateChatOauthUrlRequestDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.GenerateConnectOauthUrlRequestDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.GenerateLinkUserOauthUrlRequestDtoContext2>),
 
             typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.DigestRegularMetadata, global::Novu.DigestTimedMetadata, global::Novu.DelayRegularMetadata, global::Novu.DelayScheduledMetadata>),
 
@@ -883,6 +943,43 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoSeverity), TypeInfoPropertyName = "GetWorkflowRunResponseDtoSeverity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.StepRunDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChartsResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ExpectedDnsRecordDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainResponseDtoStatus), TypeInfoPropertyName = "DomainResponseDtoStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.ExpectedDnsRecordDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListDomainsResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.DomainResponseDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateDomainDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainDiagnosticCheckDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainDiagnosticCheckDtoCode), TypeInfoPropertyName = "DomainDiagnosticCheckDtoCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainDiagnosticCheckDtoStatus), TypeInfoPropertyName = "DomainDiagnosticCheckDtoStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainDiagnosticIssueDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainDiagnosticIssueDtoCode), TypeInfoPropertyName = "DomainDiagnosticIssueDtoCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainDiagnosticIssueDtoSeverity), TypeInfoPropertyName = "DomainDiagnosticIssueDtoSeverity2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DiagnoseDomainResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.DomainDiagnosticCheckDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.DomainDiagnosticIssueDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainRouteResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainRouteResponseDtoType), TypeInfoPropertyName = "DomainRouteResponseDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListDomainRoutesResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.DomainRouteResponseDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainRouteDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainRouteDtoType), TypeInfoPropertyName = "DomainRouteDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateDomainRouteDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateDomainRouteDtoType), TypeInfoPropertyName = "UpdateDomainRouteDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TestDomainRouteWebhookResultDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TestDomainRouteAgentResultDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TestDomainRouteResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TestDomainRouteResponseDtoDomainStatus), TypeInfoPropertyName = "TestDomainRouteResponseDtoDomainStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TestDomainRouteResponseDtoType), TypeInfoPropertyName = "TestDomainRouteResponseDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TestDomainRouteFromDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TestDomainRouteDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainConnectStatusResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainConnectStatusResponseDtoReasonCode), TypeInfoPropertyName = "DomainConnectStatusResponseDtoReasonCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainConnectApplyUrlResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateDomainConnectApplyUrlDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateDomainDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CredentialsDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ConfigurationsDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationResponseDto))]
@@ -898,6 +995,13 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateChatOauthUrlRequestDtoContext2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateChatOauthUrlRequestDtoMode), TypeInfoPropertyName = "GenerateChatOauthUrlRequestDtoMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateChatOauthUrlRequestDtoConnectionMode), TypeInfoPropertyName = "GenerateChatOauthUrlRequestDtoConnectionMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateConnectOauthUrlRequestDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.GenerateConnectOauthUrlRequestDtoContext2>), TypeInfoPropertyName = "OneOfStringGenerateConnectOauthUrlRequestDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateConnectOauthUrlRequestDtoContext2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateConnectOauthUrlRequestDtoConnectionMode), TypeInfoPropertyName = "GenerateConnectOauthUrlRequestDtoConnectionMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateLinkUserOauthUrlRequestDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.GenerateLinkUserOauthUrlRequestDtoContext2>), TypeInfoPropertyName = "OneOfStringGenerateLinkUserOauthUrlRequestDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateLinkUserOauthUrlRequestDtoContext2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetContextResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateContextRequestDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateContextRequestDto))]
@@ -1390,6 +1494,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerUploadMasterJsonEndpointRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.ChannelTypeEnum>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainsOrderDirection), TypeInfoPropertyName = "DomainsControllerListDomainsOrderDirection2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainRoutesOrderDirection), TypeInfoPropertyName = "DomainsControllerListDomainRoutesOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContextsControllerListContextsOrderDirection), TypeInfoPropertyName = "ContextsControllerListContextsOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerSearchSubscribersOrderDirection), TypeInfoPropertyName = "SubscribersControllerSearchSubscribersOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerGetSubscriberPreferencesCriticality), TypeInfoPropertyName = "SubscribersControllerGetSubscriberPreferencesCriticality2")]
@@ -1419,6 +1525,19 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.TriggerEventResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EventsControllerBroadcastEventToAllResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.NotificationsControllerGetNotificationResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerCreateDomainResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerGetDomainResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerUpdateDomainResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerVerifyDomainResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerDiagnoseDomainResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainRoutesResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerCreateDomainRouteResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerGetDomainRouteResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerUpdateDomainRouteResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerTestDomainRouteResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerGetDomainAutoConfigureResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerStartDomainAutoConfigureResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.IntegrationResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationsControllerCreateIntegrationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationsControllerUpdateIntegrationByIdResponse))]
@@ -1426,6 +1545,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationsControllerAutoConfigureIntegrationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationsControllerSetIntegrationAsPrimaryResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationsControllerGetChatOAuthUrlResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationsControllerGenerateConnectOAuthUrlResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationsControllerGenerateLinkUserOAuthUrlResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContextsControllerCreateContextResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContextsControllerListContextsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContextsControllerUpdateContextResponse))]
@@ -1525,6 +1646,11 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.GetWorkflowRunsDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepExecutionDetailDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepRunDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.ExpectedDnsRecordDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.DomainResponseDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.DomainDiagnosticCheckDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.DomainDiagnosticIssueDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.DomainRouteResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.GetContextResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.UpdatedSubscriberDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.CreatedSubscriberDto>))]

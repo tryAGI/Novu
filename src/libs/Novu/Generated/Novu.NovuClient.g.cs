@@ -84,6 +84,36 @@ namespace Novu
         };
 
         /// <summary>
+        /// Used to manage your inbound email domains.
+        /// </summary>
+        public DomainsClient Domains => new DomainsClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DomainsAutoConfigureClient DomainsAutoConfigure => new DomainsAutoConfigureClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DomainsRoutesClient DomainsRoutes => new DomainsRoutesClient(HttpClient, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
         /// 
         /// </summary>
         public EnvironmentVariablesClient EnvironmentVariables => new EnvironmentVariablesClient(HttpClient, authorizations: Authorizations, options: Options)
