@@ -167,7 +167,7 @@ namespace Novu
                 PrepareCreate2Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    topicKey: topicKey,
+                    topicKey: topicKey!,
                     request: request);
 
                 return __httpRequest;

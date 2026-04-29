@@ -146,7 +146,7 @@ namespace Novu
                 PrepareIntegrationsControllerRemoveIntegrationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    integrationId: integrationId);
+                    integrationId: integrationId!);
 
                 return __httpRequest;
             }

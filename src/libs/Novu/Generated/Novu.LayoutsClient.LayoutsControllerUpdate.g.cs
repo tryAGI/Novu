@@ -163,7 +163,7 @@ namespace Novu
                 PrepareLayoutsControllerUpdateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    layoutId: layoutId,
+                    layoutId: layoutId!,
                     request: request);
 
                 return __httpRequest;

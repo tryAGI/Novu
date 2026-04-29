@@ -171,8 +171,8 @@ namespace Novu
                 PrepareTestRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    domain: domain,
-                    address: address,
+                    domain: domain!,
+                    address: address!,
                     request: request);
 
                 return __httpRequest;

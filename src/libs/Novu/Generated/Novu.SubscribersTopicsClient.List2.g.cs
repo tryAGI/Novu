@@ -220,7 +220,7 @@ namespace Novu
                 PrepareList2Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    subscriberId: subscriberId,
+                    subscriberId: subscriberId!,
                     after: after,
                     before: before,
                     limit: limit,

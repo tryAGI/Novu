@@ -165,7 +165,7 @@ namespace Novu
                 PrepareUpdateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    environmentId: environmentId,
+                    environmentId: environmentId!,
                     request: request);
 
                 return __httpRequest;

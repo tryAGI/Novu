@@ -163,7 +163,7 @@ namespace Novu
                 PrepareEnvironmentVariablesControllerUpdateEnvironmentVariableRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    variableKey: variableKey,
+                    variableKey: variableKey!,
                     request: request);
 
                 return __httpRequest;

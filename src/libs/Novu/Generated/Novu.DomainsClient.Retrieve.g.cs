@@ -144,7 +144,7 @@ namespace Novu
                 PrepareRetrieveRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    domain: domain);
+                    domain: domain!);
 
                 return __httpRequest;
             }

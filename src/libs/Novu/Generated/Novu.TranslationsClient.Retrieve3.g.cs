@@ -149,9 +149,9 @@ namespace Novu
                 PrepareRetrieve3Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    resourceType: resourceType,
-                    resourceId: resourceId,
-                    locale: locale);
+                    resourceType: resourceType!,
+                    resourceId: resourceId!,
+                    locale: locale!);
 
                 return __httpRequest;
             }

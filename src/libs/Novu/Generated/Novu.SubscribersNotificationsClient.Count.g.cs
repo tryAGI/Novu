@@ -157,8 +157,8 @@ namespace Novu
                 PrepareCountRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    subscriberId: subscriberId,
-                    filters: filters);
+                    subscriberId: subscriberId!,
+                    filters: filters!);
 
                 return __httpRequest;
             }

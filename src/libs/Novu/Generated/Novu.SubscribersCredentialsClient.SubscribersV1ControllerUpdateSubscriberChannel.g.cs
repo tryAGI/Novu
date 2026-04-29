@@ -165,7 +165,7 @@ namespace Novu
                 PrepareSubscribersV1ControllerUpdateSubscriberChannelRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    subscriberId: subscriberId,
+                    subscriberId: subscriberId!,
                     request: request);
 
                 return __httpRequest;

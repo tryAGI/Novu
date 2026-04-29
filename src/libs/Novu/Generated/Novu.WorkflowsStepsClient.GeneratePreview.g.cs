@@ -171,8 +171,8 @@ namespace Novu
                 PrepareGeneratePreviewRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workflowId: workflowId,
-                    stepId: stepId,
+                    workflowId: workflowId!,
+                    stepId: stepId!,
                     request: request);
 
                 return __httpRequest;

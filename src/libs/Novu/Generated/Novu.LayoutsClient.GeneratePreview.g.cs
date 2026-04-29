@@ -163,7 +163,7 @@ namespace Novu
                 PrepareGeneratePreviewRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    layoutId: layoutId,
+                    layoutId: layoutId!,
                     request: request);
 
                 return __httpRequest;

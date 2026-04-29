@@ -118,7 +118,7 @@ namespace Novu
                 PrepareLayoutsControllerDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    layoutId: layoutId);
+                    layoutId: layoutId!);
 
                 return __httpRequest;
             }

@@ -144,7 +144,7 @@ namespace Novu
                 PrepareLayoutsControllerGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    layoutId: layoutId);
+                    layoutId: layoutId!);
 
                 return __httpRequest;
             }

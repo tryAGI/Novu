@@ -172,7 +172,7 @@ namespace Novu
                 PrepareUnseenCountRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    subscriberId: subscriberId,
+                    subscriberId: subscriberId!,
                     seen: seen,
                     limit: limit);
 

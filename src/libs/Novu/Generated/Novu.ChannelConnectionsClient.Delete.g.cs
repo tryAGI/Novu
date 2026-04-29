@@ -118,7 +118,7 @@ namespace Novu
                 PrepareDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    identifier: identifier);
+                    identifier: identifier!);
 
                 return __httpRequest;
             }

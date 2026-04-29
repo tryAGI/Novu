@@ -163,7 +163,7 @@ namespace Novu
                 PrepareDiffRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    targetEnvironmentId: targetEnvironmentId,
+                    targetEnvironmentId: targetEnvironmentId!,
                     request: request);
 
                 return __httpRequest;

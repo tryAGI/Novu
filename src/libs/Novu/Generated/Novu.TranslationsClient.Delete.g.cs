@@ -144,9 +144,9 @@ namespace Novu
                 PrepareDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    resourceType: resourceType,
-                    resourceId: resourceId,
-                    locale: locale);
+                    resourceType: resourceType!,
+                    resourceId: resourceId!,
+                    locale: locale!);
 
                 return __httpRequest;
             }

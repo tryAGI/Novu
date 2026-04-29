@@ -144,7 +144,7 @@ namespace Novu
                 PrepareRetrieveRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    variableKey: variableKey);
+                    variableKey: variableKey!);
 
                 return __httpRequest;
             }

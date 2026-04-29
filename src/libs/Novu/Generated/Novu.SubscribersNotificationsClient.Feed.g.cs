@@ -195,7 +195,7 @@ namespace Novu
                 PrepareFeedRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    subscriberId: subscriberId,
+                    subscriberId: subscriberId!,
                     page: page,
                     limit: limit,
                     read: read,

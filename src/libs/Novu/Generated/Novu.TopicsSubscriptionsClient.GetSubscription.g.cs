@@ -152,8 +152,8 @@ namespace Novu
                 PrepareGetSubscriptionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    topicKey: topicKey,
-                    identifier: identifier);
+                    topicKey: topicKey!,
+                    identifier: identifier!);
 
                 return __httpRequest;
             }

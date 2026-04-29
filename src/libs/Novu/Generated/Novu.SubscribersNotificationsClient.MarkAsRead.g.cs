@@ -163,8 +163,8 @@ namespace Novu
                 PrepareMarkAsReadRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    subscriberId: subscriberId,
-                    notificationId: notificationId,
+                    subscriberId: subscriberId!,
+                    notificationId: notificationId!,
                     contextKeys: contextKeys);
 
                 return __httpRequest;

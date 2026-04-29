@@ -260,7 +260,7 @@ namespace Novu
                 PrepareList3Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    subscriberId: subscriberId,
+                    subscriberId: subscriberId!,
                     limit: limit,
                     after: after,
                     offset: offset,

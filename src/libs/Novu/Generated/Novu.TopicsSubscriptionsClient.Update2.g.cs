@@ -171,8 +171,8 @@ namespace Novu
                 PrepareUpdate2Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    topicKey: topicKey,
-                    identifier: identifier,
+                    topicKey: topicKey!,
+                    identifier: identifier!,
                     request: request);
 
                 return __httpRequest;

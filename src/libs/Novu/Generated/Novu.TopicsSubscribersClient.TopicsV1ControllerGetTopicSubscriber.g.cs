@@ -152,8 +152,8 @@ namespace Novu
                 PrepareTopicsV1ControllerGetTopicSubscriberRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    externalSubscriberId: externalSubscriberId,
-                    topicKey: topicKey);
+                    externalSubscriberId: externalSubscriberId!,
+                    topicKey: topicKey!);
 
                 return __httpRequest;
             }

@@ -175,8 +175,8 @@ namespace Novu
                 PrepareContextsControllerUpdateContextRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id,
-                    type: type,
+                    id: id!,
+                    type: type!,
                     request: request);
 
                 return __httpRequest;

@@ -133,14 +133,15 @@ namespace Novu
 #endif
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.ResourceId}"),
+                                content: new global::System.Net.Http.StringContent(request.ResourceId ?? string.Empty),
                                 name: "\"resourceId\"");
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.ResourceType.ToValueString()}"),
+                                content: new global::System.Net.Http.StringContent(request.ResourceType.ToValueString()),
                                 name: "\"resourceType\"");
                             for (var __iFiles = 0; __iFiles < request.Files.Count; __iFiles++)
                             {
                                 var __contentFiles = new global::System.Net.Http.ByteArrayContent(request.Files[__iFiles]);
+                            __contentFiles.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
                                 __httpRequestContent.Add(
                                     content: __contentFiles,
                                     name: "\"files\"",

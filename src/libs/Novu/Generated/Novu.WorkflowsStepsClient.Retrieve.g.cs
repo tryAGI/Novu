@@ -152,8 +152,8 @@ namespace Novu
                 PrepareRetrieveRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workflowId: workflowId,
-                    stepId: stepId);
+                    workflowId: workflowId!,
+                    stepId: stepId!);
 
                 return __httpRequest;
             }
