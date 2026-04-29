@@ -181,9 +181,9 @@ namespace Novu
                 PrepareUpdateAsSeenRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    messageId: messageId,
-                    type: type,
-                    subscriberId: subscriberId,
+                    messageId: messageId!,
+                    type: type!,
+                    subscriberId: subscriberId!,
                     request: request);
 
                 return __httpRequest;

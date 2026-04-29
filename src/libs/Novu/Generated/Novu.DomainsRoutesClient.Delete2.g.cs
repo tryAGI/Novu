@@ -123,8 +123,8 @@ namespace Novu
                 PrepareDelete2Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    domain: domain,
-                    address: address);
+                    domain: domain!,
+                    address: address!);
 
                 return __httpRequest;
             }

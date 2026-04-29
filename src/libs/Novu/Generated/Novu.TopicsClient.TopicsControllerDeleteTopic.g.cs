@@ -146,7 +146,7 @@ namespace Novu
                 PrepareTopicsControllerDeleteTopicRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    topicKey: topicKey);
+                    topicKey: topicKey!);
 
                 return __httpRequest;
             }

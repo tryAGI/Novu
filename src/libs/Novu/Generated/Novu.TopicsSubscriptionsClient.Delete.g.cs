@@ -165,7 +165,7 @@ namespace Novu
                 PrepareDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    topicKey: topicKey,
+                    topicKey: topicKey!,
                     request: request);
 
                 return __httpRequest;

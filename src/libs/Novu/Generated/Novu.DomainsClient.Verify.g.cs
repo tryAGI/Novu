@@ -144,7 +144,7 @@ namespace Novu
                 PrepareVerifyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    domain: domain);
+                    domain: domain!);
 
                 return __httpRequest;
             }

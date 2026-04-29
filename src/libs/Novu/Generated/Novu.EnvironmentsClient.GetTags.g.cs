@@ -144,7 +144,7 @@ namespace Novu
                 PrepareGetTagsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    environmentId: environmentId);
+                    environmentId: environmentId!);
 
                 return __httpRequest;
             }

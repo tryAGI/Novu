@@ -182,8 +182,8 @@ namespace Novu
                 PrepareSnoozeRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    subscriberId: subscriberId,
-                    notificationId: notificationId,
+                    subscriberId: subscriberId!,
+                    notificationId: notificationId!,
                     contextKeys: contextKeys,
                     request: request);
 

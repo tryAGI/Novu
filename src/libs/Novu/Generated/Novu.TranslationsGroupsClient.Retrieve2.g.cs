@@ -144,8 +144,8 @@ namespace Novu
                 PrepareRetrieve2Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    resourceType: resourceType,
-                    resourceId: resourceId);
+                    resourceType: resourceType!,
+                    resourceId: resourceId!);
 
                 return __httpRequest;
             }

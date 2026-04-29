@@ -163,7 +163,7 @@ namespace Novu
                 PrepareUpdateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    identifier: identifier,
+                    identifier: identifier!,
                     request: request);
 
                 return __httpRequest;

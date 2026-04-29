@@ -155,7 +155,7 @@ namespace Novu
                 PrepareGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workflowId: workflowId,
+                    workflowId: workflowId!,
                     environmentId: environmentId);
 
                 return __httpRequest;

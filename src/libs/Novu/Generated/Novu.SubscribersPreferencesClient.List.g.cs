@@ -170,7 +170,7 @@ namespace Novu
                 PrepareListRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    subscriberId: subscriberId,
+                    subscriberId: subscriberId!,
                     criticality: criticality,
                     contextKeys: contextKeys);
 

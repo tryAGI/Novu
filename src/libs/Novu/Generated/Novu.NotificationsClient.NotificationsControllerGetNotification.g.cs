@@ -148,7 +148,7 @@ namespace Novu
                 PrepareNotificationsControllerGetNotificationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    notificationId: notificationId);
+                    notificationId: notificationId!);
 
                 return __httpRequest;
             }

@@ -144,7 +144,7 @@ namespace Novu
                 PrepareGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    topicKey: topicKey);
+                    topicKey: topicKey!);
 
                 return __httpRequest;
             }

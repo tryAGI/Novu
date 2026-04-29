@@ -148,7 +148,7 @@ namespace Novu
                 PrepareSetAsPrimaryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    integrationId: integrationId);
+                    integrationId: integrationId!);
 
                 return __httpRequest;
             }

@@ -163,7 +163,7 @@ namespace Novu
                 PrepareStartRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    domain: domain,
+                    domain: domain!,
                     request: request);
 
                 return __httpRequest;

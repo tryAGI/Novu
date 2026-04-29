@@ -160,7 +160,7 @@ namespace Novu
                 PrepareRetrieveRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    identifier: identifier);
+                    identifier: identifier!);
 
                 return __httpRequest;
             }

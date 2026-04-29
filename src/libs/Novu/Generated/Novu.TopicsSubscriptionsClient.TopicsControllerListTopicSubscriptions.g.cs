@@ -220,7 +220,7 @@ namespace Novu
                 PrepareTopicsControllerListTopicSubscriptionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    topicKey: topicKey,
+                    topicKey: topicKey!,
                     after: after,
                     before: before,
                     limit: limit,

@@ -146,7 +146,7 @@ namespace Novu
                 PrepareDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    subscriberId: subscriberId);
+                    subscriberId: subscriberId!);
 
                 return __httpRequest;
             }

@@ -159,8 +159,8 @@ namespace Novu
                 PrepareTrackRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    environmentId: environmentId,
-                    integrationId: integrationId,
+                    environmentId: environmentId!,
+                    integrationId: integrationId!,
                     request: request);
 
                 return __httpRequest;

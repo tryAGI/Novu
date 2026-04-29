@@ -128,7 +128,7 @@ namespace Novu
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     channel: channel,
-                    transactionId: transactionId);
+                    transactionId: transactionId!);
 
                 return __httpRequest;
             }

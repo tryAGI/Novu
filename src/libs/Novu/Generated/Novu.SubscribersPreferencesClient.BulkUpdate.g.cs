@@ -165,7 +165,7 @@ namespace Novu
                 PrepareBulkUpdateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    subscriberId: subscriberId,
+                    subscriberId: subscriberId!,
                     request: request);
 
                 return __httpRequest;

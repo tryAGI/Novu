@@ -171,9 +171,9 @@ namespace Novu
                 PrepareCompleteActionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    subscriberId: subscriberId,
-                    notificationId: notificationId,
-                    actionType: actionType,
+                    subscriberId: subscriberId!,
+                    notificationId: notificationId!,
+                    actionType: actionType!,
                     contextKeys: contextKeys);
 
                 return __httpRequest;

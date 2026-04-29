@@ -124,8 +124,8 @@ namespace Novu
                 PrepareContextsControllerDeleteContextRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id,
-                    type: type);
+                    id: id!,
+                    type: type!);
 
                 return __httpRequest;
             }

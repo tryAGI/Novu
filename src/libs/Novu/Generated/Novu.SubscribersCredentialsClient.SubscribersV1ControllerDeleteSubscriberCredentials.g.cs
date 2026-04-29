@@ -124,8 +124,8 @@ namespace Novu
                 PrepareSubscribersV1ControllerDeleteSubscriberCredentialsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    subscriberId: subscriberId,
-                    providerId: providerId);
+                    subscriberId: subscriberId!,
+                    providerId: providerId!);
 
                 return __httpRequest;
             }

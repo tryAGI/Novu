@@ -165,7 +165,7 @@ namespace Novu
                 PrepareIntegrationsControllerUpdateIntegrationByIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    integrationId: integrationId,
+                    integrationId: integrationId!,
                     request: request);
 
                 return __httpRequest;

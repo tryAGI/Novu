@@ -209,7 +209,7 @@ namespace Novu
                 PrepareList2Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    domain: domain,
+                    domain: domain!,
                     after: after,
                     before: before,
                     limit: limit,
