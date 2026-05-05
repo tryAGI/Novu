@@ -297,6 +297,18 @@ namespace Novu
         public string? OutboundIntegrationId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("useFromAddressOverride")]
+        public bool? UseFromAddressOverride { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fromAddressOverride")]
+        public string? FromAddressOverride { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -353,6 +365,8 @@ namespace Novu
         /// <param name="appIOBaseUrl"></param>
         /// <param name="signingSecret"></param>
         /// <param name="outboundIntegrationId"></param>
+        /// <param name="useFromAddressOverride"></param>
+        /// <param name="fromAddressOverride"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -404,7 +418,9 @@ namespace Novu
             string? tenantId,
             string? appIOBaseUrl,
             string? signingSecret,
-            string? outboundIntegrationId)
+            string? outboundIntegrationId,
+            bool? useFromAddressOverride,
+            string? fromAddressOverride)
         {
             this.ApiKey = apiKey;
             this.User = user;
@@ -454,6 +470,8 @@ namespace Novu
             this.AppIOBaseUrl = appIOBaseUrl;
             this.SigningSecret = signingSecret;
             this.OutboundIntegrationId = outboundIntegrationId;
+            this.UseFromAddressOverride = useFromAddressOverride;
+            this.FromAddressOverride = fromAddressOverride;
         }
 
         /// <summary>

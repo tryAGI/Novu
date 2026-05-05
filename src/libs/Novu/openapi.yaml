@@ -65746,6 +65746,12 @@
           },
           "outboundIntegrationId": {
             "type": "string"
+          },
+          "useFromAddressOverride": {
+            "type": "boolean"
+          },
+          "fromAddressOverride": {
+            "type": "string"
           }
         }
       },
