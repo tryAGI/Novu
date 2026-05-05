@@ -24,6 +24,21 @@ namespace Novu
         /// Permanently delete all in-app (inbox) notifications matching the specified filters. Supports context-based filtering.
         /// </summary>
         /// <param name="subscriberId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse> DeleteAllAsResponseAsync(
+            string subscriberId,
+
+            global::Novu.UpdateAllSubscriberNotificationsDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete all notifications<br/>
+        /// Permanently delete all in-app (inbox) notifications matching the specified filters. Supports context-based filtering.
+        /// </summary>
+        /// <param name="subscriberId"></param>
         /// <param name="tags">
         /// Filter notifications by workflow tags (OR for string[], or { and: [{ or: string[] }, ...] } for AND of OR-groups).
         /// </param>

@@ -24,6 +24,21 @@ namespace Novu
         /// Mark specific and multiple in-app (inbox) notifications as seen. Supports context-based filtering.
         /// </summary>
         /// <param name="subscriberId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse> MarkAsSeenAsResponseAsync(
+            string subscriberId,
+
+            global::Novu.MarkSubscriberNotificationsAsSeenDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Mark notifications as seen<br/>
+        /// Mark specific and multiple in-app (inbox) notifications as seen. Supports context-based filtering.
+        /// </summary>
+        /// <param name="subscriberId"></param>
         /// <param name="notificationIds">
         /// Specific notification IDs to mark as seen
         /// </param>

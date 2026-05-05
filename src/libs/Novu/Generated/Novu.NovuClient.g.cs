@@ -46,7 +46,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public ActivityClient Activity => new ActivityClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ActivityClient Activity => new ActivityClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -56,7 +56,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public ChannelConnectionsClient ChannelConnections => new ChannelConnectionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ChannelConnectionsClient ChannelConnections => new ChannelConnectionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -66,7 +66,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public ChannelEndpointsClient ChannelEndpoints => new ChannelEndpointsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ChannelEndpointsClient ChannelEndpoints => new ChannelEndpointsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -76,7 +76,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public ContextsClient Contexts => new ContextsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ContextsClient Contexts => new ContextsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -86,7 +86,7 @@ namespace Novu
         /// <summary>
         /// Used to manage your inbound email domains.
         /// </summary>
-        public DomainsClient Domains => new DomainsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DomainsClient Domains => new DomainsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -96,7 +96,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public DomainsAutoConfigureClient DomainsAutoConfigure => new DomainsAutoConfigureClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DomainsAutoConfigureClient DomainsAutoConfigure => new DomainsAutoConfigureClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -106,7 +106,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public DomainsRoutesClient DomainsRoutes => new DomainsRoutesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DomainsRoutesClient DomainsRoutes => new DomainsRoutesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -116,7 +116,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public EnvironmentVariablesClient EnvironmentVariables => new EnvironmentVariablesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EnvironmentVariablesClient EnvironmentVariables => new EnvironmentVariablesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -126,7 +126,7 @@ namespace Novu
         /// <summary>
         /// Environments allow you to manage different stages of your application development lifecycle. Each environment has its own set of API keys and configurations, enabling you to separate development, staging, and production workflows.
         /// </summary>
-        public EnvironmentsClient Environments => new EnvironmentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EnvironmentsClient Environments => new EnvironmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -136,7 +136,7 @@ namespace Novu
         /// <summary>
         /// Events represent a change in state of a subscriber. They are used to trigger workflows, and enable you to send notifications to subscribers based on their actions.
         /// </summary>
-        public EventsClient Events => new EventsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EventsClient Events => new EventsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -146,7 +146,7 @@ namespace Novu
         /// <summary>
         /// With the help of the Integration Store, you can easily integrate your favorite delivery provider. During the runtime of the API, the Integrations Store is responsible for storing the configurations of all the providers.
         /// </summary>
-        public IntegrationsClient Integrations => new IntegrationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public IntegrationsClient Integrations => new IntegrationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -156,7 +156,7 @@ namespace Novu
         /// <summary>
         /// Layouts are reusable wrappers for your email notifications.
         /// </summary>
-        public LayoutsClient Layouts => new LayoutsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public LayoutsClient Layouts => new LayoutsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -166,7 +166,7 @@ namespace Novu
         /// <summary>
         /// A message in Novu represents a notification delivered to a recipient on a particular channel. Messages contain information about the request that triggered its delivery, a view of the data sent to the recipient, and a timeline of its lifecycle events. Learn more about messages.
         /// </summary>
-        public MessagesClient Messages => new MessagesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MessagesClient Messages => new MessagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -176,7 +176,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public NotificationsClient Notifications => new NotificationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public NotificationsClient Notifications => new NotificationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -186,7 +186,7 @@ namespace Novu
         /// <summary>
         /// A subscriber in Novu represents someone who should receive a message. A subscriber's profile information contains important attributes about the subscriber that will be used in messages (name, email). The subscriber object can contain other key-value pairs that can be used to further personalize your messages.
         /// </summary>
-        public SubscribersClient Subscribers => new SubscribersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubscribersClient Subscribers => new SubscribersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -196,7 +196,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public SubscribersCredentialsClient SubscribersCredentials => new SubscribersCredentialsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubscribersCredentialsClient SubscribersCredentials => new SubscribersCredentialsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -206,7 +206,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public SubscribersMessagesClient SubscribersMessages => new SubscribersMessagesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubscribersMessagesClient SubscribersMessages => new SubscribersMessagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -216,7 +216,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public SubscribersNotificationsClient SubscribersNotifications => new SubscribersNotificationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubscribersNotificationsClient SubscribersNotifications => new SubscribersNotificationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -226,7 +226,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public SubscribersPreferencesClient SubscribersPreferences => new SubscribersPreferencesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubscribersPreferencesClient SubscribersPreferences => new SubscribersPreferencesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -236,7 +236,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public SubscribersPropertiesClient SubscribersProperties => new SubscribersPropertiesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubscribersPropertiesClient SubscribersProperties => new SubscribersPropertiesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -246,7 +246,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public SubscribersTopicsClient SubscribersTopics => new SubscribersTopicsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubscribersTopicsClient SubscribersTopics => new SubscribersTopicsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -256,7 +256,7 @@ namespace Novu
         /// <summary>
         /// Topics are a way to group subscribers together so that they can be notified of events at once. A topic is identified by a custom key. This can be helpful for things like sending out marketing emails or notifying users of new features. Topics can also be used to send notifications to the subscribers who have been grouped together based on their interests, location, activities and much more.
         /// </summary>
-        public TopicsClient Topics => new TopicsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TopicsClient Topics => new TopicsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -266,7 +266,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public TopicsSubscribersClient TopicsSubscribers => new TopicsSubscribersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TopicsSubscribersClient TopicsSubscribers => new TopicsSubscribersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -276,7 +276,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public TopicsSubscriptionsClient TopicsSubscriptions => new TopicsSubscriptionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TopicsSubscriptionsClient TopicsSubscriptions => new TopicsSubscriptionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -286,7 +286,7 @@ namespace Novu
         /// <summary>
         /// Used to localize your notifications to different languages.
         /// </summary>
-        public TranslationsClient Translations => new TranslationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TranslationsClient Translations => new TranslationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -296,7 +296,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public TranslationsGroupsClient TranslationsGroups => new TranslationsGroupsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TranslationsGroupsClient TranslationsGroups => new TranslationsGroupsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -306,7 +306,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public TranslationsMasterClient TranslationsMaster => new TranslationsMasterClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TranslationsMasterClient TranslationsMaster => new TranslationsMasterClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -316,7 +316,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public TranslationsMaster2Client TranslationsMaster2 => new TranslationsMaster2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public TranslationsMaster2Client TranslationsMaster2 => new TranslationsMaster2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -326,7 +326,7 @@ namespace Novu
         /// <summary>
         /// All notifications are sent via a workflow. Each workflow acts as a container for the logic and blueprint that are associated with a type of notification in your system.
         /// </summary>
-        public WorkflowsClient Workflows => new WorkflowsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public WorkflowsClient Workflows => new WorkflowsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -336,7 +336,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public WorkflowsStepsClient WorkflowsSteps => new WorkflowsStepsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public WorkflowsStepsClient WorkflowsSteps => new WorkflowsStepsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -404,10 +404,10 @@ namespace Novu
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public NovuClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::Novu.EndPointAuthorization>? authorizations = null,
-            global::Novu.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::Novu.EndPointAuthorization>? authorizations,
+            global::Novu.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

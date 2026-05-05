@@ -21,6 +21,19 @@ namespace Novu
         /// Import master translations JSON<br/>
         /// Import translations for multiple workflows from master JSON format for a specific locale
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Novu.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.ImportMasterJsonResponseDto>> ImportAsResponseAsync(
+
+            global::Novu.ImportMasterJsonRequestDto request,
+            global::Novu.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Import master translations JSON<br/>
+        /// Import translations for multiple workflows from master JSON format for a specific locale
+        /// </summary>
         /// <param name="locale">
         /// The locale for which translations are being imported<br/>
         /// Example: en_US
