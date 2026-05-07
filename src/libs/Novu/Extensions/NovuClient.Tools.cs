@@ -18,8 +18,8 @@ public static class NovuClientTools
                    [Description("Optional JSON payload with custom data for the notification template (e.g. {\"name\":\"John\",\"message\":\"Hello\"})")] string? payloadJson = null,
                    CancellationToken cancellationToken = default) =>
             {
-                var response = await client.Events.EventsControllerTriggerAsync(
-                    name: workflowName,
+                var response = await client.Events.TriggerAsync(
+                    workflowId: workflowName,
                     to: subscriberId,
                     payload: payloadJson != null
                         ? System.Text.Json.JsonSerializer.Deserialize<object>(payloadJson)
@@ -50,7 +50,7 @@ public static class NovuClientTools
                    [Description("Maximum number of results to return")] double? limit = null,
                    CancellationToken cancellationToken = default) =>
             {
-                var response = await client.Subscribers.SubscribersControllerSearchSubscribersAsync(
+                var response = await client.Subscribers.SearchAsync(
                     email: email,
                     name: name,
                     phone: phone,
@@ -74,7 +74,7 @@ public static class NovuClientTools
                    [Description("Maximum number of results to return")] double? limit = null,
                    CancellationToken cancellationToken = default) =>
             {
-                var response = await client.Workflows.WorkflowControllerSearchWorkflowsAsync(
+                var response = await client.Workflows.ListAsync(
                     query: query,
                     limit: limit,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -138,7 +138,7 @@ public static class NovuClientTools
                    [Description("Maximum number of results to return")] double? limit = null,
                    CancellationToken cancellationToken = default) =>
             {
-                var response = await client.Topics.TopicsControllerListTopicsAsync(
+                var response = await client.Topics.ListAsync(
                     key: key,
                     name: name,
                     limit: limit,

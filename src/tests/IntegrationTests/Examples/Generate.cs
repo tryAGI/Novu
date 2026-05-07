@@ -29,7 +29,7 @@ public partial class Tests
         //// List all workflows (notification templates).
         using var client = GetAuthenticatedClient();
 
-        var response = await client.Workflows.WorkflowControllerSearchWorkflowsAsync(
+        var response = await client.Workflows.ListAsync(
             limit: 10);
 
         response.Should().NotBeNull();
@@ -41,7 +41,7 @@ public partial class Tests
         //// Search for subscribers by name or email.
         using var client = GetAuthenticatedClient();
 
-        var response = await client.Subscribers.SubscribersControllerSearchSubscribersAsync(
+        var response = await client.Subscribers.SearchAsync(
             limit: 10);
 
         response.Should().NotBeNull();
