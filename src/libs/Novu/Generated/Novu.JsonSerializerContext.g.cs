@@ -813,6 +813,10 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListLayoutResponseDto), TypeInfoPropertyName = "ListLayoutResponseDto_Novu_ListLayoutResponseDto")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant9_d819718aa0a1ad4d")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>?), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant9_c21c4294b0aad1ee")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.JsonSerializerContextTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DataWrapperDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
@@ -1149,7 +1153,6 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateLayoutDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateLayoutDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DuplicateLayoutDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListLayoutResponseDto), TypeInfoPropertyName = "ListLayoutResponseDto_Novu_ListLayoutResponseDto")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.LayoutResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DirectionEnum), TypeInfoPropertyName = "DirectionEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutResponseDtoSortField), TypeInfoPropertyName = "LayoutResponseDtoSortField2")]
@@ -1310,6 +1313,821 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.StepsItem2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepsItem2), TypeInfoPropertyName = "StepsItem22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWorkflowDtoStepDiscriminator))]
+    internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+            typeof(global::Novu.JsonConverters.EnvironmentResponseDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.EnvironmentResponseDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TriggerEventResponseDtoStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TriggerEventResponseDtoStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscriberChannelDtoProviderIdJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscriberChannelDtoProviderIdNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TriggerRecipientsTypeEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TriggerRecipientsTypeEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SeverityLevelEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SeverityLevelEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelTypeEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelTypeEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.StepTypeEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.StepTypeEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ResourceOriginEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ResourceOriginEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.NotificationTriggerDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.NotificationTriggerDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestTypeEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestTypeEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestUnitEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestUnitEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.OrdinalEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.OrdinalEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.OrdinalValueEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.OrdinalValueEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MonthlyTypeEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MonthlyTypeEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestTimedConfigDtoWeekDayJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestTimedConfigDtoWeekDayNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestMetadataDtoUnitJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestMetadataDtoUnitNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ExecutionDetailsStatusEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ExecutionDetailsStatusEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ProvidersIdEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ProvidersIdEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ExecutionDetailsSourceEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ExecutionDetailsSourceEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.BuilderFieldTypeEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.BuilderFieldTypeEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.FieldFilterPartDtoOperatorJsonConverter),
+
+            typeof(global::Novu.JsonConverters.FieldFilterPartDtoOperatorNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.FieldFilterPartDtoOnJsonConverter),
+
+            typeof(global::Novu.JsonConverters.FieldFilterPartDtoOnNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.StepFilterDtoValueJsonConverter),
+
+            typeof(global::Novu.JsonConverters.StepFilterDtoValueNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ActivityNotificationJobResponseDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ActivityNotificationJobResponseDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WorkflowRunStepsDetailsDtoStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WorkflowRunStepsDetailsDtoStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetWorkflowRunsDtoStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetWorkflowRunsDtoStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetWorkflowRunsDtoDeliveryLifecycleStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetWorkflowRunsDtoDeliveryLifecycleStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetWorkflowRunsDtoSeverityJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetWorkflowRunsDtoSeverityNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.StepRunDtoStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.StepRunDtoStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetWorkflowRunResponseDtoStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetWorkflowRunResponseDtoStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetWorkflowRunResponseDtoDeliveryLifecycleStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetWorkflowRunResponseDtoDeliveryLifecycleStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetWorkflowRunResponseDtoSeverityJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetWorkflowRunResponseDtoSeverityNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainResponseDtoStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainResponseDtoStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticCheckDtoCodeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticCheckDtoCodeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticCheckDtoStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticCheckDtoStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticIssueDtoCodeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticIssueDtoCodeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticIssueDtoSeverityJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainDiagnosticIssueDtoSeverityNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainRouteResponseDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainRouteResponseDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainRouteDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainRouteDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.UpdateDomainRouteDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.UpdateDomainRouteDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TestDomainRouteResponseDtoDomainStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TestDomainRouteResponseDtoDomainStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TestDomainRouteResponseDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TestDomainRouteResponseDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainConnectStatusResponseDtoReasonCodeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainConnectStatusResponseDtoReasonCodeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.IntegrationResponseDtoChannelJsonConverter),
+
+            typeof(global::Novu.JsonConverters.IntegrationResponseDtoChannelNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateIntegrationRequestDtoChannelJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateIntegrationRequestDtoChannelNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoModeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoModeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoConnectionModeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoConnectionModeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GenerateConnectOauthUrlRequestDtoConnectionModeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GenerateConnectOauthUrlRequestDtoConnectionModeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChatOrPushProviderEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChatOrPushProviderEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.EmailBlockTypeEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.EmailBlockTypeEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TextAlignEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TextAlignEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelCTATypeEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelCTATypeEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MessageActionStatusEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MessageActionStatusEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ButtonTypeEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ButtonTypeEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ActorTypeEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ActorTypeEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.NotificationFeedItemDtoStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.NotificationFeedItemDtoStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestRegularMetadataUnitJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestRegularMetadataUnitNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestRegularMetadataTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestRegularMetadataTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestRegularMetadataBackoffUnitJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestRegularMetadataBackoffUnitNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TimedConfigWeekDayJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TimedConfigWeekDayNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TimedConfigOrdinalJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TimedConfigOrdinalNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TimedConfigOrdinalValueJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TimedConfigOrdinalValueNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TimedConfigMonthlyTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TimedConfigMonthlyTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestTimedMetadataUnitJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestTimedMetadataUnitNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestTimedMetadataTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestTimedMetadataTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DelayRegularMetadataUnitJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DelayRegularMetadataUnitNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DelayRegularMetadataTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DelayRegularMetadataTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DelayScheduledMetadataTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DelayScheduledMetadataTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.NotificationTriggerTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.NotificationTriggerTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MessageStatusEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MessageStatusEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MessageMarkAsRequestDtoMarkAsJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MessageMarkAsRequestDtoMarkAsNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MarkAllMessageAsRequestDtoMarkAsJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MarkAllMessageAsRequestDtoMarkAsNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MarkMessageActionAsSeenDtoStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MarkMessageActionAsSeenDtoStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.PreferenceOverrideSourceEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.PreferenceOverrideSourceEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.PreferenceLevelEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.PreferenceLevelEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.RedirectDtoTargetJsonConverter),
+
+            typeof(global::Novu.JsonConverters.RedirectDtoTargetNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ResourceTypeEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ResourceTypeEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.UiComponentEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.UiComponentEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.UiSchemaGroupEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.UiSchemaGroupEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.EmailControlsDtoEditorTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.EmailControlsDtoEditorTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.LayoutCreationSourceEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.LayoutCreationSourceEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DirectionEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DirectionEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.LayoutResponseDtoSortFieldJsonConverter),
+
+            typeof(global::Novu.JsonConverters.LayoutResponseDtoSortFieldNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GenerateLayoutPreviewResponseDtoResultTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GenerateLayoutPreviewResponseDtoResultTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DeleteMessageResponseDtoStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DeleteMessageResponseDtoStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.EnvironmentVariableResponseDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.EnvironmentVariableResponseDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateEnvironmentVariableRequestDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateEnvironmentVariableRequestDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.UpdateEnvironmentVariableRequestDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.UpdateEnvironmentVariableRequestDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ContentIssueEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ContentIssueEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.IntegrationIssueEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.IntegrationIssueEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.EmailControlDtoEditorTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.EmailControlDtoEditorTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DelayControlDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DelayControlDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DelayControlDtoUnitJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DelayControlDtoUnitNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.LookBackWindowDtoUnitJsonConverter),
+
+            typeof(global::Novu.JsonConverters.LookBackWindowDtoUnitNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestControlDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestControlDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestControlDtoUnitJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DigestControlDtoUnitNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ThrottleControlDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ThrottleControlDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ThrottleControlDtoUnitJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ThrottleControlDtoUnitNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.HttpMethodEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.HttpMethodEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WorkflowStatusEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WorkflowStatusEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WorkflowResponseDtoStepDiscriminatorTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WorkflowResponseDtoStepDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WorkflowCreationSourceEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WorkflowCreationSourceEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateWorkflowDtoStepDiscriminatorTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateWorkflowDtoStepDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.UpdateWorkflowDtoStepDiscriminatorTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.UpdateWorkflowDtoStepDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WorkflowResponseDtoSortFieldJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WorkflowResponseDtoSortFieldNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TimeUnitEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TimeUnitEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant2TypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant2TypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant3TypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant3TypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant4TypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant4TypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant5TypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant5TypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant6TypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant6TypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant7TypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant7TypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant8TypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant8TypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant9TypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant9TypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SyncActionEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SyncActionEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DiffActionEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DiffActionEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DependencyReasonEnumJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DependencyReasonEnumNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetChannelConnectionResponseDtoChannelJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetChannelConnectionResponseDtoChannelNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetChannelConnectionResponseDtoProviderIdJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetChannelConnectionResponseDtoProviderIdNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateChannelConnectionRequestDtoConnectionModeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateChannelConnectionRequestDtoConnectionModeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateSlackChannelEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateSlackChannelEndpointDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateSlackUserEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateSlackUserEndpointDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateWebhookEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateWebhookEndpointDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreatePhoneEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreatePhoneEndpointDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateMsTeamsChannelEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateMsTeamsChannelEndpointDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateMsTeamsUserEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateMsTeamsUserEndpointDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetChannelEndpointResponseDtoChannelJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetChannelEndpointResponseDtoChannelNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetChannelEndpointResponseDtoProviderIdJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetChannelEndpointResponseDtoProviderIdNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetChannelEndpointResponseDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.GetChannelEndpointResponseDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateTranslationRequestDtoResourceTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateTranslationRequestDtoResourceTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationResponseDtoResourceTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationResponseDtoResourceTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationGroupDtoResourceTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationGroupDtoResourceTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.EventBodyStatusJsonConverter),
+
+            typeof(global::Novu.JsonConverters.EventBodyStatusNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookMessageDtoWebhookPayloadWrapperTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookMessageDtoWebhookPayloadWrapperTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookMessageDtoWebhookPayloadWrapperObjectJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookMessageDtoWebhookPayloadWrapperObjectNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookMessageFailedDtoWebhookPayloadWrapperTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookMessageFailedDtoWebhookPayloadWrapperTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookMessageFailedDtoWebhookPayloadWrapperObjectJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookMessageFailedDtoWebhookPayloadWrapperObjectNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookCreatedWorkflowDtoWebhookPayloadWrapperTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookCreatedWorkflowDtoWebhookPayloadWrapperTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookCreatedWorkflowDtoWebhookPayloadWrapperObjectJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookCreatedWorkflowDtoWebhookPayloadWrapperObjectNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperObjectJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperObjectNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookDeletedWorkflowDtoWebhookPayloadWrapperTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookDeletedWorkflowDtoWebhookPayloadWrapperTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookDeletedWorkflowDtoWebhookPayloadWrapperObjectJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookDeletedWorkflowDtoWebhookPayloadWrapperObjectNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookPreferenceDtoWebhookPayloadWrapperTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookPreferenceDtoWebhookPayloadWrapperTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookPreferenceDtoWebhookPayloadWrapperObjectJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookPreferenceDtoWebhookPayloadWrapperObjectNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperObjectJsonConverter),
+
+            typeof(global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperObjectNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainsControllerListDomainsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainsControllerListDomainsOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainsControllerListDomainRoutesOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.DomainsControllerListDomainRoutesOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ContextsControllerListContextsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ContextsControllerListContextsOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerSearchSubscribersOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerSearchSubscribersOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerGetSubscriberPreferencesCriticalityJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerGetSubscriberPreferencesCriticalityNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerListSubscriberTopicsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerListSubscriberTopicsOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerGetSubscriberNotificationsSeverityItemJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerGetSubscriberNotificationsSeverityItemNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerCompleteNotificationActionActionTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerCompleteNotificationActionActionTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerRevertNotificationActionActionTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SubscribersControllerRevertNotificationActionActionTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MessagesControllerDeleteMessagesByTransactionIdChannelJsonConverter),
+
+            typeof(global::Novu.JsonConverters.MessagesControllerDeleteMessagesByTransactionIdChannelNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TopicsControllerListTopicsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TopicsControllerListTopicsOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TopicsControllerListTopicSubscriptionsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TopicsControllerListTopicSubscriptionsOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelConnectionsControllerListChannelConnectionsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelConnectionsControllerListChannelConnectionsOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelConnectionsControllerListChannelConnectionsChannelJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelConnectionsControllerListChannelConnectionsChannelNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelEndpointsControllerListChannelEndpointsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelEndpointsControllerListChannelEndpointsOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelEndpointsControllerListChannelEndpointsChannelJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelEndpointsControllerListChannelEndpointsChannelNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationControllerGetTranslationGroupEndpointResourceTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationControllerGetTranslationGroupEndpointResourceTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationControllerGetSingleTranslationResourceTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationControllerGetSingleTranslationResourceTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationControllerDeleteTranslationEndpointResourceTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationControllerDeleteTranslationEndpointResourceTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationControllerDeleteTranslationGroupEndpointResourceTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.TranslationControllerDeleteTranslationGroupEndpointResourceTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.StepsItemJsonConverter),
+
+            typeof(global::Novu.JsonConverters.StepsItem2JsonConverter),
+
+            typeof(global::Novu.JsonConverters.StepsItem3JsonConverter),
+
+            typeof(global::Novu.JsonConverters.ChannelEndpointsControllerCreateChannelEndpointRequestJsonConverter),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>),
+
+            typeof(global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>),
+
+            typeof(global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>),
+
+            typeof(global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>),
+
+            typeof(global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>),
+
+            typeof(global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<global::Novu.OneOf<global::Novu.SubscriberPayloadDto, global::Novu.TopicPayloadDto, string>>, string, global::Novu.SubscriberPayloadDto, global::Novu.TopicPayloadDto>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SubscriberPayloadDto, global::Novu.TopicPayloadDto, string>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.SubscriberPayloadDto>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.TenantPayloadDto>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.TriggerEventRequestDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.SubscriberPayloadDto>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.TenantPayloadDto>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.TriggerEventToAllRequestDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.GenerateChatOauthUrlRequestDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.GenerateConnectOauthUrlRequestDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.GenerateLinkUserOauthUrlRequestDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.DigestRegularMetadata, global::Novu.DigestTimedMetadata, global::Novu.DelayRegularMetadata, global::Novu.DelayScheduledMetadata>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.DigestRegularMetadata, global::Novu.DigestTimedMetadata, global::Novu.DelayRegularMetadata, global::Novu.DelayScheduledMetadata>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<global::Novu.EmailBlock>, string>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.BulkUpdateSubscriberPreferencesDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.PatchSubscriberPreferencesDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>),
+
+            typeof(global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.TopicSubscriberIdentifierDto>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateTopicSubscriptionsRequestDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.WorkflowPreferenceRequestDto, global::Novu.GroupPreferenceFilterDto>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.DeleteTopicSubscriberIdentifierDto>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.WorkflowPreferenceRequestDto, global::Novu.GroupPreferenceFilterDto>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.InAppControlDto, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.EmailControlDto, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SmsControlDto, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.PushControlDto, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.ChatControlDto, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.DelayControlDto, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.DigestControlDto, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.ThrottleControlDto, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.CustomControlDto, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.HttpRequestControlDto, object>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.PreviewPayloadDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateChannelConnectionRequestDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateSlackChannelEndpointDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateSlackUserEndpointDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateWebhookEndpointDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreatePhoneEndpointDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateMsTeamsChannelEndpointDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateMsTeamsUserEndpointDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto>),
+
+            typeof(global::Novu.JsonConverters.UnixTimestampJsonConverter),
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListLayoutResponseDto), TypeInfoPropertyName = "ListLayoutResponseDto_Novu_ListLayoutResponseDto")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant9_d819718aa0a1ad4d")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>?), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant9_c21c4294b0aad1ee")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWorkflowDtoStepDiscriminatorType), TypeInfoPropertyName = "CreateWorkflowDtoStepDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SyncWorkflowDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateWorkflowDto))]
@@ -1338,7 +2156,6 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.PreviewPayloadDtoContext2>), TypeInfoPropertyName = "OneOfStringPreviewPayloadDtoContext22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreviewPayloadDtoContext2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant9_d819718aa0a1ad4d")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant2Type), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant2Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant3))]
@@ -1674,7 +2491,6 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.TopicSubscriptionResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.InboxNotificationDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AnyOf<string, double?, bool?, object, global::System.Collections.Generic.List<global::Novu.AnyOf<string, double?, bool?, object>>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.WorkflowInfoDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.MessageResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.SubscriptionPreferenceDto>))]
@@ -1722,7 +2538,450 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.EnvironmentVariableResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.GetEnvironmentTagsDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.WebhookResultDto>))]
+    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+    /// <summary>
+    /// 
+    /// </summary>
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(
+            SourceGenerationContextChunk0.Default,
+
+            SourceGenerationContextChunk1.Default
+            );
+
+        private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SourceGenerationContext Default { get; } = new(DefaultOptions);
+
+        private SourceGenerationContext(global::System.Text.Json.JsonSerializerOptions options)
+            : base(options)
+        {
+        }
+
+        /// <inheritdoc />
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => DefaultOptions;
+
+        /// <inheritdoc />
+        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)
+        {
+            return Resolver.GetTypeInfo(type, Options);
+        }
+
+        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+        {
+            var options = new global::System.Text.Json.JsonSerializerOptions
+            {
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                TypeInfoResolver = Resolver,
+            };
+            options.Converters.Add(new global::Novu.JsonConverters.EnvironmentResponseDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.EnvironmentResponseDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TriggerEventResponseDtoStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TriggerEventResponseDtoStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscriberChannelDtoProviderIdJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscriberChannelDtoProviderIdNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TriggerRecipientsTypeEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TriggerRecipientsTypeEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SeverityLevelEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SeverityLevelEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelTypeEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelTypeEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.StepTypeEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.StepTypeEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ResourceOriginEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ResourceOriginEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.NotificationTriggerDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.NotificationTriggerDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestTypeEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestTypeEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestUnitEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestUnitEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.OrdinalEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.OrdinalEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.OrdinalValueEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.OrdinalValueEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MonthlyTypeEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MonthlyTypeEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestTimedConfigDtoWeekDayJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestTimedConfigDtoWeekDayNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestMetadataDtoUnitJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestMetadataDtoUnitNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ExecutionDetailsStatusEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ExecutionDetailsStatusEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ProvidersIdEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ProvidersIdEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ExecutionDetailsSourceEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ExecutionDetailsSourceEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.BuilderFieldTypeEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.BuilderFieldTypeEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.FieldFilterPartDtoOperatorJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.FieldFilterPartDtoOperatorNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.FieldFilterPartDtoOnJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.FieldFilterPartDtoOnNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.StepFilterDtoValueJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.StepFilterDtoValueNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ActivityNotificationJobResponseDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ActivityNotificationJobResponseDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WorkflowRunStepsDetailsDtoStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WorkflowRunStepsDetailsDtoStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunsDtoStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunsDtoStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunsDtoDeliveryLifecycleStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunsDtoDeliveryLifecycleStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunsDtoSeverityJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunsDtoSeverityNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.StepRunDtoStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.StepRunDtoStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunResponseDtoStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunResponseDtoStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunResponseDtoDeliveryLifecycleStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunResponseDtoDeliveryLifecycleStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunResponseDtoSeverityJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunResponseDtoSeverityNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainResponseDtoStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainResponseDtoStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainDiagnosticCheckDtoCodeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainDiagnosticCheckDtoCodeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainDiagnosticCheckDtoStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainDiagnosticCheckDtoStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainDiagnosticIssueDtoCodeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainDiagnosticIssueDtoCodeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainDiagnosticIssueDtoSeverityJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainDiagnosticIssueDtoSeverityNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainRouteResponseDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainRouteResponseDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainRouteDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainRouteDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.UpdateDomainRouteDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.UpdateDomainRouteDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TestDomainRouteResponseDtoDomainStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TestDomainRouteResponseDtoDomainStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TestDomainRouteResponseDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TestDomainRouteResponseDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainConnectStatusResponseDtoReasonCodeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainConnectStatusResponseDtoReasonCodeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.IntegrationResponseDtoChannelJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.IntegrationResponseDtoChannelNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateIntegrationRequestDtoChannelJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateIntegrationRequestDtoChannelNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoModeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoModeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoConnectionModeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoConnectionModeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GenerateConnectOauthUrlRequestDtoConnectionModeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GenerateConnectOauthUrlRequestDtoConnectionModeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChatOrPushProviderEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChatOrPushProviderEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.EmailBlockTypeEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.EmailBlockTypeEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TextAlignEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TextAlignEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelCTATypeEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelCTATypeEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MessageActionStatusEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MessageActionStatusEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ButtonTypeEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ButtonTypeEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ActorTypeEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ActorTypeEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.NotificationFeedItemDtoStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.NotificationFeedItemDtoStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestRegularMetadataUnitJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestRegularMetadataUnitNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestRegularMetadataTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestRegularMetadataTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestRegularMetadataBackoffUnitJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestRegularMetadataBackoffUnitNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TimedConfigWeekDayJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TimedConfigWeekDayNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TimedConfigOrdinalJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TimedConfigOrdinalNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TimedConfigOrdinalValueJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TimedConfigOrdinalValueNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TimedConfigMonthlyTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TimedConfigMonthlyTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestTimedMetadataUnitJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestTimedMetadataUnitNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestTimedMetadataTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestTimedMetadataTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DelayRegularMetadataUnitJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DelayRegularMetadataUnitNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DelayRegularMetadataTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DelayRegularMetadataTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DelayScheduledMetadataTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DelayScheduledMetadataTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.NotificationTriggerTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.NotificationTriggerTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MessageStatusEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MessageStatusEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MessageMarkAsRequestDtoMarkAsJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MessageMarkAsRequestDtoMarkAsNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MarkAllMessageAsRequestDtoMarkAsJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MarkAllMessageAsRequestDtoMarkAsNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MarkMessageActionAsSeenDtoStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MarkMessageActionAsSeenDtoStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.PreferenceOverrideSourceEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.PreferenceOverrideSourceEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.PreferenceLevelEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.PreferenceLevelEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.RedirectDtoTargetJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.RedirectDtoTargetNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ResourceTypeEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ResourceTypeEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.UiComponentEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.UiComponentEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.UiSchemaGroupEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.UiSchemaGroupEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.EmailControlsDtoEditorTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.EmailControlsDtoEditorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.LayoutCreationSourceEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.LayoutCreationSourceEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DirectionEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DirectionEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.LayoutResponseDtoSortFieldJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.LayoutResponseDtoSortFieldNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GenerateLayoutPreviewResponseDtoResultTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GenerateLayoutPreviewResponseDtoResultTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DeleteMessageResponseDtoStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DeleteMessageResponseDtoStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.EnvironmentVariableResponseDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.EnvironmentVariableResponseDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateEnvironmentVariableRequestDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateEnvironmentVariableRequestDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.UpdateEnvironmentVariableRequestDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.UpdateEnvironmentVariableRequestDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ContentIssueEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ContentIssueEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.IntegrationIssueEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.IntegrationIssueEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.EmailControlDtoEditorTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.EmailControlDtoEditorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DelayControlDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DelayControlDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DelayControlDtoUnitJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DelayControlDtoUnitNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.LookBackWindowDtoUnitJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.LookBackWindowDtoUnitNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestControlDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestControlDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestControlDtoUnitJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DigestControlDtoUnitNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ThrottleControlDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ThrottleControlDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ThrottleControlDtoUnitJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ThrottleControlDtoUnitNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.HttpMethodEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.HttpMethodEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WorkflowStatusEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WorkflowStatusEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WorkflowResponseDtoStepDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WorkflowResponseDtoStepDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WorkflowCreationSourceEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WorkflowCreationSourceEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateWorkflowDtoStepDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateWorkflowDtoStepDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.UpdateWorkflowDtoStepDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.UpdateWorkflowDtoStepDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WorkflowResponseDtoSortFieldJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WorkflowResponseDtoSortFieldNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TimeUnitEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TimeUnitEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant2TypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant2TypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant3TypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant3TypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant4TypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant4TypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant5TypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant5TypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant6TypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant6TypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant7TypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant7TypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant8TypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant8TypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant9TypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GeneratePreviewResponseDtoResultVariant9TypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SyncActionEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SyncActionEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DiffActionEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DiffActionEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DependencyReasonEnumJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DependencyReasonEnumNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetChannelConnectionResponseDtoChannelJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetChannelConnectionResponseDtoChannelNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetChannelConnectionResponseDtoProviderIdJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetChannelConnectionResponseDtoProviderIdNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateChannelConnectionRequestDtoConnectionModeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateChannelConnectionRequestDtoConnectionModeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateSlackChannelEndpointDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateSlackChannelEndpointDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateSlackUserEndpointDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateSlackUserEndpointDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateWebhookEndpointDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateWebhookEndpointDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreatePhoneEndpointDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreatePhoneEndpointDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateMsTeamsChannelEndpointDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateMsTeamsChannelEndpointDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateMsTeamsUserEndpointDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateMsTeamsUserEndpointDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetChannelEndpointResponseDtoChannelJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetChannelEndpointResponseDtoChannelNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetChannelEndpointResponseDtoProviderIdJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetChannelEndpointResponseDtoProviderIdNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetChannelEndpointResponseDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.GetChannelEndpointResponseDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateTranslationRequestDtoResourceTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateTranslationRequestDtoResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationResponseDtoResourceTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationResponseDtoResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationGroupDtoResourceTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationGroupDtoResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.EventBodyStatusJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.EventBodyStatusNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookMessageDtoWebhookPayloadWrapperTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookMessageDtoWebhookPayloadWrapperTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookMessageDtoWebhookPayloadWrapperObjectJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookMessageDtoWebhookPayloadWrapperObjectNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookMessageFailedDtoWebhookPayloadWrapperTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookMessageFailedDtoWebhookPayloadWrapperTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookMessageFailedDtoWebhookPayloadWrapperObjectJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookMessageFailedDtoWebhookPayloadWrapperObjectNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookCreatedWorkflowDtoWebhookPayloadWrapperTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookCreatedWorkflowDtoWebhookPayloadWrapperTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookCreatedWorkflowDtoWebhookPayloadWrapperObjectJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookCreatedWorkflowDtoWebhookPayloadWrapperObjectNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperObjectJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperObjectNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookDeletedWorkflowDtoWebhookPayloadWrapperTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookDeletedWorkflowDtoWebhookPayloadWrapperTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookDeletedWorkflowDtoWebhookPayloadWrapperObjectJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookDeletedWorkflowDtoWebhookPayloadWrapperObjectNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookPreferenceDtoWebhookPayloadWrapperTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookPreferenceDtoWebhookPayloadWrapperTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookPreferenceDtoWebhookPayloadWrapperObjectJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookPreferenceDtoWebhookPayloadWrapperObjectNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperObjectJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperObjectNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainsControllerListDomainsOrderDirectionJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainsControllerListDomainsOrderDirectionNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainsControllerListDomainRoutesOrderDirectionJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.DomainsControllerListDomainRoutesOrderDirectionNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ContextsControllerListContextsOrderDirectionJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ContextsControllerListContextsOrderDirectionNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscribersControllerSearchSubscribersOrderDirectionJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscribersControllerSearchSubscribersOrderDirectionNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscribersControllerGetSubscriberPreferencesCriticalityJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscribersControllerGetSubscriberPreferencesCriticalityNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscribersControllerListSubscriberTopicsOrderDirectionJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscribersControllerListSubscriberTopicsOrderDirectionNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscribersControllerGetSubscriberNotificationsSeverityItemJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscribersControllerGetSubscriberNotificationsSeverityItemNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscribersControllerCompleteNotificationActionActionTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscribersControllerCompleteNotificationActionActionTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscribersControllerRevertNotificationActionActionTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SubscribersControllerRevertNotificationActionActionTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MessagesControllerDeleteMessagesByTransactionIdChannelJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.MessagesControllerDeleteMessagesByTransactionIdChannelNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TopicsControllerListTopicsOrderDirectionJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TopicsControllerListTopicsOrderDirectionNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TopicsControllerListTopicSubscriptionsOrderDirectionJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TopicsControllerListTopicSubscriptionsOrderDirectionNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelConnectionsControllerListChannelConnectionsOrderDirectionJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelConnectionsControllerListChannelConnectionsOrderDirectionNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelConnectionsControllerListChannelConnectionsChannelJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelConnectionsControllerListChannelConnectionsChannelNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelEndpointsControllerListChannelEndpointsOrderDirectionJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelEndpointsControllerListChannelEndpointsOrderDirectionNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelEndpointsControllerListChannelEndpointsChannelJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelEndpointsControllerListChannelEndpointsChannelNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationControllerGetTranslationGroupEndpointResourceTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationControllerGetTranslationGroupEndpointResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationControllerGetSingleTranslationResourceTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationControllerGetSingleTranslationResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationControllerDeleteTranslationEndpointResourceTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationControllerDeleteTranslationEndpointResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationControllerDeleteTranslationGroupEndpointResourceTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.TranslationControllerDeleteTranslationGroupEndpointResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.StepsItemJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.StepsItem2JsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.StepsItem3JsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ChannelEndpointsControllerCreateChannelEndpointRequestJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
+            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
+            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
+            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
+            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
+            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<global::Novu.OneOf<global::Novu.SubscriberPayloadDto, global::Novu.TopicPayloadDto, string>>, string, global::Novu.SubscriberPayloadDto, global::Novu.TopicPayloadDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SubscriberPayloadDto, global::Novu.TopicPayloadDto, string>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.SubscriberPayloadDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.TenantPayloadDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.TriggerEventRequestDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.SubscriberPayloadDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.TenantPayloadDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.TriggerEventToAllRequestDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.GenerateChatOauthUrlRequestDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.GenerateConnectOauthUrlRequestDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.GenerateLinkUserOauthUrlRequestDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.DigestRegularMetadata, global::Novu.DigestTimedMetadata, global::Novu.DelayRegularMetadata, global::Novu.DelayScheduledMetadata>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.DigestRegularMetadata, global::Novu.DigestTimedMetadata, global::Novu.DelayRegularMetadata, global::Novu.DelayScheduledMetadata>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<global::Novu.EmailBlock>, string>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.BulkUpdateSubscriberPreferencesDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.PatchSubscriberPreferencesDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
+            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.TopicSubscriberIdentifierDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateTopicSubscriptionsRequestDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.WorkflowPreferenceRequestDto, global::Novu.GroupPreferenceFilterDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.DeleteTopicSubscriberIdentifierDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.WorkflowPreferenceRequestDto, global::Novu.GroupPreferenceFilterDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.InAppControlDto, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.EmailControlDto, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SmsControlDto, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.PushControlDto, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.ChatControlDto, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.DelayControlDto, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.DigestControlDto, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.ThrottleControlDto, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.CustomControlDto, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.HttpRequestControlDto, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.PreviewPayloadDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateChannelConnectionRequestDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateSlackChannelEndpointDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateSlackUserEndpointDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateWebhookEndpointDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreatePhoneEndpointDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateMsTeamsChannelEndpointDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateMsTeamsUserEndpointDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.UnixTimestampJsonConverter());
+
+            return options;
+        }
     }
 }
