@@ -1,6 +1,7 @@
 #nullable enable
 
 using System.ComponentModel;
+using System.Text.Json;
 using Microsoft.Extensions.AI;
 
 namespace Novu;
@@ -21,9 +22,7 @@ public static class NovuClientTools
                 var response = await client.Events.TriggerAsync(
                     workflowId: workflowName,
                     to: subscriberId,
-                    payload: payloadJson != null
-                        ? System.Text.Json.JsonSerializer.Deserialize<object>(payloadJson)
-                        : null,
+                    payload: payloadJson is { Length: > 0 } ? ParsePayload(payloadJson) : null,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
                 return new
@@ -148,5 +147,11 @@ public static class NovuClientTools
             },
             name: "Novu_ListTopics",
             description: "List all Novu topics with optional filtering by key or name. Topics group subscribers together for bulk notification delivery.");
+    }
+
+    private static JsonElement ParsePayload(string payloadJson)
+    {
+        using var document = JsonDocument.Parse(payloadJson);
+        return document.RootElement.Clone();
     }
 }
