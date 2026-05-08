@@ -34,6 +34,19 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInApp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.InAppStepResponseDto? value)
+        {
+            value = InApp;
+            return IsInApp;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.EmailStepResponseDto? Email { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Novu
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Email))]
 #endif
         public bool IsEmail => Email != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmail(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.EmailStepResponseDto? value)
+        {
+            value = Email;
+            return IsEmail;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSms(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.SmsStepResponseDto? value)
+        {
+            value = Sms;
+            return IsSms;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.PushStepResponseDto? Push { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Novu
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Push))]
 #endif
         public bool IsPush => Push != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPush(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.PushStepResponseDto? value)
+        {
+            value = Push;
+            return IsPush;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.ChatStepResponseDto? value)
+        {
+            value = Chat;
+            return IsChat;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.DelayStepResponseDto? Delay { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace Novu
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Delay))]
 #endif
         public bool IsDelay => Delay != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDelay(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.DelayStepResponseDto? value)
+        {
+            value = Delay;
+            return IsDelay;
+        }
 
         /// <summary>
         /// 
@@ -136,6 +214,19 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDigest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.DigestStepResponseDto? value)
+        {
+            value = Digest;
+            return IsDigest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CustomStepResponseDto? Custom { get; init; }
 #else
@@ -149,6 +240,19 @@ namespace Novu
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
 #endif
         public bool IsCustom => Custom != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustom(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CustomStepResponseDto? value)
+        {
+            value = Custom;
+            return IsCustom;
+        }
 
         /// <summary>
         /// 
@@ -170,6 +274,19 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickThrottle(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.ThrottleStepResponseDto? value)
+        {
+            value = Throttle;
+            return IsThrottle;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.HttpRequestStepResponseDto? HttpRequest { get; init; }
 #else
@@ -183,6 +300,19 @@ namespace Novu
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HttpRequest))]
 #endif
         public bool IsHttpRequest => HttpRequest != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHttpRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.HttpRequestStepResponseDto? value)
+        {
+            value = HttpRequest;
+            return IsHttpRequest;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -438,16 +568,16 @@ namespace Novu
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Novu.InAppStepResponseDto?, TResult>? inApp = null,
-            global::System.Func<global::Novu.EmailStepResponseDto?, TResult>? email = null,
-            global::System.Func<global::Novu.SmsStepResponseDto?, TResult>? sms = null,
-            global::System.Func<global::Novu.PushStepResponseDto?, TResult>? push = null,
-            global::System.Func<global::Novu.ChatStepResponseDto?, TResult>? chat = null,
-            global::System.Func<global::Novu.DelayStepResponseDto?, TResult>? delay = null,
-            global::System.Func<global::Novu.DigestStepResponseDto?, TResult>? digest = null,
-            global::System.Func<global::Novu.CustomStepResponseDto?, TResult>? custom = null,
-            global::System.Func<global::Novu.ThrottleStepResponseDto?, TResult>? throttle = null,
-            global::System.Func<global::Novu.HttpRequestStepResponseDto?, TResult>? httpRequest = null,
+            global::System.Func<global::Novu.InAppStepResponseDto, TResult>? inApp = null,
+            global::System.Func<global::Novu.EmailStepResponseDto, TResult>? email = null,
+            global::System.Func<global::Novu.SmsStepResponseDto, TResult>? sms = null,
+            global::System.Func<global::Novu.PushStepResponseDto, TResult>? push = null,
+            global::System.Func<global::Novu.ChatStepResponseDto, TResult>? chat = null,
+            global::System.Func<global::Novu.DelayStepResponseDto, TResult>? delay = null,
+            global::System.Func<global::Novu.DigestStepResponseDto, TResult>? digest = null,
+            global::System.Func<global::Novu.CustomStepResponseDto, TResult>? custom = null,
+            global::System.Func<global::Novu.ThrottleStepResponseDto, TResult>? throttle = null,
+            global::System.Func<global::Novu.HttpRequestStepResponseDto, TResult>? httpRequest = null,
             bool validate = true)
         {
             if (validate)
@@ -503,16 +633,88 @@ namespace Novu
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Novu.InAppStepResponseDto?>? inApp = null,
-            global::System.Action<global::Novu.EmailStepResponseDto?>? email = null,
-            global::System.Action<global::Novu.SmsStepResponseDto?>? sms = null,
-            global::System.Action<global::Novu.PushStepResponseDto?>? push = null,
-            global::System.Action<global::Novu.ChatStepResponseDto?>? chat = null,
-            global::System.Action<global::Novu.DelayStepResponseDto?>? delay = null,
-            global::System.Action<global::Novu.DigestStepResponseDto?>? digest = null,
-            global::System.Action<global::Novu.CustomStepResponseDto?>? custom = null,
-            global::System.Action<global::Novu.ThrottleStepResponseDto?>? throttle = null,
-            global::System.Action<global::Novu.HttpRequestStepResponseDto?>? httpRequest = null,
+            global::System.Action<global::Novu.InAppStepResponseDto>? inApp = null,
+
+            global::System.Action<global::Novu.EmailStepResponseDto>? email = null,
+
+            global::System.Action<global::Novu.SmsStepResponseDto>? sms = null,
+
+            global::System.Action<global::Novu.PushStepResponseDto>? push = null,
+
+            global::System.Action<global::Novu.ChatStepResponseDto>? chat = null,
+
+            global::System.Action<global::Novu.DelayStepResponseDto>? delay = null,
+
+            global::System.Action<global::Novu.DigestStepResponseDto>? digest = null,
+
+            global::System.Action<global::Novu.CustomStepResponseDto>? custom = null,
+
+            global::System.Action<global::Novu.ThrottleStepResponseDto>? throttle = null,
+
+            global::System.Action<global::Novu.HttpRequestStepResponseDto>? httpRequest = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInApp)
+            {
+                inApp?.Invoke(InApp!);
+            }
+            else if (IsEmail)
+            {
+                email?.Invoke(Email!);
+            }
+            else if (IsSms)
+            {
+                sms?.Invoke(Sms!);
+            }
+            else if (IsPush)
+            {
+                push?.Invoke(Push!);
+            }
+            else if (IsChat)
+            {
+                chat?.Invoke(Chat!);
+            }
+            else if (IsDelay)
+            {
+                delay?.Invoke(Delay!);
+            }
+            else if (IsDigest)
+            {
+                digest?.Invoke(Digest!);
+            }
+            else if (IsCustom)
+            {
+                custom?.Invoke(Custom!);
+            }
+            else if (IsThrottle)
+            {
+                throttle?.Invoke(Throttle!);
+            }
+            else if (IsHttpRequest)
+            {
+                httpRequest?.Invoke(HttpRequest!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Novu.InAppStepResponseDto>? inApp = null,
+            global::System.Action<global::Novu.EmailStepResponseDto>? email = null,
+            global::System.Action<global::Novu.SmsStepResponseDto>? sms = null,
+            global::System.Action<global::Novu.PushStepResponseDto>? push = null,
+            global::System.Action<global::Novu.ChatStepResponseDto>? chat = null,
+            global::System.Action<global::Novu.DelayStepResponseDto>? delay = null,
+            global::System.Action<global::Novu.DigestStepResponseDto>? digest = null,
+            global::System.Action<global::Novu.CustomStepResponseDto>? custom = null,
+            global::System.Action<global::Novu.ThrottleStepResponseDto>? throttle = null,
+            global::System.Action<global::Novu.HttpRequestStepResponseDto>? httpRequest = null,
             bool validate = true)
         {
             if (validate)
