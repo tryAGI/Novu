@@ -34,6 +34,19 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSlackChannel(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreateSlackChannelEndpointDto? value)
+        {
+            value = SlackChannel;
+            return IsSlackChannel;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateSlackUserEndpointDto? SlackUser { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Novu
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SlackUser))]
 #endif
         public bool IsSlackUser => SlackUser != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSlackUser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreateSlackUserEndpointDto? value)
+        {
+            value = SlackUser;
+            return IsSlackUser;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWebhook(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreateWebhookEndpointDto? value)
+        {
+            value = Webhook;
+            return IsWebhook;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreatePhoneEndpointDto? Phone { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Novu
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Phone))]
 #endif
         public bool IsPhone => Phone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPhone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreatePhoneEndpointDto? value)
+        {
+            value = Phone;
+            return IsPhone;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMsTeamsChannel(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreateMsTeamsChannelEndpointDto? value)
+        {
+            value = MsTeamsChannel;
+            return IsMsTeamsChannel;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateMsTeamsUserEndpointDto? MsTeamsUser { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace Novu
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MsTeamsUser))]
 #endif
         public bool IsMsTeamsUser => MsTeamsUser != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMsTeamsUser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreateMsTeamsUserEndpointDto? value)
+        {
+            value = MsTeamsUser;
+            return IsMsTeamsUser;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -282,12 +360,12 @@ namespace Novu
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Novu.CreateSlackChannelEndpointDto?, TResult>? slackChannel = null,
-            global::System.Func<global::Novu.CreateSlackUserEndpointDto?, TResult>? slackUser = null,
-            global::System.Func<global::Novu.CreateWebhookEndpointDto?, TResult>? webhook = null,
-            global::System.Func<global::Novu.CreatePhoneEndpointDto?, TResult>? phone = null,
-            global::System.Func<global::Novu.CreateMsTeamsChannelEndpointDto?, TResult>? msTeamsChannel = null,
-            global::System.Func<global::Novu.CreateMsTeamsUserEndpointDto?, TResult>? msTeamsUser = null,
+            global::System.Func<global::Novu.CreateSlackChannelEndpointDto, TResult>? slackChannel = null,
+            global::System.Func<global::Novu.CreateSlackUserEndpointDto, TResult>? slackUser = null,
+            global::System.Func<global::Novu.CreateWebhookEndpointDto, TResult>? webhook = null,
+            global::System.Func<global::Novu.CreatePhoneEndpointDto, TResult>? phone = null,
+            global::System.Func<global::Novu.CreateMsTeamsChannelEndpointDto, TResult>? msTeamsChannel = null,
+            global::System.Func<global::Novu.CreateMsTeamsUserEndpointDto, TResult>? msTeamsUser = null,
             bool validate = true)
         {
             if (validate)
@@ -327,12 +405,60 @@ namespace Novu
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Novu.CreateSlackChannelEndpointDto?>? slackChannel = null,
-            global::System.Action<global::Novu.CreateSlackUserEndpointDto?>? slackUser = null,
-            global::System.Action<global::Novu.CreateWebhookEndpointDto?>? webhook = null,
-            global::System.Action<global::Novu.CreatePhoneEndpointDto?>? phone = null,
-            global::System.Action<global::Novu.CreateMsTeamsChannelEndpointDto?>? msTeamsChannel = null,
-            global::System.Action<global::Novu.CreateMsTeamsUserEndpointDto?>? msTeamsUser = null,
+            global::System.Action<global::Novu.CreateSlackChannelEndpointDto>? slackChannel = null,
+
+            global::System.Action<global::Novu.CreateSlackUserEndpointDto>? slackUser = null,
+
+            global::System.Action<global::Novu.CreateWebhookEndpointDto>? webhook = null,
+
+            global::System.Action<global::Novu.CreatePhoneEndpointDto>? phone = null,
+
+            global::System.Action<global::Novu.CreateMsTeamsChannelEndpointDto>? msTeamsChannel = null,
+
+            global::System.Action<global::Novu.CreateMsTeamsUserEndpointDto>? msTeamsUser = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSlackChannel)
+            {
+                slackChannel?.Invoke(SlackChannel!);
+            }
+            else if (IsSlackUser)
+            {
+                slackUser?.Invoke(SlackUser!);
+            }
+            else if (IsWebhook)
+            {
+                webhook?.Invoke(Webhook!);
+            }
+            else if (IsPhone)
+            {
+                phone?.Invoke(Phone!);
+            }
+            else if (IsMsTeamsChannel)
+            {
+                msTeamsChannel?.Invoke(MsTeamsChannel!);
+            }
+            else if (IsMsTeamsUser)
+            {
+                msTeamsUser?.Invoke(MsTeamsUser!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Novu.CreateSlackChannelEndpointDto>? slackChannel = null,
+            global::System.Action<global::Novu.CreateSlackUserEndpointDto>? slackUser = null,
+            global::System.Action<global::Novu.CreateWebhookEndpointDto>? webhook = null,
+            global::System.Action<global::Novu.CreatePhoneEndpointDto>? phone = null,
+            global::System.Action<global::Novu.CreateMsTeamsChannelEndpointDto>? msTeamsChannel = null,
+            global::System.Action<global::Novu.CreateMsTeamsUserEndpointDto>? msTeamsUser = null,
             bool validate = true)
         {
             if (validate)
