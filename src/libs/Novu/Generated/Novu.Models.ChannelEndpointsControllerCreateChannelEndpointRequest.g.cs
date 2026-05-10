@@ -214,6 +214,11 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromSlackChannel(global::Novu.CreateSlackChannelEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateSlackUserEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateSlackUserEndpointDto?)value);
 
         /// <summary>
@@ -228,6 +233,11 @@ namespace Novu
         {
             SlackUser = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromSlackUser(global::Novu.CreateSlackUserEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
         /// 
@@ -250,6 +260,11 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromWebhook(global::Novu.CreateWebhookEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreatePhoneEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreatePhoneEndpointDto?)value);
 
         /// <summary>
@@ -264,6 +279,11 @@ namespace Novu
         {
             Phone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromPhone(global::Novu.CreatePhoneEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
         /// 
@@ -286,6 +306,11 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromMsTeamsChannel(global::Novu.CreateMsTeamsChannelEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateMsTeamsUserEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateMsTeamsUserEndpointDto?)value);
 
         /// <summary>
@@ -300,6 +325,11 @@ namespace Novu
         {
             MsTeamsUser = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromMsTeamsUser(global::Novu.CreateMsTeamsUserEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
         /// 
