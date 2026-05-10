@@ -304,6 +304,11 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static StepsItem3 FromInApp(global::Novu.InAppStepUpsertDto? value) => new StepsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StepsItem3(global::Novu.EmailStepUpsertDto value) => new StepsItem3((global::Novu.EmailStepUpsertDto?)value);
 
         /// <summary>
@@ -318,6 +323,11 @@ namespace Novu
         {
             Email = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StepsItem3 FromEmail(global::Novu.EmailStepUpsertDto? value) => new StepsItem3(value);
 
         /// <summary>
         /// 
@@ -340,6 +350,11 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static StepsItem3 FromSms(global::Novu.SmsStepUpsertDto? value) => new StepsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StepsItem3(global::Novu.PushStepUpsertDto value) => new StepsItem3((global::Novu.PushStepUpsertDto?)value);
 
         /// <summary>
@@ -354,6 +369,11 @@ namespace Novu
         {
             Push = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StepsItem3 FromPush(global::Novu.PushStepUpsertDto? value) => new StepsItem3(value);
 
         /// <summary>
         /// 
@@ -376,6 +396,11 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static StepsItem3 FromChat(global::Novu.ChatStepUpsertDto? value) => new StepsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StepsItem3(global::Novu.DelayStepUpsertDto value) => new StepsItem3((global::Novu.DelayStepUpsertDto?)value);
 
         /// <summary>
@@ -390,6 +415,11 @@ namespace Novu
         {
             Delay = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StepsItem3 FromDelay(global::Novu.DelayStepUpsertDto? value) => new StepsItem3(value);
 
         /// <summary>
         /// 
@@ -412,6 +442,11 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static StepsItem3 FromDigest(global::Novu.DigestStepUpsertDto? value) => new StepsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StepsItem3(global::Novu.CustomStepUpsertDto value) => new StepsItem3((global::Novu.CustomStepUpsertDto?)value);
 
         /// <summary>
@@ -430,6 +465,11 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static StepsItem3 FromCustom(global::Novu.CustomStepUpsertDto? value) => new StepsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StepsItem3(global::Novu.HttpRequestStepUpsertDto value) => new StepsItem3((global::Novu.HttpRequestStepUpsertDto?)value);
 
         /// <summary>
@@ -444,6 +484,11 @@ namespace Novu
         {
             HttpRequest = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StepsItem3 FromHttpRequest(global::Novu.HttpRequestStepUpsertDto? value) => new StepsItem3(value);
 
         /// <summary>
         /// 
