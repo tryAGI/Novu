@@ -111,5 +111,6 @@ namespace Novu
         public HttpRequestControlDto()
         {
         }
+
     }
 }

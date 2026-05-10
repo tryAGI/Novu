@@ -47,6 +47,13 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public global::Novu.CreateSlackChannelEndpointDto PickSlackChannel() => IsSlackChannel
+            ? SlackChannel!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SlackChannel' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateSlackUserEndpointDto? SlackUser { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Novu
             value = SlackUser;
             return IsSlackUser;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.CreateSlackUserEndpointDto PickSlackUser() => IsSlackUser
+            ? SlackUser!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SlackUser' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public global::Novu.CreateWebhookEndpointDto PickWebhook() => IsWebhook
+            ? Webhook!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreatePhoneEndpointDto? Phone { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Novu
             value = Phone;
             return IsPhone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.CreatePhoneEndpointDto PickPhone() => IsPhone
+            ? Phone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Phone' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,6 +195,13 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public global::Novu.CreateMsTeamsChannelEndpointDto PickMsTeamsChannel() => IsMsTeamsChannel
+            ? MsTeamsChannel!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MsTeamsChannel' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateMsTeamsUserEndpointDto? MsTeamsUser { get; init; }
 #else
@@ -193,6 +228,13 @@ namespace Novu
             value = MsTeamsUser;
             return IsMsTeamsUser;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.CreateMsTeamsUserEndpointDto PickMsTeamsUser() => IsMsTeamsUser
+            ? MsTeamsUser!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MsTeamsUser' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -127,5 +127,6 @@ namespace Novu
         public TriggerEventToAllRequestDto()
         {
         }
+
     }
 }

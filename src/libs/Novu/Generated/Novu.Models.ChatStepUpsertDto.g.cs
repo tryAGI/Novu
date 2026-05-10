@@ -89,5 +89,6 @@ namespace Novu
         public ChatStepUpsertDto()
         {
         }
+
     }
 }

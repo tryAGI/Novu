@@ -441,5 +441,6 @@ namespace Novu
         public NotificationFeedItemDto()
         {
         }
+
     }
 }

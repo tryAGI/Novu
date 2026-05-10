@@ -166,5 +166,6 @@ namespace Novu
         public ActivityNotificationStepResponseDto()
         {
         }
+
     }
 }

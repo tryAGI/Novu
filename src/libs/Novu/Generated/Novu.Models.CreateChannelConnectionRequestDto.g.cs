@@ -117,5 +117,6 @@ namespace Novu
         public CreateChannelConnectionRequestDto()
         {
         }
+
     }
 }

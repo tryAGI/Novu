@@ -86,5 +86,6 @@ namespace Novu
         public SubscriberFeedResponseDto()
         {
         }
+
     }
 }

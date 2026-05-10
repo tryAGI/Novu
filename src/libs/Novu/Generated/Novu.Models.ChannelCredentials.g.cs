@@ -142,5 +142,6 @@ namespace Novu
         public ChannelCredentials()
         {
         }
+
     }
 }

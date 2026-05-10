@@ -108,5 +108,6 @@ namespace Novu
         public InAppRenderOutput()
         {
         }
+
     }
 }

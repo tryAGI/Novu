@@ -77,5 +77,6 @@ namespace Novu
         public SubscriberPreferencesWorkflowInfoDto()
         {
         }
+
     }
 }

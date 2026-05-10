@@ -88,5 +88,6 @@ namespace Novu
         public ListChannelEndpointsResponseDto()
         {
         }
+
     }
 }

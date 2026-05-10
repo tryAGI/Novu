@@ -235,5 +235,6 @@ namespace Novu
         public WorkflowResponse()
         {
         }
+
     }
 }

@@ -116,5 +116,6 @@ namespace Novu
         public SubscriberDto()
         {
         }
+
     }
 }

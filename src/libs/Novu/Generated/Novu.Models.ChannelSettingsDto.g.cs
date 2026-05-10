@@ -78,5 +78,6 @@ namespace Novu
         public ChannelSettingsDto()
         {
         }
+
     }
 }

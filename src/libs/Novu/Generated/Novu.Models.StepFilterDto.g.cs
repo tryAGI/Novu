@@ -72,5 +72,6 @@ namespace Novu
         public StepFilterDto()
         {
         }
+
     }
 }

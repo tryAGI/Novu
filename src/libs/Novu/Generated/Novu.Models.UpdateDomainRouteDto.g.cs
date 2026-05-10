@@ -62,5 +62,6 @@ namespace Novu
         public UpdateDomainRouteDto()
         {
         }
+
     }
 }

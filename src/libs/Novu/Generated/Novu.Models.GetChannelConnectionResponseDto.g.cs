@@ -156,5 +156,6 @@ namespace Novu
         public GetChannelConnectionResponseDto()
         {
         }
+
     }
 }

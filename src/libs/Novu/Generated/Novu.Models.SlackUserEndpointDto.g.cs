@@ -45,5 +45,6 @@ namespace Novu
         public SlackUserEndpointDto()
         {
         }
+
     }
 }

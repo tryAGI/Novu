@@ -90,5 +90,6 @@ namespace Novu
         public UploadTranslationsResponseDto()
         {
         }
+
     }
 }

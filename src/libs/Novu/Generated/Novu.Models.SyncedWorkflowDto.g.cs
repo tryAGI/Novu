@@ -80,5 +80,6 @@ namespace Novu
         public SyncedWorkflowDto()
         {
         }
+
     }
 }

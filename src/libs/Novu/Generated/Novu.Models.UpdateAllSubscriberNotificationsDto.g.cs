@@ -63,5 +63,6 @@ namespace Novu
         public UpdateAllSubscriberNotificationsDto()
         {
         }
+
     }
 }

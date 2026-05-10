@@ -66,5 +66,6 @@ namespace Novu
         public PushControlDto()
         {
         }
+
     }
 }

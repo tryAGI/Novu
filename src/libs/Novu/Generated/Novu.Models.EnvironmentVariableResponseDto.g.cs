@@ -110,5 +110,6 @@ namespace Novu
         public EnvironmentVariableResponseDto()
         {
         }
+
     }
 }

@@ -97,5 +97,6 @@ namespace Novu
         public TriggerEventResponseDto()
         {
         }
+
     }
 }

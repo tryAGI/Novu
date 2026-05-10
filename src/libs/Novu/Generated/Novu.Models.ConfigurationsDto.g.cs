@@ -48,5 +48,6 @@ namespace Novu
         public ConfigurationsDto()
         {
         }
+
     }
 }

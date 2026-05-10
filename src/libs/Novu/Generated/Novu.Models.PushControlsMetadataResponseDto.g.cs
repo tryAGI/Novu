@@ -64,5 +64,6 @@ namespace Novu
         public PushControlsMetadataResponseDto()
         {
         }
+
     }
 }

@@ -47,6 +47,13 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public global::Novu.InAppStepUpsertDto PickInApp() => IsInApp
+            ? InApp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InApp' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.EmailStepUpsertDto? Email { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Novu
             value = Email;
             return IsEmail;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.EmailStepUpsertDto PickEmail() => IsEmail
+            ? Email!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Email' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public global::Novu.SmsStepUpsertDto PickSms() => IsSms
+            ? Sms!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sms' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.PushStepUpsertDto? Push { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Novu
             value = Push;
             return IsPush;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.PushStepUpsertDto PickPush() => IsPush
+            ? Push!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Push' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,6 +195,13 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public global::Novu.ChatStepUpsertDto PickChat() => IsChat
+            ? Chat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.DelayStepUpsertDto? Delay { get; init; }
 #else
@@ -193,6 +228,13 @@ namespace Novu
             value = Delay;
             return IsDelay;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.DelayStepUpsertDto PickDelay() => IsDelay
+            ? Delay!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Delay' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -227,6 +269,13 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public global::Novu.DigestStepUpsertDto PickDigest() => IsDigest
+            ? Digest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Digest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CustomStepUpsertDto? Custom { get; init; }
 #else
@@ -257,6 +306,13 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public global::Novu.CustomStepUpsertDto PickCustom() => IsCustom
+            ? Custom!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.HttpRequestStepUpsertDto? HttpRequest { get; init; }
 #else
@@ -283,6 +339,13 @@ namespace Novu
             value = HttpRequest;
             return IsHttpRequest;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.HttpRequestStepUpsertDto PickHttpRequest() => IsHttpRequest
+            ? HttpRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HttpRequest' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

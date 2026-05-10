@@ -186,5 +186,6 @@ namespace Novu
         public LayoutResponseDto()
         {
         }
+
     }
 }

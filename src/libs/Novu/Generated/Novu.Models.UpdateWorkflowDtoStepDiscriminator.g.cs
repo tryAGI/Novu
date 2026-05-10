@@ -40,5 +40,6 @@ namespace Novu
         public UpdateWorkflowDtoStepDiscriminator()
         {
         }
+
     }
 }
