@@ -70,5 +70,6 @@ namespace Novu
         public TranslationControllerUploadTranslationFilesRequest()
         {
         }
+
     }
 }

@@ -138,5 +138,6 @@ namespace Novu
         public ActivityNotificationExecutionDetailResponseDto()
         {
         }
+
     }
 }

@@ -69,5 +69,6 @@ namespace Novu
         public NotificationTrigger()
         {
         }
+
     }
 }

@@ -83,5 +83,6 @@ namespace Novu
         public PreviewPayloadDto()
         {
         }
+
     }
 }

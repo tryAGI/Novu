@@ -56,5 +56,6 @@ namespace Novu
         public WebhookEndpointDto()
         {
         }
+
     }
 }

@@ -102,5 +102,6 @@ namespace Novu
         public TopicResponseDto()
         {
         }
+
     }
 }

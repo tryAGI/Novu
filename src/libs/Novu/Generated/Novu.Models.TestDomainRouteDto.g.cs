@@ -79,5 +79,6 @@ namespace Novu
         public TestDomainRouteDto()
         {
         }
+
     }
 }

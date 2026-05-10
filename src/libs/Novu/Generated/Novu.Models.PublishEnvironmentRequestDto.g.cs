@@ -68,5 +68,6 @@ namespace Novu
         public PublishEnvironmentRequestDto()
         {
         }
+
     }
 }

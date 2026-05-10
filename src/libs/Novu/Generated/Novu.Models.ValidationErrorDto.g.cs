@@ -135,5 +135,6 @@ namespace Novu
         public ValidationErrorDto()
         {
         }
+
     }
 }

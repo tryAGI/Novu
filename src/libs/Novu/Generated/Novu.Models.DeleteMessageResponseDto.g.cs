@@ -54,5 +54,6 @@ namespace Novu
         public DeleteMessageResponseDto()
         {
         }
+
     }
 }

@@ -254,5 +254,6 @@ namespace Novu
         public SubscriberResponseDto()
         {
         }
+
     }
 }

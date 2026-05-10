@@ -101,5 +101,6 @@ namespace Novu
         public WebhookUpdatedWorkflowDtoWebhookPayloadWrapper()
         {
         }
+
     }
 }

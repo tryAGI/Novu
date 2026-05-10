@@ -76,5 +76,6 @@ namespace Novu
         public UserInfoDto()
         {
         }
+
     }
 }

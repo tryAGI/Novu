@@ -51,5 +51,6 @@ namespace Novu
         public TestDomainRouteWebhookResultDto()
         {
         }
+
     }
 }

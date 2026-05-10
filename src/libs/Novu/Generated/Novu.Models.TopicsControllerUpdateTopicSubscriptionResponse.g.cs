@@ -39,5 +39,6 @@ namespace Novu
         public TopicsControllerUpdateTopicSubscriptionResponse()
         {
         }
+
     }
 }

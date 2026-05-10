@@ -122,5 +122,6 @@ namespace Novu
         public ResourceDiffDto()
         {
         }
+
     }
 }

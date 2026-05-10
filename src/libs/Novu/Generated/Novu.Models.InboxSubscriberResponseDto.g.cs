@@ -87,5 +87,6 @@ namespace Novu
         public InboxSubscriberResponseDto()
         {
         }
+
     }
 }

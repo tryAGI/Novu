@@ -245,5 +245,6 @@ namespace Novu
         public RequestLogResponseDto()
         {
         }
+
     }
 }

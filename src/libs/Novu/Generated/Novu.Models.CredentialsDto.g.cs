@@ -480,5 +480,6 @@ namespace Novu
         public CredentialsDto()
         {
         }
+
     }
 }

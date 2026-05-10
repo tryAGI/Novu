@@ -50,5 +50,6 @@ namespace Novu
         public DelayScheduledMetadata()
         {
         }
+
     }
 }

@@ -120,5 +120,6 @@ namespace Novu
         public ErrorDto()
         {
         }
+
     }
 }

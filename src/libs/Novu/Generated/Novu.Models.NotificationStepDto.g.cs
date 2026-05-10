@@ -161,5 +161,6 @@ namespace Novu
         public NotificationStepDto()
         {
         }
+
     }
 }

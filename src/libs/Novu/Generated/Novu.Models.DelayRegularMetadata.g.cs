@@ -59,5 +59,6 @@ namespace Novu
         public DelayRegularMetadata()
         {
         }
+
     }
 }

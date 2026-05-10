@@ -152,5 +152,6 @@ namespace Novu
         public NotificationStepData()
         {
         }
+
     }
 }

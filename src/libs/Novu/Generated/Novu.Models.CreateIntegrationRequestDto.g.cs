@@ -143,5 +143,6 @@ namespace Novu
         public CreateIntegrationRequestDto()
         {
         }
+
     }
 }

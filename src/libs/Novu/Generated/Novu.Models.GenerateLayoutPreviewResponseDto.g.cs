@@ -65,5 +65,6 @@ namespace Novu
         public GenerateLayoutPreviewResponseDto()
         {
         }
+
     }
 }

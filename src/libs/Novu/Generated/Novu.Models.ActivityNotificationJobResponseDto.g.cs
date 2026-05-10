@@ -162,5 +162,6 @@ namespace Novu
         public ActivityNotificationJobResponseDto()
         {
         }
+
     }
 }

@@ -94,5 +94,6 @@ namespace Novu
         public DelayControlDto()
         {
         }
+
     }
 }

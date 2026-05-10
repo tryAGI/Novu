@@ -85,5 +85,6 @@ namespace Novu
         public PatchPreferenceChannelsDto()
         {
         }
+
     }
 }

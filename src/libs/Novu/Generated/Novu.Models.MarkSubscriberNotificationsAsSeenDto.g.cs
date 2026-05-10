@@ -74,5 +74,6 @@ namespace Novu
         public MarkSubscriberNotificationsAsSeenDto()
         {
         }
+
     }
 }

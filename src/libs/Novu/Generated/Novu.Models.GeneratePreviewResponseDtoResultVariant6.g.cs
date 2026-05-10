@@ -58,5 +58,6 @@ namespace Novu
         public GeneratePreviewResponseDtoResultVariant6()
         {
         }
+
     }
 }

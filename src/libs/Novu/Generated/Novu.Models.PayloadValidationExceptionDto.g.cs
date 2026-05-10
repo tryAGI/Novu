@@ -164,5 +164,6 @@ namespace Novu
         public PayloadValidationExceptionDto()
         {
         }
+
     }
 }

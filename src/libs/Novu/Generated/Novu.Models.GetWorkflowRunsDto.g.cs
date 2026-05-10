@@ -246,5 +246,6 @@ namespace Novu
         public GetWorkflowRunsDto()
         {
         }
+
     }
 }

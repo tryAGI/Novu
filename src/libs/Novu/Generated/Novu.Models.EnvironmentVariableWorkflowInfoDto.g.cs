@@ -60,5 +60,6 @@ namespace Novu
         public EnvironmentVariableWorkflowInfoDto()
         {
         }
+
     }
 }

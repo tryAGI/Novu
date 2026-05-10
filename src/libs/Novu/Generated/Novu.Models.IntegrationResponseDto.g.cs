@@ -206,5 +206,6 @@ namespace Novu
         public IntegrationResponseDto()
         {
         }
+
     }
 }

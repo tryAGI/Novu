@@ -47,6 +47,13 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public global::Novu.InAppStepResponseDto PickInApp() => IsInApp
+            ? InApp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InApp' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.EmailStepResponseDto? Email { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Novu
             value = Email;
             return IsEmail;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.EmailStepResponseDto PickEmail() => IsEmail
+            ? Email!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Email' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public global::Novu.SmsStepResponseDto PickSms() => IsSms
+            ? Sms!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sms' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.PushStepResponseDto? Push { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Novu
             value = Push;
             return IsPush;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.PushStepResponseDto PickPush() => IsPush
+            ? Push!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Push' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,6 +195,13 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public global::Novu.ChatStepResponseDto PickChat() => IsChat
+            ? Chat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.DelayStepResponseDto? Delay { get; init; }
 #else
@@ -193,6 +228,13 @@ namespace Novu
             value = Delay;
             return IsDelay;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.DelayStepResponseDto PickDelay() => IsDelay
+            ? Delay!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Delay' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -227,6 +269,13 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public global::Novu.DigestStepResponseDto PickDigest() => IsDigest
+            ? Digest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Digest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CustomStepResponseDto? Custom { get; init; }
 #else
@@ -253,6 +302,13 @@ namespace Novu
             value = Custom;
             return IsCustom;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.CustomStepResponseDto PickCustom() => IsCustom
+            ? Custom!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -287,6 +343,13 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public global::Novu.ThrottleStepResponseDto PickThrottle() => IsThrottle
+            ? Throttle!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Throttle' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.HttpRequestStepResponseDto? HttpRequest { get; init; }
 #else
@@ -313,6 +376,13 @@ namespace Novu
             value = HttpRequest;
             return IsHttpRequest;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.HttpRequestStepResponseDto PickHttpRequest() => IsHttpRequest
+            ? HttpRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HttpRequest' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
