@@ -180,6 +180,8 @@ namespace Novu
                     type: type!,
                     request: request);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

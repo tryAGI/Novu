@@ -177,6 +177,8 @@ namespace Novu
                     actionType: actionType!,
                     contextKeys: contextKeys);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

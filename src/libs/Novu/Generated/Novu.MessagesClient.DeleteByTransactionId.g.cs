@@ -154,6 +154,8 @@ namespace Novu
                     channel: channel,
                     transactionId: transactionId!);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

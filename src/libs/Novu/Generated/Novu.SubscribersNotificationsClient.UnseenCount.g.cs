@@ -177,6 +177,8 @@ namespace Novu
                     seen: seen,
                     limit: limit);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -294,6 +294,8 @@ namespace Novu
                     after: after,
                     before: before);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

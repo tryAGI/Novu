@@ -275,6 +275,8 @@ namespace Novu
                     createdLte: createdLte,
                     contextKeys: contextKeys);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

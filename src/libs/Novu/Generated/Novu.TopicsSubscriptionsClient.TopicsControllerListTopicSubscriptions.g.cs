@@ -231,6 +231,8 @@ namespace Novu
                     subscriberId: subscriberId,
                     contextKeys: contextKeys);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

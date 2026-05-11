@@ -151,6 +151,8 @@ namespace Novu
                     subscriberId: subscriberId!,
                     providerId: providerId!);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

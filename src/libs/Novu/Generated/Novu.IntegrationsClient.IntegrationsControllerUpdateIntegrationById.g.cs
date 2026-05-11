@@ -169,6 +169,8 @@ namespace Novu
                     integrationId: integrationId!,
                     request: request);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
