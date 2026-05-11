@@ -190,6 +190,8 @@ namespace Novu
                     orderBy: orderBy,
                     query: query);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

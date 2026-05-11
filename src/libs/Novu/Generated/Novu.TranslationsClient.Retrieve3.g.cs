@@ -181,6 +181,8 @@ namespace Novu
                     resourceId: resourceId!,
                     locale: locale!);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

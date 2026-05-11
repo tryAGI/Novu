@@ -224,6 +224,8 @@ namespace Novu
                     key: key,
                     name: name);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

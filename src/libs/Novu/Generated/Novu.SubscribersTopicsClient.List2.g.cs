@@ -231,6 +231,8 @@ namespace Novu
                     key: key,
                     contextKeys: contextKeys);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -219,6 +219,8 @@ namespace Novu
                     includeCursor: includeCursor,
                     agentId: agentId);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

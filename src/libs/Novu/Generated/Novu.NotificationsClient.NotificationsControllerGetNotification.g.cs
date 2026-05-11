@@ -151,6 +151,8 @@ namespace Novu
                     httpRequestMessage: __httpRequest,
                     notificationId: notificationId!);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

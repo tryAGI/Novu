@@ -167,6 +167,8 @@ namespace Novu
                     targetEnvironmentId: targetEnvironmentId!,
                     request: request);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

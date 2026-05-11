@@ -160,6 +160,8 @@ namespace Novu
                     subscriberId: subscriberId!,
                     request: request);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
