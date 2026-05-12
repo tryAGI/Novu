@@ -48358,6 +48358,13 @@
               "Idempotency-Replay": {
                 "$ref": "#/components/headers/Idempotency-Replay"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDto"
+                }
+              }
             }
           },
           "401": {
@@ -49787,6 +49794,13 @@
               },
               "Idempotency-Replay": {
                 "$ref": "#/components/headers/Idempotency-Replay"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorDto"
+                }
               }
             }
           },
