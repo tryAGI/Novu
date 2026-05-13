@@ -62969,7 +62969,8 @@
           },
           "subscriberId": {
             "type": "string",
-            "description": "The internal identifier you used to create this subscriber, usually correlates to the id the user in your systems"
+            "description": "The internal identifier you used to create this subscriber, usually correlates to the id the user in your systems",
+            "minLength": 1
           },
           "channels": {
             "description": "An optional array of subscriber channels.",
@@ -63008,7 +63009,8 @@
         "type": "object",
         "properties": {
           "topicKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "type": {
             "$ref": "#/components/schemas/TriggerRecipientsTypeEnum"
@@ -63214,6 +63216,7 @@
                     },
                     {
                       "type": "string",
+                      "minLength": 1,
                       "description": "Unique identifier of a subscriber in your systems",
                       "example": "SUBSCRIBER_ID"
                     }
@@ -63222,6 +63225,7 @@
               },
               {
                 "type": "string",
+                "minLength": 1,
                 "description": "Unique identifier of a subscriber in your systems",
                 "example": "SUBSCRIBER_ID"
               },
@@ -63827,7 +63831,8 @@
           "rocket-chat",
           "whatsapp-business",
           "chat-webhook",
-          "novu-slack"
+          "novu-slack",
+          "anthropic"
         ]
       },
       "ExecutionDetailsSourceEnum": {
@@ -65795,7 +65800,7 @@
           },
           "channel": {
             "type": "string",
-            "description": "The channel type for the integration, which defines how it communicates (e.g., email, SMS).",
+            "description": "The channel type for the integration, which defines how it communicates (e.g., email, SMS). Not set for agent-kind integrations.",
             "enum": [
               "in_app",
               "email",
@@ -65804,8 +65809,16 @@
               "push"
             ]
           },
+          "kind": {
+            "type": "string",
+            "description": "Distinguishes delivery integrations from agent-runtime integrations. Defaults to \"delivery\". Agent integrations do not have a channel.",
+            "enum": [
+              "delivery",
+              "agent"
+            ]
+          },
           "credentials": {
-            "description": "The credentials required for the integration to function, including API keys and other sensitive information.",
+            "description": "The decrypted credentials required for the integration to function (e.g. provider API keys, signing secrets). Only returned to dashboard/session-token callers; API-key authenticated callers receive the integration metadata without this field to avoid amplifying API-key leaks into provider-credential leaks.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/CredentialsDto"
@@ -65854,8 +65867,6 @@
           "name",
           "identifier",
           "providerId",
-          "channel",
-          "credentials",
           "active",
           "deleted",
           "primary"
@@ -65890,7 +65901,15 @@
               "push"
             ],
             "type": "string",
-            "description": "The channel type for the integration"
+            "description": "The channel type for the integration. Not required for agent-kind integrations."
+          },
+          "kind": {
+            "enum": [
+              "delivery",
+              "agent"
+            ],
+            "type": "string",
+            "description": "Distinguishes delivery integrations from agent-runtime integrations. Defaults to \"delivery\". Agent integrations do not require a channel."
           },
           "credentials": {
             "description": "The credentials for the integration",
@@ -65919,11 +65938,7 @@
             "type": "object",
             "description": "Configurations for the integration"
           }
-        },
-        "required": [
-          "providerId",
-          "channel"
-        ]
+        }
       },
       "UpdateIntegrationRequestDto": {
         "type": "object",
@@ -75246,7 +75261,8 @@
               "rocket-chat",
               "whatsapp-business",
               "chat-webhook",
-              "novu-slack"
+              "novu-slack",
+              "anthropic"
             ],
             "example": "slack"
           },
@@ -76104,7 +76120,8 @@
               "rocket-chat",
               "whatsapp-business",
               "chat-webhook",
-              "novu-slack"
+              "novu-slack",
+              "anthropic"
             ],
             "example": "slack"
           },
