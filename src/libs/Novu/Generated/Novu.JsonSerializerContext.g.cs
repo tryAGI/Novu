@@ -189,9 +189,17 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.IntegrationResponseDtoChannelNullableJsonConverter),
 
+            typeof(global::Novu.JsonConverters.IntegrationResponseDtoKindJsonConverter),
+
+            typeof(global::Novu.JsonConverters.IntegrationResponseDtoKindNullableJsonConverter),
+
             typeof(global::Novu.JsonConverters.CreateIntegrationRequestDtoChannelJsonConverter),
 
             typeof(global::Novu.JsonConverters.CreateIntegrationRequestDtoChannelNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateIntegrationRequestDtoKindJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateIntegrationRequestDtoKindNullableJsonConverter),
 
             typeof(global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoModeJsonConverter),
 
@@ -988,9 +996,11 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ConfigurationsDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationResponseDtoChannel), TypeInfoPropertyName = "IntegrationResponseDtoChannel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationResponseDtoKind), TypeInfoPropertyName = "IntegrationResponseDtoKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateIntegrationRequestDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateIntegrationRequestDtoChannel), TypeInfoPropertyName = "CreateIntegrationRequestDtoChannel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateIntegrationRequestDtoKind), TypeInfoPropertyName = "CreateIntegrationRequestDtoKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateIntegrationRequestDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AutoConfigureIntegrationResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateChatOAuthUrlResponseDto))]
@@ -1311,8 +1321,6 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferencesRequestDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWorkflowDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.StepsItem2>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepsItem2), TypeInfoPropertyName = "StepsItem22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWorkflowDtoStepDiscriminator))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1500,9 +1508,17 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.IntegrationResponseDtoChannelNullableJsonConverter),
 
+            typeof(global::Novu.JsonConverters.IntegrationResponseDtoKindJsonConverter),
+
+            typeof(global::Novu.JsonConverters.IntegrationResponseDtoKindNullableJsonConverter),
+
             typeof(global::Novu.JsonConverters.CreateIntegrationRequestDtoChannelJsonConverter),
 
             typeof(global::Novu.JsonConverters.CreateIntegrationRequestDtoChannelNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateIntegrationRequestDtoKindJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateIntegrationRequestDtoKindNullableJsonConverter),
 
             typeof(global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoModeJsonConverter),
 
@@ -2128,6 +2144,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant9_d819718aa0a1ad4d")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>?), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant9_c21c4294b0aad1ee")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepsItem2), TypeInfoPropertyName = "StepsItem22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWorkflowDtoStepDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWorkflowDtoStepDiscriminatorType), TypeInfoPropertyName = "CreateWorkflowDtoStepDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SyncWorkflowDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateWorkflowDto))]
@@ -2668,8 +2686,12 @@ namespace Novu
             options.Converters.Add(new global::Novu.JsonConverters.DomainConnectStatusResponseDtoReasonCodeNullableJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.IntegrationResponseDtoChannelJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.IntegrationResponseDtoChannelNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.IntegrationResponseDtoKindJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.IntegrationResponseDtoKindNullableJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.CreateIntegrationRequestDtoChannelJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.CreateIntegrationRequestDtoChannelNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateIntegrationRequestDtoKindJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateIntegrationRequestDtoKindNullableJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoModeJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoModeNullableJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.GenerateChatOauthUrlRequestDtoConnectionModeJsonConverter());

@@ -50,19 +50,24 @@ namespace Novu
         public required string ProviderId { get; set; }
 
         /// <summary>
-        /// The channel type for the integration, which defines how it communicates (e.g., email, SMS).
+        /// The channel type for the integration, which defines how it communicates (e.g., email, SMS). Not set for agent-kind integrations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("channel")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.IntegrationResponseDtoChannelJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Novu.IntegrationResponseDtoChannel Channel { get; set; }
+        public global::Novu.IntegrationResponseDtoChannel? Channel { get; set; }
 
         /// <summary>
-        /// The credentials required for the integration to function, including API keys and other sensitive information.
+        /// Distinguishes delivery integrations from agent-runtime integrations. Defaults to "delivery". Agent integrations do not have a channel.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("kind")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.IntegrationResponseDtoKindJsonConverter))]
+        public global::Novu.IntegrationResponseDtoKind? Kind { get; set; }
+
+        /// <summary>
+        /// The decrypted credentials required for the integration to function (e.g. provider API keys, signing secrets). Only returned to dashboard/session-token callers; API-key authenticated callers receive the integration metadata without this field to avoid amplifying API-key leaks into provider-credential leaks.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credentials")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Novu.CredentialsDto Credentials { get; set; }
+        public global::Novu.CredentialsDto? Credentials { get; set; }
 
         /// <summary>
         /// The configurations required for enabling the additional configurations of the integration.
@@ -133,12 +138,6 @@ namespace Novu
         /// <param name="providerId">
         /// The identifier for the provider of the integration (e.g., "mailgun", "twilio").
         /// </param>
-        /// <param name="channel">
-        /// The channel type for the integration, which defines how it communicates (e.g., email, SMS).
-        /// </param>
-        /// <param name="credentials">
-        /// The credentials required for the integration to function, including API keys and other sensitive information.
-        /// </param>
         /// <param name="active">
         /// Indicates whether the integration is currently active. An active integration will process events and messages.
         /// </param>
@@ -150,6 +149,15 @@ namespace Novu
         /// </param>
         /// <param name="id">
         /// The unique identifier of the integration record in the database. This is automatically generated.
+        /// </param>
+        /// <param name="channel">
+        /// The channel type for the integration, which defines how it communicates (e.g., email, SMS). Not set for agent-kind integrations.
+        /// </param>
+        /// <param name="kind">
+        /// Distinguishes delivery integrations from agent-runtime integrations. Defaults to "delivery". Agent integrations do not have a channel.
+        /// </param>
+        /// <param name="credentials">
+        /// The decrypted credentials required for the integration to function (e.g. provider API keys, signing secrets). Only returned to dashboard/session-token callers; API-key authenticated callers receive the integration metadata without this field to avoid amplifying API-key leaks into provider-credential leaks.
         /// </param>
         /// <param name="configurations">
         /// The configurations required for enabling the additional configurations of the integration.
@@ -172,12 +180,13 @@ namespace Novu
             string name,
             string identifier,
             string providerId,
-            global::Novu.IntegrationResponseDtoChannel channel,
-            global::Novu.CredentialsDto credentials,
             bool active,
             bool deleted,
             bool primary,
             string? id,
+            global::Novu.IntegrationResponseDtoChannel? channel,
+            global::Novu.IntegrationResponseDtoKind? kind,
+            global::Novu.CredentialsDto? credentials,
             global::Novu.ConfigurationsDto? configurations,
             string? deletedAt,
             string? deletedBy,
@@ -190,7 +199,8 @@ namespace Novu
             this.Identifier = identifier ?? throw new global::System.ArgumentNullException(nameof(identifier));
             this.ProviderId = providerId ?? throw new global::System.ArgumentNullException(nameof(providerId));
             this.Channel = channel;
-            this.Credentials = credentials ?? throw new global::System.ArgumentNullException(nameof(credentials));
+            this.Kind = kind;
+            this.Credentials = credentials;
             this.Configurations = configurations;
             this.Active = active;
             this.Deleted = deleted;

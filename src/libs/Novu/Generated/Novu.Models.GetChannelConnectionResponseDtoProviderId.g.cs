@@ -20,6 +20,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Anthropic,
+        /// <summary>
+        /// 
+        /// </summary>
         Apns,
         /// <summary>
         /// 
@@ -345,6 +349,7 @@ namespace Novu
             {
                 GetChannelConnectionResponseDtoProviderId.AfricasTalking => "africas-talking",
                 GetChannelConnectionResponseDtoProviderId.AfroMessage => "afro-message",
+                GetChannelConnectionResponseDtoProviderId.Anthropic => "anthropic",
                 GetChannelConnectionResponseDtoProviderId.Apns => "apns",
                 GetChannelConnectionResponseDtoProviderId.Appio => "appio",
                 GetChannelConnectionResponseDtoProviderId.AzureSms => "azure-sms",
@@ -435,6 +440,7 @@ namespace Novu
             {
                 "africas-talking" => GetChannelConnectionResponseDtoProviderId.AfricasTalking,
                 "afro-message" => GetChannelConnectionResponseDtoProviderId.AfroMessage,
+                "anthropic" => GetChannelConnectionResponseDtoProviderId.Anthropic,
                 "apns" => GetChannelConnectionResponseDtoProviderId.Apns,
                 "appio" => GetChannelConnectionResponseDtoProviderId.Appio,
                 "azure-sms" => GetChannelConnectionResponseDtoProviderId.AzureSms,

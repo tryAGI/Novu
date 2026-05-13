@@ -19,6 +19,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Anthropic,
+        /// <summary>
+        /// 
+        /// </summary>
         Apns,
         /// <summary>
         /// 
@@ -344,6 +348,7 @@ namespace Novu
             {
                 ProvidersIdEnum.AfricasTalking => "africas-talking",
                 ProvidersIdEnum.AfroMessage => "afro-message",
+                ProvidersIdEnum.Anthropic => "anthropic",
                 ProvidersIdEnum.Apns => "apns",
                 ProvidersIdEnum.Appio => "appio",
                 ProvidersIdEnum.AzureSms => "azure-sms",
@@ -434,6 +439,7 @@ namespace Novu
             {
                 "africas-talking" => ProvidersIdEnum.AfricasTalking,
                 "afro-message" => ProvidersIdEnum.AfroMessage,
+                "anthropic" => ProvidersIdEnum.Anthropic,
                 "apns" => ProvidersIdEnum.Apns,
                 "appio" => ProvidersIdEnum.Appio,
                 "azure-sms" => ProvidersIdEnum.AzureSms,
