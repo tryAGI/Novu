@@ -432,5 +432,6 @@ namespace Novu
         public MessageResponseDto()
         {
         }
+
     }
 }

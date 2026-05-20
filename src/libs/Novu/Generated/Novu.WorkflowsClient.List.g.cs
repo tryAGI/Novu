@@ -210,6 +210,8 @@ namespace Novu
                     tags: tags,
                     status: status);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

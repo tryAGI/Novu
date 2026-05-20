@@ -156,6 +156,8 @@ namespace Novu
                     topicKey: topicKey!,
                     identifier: identifier!);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

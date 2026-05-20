@@ -100,5 +100,6 @@ namespace Novu
         public WebhookInboundEmailMailDto()
         {
         }
+
     }
 }

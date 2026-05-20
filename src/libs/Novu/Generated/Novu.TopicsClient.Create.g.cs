@@ -170,6 +170,8 @@ namespace Novu
                     failIfExists: failIfExists,
                     request: request);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

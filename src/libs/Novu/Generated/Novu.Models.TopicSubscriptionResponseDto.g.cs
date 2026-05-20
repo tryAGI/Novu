@@ -113,5 +113,6 @@ namespace Novu
         public TopicSubscriptionResponseDto()
         {
         }
+
     }
 }

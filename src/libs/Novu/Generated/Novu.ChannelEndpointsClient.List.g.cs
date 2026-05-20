@@ -280,6 +280,8 @@ namespace Novu
                     integrationIdentifier: integrationIdentifier,
                     connectionIdentifier: connectionIdentifier);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

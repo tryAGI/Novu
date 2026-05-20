@@ -58,7 +58,7 @@ namespace Novu
 
         /// <summary>
         /// Update a variable<br/>
-        /// Updates an existing environment variable. Providing values replaces all existing per-environment values.
+        /// Updates an existing environment variable. Providing `values` merges them into the existing per-environment values by `_environmentId`; envs not present in the request keep their stored value. Submitting the masked secret placeholder (the value returned by read endpoints for secret variables) as a real value is rejected.
         /// </summary>
         /// <param name="variableKey"></param>
         /// <param name="request"></param>
@@ -84,7 +84,7 @@ namespace Novu
         }
         /// <summary>
         /// Update a variable<br/>
-        /// Updates an existing environment variable. Providing values replaces all existing per-environment values.
+        /// Updates an existing environment variable. Providing `values` merges them into the existing per-environment values by `_environmentId`; envs not present in the request keep their stored value. Submitting the masked secret placeholder (the value returned by read endpoints for secret variables) as a real value is rejected.
         /// </summary>
         /// <param name="variableKey"></param>
         /// <param name="request"></param>
@@ -166,6 +166,8 @@ namespace Novu
                     httpRequestMessage: __httpRequest,
                     variableKey: variableKey!,
                     request: request);
+
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }
@@ -344,7 +346,7 @@ namespace Novu
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad Request
+                            // A submitted value equals the public secret mask placeholder, or no fields were provided to update.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -935,7 +937,7 @@ namespace Novu
         }
         /// <summary>
         /// Update a variable<br/>
-        /// Updates an existing environment variable. Providing values replaces all existing per-environment values.
+        /// Updates an existing environment variable. Providing `values` merges them into the existing per-environment values by `_environmentId`; envs not present in the request keep their stored value. Submitting the masked secret placeholder (the value returned by read endpoints for secret variables) as a real value is rejected.
         /// </summary>
         /// <param name="variableKey"></param>
         /// <param name="key">

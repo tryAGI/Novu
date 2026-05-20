@@ -185,5 +185,6 @@ namespace Novu
         public EmailStepResponseDto()
         {
         }
+
     }
 }

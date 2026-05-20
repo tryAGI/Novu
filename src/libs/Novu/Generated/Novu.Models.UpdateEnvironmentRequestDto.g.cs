@@ -84,5 +84,6 @@ namespace Novu
         public UpdateEnvironmentRequestDto()
         {
         }
+
     }
 }

@@ -52,5 +52,6 @@ namespace Novu
         public ActionDto()
         {
         }
+
     }
 }

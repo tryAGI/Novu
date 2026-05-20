@@ -242,6 +242,8 @@ namespace Novu
                     phone: phone,
                     subscriberId: subscriberId);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

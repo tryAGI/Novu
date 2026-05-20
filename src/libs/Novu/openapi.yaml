@@ -48335,7 +48335,7 @@
             }
           },
           "400": {
-            "description": "Bad Request",
+            "description": "A submitted value equals the public secret mask placeholder, which is reserved.",
             "headers": {
               "Content-Type": {
                 "$ref": "#/components/headers/Content-Type"
@@ -49710,7 +49710,7 @@
       "patch": {
         "operationId": "EnvironmentVariablesController_updateEnvironmentVariable",
         "summary": "Update a variable",
-        "description": "Updates an existing environment variable. Providing values replaces all existing per-environment values.",
+        "description": "Updates an existing environment variable. Providing `values` merges them into the existing per-environment values by `_environmentId`; envs not present in the request keep their stored value. Submitting the masked secret placeholder (the value returned by read endpoints for secret variables) as a real value is rejected.",
         "parameters": [
           {
             "name": "variableKey",
@@ -49772,7 +49772,7 @@
             }
           },
           "400": {
-            "description": "Bad Request",
+            "description": "A submitted value equals the public secret mask placeholder, or no fields were provided to update.",
             "headers": {
               "Content-Type": {
                 "$ref": "#/components/headers/Content-Type"
@@ -62969,7 +62969,8 @@
           },
           "subscriberId": {
             "type": "string",
-            "description": "The internal identifier you used to create this subscriber, usually correlates to the id the user in your systems"
+            "description": "The internal identifier you used to create this subscriber, usually correlates to the id the user in your systems",
+            "minLength": 1
           },
           "channels": {
             "description": "An optional array of subscriber channels.",
@@ -63008,7 +63009,8 @@
         "type": "object",
         "properties": {
           "topicKey": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "type": {
             "$ref": "#/components/schemas/TriggerRecipientsTypeEnum"
@@ -63214,6 +63216,7 @@
                     },
                     {
                       "type": "string",
+                      "minLength": 1,
                       "description": "Unique identifier of a subscriber in your systems",
                       "example": "SUBSCRIBER_ID"
                     }
@@ -63222,6 +63225,7 @@
               },
               {
                 "type": "string",
+                "minLength": 1,
                 "description": "Unique identifier of a subscriber in your systems",
                 "example": "SUBSCRIBER_ID"
               },
@@ -63827,7 +63831,8 @@
           "rocket-chat",
           "whatsapp-business",
           "chat-webhook",
-          "novu-slack"
+          "novu-slack",
+          "anthropic"
         ]
       },
       "ExecutionDetailsSourceEnum": {
@@ -65752,6 +65757,18 @@
           },
           "fromAddressOverride": {
             "type": "string"
+          },
+          "emailSlugPrefix": {
+            "type": "string",
+            "description": "Agent default shared inbox slug prefix used in `{emailSlugPrefix}-{agentId}@<shared-domain>`. Only meaningful on the NovuAgent email integration."
+          },
+          "externalEnvironmentId": {
+            "type": "string",
+            "description": "Claude Managed Agents: ID of the Anthropic environment tied to this integration. Hydrated by the API at integration provisioning time."
+          },
+          "externalWorkspaceId": {
+            "type": "string",
+            "description": "Claude Managed Agents: id of the Anthropic workspace used in console deep links. Defaults to `'default'` (the Default Workspace). Set this when the API key is scoped to a custom workspace (e.g. `wrkspc_…`)."
           }
         }
       },
@@ -65795,7 +65812,7 @@
           },
           "channel": {
             "type": "string",
-            "description": "The channel type for the integration, which defines how it communicates (e.g., email, SMS).",
+            "description": "The channel type for the integration, which defines how it communicates (e.g., email, SMS). Not set for agent-kind integrations.",
             "enum": [
               "in_app",
               "email",
@@ -65804,8 +65821,16 @@
               "push"
             ]
           },
+          "kind": {
+            "type": "string",
+            "description": "Distinguishes delivery integrations from agent-runtime integrations. Defaults to \"delivery\". Agent integrations do not have a channel.",
+            "enum": [
+              "delivery",
+              "agent"
+            ]
+          },
           "credentials": {
-            "description": "The credentials required for the integration to function, including API keys and other sensitive information.",
+            "description": "The decrypted credentials required for the integration to function (e.g. provider API keys, signing secrets). Only returned to dashboard/session-token callers; API-key authenticated callers receive the integration metadata without this field to avoid amplifying API-key leaks into provider-credential leaks.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/CredentialsDto"
@@ -65854,8 +65879,6 @@
           "name",
           "identifier",
           "providerId",
-          "channel",
-          "credentials",
           "active",
           "deleted",
           "primary"
@@ -65890,7 +65913,15 @@
               "push"
             ],
             "type": "string",
-            "description": "The channel type for the integration"
+            "description": "The channel type for the integration. Not required for agent-kind integrations."
+          },
+          "kind": {
+            "enum": [
+              "delivery",
+              "agent"
+            ],
+            "type": "string",
+            "description": "Distinguishes delivery integrations from agent-runtime integrations. Defaults to \"delivery\". Agent integrations do not require a channel."
           },
           "credentials": {
             "description": "The credentials for the integration",
@@ -65919,11 +65950,7 @@
             "type": "object",
             "description": "Configurations for the integration"
           }
-        },
-        "required": [
-          "providerId",
-          "channel"
-        ]
+        }
       },
       "UpdateIntegrationRequestDto": {
         "type": "object",
@@ -75246,7 +75273,8 @@
               "rocket-chat",
               "whatsapp-business",
               "chat-webhook",
-              "novu-slack"
+              "novu-slack",
+              "anthropic"
             ],
             "example": "slack"
           },
@@ -76104,7 +76132,8 @@
               "rocket-chat",
               "whatsapp-business",
               "chat-webhook",
-              "novu-slack"
+              "novu-slack",
+              "anthropic"
             ],
             "example": "slack"
           },

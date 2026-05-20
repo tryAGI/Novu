@@ -112,5 +112,6 @@ namespace Novu
         public DigestControlDto()
         {
         }
+
     }
 }

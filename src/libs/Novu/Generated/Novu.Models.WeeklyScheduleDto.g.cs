@@ -128,5 +128,6 @@ namespace Novu
         public WeeklyScheduleDto()
         {
         }
+
     }
 }

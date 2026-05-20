@@ -91,5 +91,6 @@ namespace Novu
         public SyncResultDto()
         {
         }
+
     }
 }

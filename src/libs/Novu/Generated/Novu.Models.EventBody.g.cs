@@ -99,5 +99,6 @@ namespace Novu
         public EventBody()
         {
         }
+
     }
 }

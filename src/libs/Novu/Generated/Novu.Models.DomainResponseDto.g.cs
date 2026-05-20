@@ -140,5 +140,6 @@ namespace Novu
         public DomainResponseDto()
         {
         }
+
     }
 }

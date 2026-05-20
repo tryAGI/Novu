@@ -160,6 +160,8 @@ namespace Novu
                     httpRequestMessage: __httpRequest,
                     request: request);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -949,7 +951,10 @@ namespace Novu
         /// The provider ID for the integration
         /// </param>
         /// <param name="channel">
-        /// The channel type for the integration
+        /// The channel type for the integration. Not required for agent-kind integrations.
+        /// </param>
+        /// <param name="kind">
+        /// Distinguishes delivery integrations from agent-runtime integrations. Defaults to "delivery". Agent integrations do not require a channel.
         /// </param>
         /// <param name="credentials">
         /// The credentials for the integration
@@ -970,11 +975,12 @@ namespace Novu
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Novu.IntegrationsControllerCreateIntegrationResponse> IntegrationsControllerCreateIntegrationAsync(
-            string providerId,
-            global::Novu.CreateIntegrationRequestDtoChannel channel,
             string? name = default,
             string? identifier = default,
             global::System.Guid? environmentId = default,
+            string? providerId = default,
+            global::Novu.CreateIntegrationRequestDtoChannel? channel = default,
+            global::Novu.CreateIntegrationRequestDtoKind? kind = default,
             global::Novu.CredentialsDto? credentials = default,
             bool? active = default,
             bool? check = default,
@@ -990,6 +996,7 @@ namespace Novu
                 EnvironmentId = environmentId,
                 ProviderId = providerId,
                 Channel = channel,
+                Kind = kind,
                 Credentials = credentials,
                 Active = active,
                 Check = check,

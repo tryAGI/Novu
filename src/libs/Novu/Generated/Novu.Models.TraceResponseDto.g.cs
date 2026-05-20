@@ -193,5 +193,6 @@ namespace Novu
         public TraceResponseDto()
         {
         }
+
     }
 }

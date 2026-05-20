@@ -203,6 +203,8 @@ namespace Novu
                     seen: seen,
                     payload: payload);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -71,5 +71,6 @@ namespace Novu
         public TestDomainRouteAgentResultDto()
         {
         }
+
     }
 }

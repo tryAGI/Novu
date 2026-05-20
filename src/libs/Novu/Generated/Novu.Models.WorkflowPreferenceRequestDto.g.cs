@@ -73,5 +73,6 @@ namespace Novu
         public WorkflowPreferenceRequestDto()
         {
         }
+
     }
 }

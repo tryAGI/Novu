@@ -55,5 +55,6 @@ namespace Novu
         public LookBackWindowDto()
         {
         }
+
     }
 }

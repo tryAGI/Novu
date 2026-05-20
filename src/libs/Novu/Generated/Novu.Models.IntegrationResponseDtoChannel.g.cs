@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// The channel type for the integration, which defines how it communicates (e.g., email, SMS).
+    /// The channel type for the integration, which defines how it communicates (e.g., email, SMS). Not set for agent-kind integrations.
     /// </summary>
     public enum IntegrationResponseDtoChannel
     {

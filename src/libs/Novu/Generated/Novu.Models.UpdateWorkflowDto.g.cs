@@ -172,5 +172,6 @@ namespace Novu
         public UpdateWorkflowDto()
         {
         }
+
     }
 }

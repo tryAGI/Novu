@@ -307,5 +307,6 @@ namespace Novu
         public InboxNotificationDto()
         {
         }
+
     }
 }

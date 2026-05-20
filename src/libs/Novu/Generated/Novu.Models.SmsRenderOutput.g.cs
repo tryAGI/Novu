@@ -42,5 +42,6 @@ namespace Novu
         public SmsRenderOutput()
         {
         }
+
     }
 }

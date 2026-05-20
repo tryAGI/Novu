@@ -106,5 +106,6 @@ namespace Novu
         public UpdateIntegrationRequestDto()
         {
         }
+
     }
 }

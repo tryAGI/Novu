@@ -179,5 +179,6 @@ namespace Novu
         public GetChannelEndpointResponseDto()
         {
         }
+
     }
 }

@@ -134,5 +134,6 @@ namespace Novu
         public InAppControlDto()
         {
         }
+
     }
 }

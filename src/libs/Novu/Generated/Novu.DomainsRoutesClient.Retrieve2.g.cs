@@ -156,6 +156,8 @@ namespace Novu
                     domain: domain!,
                     address: address!);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

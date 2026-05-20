@@ -159,6 +159,8 @@ namespace Novu
                     workflowId: workflowId!,
                     environmentId: environmentId);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -158,6 +158,8 @@ namespace Novu
                     httpRequestMessage: __httpRequest,
                     request: request);
 
+                global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -335,7 +337,7 @@ namespace Novu
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad Request
+                            // A submitted value equals the public secret mask placeholder, which is reserved.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;

@@ -139,5 +139,6 @@ namespace Novu
         public PatchSubscriberRequestDto()
         {
         }
+
     }
 }

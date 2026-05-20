@@ -301,5 +301,6 @@ namespace Novu
         public WorkflowResponseDto()
         {
         }
+
     }
 }

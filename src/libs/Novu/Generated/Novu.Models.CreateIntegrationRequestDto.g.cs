@@ -30,16 +30,21 @@ namespace Novu
         /// The provider ID for the integration
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerId")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ProviderId { get; set; }
+        public string? ProviderId { get; set; }
 
         /// <summary>
-        /// The channel type for the integration
+        /// The channel type for the integration. Not required for agent-kind integrations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("channel")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.CreateIntegrationRequestDtoChannelJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Novu.CreateIntegrationRequestDtoChannel Channel { get; set; }
+        public global::Novu.CreateIntegrationRequestDtoChannel? Channel { get; set; }
+
+        /// <summary>
+        /// Distinguishes delivery integrations from agent-runtime integrations. Defaults to "delivery". Agent integrations do not require a channel.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("kind")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.CreateIntegrationRequestDtoKindJsonConverter))]
+        public global::Novu.CreateIntegrationRequestDtoKind? Kind { get; set; }
 
         /// <summary>
         /// The credentials for the integration
@@ -80,12 +85,6 @@ namespace Novu
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateIntegrationRequestDto" /> class.
         /// </summary>
-        /// <param name="providerId">
-        /// The provider ID for the integration
-        /// </param>
-        /// <param name="channel">
-        /// The channel type for the integration
-        /// </param>
         /// <param name="name">
         /// The name of the integration
         /// </param>
@@ -94,6 +93,15 @@ namespace Novu
         /// </param>
         /// <param name="environmentId">
         /// The ID of the associated environment
+        /// </param>
+        /// <param name="providerId">
+        /// The provider ID for the integration
+        /// </param>
+        /// <param name="channel">
+        /// The channel type for the integration. Not required for agent-kind integrations.
+        /// </param>
+        /// <param name="kind">
+        /// Distinguishes delivery integrations from agent-runtime integrations. Defaults to "delivery". Agent integrations do not require a channel.
         /// </param>
         /// <param name="credentials">
         /// The credentials for the integration
@@ -114,11 +122,12 @@ namespace Novu
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateIntegrationRequestDto(
-            string providerId,
-            global::Novu.CreateIntegrationRequestDtoChannel channel,
             string? name,
             string? identifier,
             global::System.Guid? environmentId,
+            string? providerId,
+            global::Novu.CreateIntegrationRequestDtoChannel? channel,
+            global::Novu.CreateIntegrationRequestDtoKind? kind,
             global::Novu.CredentialsDto? credentials,
             bool? active,
             bool? check,
@@ -128,8 +137,9 @@ namespace Novu
             this.Name = name;
             this.Identifier = identifier;
             this.EnvironmentId = environmentId;
-            this.ProviderId = providerId ?? throw new global::System.ArgumentNullException(nameof(providerId));
+            this.ProviderId = providerId;
             this.Channel = channel;
+            this.Kind = kind;
             this.Credentials = credentials;
             this.Active = active;
             this.Check = check;
@@ -143,5 +153,6 @@ namespace Novu
         public CreateIntegrationRequestDto()
         {
         }
+
     }
 }

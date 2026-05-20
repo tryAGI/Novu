@@ -44,5 +44,6 @@ namespace Novu
         public DiffEnvironmentRequestDto()
         {
         }
+
     }
 }

@@ -144,5 +144,6 @@ namespace Novu
         public DigestMetadataDto()
         {
         }
+
     }
 }

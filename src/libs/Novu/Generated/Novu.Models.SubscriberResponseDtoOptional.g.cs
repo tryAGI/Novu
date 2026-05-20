@@ -182,5 +182,6 @@ namespace Novu
         public SubscriberResponseDtoOptional()
         {
         }
+
     }
 }

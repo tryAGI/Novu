@@ -309,6 +309,24 @@ namespace Novu
         public string? FromAddressOverride { get; set; }
 
         /// <summary>
+        /// Agent default shared inbox slug prefix used in `{emailSlugPrefix}-{agentId}@&lt;shared-domain&gt;`. Only meaningful on the NovuAgent email integration.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("emailSlugPrefix")]
+        public string? EmailSlugPrefix { get; set; }
+
+        /// <summary>
+        /// Claude Managed Agents: ID of the Anthropic environment tied to this integration. Hydrated by the API at integration provisioning time.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("externalEnvironmentId")]
+        public string? ExternalEnvironmentId { get; set; }
+
+        /// <summary>
+        /// Claude Managed Agents: id of the Anthropic workspace used in console deep links. Defaults to `'default'` (the Default Workspace). Set this when the API key is scoped to a custom workspace (e.g. `wrkspc_…`).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("externalWorkspaceId")]
+        public string? ExternalWorkspaceId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -367,6 +385,15 @@ namespace Novu
         /// <param name="outboundIntegrationId"></param>
         /// <param name="useFromAddressOverride"></param>
         /// <param name="fromAddressOverride"></param>
+        /// <param name="emailSlugPrefix">
+        /// Agent default shared inbox slug prefix used in `{emailSlugPrefix}-{agentId}@&lt;shared-domain&gt;`. Only meaningful on the NovuAgent email integration.
+        /// </param>
+        /// <param name="externalEnvironmentId">
+        /// Claude Managed Agents: ID of the Anthropic environment tied to this integration. Hydrated by the API at integration provisioning time.
+        /// </param>
+        /// <param name="externalWorkspaceId">
+        /// Claude Managed Agents: id of the Anthropic workspace used in console deep links. Defaults to `'default'` (the Default Workspace). Set this when the API key is scoped to a custom workspace (e.g. `wrkspc_…`).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -420,7 +447,10 @@ namespace Novu
             string? signingSecret,
             string? outboundIntegrationId,
             bool? useFromAddressOverride,
-            string? fromAddressOverride)
+            string? fromAddressOverride,
+            string? emailSlugPrefix,
+            string? externalEnvironmentId,
+            string? externalWorkspaceId)
         {
             this.ApiKey = apiKey;
             this.User = user;
@@ -472,6 +502,9 @@ namespace Novu
             this.OutboundIntegrationId = outboundIntegrationId;
             this.UseFromAddressOverride = useFromAddressOverride;
             this.FromAddressOverride = fromAddressOverride;
+            this.EmailSlugPrefix = emailSlugPrefix;
+            this.ExternalEnvironmentId = externalEnvironmentId;
+            this.ExternalWorkspaceId = externalWorkspaceId;
         }
 
         /// <summary>
@@ -480,5 +513,6 @@ namespace Novu
         public CredentialsDto()
         {
         }
+
     }
 }

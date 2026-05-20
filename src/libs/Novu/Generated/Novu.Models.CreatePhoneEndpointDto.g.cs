@@ -124,5 +124,6 @@ namespace Novu
         public CreatePhoneEndpointDto()
         {
         }
+
     }
 }

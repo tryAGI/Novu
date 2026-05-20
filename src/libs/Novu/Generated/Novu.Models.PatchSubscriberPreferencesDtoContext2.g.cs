@@ -57,5 +57,6 @@ namespace Novu
         public PatchSubscriberPreferencesDtoContext2()
         {
         }
+
     }
 }

@@ -218,5 +218,6 @@ namespace Novu
         public WorkflowListResponseDto()
         {
         }
+
     }
 }

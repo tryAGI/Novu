@@ -41,5 +41,6 @@ namespace Novu
         public CustomControlDto()
         {
         }
+
     }
 }

@@ -53,5 +53,6 @@ namespace Novu
         public CreateDomainDto()
         {
         }
+
     }
 }

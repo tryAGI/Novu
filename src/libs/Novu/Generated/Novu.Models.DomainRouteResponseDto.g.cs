@@ -133,5 +133,6 @@ namespace Novu
         public DomainRouteResponseDto()
         {
         }
+
     }
 }
