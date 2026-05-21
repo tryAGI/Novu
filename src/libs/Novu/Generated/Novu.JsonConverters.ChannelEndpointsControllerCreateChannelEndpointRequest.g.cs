@@ -63,6 +63,13 @@ namespace Novu.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateMsTeamsUserEndpointDto)}");
                 msTeamsUser = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Novu.CreateTelegramChatEndpointDto? telegramChat = default;
+            if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.TelegramChat)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateTelegramChatEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateTelegramChatEndpointDto> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateTelegramChatEndpointDto)}");
+                telegramChat = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequest(
                 discriminator?.Type,
@@ -76,7 +83,9 @@ namespace Novu.JsonConverters
 
                 msTeamsChannel,
 
-                msTeamsUser
+                msTeamsUser,
+
+                telegramChat
                 );
 
             return __value;
@@ -126,6 +135,12 @@ namespace Novu.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateMsTeamsUserEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateMsTeamsUserEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateMsTeamsUserEndpointDto).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.MsTeamsUser!, typeInfo);
+            }
+            else if (value.IsTelegramChat)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateTelegramChatEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateTelegramChatEndpointDto?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateTelegramChatEndpointDto).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TelegramChat!, typeInfo);
             }
         }
     }
