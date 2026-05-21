@@ -83,6 +83,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Telegram,
+        /// <summary>
+        /// 
+        /// </summary>
         WhatsappBusiness,
         /// <summary>
         /// 
@@ -120,6 +124,7 @@ namespace Novu
                 SubscriberChannelDtoProviderId.RocketChat => "rocket-chat",
                 SubscriberChannelDtoProviderId.Ryver => "ryver",
                 SubscriberChannelDtoProviderId.Slack => "slack",
+                SubscriberChannelDtoProviderId.Telegram => "telegram",
                 SubscriberChannelDtoProviderId.WhatsappBusiness => "whatsapp-business",
                 SubscriberChannelDtoProviderId.Zulip => "zulip",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -150,6 +155,7 @@ namespace Novu
                 "rocket-chat" => SubscriberChannelDtoProviderId.RocketChat,
                 "ryver" => SubscriberChannelDtoProviderId.Ryver,
                 "slack" => SubscriberChannelDtoProviderId.Slack,
+                "telegram" => SubscriberChannelDtoProviderId.Telegram,
                 "whatsapp-business" => SubscriberChannelDtoProviderId.WhatsappBusiness,
                 "zulip" => SubscriberChannelDtoProviderId.Zulip,
                 _ => null,

@@ -311,6 +311,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Telegram,
+        /// <summary>
+        /// 
+        /// </summary>
         Telnyx,
         /// <summary>
         /// 
@@ -421,6 +425,7 @@ namespace Novu
                 ProvidersIdEnum.Smsmode => "smsmode",
                 ProvidersIdEnum.Sns => "sns",
                 ProvidersIdEnum.Sparkpost => "sparkpost",
+                ProvidersIdEnum.Telegram => "telegram",
                 ProvidersIdEnum.Telnyx => "telnyx",
                 ProvidersIdEnum.Termii => "termii",
                 ProvidersIdEnum.Twilio => "twilio",
@@ -512,6 +517,7 @@ namespace Novu
                 "smsmode" => ProvidersIdEnum.Smsmode,
                 "sns" => ProvidersIdEnum.Sns,
                 "sparkpost" => ProvidersIdEnum.Sparkpost,
+                "telegram" => ProvidersIdEnum.Telegram,
                 "telnyx" => ProvidersIdEnum.Telnyx,
                 "termii" => ProvidersIdEnum.Termii,
                 "twilio" => ProvidersIdEnum.Twilio,

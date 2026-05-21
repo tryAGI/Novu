@@ -32,6 +32,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        TelegramChat,
+        /// <summary>
+        /// 
+        /// </summary>
         Webhook,
     }
 
@@ -52,6 +56,7 @@ namespace Novu
                 GetChannelEndpointResponseDtoType.Phone => "phone",
                 GetChannelEndpointResponseDtoType.SlackChannel => "slack_channel",
                 GetChannelEndpointResponseDtoType.SlackUser => "slack_user",
+                GetChannelEndpointResponseDtoType.TelegramChat => "telegram_chat",
                 GetChannelEndpointResponseDtoType.Webhook => "webhook",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -68,6 +73,7 @@ namespace Novu
                 "phone" => GetChannelEndpointResponseDtoType.Phone,
                 "slack_channel" => GetChannelEndpointResponseDtoType.SlackChannel,
                 "slack_user" => GetChannelEndpointResponseDtoType.SlackUser,
+                "telegram_chat" => GetChannelEndpointResponseDtoType.TelegramChat,
                 "webhook" => GetChannelEndpointResponseDtoType.Webhook,
                 _ => null,
             };
