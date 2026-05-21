@@ -83,6 +83,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Telegram,
+        /// <summary>
+        /// 
+        /// </summary>
         WhatsappBusiness,
         /// <summary>
         /// 
@@ -120,6 +124,7 @@ namespace Novu
                 ChatOrPushProviderEnum.RocketChat => "rocket-chat",
                 ChatOrPushProviderEnum.Ryver => "ryver",
                 ChatOrPushProviderEnum.Slack => "slack",
+                ChatOrPushProviderEnum.Telegram => "telegram",
                 ChatOrPushProviderEnum.WhatsappBusiness => "whatsapp-business",
                 ChatOrPushProviderEnum.Zulip => "zulip",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -150,6 +155,7 @@ namespace Novu
                 "rocket-chat" => ChatOrPushProviderEnum.RocketChat,
                 "ryver" => ChatOrPushProviderEnum.Ryver,
                 "slack" => ChatOrPushProviderEnum.Slack,
+                "telegram" => ChatOrPushProviderEnum.Telegram,
                 "whatsapp-business" => ChatOrPushProviderEnum.WhatsappBusiness,
                 "zulip" => ChatOrPushProviderEnum.Zulip,
                 _ => null,

@@ -312,6 +312,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Telegram,
+        /// <summary>
+        /// 
+        /// </summary>
         Telnyx,
         /// <summary>
         /// 
@@ -422,6 +426,7 @@ namespace Novu
                 GetChannelConnectionResponseDtoProviderId.Smsmode => "smsmode",
                 GetChannelConnectionResponseDtoProviderId.Sns => "sns",
                 GetChannelConnectionResponseDtoProviderId.Sparkpost => "sparkpost",
+                GetChannelConnectionResponseDtoProviderId.Telegram => "telegram",
                 GetChannelConnectionResponseDtoProviderId.Telnyx => "telnyx",
                 GetChannelConnectionResponseDtoProviderId.Termii => "termii",
                 GetChannelConnectionResponseDtoProviderId.Twilio => "twilio",
@@ -513,6 +518,7 @@ namespace Novu
                 "smsmode" => GetChannelConnectionResponseDtoProviderId.Smsmode,
                 "sns" => GetChannelConnectionResponseDtoProviderId.Sns,
                 "sparkpost" => GetChannelConnectionResponseDtoProviderId.Sparkpost,
+                "telegram" => GetChannelConnectionResponseDtoProviderId.Telegram,
                 "telnyx" => GetChannelConnectionResponseDtoProviderId.Telnyx,
                 "termii" => GetChannelConnectionResponseDtoProviderId.Termii,
                 "twilio" => GetChannelConnectionResponseDtoProviderId.Twilio,

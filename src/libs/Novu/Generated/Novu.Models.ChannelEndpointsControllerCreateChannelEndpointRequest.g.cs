@@ -235,6 +235,43 @@ namespace Novu
         public global::Novu.CreateMsTeamsUserEndpointDto PickMsTeamsUser() => IsMsTeamsUser
             ? MsTeamsUser!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MsTeamsUser' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Novu.CreateTelegramChatEndpointDto? TelegramChat { get; init; }
+#else
+        public global::Novu.CreateTelegramChatEndpointDto? TelegramChat { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TelegramChat))]
+#endif
+        public bool IsTelegramChat => TelegramChat != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTelegramChat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreateTelegramChatEndpointDto? value)
+        {
+            value = TelegramChat;
+            return IsTelegramChat;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.CreateTelegramChatEndpointDto PickTelegramChat() => IsTelegramChat
+            ? TelegramChat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TelegramChat' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -376,6 +413,29 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateTelegramChatEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateTelegramChatEndpointDto?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Novu.CreateTelegramChatEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.TelegramChat;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateTelegramChatEndpointDto? value)
+        {
+            TelegramChat = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromTelegramChat(global::Novu.CreateTelegramChatEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(
             global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType? type,
             global::Novu.CreateSlackChannelEndpointDto? slackChannel,
@@ -383,7 +443,8 @@ namespace Novu
             global::Novu.CreateWebhookEndpointDto? webhook,
             global::Novu.CreatePhoneEndpointDto? phone,
             global::Novu.CreateMsTeamsChannelEndpointDto? msTeamsChannel,
-            global::Novu.CreateMsTeamsUserEndpointDto? msTeamsUser
+            global::Novu.CreateMsTeamsUserEndpointDto? msTeamsUser,
+            global::Novu.CreateTelegramChatEndpointDto? telegramChat
             )
         {
             Type = type;
@@ -394,12 +455,14 @@ namespace Novu
             Phone = phone;
             MsTeamsChannel = msTeamsChannel;
             MsTeamsUser = msTeamsUser;
+            TelegramChat = telegramChat;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            TelegramChat as object ??
             MsTeamsUser as object ??
             MsTeamsChannel as object ??
             Phone as object ??
@@ -417,7 +480,8 @@ namespace Novu
             Webhook?.ToString() ??
             Phone?.ToString() ??
             MsTeamsChannel?.ToString() ??
-            MsTeamsUser?.ToString() 
+            MsTeamsUser?.ToString() ??
+            TelegramChat?.ToString() 
             ;
 
         /// <summary>
@@ -425,7 +489,7 @@ namespace Novu
         /// </summary>
         public bool Validate()
         {
-            return IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser || !IsSlackChannel && IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser || !IsSlackChannel && !IsSlackUser && IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && IsMsTeamsChannel && !IsMsTeamsUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && IsMsTeamsUser;
+            return IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat || !IsSlackChannel && IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat || !IsSlackChannel && !IsSlackUser && IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat || !IsSlackChannel && !IsSlackUser && !IsWebhook && IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && IsMsTeamsUser && !IsTelegramChat || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && IsTelegramChat;
         }
 
         /// <summary>
@@ -438,6 +502,7 @@ namespace Novu
             global::System.Func<global::Novu.CreatePhoneEndpointDto, TResult>? phone = null,
             global::System.Func<global::Novu.CreateMsTeamsChannelEndpointDto, TResult>? msTeamsChannel = null,
             global::System.Func<global::Novu.CreateMsTeamsUserEndpointDto, TResult>? msTeamsUser = null,
+            global::System.Func<global::Novu.CreateTelegramChatEndpointDto, TResult>? telegramChat = null,
             bool validate = true)
         {
             if (validate)
@@ -469,6 +534,10 @@ namespace Novu
             {
                 return msTeamsUser(MsTeamsUser!);
             }
+            else if (IsTelegramChat && telegramChat != null)
+            {
+                return telegramChat(TelegramChat!);
+            }
 
             return default(TResult);
         }
@@ -488,6 +557,8 @@ namespace Novu
             global::System.Action<global::Novu.CreateMsTeamsChannelEndpointDto>? msTeamsChannel = null,
 
             global::System.Action<global::Novu.CreateMsTeamsUserEndpointDto>? msTeamsUser = null,
+
+            global::System.Action<global::Novu.CreateTelegramChatEndpointDto>? telegramChat = null,
             bool validate = true)
         {
             if (validate)
@@ -518,6 +589,10 @@ namespace Novu
             else if (IsMsTeamsUser)
             {
                 msTeamsUser?.Invoke(MsTeamsUser!);
+            }
+            else if (IsTelegramChat)
+            {
+                telegramChat?.Invoke(TelegramChat!);
             }
         }
 
@@ -531,6 +606,7 @@ namespace Novu
             global::System.Action<global::Novu.CreatePhoneEndpointDto>? phone = null,
             global::System.Action<global::Novu.CreateMsTeamsChannelEndpointDto>? msTeamsChannel = null,
             global::System.Action<global::Novu.CreateMsTeamsUserEndpointDto>? msTeamsUser = null,
+            global::System.Action<global::Novu.CreateTelegramChatEndpointDto>? telegramChat = null,
             bool validate = true)
         {
             if (validate)
@@ -561,6 +637,10 @@ namespace Novu
             else if (IsMsTeamsUser)
             {
                 msTeamsUser?.Invoke(MsTeamsUser!);
+            }
+            else if (IsTelegramChat)
+            {
+                telegramChat?.Invoke(TelegramChat!);
             }
         }
 
@@ -583,6 +663,8 @@ namespace Novu
                 typeof(global::Novu.CreateMsTeamsChannelEndpointDto),
                 MsTeamsUser,
                 typeof(global::Novu.CreateMsTeamsUserEndpointDto),
+                TelegramChat,
+                typeof(global::Novu.CreateTelegramChatEndpointDto),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -604,7 +686,8 @@ namespace Novu
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreateWebhookEndpointDto?>.Default.Equals(Webhook, other.Webhook) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreatePhoneEndpointDto?>.Default.Equals(Phone, other.Phone) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreateMsTeamsChannelEndpointDto?>.Default.Equals(MsTeamsChannel, other.MsTeamsChannel) &&
-                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateMsTeamsUserEndpointDto?>.Default.Equals(MsTeamsUser, other.MsTeamsUser) 
+                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateMsTeamsUserEndpointDto?>.Default.Equals(MsTeamsUser, other.MsTeamsUser) &&
+                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateTelegramChatEndpointDto?>.Default.Equals(TelegramChat, other.TelegramChat) 
                 ;
         }
 
