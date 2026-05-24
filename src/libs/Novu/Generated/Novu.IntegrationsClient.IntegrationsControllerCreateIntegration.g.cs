@@ -364,18 +364,17 @@ namespace Novu
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::Novu.ApiException<global::Novu.ErrorDto>(
+
+                                throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unauthorized
                             if ((int)__response.StatusCode == 401)
@@ -402,18 +401,17 @@ namespace Novu
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::Novu.ApiException<global::Novu.ErrorDto>(
+
+                                throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Forbidden
                             if ((int)__response.StatusCode == 403)
@@ -440,18 +438,17 @@ namespace Novu
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::Novu.ApiException<global::Novu.ErrorDto>(
+
+                                throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Not Found
                             if ((int)__response.StatusCode == 404)
@@ -478,18 +475,17 @@ namespace Novu
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::Novu.ApiException<global::Novu.ErrorDto>(
+
+                                throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseObject = __value_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Method Not Allowed
                             if ((int)__response.StatusCode == 405)
@@ -516,18 +512,17 @@ namespace Novu
                                     __exception_405 = __ex;
                                 }
 
-                                throw new global::Novu.ApiException<global::Novu.ErrorDto>(
+
+                                throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_405 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_405,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_405,
-                                    ResponseObject = __value_405,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_405,
+                                    responseObject: __value_405,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Conflict
                             if ((int)__response.StatusCode == 409)
@@ -554,18 +549,17 @@ namespace Novu
                                     __exception_409 = __ex;
                                 }
 
-                                throw new global::Novu.ApiException<global::Novu.ErrorDto>(
+
+                                throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_409,
-                                    ResponseObject = __value_409,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Payload Too Large
                             if ((int)__response.StatusCode == 413)
@@ -592,18 +586,17 @@ namespace Novu
                                     __exception_413 = __ex;
                                 }
 
-                                throw new global::Novu.ApiException<global::Novu.ErrorDto>(
+
+                                throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_413,
-                                    ResponseObject = __value_413,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_413,
+                                    responseObject: __value_413,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // URI Too Long
                             if ((int)__response.StatusCode == 414)
@@ -630,18 +623,17 @@ namespace Novu
                                     __exception_414 = __ex;
                                 }
 
-                                throw new global::Novu.ApiException<global::Novu.ErrorDto>(
+
+                                throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_414 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_414,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_414,
-                                    ResponseObject = __value_414,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_414,
+                                    responseObject: __value_414,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unsupported Media Type
                             if ((int)__response.StatusCode == 415)
@@ -668,18 +660,17 @@ namespace Novu
                                     __exception_415 = __ex;
                                 }
 
-                                throw new global::Novu.ApiException<global::Novu.ErrorDto>(
+
+                                throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_415,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_415,
-                                    ResponseObject = __value_415,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_415,
+                                    responseObject: __value_415,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unprocessable Entity
                             if ((int)__response.StatusCode == 422)
@@ -706,18 +697,17 @@ namespace Novu
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::Novu.ApiException<global::Novu.ValidationErrorDto>(
+
+                                throw global::Novu.ApiException<global::Novu.ValidationErrorDto>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // The client has sent too many requests in a given amount of time. 
                             if ((int)__response.StatusCode == 429)
@@ -744,18 +734,17 @@ namespace Novu
                                     __exception_429 = __ex;
                                 }
 
-                                throw new global::Novu.ApiException<string>(
+
+                                throw global::Novu.ApiException<string>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_429,
-                                    ResponseObject = __value_429,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Internal Server Error
                             if ((int)__response.StatusCode == 500)
@@ -782,18 +771,17 @@ namespace Novu
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::Novu.ApiException<global::Novu.ErrorDto>(
+
+                                throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.
                             if ((int)__response.StatusCode == 503)
@@ -820,18 +808,17 @@ namespace Novu
                                     __exception_503 = __ex;
                                 }
 
-                                throw new global::Novu.ApiException<string>(
+
+                                throw global::Novu.ApiException<string>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_503,
-                                    ResponseObject = __value_503,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_503,
+                                    responseObject: __value_503,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -865,17 +852,15 @@ namespace Novu
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::Novu.ApiException(
+                                    throw global::Novu.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -912,17 +897,15 @@ namespace Novu
                                     {
                                     }
 
-                                    throw new global::Novu.ApiException(
+                                    throw global::Novu.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
