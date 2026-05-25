@@ -142,7 +142,7 @@ namespace Novu
             {
 
                             var __pathBuilder = new global::Novu.PathBuilder(
-                                path: $"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{actionType}/complete",
+                                path: $"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{(global::System.Uri.EscapeDataString(actionType.ToValueString()))}/complete",
                                 baseUri: ResolveBaseUri(
                                 servers: s_CompleteActionServers,
                                 defaultBaseUrl: "https://api.novu.co/"));
@@ -196,7 +196,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CompleteAction",
                                 methodName: "CompleteActionAsync",
-                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{actionType}/complete\"",
+                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{(global::System.Uri.EscapeDataString(actionType.ToValueString()))}/complete\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -230,7 +230,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CompleteAction",
                                 methodName: "CompleteActionAsync",
-                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{actionType}/complete\"",
+                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{(global::System.Uri.EscapeDataString(actionType.ToValueString()))}/complete\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -271,7 +271,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CompleteAction",
                                 methodName: "CompleteActionAsync",
-                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{actionType}/complete\"",
+                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{(global::System.Uri.EscapeDataString(actionType.ToValueString()))}/complete\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -319,7 +319,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CompleteAction",
                                 methodName: "CompleteActionAsync",
-                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{actionType}/complete\"",
+                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{(global::System.Uri.EscapeDataString(actionType.ToValueString()))}/complete\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -341,7 +341,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CompleteAction",
                                 methodName: "CompleteActionAsync",
-                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{actionType}/complete\"",
+                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{(global::System.Uri.EscapeDataString(actionType.ToValueString()))}/complete\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

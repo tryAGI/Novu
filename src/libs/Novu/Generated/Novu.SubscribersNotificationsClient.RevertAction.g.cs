@@ -142,7 +142,7 @@ namespace Novu
             {
 
                             var __pathBuilder = new global::Novu.PathBuilder(
-                                path: $"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{actionType}/revert",
+                                path: $"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{(global::System.Uri.EscapeDataString(actionType.ToValueString()))}/revert",
                                 baseUri: ResolveBaseUri(
                                 servers: s_RevertActionServers,
                                 defaultBaseUrl: "https://api.novu.co/"));
@@ -196,7 +196,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RevertAction",
                                 methodName: "RevertActionAsync",
-                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{actionType}/revert\"",
+                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{(global::System.Uri.EscapeDataString(actionType.ToValueString()))}/revert\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -230,7 +230,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RevertAction",
                                 methodName: "RevertActionAsync",
-                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{actionType}/revert\"",
+                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{(global::System.Uri.EscapeDataString(actionType.ToValueString()))}/revert\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -271,7 +271,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RevertAction",
                                 methodName: "RevertActionAsync",
-                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{actionType}/revert\"",
+                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{(global::System.Uri.EscapeDataString(actionType.ToValueString()))}/revert\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -319,7 +319,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RevertAction",
                                 methodName: "RevertActionAsync",
-                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{actionType}/revert\"",
+                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{(global::System.Uri.EscapeDataString(actionType.ToValueString()))}/revert\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -341,7 +341,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "RevertAction",
                                 methodName: "RevertActionAsync",
-                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{actionType}/revert\"",
+                                pathTemplate: "$\"/v2/subscribers/{subscriberId}/notifications/{notificationId}/actions/{(global::System.Uri.EscapeDataString(actionType.ToValueString()))}/revert\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
