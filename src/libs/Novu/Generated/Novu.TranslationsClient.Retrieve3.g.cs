@@ -150,7 +150,7 @@ namespace Novu
             {
 
                             var __pathBuilder = new global::Novu.PathBuilder(
-                                path: $"/v2/translations/{resourceType}/{resourceId}/{locale}",
+                                path: $"/v2/translations/{(global::System.Uri.EscapeDataString(resourceType.ToValueString()))}/{resourceId}/{locale}",
                                 baseUri: ResolveBaseUri(
                                 servers: s_Retrieve3Servers,
                                 defaultBaseUrl: "https://api.novu.co/"));
@@ -200,7 +200,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Retrieve3",
                                 methodName: "Retrieve3Async",
-                                pathTemplate: "$\"/v2/translations/{resourceType}/{resourceId}/{locale}\"",
+                                pathTemplate: "$\"/v2/translations/{(global::System.Uri.EscapeDataString(resourceType.ToValueString()))}/{resourceId}/{locale}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -234,7 +234,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Retrieve3",
                                 methodName: "Retrieve3Async",
-                                pathTemplate: "$\"/v2/translations/{resourceType}/{resourceId}/{locale}\"",
+                                pathTemplate: "$\"/v2/translations/{(global::System.Uri.EscapeDataString(resourceType.ToValueString()))}/{resourceId}/{locale}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -275,7 +275,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Retrieve3",
                                 methodName: "Retrieve3Async",
-                                pathTemplate: "$\"/v2/translations/{resourceType}/{resourceId}/{locale}\"",
+                                pathTemplate: "$\"/v2/translations/{(global::System.Uri.EscapeDataString(resourceType.ToValueString()))}/{resourceId}/{locale}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -323,7 +323,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Retrieve3",
                                 methodName: "Retrieve3Async",
-                                pathTemplate: "$\"/v2/translations/{resourceType}/{resourceId}/{locale}\"",
+                                pathTemplate: "$\"/v2/translations/{(global::System.Uri.EscapeDataString(resourceType.ToValueString()))}/{resourceId}/{locale}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -345,7 +345,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Retrieve3",
                                 methodName: "Retrieve3Async",
-                                pathTemplate: "$\"/v2/translations/{resourceType}/{resourceId}/{locale}\"",
+                                pathTemplate: "$\"/v2/translations/{(global::System.Uri.EscapeDataString(resourceType.ToValueString()))}/{resourceId}/{locale}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

@@ -142,7 +142,7 @@ namespace Novu
             {
 
                             var __pathBuilder = new global::Novu.PathBuilder(
-                                path: $"/v2/translations/group/{resourceType}/{resourceId}",
+                                path: $"/v2/translations/group/{(global::System.Uri.EscapeDataString(resourceType.ToValueString()))}/{resourceId}",
                                 baseUri: ResolveBaseUri(
                                 servers: s_Retrieve2Servers,
                                 defaultBaseUrl: "https://api.novu.co/"));
@@ -191,7 +191,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Retrieve2",
                                 methodName: "Retrieve2Async",
-                                pathTemplate: "$\"/v2/translations/group/{resourceType}/{resourceId}\"",
+                                pathTemplate: "$\"/v2/translations/group/{(global::System.Uri.EscapeDataString(resourceType.ToValueString()))}/{resourceId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -225,7 +225,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Retrieve2",
                                 methodName: "Retrieve2Async",
-                                pathTemplate: "$\"/v2/translations/group/{resourceType}/{resourceId}\"",
+                                pathTemplate: "$\"/v2/translations/group/{(global::System.Uri.EscapeDataString(resourceType.ToValueString()))}/{resourceId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -266,7 +266,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Retrieve2",
                                 methodName: "Retrieve2Async",
-                                pathTemplate: "$\"/v2/translations/group/{resourceType}/{resourceId}\"",
+                                pathTemplate: "$\"/v2/translations/group/{(global::System.Uri.EscapeDataString(resourceType.ToValueString()))}/{resourceId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -314,7 +314,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Retrieve2",
                                 methodName: "Retrieve2Async",
-                                pathTemplate: "$\"/v2/translations/group/{resourceType}/{resourceId}\"",
+                                pathTemplate: "$\"/v2/translations/group/{(global::System.Uri.EscapeDataString(resourceType.ToValueString()))}/{resourceId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -336,7 +336,7 @@ namespace Novu
                             context: global::Novu.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Retrieve2",
                                 methodName: "Retrieve2Async",
-                                pathTemplate: "$\"/v2/translations/group/{resourceType}/{resourceId}\"",
+                                pathTemplate: "$\"/v2/translations/group/{(global::System.Uri.EscapeDataString(resourceType.ToValueString()))}/{resourceId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
