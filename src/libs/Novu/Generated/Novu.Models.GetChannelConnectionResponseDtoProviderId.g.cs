@@ -24,6 +24,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        AnthropicAws,
+        /// <summary>
+        /// 
+        /// </summary>
         Apns,
         /// <summary>
         /// 
@@ -200,6 +204,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        NovuAnthropic,
+        /// <summary>
+        /// 
+        /// </summary>
         NovuEmail,
         /// <summary>
         /// 
@@ -354,6 +362,7 @@ namespace Novu
                 GetChannelConnectionResponseDtoProviderId.AfricasTalking => "africas-talking",
                 GetChannelConnectionResponseDtoProviderId.AfroMessage => "afro-message",
                 GetChannelConnectionResponseDtoProviderId.Anthropic => "anthropic",
+                GetChannelConnectionResponseDtoProviderId.AnthropicAws => "anthropic-aws",
                 GetChannelConnectionResponseDtoProviderId.Apns => "apns",
                 GetChannelConnectionResponseDtoProviderId.Appio => "appio",
                 GetChannelConnectionResponseDtoProviderId.AzureSms => "azure-sms",
@@ -398,6 +407,7 @@ namespace Novu
                 GetChannelConnectionResponseDtoProviderId.Nexmo => "nexmo",
                 GetChannelConnectionResponseDtoProviderId.Nodemailer => "nodemailer",
                 GetChannelConnectionResponseDtoProviderId.Novu => "novu",
+                GetChannelConnectionResponseDtoProviderId.NovuAnthropic => "novu-anthropic",
                 GetChannelConnectionResponseDtoProviderId.NovuEmail => "novu-email",
                 GetChannelConnectionResponseDtoProviderId.NovuEmailAgent => "novu-email-agent",
                 GetChannelConnectionResponseDtoProviderId.NovuSlack => "novu-slack",
@@ -446,6 +456,7 @@ namespace Novu
                 "africas-talking" => GetChannelConnectionResponseDtoProviderId.AfricasTalking,
                 "afro-message" => GetChannelConnectionResponseDtoProviderId.AfroMessage,
                 "anthropic" => GetChannelConnectionResponseDtoProviderId.Anthropic,
+                "anthropic-aws" => GetChannelConnectionResponseDtoProviderId.AnthropicAws,
                 "apns" => GetChannelConnectionResponseDtoProviderId.Apns,
                 "appio" => GetChannelConnectionResponseDtoProviderId.Appio,
                 "azure-sms" => GetChannelConnectionResponseDtoProviderId.AzureSms,
@@ -490,6 +501,7 @@ namespace Novu
                 "nexmo" => GetChannelConnectionResponseDtoProviderId.Nexmo,
                 "nodemailer" => GetChannelConnectionResponseDtoProviderId.Nodemailer,
                 "novu" => GetChannelConnectionResponseDtoProviderId.Novu,
+                "novu-anthropic" => GetChannelConnectionResponseDtoProviderId.NovuAnthropic,
                 "novu-email" => GetChannelConnectionResponseDtoProviderId.NovuEmail,
                 "novu-email-agent" => GetChannelConnectionResponseDtoProviderId.NovuEmailAgent,
                 "novu-slack" => GetChannelConnectionResponseDtoProviderId.NovuSlack,

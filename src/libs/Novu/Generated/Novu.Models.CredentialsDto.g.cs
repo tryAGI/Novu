@@ -321,6 +321,12 @@ namespace Novu
         public string? ExternalEnvironmentId { get; set; }
 
         /// <summary>
+        /// Claude Managed Agents: ID of the Anthropic vault (`vlt_…`) tied to this integration. Hydrated by the API at integration provisioning time and used to push OAuth-completed MCP credentials to the per-vault credentials API.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("externalVaultId")]
+        public string? ExternalVaultId { get; set; }
+
+        /// <summary>
         /// Claude Managed Agents: id of the Anthropic workspace used in console deep links. Defaults to `'default'` (the Default Workspace). Set this when the API key is scoped to a custom workspace (e.g. `wrkspc_…`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("externalWorkspaceId")]
@@ -391,6 +397,9 @@ namespace Novu
         /// <param name="externalEnvironmentId">
         /// Claude Managed Agents: ID of the Anthropic environment tied to this integration. Hydrated by the API at integration provisioning time.
         /// </param>
+        /// <param name="externalVaultId">
+        /// Claude Managed Agents: ID of the Anthropic vault (`vlt_…`) tied to this integration. Hydrated by the API at integration provisioning time and used to push OAuth-completed MCP credentials to the per-vault credentials API.
+        /// </param>
         /// <param name="externalWorkspaceId">
         /// Claude Managed Agents: id of the Anthropic workspace used in console deep links. Defaults to `'default'` (the Default Workspace). Set this when the API key is scoped to a custom workspace (e.g. `wrkspc_…`).
         /// </param>
@@ -450,6 +459,7 @@ namespace Novu
             string? fromAddressOverride,
             string? emailSlugPrefix,
             string? externalEnvironmentId,
+            string? externalVaultId,
             string? externalWorkspaceId)
         {
             this.ApiKey = apiKey;
@@ -504,6 +514,7 @@ namespace Novu
             this.FromAddressOverride = fromAddressOverride;
             this.EmailSlugPrefix = emailSlugPrefix;
             this.ExternalEnvironmentId = externalEnvironmentId;
+            this.ExternalVaultId = externalVaultId;
             this.ExternalWorkspaceId = externalWorkspaceId;
         }
 
