@@ -63838,7 +63838,9 @@
           "chat-webhook",
           "novu-slack",
           "telegram",
-          "anthropic"
+          "anthropic",
+          "novu-anthropic",
+          "anthropic-aws"
         ]
       },
       "ExecutionDetailsSourceEnum": {
@@ -65771,6 +65773,10 @@
           "externalEnvironmentId": {
             "type": "string",
             "description": "Claude Managed Agents: ID of the Anthropic environment tied to this integration. Hydrated by the API at integration provisioning time."
+          },
+          "externalVaultId": {
+            "type": "string",
+            "description": "Claude Managed Agents: ID of the Anthropic vault (`vlt_…`) tied to this integration. Hydrated by the API at integration provisioning time and used to push OAuth-completed MCP credentials to the per-vault credentials API."
           },
           "externalWorkspaceId": {
             "type": "string",
@@ -75282,7 +75288,9 @@
               "chat-webhook",
               "novu-slack",
               "telegram",
-              "anthropic"
+              "anthropic",
+              "novu-anthropic",
+              "anthropic-aws"
             ],
             "example": "slack"
           },
@@ -76236,7 +76244,9 @@
               "chat-webhook",
               "novu-slack",
               "telegram",
-              "anthropic"
+              "anthropic",
+              "novu-anthropic",
+              "anthropic-aws"
             ],
             "example": "slack"
           },

@@ -23,6 +23,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        AnthropicAws,
+        /// <summary>
+        /// 
+        /// </summary>
         Apns,
         /// <summary>
         /// 
@@ -199,6 +203,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        NovuAnthropic,
+        /// <summary>
+        /// 
+        /// </summary>
         NovuEmail,
         /// <summary>
         /// 
@@ -353,6 +361,7 @@ namespace Novu
                 ProvidersIdEnum.AfricasTalking => "africas-talking",
                 ProvidersIdEnum.AfroMessage => "afro-message",
                 ProvidersIdEnum.Anthropic => "anthropic",
+                ProvidersIdEnum.AnthropicAws => "anthropic-aws",
                 ProvidersIdEnum.Apns => "apns",
                 ProvidersIdEnum.Appio => "appio",
                 ProvidersIdEnum.AzureSms => "azure-sms",
@@ -397,6 +406,7 @@ namespace Novu
                 ProvidersIdEnum.Nexmo => "nexmo",
                 ProvidersIdEnum.Nodemailer => "nodemailer",
                 ProvidersIdEnum.Novu => "novu",
+                ProvidersIdEnum.NovuAnthropic => "novu-anthropic",
                 ProvidersIdEnum.NovuEmail => "novu-email",
                 ProvidersIdEnum.NovuEmailAgent => "novu-email-agent",
                 ProvidersIdEnum.NovuSlack => "novu-slack",
@@ -445,6 +455,7 @@ namespace Novu
                 "africas-talking" => ProvidersIdEnum.AfricasTalking,
                 "afro-message" => ProvidersIdEnum.AfroMessage,
                 "anthropic" => ProvidersIdEnum.Anthropic,
+                "anthropic-aws" => ProvidersIdEnum.AnthropicAws,
                 "apns" => ProvidersIdEnum.Apns,
                 "appio" => ProvidersIdEnum.Appio,
                 "azure-sms" => ProvidersIdEnum.AzureSms,
@@ -489,6 +500,7 @@ namespace Novu
                 "nexmo" => ProvidersIdEnum.Nexmo,
                 "nodemailer" => ProvidersIdEnum.Nodemailer,
                 "novu" => ProvidersIdEnum.Novu,
+                "novu-anthropic" => ProvidersIdEnum.NovuAnthropic,
                 "novu-email" => ProvidersIdEnum.NovuEmail,
                 "novu-email-agent" => ProvidersIdEnum.NovuEmailAgent,
                 "novu-slack" => ProvidersIdEnum.NovuSlack,
