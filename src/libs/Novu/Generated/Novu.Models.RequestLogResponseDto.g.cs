@@ -134,6 +134,14 @@ namespace Novu
         public required double DurationMs { get; set; }
 
         /// <summary>
+        /// Origin of the request: 'http' for API triggers or 'inbound_email' for inbound mail
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.RequestLogResponseDtoSourceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Novu.RequestLogResponseDtoSource Source { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -193,6 +201,9 @@ namespace Novu
         /// <param name="durationMs">
         /// Request duration in milliseconds
         /// </param>
+        /// <param name="source">
+        /// Origin of the request: 'http' for API triggers or 'inbound_email' for inbound mail
+        /// </param>
         /// <param name="transactionId">
         /// Transaction identifier
         /// </param>
@@ -217,6 +228,7 @@ namespace Novu
             string environmentId,
             string authType,
             double durationMs,
+            global::Novu.RequestLogResponseDtoSource source,
             object? transactionId)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -237,6 +249,7 @@ namespace Novu
             this.EnvironmentId = environmentId ?? throw new global::System.ArgumentNullException(nameof(environmentId));
             this.AuthType = authType ?? throw new global::System.ArgumentNullException(nameof(authType));
             this.DurationMs = durationMs;
+            this.Source = source;
         }
 
         /// <summary>

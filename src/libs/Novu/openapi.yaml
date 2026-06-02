@@ -64386,6 +64386,14 @@
           "durationMs": {
             "type": "number",
             "description": "Request duration in milliseconds"
+          },
+          "source": {
+            "type": "string",
+            "description": "Origin of the request: 'http' for API triggers or 'inbound_email' for inbound mail",
+            "enum": [
+              "http",
+              "inbound_email"
+            ]
           }
         },
         "required": [
@@ -64405,7 +64413,8 @@
           "organizationId",
           "environmentId",
           "authType",
-          "durationMs"
+          "durationMs",
+          "source"
         ]
       },
       "GetRequestsResponseDto": {
