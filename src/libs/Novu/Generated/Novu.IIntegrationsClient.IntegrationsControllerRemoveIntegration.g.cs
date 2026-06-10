@@ -7,7 +7,7 @@ namespace Novu
         /// <summary>
         /// Delete an integration<br/>
         /// Delete an integration by its unique key identifier **integrationId**. <br/>
-        ///     This action is irreversible.
+        ///     This action is irreversible. Only integration metadata is returned, credentials field is returned as empty object.
         /// </summary>
         /// <param name="integrationId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -20,7 +20,7 @@ namespace Novu
         /// <summary>
         /// Delete an integration<br/>
         /// Delete an integration by its unique key identifier **integrationId**. <br/>
-        ///     This action is irreversible.
+        ///     This action is irreversible. Only integration metadata is returned, credentials field is returned as empty object.
         /// </summary>
         /// <param name="integrationId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

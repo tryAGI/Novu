@@ -44,6 +44,10 @@ namespace Novu
         /// 
         /// </summary>
         Sms,
+        /// <summary>
+        /// 
+        /// </summary>
+        Throttle,
     }
 
     /// <summary>
@@ -67,6 +71,7 @@ namespace Novu
                 UpdateWorkflowDtoStepDiscriminatorType.InApp => "in_app",
                 UpdateWorkflowDtoStepDiscriminatorType.Push => "push",
                 UpdateWorkflowDtoStepDiscriminatorType.Sms => "sms",
+                UpdateWorkflowDtoStepDiscriminatorType.Throttle => "throttle",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -86,6 +91,7 @@ namespace Novu
                 "in_app" => UpdateWorkflowDtoStepDiscriminatorType.InApp,
                 "push" => UpdateWorkflowDtoStepDiscriminatorType.Push,
                 "sms" => UpdateWorkflowDtoStepDiscriminatorType.Sms,
+                "throttle" => UpdateWorkflowDtoStepDiscriminatorType.Throttle,
                 _ => null,
             };
         }

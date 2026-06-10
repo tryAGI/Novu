@@ -57,7 +57,7 @@ namespace Novu
         /// <summary>
         /// Auto-configure an integration for inbound webhooks<br/>
         /// Auto-configure an integration by its unique key identifier **integrationId** for inbound webhook support. <br/>
-        ///     This will automatically generate required webhook signing keys and configure webhook endpoints.
+        ///     This will automatically generate required webhook signing keys and configure webhook endpoints. Only integration metadata is returned, credentials field is returned as an empty object.
         /// </summary>
         /// <param name="integrationId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -79,7 +79,7 @@ namespace Novu
         /// <summary>
         /// Auto-configure an integration for inbound webhooks<br/>
         /// Auto-configure an integration by its unique key identifier **integrationId** for inbound webhook support. <br/>
-        ///     This will automatically generate required webhook signing keys and configure webhook endpoints.
+        ///     This will automatically generate required webhook signing keys and configure webhook endpoints. Only integration metadata is returned, credentials field is returned as an empty object.
         /// </summary>
         /// <param name="integrationId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

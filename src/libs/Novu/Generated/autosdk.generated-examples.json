@@ -543,7 +543,7 @@
       "Order": 50,
       "Title": "Auto-configure an integration for inbound webhooks",
       "Slug": "integrationscontroller-autoconfigureintegration",
-      "Description": "Auto-configure an integration by its unique key identifier **integrationId** for inbound webhook support. \n    This will automatically generate required webhook signing keys and configure webhook endpoints.",
+      "Description": "Auto-configure an integration by its unique key identifier **integrationId** for inbound webhook support. \n    This will automatically generate required webhook signing keys and configure webhook endpoints. Only integration metadata is returned, credentials field is returned as an empty object.",
       "Language": "http",
       "Code": "### Auto-configure an integration for inbound webhooks\n# @name IntegrationsController_autoConfigureIntegration\nPOST {{host}}/v1/integrations/{{integrationId}}/auto-configure\nAccept: application/json\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: The integration with the integrationId provided does not exist in the database.\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
       "Format": "http",
@@ -554,7 +554,7 @@
       "Order": 51,
       "Title": "Create an integration",
       "Slug": "integrationscontroller-createintegration",
-      "Description": "Create an integration for the current environment the user is based on the API key provided. \n    Each provider supports different credentials, check the provider documentation for more details.",
+      "Description": "Create an integration for the current environment the user is based on the API key provided. \n    Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.",
       "Language": "http",
       "Code": "### Create an integration\n# @name IntegrationsController_createIntegration\nPOST {{host}}/v1/integrations\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022identifier\u0022: \u0022string\u0022,\n  \u0022_environmentId\u0022: \u002200000000-0000-0000-0000-000000000000\u0022,\n  \u0022providerId\u0022: \u0022string\u0022,\n  \u0022channel\u0022: \u0022in_app\u0022,\n  \u0022kind\u0022: \u0022delivery\u0022,\n  \u0022credentials\u0022: {\n    \u0022apiKey\u0022: \u0022string\u0022,\n    \u0022user\u0022: \u0022string\u0022,\n    \u0022secretKey\u0022: \u0022string\u0022,\n    \u0022domain\u0022: \u0022string\u0022,\n    \u0022password\u0022: \u0022string\u0022,\n    \u0022host\u0022: \u0022string\u0022,\n    \u0022port\u0022: \u0022string\u0022,\n    \u0022secure\u0022: true,\n    \u0022region\u0022: \u0022string\u0022,\n    \u0022accountSid\u0022: \u0022string\u0022,\n    \u0022messageProfileId\u0022: \u0022string\u0022,\n    \u0022token\u0022: \u0022string\u0022,\n    \u0022from\u0022: \u0022string\u0022,\n    \u0022senderName\u0022: \u0022string\u0022,\n    \u0022projectName\u0022: \u0022string\u0022,\n    \u0022applicationId\u0022: \u0022string\u0022,\n    \u0022clientId\u0022: \u0022string\u0022,\n    \u0022requireTls\u0022: true,\n    \u0022ignoreTls\u0022: true,\n    \u0022tlsOptions\u0022: {},\n    \u0022baseUrl\u0022: \u0022string\u0022,\n    \u0022webhookUrl\u0022: \u0022string\u0022,\n    \u0022redirectUrl\u0022: \u0022string\u0022,\n    \u0022hmac\u0022: true,\n    \u0022serviceAccount\u0022: \u0022string\u0022,\n    \u0022ipPoolName\u0022: \u0022string\u0022,\n    \u0022apiKeyRequestHeader\u0022: \u0022string\u0022,\n    \u0022secretKeyRequestHeader\u0022: \u0022string\u0022,\n    \u0022idPath\u0022: \u0022string\u0022,\n    \u0022datePath\u0022: \u0022string\u0022,\n    \u0022apiToken\u0022: \u0022string\u0022,\n    \u0022authenticateByToken\u0022: true,\n    \u0022authenticationTokenKey\u0022: \u0022string\u0022,\n    \u0022instanceId\u0022: \u0022string\u0022,\n    \u0022alertUid\u0022: \u0022string\u0022,\n    \u0022title\u0022: \u0022string\u0022,\n    \u0022imageUrl\u0022: \u0022string\u0022,\n    \u0022state\u0022: \u0022string\u0022,\n    \u0022externalLink\u0022: \u0022string\u0022,\n    \u0022channelId\u0022: \u0022string\u0022,\n    \u0022phoneNumberIdentification\u0022: \u0022string\u0022,\n    \u0022accessKey\u0022: \u0022string\u0022,\n    \u0022appSid\u0022: \u0022string\u0022,\n    \u0022senderId\u0022: \u0022string\u0022,\n    \u0022tenantId\u0022: \u0022string\u0022,\n    \u0022AppIOBaseUrl\u0022: \u0022string\u0022,\n    \u0022signingSecret\u0022: \u0022string\u0022,\n    \u0022outboundIntegrationId\u0022: \u0022string\u0022,\n    \u0022useFromAddressOverride\u0022: true,\n    \u0022fromAddressOverride\u0022: \u0022string\u0022,\n    \u0022emailSlugPrefix\u0022: \u0022string\u0022,\n    \u0022externalEnvironmentId\u0022: \u0022string\u0022,\n    \u0022externalVaultId\u0022: \u0022string\u0022,\n    \u0022externalWorkspaceId\u0022: \u0022string\u0022\n  },\n  \u0022active\u0022: true,\n  \u0022check\u0022: true,\n  \u0022conditions\u0022: [\n    {\n      \u0022isNegated\u0022: true,\n      \u0022type\u0022: \u0022BOOLEAN\u0022,\n      \u0022value\u0022: \u0022AND\u0022,\n      \u0022children\u0022: []\n    }\n  ],\n  \u0022configurations\u0022: {}\n}\n\n## Responses\n# 201\n# Description: Created\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
       "Format": "http",
@@ -565,7 +565,7 @@
       "Order": 52,
       "Title": "List all integrations",
       "Slug": "integrationscontroller-listintegrations",
-      "Description": "List all the channels integrations created in the organization",
+      "Description": "List all the channels integrations created in the organization. Only integration metadata is returned, credentials field is returned as an empty object.",
       "Language": "http",
       "Code": "### List all integrations\n# @name IntegrationsController_listIntegrations\nGET {{host}}/v1/integrations\nAccept: application/json\n\n## Responses\n# 200\n# Description: The list of integrations belonging to the organization that are successfully returned.\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
       "Format": "http",
@@ -576,7 +576,7 @@
       "Order": 53,
       "Title": "Delete an integration",
       "Slug": "integrationscontroller-removeintegration",
-      "Description": "Delete an integration by its unique key identifier **integrationId**. \n    This action is irreversible.",
+      "Description": "Delete an integration by its unique key identifier **integrationId**. \n    This action is irreversible. Only integration metadata is returned, credentials field is returned as empty object.",
       "Language": "http",
       "Code": "### Delete an integration\n# @name IntegrationsController_removeIntegration\nDELETE {{host}}/v1/integrations/{{integrationId}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
       "Format": "http",
@@ -587,7 +587,7 @@
       "Order": 54,
       "Title": "Update an integration",
       "Slug": "integrationscontroller-updateintegrationbyid",
-      "Description": "Update an integration by its unique key identifier **integrationId**. \n    Each provider supports different credentials, check the provider documentation for more details.",
+      "Description": "Update an integration by its unique key identifier **integrationId**. \n    Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.",
       "Language": "http",
       "Code": "### Update an integration\n# @name IntegrationsController_updateIntegrationById\nPUT {{host}}/v1/integrations/{{integrationId}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022identifier\u0022: \u0022string\u0022,\n  \u0022_environmentId\u0022: \u0022string\u0022,\n  \u0022active\u0022: true,\n  \u0022credentials\u0022: {\n    \u0022apiKey\u0022: \u0022string\u0022,\n    \u0022user\u0022: \u0022string\u0022,\n    \u0022secretKey\u0022: \u0022string\u0022,\n    \u0022domain\u0022: \u0022string\u0022,\n    \u0022password\u0022: \u0022string\u0022,\n    \u0022host\u0022: \u0022string\u0022,\n    \u0022port\u0022: \u0022string\u0022,\n    \u0022secure\u0022: true,\n    \u0022region\u0022: \u0022string\u0022,\n    \u0022accountSid\u0022: \u0022string\u0022,\n    \u0022messageProfileId\u0022: \u0022string\u0022,\n    \u0022token\u0022: \u0022string\u0022,\n    \u0022from\u0022: \u0022string\u0022,\n    \u0022senderName\u0022: \u0022string\u0022,\n    \u0022projectName\u0022: \u0022string\u0022,\n    \u0022applicationId\u0022: \u0022string\u0022,\n    \u0022clientId\u0022: \u0022string\u0022,\n    \u0022requireTls\u0022: true,\n    \u0022ignoreTls\u0022: true,\n    \u0022tlsOptions\u0022: {},\n    \u0022baseUrl\u0022: \u0022string\u0022,\n    \u0022webhookUrl\u0022: \u0022string\u0022,\n    \u0022redirectUrl\u0022: \u0022string\u0022,\n    \u0022hmac\u0022: true,\n    \u0022serviceAccount\u0022: \u0022string\u0022,\n    \u0022ipPoolName\u0022: \u0022string\u0022,\n    \u0022apiKeyRequestHeader\u0022: \u0022string\u0022,\n    \u0022secretKeyRequestHeader\u0022: \u0022string\u0022,\n    \u0022idPath\u0022: \u0022string\u0022,\n    \u0022datePath\u0022: \u0022string\u0022,\n    \u0022apiToken\u0022: \u0022string\u0022,\n    \u0022authenticateByToken\u0022: true,\n    \u0022authenticationTokenKey\u0022: \u0022string\u0022,\n    \u0022instanceId\u0022: \u0022string\u0022,\n    \u0022alertUid\u0022: \u0022string\u0022,\n    \u0022title\u0022: \u0022string\u0022,\n    \u0022imageUrl\u0022: \u0022string\u0022,\n    \u0022state\u0022: \u0022string\u0022,\n    \u0022externalLink\u0022: \u0022string\u0022,\n    \u0022channelId\u0022: \u0022string\u0022,\n    \u0022phoneNumberIdentification\u0022: \u0022string\u0022,\n    \u0022accessKey\u0022: \u0022string\u0022,\n    \u0022appSid\u0022: \u0022string\u0022,\n    \u0022senderId\u0022: \u0022string\u0022,\n    \u0022tenantId\u0022: \u0022string\u0022,\n    \u0022AppIOBaseUrl\u0022: \u0022string\u0022,\n    \u0022signingSecret\u0022: \u0022string\u0022,\n    \u0022outboundIntegrationId\u0022: \u0022string\u0022,\n    \u0022useFromAddressOverride\u0022: true,\n    \u0022fromAddressOverride\u0022: \u0022string\u0022,\n    \u0022emailSlugPrefix\u0022: \u0022string\u0022,\n    \u0022externalEnvironmentId\u0022: \u0022string\u0022,\n    \u0022externalVaultId\u0022: \u0022string\u0022,\n    \u0022externalWorkspaceId\u0022: \u0022string\u0022\n  },\n  \u0022check\u0022: true,\n  \u0022conditions\u0022: [\n    {\n      \u0022isNegated\u0022: true,\n      \u0022type\u0022: \u0022BOOLEAN\u0022,\n      \u0022value\u0022: \u0022AND\u0022,\n      \u0022children\u0022: []\n    }\n  ],\n  \u0022configurations\u0022: {}\n}\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: The integration with the integrationId provided does not exist in the database.\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
       "Format": "http",
@@ -598,7 +598,7 @@
       "Order": 55,
       "Title": "List active integrations",
       "Slug": "integrationscontroller-getactiveintegrations",
-      "Description": "List all the active integrations created in the organization",
+      "Description": "List all the active integrations created in the organization. Only integration metadata is returned, credentials field is returned as an empty object.",
       "Language": "http",
       "Code": "### List active integrations\n# @name IntegrationsController_getActiveIntegrations\nGET {{host}}/v1/integrations/active\nAccept: application/json\n\n## Responses\n# 200\n# Description: The list of active integrations belonging to the organization that are successfully returned.\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
       "Format": "http",
@@ -609,7 +609,7 @@
       "Order": 56,
       "Title": "Update integration as primary",
       "Slug": "integrationscontroller-setintegrationasprimary",
-      "Description": "Update an integration as **primary** by its unique key identifier **integrationId**. \n    This API will set the integration as primary for that channel in the current environment. \n    Primary integration is used to deliver notification for sms and email channels in the workflow.",
+      "Description": "Update an integration as **primary** by its unique key identifier **integrationId**. \n    This API will set the integration as primary for that channel in the current environment. \n    Primary integration is used to deliver notification for sms and email channels in the workflow. \n    Only integration metadata is returned, credentials field is returned as an empty object.",
       "Language": "http",
       "Code": "### Update integration as primary\n# @name IntegrationsController_setIntegrationAsPrimary\nPOST {{host}}/v1/integrations/{{integrationId}}/set-primary\nAccept: application/json\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: The integration with the integrationId provided does not exist in the database.\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
       "Format": "http",
@@ -860,39 +860,6 @@
     },
     {
       "Order": 79,
-      "Title": "Update all notifications state",
-      "Slug": "subscribersv1controller-markallunreadasread",
-      "Description": "Update all subscriber in-app (inbox) notifications state such as read, unread, seen or unseen by **subscriberId**.",
-      "Language": "http",
-      "Code": "### Update all notifications state\n# @name SubscribersV1Controller_markAllUnreadAsRead\nPOST {{host}}/v1/subscribers/{{subscriberId}}/messages/mark-all\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022feedIdentifier\u0022: \u0022string\u0022,\n  \u0022markAs\u0022: \u0022read\u0022\n}\n\n## Responses\n# 201\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "SubscribersV1Controller_markAllUnreadAsRead",
-      "Setup": null
-    },
-    {
-      "Order": 80,
-      "Title": "Update notifications state",
-      "Slug": "subscribersv1controller-markmessagesas",
-      "Description": "Update subscriber\u0027s multiple in-app (inbox) notifications state such as seen, read, unseen or unread by **subscriberId**. \n      **messageId** is of type mongodbId of notifications",
-      "Language": "http",
-      "Code": "### Update notifications state\n# @name SubscribersV1Controller_markMessagesAs\nPOST {{host}}/v1/subscribers/{{subscriberId}}/messages/mark-as\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022messageId\u0022: \u0022string\u0022,\n  \u0022markAs\u0022: \u0022read\u0022\n}\n\n## Responses\n# 201\n# Description: Created\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "SubscribersV1Controller_markMessagesAs",
-      "Setup": null
-    },
-    {
-      "Order": 81,
-      "Title": "Update notification action status",
-      "Slug": "subscribersv1controller-markactionasseen",
-      "Description": "Update in-app (inbox) notification\u0027s action status by its unique key identifier **messageId** and type field **type**. \n      **type** field can be **primary** or **secondary**",
-      "Language": "http",
-      "Code": "### Update notification action status\n# @name SubscribersV1Controller_markActionAsSeen\nPOST {{host}}/v1/subscribers/{{subscriberId}}/messages/{{messageId}}/actions/{{type}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022status\u0022: \u0022pending\u0022,\n  \u0022payload\u0022: {}\n}\n\n## Responses\n# 201\n# Description: Created\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "SubscribersV1Controller_markActionAsSeen",
-      "Setup": null
-    },
-    {
-      "Order": 82,
       "Title": "Archive a notification",
       "Slug": "subscriberscontroller-archivenotification",
       "Description": "Archive a specific in-app (inbox) notification by its unique identifier **notificationId**.",
@@ -903,7 +870,7 @@
       "Setup": null
     },
     {
-      "Order": 83,
+      "Order": 80,
       "Title": "Archive all notifications",
       "Slug": "subscriberscontroller-archiveallnotifications",
       "Description": "Archive all in-app (inbox) notifications matching the specified filters. Supports context-based filtering.",
@@ -914,7 +881,7 @@
       "Setup": null
     },
     {
-      "Order": 84,
+      "Order": 81,
       "Title": "Archive all read notifications",
       "Slug": "subscriberscontroller-archiveallreadnotifications",
       "Description": "Archive all read in-app (inbox) notifications matching the specified filters. Supports context-based filtering.",
@@ -925,7 +892,7 @@
       "Setup": null
     },
     {
-      "Order": 85,
+      "Order": 82,
       "Title": "Complete a notification action",
       "Slug": "subscriberscontroller-completenotificationaction",
       "Description": "Mark a single in-app (inbox) notification\u0027s action (primary or secondary) as completed by its unique identifier **notificationId** and action type **actionType**.",
@@ -936,7 +903,7 @@
       "Setup": null
     },
     {
-      "Order": 86,
+      "Order": 83,
       "Title": "Retrieve subscriber notifications count",
       "Slug": "subscriberscontroller-getsubscribernotificationscount",
       "Description": "Retrieve count of in-app (inbox) notifications for a subscriber by its unique key identifier **subscriberId**. \n    Supports multiple filters to count in-app (inbox) notifications by different criteria, including context keys.",
@@ -947,7 +914,7 @@
       "Setup": null
     },
     {
-      "Order": 87,
+      "Order": 84,
       "Title": "Delete a notification",
       "Slug": "subscriberscontroller-deletenotification",
       "Description": "Delete a specific in-app (inbox) notification permanently by its unique identifier **notificationId**.",
@@ -958,7 +925,7 @@
       "Setup": null
     },
     {
-      "Order": 88,
+      "Order": 85,
       "Title": "Delete all notifications",
       "Slug": "subscriberscontroller-deleteallnotifications",
       "Description": "Permanently delete all in-app (inbox) notifications matching the specified filters. Supports context-based filtering.",
@@ -969,18 +936,7 @@
       "Setup": null
     },
     {
-      "Order": 89,
-      "Title": "Retrieve subscriber notifications",
-      "Slug": "subscribersv1controller-getnotificationsfeed",
-      "Description": "Retrieve subscriber in-app (inbox) notifications by its unique key identifier **subscriberId**.",
-      "Language": "http",
-      "Code": "### Retrieve subscriber notifications\n# @name SubscribersV1Controller_getNotificationsFeed\nGET {{host}}/v1/subscribers/{{subscriberId}}/notifications/feed?page=0\u0026limit=10\u0026read={{read}}\u0026seen={{seen}}\u0026payload=btoa(JSON.stringify({ foo: 123 })) results in base64 encoded string like eyJmb28iOjEyM30=\nAccept: application/json\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "SubscribersV1Controller_getNotificationsFeed",
-      "Setup": null
-    },
-    {
-      "Order": 90,
+      "Order": 86,
       "Title": "Retrieve subscriber notifications",
       "Slug": "subscriberscontroller-getsubscribernotifications",
       "Description": "Retrieve in-app (inbox) notifications for a subscriber by its unique key identifier **subscriberId**. \n    Supports filtering by tags, read/archived/snoozed/seen state, data attributes, severity, date range, and context keys.",
@@ -991,7 +947,7 @@
       "Setup": null
     },
     {
-      "Order": 91,
+      "Order": 87,
       "Title": "Mark all notifications as read",
       "Slug": "subscriberscontroller-markallnotificationsasread",
       "Description": "Mark all in-app (inbox) notifications matching the specified filters as read. Supports context-based filtering.",
@@ -1002,7 +958,7 @@
       "Setup": null
     },
     {
-      "Order": 92,
+      "Order": 88,
       "Title": "Mark a notification as read",
       "Slug": "subscriberscontroller-marknotificationasread",
       "Description": "Mark a specific in-app (inbox) notification as read by its unique identifier **notificationId**.",
@@ -1013,7 +969,7 @@
       "Setup": null
     },
     {
-      "Order": 93,
+      "Order": 89,
       "Title": "Mark notifications as seen",
       "Slug": "subscriberscontroller-marknotificationsasseen",
       "Description": "Mark specific and multiple in-app (inbox) notifications as seen. Supports context-based filtering.",
@@ -1024,7 +980,7 @@
       "Setup": null
     },
     {
-      "Order": 94,
+      "Order": 90,
       "Title": "Mark a notification as unread",
       "Slug": "subscriberscontroller-marknotificationasunread",
       "Description": "Mark a specific in-app (inbox) notification as unread by its unique identifier **notificationId**.",
@@ -1035,7 +991,7 @@
       "Setup": null
     },
     {
-      "Order": 95,
+      "Order": 91,
       "Title": "Revert a notification action",
       "Slug": "subscriberscontroller-revertnotificationaction",
       "Description": "Revert a single in-app (inbox) notification\u0027s action (primary or secondary) to pending state by its unique identifier **notificationId** and action type **actionType**.",
@@ -1046,7 +1002,7 @@
       "Setup": null
     },
     {
-      "Order": 96,
+      "Order": 92,
       "Title": "Snooze a notification",
       "Slug": "subscriberscontroller-snoozenotification",
       "Description": "Snooze a specific in-app (inbox) notification by its unique identifier **notificationId** until a specified time.",
@@ -1057,7 +1013,7 @@
       "Setup": null
     },
     {
-      "Order": 97,
+      "Order": 93,
       "Title": "Unarchive a notification",
       "Slug": "subscriberscontroller-unarchivenotification",
       "Description": "Unarchive a specific in-app (inbox) notification by its unique identifier **notificationId**.",
@@ -1068,18 +1024,7 @@
       "Setup": null
     },
     {
-      "Order": 98,
-      "Title": "Retrieve unseen notifications count",
-      "Slug": "subscribersv1controller-getunseencount",
-      "Description": "Retrieve unseen in-app (inbox) notifications count for a subscriber by its unique key identifier **subscriberId**.",
-      "Language": "http",
-      "Code": "### Retrieve unseen notifications count\n# @name SubscribersV1Controller_getUnseenCount\nGET {{host}}/v1/subscribers/{{subscriberId}}/notifications/unseen?seen=false\u0026limit=100\nAccept: application/json\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "SubscribersV1Controller_getUnseenCount",
-      "Setup": null
-    },
-    {
-      "Order": 99,
+      "Order": 94,
       "Title": "Unsnooze a notification",
       "Slug": "subscriberscontroller-unsnoozenotification",
       "Description": "Unsnooze a specific in-app (inbox) notification by its unique identifier **notificationId**.",
@@ -1090,7 +1035,7 @@
       "Setup": null
     },
     {
-      "Order": 100,
+      "Order": 95,
       "Title": "Bulk update subscriber preferences",
       "Slug": "subscriberscontroller-bulkupdatesubscriberpreferences",
       "Description": "Bulk update subscriber preferences by its unique key identifier **subscriberId**. \n    This API allows updating multiple workflow preferences in a single request.",
@@ -1101,7 +1046,7 @@
       "Setup": null
     },
     {
-      "Order": 101,
+      "Order": 96,
       "Title": "Retrieve subscriber preferences",
       "Slug": "subscriberscontroller-getsubscriberpreferences",
       "Description": "Retrieve subscriber channel preferences by its unique key identifier **subscriberId**. \n    This API returns all five channels preferences for all workflows and global preferences.",
@@ -1112,7 +1057,7 @@
       "Setup": null
     },
     {
-      "Order": 102,
+      "Order": 97,
       "Title": "Update subscriber preferences",
       "Slug": "subscriberscontroller-updatesubscriberpreferences",
       "Description": "Update subscriber preferences by its unique key identifier **subscriberId**. \n    **workflowId** is optional field, if provided, this API will update that workflow preference, \n    otherwise it will update global preferences",
@@ -1123,7 +1068,7 @@
       "Setup": null
     },
     {
-      "Order": 103,
+      "Order": 98,
       "Title": "Update subscriber online status",
       "Slug": "subscribersv1controller-updatesubscriberonlineflag",
       "Description": "Update the subscriber online status by its unique key identifier **subscriberId**",
@@ -1134,7 +1079,7 @@
       "Setup": null
     },
     {
-      "Order": 104,
+      "Order": 99,
       "Title": "Retrieve subscriber subscriptions",
       "Slug": "subscriberscontroller-listsubscribertopics",
       "Description": "Retrieve subscriber\u0027s topic subscriptions by its unique key identifier **subscriberId**. \n    Checkout all available filters in the query section.",
@@ -1145,7 +1090,7 @@
       "Setup": null
     },
     {
-      "Order": 105,
+      "Order": 100,
       "Title": "Create a topic",
       "Slug": "topicscontroller-upserttopic",
       "Description": "Creates a new topic if it does not exist, or updates an existing topic if it already exists. Use ?failIfExists=true to prevent updates.",
@@ -1156,7 +1101,7 @@
       "Setup": null
     },
     {
-      "Order": 106,
+      "Order": 101,
       "Title": "Retrieve a topic",
       "Slug": "topicscontroller-gettopic",
       "Description": "Retrieve a topic by its unique key identifier **topicKey**",
@@ -1167,7 +1112,7 @@
       "Setup": null
     },
     {
-      "Order": 107,
+      "Order": 102,
       "Title": "List all topics",
       "Slug": "topicscontroller-listtopics",
       "Description": "This api returns a paginated list of topics.\n    Topics can be filtered by **key**, **name**, or **includeCursor** to paginate through the list. \n    Checkout all available filters in the query section.",
@@ -1178,7 +1123,7 @@
       "Setup": null
     },
     {
-      "Order": 108,
+      "Order": 103,
       "Title": "Delete a topic",
       "Slug": "topicscontroller-deletetopic",
       "Description": "Delete a topic by its unique key identifier **topicKey**. \n    This action is irreversible and will remove all subscriptions to the topic.",
@@ -1189,7 +1134,7 @@
       "Setup": null
     },
     {
-      "Order": 109,
+      "Order": 104,
       "Title": "Update a topic",
       "Slug": "topicscontroller-updatetopic",
       "Description": "Update a topic name by its unique key identifier **topicKey**",
@@ -1200,7 +1145,7 @@
       "Setup": null
     },
     {
-      "Order": 110,
+      "Order": 105,
       "Title": "Check topic subscriber",
       "Slug": "topicsv1controller-gettopicsubscriber",
       "Description": "Check if a subscriber belongs to a certain topic",
@@ -1211,7 +1156,7 @@
       "Setup": null
     },
     {
-      "Order": 111,
+      "Order": 106,
       "Title": "Create topic subscriptions",
       "Slug": "topicscontroller-createtopicsubscriptions",
       "Description": "This api will create subscription for subscriberIds for a topic. \n      Its like subscribing to a common interest group. if topic does not exist, it will be created.",
@@ -1222,7 +1167,7 @@
       "Setup": null
     },
     {
-      "Order": 112,
+      "Order": 107,
       "Title": "Delete topic subscriptions",
       "Slug": "topicscontroller-deletetopicsubscriptions",
       "Description": "Delete subscriptions for subscriberIds for a topic.",
@@ -1233,7 +1178,7 @@
       "Setup": null
     },
     {
-      "Order": 113,
+      "Order": 108,
       "Title": "Retrieve a topic subscription",
       "Slug": "topicscontroller-gettopicsubscription",
       "Description": "Retrieve a subscription by its unique identifier for a topic.",
@@ -1244,7 +1189,7 @@
       "Setup": null
     },
     {
-      "Order": 114,
+      "Order": 109,
       "Title": "List topic subscriptions",
       "Slug": "topicscontroller-listtopicsubscriptions",
       "Description": "List all subscriptions of subscribers for a topic.\n    Checkout all available filters in the query section.",
@@ -1255,7 +1200,7 @@
       "Setup": null
     },
     {
-      "Order": 115,
+      "Order": 110,
       "Title": "Update a topic subscription",
       "Slug": "topicscontroller-updatetopicsubscription",
       "Description": "Update a subscription by its unique identifier for a topic. You can update the preferences and name associated with the subscription.",
@@ -1266,7 +1211,7 @@
       "Setup": null
     },
     {
-      "Order": 116,
+      "Order": 111,
       "Title": "Retrieve a translation",
       "Slug": "translationcontroller-getsingletranslation",
       "Description": "Retrieve a specific translation by resource type, resource ID and locale",
@@ -1277,7 +1222,7 @@
       "Setup": null
     },
     {
-      "Order": 117,
+      "Order": 112,
       "Title": "Delete a translation group",
       "Slug": "translationcontroller-deletetranslationgroupendpoint",
       "Description": "Delete an entire translation group and all its translations",
@@ -1288,7 +1233,7 @@
       "Setup": null
     },
     {
-      "Order": 118,
+      "Order": 113,
       "Title": "Retrieve a translation group",
       "Slug": "translationcontroller-gettranslationgroupendpoint",
       "Description": "Retrieves a single translation group by resource type (workflow, layout) and resource ID (workflowId, layoutId)",
@@ -1299,7 +1244,7 @@
       "Setup": null
     },
     {
-      "Order": 119,
+      "Order": 114,
       "Title": "Retrieve master translations JSON",
       "Slug": "translationcontroller-getmasterjsonendpoint",
       "Description": "Retrieve all translations for a locale in master JSON format organized by resourceId (workflowId)",
@@ -1310,7 +1255,7 @@
       "Setup": null
     },
     {
-      "Order": 120,
+      "Order": 115,
       "Title": "Delete a workflow",
       "Slug": "workflowcontroller-removeworkflow",
       "Description": "Removes a specific workflow by its unique identifier **workflowId**",
@@ -1321,7 +1266,7 @@
       "Setup": null
     },
     {
-      "Order": 121,
+      "Order": 116,
       "Title": "Retrieve a workflow",
       "Slug": "workflowcontroller-getworkflow",
       "Description": "Fetches details of a specific workflow by its unique identifier **workflowId**",
@@ -1332,7 +1277,7 @@
       "Setup": null
     },
     {
-      "Order": 122,
+      "Order": 117,
       "Title": "List all workflows",
       "Slug": "workflowcontroller-searchworkflows",
       "Description": "Retrieves a list of workflows with optional filtering and pagination",
@@ -1343,7 +1288,7 @@
       "Setup": null
     },
     {
-      "Order": 123,
+      "Order": 118,
       "Title": "Update a workflow",
       "Slug": "workflowcontroller-patchworkflow",
       "Description": "Partially updates a workflow by its unique identifier **workflowId**",
@@ -1354,7 +1299,7 @@
       "Setup": null
     },
     {
-      "Order": 124,
+      "Order": 119,
       "Title": "Sync a workflow",
       "Slug": "workflowcontroller-sync",
       "Description": "Synchronizes a workflow to the target environment",
@@ -1365,7 +1310,7 @@
       "Setup": null
     },
     {
-      "Order": 125,
+      "Order": 120,
       "Title": "Create a workflow",
       "Slug": "workflowcontroller-create",
       "Description": "Creates a new workflow in the Novu Cloud environment",
@@ -1376,7 +1321,7 @@
       "Setup": null
     },
     {
-      "Order": 126,
+      "Order": 121,
       "Title": "Update a workflow",
       "Slug": "workflowcontroller-update",
       "Description": "Updates the details of an existing workflow, here **workflowId** is the identifier of the workflow",
@@ -1387,7 +1332,7 @@
       "Setup": null
     },
     {
-      "Order": 127,
+      "Order": 122,
       "Title": "Generate a step preview",
       "Slug": "workflowcontroller-generatepreview",
       "Description": "Generates a preview for a specific workflow step by its unique identifier **stepId**",
@@ -1398,7 +1343,7 @@
       "Setup": null
     },
     {
-      "Order": 128,
+      "Order": 123,
       "Title": "Retrieve workflow step",
       "Slug": "workflowcontroller-getworkflowstepdata",
       "Description": "Retrieves data for a specific step in a workflow",

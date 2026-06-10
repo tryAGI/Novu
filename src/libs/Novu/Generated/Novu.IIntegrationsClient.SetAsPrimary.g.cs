@@ -8,7 +8,8 @@ namespace Novu
         /// Update integration as primary<br/>
         /// Update an integration as **primary** by its unique key identifier **integrationId**. <br/>
         ///     This API will set the integration as primary for that channel in the current environment. <br/>
-        ///     Primary integration is used to deliver notification for sms and email channels in the workflow.
+        ///     Primary integration is used to deliver notification for sms and email channels in the workflow. <br/>
+        ///     Only integration metadata is returned, credentials field is returned as an empty object.
         /// </summary>
         /// <param name="integrationId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -22,7 +23,8 @@ namespace Novu
         /// Update integration as primary<br/>
         /// Update an integration as **primary** by its unique key identifier **integrationId**. <br/>
         ///     This API will set the integration as primary for that channel in the current environment. <br/>
-        ///     Primary integration is used to deliver notification for sms and email channels in the workflow.
+        ///     Primary integration is used to deliver notification for sms and email channels in the workflow. <br/>
+        ///     Only integration metadata is returned, credentials field is returned as an empty object.
         /// </summary>
         /// <param name="integrationId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
