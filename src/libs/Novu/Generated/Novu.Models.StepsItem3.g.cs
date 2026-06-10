@@ -277,6 +277,43 @@ namespace Novu
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Novu.ThrottleStepUpsertDto? Throttle { get; init; }
+#else
+        public global::Novu.ThrottleStepUpsertDto? Throttle { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Throttle))]
+#endif
+        public bool IsThrottle => Throttle != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickThrottle(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.ThrottleStepUpsertDto? value)
+        {
+            value = Throttle;
+            return IsThrottle;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.ThrottleStepUpsertDto PickThrottle() => IsThrottle
+            ? Throttle!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Throttle' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Novu.CustomStepUpsertDto? Custom { get; init; }
 #else
         public global::Novu.CustomStepUpsertDto? Custom { get; }
@@ -510,6 +547,29 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator StepsItem3(global::Novu.ThrottleStepUpsertDto value) => new StepsItem3((global::Novu.ThrottleStepUpsertDto?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Novu.ThrottleStepUpsertDto?(StepsItem3 @this) => @this.Throttle;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StepsItem3(global::Novu.ThrottleStepUpsertDto? value)
+        {
+            Throttle = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StepsItem3 FromThrottle(global::Novu.ThrottleStepUpsertDto? value) => new StepsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StepsItem3(global::Novu.CustomStepUpsertDto value) => new StepsItem3((global::Novu.CustomStepUpsertDto?)value);
 
         /// <summary>
@@ -565,6 +625,7 @@ namespace Novu
             global::Novu.ChatStepUpsertDto? chat,
             global::Novu.DelayStepUpsertDto? delay,
             global::Novu.DigestStepUpsertDto? digest,
+            global::Novu.ThrottleStepUpsertDto? throttle,
             global::Novu.CustomStepUpsertDto? custom,
             global::Novu.HttpRequestStepUpsertDto? httpRequest
             )
@@ -578,6 +639,7 @@ namespace Novu
             Chat = chat;
             Delay = delay;
             Digest = digest;
+            Throttle = throttle;
             Custom = custom;
             HttpRequest = httpRequest;
         }
@@ -588,6 +650,7 @@ namespace Novu
         public object? Object =>
             HttpRequest as object ??
             Custom as object ??
+            Throttle as object ??
             Digest as object ??
             Delay as object ??
             Chat as object ??
@@ -608,6 +671,7 @@ namespace Novu
             Chat?.ToString() ??
             Delay?.ToString() ??
             Digest?.ToString() ??
+            Throttle?.ToString() ??
             Custom?.ToString() ??
             HttpRequest?.ToString() 
             ;
@@ -617,7 +681,7 @@ namespace Novu
         /// </summary>
         public bool Validate()
         {
-            return IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsHttpRequest || !IsInApp && IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && IsChat && !IsDelay && !IsDigest && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && IsDelay && !IsDigest && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && IsDigest && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && IsHttpRequest;
+            return IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && IsDelay && !IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsCustom && IsHttpRequest;
         }
 
         /// <summary>
@@ -631,6 +695,7 @@ namespace Novu
             global::System.Func<global::Novu.ChatStepUpsertDto, TResult>? chat = null,
             global::System.Func<global::Novu.DelayStepUpsertDto, TResult>? delay = null,
             global::System.Func<global::Novu.DigestStepUpsertDto, TResult>? digest = null,
+            global::System.Func<global::Novu.ThrottleStepUpsertDto, TResult>? throttle = null,
             global::System.Func<global::Novu.CustomStepUpsertDto, TResult>? custom = null,
             global::System.Func<global::Novu.HttpRequestStepUpsertDto, TResult>? httpRequest = null,
             bool validate = true)
@@ -668,6 +733,10 @@ namespace Novu
             {
                 return digest(Digest!);
             }
+            else if (IsThrottle && throttle != null)
+            {
+                return throttle(Throttle!);
+            }
             else if (IsCustom && custom != null)
             {
                 return custom(Custom!);
@@ -698,6 +767,8 @@ namespace Novu
 
             global::System.Action<global::Novu.DigestStepUpsertDto>? digest = null,
 
+            global::System.Action<global::Novu.ThrottleStepUpsertDto>? throttle = null,
+
             global::System.Action<global::Novu.CustomStepUpsertDto>? custom = null,
 
             global::System.Action<global::Novu.HttpRequestStepUpsertDto>? httpRequest = null,
@@ -735,6 +806,10 @@ namespace Novu
             else if (IsDigest)
             {
                 digest?.Invoke(Digest!);
+            }
+            else if (IsThrottle)
+            {
+                throttle?.Invoke(Throttle!);
             }
             else if (IsCustom)
             {
@@ -757,6 +832,7 @@ namespace Novu
             global::System.Action<global::Novu.ChatStepUpsertDto>? chat = null,
             global::System.Action<global::Novu.DelayStepUpsertDto>? delay = null,
             global::System.Action<global::Novu.DigestStepUpsertDto>? digest = null,
+            global::System.Action<global::Novu.ThrottleStepUpsertDto>? throttle = null,
             global::System.Action<global::Novu.CustomStepUpsertDto>? custom = null,
             global::System.Action<global::Novu.HttpRequestStepUpsertDto>? httpRequest = null,
             bool validate = true)
@@ -793,6 +869,10 @@ namespace Novu
             else if (IsDigest)
             {
                 digest?.Invoke(Digest!);
+            }
+            else if (IsThrottle)
+            {
+                throttle?.Invoke(Throttle!);
             }
             else if (IsCustom)
             {
@@ -825,6 +905,8 @@ namespace Novu
                 typeof(global::Novu.DelayStepUpsertDto),
                 Digest,
                 typeof(global::Novu.DigestStepUpsertDto),
+                Throttle,
+                typeof(global::Novu.ThrottleStepUpsertDto),
                 Custom,
                 typeof(global::Novu.CustomStepUpsertDto),
                 HttpRequest,
@@ -852,6 +934,7 @@ namespace Novu
                 global::System.Collections.Generic.EqualityComparer<global::Novu.ChatStepUpsertDto?>.Default.Equals(Chat, other.Chat) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.DelayStepUpsertDto?>.Default.Equals(Delay, other.Delay) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.DigestStepUpsertDto?>.Default.Equals(Digest, other.Digest) &&
+                global::System.Collections.Generic.EqualityComparer<global::Novu.ThrottleStepUpsertDto?>.Default.Equals(Throttle, other.Throttle) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CustomStepUpsertDto?>.Default.Equals(Custom, other.Custom) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.HttpRequestStepUpsertDto?>.Default.Equals(HttpRequest, other.HttpRequest) 
                 ;

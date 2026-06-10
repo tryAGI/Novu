@@ -149,11 +149,6 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        public SubscribersMessagesClient SubscribersMessages { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public SubscribersNotificationsClient SubscribersNotifications { get; }
 
         /// <summary>
