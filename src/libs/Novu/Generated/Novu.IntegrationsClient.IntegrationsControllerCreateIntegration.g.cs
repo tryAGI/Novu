@@ -57,7 +57,7 @@ namespace Novu
         /// <summary>
         /// Create an integration<br/>
         /// Create an integration for the current environment the user is based on the API key provided. <br/>
-        ///     Each provider supports different credentials, check the provider documentation for more details.
+        ///     Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -81,7 +81,7 @@ namespace Novu
         /// <summary>
         /// Create an integration<br/>
         /// Create an integration for the current environment the user is based on the API key provided. <br/>
-        ///     Each provider supports different credentials, check the provider documentation for more details.
+        ///     Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -919,7 +919,7 @@ namespace Novu
         /// <summary>
         /// Create an integration<br/>
         /// Create an integration for the current environment the user is based on the API key provided. <br/>
-        ///     Each provider supports different credentials, check the provider documentation for more details.
+        ///     Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.
         /// </summary>
         /// <param name="name">
         /// The name of the integration

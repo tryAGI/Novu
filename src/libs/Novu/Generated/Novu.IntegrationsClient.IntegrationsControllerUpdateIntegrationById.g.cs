@@ -59,7 +59,7 @@ namespace Novu
         /// <summary>
         /// Update an integration<br/>
         /// Update an integration by its unique key identifier **integrationId**. <br/>
-        ///     Each provider supports different credentials, check the provider documentation for more details.
+        ///     Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.
         /// </summary>
         /// <param name="integrationId"></param>
         /// <param name="request"></param>
@@ -86,7 +86,7 @@ namespace Novu
         /// <summary>
         /// Update an integration<br/>
         /// Update an integration by its unique key identifier **integrationId**. <br/>
-        ///     Each provider supports different credentials, check the provider documentation for more details.
+        ///     Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.
         /// </summary>
         /// <param name="integrationId"></param>
         /// <param name="request"></param>
@@ -923,7 +923,7 @@ namespace Novu
         /// <summary>
         /// Update an integration<br/>
         /// Update an integration by its unique key identifier **integrationId**. <br/>
-        ///     Each provider supports different credentials, check the provider documentation for more details.
+        ///     Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.
         /// </summary>
         /// <param name="integrationId"></param>
         /// <param name="name"></param>
