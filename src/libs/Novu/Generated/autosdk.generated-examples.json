@@ -552,6 +552,17 @@
     },
     {
       "Order": 51,
+      "Title": "Configure a chat integration webhook",
+      "Slug": "integrationscontroller-configureintegrationwebhook",
+      "Description": "Registers the Novu webhook URL with the chat provider for the specified integration. Telegram is the only supported provider initially.",
+      "Language": "http",
+      "Code": "### Configure a chat integration webhook\n# @name IntegrationsController_configureIntegrationWebhook\nPOST {{host}}/v1/integrations/{{integrationIdentifier}}/webhook/configure\nAccept: application/json\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "IntegrationsController_configureIntegrationWebhook",
+      "Setup": null
+    },
+    {
+      "Order": 52,
       "Title": "Create an integration",
       "Slug": "integrationscontroller-createintegration",
       "Description": "Create an integration for the current environment the user is based on the API key provided. \n    Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.",
@@ -562,7 +573,18 @@
       "Setup": null
     },
     {
-      "Order": 52,
+      "Order": 53,
+      "Title": "Issue a short-lived mobile setup link for an existing integration",
+      "Slug": "integrationscontroller-createintegrationmobilelink",
+      "Description": "Returns an opaque, single-use setup token plus a mobile URL for configuring an existing chat integration. Telegram is the only supported provider initially.",
+      "Language": "http",
+      "Code": "### Issue a short-lived mobile setup link for an existing integration\n# @name IntegrationsController_createIntegrationMobileLink\nPOST {{host}}/v1/integrations/{{integrationIdentifier}}/mobile-link\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022subscriberId\u0022: \u0022subscriber-123\u0022\n}\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "IntegrationsController_createIntegrationMobileLink",
+      "Setup": null
+    },
+    {
+      "Order": 54,
       "Title": "List all integrations",
       "Slug": "integrationscontroller-listintegrations",
       "Description": "List all the channels integrations created in the organization. Only integration metadata is returned, credentials field is returned as an empty object.",
@@ -573,7 +595,7 @@
       "Setup": null
     },
     {
-      "Order": 53,
+      "Order": 55,
       "Title": "Delete an integration",
       "Slug": "integrationscontroller-removeintegration",
       "Description": "Delete an integration by its unique key identifier **integrationId**. \n    This action is irreversible. Only integration metadata is returned, credentials field is returned as empty object.",
@@ -584,7 +606,7 @@
       "Setup": null
     },
     {
-      "Order": 54,
+      "Order": 56,
       "Title": "Update an integration",
       "Slug": "integrationscontroller-updateintegrationbyid",
       "Description": "Update an integration by its unique key identifier **integrationId**. \n    Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.",
@@ -595,7 +617,18 @@
       "Setup": null
     },
     {
-      "Order": 55,
+      "Order": 57,
+      "Title": "Issue a URL to link a subscriber chat identity",
+      "Slug": "integrationscontroller-linkchannelendpoint",
+      "Description": "Returns a provider-specific URL the subscriber opens to link their chat identity. The integration provider is resolved from integrationIdentifier; Telegram returns a deep link.",
+      "Language": "http",
+      "Code": "### Issue a URL to link a subscriber chat identity\n# @name IntegrationsController_linkChannelEndpoint\nPOST {{host}}/v1/integrations/channel-endpoints/link\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022integrationIdentifier\u0022: \u0022telegram-bot\u0022,\n  \u0022subscriberId\u0022: \u0022subscriber-123\u0022\n}\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "IntegrationsController_linkChannelEndpoint",
+      "Setup": null
+    },
+    {
+      "Order": 58,
       "Title": "List active integrations",
       "Slug": "integrationscontroller-getactiveintegrations",
       "Description": "List all the active integrations created in the organization. Only integration metadata is returned, credentials field is returned as an empty object.",
@@ -606,7 +639,7 @@
       "Setup": null
     },
     {
-      "Order": 56,
+      "Order": 59,
       "Title": "Update integration as primary",
       "Slug": "integrationscontroller-setintegrationasprimary",
       "Description": "Update an integration as **primary** by its unique key identifier **integrationId**. \n    This API will set the integration as primary for that channel in the current environment. \n    Primary integration is used to deliver notification for sms and email channels in the workflow. \n    Only integration metadata is returned, credentials field is returned as an empty object.",
@@ -617,7 +650,7 @@
       "Setup": null
     },
     {
-      "Order": 57,
+      "Order": 60,
       "Title": "Duplicate a layout",
       "Slug": "layoutscontroller-duplicate",
       "Description": "Duplicates a layout by its unique identifier **layoutId**. This will create a new layout with the content of the original layout.",
@@ -628,7 +661,7 @@
       "Setup": null
     },
     {
-      "Order": 58,
+      "Order": 61,
       "Title": "Generate layout preview",
       "Slug": "layoutscontroller-generatepreview",
       "Description": "Generates a preview for a layout by its unique identifier **layoutId**",
@@ -639,7 +672,7 @@
       "Setup": null
     },
     {
-      "Order": 59,
+      "Order": 62,
       "Title": "Create a layout",
       "Slug": "layoutscontroller-create",
       "Description": "Creates a new layout in the Novu Cloud environment",
@@ -650,7 +683,7 @@
       "Setup": null
     },
     {
-      "Order": 60,
+      "Order": 63,
       "Title": "Delete a layout",
       "Slug": "layoutscontroller-delete",
       "Description": "Removes a specific layout by its unique identifier **layoutId**",
@@ -661,7 +694,7 @@
       "Setup": null
     },
     {
-      "Order": 61,
+      "Order": 64,
       "Title": "Retrieve a layout",
       "Slug": "layoutscontroller-get",
       "Description": "Fetches details of a specific layout by its unique identifier **layoutId**",
@@ -672,7 +705,7 @@
       "Setup": null
     },
     {
-      "Order": 62,
+      "Order": 65,
       "Title": "List all layouts",
       "Slug": "layoutscontroller-list",
       "Description": "Retrieves a list of layouts with optional filtering and pagination",
@@ -683,7 +716,7 @@
       "Setup": null
     },
     {
-      "Order": 63,
+      "Order": 66,
       "Title": "Update a layout",
       "Slug": "layoutscontroller-update",
       "Description": "Updates the details of an existing layout, here **layoutId** is the identifier of the layout",
@@ -694,7 +727,7 @@
       "Setup": null
     },
     {
-      "Order": 64,
+      "Order": 67,
       "Title": "Get layout usage",
       "Slug": "layoutscontroller-getusage",
       "Description": "Retrieves information about workflows that use the specified layout by its unique identifier **layoutId**",
@@ -705,7 +738,7 @@
       "Setup": null
     },
     {
-      "Order": 65,
+      "Order": 68,
       "Title": "Delete messages by transactionId",
       "Slug": "messagescontroller-deletemessagesbytransactionid",
       "Description": "Delete multiple messages from the Novu platform using **transactionId** of triggered event. \n    This API supports filtering by **channel** and delete all messages associated with the **transactionId**.",
@@ -716,7 +749,7 @@
       "Setup": null
     },
     {
-      "Order": 66,
+      "Order": 69,
       "Title": "Delete a message",
       "Slug": "messagescontroller-deletemessage",
       "Description": "Delete a message entity from the Novu platform by **messageId**. \n    This action is irreversible. **messageId** is required and of mongodbId type.",
@@ -727,7 +760,7 @@
       "Setup": null
     },
     {
-      "Order": 67,
+      "Order": 70,
       "Title": "List all messages",
       "Slug": "messagescontroller-getmessages",
       "Description": "List all messages for the current environment. \n    This API supports filtering by **channel**, **subscriberId**, and **transactionId**. \n    This API returns a paginated list of messages.",
@@ -738,7 +771,7 @@
       "Setup": null
     },
     {
-      "Order": 68,
+      "Order": 71,
       "Title": "Retrieve an event",
       "Slug": "notificationscontroller-getnotification",
       "Description": "Retrieve an event by its unique key identifier **notificationId**. \n    Here **notificationId** is of mongodbId type. \n    This API returns the event details - execution logs, status, actual notification (message) generated by each workflow step.",
@@ -749,7 +782,7 @@
       "Setup": null
     },
     {
-      "Order": 69,
+      "Order": 72,
       "Title": "List all events",
       "Slug": "notificationscontroller-listnotifications",
       "Description": "List all notification events (triggered events) for the current environment. \n    This API supports filtering by **channels**, **templates**, **emails**, **subscriberIds**, **transactionId**, **topicKey**, **severity**, **contextKeys**. \n    Checkout all available filters in the query section.\n    This API returns event triggers, to list each channel notifications, check messages APIs.",
@@ -760,7 +793,7 @@
       "Setup": null
     },
     {
-      "Order": 70,
+      "Order": 73,
       "Title": "Create a subscriber",
       "Slug": "subscriberscontroller-createsubscriber",
       "Description": "Create a subscriber with the subscriber attributes. \n      **subscriberId** is a required field, rest other fields are optional, if the subscriber already exists, it will be updated",
@@ -771,7 +804,7 @@
       "Setup": null
     },
     {
-      "Order": 71,
+      "Order": 74,
       "Title": "Bulk create subscribers",
       "Slug": "subscribersv1controller-bulkcreatesubscribers",
       "Description": "Using this endpoint multiple subscribers can be created at once. The bulk API is limited to 500 subscribers per request.",
@@ -782,7 +815,7 @@
       "Setup": null
     },
     {
-      "Order": 72,
+      "Order": 75,
       "Title": "Delete a subscriber",
       "Slug": "subscriberscontroller-removesubscriber",
       "Description": "Deletes a subscriber entity from the Novu platform along with associated messages, preferences, and topic subscriptions. \n      **subscriberId** is a required field.",
@@ -793,7 +826,7 @@
       "Setup": null
     },
     {
-      "Order": 73,
+      "Order": 76,
       "Title": "Update a subscriber",
       "Slug": "subscriberscontroller-patchsubscriber",
       "Description": "Update a subscriber by its unique key identifier **subscriberId**. \n    **subscriberId** is a required field, rest other fields are optional",
@@ -804,7 +837,7 @@
       "Setup": null
     },
     {
-      "Order": 74,
+      "Order": 77,
       "Title": "Retrieve a subscriber",
       "Slug": "subscriberscontroller-getsubscriber",
       "Description": "Retrieve a subscriber by its unique key identifier **subscriberId**. \n    **subscriberId** field is required.",
@@ -815,7 +848,7 @@
       "Setup": null
     },
     {
-      "Order": 75,
+      "Order": 78,
       "Title": "Search subscribers",
       "Slug": "subscriberscontroller-searchsubscribers",
       "Description": "Search subscribers by their **email**, **phone**, **subscriberId** and **name**. \n    The search is case sensitive and supports pagination.Checkout all available filters in the query section.",
@@ -826,7 +859,7 @@
       "Setup": null
     },
     {
-      "Order": 76,
+      "Order": 79,
       "Title": "Upsert provider credentials",
       "Slug": "subscribersv1controller-modifysubscriberchannel",
       "Description": "Upsert credentials for a provider such as **slack** and **FCM**. \n      **providerId** is required field. This API creates **deviceTokens** or appends to the existing ones.",
@@ -837,7 +870,7 @@
       "Setup": null
     },
     {
-      "Order": 77,
+      "Order": 80,
       "Title": "Delete provider credentials",
       "Slug": "subscribersv1controller-deletesubscribercredentials",
       "Description": "Delete subscriber credentials for a provider such as **slack** and **FCM** by **providerId**. \n    This action is irreversible and will remove the credentials for the provider for particular **subscriberId**.",
@@ -848,7 +881,7 @@
       "Setup": null
     },
     {
-      "Order": 78,
+      "Order": 81,
       "Title": "Update provider credentials",
       "Slug": "subscribersv1controller-updatesubscriberchannel",
       "Description": "Update credentials for a provider such as **slack** and **FCM**. \n      **providerId** is required field. This API creates the **deviceTokens** or replaces the existing ones.",
@@ -859,7 +892,7 @@
       "Setup": null
     },
     {
-      "Order": 79,
+      "Order": 82,
       "Title": "Archive a notification",
       "Slug": "subscriberscontroller-archivenotification",
       "Description": "Archive a specific in-app (inbox) notification by its unique identifier **notificationId**.",
@@ -870,7 +903,7 @@
       "Setup": null
     },
     {
-      "Order": 80,
+      "Order": 83,
       "Title": "Archive all notifications",
       "Slug": "subscriberscontroller-archiveallnotifications",
       "Description": "Archive all in-app (inbox) notifications matching the specified filters. Supports context-based filtering.",
@@ -881,7 +914,7 @@
       "Setup": null
     },
     {
-      "Order": 81,
+      "Order": 84,
       "Title": "Archive all read notifications",
       "Slug": "subscriberscontroller-archiveallreadnotifications",
       "Description": "Archive all read in-app (inbox) notifications matching the specified filters. Supports context-based filtering.",
@@ -892,7 +925,7 @@
       "Setup": null
     },
     {
-      "Order": 82,
+      "Order": 85,
       "Title": "Complete a notification action",
       "Slug": "subscriberscontroller-completenotificationaction",
       "Description": "Mark a single in-app (inbox) notification\u0027s action (primary or secondary) as completed by its unique identifier **notificationId** and action type **actionType**.",
@@ -903,7 +936,7 @@
       "Setup": null
     },
     {
-      "Order": 83,
+      "Order": 86,
       "Title": "Retrieve subscriber notifications count",
       "Slug": "subscriberscontroller-getsubscribernotificationscount",
       "Description": "Retrieve count of in-app (inbox) notifications for a subscriber by its unique key identifier **subscriberId**. \n    Supports multiple filters to count in-app (inbox) notifications by different criteria, including context keys.",
@@ -914,7 +947,7 @@
       "Setup": null
     },
     {
-      "Order": 84,
+      "Order": 87,
       "Title": "Delete a notification",
       "Slug": "subscriberscontroller-deletenotification",
       "Description": "Delete a specific in-app (inbox) notification permanently by its unique identifier **notificationId**.",
@@ -925,7 +958,7 @@
       "Setup": null
     },
     {
-      "Order": 85,
+      "Order": 88,
       "Title": "Delete all notifications",
       "Slug": "subscriberscontroller-deleteallnotifications",
       "Description": "Permanently delete all in-app (inbox) notifications matching the specified filters. Supports context-based filtering.",
@@ -936,7 +969,7 @@
       "Setup": null
     },
     {
-      "Order": 86,
+      "Order": 89,
       "Title": "Retrieve subscriber notifications",
       "Slug": "subscriberscontroller-getsubscribernotifications",
       "Description": "Retrieve in-app (inbox) notifications for a subscriber by its unique key identifier **subscriberId**. \n    Supports filtering by tags, read/archived/snoozed/seen state, data attributes, severity, date range, and context keys.",
@@ -947,7 +980,7 @@
       "Setup": null
     },
     {
-      "Order": 87,
+      "Order": 90,
       "Title": "Mark all notifications as read",
       "Slug": "subscriberscontroller-markallnotificationsasread",
       "Description": "Mark all in-app (inbox) notifications matching the specified filters as read. Supports context-based filtering.",
@@ -958,7 +991,7 @@
       "Setup": null
     },
     {
-      "Order": 88,
+      "Order": 91,
       "Title": "Mark a notification as read",
       "Slug": "subscriberscontroller-marknotificationasread",
       "Description": "Mark a specific in-app (inbox) notification as read by its unique identifier **notificationId**.",
@@ -969,7 +1002,7 @@
       "Setup": null
     },
     {
-      "Order": 89,
+      "Order": 92,
       "Title": "Mark notifications as seen",
       "Slug": "subscriberscontroller-marknotificationsasseen",
       "Description": "Mark specific and multiple in-app (inbox) notifications as seen. Supports context-based filtering.",
@@ -980,7 +1013,7 @@
       "Setup": null
     },
     {
-      "Order": 90,
+      "Order": 93,
       "Title": "Mark a notification as unread",
       "Slug": "subscriberscontroller-marknotificationasunread",
       "Description": "Mark a specific in-app (inbox) notification as unread by its unique identifier **notificationId**.",
@@ -991,7 +1024,7 @@
       "Setup": null
     },
     {
-      "Order": 91,
+      "Order": 94,
       "Title": "Revert a notification action",
       "Slug": "subscriberscontroller-revertnotificationaction",
       "Description": "Revert a single in-app (inbox) notification\u0027s action (primary or secondary) to pending state by its unique identifier **notificationId** and action type **actionType**.",
@@ -1002,7 +1035,7 @@
       "Setup": null
     },
     {
-      "Order": 92,
+      "Order": 95,
       "Title": "Snooze a notification",
       "Slug": "subscriberscontroller-snoozenotification",
       "Description": "Snooze a specific in-app (inbox) notification by its unique identifier **notificationId** until a specified time.",
@@ -1013,7 +1046,7 @@
       "Setup": null
     },
     {
-      "Order": 93,
+      "Order": 96,
       "Title": "Unarchive a notification",
       "Slug": "subscriberscontroller-unarchivenotification",
       "Description": "Unarchive a specific in-app (inbox) notification by its unique identifier **notificationId**.",
@@ -1024,7 +1057,7 @@
       "Setup": null
     },
     {
-      "Order": 94,
+      "Order": 97,
       "Title": "Unsnooze a notification",
       "Slug": "subscriberscontroller-unsnoozenotification",
       "Description": "Unsnooze a specific in-app (inbox) notification by its unique identifier **notificationId**.",
@@ -1035,7 +1068,7 @@
       "Setup": null
     },
     {
-      "Order": 95,
+      "Order": 98,
       "Title": "Bulk update subscriber preferences",
       "Slug": "subscriberscontroller-bulkupdatesubscriberpreferences",
       "Description": "Bulk update subscriber preferences by its unique key identifier **subscriberId**. \n    This API allows updating multiple workflow preferences in a single request.",
@@ -1046,7 +1079,7 @@
       "Setup": null
     },
     {
-      "Order": 96,
+      "Order": 99,
       "Title": "Retrieve subscriber preferences",
       "Slug": "subscriberscontroller-getsubscriberpreferences",
       "Description": "Retrieve subscriber channel preferences by its unique key identifier **subscriberId**. \n    This API returns all five channels preferences for all workflows and global preferences.",
@@ -1057,7 +1090,7 @@
       "Setup": null
     },
     {
-      "Order": 97,
+      "Order": 100,
       "Title": "Update subscriber preferences",
       "Slug": "subscriberscontroller-updatesubscriberpreferences",
       "Description": "Update subscriber preferences by its unique key identifier **subscriberId**. \n    **workflowId** is optional field, if provided, this API will update that workflow preference, \n    otherwise it will update global preferences",
@@ -1068,7 +1101,7 @@
       "Setup": null
     },
     {
-      "Order": 98,
+      "Order": 101,
       "Title": "Update subscriber online status",
       "Slug": "subscribersv1controller-updatesubscriberonlineflag",
       "Description": "Update the subscriber online status by its unique key identifier **subscriberId**",
@@ -1079,7 +1112,7 @@
       "Setup": null
     },
     {
-      "Order": 99,
+      "Order": 102,
       "Title": "Retrieve subscriber subscriptions",
       "Slug": "subscriberscontroller-listsubscribertopics",
       "Description": "Retrieve subscriber\u0027s topic subscriptions by its unique key identifier **subscriberId**. \n    Checkout all available filters in the query section.",
@@ -1090,7 +1123,7 @@
       "Setup": null
     },
     {
-      "Order": 100,
+      "Order": 103,
       "Title": "Create a topic",
       "Slug": "topicscontroller-upserttopic",
       "Description": "Creates a new topic if it does not exist, or updates an existing topic if it already exists. Use ?failIfExists=true to prevent updates.",
@@ -1101,7 +1134,7 @@
       "Setup": null
     },
     {
-      "Order": 101,
+      "Order": 104,
       "Title": "Retrieve a topic",
       "Slug": "topicscontroller-gettopic",
       "Description": "Retrieve a topic by its unique key identifier **topicKey**",
@@ -1112,7 +1145,7 @@
       "Setup": null
     },
     {
-      "Order": 102,
+      "Order": 105,
       "Title": "List all topics",
       "Slug": "topicscontroller-listtopics",
       "Description": "This api returns a paginated list of topics.\n    Topics can be filtered by **key**, **name**, or **includeCursor** to paginate through the list. \n    Checkout all available filters in the query section.",
@@ -1123,7 +1156,7 @@
       "Setup": null
     },
     {
-      "Order": 103,
+      "Order": 106,
       "Title": "Delete a topic",
       "Slug": "topicscontroller-deletetopic",
       "Description": "Delete a topic by its unique key identifier **topicKey**. \n    This action is irreversible and will remove all subscriptions to the topic.",
@@ -1134,7 +1167,7 @@
       "Setup": null
     },
     {
-      "Order": 104,
+      "Order": 107,
       "Title": "Update a topic",
       "Slug": "topicscontroller-updatetopic",
       "Description": "Update a topic name by its unique key identifier **topicKey**",
@@ -1145,7 +1178,7 @@
       "Setup": null
     },
     {
-      "Order": 105,
+      "Order": 108,
       "Title": "Check topic subscriber",
       "Slug": "topicsv1controller-gettopicsubscriber",
       "Description": "Check if a subscriber belongs to a certain topic",
@@ -1156,7 +1189,7 @@
       "Setup": null
     },
     {
-      "Order": 106,
+      "Order": 109,
       "Title": "Create topic subscriptions",
       "Slug": "topicscontroller-createtopicsubscriptions",
       "Description": "This api will create subscription for subscriberIds for a topic. \n      Its like subscribing to a common interest group. if topic does not exist, it will be created.",
@@ -1167,7 +1200,7 @@
       "Setup": null
     },
     {
-      "Order": 107,
+      "Order": 110,
       "Title": "Delete topic subscriptions",
       "Slug": "topicscontroller-deletetopicsubscriptions",
       "Description": "Delete subscriptions for subscriberIds for a topic.",
@@ -1178,7 +1211,7 @@
       "Setup": null
     },
     {
-      "Order": 108,
+      "Order": 111,
       "Title": "Retrieve a topic subscription",
       "Slug": "topicscontroller-gettopicsubscription",
       "Description": "Retrieve a subscription by its unique identifier for a topic.",
@@ -1189,7 +1222,7 @@
       "Setup": null
     },
     {
-      "Order": 109,
+      "Order": 112,
       "Title": "List topic subscriptions",
       "Slug": "topicscontroller-listtopicsubscriptions",
       "Description": "List all subscriptions of subscribers for a topic.\n    Checkout all available filters in the query section.",
@@ -1200,7 +1233,7 @@
       "Setup": null
     },
     {
-      "Order": 110,
+      "Order": 113,
       "Title": "Update a topic subscription",
       "Slug": "topicscontroller-updatetopicsubscription",
       "Description": "Update a subscription by its unique identifier for a topic. You can update the preferences and name associated with the subscription.",
@@ -1211,7 +1244,7 @@
       "Setup": null
     },
     {
-      "Order": 111,
+      "Order": 114,
       "Title": "Retrieve a translation",
       "Slug": "translationcontroller-getsingletranslation",
       "Description": "Retrieve a specific translation by resource type, resource ID and locale",
@@ -1222,7 +1255,7 @@
       "Setup": null
     },
     {
-      "Order": 112,
+      "Order": 115,
       "Title": "Delete a translation group",
       "Slug": "translationcontroller-deletetranslationgroupendpoint",
       "Description": "Delete an entire translation group and all its translations",
@@ -1233,7 +1266,7 @@
       "Setup": null
     },
     {
-      "Order": 113,
+      "Order": 116,
       "Title": "Retrieve a translation group",
       "Slug": "translationcontroller-gettranslationgroupendpoint",
       "Description": "Retrieves a single translation group by resource type (workflow, layout) and resource ID (workflowId, layoutId)",
@@ -1244,7 +1277,7 @@
       "Setup": null
     },
     {
-      "Order": 114,
+      "Order": 117,
       "Title": "Retrieve master translations JSON",
       "Slug": "translationcontroller-getmasterjsonendpoint",
       "Description": "Retrieve all translations for a locale in master JSON format organized by resourceId (workflowId)",
@@ -1255,7 +1288,7 @@
       "Setup": null
     },
     {
-      "Order": 115,
+      "Order": 118,
       "Title": "Delete a workflow",
       "Slug": "workflowcontroller-removeworkflow",
       "Description": "Removes a specific workflow by its unique identifier **workflowId**",
@@ -1266,7 +1299,7 @@
       "Setup": null
     },
     {
-      "Order": 116,
+      "Order": 119,
       "Title": "Retrieve a workflow",
       "Slug": "workflowcontroller-getworkflow",
       "Description": "Fetches details of a specific workflow by its unique identifier **workflowId**",
@@ -1277,7 +1310,7 @@
       "Setup": null
     },
     {
-      "Order": 117,
+      "Order": 120,
       "Title": "List all workflows",
       "Slug": "workflowcontroller-searchworkflows",
       "Description": "Retrieves a list of workflows with optional filtering and pagination",
@@ -1288,7 +1321,7 @@
       "Setup": null
     },
     {
-      "Order": 118,
+      "Order": 121,
       "Title": "Update a workflow",
       "Slug": "workflowcontroller-patchworkflow",
       "Description": "Partially updates a workflow by its unique identifier **workflowId**",
@@ -1299,7 +1332,7 @@
       "Setup": null
     },
     {
-      "Order": 119,
+      "Order": 122,
       "Title": "Sync a workflow",
       "Slug": "workflowcontroller-sync",
       "Description": "Synchronizes a workflow to the target environment",
@@ -1310,7 +1343,7 @@
       "Setup": null
     },
     {
-      "Order": 120,
+      "Order": 123,
       "Title": "Create a workflow",
       "Slug": "workflowcontroller-create",
       "Description": "Creates a new workflow in the Novu Cloud environment",
@@ -1321,7 +1354,7 @@
       "Setup": null
     },
     {
-      "Order": 121,
+      "Order": 124,
       "Title": "Update a workflow",
       "Slug": "workflowcontroller-update",
       "Description": "Updates the details of an existing workflow, here **workflowId** is the identifier of the workflow",
@@ -1332,7 +1365,7 @@
       "Setup": null
     },
     {
-      "Order": 122,
+      "Order": 125,
       "Title": "Generate a step preview",
       "Slug": "workflowcontroller-generatepreview",
       "Description": "Generates a preview for a specific workflow step by its unique identifier **stepId**",
@@ -1343,7 +1376,7 @@
       "Setup": null
     },
     {
-      "Order": 123,
+      "Order": 126,
       "Title": "Retrieve workflow step",
       "Slug": "workflowcontroller-getworkflowstepdata",
       "Description": "Retrieves data for a specific step in a workflow",
