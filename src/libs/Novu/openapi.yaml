@@ -75911,6 +75911,14 @@
               }
             ]
           },
+          "actor": {
+            "description": "Partial actor information",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SubscriberResponseDtoOptional"
+              }
+            ]
+          },
           "payload": {
             "type": "object",
             "description": "Payload data",
