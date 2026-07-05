@@ -15,6 +15,12 @@ namespace Novu
         public global::Novu.SubscriberResponseDtoOptional? Subscriber { get; set; }
 
         /// <summary>
+        /// Partial actor information
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
+        public global::Novu.SubscriberResponseDtoOptional? Actor { get; set; }
+
+        /// <summary>
         /// Payload data
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
@@ -50,6 +56,9 @@ namespace Novu
         /// <param name="subscriber">
         /// Partial subscriber information
         /// </param>
+        /// <param name="actor">
+        /// Partial actor information
+        /// </param>
         /// <param name="payload">
         /// Payload data
         /// </param>
@@ -65,12 +74,14 @@ namespace Novu
 #endif
         public PreviewPayloadDto(
             global::Novu.SubscriberResponseDtoOptional? subscriber,
+            global::Novu.SubscriberResponseDtoOptional? actor,
             object? payload,
             object? steps,
             object? context,
             object? env)
         {
             this.Subscriber = subscriber;
+            this.Actor = actor;
             this.Payload = payload;
             this.Steps = steps;
             this.Context = context;
