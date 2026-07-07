@@ -13,7 +13,7 @@ namespace Novu
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Novu.IntegrationsControllerCreateIntegrationMobileLinkResponse> IntegrationsControllerCreateIntegrationMobileLinkAsync(
+        global::System.Threading.Tasks.Task<global::Novu.IntegrationsControllerCreateIntegrationMobileLinkResponse> CreateMobileLinkAsync(
             string integrationIdentifier,
 
             global::Novu.IssueIntegrationMobileLinkRequestDto request,
@@ -28,7 +28,7 @@ namespace Novu
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerCreateIntegrationMobileLinkResponse>> IntegrationsControllerCreateIntegrationMobileLinkAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.IntegrationsControllerCreateIntegrationMobileLinkResponse>> CreateMobileLinkAsResponseAsync(
             string integrationIdentifier,
 
             global::Novu.IssueIntegrationMobileLinkRequestDto request,
@@ -46,7 +46,7 @@ namespace Novu
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Novu.IntegrationsControllerCreateIntegrationMobileLinkResponse> IntegrationsControllerCreateIntegrationMobileLinkAsync(
+        global::System.Threading.Tasks.Task<global::Novu.IntegrationsControllerCreateIntegrationMobileLinkResponse> CreateMobileLinkAsync(
             string integrationIdentifier,
             string? subscriberId = default,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
