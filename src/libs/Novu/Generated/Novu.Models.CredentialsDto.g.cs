@@ -299,6 +299,12 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("outboundConnectedAt")]
+        public string? OutboundConnectedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("useFromAddressOverride")]
         public bool? UseFromAddressOverride { get; set; }
 
@@ -389,6 +395,7 @@ namespace Novu
         /// <param name="appIOBaseUrl"></param>
         /// <param name="signingSecret"></param>
         /// <param name="outboundIntegrationId"></param>
+        /// <param name="outboundConnectedAt"></param>
         /// <param name="useFromAddressOverride"></param>
         /// <param name="fromAddressOverride"></param>
         /// <param name="emailSlugPrefix">
@@ -455,6 +462,7 @@ namespace Novu
             string? appIOBaseUrl,
             string? signingSecret,
             string? outboundIntegrationId,
+            string? outboundConnectedAt,
             bool? useFromAddressOverride,
             string? fromAddressOverride,
             string? emailSlugPrefix,
@@ -510,6 +518,7 @@ namespace Novu
             this.AppIOBaseUrl = appIOBaseUrl;
             this.SigningSecret = signingSecret;
             this.OutboundIntegrationId = outboundIntegrationId;
+            this.OutboundConnectedAt = outboundConnectedAt;
             this.UseFromAddressOverride = useFromAddressOverride;
             this.FromAddressOverride = fromAddressOverride;
             this.EmailSlugPrefix = emailSlugPrefix;

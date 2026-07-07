@@ -18053,6 +18053,7 @@
     "/v1/integrations/{integrationIdentifier}/mobile-link": {
       "post": {
         "operationId": "IntegrationsController_createIntegrationMobileLink",
+        "x-speakeasy-name-override": "createMobileLink",
         "summary": "Issue a short-lived mobile setup link for an existing integration",
         "description": "Returns an opaque, single-use setup token plus a mobile URL for configuring an existing chat integration. Telegram is the only supported provider initially.",
         "parameters": [
@@ -67219,6 +67220,9 @@
             "type": "string"
           },
           "outboundIntegrationId": {
+            "type": "string"
+          },
+          "outboundConnectedAt": {
             "type": "string"
           },
           "useFromAddressOverride": {
