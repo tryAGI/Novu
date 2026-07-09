@@ -63554,7 +63554,7 @@
   "info": {
     "title": "Novu API",
     "description": "Novu REST API. Please see https://docs.novu.co/api-reference for more details.",
-    "version": "3.17.1",
+    "version": "3.18.0",
     "contact": {
       "name": "Novu Support",
       "url": "https://discord.gg/novu",
@@ -72093,7 +72093,8 @@
           "identifier": {
             "type": "string",
             "description": "Unique identifier for this subscription",
-            "example": "subscriber-123-subscription-a"
+            "example": "subscriber-123-subscription-a",
+            "maxLength": 512
           },
           "subscriberId": {
             "type": "string",
