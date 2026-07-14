@@ -145,6 +145,46 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.GetWorkflowRunResponseDtoSeverityNullableJsonConverter),
 
+            typeof(global::Novu.JsonConverters.AgentBehaviorDtoSubscriberAccessJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentBehaviorDtoSubscriberAccessNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentToolDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentToolDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentResponseDtoRuntimeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentResponseDtoRuntimeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentResponseDtoVisibilityJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentResponseDtoVisibilityNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentSkillInputDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentSkillInputDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ManagedRuntimeDtoProviderIdJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ManagedRuntimeDtoProviderIdNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateAgentRequestDtoRuntimeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateAgentRequestDtoRuntimeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentPlanUsageDtoLimitSourceJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentPlanUsageDtoLimitSourceNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SignalDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SignalDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SignalDtoActionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SignalDtoActionNullableJsonConverter),
+
             typeof(global::Novu.JsonConverters.DomainResponseDtoStatusJsonConverter),
 
             typeof(global::Novu.JsonConverters.DomainResponseDtoStatusNullableJsonConverter),
@@ -533,6 +573,18 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.CreateTelegramChatEndpointDtoTypeNullableJsonConverter),
 
+            typeof(global::Novu.JsonConverters.CreateWebexPersonEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateWebexPersonEndpointDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateWebexRoomEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateWebexRoomEndpointDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateLineUserEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateLineUserEndpointDtoTypeNullableJsonConverter),
+
             typeof(global::Novu.JsonConverters.GetChannelEndpointResponseDtoChannelJsonConverter),
 
             typeof(global::Novu.JsonConverters.GetChannelEndpointResponseDtoChannelNullableJsonConverter),
@@ -624,6 +676,14 @@ namespace Novu
             typeof(global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeJsonConverter),
 
             typeof(global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentsControllerListAgentsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentsControllerListAgentsOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentIntegrationsControllerListAgentIntegrationsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentIntegrationsControllerListAgentIntegrationsOrderDirectionNullableJsonConverter),
 
             typeof(global::Novu.JsonConverters.DomainsControllerListDomainsOrderDirectionJsonConverter),
 
@@ -825,17 +885,25 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateTelegramChatEndpointDtoContext2>),
 
-            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto>),
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateWebexPersonEndpointDtoContext2>),
 
-            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto>),
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateWebexRoomEndpointDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateLineUserEndpointDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto>),
 
             typeof(global::Novu.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListLayoutResponseDto), TypeInfoPropertyName = "ListLayoutResponseDto_Novu_ListLayoutResponseDto")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant9_d819718aa0a1ad4d")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto>), TypeInfoPropertyName = "TelegramChatEndpointDto_4d499288bedd416f")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto>), TypeInfoPropertyName = "LineUserEndpointDto_0838ef363921a7c8")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto>), TypeInfoPropertyName = "WebexPersonEndpointDto_4c148951f37e9728")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>?), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant9_c21c4294b0aad1ee")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto>?), TypeInfoPropertyName = "TelegramChatEndpointDto_72bcdf72cda336d0")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto>?), TypeInfoPropertyName = "LineUserEndpointDto_7110c193dd59434d")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto>?), TypeInfoPropertyName = "WebexPersonEndpointDto_20094d452059fcf0")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
@@ -969,6 +1037,54 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoSeverity), TypeInfoPropertyName = "GetWorkflowRunResponseDtoSeverity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.StepRunDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChartsResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoSubscriberAccess), TypeInfoPropertyName = "AgentBehaviorDtoSubscriberAccess2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentToolDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentToolDtoType), TypeInfoPropertyName = "AgentToolDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentMcpServerDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ManagedRuntimeResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.AgentToolDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.AgentMcpServerDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentIntegrationSummaryDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentResponseDtoRuntime), TypeInfoPropertyName = "AgentResponseDtoRuntime2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentResponseDtoVisibility), TypeInfoPropertyName = "AgentResponseDtoVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.AgentIntegrationSummaryDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentSkillInputDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentSkillInputDtoType), TypeInfoPropertyName = "AgentSkillInputDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ManagedRuntimeDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ManagedRuntimeDtoProviderId), TypeInfoPropertyName = "ManagedRuntimeDtoProviderId2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.AgentSkillInputDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateAgentRequestDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateAgentRequestDtoRuntime), TypeInfoPropertyName = "CreateAgentRequestDtoRuntime2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentPlanUsageDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentPlanUsageDtoLimitSource), TypeInfoPropertyName = "AgentPlanUsageDtoLimitSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListAgentsResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.AgentResponseDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateAgentBridgeRequestDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateAgentRequestDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentIntegrationResponseIntegrationDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentIntegrationResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AddAgentIntegrationRequestDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PlanUsageDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListAgentIntegrationsResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.AgentIntegrationResponseDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateAgentIntegrationRequestDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ReplyContentDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ToolApprovalRequestPayloadDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EditPayloadDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ResolveDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SignalDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SignalDtoType), TypeInfoPropertyName = "SignalDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SignalDtoAction), TypeInfoPropertyName = "SignalDtoAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ToolResultDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AddReactionPayloadDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DeleteMessagePayloadDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentReplyPayloadDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.SignalDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.ToolResultDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.AddReactionPayloadDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.DeleteMessagePayloadDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ExpectedDnsRecordDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainResponseDtoStatus), TypeInfoPropertyName = "DomainResponseDtoStatus2")]
@@ -1281,56 +1397,6 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LookBackWindowDtoUnit), TypeInfoPropertyName = "LookBackWindowDtoUnit2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestControlDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestControlDtoType), TypeInfoPropertyName = "DigestControlDtoType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestControlDtoUnit), TypeInfoPropertyName = "DigestControlDtoUnit2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestControlsMetadataResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestStepResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleControlDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleControlDtoType), TypeInfoPropertyName = "ThrottleControlDtoType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleControlDtoUnit), TypeInfoPropertyName = "ThrottleControlDtoUnit2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleControlsMetadataResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleStepResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CustomControlDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CustomControlsMetadataResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CustomStepResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpMethodEnum), TypeInfoPropertyName = "HttpMethodEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestKeyValuePairDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestControlDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>>), TypeInfoPropertyName = "OneOfStringIListHttpRequestKeyValuePairDto2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestControlsMetadataResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestStepResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ActionDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InAppControlDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InAppControlsMetadataResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InAppStepResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowPreferenceDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelPreferenceDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowPreferencesDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Novu.ChannelPreferenceDto>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowPreferencesResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowStatusEnum), TypeInfoPropertyName = "WorkflowStatusEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.StepsItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepsItem), TypeInfoPropertyName = "StepsItem2_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDtoStepDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDtoStepDiscriminatorType), TypeInfoPropertyName = "WorkflowResponseDtoStepDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Novu.RuntimeIssueDto>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InAppStepUpsertDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.InAppControlDto, object>), TypeInfoPropertyName = "OneOfInAppControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailStepUpsertDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.EmailControlDto, object>), TypeInfoPropertyName = "OneOfEmailControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SmsStepUpsertDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SmsControlDto, object>), TypeInfoPropertyName = "OneOfSmsControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PushStepUpsertDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.PushControlDto, object>), TypeInfoPropertyName = "OneOfPushControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChatStepUpsertDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.ChatControlDto, object>), TypeInfoPropertyName = "OneOfChatControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayStepUpsertDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.DelayControlDto, object>), TypeInfoPropertyName = "OneOfDelayControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestStepUpsertDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.DigestControlDto, object>), TypeInfoPropertyName = "OneOfDigestControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleStepUpsertDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.ThrottleControlDto, object>), TypeInfoPropertyName = "OneOfThrottleControlDtoObject2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1474,6 +1540,46 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.GetWorkflowRunResponseDtoSeverityNullableJsonConverter),
 
+            typeof(global::Novu.JsonConverters.AgentBehaviorDtoSubscriberAccessJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentBehaviorDtoSubscriberAccessNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentToolDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentToolDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentResponseDtoRuntimeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentResponseDtoRuntimeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentResponseDtoVisibilityJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentResponseDtoVisibilityNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentSkillInputDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentSkillInputDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ManagedRuntimeDtoProviderIdJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ManagedRuntimeDtoProviderIdNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateAgentRequestDtoRuntimeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateAgentRequestDtoRuntimeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentPlanUsageDtoLimitSourceJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentPlanUsageDtoLimitSourceNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SignalDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SignalDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SignalDtoActionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SignalDtoActionNullableJsonConverter),
+
             typeof(global::Novu.JsonConverters.DomainResponseDtoStatusJsonConverter),
 
             typeof(global::Novu.JsonConverters.DomainResponseDtoStatusNullableJsonConverter),
@@ -1862,6 +1968,18 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.CreateTelegramChatEndpointDtoTypeNullableJsonConverter),
 
+            typeof(global::Novu.JsonConverters.CreateWebexPersonEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateWebexPersonEndpointDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateWebexRoomEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateWebexRoomEndpointDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateLineUserEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateLineUserEndpointDtoTypeNullableJsonConverter),
+
             typeof(global::Novu.JsonConverters.GetChannelEndpointResponseDtoChannelJsonConverter),
 
             typeof(global::Novu.JsonConverters.GetChannelEndpointResponseDtoChannelNullableJsonConverter),
@@ -1953,6 +2071,14 @@ namespace Novu
             typeof(global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeJsonConverter),
 
             typeof(global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentsControllerListAgentsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentsControllerListAgentsOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentIntegrationsControllerListAgentIntegrationsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentIntegrationsControllerListAgentIntegrationsOrderDirectionNullableJsonConverter),
 
             typeof(global::Novu.JsonConverters.DomainsControllerListDomainsOrderDirectionJsonConverter),
 
@@ -2154,18 +2280,76 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateTelegramChatEndpointDtoContext2>),
 
-            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto>),
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateWebexPersonEndpointDtoContext2>),
 
-            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto>),
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateWebexRoomEndpointDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateLineUserEndpointDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto>),
 
             typeof(global::Novu.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListLayoutResponseDto), TypeInfoPropertyName = "ListLayoutResponseDto_Novu_ListLayoutResponseDto")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant9_d819718aa0a1ad4d")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto>), TypeInfoPropertyName = "TelegramChatEndpointDto_4d499288bedd416f")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto>), TypeInfoPropertyName = "LineUserEndpointDto_0838ef363921a7c8")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto>), TypeInfoPropertyName = "WebexPersonEndpointDto_4c148951f37e9728")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>?), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant9_c21c4294b0aad1ee")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto>?), TypeInfoPropertyName = "TelegramChatEndpointDto_72bcdf72cda336d0")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto>?), TypeInfoPropertyName = "LineUserEndpointDto_7110c193dd59434d")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto>?), TypeInfoPropertyName = "WebexPersonEndpointDto_20094d452059fcf0")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestControlDtoUnit), TypeInfoPropertyName = "DigestControlDtoUnit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestControlsMetadataResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestStepResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleControlDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleControlDtoType), TypeInfoPropertyName = "ThrottleControlDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleControlDtoUnit), TypeInfoPropertyName = "ThrottleControlDtoUnit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleControlsMetadataResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleStepResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CustomControlDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CustomControlsMetadataResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CustomStepResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpMethodEnum), TypeInfoPropertyName = "HttpMethodEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestKeyValuePairDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestControlDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>>), TypeInfoPropertyName = "OneOfStringIListHttpRequestKeyValuePairDto2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestControlsMetadataResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestStepResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ActionDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InAppControlDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InAppControlsMetadataResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InAppStepResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowPreferenceDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelPreferenceDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowPreferencesDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Novu.ChannelPreferenceDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowPreferencesResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowStatusEnum), TypeInfoPropertyName = "WorkflowStatusEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.StepsItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepsItem), TypeInfoPropertyName = "StepsItem2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDtoStepDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDtoStepDiscriminatorType), TypeInfoPropertyName = "WorkflowResponseDtoStepDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Novu.RuntimeIssueDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InAppStepUpsertDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.InAppControlDto, object>), TypeInfoPropertyName = "OneOfInAppControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailStepUpsertDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.EmailControlDto, object>), TypeInfoPropertyName = "OneOfEmailControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SmsStepUpsertDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SmsControlDto, object>), TypeInfoPropertyName = "OneOfSmsControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PushStepUpsertDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.PushControlDto, object>), TypeInfoPropertyName = "OneOfPushControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChatStepUpsertDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.ChatControlDto, object>), TypeInfoPropertyName = "OneOfChatControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayStepUpsertDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.DelayControlDto, object>), TypeInfoPropertyName = "OneOfDelayControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestStepUpsertDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.DigestControlDto, object>), TypeInfoPropertyName = "OneOfDigestControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleStepUpsertDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.ThrottleControlDto, object>), TypeInfoPropertyName = "OneOfThrottleControlDtoObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CustomStepUpsertDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.CustomControlDto, object>), TypeInfoPropertyName = "OneOfCustomControlDtoObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpRequestStepUpsertDto))]
@@ -2299,6 +2483,21 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateTelegramChatEndpointDtoContext2>), TypeInfoPropertyName = "OneOfStringCreateTelegramChatEndpointDtoContext22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateTelegramChatEndpointDtoContext2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateTelegramChatEndpointDtoType), TypeInfoPropertyName = "CreateTelegramChatEndpointDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebexPersonEndpointDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWebexPersonEndpointDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateWebexPersonEndpointDtoContext2>), TypeInfoPropertyName = "OneOfStringCreateWebexPersonEndpointDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWebexPersonEndpointDtoContext2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWebexPersonEndpointDtoType), TypeInfoPropertyName = "CreateWebexPersonEndpointDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebexRoomEndpointDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWebexRoomEndpointDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateWebexRoomEndpointDtoContext2>), TypeInfoPropertyName = "OneOfStringCreateWebexRoomEndpointDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWebexRoomEndpointDtoContext2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWebexRoomEndpointDtoType), TypeInfoPropertyName = "CreateWebexRoomEndpointDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LineUserEndpointDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateLineUserEndpointDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateLineUserEndpointDtoContext2>), TypeInfoPropertyName = "OneOfStringCreateLineUserEndpointDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateLineUserEndpointDtoContext2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateLineUserEndpointDtoType), TypeInfoPropertyName = "CreateLineUserEndpointDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChannelEndpointResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChannelEndpointResponseDtoChannel), TypeInfoPropertyName = "GetChannelEndpointResponseDtoChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChannelEndpointResponseDtoProviderId), TypeInfoPropertyName = "GetChannelEndpointResponseDtoProviderId2")]
@@ -2306,7 +2505,6 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListChannelEndpointsResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.GetChannelEndpointResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateChannelEndpointRequestDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto>), TypeInfoPropertyName = "OneOfSlackChannelEndpointDtoSlackUserEndpointDtoWebhookEndpointDtoPhoneEndpointDto2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UploadTranslationsResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateTranslationRequestDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateTranslationRequestDtoResourceType), TypeInfoPropertyName = "CreateTranslationRequestDtoResourceType2")]
@@ -2364,6 +2562,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerUploadMasterJsonEndpointRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.ChannelTypeEnum>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentsControllerListAgentsOrderDirection), TypeInfoPropertyName = "AgentsControllerListAgentsOrderDirection2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentIntegrationsControllerListAgentIntegrationsOrderDirection), TypeInfoPropertyName = "AgentIntegrationsControllerListAgentIntegrationsOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainsOrderDirection), TypeInfoPropertyName = "DomainsControllerListDomainsOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainRoutesOrderDirection), TypeInfoPropertyName = "DomainsControllerListDomainRoutesOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContextsControllerListContextsOrderDirection), TypeInfoPropertyName = "ContextsControllerListContextsOrderDirection2")]
@@ -2395,6 +2595,14 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.TriggerEventResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EventsControllerBroadcastEventToAllResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.NotificationsControllerGetNotificationResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentsControllerCreateAgentResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentsControllerListAgentsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentsControllerUpdateAgentBridgeResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentsControllerGetAgentResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentsControllerUpdateAgentResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentIntegrationsControllerAddAgentIntegrationResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentIntegrationsControllerListAgentIntegrationsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentIntegrationsControllerUpdateAgentIntegrationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerCreateDomainResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerGetDomainResponse))]
@@ -2534,6 +2742,16 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoStatus?), TypeInfoPropertyName = "NullableGetWorkflowRunResponseDtoStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoDeliveryLifecycleStatus?), TypeInfoPropertyName = "NullableGetWorkflowRunResponseDtoDeliveryLifecycleStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoSeverity?), TypeInfoPropertyName = "NullableGetWorkflowRunResponseDtoSeverity2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoSubscriberAccess?), TypeInfoPropertyName = "NullableAgentBehaviorDtoSubscriberAccess2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentToolDtoType?), TypeInfoPropertyName = "NullableAgentToolDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentResponseDtoRuntime?), TypeInfoPropertyName = "NullableAgentResponseDtoRuntime2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentResponseDtoVisibility?), TypeInfoPropertyName = "NullableAgentResponseDtoVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentSkillInputDtoType?), TypeInfoPropertyName = "NullableAgentSkillInputDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ManagedRuntimeDtoProviderId?), TypeInfoPropertyName = "NullableManagedRuntimeDtoProviderId2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateAgentRequestDtoRuntime?), TypeInfoPropertyName = "NullableCreateAgentRequestDtoRuntime2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentPlanUsageDtoLimitSource?), TypeInfoPropertyName = "NullableAgentPlanUsageDtoLimitSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SignalDtoType?), TypeInfoPropertyName = "NullableSignalDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SignalDtoAction?), TypeInfoPropertyName = "NullableSignalDtoAction2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainResponseDtoStatus?), TypeInfoPropertyName = "NullableDomainResponseDtoStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainDiagnosticCheckDtoCode?), TypeInfoPropertyName = "NullableDomainDiagnosticCheckDtoCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainDiagnosticCheckDtoStatus?), TypeInfoPropertyName = "NullableDomainDiagnosticCheckDtoStatus2")]
@@ -2574,92 +2792,6 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestTimedMetadataUnit?), TypeInfoPropertyName = "NullableDigestTimedMetadataUnit2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestTimedMetadataType?), TypeInfoPropertyName = "NullableDigestTimedMetadataType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayRegularMetadataUnit?), TypeInfoPropertyName = "NullableDelayRegularMetadataUnit2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayRegularMetadataType?), TypeInfoPropertyName = "NullableDelayRegularMetadataType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayScheduledMetadataType?), TypeInfoPropertyName = "NullableDelayScheduledMetadataType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.DigestRegularMetadata, global::Novu.DigestTimedMetadata, global::Novu.DelayRegularMetadata, global::Novu.DelayScheduledMetadata>?), TypeInfoPropertyName = "NullableOneOfDigestRegularMetadataDigestTimedMetadataDelayRegularMetadataDelayScheduledMetadata2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.NotificationTriggerType?), TypeInfoPropertyName = "NullableNotificationTriggerType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageStatusEnum?), TypeInfoPropertyName = "NullableMessageStatusEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::System.Collections.Generic.IList<global::Novu.EmailBlock>, string>?), TypeInfoPropertyName = "NullableOneOfIListEmailBlockString2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::System.Collections.Generic.IList<string>>?), TypeInfoPropertyName = "NullableOneOfStringIListString2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageMarkAsRequestDtoMarkAs?), TypeInfoPropertyName = "NullableMessageMarkAsRequestDtoMarkAs2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MarkAllMessageAsRequestDtoMarkAs?), TypeInfoPropertyName = "NullableMarkAllMessageAsRequestDtoMarkAs2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MarkMessageActionAsSeenDtoStatus?), TypeInfoPropertyName = "NullableMarkMessageActionAsSeenDtoStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceOverrideSourceEnum?), TypeInfoPropertyName = "NullablePreferenceOverrideSourceEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceLevelEnum?), TypeInfoPropertyName = "NullablePreferenceLevelEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.BulkUpdateSubscriberPreferencesDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringBulkUpdateSubscriberPreferencesDtoContext22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.PatchSubscriberPreferencesDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringPatchSubscriberPreferencesDtoContext22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.RedirectDtoTarget?), TypeInfoPropertyName = "NullableRedirectDtoTarget2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ResourceTypeEnum?), TypeInfoPropertyName = "NullableResourceTypeEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiComponentEnum?), TypeInfoPropertyName = "NullableUiComponentEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AnyOf<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>?), TypeInfoPropertyName = "NullableAnyOfStringDoubleBooleanObjectIListAnyOfStringDoubleBooleanObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiSchemaGroupEnum?), TypeInfoPropertyName = "NullableUiSchemaGroupEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDtoEditorType?), TypeInfoPropertyName = "NullableEmailControlsDtoEditorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutCreationSourceEnum?), TypeInfoPropertyName = "NullableLayoutCreationSourceEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DirectionEnum?), TypeInfoPropertyName = "NullableDirectionEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutResponseDtoSortField?), TypeInfoPropertyName = "NullableLayoutResponseDtoSortField2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateLayoutPreviewResponseDtoResultType?), TypeInfoPropertyName = "NullableGenerateLayoutPreviewResponseDtoResultType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DeleteMessageResponseDtoStatus?), TypeInfoPropertyName = "NullableDeleteMessageResponseDtoStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.TopicSubscriberIdentifierDto>?), TypeInfoPropertyName = "NullableOneOfStringTopicSubscriberIdentifierDto2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateTopicSubscriptionsRequestDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateTopicSubscriptionsRequestDtoContext22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.WorkflowPreferenceRequestDto, global::Novu.GroupPreferenceFilterDto>?), TypeInfoPropertyName = "NullableOneOfStringWorkflowPreferenceRequestDtoGroupPreferenceFilterDto2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.DeleteTopicSubscriberIdentifierDto>?), TypeInfoPropertyName = "NullableOneOfStringDeleteTopicSubscriberIdentifierDto2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EnvironmentVariableResponseDtoType?), TypeInfoPropertyName = "NullableEnvironmentVariableResponseDtoType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateEnvironmentVariableRequestDtoType?), TypeInfoPropertyName = "NullableCreateEnvironmentVariableRequestDtoType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateEnvironmentVariableRequestDtoType?), TypeInfoPropertyName = "NullableUpdateEnvironmentVariableRequestDtoType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContentIssueEnum?), TypeInfoPropertyName = "NullableContentIssueEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationIssueEnum?), TypeInfoPropertyName = "NullableIntegrationIssueEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlDtoEditorType?), TypeInfoPropertyName = "NullableEmailControlDtoEditorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayControlDtoType?), TypeInfoPropertyName = "NullableDelayControlDtoType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayControlDtoUnit?), TypeInfoPropertyName = "NullableDelayControlDtoUnit2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LookBackWindowDtoUnit?), TypeInfoPropertyName = "NullableLookBackWindowDtoUnit2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestControlDtoType?), TypeInfoPropertyName = "NullableDigestControlDtoType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestControlDtoUnit?), TypeInfoPropertyName = "NullableDigestControlDtoUnit2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleControlDtoType?), TypeInfoPropertyName = "NullableThrottleControlDtoType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleControlDtoUnit?), TypeInfoPropertyName = "NullableThrottleControlDtoUnit2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpMethodEnum?), TypeInfoPropertyName = "NullableHttpMethodEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>>?), TypeInfoPropertyName = "NullableOneOfStringIListHttpRequestKeyValuePairDto2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowStatusEnum?), TypeInfoPropertyName = "NullableWorkflowStatusEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepsItem?), TypeInfoPropertyName = "NullableStepsItem2_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDtoStepDiscriminatorType?), TypeInfoPropertyName = "NullableWorkflowResponseDtoStepDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.InAppControlDto, object>?), TypeInfoPropertyName = "NullableOneOfInAppControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.EmailControlDto, object>?), TypeInfoPropertyName = "NullableOneOfEmailControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SmsControlDto, object>?), TypeInfoPropertyName = "NullableOneOfSmsControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.PushControlDto, object>?), TypeInfoPropertyName = "NullableOneOfPushControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.ChatControlDto, object>?), TypeInfoPropertyName = "NullableOneOfChatControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.DelayControlDto, object>?), TypeInfoPropertyName = "NullableOneOfDelayControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.DigestControlDto, object>?), TypeInfoPropertyName = "NullableOneOfDigestControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.ThrottleControlDto, object>?), TypeInfoPropertyName = "NullableOneOfThrottleControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.CustomControlDto, object>?), TypeInfoPropertyName = "NullableOneOfCustomControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.HttpRequestControlDto, object>?), TypeInfoPropertyName = "NullableOneOfHttpRequestControlDtoObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowCreationSourceEnum?), TypeInfoPropertyName = "NullableWorkflowCreationSourceEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepsItem2?), TypeInfoPropertyName = "NullableStepsItem22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWorkflowDtoStepDiscriminatorType?), TypeInfoPropertyName = "NullableCreateWorkflowDtoStepDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepsItem3?), TypeInfoPropertyName = "NullableStepsItem32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateWorkflowDtoStepDiscriminatorType?), TypeInfoPropertyName = "NullableUpdateWorkflowDtoStepDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDtoSortField?), TypeInfoPropertyName = "NullableWorkflowResponseDtoSortField2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TimeUnitEnum?), TypeInfoPropertyName = "NullableTimeUnitEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.PreviewPayloadDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringPreviewPayloadDtoContext22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant2Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant2Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant3Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant3Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant4Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant4Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant5Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant5Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant6Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant6Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant7Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant7Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant8Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant8Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant9Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant9Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SyncActionEnum?), TypeInfoPropertyName = "NullableSyncActionEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DiffActionEnum?), TypeInfoPropertyName = "NullableDiffActionEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DependencyReasonEnum?), TypeInfoPropertyName = "NullableDependencyReasonEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChannelConnectionResponseDtoChannel?), TypeInfoPropertyName = "NullableGetChannelConnectionResponseDtoChannel2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChannelConnectionResponseDtoProviderId?), TypeInfoPropertyName = "NullableGetChannelConnectionResponseDtoProviderId2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateChannelConnectionRequestDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateChannelConnectionRequestDtoContext22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateChannelConnectionRequestDtoConnectionMode?), TypeInfoPropertyName = "NullableCreateChannelConnectionRequestDtoConnectionMode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateSlackChannelEndpointDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateSlackChannelEndpointDtoContext22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateSlackChannelEndpointDtoType?), TypeInfoPropertyName = "NullableCreateSlackChannelEndpointDtoType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateSlackUserEndpointDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateSlackUserEndpointDtoContext22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateSlackUserEndpointDtoType?), TypeInfoPropertyName = "NullableCreateSlackUserEndpointDtoType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateWebhookEndpointDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateWebhookEndpointDtoContext22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWebhookEndpointDtoType?), TypeInfoPropertyName = "NullableCreateWebhookEndpointDtoType2")]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -2803,6 +2935,46 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.GetWorkflowRunResponseDtoSeverityNullableJsonConverter),
 
+            typeof(global::Novu.JsonConverters.AgentBehaviorDtoSubscriberAccessJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentBehaviorDtoSubscriberAccessNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentToolDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentToolDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentResponseDtoRuntimeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentResponseDtoRuntimeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentResponseDtoVisibilityJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentResponseDtoVisibilityNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentSkillInputDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentSkillInputDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ManagedRuntimeDtoProviderIdJsonConverter),
+
+            typeof(global::Novu.JsonConverters.ManagedRuntimeDtoProviderIdNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateAgentRequestDtoRuntimeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateAgentRequestDtoRuntimeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentPlanUsageDtoLimitSourceJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentPlanUsageDtoLimitSourceNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SignalDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SignalDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SignalDtoActionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.SignalDtoActionNullableJsonConverter),
+
             typeof(global::Novu.JsonConverters.DomainResponseDtoStatusJsonConverter),
 
             typeof(global::Novu.JsonConverters.DomainResponseDtoStatusNullableJsonConverter),
@@ -3191,6 +3363,18 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.CreateTelegramChatEndpointDtoTypeNullableJsonConverter),
 
+            typeof(global::Novu.JsonConverters.CreateWebexPersonEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateWebexPersonEndpointDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateWebexRoomEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateWebexRoomEndpointDtoTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateLineUserEndpointDtoTypeJsonConverter),
+
+            typeof(global::Novu.JsonConverters.CreateLineUserEndpointDtoTypeNullableJsonConverter),
+
             typeof(global::Novu.JsonConverters.GetChannelEndpointResponseDtoChannelJsonConverter),
 
             typeof(global::Novu.JsonConverters.GetChannelEndpointResponseDtoChannelNullableJsonConverter),
@@ -3282,6 +3466,14 @@ namespace Novu
             typeof(global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeJsonConverter),
 
             typeof(global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentsControllerListAgentsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentsControllerListAgentsOrderDirectionNullableJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentIntegrationsControllerListAgentIntegrationsOrderDirectionJsonConverter),
+
+            typeof(global::Novu.JsonConverters.AgentIntegrationsControllerListAgentIntegrationsOrderDirectionNullableJsonConverter),
 
             typeof(global::Novu.JsonConverters.DomainsControllerListDomainsOrderDirectionJsonConverter),
 
@@ -3483,18 +3675,112 @@ namespace Novu
 
             typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateTelegramChatEndpointDtoContext2>),
 
-            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto>),
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateWebexPersonEndpointDtoContext2>),
 
-            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto>),
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateWebexRoomEndpointDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateLineUserEndpointDtoContext2>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto>),
+
+            typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto>),
 
             typeof(global::Novu.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListLayoutResponseDto), TypeInfoPropertyName = "ListLayoutResponseDto_Novu_ListLayoutResponseDto")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant9_d819718aa0a1ad4d")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto>), TypeInfoPropertyName = "TelegramChatEndpointDto_4d499288bedd416f")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto>), TypeInfoPropertyName = "LineUserEndpointDto_0838ef363921a7c8")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto>), TypeInfoPropertyName = "WebexPersonEndpointDto_4c148951f37e9728")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9>?), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant9_c21c4294b0aad1ee")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto>?), TypeInfoPropertyName = "TelegramChatEndpointDto_72bcdf72cda336d0")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto>?), TypeInfoPropertyName = "LineUserEndpointDto_7110c193dd59434d")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto>?), TypeInfoPropertyName = "WebexPersonEndpointDto_20094d452059fcf0")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayRegularMetadataType?), TypeInfoPropertyName = "NullableDelayRegularMetadataType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayScheduledMetadataType?), TypeInfoPropertyName = "NullableDelayScheduledMetadataType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.DigestRegularMetadata, global::Novu.DigestTimedMetadata, global::Novu.DelayRegularMetadata, global::Novu.DelayScheduledMetadata>?), TypeInfoPropertyName = "NullableOneOfDigestRegularMetadataDigestTimedMetadataDelayRegularMetadataDelayScheduledMetadata2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.NotificationTriggerType?), TypeInfoPropertyName = "NullableNotificationTriggerType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageStatusEnum?), TypeInfoPropertyName = "NullableMessageStatusEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::System.Collections.Generic.IList<global::Novu.EmailBlock>, string>?), TypeInfoPropertyName = "NullableOneOfIListEmailBlockString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::System.Collections.Generic.IList<string>>?), TypeInfoPropertyName = "NullableOneOfStringIListString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageMarkAsRequestDtoMarkAs?), TypeInfoPropertyName = "NullableMessageMarkAsRequestDtoMarkAs2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MarkAllMessageAsRequestDtoMarkAs?), TypeInfoPropertyName = "NullableMarkAllMessageAsRequestDtoMarkAs2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MarkMessageActionAsSeenDtoStatus?), TypeInfoPropertyName = "NullableMarkMessageActionAsSeenDtoStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceOverrideSourceEnum?), TypeInfoPropertyName = "NullablePreferenceOverrideSourceEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceLevelEnum?), TypeInfoPropertyName = "NullablePreferenceLevelEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.BulkUpdateSubscriberPreferencesDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringBulkUpdateSubscriberPreferencesDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.PatchSubscriberPreferencesDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringPatchSubscriberPreferencesDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.RedirectDtoTarget?), TypeInfoPropertyName = "NullableRedirectDtoTarget2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ResourceTypeEnum?), TypeInfoPropertyName = "NullableResourceTypeEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiComponentEnum?), TypeInfoPropertyName = "NullableUiComponentEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AnyOf<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>?), TypeInfoPropertyName = "NullableAnyOfStringDoubleBooleanObjectIListAnyOfStringDoubleBooleanObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiSchemaGroupEnum?), TypeInfoPropertyName = "NullableUiSchemaGroupEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDtoEditorType?), TypeInfoPropertyName = "NullableEmailControlsDtoEditorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutCreationSourceEnum?), TypeInfoPropertyName = "NullableLayoutCreationSourceEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DirectionEnum?), TypeInfoPropertyName = "NullableDirectionEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutResponseDtoSortField?), TypeInfoPropertyName = "NullableLayoutResponseDtoSortField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateLayoutPreviewResponseDtoResultType?), TypeInfoPropertyName = "NullableGenerateLayoutPreviewResponseDtoResultType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DeleteMessageResponseDtoStatus?), TypeInfoPropertyName = "NullableDeleteMessageResponseDtoStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.TopicSubscriberIdentifierDto>?), TypeInfoPropertyName = "NullableOneOfStringTopicSubscriberIdentifierDto2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateTopicSubscriptionsRequestDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateTopicSubscriptionsRequestDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.WorkflowPreferenceRequestDto, global::Novu.GroupPreferenceFilterDto>?), TypeInfoPropertyName = "NullableOneOfStringWorkflowPreferenceRequestDtoGroupPreferenceFilterDto2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.DeleteTopicSubscriberIdentifierDto>?), TypeInfoPropertyName = "NullableOneOfStringDeleteTopicSubscriberIdentifierDto2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EnvironmentVariableResponseDtoType?), TypeInfoPropertyName = "NullableEnvironmentVariableResponseDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateEnvironmentVariableRequestDtoType?), TypeInfoPropertyName = "NullableCreateEnvironmentVariableRequestDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateEnvironmentVariableRequestDtoType?), TypeInfoPropertyName = "NullableUpdateEnvironmentVariableRequestDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContentIssueEnum?), TypeInfoPropertyName = "NullableContentIssueEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationIssueEnum?), TypeInfoPropertyName = "NullableIntegrationIssueEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlDtoEditorType?), TypeInfoPropertyName = "NullableEmailControlDtoEditorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayControlDtoType?), TypeInfoPropertyName = "NullableDelayControlDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayControlDtoUnit?), TypeInfoPropertyName = "NullableDelayControlDtoUnit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LookBackWindowDtoUnit?), TypeInfoPropertyName = "NullableLookBackWindowDtoUnit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestControlDtoType?), TypeInfoPropertyName = "NullableDigestControlDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestControlDtoUnit?), TypeInfoPropertyName = "NullableDigestControlDtoUnit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleControlDtoType?), TypeInfoPropertyName = "NullableThrottleControlDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ThrottleControlDtoUnit?), TypeInfoPropertyName = "NullableThrottleControlDtoUnit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.HttpMethodEnum?), TypeInfoPropertyName = "NullableHttpMethodEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::System.Collections.Generic.IList<global::Novu.HttpRequestKeyValuePairDto>>?), TypeInfoPropertyName = "NullableOneOfStringIListHttpRequestKeyValuePairDto2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowStatusEnum?), TypeInfoPropertyName = "NullableWorkflowStatusEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepsItem?), TypeInfoPropertyName = "NullableStepsItem2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDtoStepDiscriminatorType?), TypeInfoPropertyName = "NullableWorkflowResponseDtoStepDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.InAppControlDto, object>?), TypeInfoPropertyName = "NullableOneOfInAppControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.EmailControlDto, object>?), TypeInfoPropertyName = "NullableOneOfEmailControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SmsControlDto, object>?), TypeInfoPropertyName = "NullableOneOfSmsControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.PushControlDto, object>?), TypeInfoPropertyName = "NullableOneOfPushControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.ChatControlDto, object>?), TypeInfoPropertyName = "NullableOneOfChatControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.DelayControlDto, object>?), TypeInfoPropertyName = "NullableOneOfDelayControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.DigestControlDto, object>?), TypeInfoPropertyName = "NullableOneOfDigestControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.ThrottleControlDto, object>?), TypeInfoPropertyName = "NullableOneOfThrottleControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.CustomControlDto, object>?), TypeInfoPropertyName = "NullableOneOfCustomControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.HttpRequestControlDto, object>?), TypeInfoPropertyName = "NullableOneOfHttpRequestControlDtoObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowCreationSourceEnum?), TypeInfoPropertyName = "NullableWorkflowCreationSourceEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepsItem2?), TypeInfoPropertyName = "NullableStepsItem22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWorkflowDtoStepDiscriminatorType?), TypeInfoPropertyName = "NullableCreateWorkflowDtoStepDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepsItem3?), TypeInfoPropertyName = "NullableStepsItem32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateWorkflowDtoStepDiscriminatorType?), TypeInfoPropertyName = "NullableUpdateWorkflowDtoStepDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDtoSortField?), TypeInfoPropertyName = "NullableWorkflowResponseDtoSortField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TimeUnitEnum?), TypeInfoPropertyName = "NullableTimeUnitEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.PreviewPayloadDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringPreviewPayloadDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant2Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant2Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant3Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant3Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant4Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant4Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant5Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant5Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant6Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant6Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant7Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant7Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant8Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant8Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GeneratePreviewResponseDtoResultVariant9Type?), TypeInfoPropertyName = "NullableGeneratePreviewResponseDtoResultVariant9Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SyncActionEnum?), TypeInfoPropertyName = "NullableSyncActionEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DiffActionEnum?), TypeInfoPropertyName = "NullableDiffActionEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DependencyReasonEnum?), TypeInfoPropertyName = "NullableDependencyReasonEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChannelConnectionResponseDtoChannel?), TypeInfoPropertyName = "NullableGetChannelConnectionResponseDtoChannel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChannelConnectionResponseDtoProviderId?), TypeInfoPropertyName = "NullableGetChannelConnectionResponseDtoProviderId2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateChannelConnectionRequestDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateChannelConnectionRequestDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateChannelConnectionRequestDtoConnectionMode?), TypeInfoPropertyName = "NullableCreateChannelConnectionRequestDtoConnectionMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateSlackChannelEndpointDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateSlackChannelEndpointDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateSlackChannelEndpointDtoType?), TypeInfoPropertyName = "NullableCreateSlackChannelEndpointDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateSlackUserEndpointDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateSlackUserEndpointDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateSlackUserEndpointDtoType?), TypeInfoPropertyName = "NullableCreateSlackUserEndpointDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateWebhookEndpointDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateWebhookEndpointDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWebhookEndpointDtoType?), TypeInfoPropertyName = "NullableCreateWebhookEndpointDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreatePhoneEndpointDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreatePhoneEndpointDtoContext22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreatePhoneEndpointDtoType?), TypeInfoPropertyName = "NullableCreatePhoneEndpointDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateMsTeamsChannelEndpointDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateMsTeamsChannelEndpointDtoContext22")]
@@ -3503,10 +3789,15 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateMsTeamsUserEndpointDtoType?), TypeInfoPropertyName = "NullableCreateMsTeamsUserEndpointDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateTelegramChatEndpointDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateTelegramChatEndpointDtoContext22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateTelegramChatEndpointDtoType?), TypeInfoPropertyName = "NullableCreateTelegramChatEndpointDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateWebexPersonEndpointDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateWebexPersonEndpointDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWebexPersonEndpointDtoType?), TypeInfoPropertyName = "NullableCreateWebexPersonEndpointDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateWebexRoomEndpointDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateWebexRoomEndpointDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateWebexRoomEndpointDtoType?), TypeInfoPropertyName = "NullableCreateWebexRoomEndpointDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.CreateLineUserEndpointDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringCreateLineUserEndpointDtoContext22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateLineUserEndpointDtoType?), TypeInfoPropertyName = "NullableCreateLineUserEndpointDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChannelEndpointResponseDtoChannel?), TypeInfoPropertyName = "NullableGetChannelEndpointResponseDtoChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChannelEndpointResponseDtoProviderId?), TypeInfoPropertyName = "NullableGetChannelEndpointResponseDtoProviderId2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChannelEndpointResponseDtoType?), TypeInfoPropertyName = "NullableGetChannelEndpointResponseDtoType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto>?), TypeInfoPropertyName = "NullableOneOfSlackChannelEndpointDtoSlackUserEndpointDtoWebhookEndpointDtoPhoneEndpointDto2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateTranslationRequestDtoResourceType?), TypeInfoPropertyName = "NullableCreateTranslationRequestDtoResourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationResponseDtoResourceType?), TypeInfoPropertyName = "NullableTranslationResponseDtoResourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationGroupDtoResourceType?), TypeInfoPropertyName = "NullableTranslationGroupDtoResourceType2")]
@@ -3528,6 +3819,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequest?), TypeInfoPropertyName = "NullableChannelEndpointsControllerCreateChannelEndpointRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType?), TypeInfoPropertyName = "NullableChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerUploadTranslationFilesRequestResourceType?), TypeInfoPropertyName = "NullableTranslationControllerUploadTranslationFilesRequestResourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentsControllerListAgentsOrderDirection?), TypeInfoPropertyName = "NullableAgentsControllerListAgentsOrderDirection2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentIntegrationsControllerListAgentIntegrationsOrderDirection?), TypeInfoPropertyName = "NullableAgentIntegrationsControllerListAgentIntegrationsOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainsOrderDirection?), TypeInfoPropertyName = "NullableDomainsControllerListDomainsOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainRoutesOrderDirection?), TypeInfoPropertyName = "NullableDomainsControllerListDomainRoutesOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContextsControllerListContextsOrderDirection?), TypeInfoPropertyName = "NullableContextsControllerListContextsOrderDirection2")]
@@ -3577,6 +3870,16 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.GetWorkflowRunsDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepExecutionDetailDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepRunDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.AgentToolDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.AgentMcpServerDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.AgentIntegrationSummaryDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.AgentSkillInputDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.AgentResponseDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.AgentIntegrationResponseDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.SignalDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.ToolResultDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.AddReactionPayloadDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.DeleteMessagePayloadDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.ExpectedDnsRecordDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.DomainResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.DomainDiagnosticCheckDto>))]
@@ -3762,6 +4065,26 @@ namespace Novu
             options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunResponseDtoDeliveryLifecycleStatusNullableJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunResponseDtoSeverityJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.GetWorkflowRunResponseDtoSeverityNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentBehaviorDtoSubscriberAccessJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentBehaviorDtoSubscriberAccessNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentToolDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentToolDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentResponseDtoRuntimeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentResponseDtoRuntimeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentResponseDtoVisibilityJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentResponseDtoVisibilityNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentSkillInputDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentSkillInputDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ManagedRuntimeDtoProviderIdJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.ManagedRuntimeDtoProviderIdNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateAgentRequestDtoRuntimeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateAgentRequestDtoRuntimeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentPlanUsageDtoLimitSourceJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentPlanUsageDtoLimitSourceNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SignalDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SignalDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SignalDtoActionJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.SignalDtoActionNullableJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.DomainResponseDtoStatusJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.DomainResponseDtoStatusNullableJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.DomainDiagnosticCheckDtoCodeJsonConverter());
@@ -3956,6 +4279,12 @@ namespace Novu
             options.Converters.Add(new global::Novu.JsonConverters.CreateMsTeamsUserEndpointDtoTypeNullableJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.CreateTelegramChatEndpointDtoTypeJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.CreateTelegramChatEndpointDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateWebexPersonEndpointDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateWebexPersonEndpointDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateWebexRoomEndpointDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateWebexRoomEndpointDtoTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateLineUserEndpointDtoTypeJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.CreateLineUserEndpointDtoTypeNullableJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.GetChannelEndpointResponseDtoChannelJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.GetChannelEndpointResponseDtoChannelNullableJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.GetChannelEndpointResponseDtoProviderIdJsonConverter());
@@ -4002,6 +4331,10 @@ namespace Novu
             options.Converters.Add(new global::Novu.JsonConverters.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorTypeNullableJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentsControllerListAgentsOrderDirectionJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentsControllerListAgentsOrderDirectionNullableJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentIntegrationsControllerListAgentIntegrationsOrderDirectionJsonConverter());
+            options.Converters.Add(new global::Novu.JsonConverters.AgentIntegrationsControllerListAgentIntegrationsOrderDirectionNullableJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.DomainsControllerListDomainsOrderDirectionJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.DomainsControllerListDomainsOrderDirectionNullableJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.DomainsControllerListDomainRoutesOrderDirectionJsonConverter());
@@ -4102,8 +4435,11 @@ namespace Novu
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateMsTeamsChannelEndpointDtoContext2>());
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateMsTeamsUserEndpointDtoContext2>());
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateTelegramChatEndpointDtoContext2>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateWebexPersonEndpointDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateWebexRoomEndpointDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateLineUserEndpointDtoContext2>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto>());
             options.Converters.Add(new global::Novu.JsonConverters.UnixTimestampJsonConverter());
 
             return options;

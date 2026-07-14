@@ -9,7 +9,7 @@ namespace Novu
     public sealed partial class GenerateConnectOauthUrlRequestDto
     {
         /// <summary>
-        /// The subscriber ID to associate with the channel connection. For Slack: optional for workspace connections (required only for incoming-webhook scope). For MS Teams: optional. Admin consent is tenant-wide.<br/>
+        /// The subscriber ID to associate with the channel connection. For Slack: optional for workspace connections (required only for incoming-webhook scope). For Webex: optional for workspace connections. For MS Teams: optional. Admin consent is tenant-wide.<br/>
         /// Example: subscriber-123
         /// </summary>
         /// <example>subscriber-123</example>
@@ -38,7 +38,7 @@ namespace Novu
         public object? Context { get; set; }
 
         /// <summary>
-        /// **Slack only**: OAuth scopes to request during authorization. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **MS Teams**: ignored — uses admin consent with pre-configured Azure AD permissions.<br/>
+        /// **Slack only**: OAuth scopes to request during authorization. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **Webex**: OAuth scopes to request during authorization. Defaults to: spark:messages_write, spark:rooms_read, spark:people_read, spark:memberships_read, spark:kms. **MS Teams**: ignored — uses admin consent with pre-configured Azure AD permissions.<br/>
         /// Example: [chat:write, chat:write.public, channels:read]
         /// </summary>
         /// <example>[chat:write, chat:write.public, channels:read]</example>
@@ -55,7 +55,7 @@ namespace Novu
         public global::Novu.GenerateConnectOauthUrlRequestDtoConnectionMode? ConnectionMode { get; set; }
 
         /// <summary>
-        /// When true (default when connectionMode is "subscriber"), after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, uses the authed_user.id returned by oauth.v2.access — no extra redirect. For MS Teams, triggers a second OAuth redirect for delegated user-identity consent. Set to false to only create the workspace connection without linking the individual user.<br/>
+        /// When true (default when connectionMode is "subscriber"), after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, uses the authed_user.id returned by oauth.v2.access — no extra redirect. For Webex, uses the authenticated Webex person returned by people/me — no extra redirect. For MS Teams, triggers a second OAuth redirect for delegated user-identity consent. Set to false to only create the workspace connection without linking the individual user.<br/>
         /// Example: true
         /// </summary>
         /// <example>true</example>
@@ -75,7 +75,7 @@ namespace Novu
         /// Integration identifier
         /// </param>
         /// <param name="subscriberId">
-        /// The subscriber ID to associate with the channel connection. For Slack: optional for workspace connections (required only for incoming-webhook scope). For MS Teams: optional. Admin consent is tenant-wide.<br/>
+        /// The subscriber ID to associate with the channel connection. For Slack: optional for workspace connections (required only for incoming-webhook scope). For Webex: optional for workspace connections. For MS Teams: optional. Admin consent is tenant-wide.<br/>
         /// Example: subscriber-123
         /// </param>
         /// <param name="connectionIdentifier">
@@ -84,7 +84,7 @@ namespace Novu
         /// </param>
         /// <param name="context"></param>
         /// <param name="scope">
-        /// **Slack only**: OAuth scopes to request during authorization. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **MS Teams**: ignored — uses admin consent with pre-configured Azure AD permissions.<br/>
+        /// **Slack only**: OAuth scopes to request during authorization. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **Webex**: OAuth scopes to request during authorization. Defaults to: spark:messages_write, spark:rooms_read, spark:people_read, spark:memberships_read, spark:kms. **MS Teams**: ignored — uses admin consent with pre-configured Azure AD permissions.<br/>
         /// Example: [chat:write, chat:write.public, channels:read]
         /// </param>
         /// <param name="connectionMode">
@@ -92,7 +92,7 @@ namespace Novu
         /// Example: shared
         /// </param>
         /// <param name="autoLinkUser">
-        /// When true (default when connectionMode is "subscriber"), after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, uses the authed_user.id returned by oauth.v2.access — no extra redirect. For MS Teams, triggers a second OAuth redirect for delegated user-identity consent. Set to false to only create the workspace connection without linking the individual user.<br/>
+        /// When true (default when connectionMode is "subscriber"), after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, uses the authed_user.id returned by oauth.v2.access — no extra redirect. For Webex, uses the authenticated Webex person returned by people/me — no extra redirect. For MS Teams, triggers a second OAuth redirect for delegated user-identity consent. Set to false to only create the workspace connection without linking the individual user.<br/>
         /// Example: true
         /// </param>
 #if NET7_0_OR_GREATER

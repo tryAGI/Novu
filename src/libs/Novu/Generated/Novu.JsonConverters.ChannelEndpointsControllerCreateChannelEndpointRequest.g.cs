@@ -70,6 +70,27 @@ namespace Novu.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateTelegramChatEndpointDto)}");
                 telegramChat = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Novu.CreateWebexRoomEndpointDto? webexRoom = default;
+            if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.WebexRoom)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateWebexRoomEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateWebexRoomEndpointDto> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateWebexRoomEndpointDto)}");
+                webexRoom = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Novu.CreateWebexPersonEndpointDto? webexPerson = default;
+            if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.WebexPerson)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateWebexPersonEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateWebexPersonEndpointDto> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateWebexPersonEndpointDto)}");
+                webexPerson = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Novu.CreateLineUserEndpointDto? lineUser = default;
+            if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.LineUser)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateLineUserEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateLineUserEndpointDto> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateLineUserEndpointDto)}");
+                lineUser = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequest(
                 discriminator?.Type,
@@ -85,7 +106,13 @@ namespace Novu.JsonConverters
 
                 msTeamsUser,
 
-                telegramChat
+                telegramChat,
+
+                webexRoom,
+
+                webexPerson,
+
+                lineUser
                 );
 
             return __value;
@@ -141,6 +168,24 @@ namespace Novu.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateTelegramChatEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateTelegramChatEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateTelegramChatEndpointDto).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.TelegramChat!, typeInfo);
+            }
+            else if (value.IsWebexRoom)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateWebexRoomEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateWebexRoomEndpointDto?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateWebexRoomEndpointDto).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebexRoom!, typeInfo);
+            }
+            else if (value.IsWebexPerson)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateWebexPersonEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateWebexPersonEndpointDto?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateWebexPersonEndpointDto).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebexPerson!, typeInfo);
+            }
+            else if (value.IsLineUser)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateLineUserEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateLineUserEndpointDto?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateLineUserEndpointDto).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LineUser!, typeInfo);
             }
         }
     }

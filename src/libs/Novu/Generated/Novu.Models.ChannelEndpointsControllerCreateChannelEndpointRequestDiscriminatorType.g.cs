@@ -11,6 +11,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        LineUser,
+        /// <summary>
+        /// 
+        /// </summary>
         MsTeamsChannel,
         /// <summary>
         /// 
@@ -35,6 +39,14 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        WebexPerson,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebexRoom,
+        /// <summary>
+        /// 
+        /// </summary>
         Webhook,
     }
 
@@ -50,12 +62,15 @@ namespace Novu
         {
             return value switch
             {
+                ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.LineUser => "line_user",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsChannel => "ms_teams_channel",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsUser => "ms_teams_user",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.Phone => "phone",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackChannel => "slack_channel",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackUser => "slack_user",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.TelegramChat => "telegram_chat",
+                ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.WebexPerson => "webex_person",
+                ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.WebexRoom => "webex_room",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.Webhook => "webhook",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -67,12 +82,15 @@ namespace Novu
         {
             return value switch
             {
+                "line_user" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.LineUser,
                 "ms_teams_channel" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsChannel,
                 "ms_teams_user" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsUser,
                 "phone" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.Phone,
                 "slack_channel" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackChannel,
                 "slack_user" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackUser,
                 "telegram_chat" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.TelegramChat,
+                "webex_person" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.WebexPerson,
+                "webex_room" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.WebexRoom,
                 "webhook" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.Webhook,
                 _ => null,
             };

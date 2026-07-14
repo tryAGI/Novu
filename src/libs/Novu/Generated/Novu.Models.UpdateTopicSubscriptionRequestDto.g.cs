@@ -18,9 +18,9 @@ namespace Novu
 
         /// <summary>
         /// The preferences of the topic. Can be a simple workflow ID string, workflow preference object, or group filter object<br/>
-        /// Example: [{"workflowId":"workflow-123","condition":{"===":[{"var":"tier"},"premium"]}}]
+        /// Example: [{"workflowId":"workflow-123","condition":{"===":[{"var":"payload.tier"},"premium"]}}]
         /// </summary>
-        /// <example>[{"workflowId":"workflow-123","condition":{"===":[{"var":"tier"},"premium"]}}]</example>
+        /// <example>[{"workflowId":"workflow-123","condition":{"===":[{"var":"payload.tier"},"premium"]}}]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("preferences")]
         public global::System.Collections.Generic.IList<global::Novu.OneOf<string, global::Novu.WorkflowPreferenceRequestDto, global::Novu.GroupPreferenceFilterDto>>? Preferences { get; set; }
 
@@ -39,7 +39,7 @@ namespace Novu
         /// </param>
         /// <param name="preferences">
         /// The preferences of the topic. Can be a simple workflow ID string, workflow preference object, or group filter object<br/>
-        /// Example: [{"workflowId":"workflow-123","condition":{"===":[{"var":"tier"},"premium"]}}]
+        /// Example: [{"workflowId":"workflow-123","condition":{"===":[{"var":"payload.tier"},"premium"]}}]
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

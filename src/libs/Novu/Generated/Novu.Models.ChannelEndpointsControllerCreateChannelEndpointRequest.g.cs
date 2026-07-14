@@ -272,6 +272,117 @@ namespace Novu
         public global::Novu.CreateTelegramChatEndpointDto PickTelegramChat() => IsTelegramChat
             ? TelegramChat!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TelegramChat' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Novu.CreateWebexRoomEndpointDto? WebexRoom { get; init; }
+#else
+        public global::Novu.CreateWebexRoomEndpointDto? WebexRoom { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebexRoom))]
+#endif
+        public bool IsWebexRoom => WebexRoom != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebexRoom(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreateWebexRoomEndpointDto? value)
+        {
+            value = WebexRoom;
+            return IsWebexRoom;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.CreateWebexRoomEndpointDto PickWebexRoom() => IsWebexRoom
+            ? WebexRoom!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebexRoom' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Novu.CreateWebexPersonEndpointDto? WebexPerson { get; init; }
+#else
+        public global::Novu.CreateWebexPersonEndpointDto? WebexPerson { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebexPerson))]
+#endif
+        public bool IsWebexPerson => WebexPerson != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebexPerson(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreateWebexPersonEndpointDto? value)
+        {
+            value = WebexPerson;
+            return IsWebexPerson;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.CreateWebexPersonEndpointDto PickWebexPerson() => IsWebexPerson
+            ? WebexPerson!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebexPerson' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Novu.CreateLineUserEndpointDto? LineUser { get; init; }
+#else
+        public global::Novu.CreateLineUserEndpointDto? LineUser { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LineUser))]
+#endif
+        public bool IsLineUser => LineUser != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLineUser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreateLineUserEndpointDto? value)
+        {
+            value = LineUser;
+            return IsLineUser;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.CreateLineUserEndpointDto PickLineUser() => IsLineUser
+            ? LineUser!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LineUser' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -436,6 +547,75 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateWebexRoomEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateWebexRoomEndpointDto?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Novu.CreateWebexRoomEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.WebexRoom;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateWebexRoomEndpointDto? value)
+        {
+            WebexRoom = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromWebexRoom(global::Novu.CreateWebexRoomEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateWebexPersonEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateWebexPersonEndpointDto?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Novu.CreateWebexPersonEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.WebexPerson;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateWebexPersonEndpointDto? value)
+        {
+            WebexPerson = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromWebexPerson(global::Novu.CreateWebexPersonEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateLineUserEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateLineUserEndpointDto?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Novu.CreateLineUserEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.LineUser;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateLineUserEndpointDto? value)
+        {
+            LineUser = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromLineUser(global::Novu.CreateLineUserEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(
             global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType? type,
             global::Novu.CreateSlackChannelEndpointDto? slackChannel,
@@ -444,7 +624,10 @@ namespace Novu
             global::Novu.CreatePhoneEndpointDto? phone,
             global::Novu.CreateMsTeamsChannelEndpointDto? msTeamsChannel,
             global::Novu.CreateMsTeamsUserEndpointDto? msTeamsUser,
-            global::Novu.CreateTelegramChatEndpointDto? telegramChat
+            global::Novu.CreateTelegramChatEndpointDto? telegramChat,
+            global::Novu.CreateWebexRoomEndpointDto? webexRoom,
+            global::Novu.CreateWebexPersonEndpointDto? webexPerson,
+            global::Novu.CreateLineUserEndpointDto? lineUser
             )
         {
             Type = type;
@@ -456,12 +639,18 @@ namespace Novu
             MsTeamsChannel = msTeamsChannel;
             MsTeamsUser = msTeamsUser;
             TelegramChat = telegramChat;
+            WebexRoom = webexRoom;
+            WebexPerson = webexPerson;
+            LineUser = lineUser;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            LineUser as object ??
+            WebexPerson as object ??
+            WebexRoom as object ??
             TelegramChat as object ??
             MsTeamsUser as object ??
             MsTeamsChannel as object ??
@@ -481,7 +670,10 @@ namespace Novu
             Phone?.ToString() ??
             MsTeamsChannel?.ToString() ??
             MsTeamsUser?.ToString() ??
-            TelegramChat?.ToString() 
+            TelegramChat?.ToString() ??
+            WebexRoom?.ToString() ??
+            WebexPerson?.ToString() ??
+            LineUser?.ToString() 
             ;
 
         /// <summary>
@@ -489,7 +681,7 @@ namespace Novu
         /// </summary>
         public bool Validate()
         {
-            return IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat || !IsSlackChannel && IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat || !IsSlackChannel && !IsSlackUser && IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat || !IsSlackChannel && !IsSlackUser && !IsWebhook && IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && IsMsTeamsUser && !IsTelegramChat || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && IsTelegramChat;
+            return IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && IsLineUser;
         }
 
         /// <summary>
@@ -503,6 +695,9 @@ namespace Novu
             global::System.Func<global::Novu.CreateMsTeamsChannelEndpointDto, TResult>? msTeamsChannel = null,
             global::System.Func<global::Novu.CreateMsTeamsUserEndpointDto, TResult>? msTeamsUser = null,
             global::System.Func<global::Novu.CreateTelegramChatEndpointDto, TResult>? telegramChat = null,
+            global::System.Func<global::Novu.CreateWebexRoomEndpointDto, TResult>? webexRoom = null,
+            global::System.Func<global::Novu.CreateWebexPersonEndpointDto, TResult>? webexPerson = null,
+            global::System.Func<global::Novu.CreateLineUserEndpointDto, TResult>? lineUser = null,
             bool validate = true)
         {
             if (validate)
@@ -538,6 +733,18 @@ namespace Novu
             {
                 return telegramChat(TelegramChat!);
             }
+            else if (IsWebexRoom && webexRoom != null)
+            {
+                return webexRoom(WebexRoom!);
+            }
+            else if (IsWebexPerson && webexPerson != null)
+            {
+                return webexPerson(WebexPerson!);
+            }
+            else if (IsLineUser && lineUser != null)
+            {
+                return lineUser(LineUser!);
+            }
 
             return default(TResult);
         }
@@ -559,6 +766,12 @@ namespace Novu
             global::System.Action<global::Novu.CreateMsTeamsUserEndpointDto>? msTeamsUser = null,
 
             global::System.Action<global::Novu.CreateTelegramChatEndpointDto>? telegramChat = null,
+
+            global::System.Action<global::Novu.CreateWebexRoomEndpointDto>? webexRoom = null,
+
+            global::System.Action<global::Novu.CreateWebexPersonEndpointDto>? webexPerson = null,
+
+            global::System.Action<global::Novu.CreateLineUserEndpointDto>? lineUser = null,
             bool validate = true)
         {
             if (validate)
@@ -593,6 +806,18 @@ namespace Novu
             else if (IsTelegramChat)
             {
                 telegramChat?.Invoke(TelegramChat!);
+            }
+            else if (IsWebexRoom)
+            {
+                webexRoom?.Invoke(WebexRoom!);
+            }
+            else if (IsWebexPerson)
+            {
+                webexPerson?.Invoke(WebexPerson!);
+            }
+            else if (IsLineUser)
+            {
+                lineUser?.Invoke(LineUser!);
             }
         }
 
@@ -607,6 +832,9 @@ namespace Novu
             global::System.Action<global::Novu.CreateMsTeamsChannelEndpointDto>? msTeamsChannel = null,
             global::System.Action<global::Novu.CreateMsTeamsUserEndpointDto>? msTeamsUser = null,
             global::System.Action<global::Novu.CreateTelegramChatEndpointDto>? telegramChat = null,
+            global::System.Action<global::Novu.CreateWebexRoomEndpointDto>? webexRoom = null,
+            global::System.Action<global::Novu.CreateWebexPersonEndpointDto>? webexPerson = null,
+            global::System.Action<global::Novu.CreateLineUserEndpointDto>? lineUser = null,
             bool validate = true)
         {
             if (validate)
@@ -641,6 +869,18 @@ namespace Novu
             else if (IsTelegramChat)
             {
                 telegramChat?.Invoke(TelegramChat!);
+            }
+            else if (IsWebexRoom)
+            {
+                webexRoom?.Invoke(WebexRoom!);
+            }
+            else if (IsWebexPerson)
+            {
+                webexPerson?.Invoke(WebexPerson!);
+            }
+            else if (IsLineUser)
+            {
+                lineUser?.Invoke(LineUser!);
             }
         }
 
@@ -665,6 +905,12 @@ namespace Novu
                 typeof(global::Novu.CreateMsTeamsUserEndpointDto),
                 TelegramChat,
                 typeof(global::Novu.CreateTelegramChatEndpointDto),
+                WebexRoom,
+                typeof(global::Novu.CreateWebexRoomEndpointDto),
+                WebexPerson,
+                typeof(global::Novu.CreateWebexPersonEndpointDto),
+                LineUser,
+                typeof(global::Novu.CreateLineUserEndpointDto),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -687,7 +933,10 @@ namespace Novu
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreatePhoneEndpointDto?>.Default.Equals(Phone, other.Phone) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreateMsTeamsChannelEndpointDto?>.Default.Equals(MsTeamsChannel, other.MsTeamsChannel) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreateMsTeamsUserEndpointDto?>.Default.Equals(MsTeamsUser, other.MsTeamsUser) &&
-                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateTelegramChatEndpointDto?>.Default.Equals(TelegramChat, other.TelegramChat) 
+                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateTelegramChatEndpointDto?>.Default.Equals(TelegramChat, other.TelegramChat) &&
+                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateWebexRoomEndpointDto?>.Default.Equals(WebexRoom, other.WebexRoom) &&
+                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateWebexPersonEndpointDto?>.Default.Equals(WebexPerson, other.WebexPerson) &&
+                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateLineUserEndpointDto?>.Default.Equals(LineUser, other.LineUser) 
                 ;
         }
 

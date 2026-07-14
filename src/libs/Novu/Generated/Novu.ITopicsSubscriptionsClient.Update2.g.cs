@@ -50,7 +50,7 @@ namespace Novu
         /// </param>
         /// <param name="preferences">
         /// The preferences of the topic. Can be a simple workflow ID string, workflow preference object, or group filter object<br/>
-        /// Example: [{"workflowId":"workflow-123","condition":{"===":[{"var":"tier"},"premium"]}}]
+        /// Example: [{"workflowId":"workflow-123","condition":{"===":[{"var":"payload.tier"},"premium"]}}]
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

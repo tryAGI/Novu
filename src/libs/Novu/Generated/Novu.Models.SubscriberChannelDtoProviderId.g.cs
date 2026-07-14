@@ -43,6 +43,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Line,
+        /// <summary>
+        /// 
+        /// </summary>
         Mattermost,
         /// <summary>
         /// 
@@ -79,11 +83,19 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Sendblue,
+        /// <summary>
+        /// 
+        /// </summary>
         Slack,
         /// <summary>
         /// 
         /// </summary>
         Telegram,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebexMessaging,
         /// <summary>
         /// 
         /// </summary>
@@ -114,6 +126,7 @@ namespace Novu
                 SubscriberChannelDtoProviderId.Fcm => "fcm",
                 SubscriberChannelDtoProviderId.Getstream => "getstream",
                 SubscriberChannelDtoProviderId.GrafanaOnCall => "grafana-on-call",
+                SubscriberChannelDtoProviderId.Line => "line",
                 SubscriberChannelDtoProviderId.Mattermost => "mattermost",
                 SubscriberChannelDtoProviderId.Msteams => "msteams",
                 SubscriberChannelDtoProviderId.NovuSlack => "novu-slack",
@@ -123,8 +136,10 @@ namespace Novu
                 SubscriberChannelDtoProviderId.Pushpad => "pushpad",
                 SubscriberChannelDtoProviderId.RocketChat => "rocket-chat",
                 SubscriberChannelDtoProviderId.Ryver => "ryver",
+                SubscriberChannelDtoProviderId.Sendblue => "sendblue",
                 SubscriberChannelDtoProviderId.Slack => "slack",
                 SubscriberChannelDtoProviderId.Telegram => "telegram",
+                SubscriberChannelDtoProviderId.WebexMessaging => "webex-messaging",
                 SubscriberChannelDtoProviderId.WhatsappBusiness => "whatsapp-business",
                 SubscriberChannelDtoProviderId.Zulip => "zulip",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -145,6 +160,7 @@ namespace Novu
                 "fcm" => SubscriberChannelDtoProviderId.Fcm,
                 "getstream" => SubscriberChannelDtoProviderId.Getstream,
                 "grafana-on-call" => SubscriberChannelDtoProviderId.GrafanaOnCall,
+                "line" => SubscriberChannelDtoProviderId.Line,
                 "mattermost" => SubscriberChannelDtoProviderId.Mattermost,
                 "msteams" => SubscriberChannelDtoProviderId.Msteams,
                 "novu-slack" => SubscriberChannelDtoProviderId.NovuSlack,
@@ -154,8 +170,10 @@ namespace Novu
                 "pushpad" => SubscriberChannelDtoProviderId.Pushpad,
                 "rocket-chat" => SubscriberChannelDtoProviderId.RocketChat,
                 "ryver" => SubscriberChannelDtoProviderId.Ryver,
+                "sendblue" => SubscriberChannelDtoProviderId.Sendblue,
                 "slack" => SubscriberChannelDtoProviderId.Slack,
                 "telegram" => SubscriberChannelDtoProviderId.Telegram,
+                "webex-messaging" => SubscriberChannelDtoProviderId.WebexMessaging,
                 "whatsapp-business" => SubscriberChannelDtoProviderId.WhatsappBusiness,
                 "zulip" => SubscriberChannelDtoProviderId.Zulip,
                 _ => null,

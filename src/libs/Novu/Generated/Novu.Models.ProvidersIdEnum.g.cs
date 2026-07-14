@@ -27,6 +27,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Anypost,
+        /// <summary>
+        /// 
+        /// </summary>
         Apns,
         /// <summary>
         /// 
@@ -144,6 +148,10 @@ namespace Novu
         /// 
         /// </summary>
         Kannel,
+        /// <summary>
+        /// 
+        /// </summary>
+        Line,
         /// <summary>
         /// 
         /// </summary>
@@ -271,6 +279,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Sendblue,
+        /// <summary>
+        /// 
+        /// </summary>
         Sendchamp,
         /// <summary>
         /// 
@@ -339,6 +351,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        WebexMessaging,
+        /// <summary>
+        /// 
+        /// </summary>
         WhatsappBusiness,
         /// <summary>
         /// 
@@ -362,6 +378,7 @@ namespace Novu
                 ProvidersIdEnum.AfroMessage => "afro-message",
                 ProvidersIdEnum.Anthropic => "anthropic",
                 ProvidersIdEnum.AnthropicAws => "anthropic-aws",
+                ProvidersIdEnum.Anypost => "anypost",
                 ProvidersIdEnum.Apns => "apns",
                 ProvidersIdEnum.Appio => "appio",
                 ProvidersIdEnum.AzureSms => "azure-sms",
@@ -392,6 +409,7 @@ namespace Novu
                 ProvidersIdEnum.IsendSms => "isend-sms",
                 ProvidersIdEnum.IsendproSms => "isendpro-sms",
                 ProvidersIdEnum.Kannel => "kannel",
+                ProvidersIdEnum.Line => "line",
                 ProvidersIdEnum.Mailersend => "mailersend",
                 ProvidersIdEnum.Mailgun => "mailgun",
                 ProvidersIdEnum.Mailjet => "mailjet",
@@ -423,6 +441,7 @@ namespace Novu
                 ProvidersIdEnum.RingCentral => "ring-central",
                 ProvidersIdEnum.RocketChat => "rocket-chat",
                 ProvidersIdEnum.Ryver => "ryver",
+                ProvidersIdEnum.Sendblue => "sendblue",
                 ProvidersIdEnum.Sendchamp => "sendchamp",
                 ProvidersIdEnum.Sendgrid => "sendgrid",
                 ProvidersIdEnum.Sendinblue => "sendinblue",
@@ -440,6 +459,7 @@ namespace Novu
                 ProvidersIdEnum.Termii => "termii",
                 ProvidersIdEnum.Twilio => "twilio",
                 ProvidersIdEnum.Unifonic => "unifonic",
+                ProvidersIdEnum.WebexMessaging => "webex-messaging",
                 ProvidersIdEnum.WhatsappBusiness => "whatsapp-business",
                 ProvidersIdEnum.Zulip => "zulip",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -456,6 +476,7 @@ namespace Novu
                 "afro-message" => ProvidersIdEnum.AfroMessage,
                 "anthropic" => ProvidersIdEnum.Anthropic,
                 "anthropic-aws" => ProvidersIdEnum.AnthropicAws,
+                "anypost" => ProvidersIdEnum.Anypost,
                 "apns" => ProvidersIdEnum.Apns,
                 "appio" => ProvidersIdEnum.Appio,
                 "azure-sms" => ProvidersIdEnum.AzureSms,
@@ -486,6 +507,7 @@ namespace Novu
                 "isend-sms" => ProvidersIdEnum.IsendSms,
                 "isendpro-sms" => ProvidersIdEnum.IsendproSms,
                 "kannel" => ProvidersIdEnum.Kannel,
+                "line" => ProvidersIdEnum.Line,
                 "mailersend" => ProvidersIdEnum.Mailersend,
                 "mailgun" => ProvidersIdEnum.Mailgun,
                 "mailjet" => ProvidersIdEnum.Mailjet,
@@ -517,6 +539,7 @@ namespace Novu
                 "ring-central" => ProvidersIdEnum.RingCentral,
                 "rocket-chat" => ProvidersIdEnum.RocketChat,
                 "ryver" => ProvidersIdEnum.Ryver,
+                "sendblue" => ProvidersIdEnum.Sendblue,
                 "sendchamp" => ProvidersIdEnum.Sendchamp,
                 "sendgrid" => ProvidersIdEnum.Sendgrid,
                 "sendinblue" => ProvidersIdEnum.Sendinblue,
@@ -534,6 +557,7 @@ namespace Novu
                 "termii" => ProvidersIdEnum.Termii,
                 "twilio" => ProvidersIdEnum.Twilio,
                 "unifonic" => ProvidersIdEnum.Unifonic,
+                "webex-messaging" => ProvidersIdEnum.WebexMessaging,
                 "whatsapp-business" => ProvidersIdEnum.WhatsappBusiness,
                 "zulip" => ProvidersIdEnum.Zulip,
                 _ => null,

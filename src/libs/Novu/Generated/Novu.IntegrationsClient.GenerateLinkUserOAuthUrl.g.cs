@@ -56,7 +56,7 @@ namespace Novu
 
         /// <summary>
         /// Generate OAuth URL to link a subscriber user identity<br/>
-        /// Generate an OAuth URL that links a specific subscriber to their chat identity (Slack user ID or MS Teams user OID). <br/>
+        /// Generate an OAuth URL that links a specific subscriber to their chat identity (Slack user ID, MS Teams user OID, or Webex person).<br/>
         ///     The generated URL expires after 5 minutes.
         /// </summary>
         /// <param name="request"></param>
@@ -80,7 +80,7 @@ namespace Novu
         }
         /// <summary>
         /// Generate OAuth URL to link a subscriber user identity<br/>
-        /// Generate an OAuth URL that links a specific subscriber to their chat identity (Slack user ID or MS Teams user OID). <br/>
+        /// Generate an OAuth URL that links a specific subscriber to their chat identity (Slack user ID, MS Teams user OID, or Webex person).<br/>
         ///     The generated URL expires after 5 minutes.
         /// </summary>
         /// <param name="request"></param>
@@ -918,7 +918,7 @@ namespace Novu
         }
         /// <summary>
         /// Generate OAuth URL to link a subscriber user identity<br/>
-        /// Generate an OAuth URL that links a specific subscriber to their chat identity (Slack user ID or MS Teams user OID). <br/>
+        /// Generate an OAuth URL that links a specific subscriber to their chat identity (Slack user ID, MS Teams user OID, or Webex person).<br/>
         ///     The generated URL expires after 5 minutes.
         /// </summary>
         /// <param name="subscriberId">
@@ -929,12 +929,12 @@ namespace Novu
         /// Integration identifier
         /// </param>
         /// <param name="connectionIdentifier">
-        /// Identifier of the existing channel connection to associate this user endpoint with. Generated automatically if not provided.<br/>
+        /// Identifier of the existing channel connection to associate this user endpoint with. Generated automatically if not provided for providers that support standalone user linking. Required for Webex.<br/>
         /// Example: slack-connection-abc123
         /// </param>
         /// <param name="context"></param>
         /// <param name="userScope">
-        /// **Slack only**: User-level OAuth scopes for "Sign in with Slack". Defaults to: identity.basic. **MS Teams**: ignored — uses delegated OpenID scopes (openid, profile, User.Read).<br/>
+        /// **Slack only**: User-level OAuth scopes for "Sign in with Slack". Defaults to: identity.basic. **Webex**: Optional Webex scopes for people/me; defaults to spark:people_read. **MS Teams**: ignored — uses delegated OpenID scopes (openid, profile, User.Read).<br/>
         /// Example: [identity.basic]
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

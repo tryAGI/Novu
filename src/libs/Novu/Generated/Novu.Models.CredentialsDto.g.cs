@@ -303,6 +303,12 @@ namespace Novu
         public string? OutboundConnectedAt { get; set; }
 
         /// <summary>
+        /// ISO timestamp marking Layer-2 What's next completion (Connected badge + guide hide). WhatsApp Business: stamped on post-connect Access Token rotation or manual confirm.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("whatsNextCompletedAt")]
+        public string? WhatsNextCompletedAt { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("useFromAddressOverride")]
@@ -396,6 +402,9 @@ namespace Novu
         /// <param name="signingSecret"></param>
         /// <param name="outboundIntegrationId"></param>
         /// <param name="outboundConnectedAt"></param>
+        /// <param name="whatsNextCompletedAt">
+        /// ISO timestamp marking Layer-2 What's next completion (Connected badge + guide hide). WhatsApp Business: stamped on post-connect Access Token rotation or manual confirm.
+        /// </param>
         /// <param name="useFromAddressOverride"></param>
         /// <param name="fromAddressOverride"></param>
         /// <param name="emailSlugPrefix">
@@ -463,6 +472,7 @@ namespace Novu
             string? signingSecret,
             string? outboundIntegrationId,
             string? outboundConnectedAt,
+            string? whatsNextCompletedAt,
             bool? useFromAddressOverride,
             string? fromAddressOverride,
             string? emailSlugPrefix,
@@ -519,6 +529,7 @@ namespace Novu
             this.SigningSecret = signingSecret;
             this.OutboundIntegrationId = outboundIntegrationId;
             this.OutboundConnectedAt = outboundConnectedAt;
+            this.WhatsNextCompletedAt = whatsNextCompletedAt;
             this.UseFromAddressOverride = useFromAddressOverride;
             this.FromAddressOverride = fromAddressOverride;
             this.EmailSlugPrefix = emailSlugPrefix;

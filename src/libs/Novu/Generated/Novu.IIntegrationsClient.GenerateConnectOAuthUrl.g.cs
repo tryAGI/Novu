@@ -6,7 +6,7 @@ namespace Novu
     {
         /// <summary>
         /// Generate OAuth URL for a workspace/tenant connection<br/>
-        /// Generate an OAuth URL that creates a workspace or tenant-level channel connection (Slack workspace install or MS Teams admin consent). <br/>
+        /// Generate an OAuth URL that creates a workspace or tenant-level channel connection (Slack workspace install, MS Teams admin consent, or Webex integration authorization).<br/>
         ///     The generated URL expires after 5 minutes.
         /// </summary>
         /// <param name="request"></param>
@@ -20,7 +20,7 @@ namespace Novu
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate OAuth URL for a workspace/tenant connection<br/>
-        /// Generate an OAuth URL that creates a workspace or tenant-level channel connection (Slack workspace install or MS Teams admin consent). <br/>
+        /// Generate an OAuth URL that creates a workspace or tenant-level channel connection (Slack workspace install, MS Teams admin consent, or Webex integration authorization).<br/>
         ///     The generated URL expires after 5 minutes.
         /// </summary>
         /// <param name="request"></param>
@@ -34,11 +34,11 @@ namespace Novu
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate OAuth URL for a workspace/tenant connection<br/>
-        /// Generate an OAuth URL that creates a workspace or tenant-level channel connection (Slack workspace install or MS Teams admin consent). <br/>
+        /// Generate an OAuth URL that creates a workspace or tenant-level channel connection (Slack workspace install, MS Teams admin consent, or Webex integration authorization).<br/>
         ///     The generated URL expires after 5 minutes.
         /// </summary>
         /// <param name="subscriberId">
-        /// The subscriber ID to associate with the channel connection. For Slack: optional for workspace connections (required only for incoming-webhook scope). For MS Teams: optional. Admin consent is tenant-wide.<br/>
+        /// The subscriber ID to associate with the channel connection. For Slack: optional for workspace connections (required only for incoming-webhook scope). For Webex: optional for workspace connections. For MS Teams: optional. Admin consent is tenant-wide.<br/>
         /// Example: subscriber-123
         /// </param>
         /// <param name="integrationIdentifier">
@@ -50,7 +50,7 @@ namespace Novu
         /// </param>
         /// <param name="context"></param>
         /// <param name="scope">
-        /// **Slack only**: OAuth scopes to request during authorization. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **MS Teams**: ignored — uses admin consent with pre-configured Azure AD permissions.<br/>
+        /// **Slack only**: OAuth scopes to request during authorization. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **Webex**: OAuth scopes to request during authorization. Defaults to: spark:messages_write, spark:rooms_read, spark:people_read, spark:memberships_read, spark:kms. **MS Teams**: ignored — uses admin consent with pre-configured Azure AD permissions.<br/>
         /// Example: [chat:write, chat:write.public, channels:read]
         /// </param>
         /// <param name="connectionMode">
@@ -58,7 +58,7 @@ namespace Novu
         /// Example: shared
         /// </param>
         /// <param name="autoLinkUser">
-        /// When true (default when connectionMode is "subscriber"), after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, uses the authed_user.id returned by oauth.v2.access — no extra redirect. For MS Teams, triggers a second OAuth redirect for delegated user-identity consent. Set to false to only create the workspace connection without linking the individual user.<br/>
+        /// When true (default when connectionMode is "subscriber"), after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, uses the authed_user.id returned by oauth.v2.access — no extra redirect. For Webex, uses the authenticated Webex person returned by people/me — no extra redirect. For MS Teams, triggers a second OAuth redirect for delegated user-identity consent. Set to false to only create the workspace connection without linking the individual user.<br/>
         /// Example: true
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

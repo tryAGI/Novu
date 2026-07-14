@@ -4,8 +4,8 @@
 namespace Novu
 {
     /// <summary>
-    /// Optional condition using JSON Logic rules<br/>
-    /// Example: {"and":[{"===":[{"var":"tier"},"premium"]}]}
+    /// Optional JSON Logic condition evaluated against the trigger payload at fan-out time (for example, `{ "var": "payload.tier" }`)<br/>
+    /// Example: {"and":[{"===":[{"var":"payload.tier"},"premium"]}]}
     /// </summary>
     public sealed partial class SubscriptionPreferenceDtoCondition
     {

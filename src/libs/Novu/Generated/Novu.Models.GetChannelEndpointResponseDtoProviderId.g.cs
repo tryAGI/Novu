@@ -28,6 +28,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Anypost,
+        /// <summary>
+        /// 
+        /// </summary>
         Apns,
         /// <summary>
         /// 
@@ -145,6 +149,10 @@ namespace Novu
         /// 
         /// </summary>
         Kannel,
+        /// <summary>
+        /// 
+        /// </summary>
+        Line,
         /// <summary>
         /// 
         /// </summary>
@@ -272,6 +280,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Sendblue,
+        /// <summary>
+        /// 
+        /// </summary>
         Sendchamp,
         /// <summary>
         /// 
@@ -340,6 +352,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        WebexMessaging,
+        /// <summary>
+        /// 
+        /// </summary>
         WhatsappBusiness,
         /// <summary>
         /// 
@@ -363,6 +379,7 @@ namespace Novu
                 GetChannelEndpointResponseDtoProviderId.AfroMessage => "afro-message",
                 GetChannelEndpointResponseDtoProviderId.Anthropic => "anthropic",
                 GetChannelEndpointResponseDtoProviderId.AnthropicAws => "anthropic-aws",
+                GetChannelEndpointResponseDtoProviderId.Anypost => "anypost",
                 GetChannelEndpointResponseDtoProviderId.Apns => "apns",
                 GetChannelEndpointResponseDtoProviderId.Appio => "appio",
                 GetChannelEndpointResponseDtoProviderId.AzureSms => "azure-sms",
@@ -393,6 +410,7 @@ namespace Novu
                 GetChannelEndpointResponseDtoProviderId.IsendSms => "isend-sms",
                 GetChannelEndpointResponseDtoProviderId.IsendproSms => "isendpro-sms",
                 GetChannelEndpointResponseDtoProviderId.Kannel => "kannel",
+                GetChannelEndpointResponseDtoProviderId.Line => "line",
                 GetChannelEndpointResponseDtoProviderId.Mailersend => "mailersend",
                 GetChannelEndpointResponseDtoProviderId.Mailgun => "mailgun",
                 GetChannelEndpointResponseDtoProviderId.Mailjet => "mailjet",
@@ -424,6 +442,7 @@ namespace Novu
                 GetChannelEndpointResponseDtoProviderId.RingCentral => "ring-central",
                 GetChannelEndpointResponseDtoProviderId.RocketChat => "rocket-chat",
                 GetChannelEndpointResponseDtoProviderId.Ryver => "ryver",
+                GetChannelEndpointResponseDtoProviderId.Sendblue => "sendblue",
                 GetChannelEndpointResponseDtoProviderId.Sendchamp => "sendchamp",
                 GetChannelEndpointResponseDtoProviderId.Sendgrid => "sendgrid",
                 GetChannelEndpointResponseDtoProviderId.Sendinblue => "sendinblue",
@@ -441,6 +460,7 @@ namespace Novu
                 GetChannelEndpointResponseDtoProviderId.Termii => "termii",
                 GetChannelEndpointResponseDtoProviderId.Twilio => "twilio",
                 GetChannelEndpointResponseDtoProviderId.Unifonic => "unifonic",
+                GetChannelEndpointResponseDtoProviderId.WebexMessaging => "webex-messaging",
                 GetChannelEndpointResponseDtoProviderId.WhatsappBusiness => "whatsapp-business",
                 GetChannelEndpointResponseDtoProviderId.Zulip => "zulip",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -457,6 +477,7 @@ namespace Novu
                 "afro-message" => GetChannelEndpointResponseDtoProviderId.AfroMessage,
                 "anthropic" => GetChannelEndpointResponseDtoProviderId.Anthropic,
                 "anthropic-aws" => GetChannelEndpointResponseDtoProviderId.AnthropicAws,
+                "anypost" => GetChannelEndpointResponseDtoProviderId.Anypost,
                 "apns" => GetChannelEndpointResponseDtoProviderId.Apns,
                 "appio" => GetChannelEndpointResponseDtoProviderId.Appio,
                 "azure-sms" => GetChannelEndpointResponseDtoProviderId.AzureSms,
@@ -487,6 +508,7 @@ namespace Novu
                 "isend-sms" => GetChannelEndpointResponseDtoProviderId.IsendSms,
                 "isendpro-sms" => GetChannelEndpointResponseDtoProviderId.IsendproSms,
                 "kannel" => GetChannelEndpointResponseDtoProviderId.Kannel,
+                "line" => GetChannelEndpointResponseDtoProviderId.Line,
                 "mailersend" => GetChannelEndpointResponseDtoProviderId.Mailersend,
                 "mailgun" => GetChannelEndpointResponseDtoProviderId.Mailgun,
                 "mailjet" => GetChannelEndpointResponseDtoProviderId.Mailjet,
@@ -518,6 +540,7 @@ namespace Novu
                 "ring-central" => GetChannelEndpointResponseDtoProviderId.RingCentral,
                 "rocket-chat" => GetChannelEndpointResponseDtoProviderId.RocketChat,
                 "ryver" => GetChannelEndpointResponseDtoProviderId.Ryver,
+                "sendblue" => GetChannelEndpointResponseDtoProviderId.Sendblue,
                 "sendchamp" => GetChannelEndpointResponseDtoProviderId.Sendchamp,
                 "sendgrid" => GetChannelEndpointResponseDtoProviderId.Sendgrid,
                 "sendinblue" => GetChannelEndpointResponseDtoProviderId.Sendinblue,
@@ -535,6 +558,7 @@ namespace Novu
                 "termii" => GetChannelEndpointResponseDtoProviderId.Termii,
                 "twilio" => GetChannelEndpointResponseDtoProviderId.Twilio,
                 "unifonic" => GetChannelEndpointResponseDtoProviderId.Unifonic,
+                "webex-messaging" => GetChannelEndpointResponseDtoProviderId.WebexMessaging,
                 "whatsapp-business" => GetChannelEndpointResponseDtoProviderId.WhatsappBusiness,
                 "zulip" => GetChannelEndpointResponseDtoProviderId.Zulip,
                 _ => null,
