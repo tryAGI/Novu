@@ -17,10 +17,10 @@ namespace Novu
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// Optional condition using JSON Logic rules<br/>
-        /// Example: {"and":[{"===":[{"var":"tier"},"premium"]}]}
+        /// Optional JSON Logic condition evaluated against the trigger payload at fan-out time (for example, `{ "var": "payload.tier" }`)<br/>
+        /// Example: {"and":[{"===":[{"var":"payload.tier"},"premium"]}]}
         /// </summary>
-        /// <example>{"and":[{"===":[{"var":"tier"},"premium"]}]}</example>
+        /// <example>{"and":[{"===":[{"var":"payload.tier"},"premium"]}]}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("condition")]
         public object? Condition { get; set; }
 
@@ -48,8 +48,8 @@ namespace Novu
         /// Example: true
         /// </param>
         /// <param name="condition">
-        /// Optional condition using JSON Logic rules<br/>
-        /// Example: {"and":[{"===":[{"var":"tier"},"premium"]}]}
+        /// Optional JSON Logic condition evaluated against the trigger payload at fan-out time (for example, `{ "var": "payload.tier" }`)<br/>
+        /// Example: {"and":[{"===":[{"var":"payload.tier"},"premium"]}]}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

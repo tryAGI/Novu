@@ -25,7 +25,7 @@ namespace Novu
         public required string IntegrationIdentifier { get; set; }
 
         /// <summary>
-        /// Identifier of the existing channel connection to associate this user endpoint with. Generated automatically if not provided.<br/>
+        /// Identifier of the existing channel connection to associate this user endpoint with. Generated automatically if not provided for providers that support standalone user linking. Required for Webex.<br/>
         /// Example: slack-connection-abc123
         /// </summary>
         /// <example>slack-connection-abc123</example>
@@ -39,7 +39,7 @@ namespace Novu
         public object? Context { get; set; }
 
         /// <summary>
-        /// **Slack only**: User-level OAuth scopes for "Sign in with Slack". Defaults to: identity.basic. **MS Teams**: ignored — uses delegated OpenID scopes (openid, profile, User.Read).<br/>
+        /// **Slack only**: User-level OAuth scopes for "Sign in with Slack". Defaults to: identity.basic. **Webex**: Optional Webex scopes for people/me; defaults to spark:people_read. **MS Teams**: ignored — uses delegated OpenID scopes (openid, profile, User.Read).<br/>
         /// Example: [identity.basic]
         /// </summary>
         /// <example>[identity.basic]</example>
@@ -63,12 +63,12 @@ namespace Novu
         /// Integration identifier
         /// </param>
         /// <param name="connectionIdentifier">
-        /// Identifier of the existing channel connection to associate this user endpoint with. Generated automatically if not provided.<br/>
+        /// Identifier of the existing channel connection to associate this user endpoint with. Generated automatically if not provided for providers that support standalone user linking. Required for Webex.<br/>
         /// Example: slack-connection-abc123
         /// </param>
         /// <param name="context"></param>
         /// <param name="userScope">
-        /// **Slack only**: User-level OAuth scopes for "Sign in with Slack". Defaults to: identity.basic. **MS Teams**: ignored — uses delegated OpenID scopes (openid, profile, User.Read).<br/>
+        /// **Slack only**: User-level OAuth scopes for "Sign in with Slack". Defaults to: identity.basic. **Webex**: Optional Webex scopes for people/me; defaults to spark:people_read. **MS Teams**: ignored — uses delegated OpenID scopes (openid, profile, User.Read).<br/>
         /// Example: [identity.basic]
         /// </param>
 #if NET7_0_OR_GREATER

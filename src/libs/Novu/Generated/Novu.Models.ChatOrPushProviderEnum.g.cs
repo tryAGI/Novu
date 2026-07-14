@@ -43,6 +43,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Line,
+        /// <summary>
+        /// 
+        /// </summary>
         Mattermost,
         /// <summary>
         /// 
@@ -79,11 +83,19 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Sendblue,
+        /// <summary>
+        /// 
+        /// </summary>
         Slack,
         /// <summary>
         /// 
         /// </summary>
         Telegram,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebexMessaging,
         /// <summary>
         /// 
         /// </summary>
@@ -114,6 +126,7 @@ namespace Novu
                 ChatOrPushProviderEnum.Fcm => "fcm",
                 ChatOrPushProviderEnum.Getstream => "getstream",
                 ChatOrPushProviderEnum.GrafanaOnCall => "grafana-on-call",
+                ChatOrPushProviderEnum.Line => "line",
                 ChatOrPushProviderEnum.Mattermost => "mattermost",
                 ChatOrPushProviderEnum.Msteams => "msteams",
                 ChatOrPushProviderEnum.NovuSlack => "novu-slack",
@@ -123,8 +136,10 @@ namespace Novu
                 ChatOrPushProviderEnum.Pushpad => "pushpad",
                 ChatOrPushProviderEnum.RocketChat => "rocket-chat",
                 ChatOrPushProviderEnum.Ryver => "ryver",
+                ChatOrPushProviderEnum.Sendblue => "sendblue",
                 ChatOrPushProviderEnum.Slack => "slack",
                 ChatOrPushProviderEnum.Telegram => "telegram",
+                ChatOrPushProviderEnum.WebexMessaging => "webex-messaging",
                 ChatOrPushProviderEnum.WhatsappBusiness => "whatsapp-business",
                 ChatOrPushProviderEnum.Zulip => "zulip",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -145,6 +160,7 @@ namespace Novu
                 "fcm" => ChatOrPushProviderEnum.Fcm,
                 "getstream" => ChatOrPushProviderEnum.Getstream,
                 "grafana-on-call" => ChatOrPushProviderEnum.GrafanaOnCall,
+                "line" => ChatOrPushProviderEnum.Line,
                 "mattermost" => ChatOrPushProviderEnum.Mattermost,
                 "msteams" => ChatOrPushProviderEnum.Msteams,
                 "novu-slack" => ChatOrPushProviderEnum.NovuSlack,
@@ -154,8 +170,10 @@ namespace Novu
                 "pushpad" => ChatOrPushProviderEnum.Pushpad,
                 "rocket-chat" => ChatOrPushProviderEnum.RocketChat,
                 "ryver" => ChatOrPushProviderEnum.Ryver,
+                "sendblue" => ChatOrPushProviderEnum.Sendblue,
                 "slack" => ChatOrPushProviderEnum.Slack,
                 "telegram" => ChatOrPushProviderEnum.Telegram,
+                "webex-messaging" => ChatOrPushProviderEnum.WebexMessaging,
                 "whatsapp-business" => ChatOrPushProviderEnum.WhatsappBusiness,
                 "zulip" => ChatOrPushProviderEnum.Zulip,
                 _ => null,

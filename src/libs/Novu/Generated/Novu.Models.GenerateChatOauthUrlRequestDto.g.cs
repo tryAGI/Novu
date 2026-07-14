@@ -38,7 +38,7 @@ namespace Novu
         public object? Context { get; set; }
 
         /// <summary>
-        /// **Slack only**: OAuth scopes to request during authorization. These define the permissions your Slack integration will have. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **MS Teams**: This parameter is ignored. MS Teams uses admin consent with pre-configured permissions in Azure AD. Note: The generated OAuth URL expires after 5 minutes.<br/>
+        /// **Slack only**: OAuth scopes to request during authorization. These define the permissions your Slack integration will have. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **Webex**: OAuth scopes to request during authorization. Defaults to: spark:messages_write, spark:rooms_read, spark:people_read, spark:memberships_read, spark:kms. **MS Teams**: This parameter is ignored. MS Teams uses admin consent with pre-configured permissions in Azure AD. Note: The generated OAuth URL expires after 5 minutes.<br/>
         /// Example: [chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email, incoming-webhook]
         /// </summary>
         /// <example>[chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email, incoming-webhook]</example>
@@ -72,7 +72,7 @@ namespace Novu
         public global::Novu.GenerateChatOauthUrlRequestDtoConnectionMode? ConnectionMode { get; set; }
 
         /// <summary>
-        /// When true, after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, this uses the authed_user.id already returned by oauth.v2.access — no extra redirect. For MS Teams, this triggers a second OAuth redirect for delegated user-identity consent. Defaults to false when omitted; the SlackConnectButton and MsTeamsConnectButton SDK components default this to true.<br/>
+        /// When true, after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, this uses the authed_user.id already returned by oauth.v2.access — no extra redirect. For Webex, this uses the authenticated Webex person returned by people/me — no extra redirect. For MS Teams, this triggers a second OAuth redirect for delegated user-identity consent. Defaults to false when omitted; the SlackConnectButton and MsTeamsConnectButton SDK components default this to true.<br/>
         /// Example: true
         /// </summary>
         /// <example>true</example>
@@ -101,7 +101,7 @@ namespace Novu
         /// </param>
         /// <param name="context"></param>
         /// <param name="scope">
-        /// **Slack only**: OAuth scopes to request during authorization. These define the permissions your Slack integration will have. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **MS Teams**: This parameter is ignored. MS Teams uses admin consent with pre-configured permissions in Azure AD. Note: The generated OAuth URL expires after 5 minutes.<br/>
+        /// **Slack only**: OAuth scopes to request during authorization. These define the permissions your Slack integration will have. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **Webex**: OAuth scopes to request during authorization. Defaults to: spark:messages_write, spark:rooms_read, spark:people_read, spark:memberships_read, spark:kms. **MS Teams**: This parameter is ignored. MS Teams uses admin consent with pre-configured permissions in Azure AD. Note: The generated OAuth URL expires after 5 minutes.<br/>
         /// Example: [chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email, incoming-webhook]
         /// </param>
         /// <param name="userScope">
@@ -117,7 +117,7 @@ namespace Novu
         /// Example: shared
         /// </param>
         /// <param name="autoLinkUser">
-        /// When true, after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, this uses the authed_user.id already returned by oauth.v2.access — no extra redirect. For MS Teams, this triggers a second OAuth redirect for delegated user-identity consent. Defaults to false when omitted; the SlackConnectButton and MsTeamsConnectButton SDK components default this to true.<br/>
+        /// When true, after the workspace/tenant connection is created the OAuth flow also links the subscriber who clicked "Connect" as a personal endpoint. For Slack, this uses the authed_user.id already returned by oauth.v2.access — no extra redirect. For Webex, this uses the authenticated Webex person returned by people/me — no extra redirect. For MS Teams, this triggers a second OAuth redirect for delegated user-identity consent. Defaults to false when omitted; the SlackConnectButton and MsTeamsConnectButton SDK components default this to true.<br/>
         /// Example: true
         /// </param>
 #if NET7_0_OR_GREATER

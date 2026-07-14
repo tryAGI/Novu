@@ -12,6 +12,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        LineUser,
+        /// <summary>
+        /// 
+        /// </summary>
         MsTeamsChannel,
         /// <summary>
         /// 
@@ -36,6 +40,14 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        WebexPerson,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebexRoom,
+        /// <summary>
+        /// 
+        /// </summary>
         Webhook,
     }
 
@@ -51,12 +63,15 @@ namespace Novu
         {
             return value switch
             {
+                GetChannelEndpointResponseDtoType.LineUser => "line_user",
                 GetChannelEndpointResponseDtoType.MsTeamsChannel => "ms_teams_channel",
                 GetChannelEndpointResponseDtoType.MsTeamsUser => "ms_teams_user",
                 GetChannelEndpointResponseDtoType.Phone => "phone",
                 GetChannelEndpointResponseDtoType.SlackChannel => "slack_channel",
                 GetChannelEndpointResponseDtoType.SlackUser => "slack_user",
                 GetChannelEndpointResponseDtoType.TelegramChat => "telegram_chat",
+                GetChannelEndpointResponseDtoType.WebexPerson => "webex_person",
+                GetChannelEndpointResponseDtoType.WebexRoom => "webex_room",
                 GetChannelEndpointResponseDtoType.Webhook => "webhook",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -68,12 +83,15 @@ namespace Novu
         {
             return value switch
             {
+                "line_user" => GetChannelEndpointResponseDtoType.LineUser,
                 "ms_teams_channel" => GetChannelEndpointResponseDtoType.MsTeamsChannel,
                 "ms_teams_user" => GetChannelEndpointResponseDtoType.MsTeamsUser,
                 "phone" => GetChannelEndpointResponseDtoType.Phone,
                 "slack_channel" => GetChannelEndpointResponseDtoType.SlackChannel,
                 "slack_user" => GetChannelEndpointResponseDtoType.SlackUser,
                 "telegram_chat" => GetChannelEndpointResponseDtoType.TelegramChat,
+                "webex_person" => GetChannelEndpointResponseDtoType.WebexPerson,
+                "webex_room" => GetChannelEndpointResponseDtoType.WebexRoom,
                 "webhook" => GetChannelEndpointResponseDtoType.Webhook,
                 _ => null,
             };

@@ -54,6 +54,26 @@ namespace Novu
         };
 
         /// <summary>
+        /// Agents are conversational assistants that receive inbound messages from connected channels and respond through a custom code bridge or a managed runtime provider.
+        /// </summary>
+        public AgentsClient Agents => new AgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AgentsIntegrationsClient AgentsIntegrations => new AgentsIntegrationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
         /// 
         /// </summary>
         public ChannelConnectionsClient ChannelConnections => new ChannelConnectionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
