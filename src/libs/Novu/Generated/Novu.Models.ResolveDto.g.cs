@@ -9,8 +9,10 @@ namespace Novu
     public sealed partial class ResolveDto
     {
         /// <summary>
-        /// 
+        /// Optional human-readable resolution summary stored on the conversation.<br/>
+        /// Example: Answered billing question about invoice INV-42.
         /// </summary>
+        /// <example>Answered billing question about invoice INV-42.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         public string? Summary { get; set; }
 
@@ -23,7 +25,10 @@ namespace Novu
         /// <summary>
         /// Initializes a new instance of the <see cref="ResolveDto" /> class.
         /// </summary>
-        /// <param name="summary"></param>
+        /// <param name="summary">
+        /// Optional human-readable resolution summary stored on the conversation.<br/>
+        /// Example: Answered billing question about invoice INV-42.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -9,57 +9,62 @@ namespace Novu
     public sealed partial class AgentReplyPayloadDto
     {
         /// <summary>
-        /// 
+        /// Conversation id to reply into. Obtained from the inbound agent event / bridge payload.<br/>
+        /// Example: 64f5a1c2e8b7a3d9f0c1b2a3
         /// </summary>
+        /// <example>64f5a1c2e8b7a3d9f0c1b2a3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversationId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ConversationId { get; set; }
 
         /// <summary>
-        /// 
+        /// Channel integration identifier linked to the agent for this conversation (e.g. `slack-support`).<br/>
+        /// Example: slack-support
         /// </summary>
+        /// <example>slack-support</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("integrationIdentifier")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string IntegrationIdentifier { get; set; }
 
         /// <summary>
-        /// 
+        /// Outbound message content. Exactly one of `markdown`, `card`, or `toolApprovalCard`. Optional `files` attach to the message. Cannot be combined with `edit`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reply")]
-        public global::Novu.ReplyContentDto? Reply { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.MarkdownReplyContentDto, global::Novu.CardReplyContentDto, global::Novu.ToolApprovalCardReplyContentDto>))]
+        public global::Novu.OneOf<global::Novu.MarkdownReplyContentDto, global::Novu.CardReplyContentDto, global::Novu.ToolApprovalCardReplyContentDto>? Reply { get; set; }
 
         /// <summary>
-        /// Tool-lifecycle ledger row for a gated tool call. Optional reply delivers the approval card.
+        /// Tool-lifecycle ledger row for a gated tool call. Pair with `reply.toolApprovalCard` (or another reply shape) to deliver the approval UI.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("toolApprovalRequest")]
         public global::Novu.ToolApprovalRequestPayloadDto? ToolApprovalRequest { get; set; }
 
         /// <summary>
-        /// 
+        /// In-place edit of a previously posted agent message. Cannot be combined with reply, resolve, signals, toolResults, toolApprovalRequest, addReactions, or deleteMessages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("edit")]
         public global::Novu.EditPayloadDto? Edit { get; set; }
 
         /// <summary>
-        /// 
+        /// Mark the conversation resolved. May be combined with a final `reply`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolve")]
         public global::Novu.ResolveDto? Resolve { get; set; }
 
         /// <summary>
-        /// 
+        /// Side-effect signals executed during this turn: conversation metadata mutations or Novu workflow triggers.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("signals")]
-        public global::System.Collections.Generic.IList<global::Novu.SignalDto>? Signals { get; set; }
+        public global::System.Collections.Generic.IList<global::Novu.OneOf<global::Novu.MetadataSetSignalDto, global::Novu.MetadataDeleteSignalDto, global::Novu.MetadataClearSignalDto, global::Novu.TriggerSignalDto>>? Signals { get; set; }
 
         /// <summary>
-        /// 
+        /// Tool-call outcomes to persist in conversation history (typically before the assistant reply).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("toolResults")]
         public global::System.Collections.Generic.IList<global::Novu.ToolResultDto>? ToolResults { get; set; }
 
         /// <summary>
-        /// 
+        /// Emoji reactions to add to existing platform messages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("addReactions")]
         public global::System.Collections.Generic.IList<global::Novu.AddReactionPayloadDto>? AddReactions { get; set; }
@@ -71,14 +76,17 @@ namespace Novu
         public global::System.Collections.Generic.IList<global::Novu.DeleteMessagePayloadDto>? DeleteMessages { get; set; }
 
         /// <summary>
-        /// Per-turn typing/status control. `{ status?: string }` sets the status text (omit for the default "Thinking…"); `"stop"` clears it. Best-effort per platform.
+        /// Per-turn typing/status control. Pass `{ status?: string }` to set/update the status (omit `status` for "Thinking…"), or `"stop"` to clear it. Best-effort per platform.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("typing")]
-        public object? Typing { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.AgentReplyPayloadDtoTyping?, global::Novu.TypingStatusDto>))]
+        public global::Novu.OneOf<global::Novu.AgentReplyPayloadDtoTyping?, global::Novu.TypingStatusDto>? Typing { get; set; }
 
         /// <summary>
-        /// Bridge reports the turn failed on the customer runtime. Delivers generic user copy.
+        /// Bridge reports that the customer runtime failed this turn. Cannot be combined with other actions. Novu delivers generic user-facing error copy.<br/>
+        /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public bool? Error { get; set; }
 
@@ -91,25 +99,44 @@ namespace Novu
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentReplyPayloadDto" /> class.
         /// </summary>
-        /// <param name="conversationId"></param>
-        /// <param name="integrationIdentifier"></param>
-        /// <param name="reply"></param>
-        /// <param name="toolApprovalRequest">
-        /// Tool-lifecycle ledger row for a gated tool call. Optional reply delivers the approval card.
+        /// <param name="conversationId">
+        /// Conversation id to reply into. Obtained from the inbound agent event / bridge payload.<br/>
+        /// Example: 64f5a1c2e8b7a3d9f0c1b2a3
         /// </param>
-        /// <param name="edit"></param>
-        /// <param name="resolve"></param>
-        /// <param name="signals"></param>
-        /// <param name="toolResults"></param>
-        /// <param name="addReactions"></param>
+        /// <param name="integrationIdentifier">
+        /// Channel integration identifier linked to the agent for this conversation (e.g. `slack-support`).<br/>
+        /// Example: slack-support
+        /// </param>
+        /// <param name="reply">
+        /// Outbound message content. Exactly one of `markdown`, `card`, or `toolApprovalCard`. Optional `files` attach to the message. Cannot be combined with `edit`.
+        /// </param>
+        /// <param name="toolApprovalRequest">
+        /// Tool-lifecycle ledger row for a gated tool call. Pair with `reply.toolApprovalCard` (or another reply shape) to deliver the approval UI.
+        /// </param>
+        /// <param name="edit">
+        /// In-place edit of a previously posted agent message. Cannot be combined with reply, resolve, signals, toolResults, toolApprovalRequest, addReactions, or deleteMessages.
+        /// </param>
+        /// <param name="resolve">
+        /// Mark the conversation resolved. May be combined with a final `reply`.
+        /// </param>
+        /// <param name="signals">
+        /// Side-effect signals executed during this turn: conversation metadata mutations or Novu workflow triggers.
+        /// </param>
+        /// <param name="toolResults">
+        /// Tool-call outcomes to persist in conversation history (typically before the assistant reply).
+        /// </param>
+        /// <param name="addReactions">
+        /// Emoji reactions to add to existing platform messages.
+        /// </param>
         /// <param name="deleteMessages">
         /// Delete previously posted platform messages. Removes the rendered message only — history is preserved.
         /// </param>
         /// <param name="typing">
-        /// Per-turn typing/status control. `{ status?: string }` sets the status text (omit for the default "Thinking…"); `"stop"` clears it. Best-effort per platform.
+        /// Per-turn typing/status control. Pass `{ status?: string }` to set/update the status (omit `status` for "Thinking…"), or `"stop"` to clear it. Best-effort per platform.
         /// </param>
         /// <param name="error">
-        /// Bridge reports the turn failed on the customer runtime. Delivers generic user copy.
+        /// Bridge reports that the customer runtime failed this turn. Cannot be combined with other actions. Novu delivers generic user-facing error copy.<br/>
+        /// Example: true
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -117,15 +144,15 @@ namespace Novu
         public AgentReplyPayloadDto(
             string conversationId,
             string integrationIdentifier,
-            global::Novu.ReplyContentDto? reply,
+            global::Novu.OneOf<global::Novu.MarkdownReplyContentDto, global::Novu.CardReplyContentDto, global::Novu.ToolApprovalCardReplyContentDto>? reply,
             global::Novu.ToolApprovalRequestPayloadDto? toolApprovalRequest,
             global::Novu.EditPayloadDto? edit,
             global::Novu.ResolveDto? resolve,
-            global::System.Collections.Generic.IList<global::Novu.SignalDto>? signals,
+            global::System.Collections.Generic.IList<global::Novu.OneOf<global::Novu.MetadataSetSignalDto, global::Novu.MetadataDeleteSignalDto, global::Novu.MetadataClearSignalDto, global::Novu.TriggerSignalDto>>? signals,
             global::System.Collections.Generic.IList<global::Novu.ToolResultDto>? toolResults,
             global::System.Collections.Generic.IList<global::Novu.AddReactionPayloadDto>? addReactions,
             global::System.Collections.Generic.IList<global::Novu.DeleteMessagePayloadDto>? deleteMessages,
-            object? typing,
+            global::Novu.OneOf<global::Novu.AgentReplyPayloadDtoTyping?, global::Novu.TypingStatusDto>? typing,
             bool? error)
         {
             this.ConversationId = conversationId ?? throw new global::System.ArgumentNullException(nameof(conversationId));

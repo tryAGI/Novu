@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    /// `metadata` updates conversation state; `trigger` fires a Novu workflow.
     /// </summary>
     public enum SignalDtoType
     {

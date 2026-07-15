@@ -9,29 +9,37 @@ namespace Novu
     public sealed partial class ToolApprovalRequestPayloadDto
     {
         /// <summary>
-        /// Unique id for this approval request (matches the AI SDK approvalId).
+        /// Unique id for this approval request (matches the AI SDK approvalId).<br/>
+        /// Example: apr_01HZX
         /// </summary>
+        /// <example>apr_01HZX</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("approvalId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ApprovalId { get; set; }
 
         /// <summary>
-        /// Id of the tool call awaiting approval.
+        /// Id of the tool call awaiting approval.<br/>
+        /// Example: call_refund_1
         /// </summary>
+        /// <example>call_refund_1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("toolCallId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ToolCallId { get; set; }
 
         /// <summary>
-        /// Name of the gated tool.
+        /// Name of the gated tool.<br/>
+        /// Example: issue_refund
         /// </summary>
+        /// <example>issue_refund</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// Tool input the model proposed.
+        /// Tool input the model proposed.<br/>
+        /// Example: {"orderId":"ORD-42","amountCents":2500}
         /// </summary>
+        /// <example>{"orderId":"ORD-42","amountCents":2500}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         public object? Input { get; set; }
 
@@ -45,16 +53,20 @@ namespace Novu
         /// Initializes a new instance of the <see cref="ToolApprovalRequestPayloadDto" /> class.
         /// </summary>
         /// <param name="approvalId">
-        /// Unique id for this approval request (matches the AI SDK approvalId).
+        /// Unique id for this approval request (matches the AI SDK approvalId).<br/>
+        /// Example: apr_01HZX
         /// </param>
         /// <param name="toolCallId">
-        /// Id of the tool call awaiting approval.
+        /// Id of the tool call awaiting approval.<br/>
+        /// Example: call_refund_1
         /// </param>
         /// <param name="name">
-        /// Name of the gated tool.
+        /// Name of the gated tool.<br/>
+        /// Example: issue_refund
         /// </param>
         /// <param name="input">
-        /// Tool input the model proposed.
+        /// Tool input the model proposed.<br/>
+        /// Example: {"orderId":"ORD-42","amountCents":2500}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

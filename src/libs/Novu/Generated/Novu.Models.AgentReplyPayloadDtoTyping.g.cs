@@ -4,16 +4,42 @@
 namespace Novu
 {
     /// <summary>
-    /// Per-turn typing/status control. `{ status?: string }` sets the status text (omit for the default "Thinking…"); `"stop"` clears it. Best-effort per platform.
+    /// Clear the typing indicator.
     /// </summary>
-    public sealed partial class AgentReplyPayloadDtoTyping
+    public enum AgentReplyPayloadDtoTyping
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Stop,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class AgentReplyPayloadDtoTypingExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this AgentReplyPayloadDtoTyping value)
+        {
+            return value switch
+            {
+                AgentReplyPayloadDtoTyping.Stop => "stop",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static AgentReplyPayloadDtoTyping? ToEnum(string value)
+        {
+            return value switch
+            {
+                "stop" => AgentReplyPayloadDtoTyping.Stop,
+                _ => null,
+            };
+        }
     }
 }

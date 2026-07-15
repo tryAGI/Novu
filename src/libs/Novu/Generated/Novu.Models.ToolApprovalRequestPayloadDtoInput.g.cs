@@ -4,7 +4,8 @@
 namespace Novu
 {
     /// <summary>
-    /// Tool input the model proposed.
+    /// Tool input the model proposed.<br/>
+    /// Example: {"orderId":"ORD-42","amountCents":2500}
     /// </summary>
     public sealed partial class ToolApprovalRequestPayloadDtoInput
     {

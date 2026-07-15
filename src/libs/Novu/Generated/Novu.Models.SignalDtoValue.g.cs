@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    /// Value for metadata `set` actions. JSON-serializable.
     /// </summary>
     public sealed partial class SignalDtoValue
     {

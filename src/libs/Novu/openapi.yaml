@@ -9869,15 +9869,20 @@
     "/v1/agents/{agentId}/reply": {
       "post": {
         "operationId": "AgentReplyController_handleAgentReplyHandler",
+        "x-speakeasy-usage-example": {
+          "title": "Send an agent reply"
+        },
         "x-speakeasy-name-override": "sendReply",
         "x-speakeasy-group": "Agents",
         "summary": "Send an agent reply",
-        "description": "Send a reply into an existing agent conversation from server-side code. Supports plain text, markdown, cards, edits, reactions, typing indicators, tool results, and conversation resolution signals.",
+        "description": "Send a message or side-effect into an existing agent conversation from your backend.\n\nUse this endpoint when you are not using `@novu/framework` (for example Python, Go, PHP, .NET, or Java SDKs),\nor when a server process outside the bridge needs to post into a live conversation.\n\n**Message actions**\n- `reply` — markdown, interactive card, or tool-approval card (optional `files`)\n- `edit` — update a previously delivered message in place\n- `deleteMessages` — remove rendered platform messages (history is kept)\n- `addReactions` — add emoji reactions to existing messages\n\n**Turn control**\n- `typing` — `{ status?: string }` to set status, or `\"stop\"` to clear\n- `resolve` — mark the conversation resolved (optionally with a final reply)\n- `error: true` — report a customer-runtime failure (cannot combine with other actions)\n\n**Signals & tools**\n- `signals` — metadata set/delete/clear, or trigger a Novu workflow\n- `toolResults` — persist tool outputs into conversation history\n- `toolApprovalRequest` — ledger a gated tool call (pair with an approval card reply)\n\nReturns `{ data: { messageId, platformThreadId } }` when a reply or edit is delivered;\notherwise `{ data: null }`.",
         "parameters": [
           {
             "name": "agentId",
             "required": true,
             "in": "path",
+            "description": "Agent identifier (slug) for the agent that owns the conversation.",
+            "example": "support-agent",
             "schema": {
               "type": "string"
             }
@@ -9885,21 +9890,278 @@
         ],
         "requestBody": {
           "required": true,
+          "description": "Reply payload. Provide at least one action: `reply`, `edit`, `resolve`, `signals`, `toolResults`, `toolApprovalRequest`, `addReactions`, `deleteMessages`, `typing`, or `error`. See named examples for common shapes used by server-side SDKs.",
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/AgentReplyPayloadDto"
+              },
+              "examples": {
+                "markdownReply": {
+                  "summary": "Markdown reply",
+                  "description": "Send a markdown (or plain text) message into an existing conversation.",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "reply": {
+                      "markdown": "**Report ready.** Your weekly summary is attached."
+                    }
+                  }
+                },
+                "replyWithFile": {
+                  "summary": "Reply with file attachment",
+                  "description": "Attach files to a markdown reply. Provide exactly one of `url` or `data` per file. Prefer `url` for larger files.",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "reply": {
+                      "markdown": "Here is your report.",
+                      "files": [
+                        {
+                          "filename": "report.pdf",
+                          "mimeType": "application/pdf",
+                          "url": "https://example.com/files/report.pdf"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "cardReply": {
+                  "summary": "Interactive card reply",
+                  "description": "Send a Chat SDK card (buttons, text, links). Build cards with `@novu/framework` helpers or an equivalent JSON tree.",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "reply": {
+                      "card": {
+                        "type": "card",
+                        "title": "Order #123",
+                        "children": [
+                          {
+                            "type": "text",
+                            "content": "Your order is ready for pickup."
+                          },
+                          {
+                            "type": "button",
+                            "id": "confirm",
+                            "label": "Confirm",
+                            "style": "primary"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "editMessage": {
+                  "summary": "Edit a sent message",
+                  "description": "Update a previously delivered agent message in place. Cannot be combined with resolve, signals, or reactions.",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "edit": {
+                      "messageId": "1712345678.123456",
+                      "content": {
+                        "markdown": "Updated: the report is now final."
+                      }
+                    }
+                  }
+                },
+                "typingStart": {
+                  "summary": "Start typing indicator",
+                  "description": "Best-effort status text on platforms that support it. Omit `status` for the default \"Thinking…\".",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "typing": {
+                      "status": "Looking up your order…"
+                    }
+                  }
+                },
+                "typingStop": {
+                  "summary": "Stop typing indicator",
+                  "description": "Clear the typing / status indicator for this turn.",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "typing": "stop"
+                  }
+                },
+                "addReaction": {
+                  "summary": "Add emoji reaction",
+                  "description": "React to a platform message with a well-known emoji name.",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "addReactions": [
+                      {
+                        "messageId": "1712345678.123456",
+                        "emojiName": "white_check_mark"
+                      }
+                    ]
+                  }
+                },
+                "deleteMessage": {
+                  "summary": "Delete a sent message",
+                  "description": "Remove a previously posted platform message. Conversation history is preserved.",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "deleteMessages": [
+                      {
+                        "messageId": "1712345678.123456"
+                      }
+                    ]
+                  }
+                },
+                "resolveConversation": {
+                  "summary": "Resolve conversation",
+                  "description": "Mark the conversation resolved. Optionally include a summary and/or a final reply in the same request.",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "reply": {
+                      "markdown": "Glad that helped — marking this as resolved."
+                    },
+                    "resolve": {
+                      "summary": "Answered billing question about invoice INV-42."
+                    }
+                  }
+                },
+                "metadataSignal": {
+                  "summary": "Set conversation metadata",
+                  "description": "Persist key/value metadata on the conversation for later turns. Keys: 1–128 chars, letters/digits with `-`, `_`, `:` separators.",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "signals": [
+                      {
+                        "type": "metadata",
+                        "action": "set",
+                        "key": "crm:ticketId",
+                        "value": "TCK-1001"
+                      }
+                    ]
+                  }
+                },
+                "triggerWorkflow": {
+                  "summary": "Trigger a Novu workflow",
+                  "description": "Fire a workflow from the agent turn. When `to` is omitted, Novu uses the conversation subscriber if one is resolved.",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "signals": [
+                      {
+                        "type": "trigger",
+                        "workflowId": "order-shipped",
+                        "to": "subscriber-123",
+                        "payload": {
+                          "orderId": "ORD-42"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "toolResult": {
+                  "summary": "Report tool results",
+                  "description": "Persist tool-call outcomes into conversation history (typically before the assistant reply).",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "toolResults": [
+                      {
+                        "toolCallId": "call_abc123",
+                        "toolName": "lookup_order",
+                        "output": {
+                          "status": "shipped",
+                          "eta": "2026-07-16"
+                        },
+                        "preview": "Order ORD-42 is shipped"
+                      }
+                    ],
+                    "reply": {
+                      "markdown": "Your order **ORD-42** has shipped and should arrive by July 16."
+                    }
+                  }
+                },
+                "toolApprovalRequest": {
+                  "summary": "Request tool approval",
+                  "description": "Ledger a gated tool call and optionally deliver an approval card via `reply.toolApprovalCard` or a normal card/markdown reply.",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "toolApprovalRequest": {
+                      "approvalId": "apr_01HZX",
+                      "toolCallId": "call_refund_1",
+                      "name": "issue_refund",
+                      "input": {
+                        "orderId": "ORD-42",
+                        "amountCents": 2500
+                      }
+                    },
+                    "reply": {
+                      "toolApprovalCard": {
+                        "type": "tool-approval-card",
+                        "title": "Approve refund?",
+                        "subtitle": "issue_refund · ORD-42 · $25.00",
+                        "approveLabel": "Approve",
+                        "denyLabel": "Deny"
+                      }
+                    }
+                  }
+                },
+                "turnError": {
+                  "summary": "Report turn failure",
+                  "description": "Bridge reports that the customer runtime failed. Cannot be combined with other actions. Novu delivers generic user-facing copy.",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "error": true
+                  }
+                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "",
+            "description": "OK. When a reply or edit is delivered, `data` contains the platform message identifiers. Side-effect-only requests (typing, reactions, deletes, signals without an outbound message) return `data: null`.",
+            "headers": {
+              "Content-Type": {
+                "$ref": "#/components/headers/Content-Type"
+              },
+              "RateLimit-Limit": {
+                "$ref": "#/components/headers/RateLimit-Limit"
+              },
+              "RateLimit-Remaining": {
+                "$ref": "#/components/headers/RateLimit-Remaining"
+              },
+              "RateLimit-Reset": {
+                "$ref": "#/components/headers/RateLimit-Reset"
+              },
+              "RateLimit-Policy": {
+                "$ref": "#/components/headers/RateLimit-Policy"
+              },
+              "Idempotency-Key": {
+                "$ref": "#/components/headers/Idempotency-Key"
+              },
+              "Idempotency-Replay": {
+                "$ref": "#/components/headers/Idempotency-Replay"
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/SentMessageInfoDto"
+                        }
+                      ],
+                      "nullable": true
+                    }
+                  }
                 }
               }
             }
@@ -10004,7 +10266,7 @@
             }
           },
           "404": {
-            "description": "Not Found",
+            "description": "The agent or conversation was not found.",
             "headers": {
               "Content-Type": {
                 "$ref": "#/components/headers/Content-Type"
@@ -10026,13 +10288,6 @@
               },
               "Idempotency-Replay": {
                 "$ref": "#/components/headers/Idempotency-Replay"
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorDto"
-                }
               }
             }
           },
@@ -71897,7 +72152,7 @@
               "restricted"
             ],
             "type": "string",
-            "description": "Controls whether the agent accepts inbound messages from senders not yet linked to a subscriber. \"open\" auto-creates a lightweight subscriber from the sender email so the agent can reply; \"restricted\" rejects unknown senders. Defaults to \"restricted\" when unset. Newly provisioned email integrations default to \"open\"."
+            "description": "Controls whether the agent accepts inbound messages from senders not yet linked to a subscriber, across all channels. \"open\" on managed agents auto-creates a lightweight subscriber so the agent can reply; on custom-code / self-hosted agents, the turn is forwarded to the bridge with a null subscriber. \"restricted\" rejects unknown senders with a managed denial reply (any runtime). Unset resolves as \"restricted\". Managed agent create defaults to \"open\"; self-hosted create defaults to \"restricted\"."
           }
         }
       },
@@ -72539,44 +72794,142 @@
           "integrationIdentifier"
         ]
       },
-      "ReplyContentDto": {
+      "FileRefDto": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string",
+            "description": "Filename shown to the end user, including extension.",
+            "example": "report.pdf"
+          },
+          "mimeType": {
+            "type": "string",
+            "description": "IANA MIME type of the file.",
+            "example": "application/pdf"
+          },
+          "data": {
+            "type": "string",
+            "description": "Base64-encoded inline file bytes. Mutually exclusive with `url`. Decoded size must be ≤ 5 MB. Prefer `url` for larger files.",
+            "example": "JVBERi0xLjQK..."
+          },
+          "url": {
+            "type": "string",
+            "description": "Publicly accessible HTTP(S) URL. Mutually exclusive with `data`. Server-side limits: 25 MB per file, 15 files per message, 50 MB aggregate.",
+            "example": "https://example.com/files/report.pdf"
+          }
+        },
+        "required": [
+          "filename"
+        ]
+      },
+      "MarkdownReplyContentDto": {
         "type": "object",
         "properties": {
           "markdown": {
-            "type": "string"
+            "type": "string",
+            "description": "Plain text or markdown body. Converted to the platform-native format by Novu.",
+            "example": "**Report ready.** Your weekly summary is attached."
           },
+          "files": {
+            "description": "Optional attachments (max 15). Each file needs exactly one of data or url.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileRefDto"
+            }
+          }
+        },
+        "required": [
+          "markdown"
+        ]
+      },
+      "CardReplyContentDto": {
+        "type": "object",
+        "properties": {
           "card": {
-            "type": "object"
+            "type": "object",
+            "description": "Interactive card as a Chat SDK element tree (`type: \"card\"`). Prefer building with `@novu/framework` Card helpers when using TypeScript.",
+            "additionalProperties": true,
+            "example": {
+              "type": "card",
+              "title": "Order #123",
+              "children": [
+                {
+                  "type": "text",
+                  "content": "Your order is ready for pickup."
+                },
+                {
+                  "type": "button",
+                  "id": "confirm",
+                  "label": "Confirm",
+                  "style": "primary"
+                }
+              ]
+            }
           },
+          "files": {
+            "description": "Optional attachments (max 15). Supported alongside cards on platforms that allow it (e.g. WhatsApp).",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileRefDto"
+            }
+          }
+        },
+        "required": [
+          "card"
+        ]
+      },
+      "ToolApprovalCardReplyContentDto": {
+        "type": "object",
+        "properties": {
           "toolApprovalCard": {
-            "type": "object"
+            "type": "object",
+            "description": "Novu tool-approval card descriptor (`type: \"tool-approval-card\"`). Used with `toolApprovalRequest` to render Approve/Deny UI.",
+            "additionalProperties": true,
+            "example": {
+              "type": "tool-approval-card",
+              "title": "Approve refund?",
+              "subtitle": "issue_refund · ORD-42 · $25.00",
+              "approveLabel": "Approve",
+              "denyLabel": "Deny"
+            }
           },
           "files": {
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "#/components/schemas/FileRefDto"
             }
           }
-        }
+        },
+        "required": [
+          "toolApprovalCard"
+        ]
       },
       "ToolApprovalRequestPayloadDto": {
         "type": "object",
         "properties": {
           "approvalId": {
             "type": "string",
-            "description": "Unique id for this approval request (matches the AI SDK approvalId)."
+            "description": "Unique id for this approval request (matches the AI SDK approvalId).",
+            "example": "apr_01HZX"
           },
           "toolCallId": {
             "type": "string",
-            "description": "Id of the tool call awaiting approval."
+            "description": "Id of the tool call awaiting approval.",
+            "example": "call_refund_1"
           },
           "name": {
             "type": "string",
-            "description": "Name of the gated tool."
+            "description": "Name of the gated tool.",
+            "example": "issue_refund"
           },
           "input": {
             "type": "object",
-            "description": "Tool input the model proposed."
+            "description": "Tool input the model proposed.",
+            "additionalProperties": true,
+            "example": {
+              "orderId": "ORD-42",
+              "amountCents": 2500
+            }
           }
         },
         "required": [
@@ -72589,10 +72942,23 @@
         "type": "object",
         "properties": {
           "messageId": {
-            "type": "string"
+            "type": "string",
+            "description": "Platform message id of the message to edit.",
+            "example": "1712345678.123456"
           },
           "content": {
-            "$ref": "#/components/schemas/ReplyContentDto"
+            "description": "Replacement content. Exactly one of markdown, card, or toolApprovalCard.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MarkdownReplyContentDto"
+              },
+              {
+                "$ref": "#/components/schemas/CardReplyContentDto"
+              },
+              {
+                "$ref": "#/components/schemas/ToolApprovalCardReplyContentDto"
+              }
+            ]
           }
         },
         "required": [
@@ -72604,9 +72970,151 @@
         "type": "object",
         "properties": {
           "summary": {
-            "type": "string"
+            "type": "string",
+            "description": "Optional human-readable resolution summary stored on the conversation.",
+            "example": "Answered billing question about invoice INV-42."
           }
         }
+      },
+      "MetadataSetSignalDto": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "metadata"
+            ]
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "set"
+            ],
+            "description": "Defaults to `set` when omitted.",
+            "default": "set"
+          },
+          "key": {
+            "type": "string",
+            "description": "Metadata key (1–128 chars; letters, digits, and `-` `_` `:` separators).",
+            "example": "crm:ticketId"
+          },
+          "value": {
+            "type": "object",
+            "description": "JSON-serializable value to store.",
+            "example": "TCK-1001"
+          }
+        },
+        "required": [
+          "type",
+          "key",
+          "value"
+        ]
+      },
+      "MetadataDeleteSignalDto": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "metadata"
+            ]
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "delete"
+            ]
+          },
+          "key": {
+            "type": "string",
+            "description": "Metadata key to remove.",
+            "example": "crm:ticketId"
+          }
+        },
+        "required": [
+          "type",
+          "action",
+          "key"
+        ]
+      },
+      "MetadataClearSignalDto": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "metadata"
+            ]
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "clear"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "action"
+        ]
+      },
+      "TriggerSignalDto": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "trigger"
+            ]
+          },
+          "workflowId": {
+            "type": "string",
+            "description": "Workflow identifier (same string used with `events.trigger`).",
+            "example": "order-shipped"
+          },
+          "to": {
+            "description": "Recipient(s). Accepts a subscriberId string, subscriber object, topic object, or an array of those. When omitted, Novu falls back to the conversation subscriber.",
+            "oneOf": [
+              {
+                "type": "string",
+                "example": "subscriber-123"
+              },
+              {
+                "type": "object",
+                "additionalProperties": true,
+                "example": {
+                  "subscriberId": "subscriber-123"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": true
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "description": "Arbitrary payload forwarded to the workflow.",
+            "additionalProperties": true,
+            "example": {
+              "orderId": "ORD-42"
+            }
+          }
+        },
+        "required": [
+          "type",
+          "workflowId"
+        ]
       },
       "SignalDto": {
         "type": "object",
@@ -72616,7 +73124,8 @@
             "enum": [
               "metadata",
               "trigger"
-            ]
+            ],
+            "description": "`metadata` updates conversation state; `trigger` fires a Novu workflow."
           },
           "action": {
             "type": "string",
@@ -72624,22 +73133,54 @@
               "set",
               "delete",
               "clear"
-            ]
+            ],
+            "description": "Required for metadata signals other than the default `set`."
           },
           "key": {
-            "type": "string"
+            "type": "string",
+            "description": "Metadata key for `set` / `delete` actions.",
+            "example": "crm:ticketId"
           },
           "value": {
-            "type": "object"
+            "type": "object",
+            "description": "Value for metadata `set` actions. JSON-serializable."
           },
           "workflowId": {
-            "type": "string"
+            "type": "string",
+            "description": "Workflow identifier for `trigger` signals.",
+            "example": "order-shipped"
           },
           "to": {
-            "type": "object"
+            "description": "Trigger recipients. SubscriberId string, subscriber/topic object, or array. Falls back to the conversation subscriber when omitted.",
+            "oneOf": [
+              {
+                "type": "string",
+                "example": "subscriber-123"
+              },
+              {
+                "type": "object",
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": true
+                    }
+                  ]
+                }
+              }
+            ]
           },
           "payload": {
-            "type": "object"
+            "type": "object",
+            "description": "Workflow payload for `trigger` signals.",
+            "additionalProperties": true
           }
         },
         "required": [
@@ -72651,11 +73192,13 @@
         "properties": {
           "toolCallId": {
             "type": "string",
-            "description": "Id of the tool call this result resolves."
+            "description": "Id of the tool call this result resolves.",
+            "example": "call_abc123"
           },
           "toolName": {
             "type": "string",
-            "description": "Name of the tool that produced this result."
+            "description": "Name of the tool that produced this result.",
+            "example": "lookup_order"
           },
           "output": {
             "type": "object",
@@ -72663,7 +73206,8 @@
           },
           "preview": {
             "type": "string",
-            "description": "Human-readable preview for the display timeline."
+            "description": "Human-readable preview for the display timeline.",
+            "example": "Order ORD-42 is shipped"
           }
         },
         "required": [
@@ -72674,10 +73218,14 @@
         "type": "object",
         "properties": {
           "messageId": {
-            "type": "string"
+            "type": "string",
+            "description": "Platform message id to react to.",
+            "example": "1712345678.123456"
           },
           "emojiName": {
-            "type": "string"
+            "type": "string",
+            "description": "Well-known cross-platform emoji name (e.g. `white_check_mark`, `thumbsup`).",
+            "example": "white_check_mark"
           }
         },
         "required": [
@@ -72689,27 +73237,54 @@
         "type": "object",
         "properties": {
           "messageId": {
-            "type": "string"
+            "type": "string",
+            "description": "Platform message id to delete. Removes the rendered message only — history is preserved.",
+            "example": "1712345678.123456"
           }
         },
         "required": [
           "messageId"
         ]
       },
+      "TypingStatusDto": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Status text shown while the agent works. Omit for the default \"Thinking…\".",
+            "example": "Looking up your order…"
+          }
+        }
+      },
       "AgentReplyPayloadDto": {
         "type": "object",
         "properties": {
           "conversationId": {
-            "type": "string"
+            "type": "string",
+            "description": "Conversation id to reply into. Obtained from the inbound agent event / bridge payload.",
+            "example": "64f5a1c2e8b7a3d9f0c1b2a3"
           },
           "integrationIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "Channel integration identifier linked to the agent for this conversation (e.g. `slack-support`).",
+            "example": "slack-support"
           },
           "reply": {
-            "$ref": "#/components/schemas/ReplyContentDto"
+            "description": "Outbound message content. Exactly one of `markdown`, `card`, or `toolApprovalCard`. Optional `files` attach to the message. Cannot be combined with `edit`.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/MarkdownReplyContentDto"
+              },
+              {
+                "$ref": "#/components/schemas/CardReplyContentDto"
+              },
+              {
+                "$ref": "#/components/schemas/ToolApprovalCardReplyContentDto"
+              }
+            ]
           },
           "toolApprovalRequest": {
-            "description": "Tool-lifecycle ledger row for a gated tool call. Optional reply delivers the approval card.",
+            "description": "Tool-lifecycle ledger row for a gated tool call. Pair with `reply.toolApprovalCard` (or another reply shape) to deliver the approval UI.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/ToolApprovalRequestPayloadDto"
@@ -72717,24 +73292,50 @@
             ]
           },
           "edit": {
-            "$ref": "#/components/schemas/EditPayloadDto"
+            "description": "In-place edit of a previously posted agent message. Cannot be combined with reply, resolve, signals, toolResults, toolApprovalRequest, addReactions, or deleteMessages.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EditPayloadDto"
+              }
+            ]
           },
           "resolve": {
-            "$ref": "#/components/schemas/ResolveDto"
+            "description": "Mark the conversation resolved. May be combined with a final `reply`.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResolveDto"
+              }
+            ]
           },
           "signals": {
             "type": "array",
+            "description": "Side-effect signals executed during this turn: conversation metadata mutations or Novu workflow triggers.",
             "items": {
-              "$ref": "#/components/schemas/SignalDto"
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/MetadataSetSignalDto"
+                },
+                {
+                  "$ref": "#/components/schemas/MetadataDeleteSignalDto"
+                },
+                {
+                  "$ref": "#/components/schemas/MetadataClearSignalDto"
+                },
+                {
+                  "$ref": "#/components/schemas/TriggerSignalDto"
+                }
+              ]
             }
           },
           "toolResults": {
+            "description": "Tool-call outcomes to persist in conversation history (typically before the assistant reply).",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ToolResultDto"
             }
           },
           "addReactions": {
+            "description": "Emoji reactions to add to existing platform messages.",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AddReactionPayloadDto"
@@ -72748,17 +73349,81 @@
             }
           },
           "typing": {
-            "type": "object",
-            "description": "Per-turn typing/status control. `{ status?: string }` sets the status text (omit for the default \"Thinking…\"); `\"stop\"` clears it. Best-effort per platform."
+            "description": "Per-turn typing/status control. Pass `{ status?: string }` to set/update the status (omit `status` for \"Thinking…\"), or `\"stop\"` to clear it. Best-effort per platform.",
+            "oneOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "stop"
+                ],
+                "description": "Clear the typing indicator."
+              },
+              {
+                "$ref": "#/components/schemas/TypingStatusDto"
+              }
+            ],
+            "examples": [
+              {
+                "status": "Looking up your order…"
+              },
+              "stop"
+            ]
           },
           "error": {
             "type": "boolean",
-            "description": "Bridge reports the turn failed on the customer runtime. Delivers generic user copy."
+            "description": "Bridge reports that the customer runtime failed this turn. Cannot be combined with other actions. Novu delivers generic user-facing error copy.",
+            "example": true
           }
         },
         "required": [
           "conversationId",
           "integrationIdentifier"
+        ]
+      },
+      "ReplyContentDto": {
+        "type": "object",
+        "properties": {
+          "markdown": {
+            "type": "string",
+            "description": "Plain text or markdown body. Mutually exclusive with `card` and `toolApprovalCard`.",
+            "example": "Hello! How can I help?"
+          },
+          "card": {
+            "type": "object",
+            "description": "Interactive Chat SDK card JSON. Mutually exclusive with `markdown` and `toolApprovalCard`.",
+            "additionalProperties": true
+          },
+          "toolApprovalCard": {
+            "type": "object",
+            "description": "Built-in tool-approval card. Mutually exclusive with `markdown` and `card`.",
+            "additionalProperties": true
+          },
+          "files": {
+            "description": "Optional file attachments (max 15). Requires markdown, card, or toolApprovalCard.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileRefDto"
+            }
+          }
+        }
+      },
+      "SentMessageInfoDto": {
+        "type": "object",
+        "properties": {
+          "messageId": {
+            "type": "string",
+            "description": "Platform-native message id of the delivered or edited message (e.g. Slack `ts`, Teams activity id).",
+            "example": "1712345678.123456"
+          },
+          "platformThreadId": {
+            "type": "string",
+            "description": "Platform-native thread / conversation id where the message was delivered.",
+            "example": "C0123456789"
+          }
+        },
+        "required": [
+          "messageId",
+          "platformThreadId"
         ]
       },
       "ExpectedDnsRecordDto": {
