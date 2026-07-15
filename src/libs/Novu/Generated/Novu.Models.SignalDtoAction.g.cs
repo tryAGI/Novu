@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    /// Required for metadata signals other than the default `set`.
     /// </summary>
     public enum SignalDtoAction
     {

@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    /// Workflow payload for `trigger` signals.
     /// </summary>
     public sealed partial class SignalDtoPayload
     {

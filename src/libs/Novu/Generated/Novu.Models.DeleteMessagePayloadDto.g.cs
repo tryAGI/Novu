@@ -9,8 +9,10 @@ namespace Novu
     public sealed partial class DeleteMessagePayloadDto
     {
         /// <summary>
-        /// 
+        /// Platform message id to delete. Removes the rendered message only — history is preserved.<br/>
+        /// Example: 1712345678.123456
         /// </summary>
+        /// <example>1712345678.123456</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("messageId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string MessageId { get; set; }
@@ -24,7 +26,10 @@ namespace Novu
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteMessagePayloadDto" /> class.
         /// </summary>
-        /// <param name="messageId"></param>
+        /// <param name="messageId">
+        /// Platform message id to delete. Removes the rendered message only — history is preserved.<br/>
+        /// Example: 1712345678.123456
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

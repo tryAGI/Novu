@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    /// Interactive Chat SDK card JSON. Mutually exclusive with `markdown` and `toolApprovalCard`.
     /// </summary>
     public sealed partial class ReplyContentDtoCard
     {

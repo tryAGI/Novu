@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    /// Built-in tool-approval card. Mutually exclusive with `markdown` and `card`.
     /// </summary>
     public sealed partial class ReplyContentDtoToolApprovalCard
     {
