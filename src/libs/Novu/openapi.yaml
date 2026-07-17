@@ -4968,7 +4968,16 @@
         "x-speakeasy-group": "Agents",
         "summary": "Create an agent",
         "description": "Create an agent scoped to the current environment. The identifier must be unique per environment. Set `runtime` to `managed` and supply `managedRuntime` to provision a provider-hosted agent brain.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Novu-Analytics-Source",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "required": true,
           "content": {
@@ -69189,7 +69198,7 @@
   "info": {
     "title": "Novu API",
     "description": "Novu REST API. Please see https://docs.novu.co/api-reference for more details.",
-    "version": "3.18.0",
+    "version": "3.18.1",
     "contact": {
       "name": "Novu Support",
       "url": "https://discord.gg/novu",
@@ -70288,6 +70297,11 @@
                 "text": "string"
               }
             }
+          },
+          "bridgeUrl": {
+            "type": "string",
+            "description": "Optional Bridge Endpoint URL used to route this trigger to a specific Bridge application. Useful during local development when multiple engineers share an organization: set this to your personal tunnel URL from `npx novu@latest dev` (for example via NOVU_BRIDGE_URL) so app-fired triggers hit your machine instead of the environment's synced Bridge URL. Must be a publicly reachable https URL — private or localhost addresses are rejected.",
+            "example": "https://your-tunnel.novu.co/api/novu"
           },
           "overrides": {
             "description": "This could be used to override provider specific configurations",

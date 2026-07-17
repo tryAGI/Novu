@@ -40,10 +40,12 @@ namespace Novu
             };
         partial void PrepareCreateArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string novuAnalyticsSource,
             global::Novu.CreateAgentRequestDto request);
         partial void PrepareCreateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string novuAnalyticsSource,
             global::Novu.CreateAgentRequestDto request);
         partial void ProcessCreateResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -58,17 +60,20 @@ namespace Novu
         /// Create an agent<br/>
         /// Create an agent scoped to the current environment. The identifier must be unique per environment. Set `runtime` to `managed` and supply `managedRuntime` to provision a provider-hosted agent brain.
         /// </summary>
+        /// <param name="novuAnalyticsSource"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Novu.AgentsControllerCreateAgentResponse> CreateAsync(
+            string novuAnalyticsSource,
 
             global::Novu.CreateAgentRequestDto request,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await CreateAsResponseAsync(
+                novuAnalyticsSource: novuAnalyticsSource,
 
                 request: request,
                 requestOptions: requestOptions,
@@ -81,11 +86,13 @@ namespace Novu
         /// Create an agent<br/>
         /// Create an agent scoped to the current environment. The identifier must be unique per environment. Set `runtime` to `managed` and supply `managedRuntime` to provision a provider-hosted agent brain.
         /// </summary>
+        /// <param name="novuAnalyticsSource"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.AgentsControllerCreateAgentResponse>> CreateAsResponseAsync(
+            string novuAnalyticsSource,
 
             global::Novu.CreateAgentRequestDto request,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
@@ -97,6 +104,7 @@ namespace Novu
                 client: HttpClient);
             PrepareCreateArguments(
                 httpClient: HttpClient,
+                novuAnalyticsSource: ref novuAnalyticsSource,
                 request: request);
 
 
@@ -139,6 +147,9 @@ namespace Novu
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+
+                __httpRequest.Headers.TryAddWithoutValidation("Novu-Analytics-Source", novuAnalyticsSource.ToString());
+
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
                                 content: __httpRequestContentBody,
@@ -156,6 +167,7 @@ namespace Novu
                 PrepareCreateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    novuAnalyticsSource: novuAnalyticsSource!,
                     request: request);
 
                 global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -918,6 +930,7 @@ namespace Novu
         /// Create an agent<br/>
         /// Create an agent scoped to the current environment. The identifier must be unique per environment. Set `runtime` to `managed` and supply `managedRuntime` to provision a provider-hosted agent brain.
         /// </summary>
+        /// <param name="novuAnalyticsSource"></param>
         /// <param name="name">
         /// Required when not adopting an existing managed agent (i.e. when managedRuntime.externalAgentId is absent). Optional in adopt mode where the name is resolved from the provider.
         /// </param>
@@ -934,6 +947,7 @@ namespace Novu
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Novu.AgentsControllerCreateAgentResponse> CreateAsync(
+            string novuAnalyticsSource,
             string name,
             string identifier,
             string? description = default,
@@ -954,6 +968,7 @@ namespace Novu
             };
 
             return await CreateAsync(
+                novuAnalyticsSource: novuAnalyticsSource,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
