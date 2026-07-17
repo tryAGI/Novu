@@ -28,6 +28,14 @@ namespace Novu
         public object? Payload { get; set; }
 
         /// <summary>
+        /// Optional Bridge Endpoint URL used to route this trigger to a specific Bridge application. Useful during local development when multiple engineers share an organization: set this to your personal tunnel URL from `npx novu@latest dev` (for example via NOVU_BRIDGE_URL) so app-fired triggers hit your machine instead of the environment's synced Bridge URL. Must be a publicly reachable https URL — private or localhost addresses are rejected.<br/>
+        /// Example: https://your-tunnel.novu.co/api/novu
+        /// </summary>
+        /// <example>https://your-tunnel.novu.co/api/novu</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bridgeUrl")]
+        public string? BridgeUrl { get; set; }
+
+        /// <summary>
         /// This could be used to override provider specific configurations<br/>
         /// Example: {"fcm":{"data":{"key":"value"}}}
         /// </summary>
@@ -94,6 +102,10 @@ namespace Novu
         ///       This data will also be available when fetching the notifications feed from the API to display certain parts of the UI.<br/>
         /// Example: {"comment_id":"string","post":{"text":"string"}}
         /// </param>
+        /// <param name="bridgeUrl">
+        /// Optional Bridge Endpoint URL used to route this trigger to a specific Bridge application. Useful during local development when multiple engineers share an organization: set this to your personal tunnel URL from `npx novu@latest dev` (for example via NOVU_BRIDGE_URL) so app-fired triggers hit your machine instead of the environment's synced Bridge URL. Must be a publicly reachable https URL — private or localhost addresses are rejected.<br/>
+        /// Example: https://your-tunnel.novu.co/api/novu
+        /// </param>
         /// <param name="overrides">
         /// This could be used to override provider specific configurations<br/>
         /// Example: {"fcm":{"data":{"key":"value"}}}
@@ -118,6 +130,7 @@ namespace Novu
             string workflowId,
             global::Novu.OneOf<global::System.Collections.Generic.IList<global::Novu.OneOf<global::Novu.SubscriberPayloadDto, global::Novu.TopicPayloadDto, string>>, string, global::Novu.SubscriberPayloadDto, global::Novu.TopicPayloadDto> to,
             object? payload,
+            string? bridgeUrl,
             global::Novu.TriggerOverrides? overrides,
             string? transactionId,
             global::Novu.OneOf<string, global::Novu.SubscriberPayloadDto>? actor,
@@ -126,6 +139,7 @@ namespace Novu
         {
             this.WorkflowId = workflowId ?? throw new global::System.ArgumentNullException(nameof(workflowId));
             this.Payload = payload;
+            this.BridgeUrl = bridgeUrl;
             this.Overrides = overrides;
             this.To = to;
             this.TransactionId = transactionId;
