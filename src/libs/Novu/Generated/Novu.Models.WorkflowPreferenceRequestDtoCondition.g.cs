@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// Optional JSON Logic condition evaluated against the trigger payload at fan-out time (for example, `{ "var": "payload.tier" }`)<br/>
+    /// Optional JSON Logic condition evaluated at fan-out time against trigger payload, subscriber profile, actor, and context (for example, `{ "var": "payload.tier" }`, `{ "var": "subscriber.data.plan" }`, or `{ "var": "actor.data.role" }`)<br/>
     /// Example: {"and":[{"===":[{"var":"payload.tier"},"premium"]}]}
     /// </summary>
     public sealed partial class WorkflowPreferenceRequestDtoCondition
