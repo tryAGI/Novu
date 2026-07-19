@@ -1007,7 +1007,8 @@ namespace Novu
         /// Delete previously posted platform messages. Removes the rendered message only — history is preserved.
         /// </param>
         /// <param name="typing">
-        /// Per-turn typing/status control. Pass `{ status?: string }` to set/update the status (omit `status` for "Thinking…"), or `"stop"` to clear it. Best-effort per platform.
+        /// Per-turn typing/status control. Pass `{ status?: string }` to set/update the status (omit `status` for "Thinking…"), or `"stop"` to clear it. Best-effort per platform.<br/>
+        /// Example: {"status":"Looking up your order\u2026"}
         /// </param>
         /// <param name="error">
         /// Bridge reports that the customer runtime failed this turn. Cannot be combined with other actions. Novu delivers generic user-facing error copy.<br/>
