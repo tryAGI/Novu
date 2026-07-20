@@ -11,7 +11,7 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
-        Digest,
+        Delay,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace Novu
         {
             return value switch
             {
-                GeneratePreviewResponseDtoResultVariant9Type.Digest => "digest",
+                GeneratePreviewResponseDtoResultVariant9Type.Delay => "delay",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace Novu
         {
             return value switch
             {
-                "digest" => GeneratePreviewResponseDtoResultVariant9Type.Digest,
+                "delay" => GeneratePreviewResponseDtoResultVariant9Type.Delay,
                 _ => null,
             };
         }

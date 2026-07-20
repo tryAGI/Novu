@@ -91,6 +91,20 @@ namespace Novu.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateLineUserEndpointDto)}");
                 lineUser = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Novu.CreatePagerDutyServiceEndpointDto? pagerdutyService = default;
+            if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.PagerdutyService)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreatePagerDutyServiceEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreatePagerDutyServiceEndpointDto> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreatePagerDutyServiceEndpointDto)}");
+                pagerdutyService = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Novu.CreateOpsgenieIntegrationEndpointDto? opsgenieIntegration = default;
+            if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.OpsgenieIntegration)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateOpsgenieIntegrationEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateOpsgenieIntegrationEndpointDto> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateOpsgenieIntegrationEndpointDto)}");
+                opsgenieIntegration = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequest(
                 discriminator?.Type,
@@ -112,7 +126,11 @@ namespace Novu.JsonConverters
 
                 webexPerson,
 
-                lineUser
+                lineUser,
+
+                pagerdutyService,
+
+                opsgenieIntegration
                 );
 
             return __value;
@@ -186,6 +204,18 @@ namespace Novu.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateLineUserEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateLineUserEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateLineUserEndpointDto).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.LineUser!, typeInfo);
+            }
+            else if (value.IsPagerdutyService)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreatePagerDutyServiceEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreatePagerDutyServiceEndpointDto?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreatePagerDutyServiceEndpointDto).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PagerdutyService!, typeInfo);
+            }
+            else if (value.IsOpsgenieIntegration)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateOpsgenieIntegrationEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateOpsgenieIntegrationEndpointDto?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateOpsgenieIntegrationEndpointDto).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpsgenieIntegration!, typeInfo);
             }
         }
     }

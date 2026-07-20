@@ -28,6 +28,10 @@ namespace Novu
         /// 
         /// </summary>
         Sms,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tool,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace Novu
                 IntegrationResponseDtoChannel.InApp => "in_app",
                 IntegrationResponseDtoChannel.Push => "push",
                 IntegrationResponseDtoChannel.Sms => "sms",
+                IntegrationResponseDtoChannel.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace Novu
                 "in_app" => IntegrationResponseDtoChannel.InApp,
                 "push" => IntegrationResponseDtoChannel.Push,
                 "sms" => IntegrationResponseDtoChannel.Sms,
+                "tool" => IntegrationResponseDtoChannel.Tool,
                 _ => null,
             };
         }

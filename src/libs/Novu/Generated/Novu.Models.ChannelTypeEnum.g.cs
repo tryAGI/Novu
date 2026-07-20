@@ -28,6 +28,10 @@ namespace Novu
         /// 
         /// </summary>
         Sms,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tool,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace Novu
                 ChannelTypeEnum.InApp => "in_app",
                 ChannelTypeEnum.Push => "push",
                 ChannelTypeEnum.Sms => "sms",
+                ChannelTypeEnum.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace Novu
                 "in_app" => ChannelTypeEnum.InApp,
                 "push" => ChannelTypeEnum.Push,
                 "sms" => ChannelTypeEnum.Sms,
+                "tool" => ChannelTypeEnum.Tool,
                 _ => null,
             };
         }

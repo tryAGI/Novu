@@ -236,7 +236,15 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Opsgenie,
+        /// <summary>
+        /// 
+        /// </summary>
         Outlook365,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pagerduty,
         /// <summary>
         /// 
         /// </summary>
@@ -344,6 +352,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        ToolWebhook,
+        /// <summary>
+        /// 
+        /// </summary>
         Twilio,
         /// <summary>
         /// 
@@ -431,7 +443,9 @@ namespace Novu
                 GetChannelConnectionResponseDtoProviderId.NovuSlack => "novu-slack",
                 GetChannelConnectionResponseDtoProviderId.NovuSms => "novu-sms",
                 GetChannelConnectionResponseDtoProviderId.OneSignal => "one-signal",
+                GetChannelConnectionResponseDtoProviderId.Opsgenie => "opsgenie",
                 GetChannelConnectionResponseDtoProviderId.Outlook365 => "outlook365",
+                GetChannelConnectionResponseDtoProviderId.Pagerduty => "pagerduty",
                 GetChannelConnectionResponseDtoProviderId.Plivo => "plivo",
                 GetChannelConnectionResponseDtoProviderId.Plunk => "plunk",
                 GetChannelConnectionResponseDtoProviderId.Postmark => "postmark",
@@ -458,6 +472,7 @@ namespace Novu
                 GetChannelConnectionResponseDtoProviderId.Telegram => "telegram",
                 GetChannelConnectionResponseDtoProviderId.Telnyx => "telnyx",
                 GetChannelConnectionResponseDtoProviderId.Termii => "termii",
+                GetChannelConnectionResponseDtoProviderId.ToolWebhook => "tool-webhook",
                 GetChannelConnectionResponseDtoProviderId.Twilio => "twilio",
                 GetChannelConnectionResponseDtoProviderId.Unifonic => "unifonic",
                 GetChannelConnectionResponseDtoProviderId.WebexMessaging => "webex-messaging",
@@ -529,7 +544,9 @@ namespace Novu
                 "novu-slack" => GetChannelConnectionResponseDtoProviderId.NovuSlack,
                 "novu-sms" => GetChannelConnectionResponseDtoProviderId.NovuSms,
                 "one-signal" => GetChannelConnectionResponseDtoProviderId.OneSignal,
+                "opsgenie" => GetChannelConnectionResponseDtoProviderId.Opsgenie,
                 "outlook365" => GetChannelConnectionResponseDtoProviderId.Outlook365,
+                "pagerduty" => GetChannelConnectionResponseDtoProviderId.Pagerduty,
                 "plivo" => GetChannelConnectionResponseDtoProviderId.Plivo,
                 "plunk" => GetChannelConnectionResponseDtoProviderId.Plunk,
                 "postmark" => GetChannelConnectionResponseDtoProviderId.Postmark,
@@ -556,6 +573,7 @@ namespace Novu
                 "telegram" => GetChannelConnectionResponseDtoProviderId.Telegram,
                 "telnyx" => GetChannelConnectionResponseDtoProviderId.Telnyx,
                 "termii" => GetChannelConnectionResponseDtoProviderId.Termii,
+                "tool-webhook" => GetChannelConnectionResponseDtoProviderId.ToolWebhook,
                 "twilio" => GetChannelConnectionResponseDtoProviderId.Twilio,
                 "unifonic" => GetChannelConnectionResponseDtoProviderId.Unifonic,
                 "webex-messaging" => GetChannelConnectionResponseDtoProviderId.WebexMessaging,

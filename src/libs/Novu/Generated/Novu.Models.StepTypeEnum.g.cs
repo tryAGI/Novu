@@ -51,6 +51,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Tool,
+        /// <summary>
+        /// 
+        /// </summary>
         Trigger,
     }
 
@@ -76,6 +80,7 @@ namespace Novu
                 StepTypeEnum.Push => "push",
                 StepTypeEnum.Sms => "sms",
                 StepTypeEnum.Throttle => "throttle",
+                StepTypeEnum.Tool => "tool",
                 StepTypeEnum.Trigger => "trigger",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -97,6 +102,7 @@ namespace Novu
                 "push" => StepTypeEnum.Push,
                 "sms" => StepTypeEnum.Sms,
                 "throttle" => StepTypeEnum.Throttle,
+                "tool" => StepTypeEnum.Tool,
                 "trigger" => StepTypeEnum.Trigger,
                 _ => null,
             };

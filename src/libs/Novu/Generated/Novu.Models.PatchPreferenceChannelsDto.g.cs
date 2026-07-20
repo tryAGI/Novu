@@ -39,6 +39,12 @@ namespace Novu
         public bool? Chat { get; set; }
 
         /// <summary>
+        /// Tool channel preference
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
+        public bool? Tool { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -62,6 +68,9 @@ namespace Novu
         /// <param name="chat">
         /// Chat channel preference
         /// </param>
+        /// <param name="tool">
+        /// Tool channel preference
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -70,13 +79,15 @@ namespace Novu
             bool? sms,
             bool? inApp,
             bool? push,
-            bool? chat)
+            bool? chat,
+            bool? tool)
         {
             this.Email = email;
             this.Sms = sms;
             this.InApp = inApp;
             this.Push = push;
             this.Chat = chat;
+            this.Tool = tool;
         }
 
         /// <summary>

@@ -235,7 +235,15 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Opsgenie,
+        /// <summary>
+        /// 
+        /// </summary>
         Outlook365,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pagerduty,
         /// <summary>
         /// 
         /// </summary>
@@ -343,6 +351,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        ToolWebhook,
+        /// <summary>
+        /// 
+        /// </summary>
         Twilio,
         /// <summary>
         /// 
@@ -430,7 +442,9 @@ namespace Novu
                 ProvidersIdEnum.NovuSlack => "novu-slack",
                 ProvidersIdEnum.NovuSms => "novu-sms",
                 ProvidersIdEnum.OneSignal => "one-signal",
+                ProvidersIdEnum.Opsgenie => "opsgenie",
                 ProvidersIdEnum.Outlook365 => "outlook365",
+                ProvidersIdEnum.Pagerduty => "pagerduty",
                 ProvidersIdEnum.Plivo => "plivo",
                 ProvidersIdEnum.Plunk => "plunk",
                 ProvidersIdEnum.Postmark => "postmark",
@@ -457,6 +471,7 @@ namespace Novu
                 ProvidersIdEnum.Telegram => "telegram",
                 ProvidersIdEnum.Telnyx => "telnyx",
                 ProvidersIdEnum.Termii => "termii",
+                ProvidersIdEnum.ToolWebhook => "tool-webhook",
                 ProvidersIdEnum.Twilio => "twilio",
                 ProvidersIdEnum.Unifonic => "unifonic",
                 ProvidersIdEnum.WebexMessaging => "webex-messaging",
@@ -528,7 +543,9 @@ namespace Novu
                 "novu-slack" => ProvidersIdEnum.NovuSlack,
                 "novu-sms" => ProvidersIdEnum.NovuSms,
                 "one-signal" => ProvidersIdEnum.OneSignal,
+                "opsgenie" => ProvidersIdEnum.Opsgenie,
                 "outlook365" => ProvidersIdEnum.Outlook365,
+                "pagerduty" => ProvidersIdEnum.Pagerduty,
                 "plivo" => ProvidersIdEnum.Plivo,
                 "plunk" => ProvidersIdEnum.Plunk,
                 "postmark" => ProvidersIdEnum.Postmark,
@@ -555,6 +572,7 @@ namespace Novu
                 "telegram" => ProvidersIdEnum.Telegram,
                 "telnyx" => ProvidersIdEnum.Telnyx,
                 "termii" => ProvidersIdEnum.Termii,
+                "tool-webhook" => ProvidersIdEnum.ToolWebhook,
                 "twilio" => ProvidersIdEnum.Twilio,
                 "unifonic" => ProvidersIdEnum.Unifonic,
                 "webex-messaging" => ProvidersIdEnum.WebexMessaging,

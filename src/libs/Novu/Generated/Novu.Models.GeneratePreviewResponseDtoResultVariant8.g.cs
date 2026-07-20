@@ -19,7 +19,13 @@ namespace Novu
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preview")]
-        public global::Novu.DigestRegularOutput? Preview { get; set; }
+        public object? Preview { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public global::Novu.PreviewErrorDto? Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,15 +38,18 @@ namespace Novu
         /// </summary>
         /// <param name="type"></param>
         /// <param name="preview"></param>
+        /// <param name="error"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GeneratePreviewResponseDtoResultVariant8(
             global::Novu.GeneratePreviewResponseDtoResultVariant8Type? type,
-            global::Novu.DigestRegularOutput? preview)
+            object? preview,
+            global::Novu.PreviewErrorDto? error)
         {
             this.Type = type;
             this.Preview = preview;
+            this.Error = error;
         }
 
         /// <summary>

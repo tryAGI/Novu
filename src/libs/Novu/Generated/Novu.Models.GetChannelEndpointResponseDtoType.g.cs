@@ -24,6 +24,14 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        OpsgenieIntegration,
+        /// <summary>
+        /// 
+        /// </summary>
+        PagerdutyService,
+        /// <summary>
+        /// 
+        /// </summary>
         Phone,
         /// <summary>
         /// 
@@ -66,6 +74,8 @@ namespace Novu
                 GetChannelEndpointResponseDtoType.LineUser => "line_user",
                 GetChannelEndpointResponseDtoType.MsTeamsChannel => "ms_teams_channel",
                 GetChannelEndpointResponseDtoType.MsTeamsUser => "ms_teams_user",
+                GetChannelEndpointResponseDtoType.OpsgenieIntegration => "opsgenie_integration",
+                GetChannelEndpointResponseDtoType.PagerdutyService => "pagerduty_service",
                 GetChannelEndpointResponseDtoType.Phone => "phone",
                 GetChannelEndpointResponseDtoType.SlackChannel => "slack_channel",
                 GetChannelEndpointResponseDtoType.SlackUser => "slack_user",
@@ -86,6 +96,8 @@ namespace Novu
                 "line_user" => GetChannelEndpointResponseDtoType.LineUser,
                 "ms_teams_channel" => GetChannelEndpointResponseDtoType.MsTeamsChannel,
                 "ms_teams_user" => GetChannelEndpointResponseDtoType.MsTeamsUser,
+                "opsgenie_integration" => GetChannelEndpointResponseDtoType.OpsgenieIntegration,
+                "pagerduty_service" => GetChannelEndpointResponseDtoType.PagerdutyService,
                 "phone" => GetChannelEndpointResponseDtoType.Phone,
                 "slack_channel" => GetChannelEndpointResponseDtoType.SlackChannel,
                 "slack_user" => GetChannelEndpointResponseDtoType.SlackUser,

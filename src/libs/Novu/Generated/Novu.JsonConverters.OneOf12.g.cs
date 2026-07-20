@@ -3,10 +3,10 @@
 namespace Novu.JsonConverters
 {
     /// <inheritdoc />
-    public class OneOfJsonConverter<T1, T2, T3, T4, T5, T6, T7, T8, T9> : global::System.Text.Json.Serialization.JsonConverter<global::Novu.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>>
+    public class OneOfJsonConverter<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : global::System.Text.Json.Serialization.JsonConverter<global::Novu.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>>
     {
         /// <inheritdoc />
-        public override global::Novu.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> Read(
+        public override global::Novu.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -125,6 +125,39 @@ namespace Novu.JsonConverters
                     }
                 }
             }
+            var __score9 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(T10), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score9++;
+                    }
+                }
+            }
+            var __score10 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(T11), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score10++;
+                    }
+                }
+            }
+            var __score11 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(T12), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score11++;
+                    }
+                }
+            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -136,6 +169,9 @@ namespace Novu.JsonConverters
             if (__score6 > __bestScore) { __bestScore = __score6; __bestIndex = 6; }
             if (__score7 > __bestScore) { __bestScore = __score7; __bestIndex = 7; }
             if (__score8 > __bestScore) { __bestScore = __score8; __bestIndex = 8; }
+            if (__score9 > __bestScore) { __bestScore = __score9; __bestIndex = 9; }
+            if (__score10 > __bestScore) { __bestScore = __score10; __bestIndex = 10; }
+            if (__score11 > __bestScore) { __bestScore = __score11; __bestIndex = 11; }
 
             T1? value1 = default;
             T2? value2 = default;
@@ -146,6 +182,9 @@ namespace Novu.JsonConverters
             T7? value7 = default;
             T8? value8 = default;
             T9? value9 = default;
+            T10? value10 = default;
+            T11? value11 = default;
+            T12? value12 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -300,9 +339,60 @@ namespace Novu.JsonConverters
                     {
                     }
                 }
+
+                else if (__bestIndex == 9)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T10> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T10).Name}");
+                        value10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 10)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T11), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T11> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T11).Name}");
+                        value11 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 11)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T12), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T12> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T12).Name}");
+                        value12 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null)
             {
                 try
                 {
@@ -319,7 +409,7 @@ namespace Novu.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null)
             {
                 try
                 {
@@ -336,7 +426,7 @@ namespace Novu.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null)
             {
                 try
                 {
@@ -353,7 +443,7 @@ namespace Novu.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null)
             {
                 try
                 {
@@ -370,7 +460,7 @@ namespace Novu.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null)
             {
                 try
                 {
@@ -387,7 +477,7 @@ namespace Novu.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null)
             {
                 try
                 {
@@ -404,7 +494,7 @@ namespace Novu.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null)
             {
                 try
                 {
@@ -421,7 +511,7 @@ namespace Novu.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null)
             {
                 try
                 {
@@ -438,7 +528,7 @@ namespace Novu.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null)
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null)
             {
                 try
                 {
@@ -455,7 +545,58 @@ namespace Novu.JsonConverters
                 }
             }
 
-            var __value = new global::Novu.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T10> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T10).Name}");
+                    value10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T11), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T11> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T11).Name}");
+                    value11 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T12), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T12> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T12).Name}");
+                    value12 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            var __value = new global::Novu.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(
                 value1,
 
                 value2,
@@ -472,7 +613,13 @@ namespace Novu.JsonConverters
 
                 value8,
 
-                value9
+                value9,
+
+                value10,
+
+                value11,
+
+                value12
                 );
 
             return __value;
@@ -481,7 +628,7 @@ namespace Novu.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Novu.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> value,
+            global::Novu.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
@@ -540,6 +687,24 @@ namespace Novu.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T9), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T9?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T9).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value9!, typeInfo);
+            }
+            else if (value.IsValue10)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T10), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T10?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T10).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value10!, typeInfo);
+            }
+            else if (value.IsValue11)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T11), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T11?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T11).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value11!, typeInfo);
+            }
+            else if (value.IsValue12)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T12), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T12?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T12).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value12!, typeInfo);
             }
         }
     }

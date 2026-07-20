@@ -51,6 +51,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Tool,
+        /// <summary>
+        /// 
+        /// </summary>
         Trigger,
     }
 
@@ -76,6 +80,7 @@ namespace Novu
                 ActivityNotificationJobResponseDtoType.Push => "push",
                 ActivityNotificationJobResponseDtoType.Sms => "sms",
                 ActivityNotificationJobResponseDtoType.Throttle => "throttle",
+                ActivityNotificationJobResponseDtoType.Tool => "tool",
                 ActivityNotificationJobResponseDtoType.Trigger => "trigger",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -97,6 +102,7 @@ namespace Novu
                 "push" => ActivityNotificationJobResponseDtoType.Push,
                 "sms" => ActivityNotificationJobResponseDtoType.Sms,
                 "throttle" => ActivityNotificationJobResponseDtoType.Throttle,
+                "tool" => ActivityNotificationJobResponseDtoType.Tool,
                 "trigger" => ActivityNotificationJobResponseDtoType.Trigger,
                 _ => null,
             };

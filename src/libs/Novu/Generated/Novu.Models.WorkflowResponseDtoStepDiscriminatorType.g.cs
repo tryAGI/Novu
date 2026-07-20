@@ -48,6 +48,10 @@ namespace Novu
         /// 
         /// </summary>
         Throttle,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tool,
     }
 
     /// <summary>
@@ -72,6 +76,7 @@ namespace Novu
                 WorkflowResponseDtoStepDiscriminatorType.Push => "push",
                 WorkflowResponseDtoStepDiscriminatorType.Sms => "sms",
                 WorkflowResponseDtoStepDiscriminatorType.Throttle => "throttle",
+                WorkflowResponseDtoStepDiscriminatorType.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -92,6 +97,7 @@ namespace Novu
                 "push" => WorkflowResponseDtoStepDiscriminatorType.Push,
                 "sms" => WorkflowResponseDtoStepDiscriminatorType.Sms,
                 "throttle" => WorkflowResponseDtoStepDiscriminatorType.Throttle,
+                "tool" => WorkflowResponseDtoStepDiscriminatorType.Tool,
                 _ => null,
             };
         }
