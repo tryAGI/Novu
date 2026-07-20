@@ -187,6 +187,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        ToolBody,
+        /// <summary>
+        /// 
+        /// </summary>
         UrlTextBox,
     }
 
@@ -246,6 +250,7 @@ namespace Novu
                 UiComponentEnum.ThrottleType => "THROTTLE_TYPE",
                 UiComponentEnum.ThrottleUnit => "THROTTLE_UNIT",
                 UiComponentEnum.ThrottleWindow => "THROTTLE_WINDOW",
+                UiComponentEnum.ToolBody => "TOOL_BODY",
                 UiComponentEnum.UrlTextBox => "URL_TEXT_BOX",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -301,6 +306,7 @@ namespace Novu
                 "THROTTLE_TYPE" => UiComponentEnum.ThrottleType,
                 "THROTTLE_UNIT" => UiComponentEnum.ThrottleUnit,
                 "THROTTLE_WINDOW" => UiComponentEnum.ThrottleWindow,
+                "TOOL_BODY" => UiComponentEnum.ToolBody,
                 "URL_TEXT_BOX" => UiComponentEnum.UrlTextBox,
                 _ => null,
             };

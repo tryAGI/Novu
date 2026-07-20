@@ -383,6 +383,43 @@ namespace Novu
         public global::Novu.HttpRequestStepResponseDto PickHttpRequest() => IsHttpRequest
             ? HttpRequest!
             : throw new global::System.InvalidOperationException($"Expected union variant 'HttpRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Novu.ToolStepResponseDto? Tool { get; init; }
+#else
+        public global::Novu.ToolStepResponseDto? Tool { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+#endif
+        public bool IsTool => Tool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.ToolStepResponseDto? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.ToolStepResponseDto PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -616,6 +653,29 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator StepsItem(global::Novu.ToolStepResponseDto value) => new StepsItem((global::Novu.ToolStepResponseDto?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Novu.ToolStepResponseDto?(StepsItem @this) => @this.Tool;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StepsItem(global::Novu.ToolStepResponseDto? value)
+        {
+            Tool = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StepsItem FromTool(global::Novu.ToolStepResponseDto? value) => new StepsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public StepsItem(
             global::Novu.WorkflowResponseDtoStepDiscriminatorType? type,
             global::Novu.InAppStepResponseDto? inApp,
@@ -627,7 +687,8 @@ namespace Novu
             global::Novu.DigestStepResponseDto? digest,
             global::Novu.CustomStepResponseDto? custom,
             global::Novu.ThrottleStepResponseDto? throttle,
-            global::Novu.HttpRequestStepResponseDto? httpRequest
+            global::Novu.HttpRequestStepResponseDto? httpRequest,
+            global::Novu.ToolStepResponseDto? tool
             )
         {
             Type = type;
@@ -642,12 +703,14 @@ namespace Novu
             Custom = custom;
             Throttle = throttle;
             HttpRequest = httpRequest;
+            Tool = tool;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Tool as object ??
             HttpRequest as object ??
             Throttle as object ??
             Custom as object ??
@@ -673,7 +736,8 @@ namespace Novu
             Digest?.ToString() ??
             Custom?.ToString() ??
             Throttle?.ToString() ??
-            HttpRequest?.ToString() 
+            HttpRequest?.ToString() ??
+            Tool?.ToString() 
             ;
 
         /// <summary>
@@ -681,7 +745,7 @@ namespace Novu
         /// </summary>
         public bool Validate()
         {
-            return IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest || !IsInApp && IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest || !IsInApp && !IsEmail && IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && IsChat && !IsDelay && !IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && IsDelay && !IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && IsCustom && !IsThrottle && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && IsThrottle && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsThrottle && IsHttpRequest;
+            return IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest && !IsTool || !IsInApp && IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest && !IsTool || !IsInApp && !IsEmail && IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest && !IsTool || !IsInApp && !IsEmail && !IsSms && IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest && !IsTool || !IsInApp && !IsEmail && !IsSms && !IsPush && IsChat && !IsDelay && !IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest && !IsTool || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && IsDelay && !IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest && !IsTool || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest && !IsTool || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && IsCustom && !IsThrottle && !IsHttpRequest && !IsTool || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && IsThrottle && !IsHttpRequest && !IsTool || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsThrottle && IsHttpRequest && !IsTool || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsCustom && !IsThrottle && !IsHttpRequest && IsTool;
         }
 
         /// <summary>
@@ -698,6 +762,7 @@ namespace Novu
             global::System.Func<global::Novu.CustomStepResponseDto, TResult>? custom = null,
             global::System.Func<global::Novu.ThrottleStepResponseDto, TResult>? throttle = null,
             global::System.Func<global::Novu.HttpRequestStepResponseDto, TResult>? httpRequest = null,
+            global::System.Func<global::Novu.ToolStepResponseDto, TResult>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -745,6 +810,10 @@ namespace Novu
             {
                 return httpRequest(HttpRequest!);
             }
+            else if (IsTool && tool != null)
+            {
+                return tool(Tool!);
+            }
 
             return default(TResult);
         }
@@ -772,6 +841,8 @@ namespace Novu
             global::System.Action<global::Novu.ThrottleStepResponseDto>? throttle = null,
 
             global::System.Action<global::Novu.HttpRequestStepResponseDto>? httpRequest = null,
+
+            global::System.Action<global::Novu.ToolStepResponseDto>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -818,6 +889,10 @@ namespace Novu
             else if (IsHttpRequest)
             {
                 httpRequest?.Invoke(HttpRequest!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
             }
         }
 
@@ -835,6 +910,7 @@ namespace Novu
             global::System.Action<global::Novu.CustomStepResponseDto>? custom = null,
             global::System.Action<global::Novu.ThrottleStepResponseDto>? throttle = null,
             global::System.Action<global::Novu.HttpRequestStepResponseDto>? httpRequest = null,
+            global::System.Action<global::Novu.ToolStepResponseDto>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -881,6 +957,10 @@ namespace Novu
             else if (IsHttpRequest)
             {
                 httpRequest?.Invoke(HttpRequest!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
             }
         }
 
@@ -911,6 +991,8 @@ namespace Novu
                 typeof(global::Novu.ThrottleStepResponseDto),
                 HttpRequest,
                 typeof(global::Novu.HttpRequestStepResponseDto),
+                Tool,
+                typeof(global::Novu.ToolStepResponseDto),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -936,7 +1018,8 @@ namespace Novu
                 global::System.Collections.Generic.EqualityComparer<global::Novu.DigestStepResponseDto?>.Default.Equals(Digest, other.Digest) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CustomStepResponseDto?>.Default.Equals(Custom, other.Custom) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.ThrottleStepResponseDto?>.Default.Equals(Throttle, other.Throttle) &&
-                global::System.Collections.Generic.EqualityComparer<global::Novu.HttpRequestStepResponseDto?>.Default.Equals(HttpRequest, other.HttpRequest) 
+                global::System.Collections.Generic.EqualityComparer<global::Novu.HttpRequestStepResponseDto?>.Default.Equals(HttpRequest, other.HttpRequest) &&
+                global::System.Collections.Generic.EqualityComparer<global::Novu.ToolStepResponseDto?>.Default.Equals(Tool, other.Tool) 
                 ;
         }
 

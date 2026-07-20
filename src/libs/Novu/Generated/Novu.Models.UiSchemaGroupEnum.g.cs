@@ -52,6 +52,10 @@ namespace Novu
         /// 
         /// </summary>
         Throttle,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tool,
     }
 
     /// <summary>
@@ -77,6 +81,7 @@ namespace Novu
                 UiSchemaGroupEnum.Skip => "SKIP",
                 UiSchemaGroupEnum.Sms => "SMS",
                 UiSchemaGroupEnum.Throttle => "THROTTLE",
+                UiSchemaGroupEnum.Tool => "TOOL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -98,6 +103,7 @@ namespace Novu
                 "SKIP" => UiSchemaGroupEnum.Skip,
                 "SMS" => UiSchemaGroupEnum.Sms,
                 "THROTTLE" => UiSchemaGroupEnum.Throttle,
+                "TOOL" => UiSchemaGroupEnum.Tool,
                 _ => null,
             };
         }

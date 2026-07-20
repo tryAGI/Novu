@@ -383,6 +383,80 @@ namespace Novu
         public global::Novu.CreateLineUserEndpointDto PickLineUser() => IsLineUser
             ? LineUser!
             : throw new global::System.InvalidOperationException($"Expected union variant 'LineUser' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Novu.CreatePagerDutyServiceEndpointDto? PagerdutyService { get; init; }
+#else
+        public global::Novu.CreatePagerDutyServiceEndpointDto? PagerdutyService { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PagerdutyService))]
+#endif
+        public bool IsPagerdutyService => PagerdutyService != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPagerdutyService(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreatePagerDutyServiceEndpointDto? value)
+        {
+            value = PagerdutyService;
+            return IsPagerdutyService;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.CreatePagerDutyServiceEndpointDto PickPagerdutyService() => IsPagerdutyService
+            ? PagerdutyService!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PagerdutyService' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Novu.CreateOpsgenieIntegrationEndpointDto? OpsgenieIntegration { get; init; }
+#else
+        public global::Novu.CreateOpsgenieIntegrationEndpointDto? OpsgenieIntegration { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpsgenieIntegration))]
+#endif
+        public bool IsOpsgenieIntegration => OpsgenieIntegration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpsgenieIntegration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreateOpsgenieIntegrationEndpointDto? value)
+        {
+            value = OpsgenieIntegration;
+            return IsOpsgenieIntegration;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.CreateOpsgenieIntegrationEndpointDto PickOpsgenieIntegration() => IsOpsgenieIntegration
+            ? OpsgenieIntegration!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpsgenieIntegration' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -616,6 +690,52 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreatePagerDutyServiceEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreatePagerDutyServiceEndpointDto?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Novu.CreatePagerDutyServiceEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.PagerdutyService;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreatePagerDutyServiceEndpointDto? value)
+        {
+            PagerdutyService = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromPagerdutyService(global::Novu.CreatePagerDutyServiceEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateOpsgenieIntegrationEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateOpsgenieIntegrationEndpointDto?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Novu.CreateOpsgenieIntegrationEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.OpsgenieIntegration;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateOpsgenieIntegrationEndpointDto? value)
+        {
+            OpsgenieIntegration = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromOpsgenieIntegration(global::Novu.CreateOpsgenieIntegrationEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(
             global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType? type,
             global::Novu.CreateSlackChannelEndpointDto? slackChannel,
@@ -627,7 +747,9 @@ namespace Novu
             global::Novu.CreateTelegramChatEndpointDto? telegramChat,
             global::Novu.CreateWebexRoomEndpointDto? webexRoom,
             global::Novu.CreateWebexPersonEndpointDto? webexPerson,
-            global::Novu.CreateLineUserEndpointDto? lineUser
+            global::Novu.CreateLineUserEndpointDto? lineUser,
+            global::Novu.CreatePagerDutyServiceEndpointDto? pagerdutyService,
+            global::Novu.CreateOpsgenieIntegrationEndpointDto? opsgenieIntegration
             )
         {
             Type = type;
@@ -642,12 +764,16 @@ namespace Novu
             WebexRoom = webexRoom;
             WebexPerson = webexPerson;
             LineUser = lineUser;
+            PagerdutyService = pagerdutyService;
+            OpsgenieIntegration = opsgenieIntegration;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            OpsgenieIntegration as object ??
+            PagerdutyService as object ??
             LineUser as object ??
             WebexPerson as object ??
             WebexRoom as object ??
@@ -673,7 +799,9 @@ namespace Novu
             TelegramChat?.ToString() ??
             WebexRoom?.ToString() ??
             WebexPerson?.ToString() ??
-            LineUser?.ToString() 
+            LineUser?.ToString() ??
+            PagerdutyService?.ToString() ??
+            OpsgenieIntegration?.ToString() 
             ;
 
         /// <summary>
@@ -681,7 +809,7 @@ namespace Novu
         /// </summary>
         public bool Validate()
         {
-            return IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && IsWebexRoom && !IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && IsWebexPerson && !IsLineUser || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && IsLineUser;
+            return IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && IsOpsgenieIntegration;
         }
 
         /// <summary>
@@ -698,6 +826,8 @@ namespace Novu
             global::System.Func<global::Novu.CreateWebexRoomEndpointDto, TResult>? webexRoom = null,
             global::System.Func<global::Novu.CreateWebexPersonEndpointDto, TResult>? webexPerson = null,
             global::System.Func<global::Novu.CreateLineUserEndpointDto, TResult>? lineUser = null,
+            global::System.Func<global::Novu.CreatePagerDutyServiceEndpointDto, TResult>? pagerdutyService = null,
+            global::System.Func<global::Novu.CreateOpsgenieIntegrationEndpointDto, TResult>? opsgenieIntegration = null,
             bool validate = true)
         {
             if (validate)
@@ -745,6 +875,14 @@ namespace Novu
             {
                 return lineUser(LineUser!);
             }
+            else if (IsPagerdutyService && pagerdutyService != null)
+            {
+                return pagerdutyService(PagerdutyService!);
+            }
+            else if (IsOpsgenieIntegration && opsgenieIntegration != null)
+            {
+                return opsgenieIntegration(OpsgenieIntegration!);
+            }
 
             return default(TResult);
         }
@@ -772,6 +910,10 @@ namespace Novu
             global::System.Action<global::Novu.CreateWebexPersonEndpointDto>? webexPerson = null,
 
             global::System.Action<global::Novu.CreateLineUserEndpointDto>? lineUser = null,
+
+            global::System.Action<global::Novu.CreatePagerDutyServiceEndpointDto>? pagerdutyService = null,
+
+            global::System.Action<global::Novu.CreateOpsgenieIntegrationEndpointDto>? opsgenieIntegration = null,
             bool validate = true)
         {
             if (validate)
@@ -818,6 +960,14 @@ namespace Novu
             else if (IsLineUser)
             {
                 lineUser?.Invoke(LineUser!);
+            }
+            else if (IsPagerdutyService)
+            {
+                pagerdutyService?.Invoke(PagerdutyService!);
+            }
+            else if (IsOpsgenieIntegration)
+            {
+                opsgenieIntegration?.Invoke(OpsgenieIntegration!);
             }
         }
 
@@ -835,6 +985,8 @@ namespace Novu
             global::System.Action<global::Novu.CreateWebexRoomEndpointDto>? webexRoom = null,
             global::System.Action<global::Novu.CreateWebexPersonEndpointDto>? webexPerson = null,
             global::System.Action<global::Novu.CreateLineUserEndpointDto>? lineUser = null,
+            global::System.Action<global::Novu.CreatePagerDutyServiceEndpointDto>? pagerdutyService = null,
+            global::System.Action<global::Novu.CreateOpsgenieIntegrationEndpointDto>? opsgenieIntegration = null,
             bool validate = true)
         {
             if (validate)
@@ -881,6 +1033,14 @@ namespace Novu
             else if (IsLineUser)
             {
                 lineUser?.Invoke(LineUser!);
+            }
+            else if (IsPagerdutyService)
+            {
+                pagerdutyService?.Invoke(PagerdutyService!);
+            }
+            else if (IsOpsgenieIntegration)
+            {
+                opsgenieIntegration?.Invoke(OpsgenieIntegration!);
             }
         }
 
@@ -911,6 +1071,10 @@ namespace Novu
                 typeof(global::Novu.CreateWebexPersonEndpointDto),
                 LineUser,
                 typeof(global::Novu.CreateLineUserEndpointDto),
+                PagerdutyService,
+                typeof(global::Novu.CreatePagerDutyServiceEndpointDto),
+                OpsgenieIntegration,
+                typeof(global::Novu.CreateOpsgenieIntegrationEndpointDto),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -936,7 +1100,9 @@ namespace Novu
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreateTelegramChatEndpointDto?>.Default.Equals(TelegramChat, other.TelegramChat) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreateWebexRoomEndpointDto?>.Default.Equals(WebexRoom, other.WebexRoom) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreateWebexPersonEndpointDto?>.Default.Equals(WebexPerson, other.WebexPerson) &&
-                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateLineUserEndpointDto?>.Default.Equals(LineUser, other.LineUser) 
+                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateLineUserEndpointDto?>.Default.Equals(LineUser, other.LineUser) &&
+                global::System.Collections.Generic.EqualityComparer<global::Novu.CreatePagerDutyServiceEndpointDto?>.Default.Equals(PagerdutyService, other.PagerdutyService) &&
+                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateOpsgenieIntegrationEndpointDto?>.Default.Equals(OpsgenieIntegration, other.OpsgenieIntegration) 
                 ;
         }
 

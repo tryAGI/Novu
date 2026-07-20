@@ -28,6 +28,10 @@ namespace Novu
         /// 
         /// </summary>
         Sms,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tool,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace Novu
                 MessagesControllerDeleteMessagesByTransactionIdChannel.InApp => "in_app",
                 MessagesControllerDeleteMessagesByTransactionIdChannel.Push => "push",
                 MessagesControllerDeleteMessagesByTransactionIdChannel.Sms => "sms",
+                MessagesControllerDeleteMessagesByTransactionIdChannel.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace Novu
                 "in_app" => MessagesControllerDeleteMessagesByTransactionIdChannel.InApp,
                 "push" => MessagesControllerDeleteMessagesByTransactionIdChannel.Push,
                 "sms" => MessagesControllerDeleteMessagesByTransactionIdChannel.Sms,
+                "tool" => MessagesControllerDeleteMessagesByTransactionIdChannel.Tool,
                 _ => null,
             };
         }

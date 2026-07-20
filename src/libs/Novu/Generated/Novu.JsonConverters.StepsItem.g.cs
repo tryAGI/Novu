@@ -91,6 +91,13 @@ namespace Novu.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.HttpRequestStepResponseDto)}");
                 httpRequest = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Novu.ToolStepResponseDto? tool = default;
+            if (discriminator?.Type == global::Novu.WorkflowResponseDtoStepDiscriminatorType.Tool)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.ToolStepResponseDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.ToolStepResponseDto> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.ToolStepResponseDto)}");
+                tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Novu.StepsItem(
                 discriminator?.Type,
@@ -112,7 +119,9 @@ namespace Novu.JsonConverters
 
                 throttle,
 
-                httpRequest
+                httpRequest,
+
+                tool
                 );
 
             return __value;
@@ -186,6 +195,12 @@ namespace Novu.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.HttpRequestStepResponseDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.HttpRequestStepResponseDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.HttpRequestStepResponseDto).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.HttpRequest!, typeInfo);
+            }
+            else if (value.IsTool)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.ToolStepResponseDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.ToolStepResponseDto?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.ToolStepResponseDto).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool!, typeInfo);
             }
         }
     }

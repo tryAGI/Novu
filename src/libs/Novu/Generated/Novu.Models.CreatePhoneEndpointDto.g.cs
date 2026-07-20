@@ -26,6 +26,13 @@ namespace Novu
         public required string SubscriberId { get; set; }
 
         /// <summary>
+        /// When true, the subscriber is created if it does not exist yet (existing subscribers are never modified). When false or omitted, an unknown subscriberId returns 404.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("createSubscriberIfMissing")]
+        public bool? CreateSubscriberIfMissing { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
@@ -88,6 +95,10 @@ namespace Novu
         /// The unique identifier for the channel endpoint. If not provided, one will be generated automatically.<br/>
         /// Example: slack-channel-user123-abc4
         /// </param>
+        /// <param name="createSubscriberIfMissing">
+        /// When true, the subscriber is created if it does not exist yet (existing subscribers are never modified). When false or omitted, an unknown subscriberId returns 404.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="context"></param>
         /// <param name="connectionIdentifier">
         /// The identifier of the channel connection to use for this channel endpoint.<br/>
@@ -105,12 +116,14 @@ namespace Novu
             string integrationIdentifier,
             global::Novu.PhoneEndpointDto endpoint,
             string? identifier,
+            bool? createSubscriberIfMissing,
             object? context,
             string? connectionIdentifier,
             global::Novu.CreatePhoneEndpointDtoType type)
         {
             this.Identifier = identifier;
             this.SubscriberId = subscriberId ?? throw new global::System.ArgumentNullException(nameof(subscriberId));
+            this.CreateSubscriberIfMissing = createSubscriberIfMissing;
             this.Context = context;
             this.IntegrationIdentifier = integrationIdentifier ?? throw new global::System.ArgumentNullException(nameof(integrationIdentifier));
             this.ConnectionIdentifier = connectionIdentifier;

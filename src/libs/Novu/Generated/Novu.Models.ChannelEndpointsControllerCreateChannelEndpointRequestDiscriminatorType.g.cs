@@ -23,6 +23,14 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        OpsgenieIntegration,
+        /// <summary>
+        /// 
+        /// </summary>
+        PagerdutyService,
+        /// <summary>
+        /// 
+        /// </summary>
         Phone,
         /// <summary>
         /// 
@@ -65,6 +73,8 @@ namespace Novu
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.LineUser => "line_user",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsChannel => "ms_teams_channel",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsUser => "ms_teams_user",
+                ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.OpsgenieIntegration => "opsgenie_integration",
+                ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.PagerdutyService => "pagerduty_service",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.Phone => "phone",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackChannel => "slack_channel",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackUser => "slack_user",
@@ -85,6 +95,8 @@ namespace Novu
                 "line_user" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.LineUser,
                 "ms_teams_channel" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsChannel,
                 "ms_teams_user" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsUser,
+                "opsgenie_integration" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.OpsgenieIntegration,
+                "pagerduty_service" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.PagerdutyService,
                 "phone" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.Phone,
                 "slack_channel" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackChannel,
                 "slack_user" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackUser,
