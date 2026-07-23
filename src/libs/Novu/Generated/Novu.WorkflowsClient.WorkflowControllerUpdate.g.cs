@@ -974,7 +974,6 @@ namespace Novu
             string name,
             global::System.Collections.Generic.IList<global::Novu.StepsItem3> steps,
             global::Novu.PreferencesRequestDto preferences,
-            global::Novu.ResourceOriginEnum origin,
             string? description = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             bool? active = default,
@@ -982,6 +981,7 @@ namespace Novu
             object? payloadSchema = default,
             bool? isTranslationEnabled = default,
             string? requestWorkflowId = default,
+            global::Novu.ResourceOriginEnum? origin = default,
             global::Novu.SeverityLevelEnum? severity = default,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

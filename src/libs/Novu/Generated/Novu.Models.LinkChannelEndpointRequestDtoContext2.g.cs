@@ -4,31 +4,25 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    /// Rich context object with id and optional data
     /// </summary>
-    public sealed partial class WorkspaceDto
+    public sealed partial class LinkChannelEndpointRequestDtoContext2
     {
         /// <summary>
-        /// Example: T123456
+        /// Example: org-acme
         /// </summary>
-        /// <example>T123456</example>
+        /// <example>org-acme</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// Example: Acme HQ
+        /// Optional additional context data<br/>
+        /// Example: {"name":"Acme Corp","region":"us-east-1"}
         /// </summary>
-        /// <example>Acme HQ</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
-        /// Example: U0123456789
-        /// </summary>
-        /// <example>U0123456789</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("botUserId")]
-        public string? BotUserId { get; set; }
+        /// <example>{"name":"Acme Corp","region":"us-east-1"}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        public object? Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,34 +31,30 @@ namespace Novu
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkspaceDto" /> class.
+        /// Initializes a new instance of the <see cref="LinkChannelEndpointRequestDtoContext2" /> class.
         /// </summary>
         /// <param name="id">
-        /// Example: T123456
+        /// Example: org-acme
         /// </param>
-        /// <param name="name">
-        /// Example: Acme HQ
-        /// </param>
-        /// <param name="botUserId">
-        /// Example: U0123456789
+        /// <param name="data">
+        /// Optional additional context data<br/>
+        /// Example: {"name":"Acme Corp","region":"us-east-1"}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public WorkspaceDto(
+        public LinkChannelEndpointRequestDtoContext2(
             string id,
-            string? name,
-            string? botUserId)
+            object? data)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name;
-            this.BotUserId = botUserId;
+            this.Data = data;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkspaceDto" /> class.
+        /// Initializes a new instance of the <see cref="LinkChannelEndpointRequestDtoContext2" /> class.
         /// </summary>
-        public WorkspaceDto()
+        public LinkChannelEndpointRequestDtoContext2()
         {
         }
 

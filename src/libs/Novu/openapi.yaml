@@ -44492,6 +44492,8 @@
             "description": "Number of items to return per page",
             "example": 10,
             "schema": {
+              "minimum": 1,
+              "maximum": 100,
               "type": "number"
             }
           },
@@ -44502,6 +44504,7 @@
             "description": "Number of items to skip before starting to return results",
             "example": 0,
             "schema": {
+              "minimum": 0,
               "type": "number"
             }
           },
@@ -58227,6 +58230,8 @@
             "description": "Number of items to return per page",
             "example": 10,
             "schema": {
+              "minimum": 1,
+              "maximum": 100,
               "type": "number"
             }
           },
@@ -58237,6 +58242,7 @@
             "description": "Number of items to skip before starting to return results",
             "example": 0,
             "schema": {
+              "minimum": 0,
               "type": "number"
             }
           },
@@ -63679,6 +63685,20 @@
             "description": "The subscriber ID to filter results by",
             "example": "subscriber-123",
             "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionMode",
+            "required": false,
+            "in": "query",
+            "description": "Scope results relative to the subscriber. `subscriber` returns only the subscriber-owned connections, `shared` returns only shared (workspace-level) connections. Omit to return both.",
+            "example": "shared",
+            "schema": {
+              "enum": [
+                "subscriber",
+                "shared"
+              ],
               "type": "string"
             }
           },
@@ -70942,6 +70962,7 @@
           "sinch",
           "isendpro-sms",
           "cm-telecom",
+          "ruach-sms",
           "fcm",
           "apns",
           "expo",
@@ -74629,6 +74650,11 @@
               ]
             }
           },
+          "contextHash": {
+            "type": "string",
+            "description": "HMAC-SHA256 of the canonicalized `context`, signed with the tenant environment secret key (the same \"Inbox with context\" signing scheme). Required when the integration has HMAC validation enabled and the session did not already HMAC-verify the context. Establishes that the context/tenant binding was minted by an authenticated backend rather than forged in the browser.",
+            "example": "a1b2c3d4e5f6..."
+          },
           "scope": {
             "description": "**Slack only**: OAuth scopes to request during authorization. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **Webex**: OAuth scopes to request during authorization. Defaults to: spark:messages_write, spark:rooms_read, spark:people_read, spark:memberships_read, spark:kms. **MS Teams**: ignored — uses admin consent with pre-configured Azure AD permissions.",
             "example": [
@@ -74711,6 +74737,11 @@
               ]
             }
           },
+          "contextHash": {
+            "type": "string",
+            "description": "HMAC-SHA256 of the canonicalized `context`, signed with the tenant environment secret key (the same \"Inbox with context\" signing scheme). Required when the integration has HMAC validation enabled and the session did not already HMAC-verify the context, so the per-user link carries a trustworthy subscriber/tenant binding.",
+            "example": "a1b2c3d4e5f6..."
+          },
           "userScope": {
             "description": "**Slack only**: User-level OAuth scopes for \"Sign in with Slack\". Defaults to: identity.basic. **Webex**: Optional Webex scopes for people/me; defaults to spark:people_read. **MS Teams**: ignored — uses delegated OpenID scopes (openid, profile, User.Read).",
             "example": [
@@ -74761,6 +74792,40 @@
             "type": "string",
             "description": "External subscriber identifier to link to their chat identity",
             "example": "subscriber-123"
+          },
+          "context": {
+            "type": "object",
+            "additionalProperties": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "description": "Simple context id",
+                  "example": "org-acme"
+                },
+                {
+                  "type": "object",
+                  "description": "Rich context object with id and optional data",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "org-acme"
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "Optional additional context data",
+                      "additionalProperties": true,
+                      "example": {
+                        "name": "Acme Corp",
+                        "region": "us-east-1"
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
           }
         },
         "required": [
@@ -79659,6 +79724,30 @@
           }
         }
       },
+      "ProviderOverridesDto": {
+        "type": "object",
+        "properties": {
+          "pagerduty": {
+            "type": "object",
+            "description": "PagerDuty content overrides. Merged over the default step body at send time. Supported keys are documented in the PagerDuty override schema.",
+            "additionalProperties": true,
+            "example": {
+              "severity": "warning",
+              "source": "novu",
+              "summary": "{{payload.title}}"
+            }
+          },
+          "opsgenie": {
+            "type": "object",
+            "description": "Opsgenie content overrides. Merged over the default step body at send time. Supported keys are documented in the Opsgenie override schema.",
+            "additionalProperties": true,
+            "example": {
+              "priority": "P2",
+              "message": "{{payload.title}}"
+            }
+          }
+        }
+      },
       "ContentIssueEnum": {
         "type": "string",
         "description": "Type of step content issue",
@@ -79667,7 +79756,8 @@
           "INVALID_FILTER_ARG_IN_VARIABLE",
           "INVALID_URL",
           "MISSING_VALUE",
-          "TIER_LIMIT_EXCEEDED"
+          "TIER_LIMIT_EXCEEDED",
+          "UNSUPPORTED_PROPERTY"
         ]
       },
       "StepContentIssueDto": {
@@ -79758,6 +79848,15 @@
             "type": "object",
             "description": "Control values for the step (alias for controls.values)",
             "additionalProperties": true
+          },
+          "providerOverrides": {
+            "description": "Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderOverridesDto"
+              }
+            ]
           },
           "variables": {
             "type": "object",
@@ -79940,6 +80039,15 @@
               }
             ]
           },
+          "providerOverrides": {
+            "description": "Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderOverridesDto"
+              }
+            ]
+          },
           "variables": {
             "type": "object",
             "description": "JSON Schema for variables, follows the JSON Schema standard",
@@ -80089,6 +80197,15 @@
             "allOf": [
               {
                 "$ref": "#/components/schemas/SmsControlDto"
+              }
+            ]
+          },
+          "providerOverrides": {
+            "description": "Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderOverridesDto"
               }
             ]
           },
@@ -80248,6 +80365,15 @@
               }
             ]
           },
+          "providerOverrides": {
+            "description": "Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderOverridesDto"
+              }
+            ]
+          },
           "variables": {
             "type": "object",
             "description": "JSON Schema for variables, follows the JSON Schema standard",
@@ -80397,6 +80523,15 @@
             "allOf": [
               {
                 "$ref": "#/components/schemas/ChatControlDto"
+              }
+            ]
+          },
+          "providerOverrides": {
+            "description": "Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderOverridesDto"
               }
             ]
           },
@@ -80578,6 +80713,15 @@
             "allOf": [
               {
                 "$ref": "#/components/schemas/DelayControlDto"
+              }
+            ]
+          },
+          "providerOverrides": {
+            "description": "Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderOverridesDto"
               }
             ]
           },
@@ -80796,6 +80940,15 @@
               }
             ]
           },
+          "providerOverrides": {
+            "description": "Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderOverridesDto"
+              }
+            ]
+          },
           "variables": {
             "type": "object",
             "description": "JSON Schema for variables, follows the JSON Schema standard",
@@ -80985,6 +81138,15 @@
               }
             ]
           },
+          "providerOverrides": {
+            "description": "Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderOverridesDto"
+              }
+            ]
+          },
           "variables": {
             "type": "object",
             "description": "JSON Schema for variables, follows the JSON Schema standard",
@@ -81102,6 +81264,15 @@
             "allOf": [
               {
                 "$ref": "#/components/schemas/CustomControlDto"
+              }
+            ]
+          },
+          "providerOverrides": {
+            "description": "Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderOverridesDto"
               }
             ]
           },
@@ -81290,6 +81461,15 @@
             "allOf": [
               {
                 "$ref": "#/components/schemas/HttpRequestControlDto"
+              }
+            ]
+          },
+          "providerOverrides": {
+            "description": "Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderOverridesDto"
               }
             ]
           },
@@ -81506,6 +81686,15 @@
               }
             ]
           },
+          "providerOverrides": {
+            "description": "Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderOverridesDto"
+              }
+            ]
+          },
           "variables": {
             "type": "object",
             "description": "JSON Schema for variables, follows the JSON Schema standard",
@@ -81606,13 +81795,6 @@
           "body": {
             "type": "string",
             "description": "Content of the tool payload."
-          },
-          "enabledIntegrations": {
-            "description": "Optional integration identifiers to deliver to. Empty or omitted sends to all active Tool integrations.",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       },
@@ -81662,6 +81844,15 @@
             "allOf": [
               {
                 "$ref": "#/components/schemas/ToolControlDto"
+              }
+            ]
+          },
+          "providerOverrides": {
+            "description": "Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderOverridesDto"
               }
             ]
           },
@@ -82670,8 +82861,7 @@
         "required": [
           "name",
           "steps",
-          "preferences",
-          "origin"
+          "preferences"
         ]
       },
       "StepListResponseDto": {
@@ -83908,6 +84098,10 @@
           "name": {
             "type": "string",
             "example": "Acme HQ"
+          },
+          "botUserId": {
+            "type": "string",
+            "example": "U0123456789"
           }
         },
         "required": [
@@ -84023,6 +84217,7 @@
               "sinch",
               "isendpro-sms",
               "cm-telecom",
+              "ruach-sms",
               "fcm",
               "apns",
               "expo",
@@ -85548,6 +85743,7 @@
               "sinch",
               "isendpro-sms",
               "cm-telecom",
+              "ruach-sms",
               "fcm",
               "apns",
               "expo",

@@ -49,6 +49,10 @@ namespace Novu
         /// Example: slack-connection-abc123
         /// </param>
         /// <param name="context"></param>
+        /// <param name="contextHash">
+        /// HMAC-SHA256 of the canonicalized `context`, signed with the tenant environment secret key (the same "Inbox with context" signing scheme). Required when the integration has HMAC validation enabled and the session did not already HMAC-verify the context. Establishes that the context/tenant binding was minted by an authenticated backend rather than forged in the browser.<br/>
+        /// Example: a1b2c3d4e5f6...
+        /// </param>
         /// <param name="scope">
         /// **Slack only**: OAuth scopes to request during authorization. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **Webex**: OAuth scopes to request during authorization. Defaults to: spark:messages_write, spark:rooms_read, spark:people_read, spark:memberships_read, spark:kms. **MS Teams**: ignored — uses admin consent with pre-configured Azure AD permissions.<br/>
         /// Example: [chat:write, chat:write.public, channels:read]
@@ -69,6 +73,7 @@ namespace Novu
             string? subscriberId = default,
             string? connectionIdentifier = default,
             object? context = default,
+            string? contextHash = default,
             global::System.Collections.Generic.IList<string>? scope = default,
             global::Novu.GenerateConnectOauthUrlRequestDtoConnectionMode? connectionMode = default,
             bool? autoLinkUser = default,

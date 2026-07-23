@@ -23,12 +23,6 @@ namespace Novu
         public string? Body { get; set; }
 
         /// <summary>
-        /// Optional integration identifiers to deliver to. Empty or omitted sends to all active Tool integrations.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enabledIntegrations")]
-        public global::System.Collections.Generic.IList<string>? EnabledIntegrations { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -44,20 +38,15 @@ namespace Novu
         /// <param name="body">
         /// Content of the tool payload.
         /// </param>
-        /// <param name="enabledIntegrations">
-        /// Optional integration identifiers to deliver to. Empty or omitted sends to all active Tool integrations.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolControlDto(
             object? skip,
-            string? body,
-            global::System.Collections.Generic.IList<string>? enabledIntegrations)
+            string? body)
         {
             this.Skip = skip;
             this.Body = body;
-            this.EnabledIntegrations = enabledIntegrations;
         }
 
         /// <summary>

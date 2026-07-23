@@ -47,6 +47,7 @@ namespace Novu
             ref string? orderBy,
             ref bool? includeCursor,
             ref string? subscriberId,
+            ref global::Novu.ChannelConnectionsControllerListChannelConnectionsConnectionMode? connectionMode,
             ref global::Novu.ChannelConnectionsControllerListChannelConnectionsChannel? channel,
             ref global::Novu.ProvidersIdEnum? providerId,
             ref string? integrationIdentifier,
@@ -61,6 +62,7 @@ namespace Novu
             string? orderBy,
             bool? includeCursor,
             string? subscriberId,
+            global::Novu.ChannelConnectionsControllerListChannelConnectionsConnectionMode? connectionMode,
             global::Novu.ChannelConnectionsControllerListChannelConnectionsChannel? channel,
             global::Novu.ProvidersIdEnum? providerId,
             string? integrationIdentifier,
@@ -85,6 +87,7 @@ namespace Novu
         /// <param name="orderBy"></param>
         /// <param name="includeCursor"></param>
         /// <param name="subscriberId"></param>
+        /// <param name="connectionMode"></param>
         /// <param name="channel"></param>
         /// <param name="providerId">
         /// Provider ID of the job
@@ -102,6 +105,7 @@ namespace Novu
             string? orderBy = default,
             bool? includeCursor = default,
             string? subscriberId = default,
+            global::Novu.ChannelConnectionsControllerListChannelConnectionsConnectionMode? connectionMode = default,
             global::Novu.ChannelConnectionsControllerListChannelConnectionsChannel? channel = default,
             global::Novu.ProvidersIdEnum? providerId = default,
             string? integrationIdentifier = default,
@@ -117,6 +121,7 @@ namespace Novu
                 orderBy: orderBy,
                 includeCursor: includeCursor,
                 subscriberId: subscriberId,
+                connectionMode: connectionMode,
                 channel: channel,
                 providerId: providerId,
                 integrationIdentifier: integrationIdentifier,
@@ -138,6 +143,7 @@ namespace Novu
         /// <param name="orderBy"></param>
         /// <param name="includeCursor"></param>
         /// <param name="subscriberId"></param>
+        /// <param name="connectionMode"></param>
         /// <param name="channel"></param>
         /// <param name="providerId">
         /// Provider ID of the job
@@ -155,6 +161,7 @@ namespace Novu
             string? orderBy = default,
             bool? includeCursor = default,
             string? subscriberId = default,
+            global::Novu.ChannelConnectionsControllerListChannelConnectionsConnectionMode? connectionMode = default,
             global::Novu.ChannelConnectionsControllerListChannelConnectionsChannel? channel = default,
             global::Novu.ProvidersIdEnum? providerId = default,
             string? integrationIdentifier = default,
@@ -173,6 +180,7 @@ namespace Novu
                 orderBy: ref orderBy,
                 includeCursor: ref includeCursor,
                 subscriberId: ref subscriberId,
+                connectionMode: ref connectionMode,
                 channel: ref channel,
                 providerId: ref providerId,
                 integrationIdentifier: ref integrationIdentifier,
@@ -214,6 +222,7 @@ namespace Novu
                                 .AddOptionalParameter("orderBy", orderBy)
                                 .AddOptionalParameter("includeCursor", includeCursor?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("subscriberId", subscriberId)
+                                .AddOptionalParameter("connectionMode", connectionMode?.ToValueString())
                                 .AddOptionalParameter("channel", channel?.ToValueString())
                                 .AddOptionalParameter("providerId", providerId?.ToValueString())
                                 .AddOptionalParameter("integrationIdentifier", integrationIdentifier)
@@ -249,6 +258,7 @@ namespace Novu
                     orderBy: orderBy,
                     includeCursor: includeCursor,
                     subscriberId: subscriberId,
+                    connectionMode: connectionMode,
                     channel: channel,
                     providerId: providerId,
                     integrationIdentifier: integrationIdentifier,
