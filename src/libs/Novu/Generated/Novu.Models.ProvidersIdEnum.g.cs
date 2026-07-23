@@ -283,6 +283,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        RuachSms,
+        /// <summary>
+        /// 
+        /// </summary>
         Ryver,
         /// <summary>
         /// 
@@ -454,6 +458,7 @@ namespace Novu
                 ProvidersIdEnum.Resend => "resend",
                 ProvidersIdEnum.RingCentral => "ring-central",
                 ProvidersIdEnum.RocketChat => "rocket-chat",
+                ProvidersIdEnum.RuachSms => "ruach-sms",
                 ProvidersIdEnum.Ryver => "ryver",
                 ProvidersIdEnum.Sendblue => "sendblue",
                 ProvidersIdEnum.Sendchamp => "sendchamp",
@@ -555,6 +560,7 @@ namespace Novu
                 "resend" => ProvidersIdEnum.Resend,
                 "ring-central" => ProvidersIdEnum.RingCentral,
                 "rocket-chat" => ProvidersIdEnum.RocketChat,
+                "ruach-sms" => ProvidersIdEnum.RuachSms,
                 "ryver" => ProvidersIdEnum.Ryver,
                 "sendblue" => ProvidersIdEnum.Sendblue,
                 "sendchamp" => ProvidersIdEnum.Sendchamp,

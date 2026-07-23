@@ -27,6 +27,12 @@ namespace Novu
         public required string SubscriberId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("context")]
+        public object? Context { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -43,15 +49,18 @@ namespace Novu
         /// External subscriber identifier to link to their chat identity<br/>
         /// Example: subscriber-123
         /// </param>
+        /// <param name="context"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LinkChannelEndpointRequestDto(
             string integrationIdentifier,
-            string subscriberId)
+            string subscriberId,
+            object? context)
         {
             this.IntegrationIdentifier = integrationIdentifier ?? throw new global::System.ArgumentNullException(nameof(integrationIdentifier));
             this.SubscriberId = subscriberId ?? throw new global::System.ArgumentNullException(nameof(subscriberId));
+            this.Context = context;
         }
 
         /// <summary>

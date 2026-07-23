@@ -933,6 +933,10 @@ namespace Novu
         /// Example: slack-connection-abc123
         /// </param>
         /// <param name="context"></param>
+        /// <param name="contextHash">
+        /// HMAC-SHA256 of the canonicalized `context`, signed with the tenant environment secret key (the same "Inbox with context" signing scheme). Required when the integration has HMAC validation enabled and the session did not already HMAC-verify the context, so the per-user link carries a trustworthy subscriber/tenant binding.<br/>
+        /// Example: a1b2c3d4e5f6...
+        /// </param>
         /// <param name="userScope">
         /// **Slack only**: User-level OAuth scopes for "Sign in with Slack". Defaults to: identity.basic. **Webex**: Optional Webex scopes for people/me; defaults to spark:people_read. **MS Teams**: ignored — uses delegated OpenID scopes (openid, profile, User.Read).<br/>
         /// Example: [identity.basic]
@@ -945,6 +949,7 @@ namespace Novu
             string integrationIdentifier,
             string? connectionIdentifier = default,
             object? context = default,
+            string? contextHash = default,
             global::System.Collections.Generic.IList<string>? userScope = default,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -955,6 +960,7 @@ namespace Novu
                 IntegrationIdentifier = integrationIdentifier,
                 ConnectionIdentifier = connectionIdentifier,
                 Context = context,
+                ContextHash = contextHash,
                 UserScope = userScope,
             };
 

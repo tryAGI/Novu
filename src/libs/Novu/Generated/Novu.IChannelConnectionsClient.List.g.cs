@@ -15,6 +15,7 @@ namespace Novu
         /// <param name="orderBy"></param>
         /// <param name="includeCursor"></param>
         /// <param name="subscriberId"></param>
+        /// <param name="connectionMode"></param>
         /// <param name="channel"></param>
         /// <param name="providerId">
         /// Provider ID of the job
@@ -32,6 +33,7 @@ namespace Novu
             string? orderBy = default,
             bool? includeCursor = default,
             string? subscriberId = default,
+            global::Novu.ChannelConnectionsControllerListChannelConnectionsConnectionMode? connectionMode = default,
             global::Novu.ChannelConnectionsControllerListChannelConnectionsChannel? channel = default,
             global::Novu.ProvidersIdEnum? providerId = default,
             string? integrationIdentifier = default,
@@ -49,6 +51,7 @@ namespace Novu
         /// <param name="orderBy"></param>
         /// <param name="includeCursor"></param>
         /// <param name="subscriberId"></param>
+        /// <param name="connectionMode"></param>
         /// <param name="channel"></param>
         /// <param name="providerId">
         /// Provider ID of the job
@@ -66,6 +69,7 @@ namespace Novu
             string? orderBy = default,
             bool? includeCursor = default,
             string? subscriberId = default,
+            global::Novu.ChannelConnectionsControllerListChannelConnectionsConnectionMode? connectionMode = default,
             global::Novu.ChannelConnectionsControllerListChannelConnectionsChannel? channel = default,
             global::Novu.ProvidersIdEnum? providerId = default,
             string? integrationIdentifier = default,

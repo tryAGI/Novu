@@ -284,6 +284,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        RuachSms,
+        /// <summary>
+        /// 
+        /// </summary>
         Ryver,
         /// <summary>
         /// 
@@ -455,6 +459,7 @@ namespace Novu
                 GetChannelConnectionResponseDtoProviderId.Resend => "resend",
                 GetChannelConnectionResponseDtoProviderId.RingCentral => "ring-central",
                 GetChannelConnectionResponseDtoProviderId.RocketChat => "rocket-chat",
+                GetChannelConnectionResponseDtoProviderId.RuachSms => "ruach-sms",
                 GetChannelConnectionResponseDtoProviderId.Ryver => "ryver",
                 GetChannelConnectionResponseDtoProviderId.Sendblue => "sendblue",
                 GetChannelConnectionResponseDtoProviderId.Sendchamp => "sendchamp",
@@ -556,6 +561,7 @@ namespace Novu
                 "resend" => GetChannelConnectionResponseDtoProviderId.Resend,
                 "ring-central" => GetChannelConnectionResponseDtoProviderId.RingCentral,
                 "rocket-chat" => GetChannelConnectionResponseDtoProviderId.RocketChat,
+                "ruach-sms" => GetChannelConnectionResponseDtoProviderId.RuachSms,
                 "ryver" => GetChannelConnectionResponseDtoProviderId.Ryver,
                 "sendblue" => GetChannelConnectionResponseDtoProviderId.Sendblue,
                 "sendchamp" => GetChannelConnectionResponseDtoProviderId.Sendchamp,

@@ -78,8 +78,7 @@ namespace Novu
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("origin")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ResourceOriginEnumJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Novu.ResourceOriginEnum Origin { get; set; }
+        public global::Novu.ResourceOriginEnum? Origin { get; set; }
 
         /// <summary>
         /// Severity of the workflow
@@ -106,9 +105,6 @@ namespace Novu
         /// <param name="preferences">
         /// Workflow preferences
         /// </param>
-        /// <param name="origin">
-        /// Origin of the layout
-        /// </param>
         /// <param name="description">
         /// Description of the workflow
         /// </param>
@@ -132,6 +128,9 @@ namespace Novu
         /// <param name="workflowId">
         /// Workflow ID (allowed only for code-first workflows)
         /// </param>
+        /// <param name="origin">
+        /// Origin of the layout
+        /// </param>
         /// <param name="severity">
         /// Severity of the workflow
         /// </param>
@@ -142,7 +141,6 @@ namespace Novu
             string name,
             global::System.Collections.Generic.IList<global::Novu.StepsItem3> steps,
             global::Novu.PreferencesRequestDto preferences,
-            global::Novu.ResourceOriginEnum origin,
             string? description,
             global::System.Collections.Generic.IList<string>? tags,
             bool? active,
@@ -150,6 +148,7 @@ namespace Novu
             object? payloadSchema,
             bool? isTranslationEnabled,
             string? workflowId,
+            global::Novu.ResourceOriginEnum? origin,
             global::Novu.SeverityLevelEnum? severity)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

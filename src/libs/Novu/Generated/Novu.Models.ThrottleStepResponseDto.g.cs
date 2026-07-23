@@ -22,6 +22,12 @@ namespace Novu
         public global::Novu.ThrottleControlDto? ControlValues { get; set; }
 
         /// <summary>
+        /// Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("providerOverrides")]
+        public global::Novu.ProviderOverridesDto? ProviderOverrides { get; set; }
+
+        /// <summary>
         /// JSON Schema for variables, follows the JSON Schema standard
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variables")]
@@ -140,6 +146,9 @@ namespace Novu
         /// <param name="controlValues">
         /// Control values for the throttle step
         /// </param>
+        /// <param name="providerOverrides">
+        /// Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.
+        /// </param>
         /// <param name="issues">
         /// Issues associated with the step
         /// </param>
@@ -161,11 +170,13 @@ namespace Novu
             string workflowId,
             string workflowDatabaseId,
             global::Novu.ThrottleControlDto? controlValues,
+            global::Novu.ProviderOverridesDto? providerOverrides,
             global::Novu.StepIssuesDto? issues,
             string? stepResolverHash)
         {
             this.Controls = controls ?? throw new global::System.ArgumentNullException(nameof(controls));
             this.ControlValues = controlValues;
+            this.ProviderOverrides = providerOverrides;
             this.Variables = variables ?? throw new global::System.ArgumentNullException(nameof(variables));
             this.StepId = stepId ?? throw new global::System.ArgumentNullException(nameof(stepId));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

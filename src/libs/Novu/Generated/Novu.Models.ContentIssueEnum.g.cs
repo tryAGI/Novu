@@ -28,6 +28,10 @@ namespace Novu
         /// 
         /// </summary>
         TierLimitExceeded,
+        /// <summary>
+        /// 
+        /// </summary>
+        UnsupportedProperty,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace Novu
                 ContentIssueEnum.InvalidUrl => "INVALID_URL",
                 ContentIssueEnum.MissingValue => "MISSING_VALUE",
                 ContentIssueEnum.TierLimitExceeded => "TIER_LIMIT_EXCEEDED",
+                ContentIssueEnum.UnsupportedProperty => "UNSUPPORTED_PROPERTY",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace Novu
                 "INVALID_URL" => ContentIssueEnum.InvalidUrl,
                 "MISSING_VALUE" => ContentIssueEnum.MissingValue,
                 "TIER_LIMIT_EXCEEDED" => ContentIssueEnum.TierLimitExceeded,
+                "UNSUPPORTED_PROPERTY" => ContentIssueEnum.UnsupportedProperty,
                 _ => null,
             };
         }
