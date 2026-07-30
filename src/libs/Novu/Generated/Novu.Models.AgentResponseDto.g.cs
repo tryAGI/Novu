@@ -39,7 +39,8 @@ namespace Novu
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("behavior")]
-        public global::Novu.AgentBehaviorDto? Behavior { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Novu.AgentBehaviorDto Behavior { get; set; }
 
         /// <summary>
         /// 
@@ -144,13 +145,13 @@ namespace Novu
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="identifier"></param>
+        /// <param name="behavior"></param>
         /// <param name="active"></param>
         /// <param name="environmentId"></param>
         /// <param name="organizationId"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="description"></param>
-        /// <param name="behavior"></param>
         /// <param name="bridgeUrl">
         /// Production bridge URL
         /// </param>
@@ -183,13 +184,13 @@ namespace Novu
             string id,
             string name,
             string identifier,
+            global::Novu.AgentBehaviorDto behavior,
             bool active,
             string environmentId,
             string organizationId,
             string createdAt,
             string updatedAt,
             string? description,
-            global::Novu.AgentBehaviorDto? behavior,
             string? bridgeUrl,
             string? devBridgeUrl,
             bool? devBridgeActive,
@@ -204,7 +205,7 @@ namespace Novu
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Identifier = identifier ?? throw new global::System.ArgumentNullException(nameof(identifier));
             this.Description = description;
-            this.Behavior = behavior;
+            this.Behavior = behavior ?? throw new global::System.ArgumentNullException(nameof(behavior));
             this.Active = active;
             this.BridgeUrl = bridgeUrl;
             this.DevBridgeUrl = devBridgeUrl;

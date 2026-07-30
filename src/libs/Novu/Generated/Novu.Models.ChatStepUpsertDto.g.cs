@@ -43,6 +43,14 @@ namespace Novu
         public global::Novu.OneOf<global::Novu.ChatControlDto, object>? ControlValues { get; set; }
 
         /// <summary>
+        /// Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time. Keys are ChatProviderIdEnum / ToolProviderIdEnum values (e.g. `slack`, `whatsapp-business`, `pagerduty`). Omit to leave unchanged; pass null to delete all provider overrides; pass an object to replace the full set.<br/>
+        /// Example: {"slack":{"text":"{{payload.title}}","blocks":[{"type":"divider"}]},"whatsapp-business":{"type":"text","text":{"body":"{{payload.title}}"}},"pagerduty":{"severity":"warning","source":"novu","summary":"{{payload.title}}"}}
+        /// </summary>
+        /// <example>{"slack":{"text":"{{payload.title}}","blocks":[{"type":"divider"}]},"whatsapp-business":{"type":"text","text":{"body":"{{payload.title}}"}},"pagerduty":{"severity":"warning","source":"novu","summary":"{{payload.title}}"}}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("providerOverrides")]
+        public global::System.Collections.Generic.Dictionary<string, object>? ProviderOverrides { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -66,6 +74,10 @@ namespace Novu
         /// <param name="controlValues">
         /// Control values for the Chat step.
         /// </param>
+        /// <param name="providerOverrides">
+        /// Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time. Keys are ChatProviderIdEnum / ToolProviderIdEnum values (e.g. `slack`, `whatsapp-business`, `pagerduty`). Omit to leave unchanged; pass null to delete all provider overrides; pass an object to replace the full set.<br/>
+        /// Example: {"slack":{"text":"{{payload.title}}","blocks":[{"type":"divider"}]},"whatsapp-business":{"type":"text","text":{"body":"{{payload.title}}"}},"pagerduty":{"severity":"warning","source":"novu","summary":"{{payload.title}}"}}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,13 +86,15 @@ namespace Novu
             global::Novu.StepTypeEnum type,
             string? id,
             string? stepId,
-            global::Novu.OneOf<global::Novu.ChatControlDto, object>? controlValues)
+            global::Novu.OneOf<global::Novu.ChatControlDto, object>? controlValues,
+            global::System.Collections.Generic.Dictionary<string, object>? providerOverrides)
         {
             this.Id = id;
             this.StepId = stepId;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
             this.ControlValues = controlValues;
+            this.ProviderOverrides = providerOverrides;
         }
 
         /// <summary>

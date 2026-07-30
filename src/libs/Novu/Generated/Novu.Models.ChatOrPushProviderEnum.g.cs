@@ -59,6 +59,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        NovuWebChat,
+        /// <summary>
+        /// 
+        /// </summary>
         OneSignal,
         /// <summary>
         /// 
@@ -130,6 +134,7 @@ namespace Novu
                 ChatOrPushProviderEnum.Mattermost => "mattermost",
                 ChatOrPushProviderEnum.Msteams => "msteams",
                 ChatOrPushProviderEnum.NovuSlack => "novu-slack",
+                ChatOrPushProviderEnum.NovuWebChat => "novu-web-chat",
                 ChatOrPushProviderEnum.OneSignal => "one-signal",
                 ChatOrPushProviderEnum.PushWebhook => "push-webhook",
                 ChatOrPushProviderEnum.PusherBeams => "pusher-beams",
@@ -164,6 +169,7 @@ namespace Novu
                 "mattermost" => ChatOrPushProviderEnum.Mattermost,
                 "msteams" => ChatOrPushProviderEnum.Msteams,
                 "novu-slack" => ChatOrPushProviderEnum.NovuSlack,
+                "novu-web-chat" => ChatOrPushProviderEnum.NovuWebChat,
                 "one-signal" => ChatOrPushProviderEnum.OneSignal,
                 "push-webhook" => ChatOrPushProviderEnum.PushWebhook,
                 "pusher-beams" => ChatOrPushProviderEnum.PusherBeams,

@@ -59,6 +59,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        NovuWebChat,
+        /// <summary>
+        /// 
+        /// </summary>
         OneSignal,
         /// <summary>
         /// 
@@ -130,6 +134,7 @@ namespace Novu
                 SubscriberChannelDtoProviderId.Mattermost => "mattermost",
                 SubscriberChannelDtoProviderId.Msteams => "msteams",
                 SubscriberChannelDtoProviderId.NovuSlack => "novu-slack",
+                SubscriberChannelDtoProviderId.NovuWebChat => "novu-web-chat",
                 SubscriberChannelDtoProviderId.OneSignal => "one-signal",
                 SubscriberChannelDtoProviderId.PushWebhook => "push-webhook",
                 SubscriberChannelDtoProviderId.PusherBeams => "pusher-beams",
@@ -164,6 +169,7 @@ namespace Novu
                 "mattermost" => SubscriberChannelDtoProviderId.Mattermost,
                 "msteams" => SubscriberChannelDtoProviderId.Msteams,
                 "novu-slack" => SubscriberChannelDtoProviderId.NovuSlack,
+                "novu-web-chat" => SubscriberChannelDtoProviderId.NovuWebChat,
                 "one-signal" => SubscriberChannelDtoProviderId.OneSignal,
                 "push-webhook" => SubscriberChannelDtoProviderId.PushWebhook,
                 "pusher-beams" => SubscriberChannelDtoProviderId.PusherBeams,

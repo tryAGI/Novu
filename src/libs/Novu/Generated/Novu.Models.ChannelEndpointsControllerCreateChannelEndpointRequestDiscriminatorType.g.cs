@@ -11,6 +11,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        GrafanaOncallIntegration,
+        /// <summary>
+        /// 
+        /// </summary>
         LineUser,
         /// <summary>
         /// 
@@ -47,6 +51,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        ToolWebhook,
+        /// <summary>
+        /// 
+        /// </summary>
         WebexPerson,
         /// <summary>
         /// 
@@ -70,6 +78,7 @@ namespace Novu
         {
             return value switch
             {
+                ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.GrafanaOncallIntegration => "grafana_oncall_integration",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.LineUser => "line_user",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsChannel => "ms_teams_channel",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsUser => "ms_teams_user",
@@ -79,6 +88,7 @@ namespace Novu
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackChannel => "slack_channel",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackUser => "slack_user",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.TelegramChat => "telegram_chat",
+                ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.ToolWebhook => "tool_webhook",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.WebexPerson => "webex_person",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.WebexRoom => "webex_room",
                 ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.Webhook => "webhook",
@@ -92,6 +102,7 @@ namespace Novu
         {
             return value switch
             {
+                "grafana_oncall_integration" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.GrafanaOncallIntegration,
                 "line_user" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.LineUser,
                 "ms_teams_channel" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsChannel,
                 "ms_teams_user" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.MsTeamsUser,
@@ -101,6 +112,7 @@ namespace Novu
                 "slack_channel" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackChannel,
                 "slack_user" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.SlackUser,
                 "telegram_chat" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.TelegramChat,
+                "tool_webhook" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.ToolWebhook,
                 "webex_person" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.WebexPerson,
                 "webex_room" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.WebexRoom,
                 "webhook" => ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.Webhook,

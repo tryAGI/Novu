@@ -12,6 +12,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        GrafanaOncallIntegration,
+        /// <summary>
+        /// 
+        /// </summary>
         LineUser,
         /// <summary>
         /// 
@@ -48,6 +52,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        ToolWebhook,
+        /// <summary>
+        /// 
+        /// </summary>
         WebexPerson,
         /// <summary>
         /// 
@@ -71,6 +79,7 @@ namespace Novu
         {
             return value switch
             {
+                GetChannelEndpointResponseDtoType.GrafanaOncallIntegration => "grafana_oncall_integration",
                 GetChannelEndpointResponseDtoType.LineUser => "line_user",
                 GetChannelEndpointResponseDtoType.MsTeamsChannel => "ms_teams_channel",
                 GetChannelEndpointResponseDtoType.MsTeamsUser => "ms_teams_user",
@@ -80,6 +89,7 @@ namespace Novu
                 GetChannelEndpointResponseDtoType.SlackChannel => "slack_channel",
                 GetChannelEndpointResponseDtoType.SlackUser => "slack_user",
                 GetChannelEndpointResponseDtoType.TelegramChat => "telegram_chat",
+                GetChannelEndpointResponseDtoType.ToolWebhook => "tool_webhook",
                 GetChannelEndpointResponseDtoType.WebexPerson => "webex_person",
                 GetChannelEndpointResponseDtoType.WebexRoom => "webex_room",
                 GetChannelEndpointResponseDtoType.Webhook => "webhook",
@@ -93,6 +103,7 @@ namespace Novu
         {
             return value switch
             {
+                "grafana_oncall_integration" => GetChannelEndpointResponseDtoType.GrafanaOncallIntegration,
                 "line_user" => GetChannelEndpointResponseDtoType.LineUser,
                 "ms_teams_channel" => GetChannelEndpointResponseDtoType.MsTeamsChannel,
                 "ms_teams_user" => GetChannelEndpointResponseDtoType.MsTeamsUser,
@@ -102,6 +113,7 @@ namespace Novu
                 "slack_channel" => GetChannelEndpointResponseDtoType.SlackChannel,
                 "slack_user" => GetChannelEndpointResponseDtoType.SlackUser,
                 "telegram_chat" => GetChannelEndpointResponseDtoType.TelegramChat,
+                "tool_webhook" => GetChannelEndpointResponseDtoType.ToolWebhook,
                 "webex_person" => GetChannelEndpointResponseDtoType.WebexPerson,
                 "webex_room" => GetChannelEndpointResponseDtoType.WebexRoom,
                 "webhook" => GetChannelEndpointResponseDtoType.Webhook,

@@ -9,7 +9,7 @@ namespace Novu
     public sealed partial class PagerDutyServiceEndpointDto
     {
         /// <summary>
-        /// PagerDuty Events API v2 integration key (32-character alphanumeric string). Stored encrypted on the linked channel connection.<br/>
+        /// PagerDuty Events API v2 integration key (32-character alphanumeric string). Encrypted at rest on the channel endpoint (`endpoint` field).<br/>
         /// Example: R0UTINGK3YEXAMPLE000000000000000
         /// </summary>
         /// <example>R0UTINGK3YEXAMPLE000000000000000</example>
@@ -37,7 +37,7 @@ namespace Novu
         /// Initializes a new instance of the <see cref="PagerDutyServiceEndpointDto" /> class.
         /// </summary>
         /// <param name="routingKey">
-        /// PagerDuty Events API v2 integration key (32-character alphanumeric string). Stored encrypted on the linked channel connection.<br/>
+        /// PagerDuty Events API v2 integration key (32-character alphanumeric string). Encrypted at rest on the channel endpoint (`endpoint` field).<br/>
         /// Example: R0UTINGK3YEXAMPLE000000000000000
         /// </param>
         /// <param name="region">

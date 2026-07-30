@@ -314,6 +314,43 @@ namespace Novu
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Novu.ToolStepUpsertDto? Tool { get; init; }
+#else
+        public global::Novu.ToolStepUpsertDto? Tool { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+#endif
+        public bool IsTool => Tool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.ToolStepUpsertDto? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.ToolStepUpsertDto PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Novu.CustomStepUpsertDto? Custom { get; init; }
 #else
         public global::Novu.CustomStepUpsertDto? Custom { get; }
@@ -570,6 +607,29 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator StepsItem2(global::Novu.ToolStepUpsertDto value) => new StepsItem2((global::Novu.ToolStepUpsertDto?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Novu.ToolStepUpsertDto?(StepsItem2 @this) => @this.Tool;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public StepsItem2(global::Novu.ToolStepUpsertDto? value)
+        {
+            Tool = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StepsItem2 FromTool(global::Novu.ToolStepUpsertDto? value) => new StepsItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StepsItem2(global::Novu.CustomStepUpsertDto value) => new StepsItem2((global::Novu.CustomStepUpsertDto?)value);
 
         /// <summary>
@@ -626,6 +686,7 @@ namespace Novu
             global::Novu.DelayStepUpsertDto? delay,
             global::Novu.DigestStepUpsertDto? digest,
             global::Novu.ThrottleStepUpsertDto? throttle,
+            global::Novu.ToolStepUpsertDto? tool,
             global::Novu.CustomStepUpsertDto? custom,
             global::Novu.HttpRequestStepUpsertDto? httpRequest
             )
@@ -640,6 +701,7 @@ namespace Novu
             Delay = delay;
             Digest = digest;
             Throttle = throttle;
+            Tool = tool;
             Custom = custom;
             HttpRequest = httpRequest;
         }
@@ -650,6 +712,7 @@ namespace Novu
         public object? Object =>
             HttpRequest as object ??
             Custom as object ??
+            Tool as object ??
             Throttle as object ??
             Digest as object ??
             Delay as object ??
@@ -672,6 +735,7 @@ namespace Novu
             Delay?.ToString() ??
             Digest?.ToString() ??
             Throttle?.ToString() ??
+            Tool?.ToString() ??
             Custom?.ToString() ??
             HttpRequest?.ToString() 
             ;
@@ -681,7 +745,7 @@ namespace Novu
         /// </summary>
         public bool Validate()
         {
-            return IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && IsDelay && !IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && IsDigest && !IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && IsThrottle && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsCustom && IsHttpRequest;
+            return IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsTool && !IsCustom && !IsHttpRequest || !IsInApp && IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsTool && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsTool && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsTool && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsTool && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && IsDelay && !IsDigest && !IsThrottle && !IsTool && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && IsDigest && !IsThrottle && !IsTool && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && IsThrottle && !IsTool && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && IsTool && !IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsTool && IsCustom && !IsHttpRequest || !IsInApp && !IsEmail && !IsSms && !IsPush && !IsChat && !IsDelay && !IsDigest && !IsThrottle && !IsTool && !IsCustom && IsHttpRequest;
         }
 
         /// <summary>
@@ -696,6 +760,7 @@ namespace Novu
             global::System.Func<global::Novu.DelayStepUpsertDto, TResult>? delay = null,
             global::System.Func<global::Novu.DigestStepUpsertDto, TResult>? digest = null,
             global::System.Func<global::Novu.ThrottleStepUpsertDto, TResult>? throttle = null,
+            global::System.Func<global::Novu.ToolStepUpsertDto, TResult>? tool = null,
             global::System.Func<global::Novu.CustomStepUpsertDto, TResult>? custom = null,
             global::System.Func<global::Novu.HttpRequestStepUpsertDto, TResult>? httpRequest = null,
             bool validate = true)
@@ -737,6 +802,10 @@ namespace Novu
             {
                 return throttle(Throttle!);
             }
+            else if (IsTool && tool != null)
+            {
+                return tool(Tool!);
+            }
             else if (IsCustom && custom != null)
             {
                 return custom(Custom!);
@@ -769,6 +838,8 @@ namespace Novu
 
             global::System.Action<global::Novu.ThrottleStepUpsertDto>? throttle = null,
 
+            global::System.Action<global::Novu.ToolStepUpsertDto>? tool = null,
+
             global::System.Action<global::Novu.CustomStepUpsertDto>? custom = null,
 
             global::System.Action<global::Novu.HttpRequestStepUpsertDto>? httpRequest = null,
@@ -810,6 +881,10 @@ namespace Novu
             else if (IsThrottle)
             {
                 throttle?.Invoke(Throttle!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
             }
             else if (IsCustom)
             {
@@ -833,6 +908,7 @@ namespace Novu
             global::System.Action<global::Novu.DelayStepUpsertDto>? delay = null,
             global::System.Action<global::Novu.DigestStepUpsertDto>? digest = null,
             global::System.Action<global::Novu.ThrottleStepUpsertDto>? throttle = null,
+            global::System.Action<global::Novu.ToolStepUpsertDto>? tool = null,
             global::System.Action<global::Novu.CustomStepUpsertDto>? custom = null,
             global::System.Action<global::Novu.HttpRequestStepUpsertDto>? httpRequest = null,
             bool validate = true)
@@ -873,6 +949,10 @@ namespace Novu
             else if (IsThrottle)
             {
                 throttle?.Invoke(Throttle!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
             }
             else if (IsCustom)
             {
@@ -907,6 +987,8 @@ namespace Novu
                 typeof(global::Novu.DigestStepUpsertDto),
                 Throttle,
                 typeof(global::Novu.ThrottleStepUpsertDto),
+                Tool,
+                typeof(global::Novu.ToolStepUpsertDto),
                 Custom,
                 typeof(global::Novu.CustomStepUpsertDto),
                 HttpRequest,
@@ -935,6 +1017,7 @@ namespace Novu
                 global::System.Collections.Generic.EqualityComparer<global::Novu.DelayStepUpsertDto?>.Default.Equals(Delay, other.Delay) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.DigestStepUpsertDto?>.Default.Equals(Digest, other.Digest) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.ThrottleStepUpsertDto?>.Default.Equals(Throttle, other.Throttle) &&
+                global::System.Collections.Generic.EqualityComparer<global::Novu.ToolStepUpsertDto?>.Default.Equals(Tool, other.Tool) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CustomStepUpsertDto?>.Default.Equals(Custom, other.Custom) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.HttpRequestStepUpsertDto?>.Default.Equals(HttpRequest, other.HttpRequest) 
                 ;

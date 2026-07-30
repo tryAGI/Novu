@@ -22,10 +22,12 @@ namespace Novu
         public global::Novu.CustomControlDto? ControlValues { get; set; }
 
         /// <summary>
-        /// Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.
+        /// Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time. Keys are ChatProviderIdEnum / ToolProviderIdEnum values (e.g. `slack`, `whatsapp-business`, `pagerduty`).<br/>
+        /// Example: {"slack":{"text":"{{payload.title}}","blocks":[{"type":"divider"}]},"whatsapp-business":{"type":"text","text":{"body":"{{payload.title}}"}},"pagerduty":{"severity":"warning","source":"novu","summary":"{{payload.title}}"}}
         /// </summary>
+        /// <example>{"slack":{"text":"{{payload.title}}","blocks":[{"type":"divider"}]},"whatsapp-business":{"type":"text","text":{"body":"{{payload.title}}"}},"pagerduty":{"severity":"warning","source":"novu","summary":"{{payload.title}}"}}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerOverrides")]
-        public global::Novu.ProviderOverridesDto? ProviderOverrides { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, object>? ProviderOverrides { get; set; }
 
         /// <summary>
         /// JSON Schema for variables, follows the JSON Schema standard
@@ -147,7 +149,8 @@ namespace Novu
         /// Control values for the custom step
         /// </param>
         /// <param name="providerOverrides">
-        /// Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time.
+        /// Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time. Keys are ChatProviderIdEnum / ToolProviderIdEnum values (e.g. `slack`, `whatsapp-business`, `pagerduty`).<br/>
+        /// Example: {"slack":{"text":"{{payload.title}}","blocks":[{"type":"divider"}]},"whatsapp-business":{"type":"text","text":{"body":"{{payload.title}}"}},"pagerduty":{"severity":"warning","source":"novu","summary":"{{payload.title}}"}}
         /// </param>
         /// <param name="issues">
         /// Issues associated with the step
@@ -170,7 +173,7 @@ namespace Novu
             string workflowId,
             string workflowDatabaseId,
             global::Novu.CustomControlDto? controlValues,
-            global::Novu.ProviderOverridesDto? providerOverrides,
+            global::System.Collections.Generic.Dictionary<string, object>? providerOverrides,
             global::Novu.StepIssuesDto? issues,
             string? stepResolverHash)
         {
