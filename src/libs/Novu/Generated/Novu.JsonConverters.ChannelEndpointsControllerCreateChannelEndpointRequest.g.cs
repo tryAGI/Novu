@@ -105,6 +105,20 @@ namespace Novu.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateOpsgenieIntegrationEndpointDto)}");
                 opsgenieIntegration = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Novu.CreateGrafanaOnCallIntegrationEndpointDto? grafanaOncallIntegration = default;
+            if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.GrafanaOncallIntegration)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateGrafanaOnCallIntegrationEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateGrafanaOnCallIntegrationEndpointDto> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateGrafanaOnCallIntegrationEndpointDto)}");
+                grafanaOncallIntegration = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Novu.CreateToolWebhookEndpointDto? toolWebhook = default;
+            if (discriminator?.Type == global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType.ToolWebhook)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateToolWebhookEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateToolWebhookEndpointDto> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateToolWebhookEndpointDto)}");
+                toolWebhook = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequest(
                 discriminator?.Type,
@@ -130,7 +144,11 @@ namespace Novu.JsonConverters
 
                 pagerdutyService,
 
-                opsgenieIntegration
+                opsgenieIntegration,
+
+                grafanaOncallIntegration,
+
+                toolWebhook
                 );
 
             return __value;
@@ -216,6 +234,18 @@ namespace Novu.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateOpsgenieIntegrationEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateOpsgenieIntegrationEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateOpsgenieIntegrationEndpointDto).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpsgenieIntegration!, typeInfo);
+            }
+            else if (value.IsGrafanaOncallIntegration)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateGrafanaOnCallIntegrationEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateGrafanaOnCallIntegrationEndpointDto?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateGrafanaOnCallIntegrationEndpointDto).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GrafanaOncallIntegration!, typeInfo);
+            }
+            else if (value.IsToolWebhook)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateToolWebhookEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateToolWebhookEndpointDto?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateToolWebhookEndpointDto).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolWebhook!, typeInfo);
             }
         }
     }

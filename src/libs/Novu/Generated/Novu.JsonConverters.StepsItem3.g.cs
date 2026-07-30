@@ -77,6 +77,13 @@ namespace Novu.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.ThrottleStepUpsertDto)}");
                 throttle = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Novu.ToolStepUpsertDto? tool = default;
+            if (discriminator?.Type == global::Novu.UpdateWorkflowDtoStepDiscriminatorType.Tool)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.ToolStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.ToolStepUpsertDto> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.ToolStepUpsertDto)}");
+                tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Novu.CustomStepUpsertDto? custom = default;
             if (discriminator?.Type == global::Novu.UpdateWorkflowDtoStepDiscriminatorType.Custom)
             {
@@ -109,6 +116,8 @@ namespace Novu.JsonConverters
                 digest,
 
                 throttle,
+
+                tool,
 
                 custom,
 
@@ -174,6 +183,12 @@ namespace Novu.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.ThrottleStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.ThrottleStepUpsertDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.ThrottleStepUpsertDto).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Throttle!, typeInfo);
+            }
+            else if (value.IsTool)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.ToolStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.ToolStepUpsertDto?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.ToolStepUpsertDto).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool!, typeInfo);
             }
             else if (value.IsCustom)
             {

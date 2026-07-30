@@ -9,7 +9,7 @@ namespace Novu
     public sealed partial class OpsgenieIntegrationEndpointDto
     {
         /// <summary>
-        /// Opsgenie API integration key (GenieKey) in UUID format. Stored encrypted on the linked channel connection.<br/>
+        /// Opsgenie API integration key (GenieKey) in UUID format. Encrypted at rest on the channel endpoint (`endpoint` field).<br/>
         /// Example: abcdefg-a25a-4652-883c-73703b12345
         /// </summary>
         /// <example>abcdefg-a25a-4652-883c-73703b12345</example>
@@ -37,7 +37,7 @@ namespace Novu
         /// Initializes a new instance of the <see cref="OpsgenieIntegrationEndpointDto" /> class.
         /// </summary>
         /// <param name="apiKey">
-        /// Opsgenie API integration key (GenieKey) in UUID format. Stored encrypted on the linked channel connection.<br/>
+        /// Opsgenie API integration key (GenieKey) in UUID format. Encrypted at rest on the channel endpoint (`endpoint` field).<br/>
         /// Example: abcdefg-a25a-4652-883c-73703b12345
         /// </param>
         /// <param name="region">

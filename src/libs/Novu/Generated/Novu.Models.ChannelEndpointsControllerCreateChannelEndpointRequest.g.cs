@@ -457,6 +457,80 @@ namespace Novu
         public global::Novu.CreateOpsgenieIntegrationEndpointDto PickOpsgenieIntegration() => IsOpsgenieIntegration
             ? OpsgenieIntegration!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpsgenieIntegration' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Novu.CreateGrafanaOnCallIntegrationEndpointDto? GrafanaOncallIntegration { get; init; }
+#else
+        public global::Novu.CreateGrafanaOnCallIntegrationEndpointDto? GrafanaOncallIntegration { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GrafanaOncallIntegration))]
+#endif
+        public bool IsGrafanaOncallIntegration => GrafanaOncallIntegration != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGrafanaOncallIntegration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreateGrafanaOnCallIntegrationEndpointDto? value)
+        {
+            value = GrafanaOncallIntegration;
+            return IsGrafanaOncallIntegration;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.CreateGrafanaOnCallIntegrationEndpointDto PickGrafanaOncallIntegration() => IsGrafanaOncallIntegration
+            ? GrafanaOncallIntegration!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GrafanaOncallIntegration' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Novu.CreateToolWebhookEndpointDto? ToolWebhook { get; init; }
+#else
+        public global::Novu.CreateToolWebhookEndpointDto? ToolWebhook { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolWebhook))]
+#endif
+        public bool IsToolWebhook => ToolWebhook != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolWebhook(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Novu.CreateToolWebhookEndpointDto? value)
+        {
+            value = ToolWebhook;
+            return IsToolWebhook;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Novu.CreateToolWebhookEndpointDto PickToolWebhook() => IsToolWebhook
+            ? ToolWebhook!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolWebhook' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -736,6 +810,52 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateGrafanaOnCallIntegrationEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateGrafanaOnCallIntegrationEndpointDto?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Novu.CreateGrafanaOnCallIntegrationEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.GrafanaOncallIntegration;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateGrafanaOnCallIntegrationEndpointDto? value)
+        {
+            GrafanaOncallIntegration = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromGrafanaOncallIntegration(global::Novu.CreateGrafanaOnCallIntegrationEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateToolWebhookEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateToolWebhookEndpointDto?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Novu.CreateToolWebhookEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.ToolWebhook;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateToolWebhookEndpointDto? value)
+        {
+            ToolWebhook = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChannelEndpointsControllerCreateChannelEndpointRequest FromToolWebhook(global::Novu.CreateToolWebhookEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(
             global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType? type,
             global::Novu.CreateSlackChannelEndpointDto? slackChannel,
@@ -749,7 +869,9 @@ namespace Novu
             global::Novu.CreateWebexPersonEndpointDto? webexPerson,
             global::Novu.CreateLineUserEndpointDto? lineUser,
             global::Novu.CreatePagerDutyServiceEndpointDto? pagerdutyService,
-            global::Novu.CreateOpsgenieIntegrationEndpointDto? opsgenieIntegration
+            global::Novu.CreateOpsgenieIntegrationEndpointDto? opsgenieIntegration,
+            global::Novu.CreateGrafanaOnCallIntegrationEndpointDto? grafanaOncallIntegration,
+            global::Novu.CreateToolWebhookEndpointDto? toolWebhook
             )
         {
             Type = type;
@@ -766,12 +888,16 @@ namespace Novu
             LineUser = lineUser;
             PagerdutyService = pagerdutyService;
             OpsgenieIntegration = opsgenieIntegration;
+            GrafanaOncallIntegration = grafanaOncallIntegration;
+            ToolWebhook = toolWebhook;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            ToolWebhook as object ??
+            GrafanaOncallIntegration as object ??
             OpsgenieIntegration as object ??
             PagerdutyService as object ??
             LineUser as object ??
@@ -801,7 +927,9 @@ namespace Novu
             WebexPerson?.ToString() ??
             LineUser?.ToString() ??
             PagerdutyService?.ToString() ??
-            OpsgenieIntegration?.ToString() 
+            OpsgenieIntegration?.ToString() ??
+            GrafanaOncallIntegration?.ToString() ??
+            ToolWebhook?.ToString() 
             ;
 
         /// <summary>
@@ -809,7 +937,7 @@ namespace Novu
         /// </summary>
         public bool Validate()
         {
-            return IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && IsPagerdutyService && !IsOpsgenieIntegration || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && IsOpsgenieIntegration;
+            return IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration && !IsGrafanaOncallIntegration && !IsToolWebhook || !IsSlackChannel && IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration && !IsGrafanaOncallIntegration && !IsToolWebhook || !IsSlackChannel && !IsSlackUser && IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration && !IsGrafanaOncallIntegration && !IsToolWebhook || !IsSlackChannel && !IsSlackUser && !IsWebhook && IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration && !IsGrafanaOncallIntegration && !IsToolWebhook || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration && !IsGrafanaOncallIntegration && !IsToolWebhook || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration && !IsGrafanaOncallIntegration && !IsToolWebhook || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration && !IsGrafanaOncallIntegration && !IsToolWebhook || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration && !IsGrafanaOncallIntegration && !IsToolWebhook || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration && !IsGrafanaOncallIntegration && !IsToolWebhook || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration && !IsGrafanaOncallIntegration && !IsToolWebhook || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && IsPagerdutyService && !IsOpsgenieIntegration && !IsGrafanaOncallIntegration && !IsToolWebhook || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && IsOpsgenieIntegration && !IsGrafanaOncallIntegration && !IsToolWebhook || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration && IsGrafanaOncallIntegration && !IsToolWebhook || !IsSlackChannel && !IsSlackUser && !IsWebhook && !IsPhone && !IsMsTeamsChannel && !IsMsTeamsUser && !IsTelegramChat && !IsWebexRoom && !IsWebexPerson && !IsLineUser && !IsPagerdutyService && !IsOpsgenieIntegration && !IsGrafanaOncallIntegration && IsToolWebhook;
         }
 
         /// <summary>
@@ -828,6 +956,8 @@ namespace Novu
             global::System.Func<global::Novu.CreateLineUserEndpointDto, TResult>? lineUser = null,
             global::System.Func<global::Novu.CreatePagerDutyServiceEndpointDto, TResult>? pagerdutyService = null,
             global::System.Func<global::Novu.CreateOpsgenieIntegrationEndpointDto, TResult>? opsgenieIntegration = null,
+            global::System.Func<global::Novu.CreateGrafanaOnCallIntegrationEndpointDto, TResult>? grafanaOncallIntegration = null,
+            global::System.Func<global::Novu.CreateToolWebhookEndpointDto, TResult>? toolWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -883,6 +1013,14 @@ namespace Novu
             {
                 return opsgenieIntegration(OpsgenieIntegration!);
             }
+            else if (IsGrafanaOncallIntegration && grafanaOncallIntegration != null)
+            {
+                return grafanaOncallIntegration(GrafanaOncallIntegration!);
+            }
+            else if (IsToolWebhook && toolWebhook != null)
+            {
+                return toolWebhook(ToolWebhook!);
+            }
 
             return default(TResult);
         }
@@ -914,6 +1052,10 @@ namespace Novu
             global::System.Action<global::Novu.CreatePagerDutyServiceEndpointDto>? pagerdutyService = null,
 
             global::System.Action<global::Novu.CreateOpsgenieIntegrationEndpointDto>? opsgenieIntegration = null,
+
+            global::System.Action<global::Novu.CreateGrafanaOnCallIntegrationEndpointDto>? grafanaOncallIntegration = null,
+
+            global::System.Action<global::Novu.CreateToolWebhookEndpointDto>? toolWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -968,6 +1110,14 @@ namespace Novu
             else if (IsOpsgenieIntegration)
             {
                 opsgenieIntegration?.Invoke(OpsgenieIntegration!);
+            }
+            else if (IsGrafanaOncallIntegration)
+            {
+                grafanaOncallIntegration?.Invoke(GrafanaOncallIntegration!);
+            }
+            else if (IsToolWebhook)
+            {
+                toolWebhook?.Invoke(ToolWebhook!);
             }
         }
 
@@ -987,6 +1137,8 @@ namespace Novu
             global::System.Action<global::Novu.CreateLineUserEndpointDto>? lineUser = null,
             global::System.Action<global::Novu.CreatePagerDutyServiceEndpointDto>? pagerdutyService = null,
             global::System.Action<global::Novu.CreateOpsgenieIntegrationEndpointDto>? opsgenieIntegration = null,
+            global::System.Action<global::Novu.CreateGrafanaOnCallIntegrationEndpointDto>? grafanaOncallIntegration = null,
+            global::System.Action<global::Novu.CreateToolWebhookEndpointDto>? toolWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -1041,6 +1193,14 @@ namespace Novu
             else if (IsOpsgenieIntegration)
             {
                 opsgenieIntegration?.Invoke(OpsgenieIntegration!);
+            }
+            else if (IsGrafanaOncallIntegration)
+            {
+                grafanaOncallIntegration?.Invoke(GrafanaOncallIntegration!);
+            }
+            else if (IsToolWebhook)
+            {
+                toolWebhook?.Invoke(ToolWebhook!);
             }
         }
 
@@ -1075,6 +1235,10 @@ namespace Novu
                 typeof(global::Novu.CreatePagerDutyServiceEndpointDto),
                 OpsgenieIntegration,
                 typeof(global::Novu.CreateOpsgenieIntegrationEndpointDto),
+                GrafanaOncallIntegration,
+                typeof(global::Novu.CreateGrafanaOnCallIntegrationEndpointDto),
+                ToolWebhook,
+                typeof(global::Novu.CreateToolWebhookEndpointDto),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1102,7 +1266,9 @@ namespace Novu
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreateWebexPersonEndpointDto?>.Default.Equals(WebexPerson, other.WebexPerson) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreateLineUserEndpointDto?>.Default.Equals(LineUser, other.LineUser) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreatePagerDutyServiceEndpointDto?>.Default.Equals(PagerdutyService, other.PagerdutyService) &&
-                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateOpsgenieIntegrationEndpointDto?>.Default.Equals(OpsgenieIntegration, other.OpsgenieIntegration) 
+                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateOpsgenieIntegrationEndpointDto?>.Default.Equals(OpsgenieIntegration, other.OpsgenieIntegration) &&
+                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateGrafanaOnCallIntegrationEndpointDto?>.Default.Equals(GrafanaOncallIntegration, other.GrafanaOncallIntegration) &&
+                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateToolWebhookEndpointDto?>.Default.Equals(ToolWebhook, other.ToolWebhook) 
                 ;
         }
 

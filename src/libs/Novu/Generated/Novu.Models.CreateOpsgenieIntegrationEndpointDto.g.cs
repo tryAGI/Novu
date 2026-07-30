@@ -65,7 +65,7 @@ namespace Novu
         public global::Novu.CreateOpsgenieIntegrationEndpointDtoType Type { get; set; }
 
         /// <summary>
-        /// Opsgenie integration endpoint data. The API key is persisted encrypted on the linked ChannelConnection; the ChannelEndpoint itself carries a lightweight connection reference.
+        /// Opsgenie integration endpoint data. `apiKey` is encrypted at rest on the channel endpoint (`endpoint` field); `region` remains plaintext. No linked channel connection.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("endpoint")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -89,7 +89,7 @@ namespace Novu
         /// Example: slack-prod
         /// </param>
         /// <param name="endpoint">
-        /// Opsgenie integration endpoint data. The API key is persisted encrypted on the linked ChannelConnection; the ChannelEndpoint itself carries a lightweight connection reference.
+        /// Opsgenie integration endpoint data. `apiKey` is encrypted at rest on the channel endpoint (`endpoint` field); `region` remains plaintext. No linked channel connection.
         /// </param>
         /// <param name="identifier">
         /// The unique identifier for the channel endpoint. If not provided, one will be generated automatically.<br/>

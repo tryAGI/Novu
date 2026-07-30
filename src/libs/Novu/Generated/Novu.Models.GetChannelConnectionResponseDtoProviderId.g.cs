@@ -120,6 +120,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Grafana,
+        /// <summary>
+        /// 
+        /// </summary>
         GrafanaOnCall,
         /// <summary>
         /// 
@@ -229,6 +233,10 @@ namespace Novu
         /// 
         /// </summary>
         NovuSms,
+        /// <summary>
+        /// 
+        /// </summary>
+        NovuWebChat,
         /// <summary>
         /// 
         /// </summary>
@@ -418,6 +426,7 @@ namespace Novu
                 GetChannelConnectionResponseDtoProviderId.FortySixElks => "forty-six-elks",
                 GetChannelConnectionResponseDtoProviderId.GenericSms => "generic-sms",
                 GetChannelConnectionResponseDtoProviderId.Getstream => "getstream",
+                GetChannelConnectionResponseDtoProviderId.Grafana => "grafana",
                 GetChannelConnectionResponseDtoProviderId.GrafanaOnCall => "grafana-on-call",
                 GetChannelConnectionResponseDtoProviderId.Gupshup => "gupshup",
                 GetChannelConnectionResponseDtoProviderId.Imedia => "imedia",
@@ -446,6 +455,7 @@ namespace Novu
                 GetChannelConnectionResponseDtoProviderId.NovuEmailAgent => "novu-email-agent",
                 GetChannelConnectionResponseDtoProviderId.NovuSlack => "novu-slack",
                 GetChannelConnectionResponseDtoProviderId.NovuSms => "novu-sms",
+                GetChannelConnectionResponseDtoProviderId.NovuWebChat => "novu-web-chat",
                 GetChannelConnectionResponseDtoProviderId.OneSignal => "one-signal",
                 GetChannelConnectionResponseDtoProviderId.Opsgenie => "opsgenie",
                 GetChannelConnectionResponseDtoProviderId.Outlook365 => "outlook365",
@@ -520,6 +530,7 @@ namespace Novu
                 "forty-six-elks" => GetChannelConnectionResponseDtoProviderId.FortySixElks,
                 "generic-sms" => GetChannelConnectionResponseDtoProviderId.GenericSms,
                 "getstream" => GetChannelConnectionResponseDtoProviderId.Getstream,
+                "grafana" => GetChannelConnectionResponseDtoProviderId.Grafana,
                 "grafana-on-call" => GetChannelConnectionResponseDtoProviderId.GrafanaOnCall,
                 "gupshup" => GetChannelConnectionResponseDtoProviderId.Gupshup,
                 "imedia" => GetChannelConnectionResponseDtoProviderId.Imedia,
@@ -548,6 +559,7 @@ namespace Novu
                 "novu-email-agent" => GetChannelConnectionResponseDtoProviderId.NovuEmailAgent,
                 "novu-slack" => GetChannelConnectionResponseDtoProviderId.NovuSlack,
                 "novu-sms" => GetChannelConnectionResponseDtoProviderId.NovuSms,
+                "novu-web-chat" => GetChannelConnectionResponseDtoProviderId.NovuWebChat,
                 "one-signal" => GetChannelConnectionResponseDtoProviderId.OneSignal,
                 "opsgenie" => GetChannelConnectionResponseDtoProviderId.Opsgenie,
                 "outlook365" => GetChannelConnectionResponseDtoProviderId.Outlook365,

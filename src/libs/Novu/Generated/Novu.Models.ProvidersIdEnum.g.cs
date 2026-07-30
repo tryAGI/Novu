@@ -119,6 +119,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        Grafana,
+        /// <summary>
+        /// 
+        /// </summary>
         GrafanaOnCall,
         /// <summary>
         /// 
@@ -228,6 +232,10 @@ namespace Novu
         /// 
         /// </summary>
         NovuSms,
+        /// <summary>
+        /// 
+        /// </summary>
+        NovuWebChat,
         /// <summary>
         /// 
         /// </summary>
@@ -417,6 +425,7 @@ namespace Novu
                 ProvidersIdEnum.FortySixElks => "forty-six-elks",
                 ProvidersIdEnum.GenericSms => "generic-sms",
                 ProvidersIdEnum.Getstream => "getstream",
+                ProvidersIdEnum.Grafana => "grafana",
                 ProvidersIdEnum.GrafanaOnCall => "grafana-on-call",
                 ProvidersIdEnum.Gupshup => "gupshup",
                 ProvidersIdEnum.Imedia => "imedia",
@@ -445,6 +454,7 @@ namespace Novu
                 ProvidersIdEnum.NovuEmailAgent => "novu-email-agent",
                 ProvidersIdEnum.NovuSlack => "novu-slack",
                 ProvidersIdEnum.NovuSms => "novu-sms",
+                ProvidersIdEnum.NovuWebChat => "novu-web-chat",
                 ProvidersIdEnum.OneSignal => "one-signal",
                 ProvidersIdEnum.Opsgenie => "opsgenie",
                 ProvidersIdEnum.Outlook365 => "outlook365",
@@ -519,6 +529,7 @@ namespace Novu
                 "forty-six-elks" => ProvidersIdEnum.FortySixElks,
                 "generic-sms" => ProvidersIdEnum.GenericSms,
                 "getstream" => ProvidersIdEnum.Getstream,
+                "grafana" => ProvidersIdEnum.Grafana,
                 "grafana-on-call" => ProvidersIdEnum.GrafanaOnCall,
                 "gupshup" => ProvidersIdEnum.Gupshup,
                 "imedia" => ProvidersIdEnum.Imedia,
@@ -547,6 +558,7 @@ namespace Novu
                 "novu-email-agent" => ProvidersIdEnum.NovuEmailAgent,
                 "novu-slack" => ProvidersIdEnum.NovuSlack,
                 "novu-sms" => ProvidersIdEnum.NovuSms,
+                "novu-web-chat" => ProvidersIdEnum.NovuWebChat,
                 "one-signal" => ProvidersIdEnum.OneSignal,
                 "opsgenie" => ProvidersIdEnum.Opsgenie,
                 "outlook365" => ProvidersIdEnum.Outlook365,
