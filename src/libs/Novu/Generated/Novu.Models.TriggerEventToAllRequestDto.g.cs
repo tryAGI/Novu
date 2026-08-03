@@ -35,6 +35,14 @@ namespace Novu
         public global::Novu.TriggerOverrides? Overrides { get; set; }
 
         /// <summary>
+        /// Override the workflow-assigned agent for this trigger using the public agent identifier. Omit to use the workflow default; pass null to disable agent routing for this execution.<br/>
+        /// Example: support-agent
+        /// </summary>
+        /// <example>support-agent</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agentId")]
+        public string? AgentId { get; set; }
+
+        /// <summary>
         /// A unique identifier for this transaction, we will generated a UUID if not provided.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transactionId")]
@@ -86,6 +94,10 @@ namespace Novu
         /// This could be used to override provider specific configurations<br/>
         /// Example: {"fcm":{"data":{"key":"value"}}}
         /// </param>
+        /// <param name="agentId">
+        /// Override the workflow-assigned agent for this trigger using the public agent identifier. Omit to use the workflow default; pass null to disable agent routing for this execution.<br/>
+        /// Example: support-agent
+        /// </param>
         /// <param name="transactionId">
         /// A unique identifier for this transaction, we will generated a UUID if not provided.
         /// </param>
@@ -107,6 +119,7 @@ namespace Novu
             string name,
             object payload,
             global::Novu.TriggerOverrides? overrides,
+            string? agentId,
             string? transactionId,
             global::Novu.OneOf<string, global::Novu.SubscriberPayloadDto>? actor,
             global::Novu.OneOf<string, global::Novu.TenantPayloadDto>? tenant,
@@ -115,6 +128,7 @@ namespace Novu
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
             this.Overrides = overrides;
+            this.AgentId = agentId;
             this.TransactionId = transactionId;
             this.Actor = actor;
             this.Tenant = tenant;
