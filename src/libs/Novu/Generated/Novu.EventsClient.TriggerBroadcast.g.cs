@@ -934,6 +934,10 @@ namespace Novu
         /// This could be used to override provider specific configurations<br/>
         /// Example: {"fcm":{"data":{"key":"value"}}}
         /// </param>
+        /// <param name="agentId">
+        /// Override the workflow-assigned agent for this trigger using the public agent identifier. Omit to use the workflow default; pass null to disable agent routing for this execution.<br/>
+        /// Example: support-agent
+        /// </param>
         /// <param name="transactionId">
         /// A unique identifier for this transaction, we will generated a UUID if not provided.
         /// </param>
@@ -955,6 +959,7 @@ namespace Novu
             string name,
             object payload,
             global::Novu.TriggerOverrides? overrides = default,
+            string? agentId = default,
             string? transactionId = default,
             global::Novu.OneOf<string, global::Novu.SubscriberPayloadDto>? actor = default,
             global::Novu.OneOf<string, global::Novu.TenantPayloadDto>? tenant = default,
@@ -967,6 +972,7 @@ namespace Novu
                 Name = name,
                 Payload = payload,
                 Overrides = overrides,
+                AgentId = agentId,
                 TransactionId = transactionId,
                 Actor = actor,
                 Tenant = tenant,

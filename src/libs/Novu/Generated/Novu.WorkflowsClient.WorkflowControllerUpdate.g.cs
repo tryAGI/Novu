@@ -951,6 +951,9 @@ namespace Novu
         /// Enable or disable translations for this workflow<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="agent">
+        /// Optional agent assignment used to route this workflow through an agent's connected channels. Pass null to clear.
+        /// </param>
         /// <param name="requestWorkflowId">
         /// Workflow ID (allowed only for code-first workflows)
         /// </param>
@@ -980,6 +983,7 @@ namespace Novu
             bool? validatePayload = default,
             object? payloadSchema = default,
             bool? isTranslationEnabled = default,
+            global::Novu.WorkflowAgentConfigDto? agent = default,
             string? requestWorkflowId = default,
             global::Novu.ResourceOriginEnum? origin = default,
             global::Novu.SeverityLevelEnum? severity = default,
@@ -995,6 +999,7 @@ namespace Novu
                 ValidatePayload = validatePayload,
                 PayloadSchema = payloadSchema,
                 IsTranslationEnabled = isTranslationEnabled,
+                Agent = agent,
                 WorkflowId = requestWorkflowId,
                 Steps = steps,
                 Preferences = preferences,

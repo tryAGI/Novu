@@ -55,6 +55,10 @@ namespace Novu
         /// This could be used to override provider specific configurations<br/>
         /// Example: {"fcm":{"data":{"key":"value"}}}
         /// </param>
+        /// <param name="agentId">
+        /// Override the workflow-assigned agent for this trigger using the public agent identifier. Omit to use the workflow default; pass null to disable agent routing for this execution.<br/>
+        /// Example: support-agent
+        /// </param>
         /// <param name="to">
         /// The recipients list of people who will receive the notification. Maximum number of recipients can be 100.
         /// </param>
@@ -80,6 +84,7 @@ namespace Novu
             object? payload = default,
             string? bridgeUrl = default,
             global::Novu.TriggerOverrides? overrides = default,
+            string? agentId = default,
             string? transactionId = default,
             global::Novu.OneOf<string, global::Novu.SubscriberPayloadDto>? actor = default,
             global::Novu.OneOf<string, global::Novu.TenantPayloadDto>? tenant = default,

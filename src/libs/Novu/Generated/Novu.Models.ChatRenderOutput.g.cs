@@ -9,11 +9,16 @@ namespace Novu
     public sealed partial class ChatRenderOutput
     {
         /// <summary>
-        /// Body of the chat message
+        /// Body of the chat message. Mutually exclusive with `card`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Body { get; set; }
+        public string? Body { get; set; }
+
+        /// <summary>
+        /// Rich Chat: compiled provider-agnostic card DSL. Mutually exclusive with `body`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("card")]
+        public object? Card { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -25,15 +30,20 @@ namespace Novu
         /// Initializes a new instance of the <see cref="ChatRenderOutput" /> class.
         /// </summary>
         /// <param name="body">
-        /// Body of the chat message
+        /// Body of the chat message. Mutually exclusive with `card`.
+        /// </param>
+        /// <param name="card">
+        /// Rich Chat: compiled provider-agnostic card DSL. Mutually exclusive with `body`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatRenderOutput(
-            string body)
+            string? body,
+            object? card)
         {
-            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.Body = body;
+            this.Card = card;
         }
 
         /// <summary>

@@ -54,6 +54,12 @@ namespace Novu
         public bool? IsTranslationEnabled { get; set; }
 
         /// <summary>
+        /// Optional agent assignment used to route this workflow through an agent's connected channels. Null when unassigned.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
+        public global::Novu.WorkflowAgentConfigDto? Agent { get; set; }
+
+        /// <summary>
         /// Database identifier of the workflow
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_id")]
@@ -224,6 +230,9 @@ namespace Novu
         /// Enable or disable translations for this workflow<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="agent">
+        /// Optional agent assignment used to route this workflow through an agent's connected channels. Null when unassigned.
+        /// </param>
         /// <param name="updatedBy">
         /// User who last updated the workflow
         /// </param>
@@ -263,6 +272,7 @@ namespace Novu
             bool? validatePayload,
             object? payloadSchema,
             bool? isTranslationEnabled,
+            global::Novu.WorkflowAgentConfigDto? agent,
             global::Novu.UserResponseDto? updatedBy,
             string? lastPublishedAt,
             global::Novu.UserResponseDto? lastPublishedBy,
@@ -277,6 +287,7 @@ namespace Novu
             this.ValidatePayload = validatePayload;
             this.PayloadSchema = payloadSchema;
             this.IsTranslationEnabled = isTranslationEnabled;
+            this.Agent = agent;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.WorkflowId = workflowId ?? throw new global::System.ArgumentNullException(nameof(workflowId));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));

@@ -52,6 +52,30 @@ namespace Novu
         public string? LayoutId { get; set; }
 
         /// <summary>
+        /// Sender name and email overrides for this step.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("from")]
+        public global::Novu.EmailFromControlDto? From { get; set; }
+
+        /// <summary>
+        /// When true, sender name/email use the primary email integration defaults and skip workflow agent defaults.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("useProviderDefaults")]
+        public bool? UseProviderDefaults { get; set; }
+
+        /// <summary>
+        /// Step-level Reply-To override. When unset, inherits the workflow agent reply-to.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("replyTo")]
+        public string? ReplyTo { get; set; }
+
+        /// <summary>
+        /// One-line inbox preview text shown next to the subject.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("preheader")]
+        public string? Preheader { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -81,6 +105,18 @@ namespace Novu
         /// <param name="layoutId">
         /// Layout ID to use for the email. Null means no layout, undefined means default layout.
         /// </param>
+        /// <param name="from">
+        /// Sender name and email overrides for this step.
+        /// </param>
+        /// <param name="useProviderDefaults">
+        /// When true, sender name/email use the primary email integration defaults and skip workflow agent defaults.
+        /// </param>
+        /// <param name="replyTo">
+        /// Step-level Reply-To override. When unset, inherits the workflow agent reply-to.
+        /// </param>
+        /// <param name="preheader">
+        /// One-line inbox preview text shown next to the subject.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -90,7 +126,11 @@ namespace Novu
             object? skip,
             global::Novu.EmailControlDtoEditorType? editorType,
             bool? disableOutputSanitization,
-            string? layoutId)
+            string? layoutId,
+            global::Novu.EmailFromControlDto? from,
+            bool? useProviderDefaults,
+            string? replyTo,
+            string? preheader)
         {
             this.Skip = skip;
             this.Subject = subject ?? throw new global::System.ArgumentNullException(nameof(subject));
@@ -98,6 +138,10 @@ namespace Novu
             this.EditorType = editorType;
             this.DisableOutputSanitization = disableOutputSanitization;
             this.LayoutId = layoutId;
+            this.From = from;
+            this.UseProviderDefaults = useProviderDefaults;
+            this.ReplyTo = replyTo;
+            this.Preheader = preheader;
         }
 
         /// <summary>

@@ -7430,7 +7430,7 @@
         "x-speakeasy-name-override": "delete",
         "x-speakeasy-group": "Agents",
         "summary": "Delete an agent",
-        "description": "Delete an agent by identifier and remove all agent-integration links. For managed-runtime agents, pass `deleteFromProvider=true` to also archive the agent on the provider side (e.g. Anthropic). By default only the Novu record is deleted and the provider agent is left intact.",
+        "description": "Delete an agent by identifier, remove all agent-integration links, and clear the agent assignment from any workflows that reference it. For managed-runtime agents, pass `deleteFromProvider=true` to also archive the agent on the provider side (e.g. Anthropic). By default only the Novu record is deleted and the provider agent is left intact.",
         "parameters": [
           {
             "name": "identifier",
@@ -70358,6 +70358,12 @@
               }
             ]
           },
+          "agentId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Override the workflow-assigned agent for this trigger using the public agent identifier. Omit to use the workflow default; pass null to disable agent routing for this execution.",
+            "example": "support-agent"
+          },
           "to": {
             "description": "The recipients list of people who will receive the notification. Maximum number of recipients can be 100.",
             "oneOf": [
@@ -70512,6 +70518,12 @@
                 "$ref": "#/components/schemas/TriggerOverrides"
               }
             ]
+          },
+          "agentId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Override the workflow-assigned agent for this trigger using the public agent identifier. Omit to use the workflow default; pass null to disable agent routing for this execution.",
+            "example": "support-agent"
           },
           "transactionId": {
             "type": "string",
@@ -79933,6 +79945,19 @@
           "workflowDatabaseId"
         ]
       },
+      "EmailFromControlDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "Sender email address override for this step."
+          },
+          "name": {
+            "type": "string",
+            "description": "Sender display name override for this step."
+          }
+        }
+      },
       "EmailControlDto": {
         "type": "object",
         "properties": {
@@ -79997,6 +80022,27 @@
             "type": "string",
             "description": "Layout ID to use for the email. Null means no layout, undefined means default layout.",
             "nullable": true
+          },
+          "from": {
+            "description": "Sender name and email overrides for this step.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EmailFromControlDto"
+              }
+            ]
+          },
+          "useProviderDefaults": {
+            "type": "boolean",
+            "description": "When true, sender name/email use the primary email integration defaults and skip workflow agent defaults."
+          },
+          "replyTo": {
+            "type": "string",
+            "description": "Step-level Reply-To override. When unset, inherits the workflow agent reply-to."
+          },
+          "preheader": {
+            "type": "string",
+            "description": "One-line inbox preview text shown next to the subject.",
+            "maxLength": 84
           }
         },
         "required": [
@@ -82162,6 +82208,30 @@
           "workflowDatabaseId"
         ]
       },
+      "WorkflowAgentConfigDto": {
+        "type": "object",
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "Public agent identifier used to route this workflow through an agent's connected channels."
+          },
+          "providers": {
+            "type": "object",
+            "description": "Optional per-provider overrides keyed by providerId (e.g. novu-email-agent). Today only Novu Email replyTo is supported.",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "replyTo": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "identifier"
+        ]
+      },
       "WorkflowPreferenceDto": {
         "type": "object",
         "properties": {
@@ -82302,6 +82372,15 @@
             "type": "boolean",
             "description": "Enable or disable translations for this workflow",
             "default": false
+          },
+          "agent": {
+            "description": "Optional agent assignment used to route this workflow through an agent's connected channels. Null when unassigned.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/WorkflowAgentConfigDto"
+              }
+            ]
           },
           "_id": {
             "type": "string",
@@ -82999,6 +83078,15 @@
             "description": "Enable or disable translations for this workflow",
             "default": false
           },
+          "agent": {
+            "description": "Optional agent assignment used to route this workflow through an agent's connected channels. Pass null to clear.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/WorkflowAgentConfigDto"
+              }
+            ]
+          },
           "workflowId": {
             "type": "string",
             "pattern": "SLUG_IDENTIFIER_REGEX",
@@ -83131,6 +83219,15 @@
             "type": "boolean",
             "description": "Enable or disable translations for this workflow",
             "default": false
+          },
+          "agent": {
+            "description": "Optional agent assignment used to route this workflow through an agent's connected channels. Pass null to clear.",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/WorkflowAgentConfigDto"
+              }
+            ]
           },
           "workflowId": {
             "type": "string",
@@ -83497,12 +83594,14 @@
         "properties": {
           "body": {
             "type": "string",
-            "description": "Body of the chat message"
+            "description": "Body of the chat message. Mutually exclusive with `card`."
+          },
+          "card": {
+            "type": "object",
+            "description": "Rich Chat: compiled provider-agnostic card DSL. Mutually exclusive with `body`.",
+            "additionalProperties": true
           }
-        },
-        "required": [
-          "body"
-        ]
+        }
       },
       "TimeUnitEnum": {
         "type": "string",
@@ -84286,7 +84385,9 @@
         "description": "Reason for the dependency",
         "enum": [
           "LAYOUT_REQUIRED_FOR_WORKFLOW",
-          "LAYOUT_EXISTS_IN_TARGET"
+          "LAYOUT_EXISTS_IN_TARGET",
+          "AGENT_REQUIRED_FOR_WORKFLOW",
+          "AGENT_EXISTS_IN_TARGET"
         ]
       },
       "ResourceDependencyDto": {

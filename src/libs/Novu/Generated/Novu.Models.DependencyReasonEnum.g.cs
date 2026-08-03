@@ -11,6 +11,14 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        AgentExistsInTarget,
+        /// <summary>
+        /// 
+        /// </summary>
+        AgentRequiredForWorkflow,
+        /// <summary>
+        /// 
+        /// </summary>
         LayoutExistsInTarget,
         /// <summary>
         /// 
@@ -30,6 +38,8 @@ namespace Novu
         {
             return value switch
             {
+                DependencyReasonEnum.AgentExistsInTarget => "AGENT_EXISTS_IN_TARGET",
+                DependencyReasonEnum.AgentRequiredForWorkflow => "AGENT_REQUIRED_FOR_WORKFLOW",
                 DependencyReasonEnum.LayoutExistsInTarget => "LAYOUT_EXISTS_IN_TARGET",
                 DependencyReasonEnum.LayoutRequiredForWorkflow => "LAYOUT_REQUIRED_FOR_WORKFLOW",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -42,6 +52,8 @@ namespace Novu
         {
             return value switch
             {
+                "AGENT_EXISTS_IN_TARGET" => DependencyReasonEnum.AgentExistsInTarget,
+                "AGENT_REQUIRED_FOR_WORKFLOW" => DependencyReasonEnum.AgentRequiredForWorkflow,
                 "LAYOUT_EXISTS_IN_TARGET" => DependencyReasonEnum.LayoutExistsInTarget,
                 "LAYOUT_REQUIRED_FOR_WORKFLOW" => DependencyReasonEnum.LayoutRequiredForWorkflow,
                 _ => null,

@@ -44,6 +44,14 @@ namespace Novu
         public global::Novu.TriggerOverrides? Overrides { get; set; }
 
         /// <summary>
+        /// Override the workflow-assigned agent for this trigger using the public agent identifier. Omit to use the workflow default; pass null to disable agent routing for this execution.<br/>
+        /// Example: support-agent
+        /// </summary>
+        /// <example>support-agent</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agentId")]
+        public string? AgentId { get; set; }
+
+        /// <summary>
         /// The recipients list of people who will receive the notification. Maximum number of recipients can be 100.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("to")]
@@ -110,6 +118,10 @@ namespace Novu
         /// This could be used to override provider specific configurations<br/>
         /// Example: {"fcm":{"data":{"key":"value"}}}
         /// </param>
+        /// <param name="agentId">
+        /// Override the workflow-assigned agent for this trigger using the public agent identifier. Omit to use the workflow default; pass null to disable agent routing for this execution.<br/>
+        /// Example: support-agent
+        /// </param>
         /// <param name="transactionId">
         /// A unique identifier for deduplication. If the same **transactionId** is sent again, <br/>
         ///       the trigger is ignored. Useful to prevent duplicate notifications. The retention period depends on your billing tier.
@@ -132,6 +144,7 @@ namespace Novu
             object? payload,
             string? bridgeUrl,
             global::Novu.TriggerOverrides? overrides,
+            string? agentId,
             string? transactionId,
             global::Novu.OneOf<string, global::Novu.SubscriberPayloadDto>? actor,
             global::Novu.OneOf<string, global::Novu.TenantPayloadDto>? tenant,
@@ -141,6 +154,7 @@ namespace Novu
             this.Payload = payload;
             this.BridgeUrl = bridgeUrl;
             this.Overrides = overrides;
+            this.AgentId = agentId;
             this.To = to;
             this.TransactionId = transactionId;
             this.Actor = actor;
