@@ -77584,6 +77584,51 @@
           "subscriberId"
         ]
       },
+      "SubscriptionPreferenceDto": {
+        "type": "object",
+        "properties": {
+          "subscriptionId": {
+            "type": "string",
+            "description": "The unique identifier of the subscription",
+            "example": "64f5e95d3d7946d80d0cb679"
+          },
+          "workflow": {
+            "description": "Workflow information if this is a template-level preference",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/WorkflowDto"
+              }
+            ]
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether the preference is enabled",
+            "example": true
+          },
+          "condition": {
+            "type": "object",
+            "description": "Optional JSON Logic condition evaluated against the trigger payload at fan-out time (for example, `{ \"var\": \"payload.tier\" }`)",
+            "additionalProperties": true,
+            "example": {
+              "and": [
+                {
+                  "===": [
+                    {
+                      "var": "payload.tier"
+                    },
+                    "premium"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "subscriptionId",
+          "enabled"
+        ]
+      },
       "TopicSubscriptionResponseDto": {
         "type": "object",
         "properties": {
@@ -77627,6 +77672,13 @@
             "type": "array",
             "items": {
               "type": "string"
+            }
+          },
+          "preferences": {
+            "description": "The preferences for workflows in this subscription",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubscriptionPreferenceDto"
             }
           }
         },
@@ -78877,51 +78929,6 @@
         "required": [
           "_id",
           "key"
-        ]
-      },
-      "SubscriptionPreferenceDto": {
-        "type": "object",
-        "properties": {
-          "subscriptionId": {
-            "type": "string",
-            "description": "The unique identifier of the subscription",
-            "example": "64f5e95d3d7946d80d0cb679"
-          },
-          "workflow": {
-            "description": "Workflow information if this is a template-level preference",
-            "nullable": true,
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/WorkflowDto"
-              }
-            ]
-          },
-          "enabled": {
-            "type": "boolean",
-            "description": "Whether the preference is enabled",
-            "example": true
-          },
-          "condition": {
-            "type": "object",
-            "description": "Optional JSON Logic condition evaluated against the trigger payload at fan-out time (for example, `{ \"var\": \"payload.tier\" }`)",
-            "additionalProperties": true,
-            "example": {
-              "and": [
-                {
-                  "===": [
-                    {
-                      "var": "payload.tier"
-                    },
-                    "premium"
-                  ]
-                }
-              ]
-            }
-          }
-        },
-        "required": [
-          "subscriptionId",
-          "enabled"
         ]
       },
       "SubscriptionResponseDto": {
