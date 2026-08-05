@@ -58,6 +58,12 @@ namespace Novu
         public global::System.Collections.Generic.IList<string>? ContextKeys { get; set; }
 
         /// <summary>
+        /// The preferences for workflows in this subscription
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("preferences")]
+        public global::System.Collections.Generic.IList<global::Novu.SubscriptionPreferenceDto>? Preferences { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -88,6 +94,9 @@ namespace Novu
         /// Context keys that scope this subscription (e.g., tenant:org-a, project:proj-123)<br/>
         /// Example: [tenant:org-a, project:proj-123]
         /// </param>
+        /// <param name="preferences">
+        /// The preferences for workflows in this subscription
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -97,7 +106,8 @@ namespace Novu
             string createdAt,
             global::Novu.TopicResponseDto topic,
             global::Novu.SubscriberDto subscriber,
-            global::System.Collections.Generic.IList<string>? contextKeys)
+            global::System.Collections.Generic.IList<string>? contextKeys,
+            global::System.Collections.Generic.IList<global::Novu.SubscriptionPreferenceDto>? preferences)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Identifier = identifier ?? throw new global::System.ArgumentNullException(nameof(identifier));
@@ -105,6 +115,7 @@ namespace Novu
             this.Topic = topic ?? throw new global::System.ArgumentNullException(nameof(topic));
             this.Subscriber = subscriber ?? throw new global::System.ArgumentNullException(nameof(subscriber));
             this.ContextKeys = contextKeys;
+            this.Preferences = preferences;
         }
 
         /// <summary>
