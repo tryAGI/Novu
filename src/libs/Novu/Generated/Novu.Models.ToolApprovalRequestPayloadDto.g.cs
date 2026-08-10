@@ -44,6 +44,22 @@ namespace Novu
         public object? Input { get; set; }
 
         /// <summary>
+        /// Server-minted approve action id. When omitted, self-hosted tool-approval:* is minted at persist.<br/>
+        /// Example: tool-approval:approve:apr_01HZX
+        /// </summary>
+        /// <example>tool-approval:approve:apr_01HZX</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("approveActionId")]
+        public string? ApproveActionId { get; set; }
+
+        /// <summary>
+        /// Server-minted deny action id. When omitted, self-hosted tool-approval:* is minted at persist.<br/>
+        /// Example: tool-approval:deny:apr_01HZX
+        /// </summary>
+        /// <example>tool-approval:deny:apr_01HZX</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("denyActionId")]
+        public string? DenyActionId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -68,6 +84,14 @@ namespace Novu
         /// Tool input the model proposed.<br/>
         /// Example: {"orderId":"ORD-42","amountCents":2500}
         /// </param>
+        /// <param name="approveActionId">
+        /// Server-minted approve action id. When omitted, self-hosted tool-approval:* is minted at persist.<br/>
+        /// Example: tool-approval:approve:apr_01HZX
+        /// </param>
+        /// <param name="denyActionId">
+        /// Server-minted deny action id. When omitted, self-hosted tool-approval:* is minted at persist.<br/>
+        /// Example: tool-approval:deny:apr_01HZX
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -75,12 +99,16 @@ namespace Novu
             string approvalId,
             string toolCallId,
             string name,
-            object? input)
+            object? input,
+            string? approveActionId,
+            string? denyActionId)
         {
             this.ApprovalId = approvalId ?? throw new global::System.ArgumentNullException(nameof(approvalId));
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Input = input;
+            this.ApproveActionId = approveActionId;
+            this.DenyActionId = denyActionId;
         }
 
         /// <summary>

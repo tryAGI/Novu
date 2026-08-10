@@ -10,9 +10,9 @@ namespace Novu
     {
         /// <summary>
         /// API key<br/>
-        /// Example: sk_test_1234567890abcdef
+        /// Example: api-key-1234567890abcdef
         /// </summary>
-        /// <example>sk_test_1234567890abcdef</example>
+        /// <example>api-key-1234567890abcdef</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Key { get; set; }
@@ -45,7 +45,7 @@ namespace Novu
         /// </summary>
         /// <param name="key">
         /// API key<br/>
-        /// Example: sk_test_1234567890abcdef
+        /// Example: api-key-1234567890abcdef
         /// </param>
         /// <param name="userId">
         /// User ID associated with the API key<br/>
