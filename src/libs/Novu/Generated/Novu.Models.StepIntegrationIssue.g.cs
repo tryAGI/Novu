@@ -30,6 +30,13 @@ namespace Novu
         public required string Message { get; set; }
 
         /// <summary>
+        /// Blocking severity of the issue. `error` (default when omitted) blocks save; `warning` is a non-blocking notice.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.StepIssueSeverityEnumJsonConverter))]
+        public global::Novu.StepIssueSeverityEnum? Severity { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,17 +54,22 @@ namespace Novu
         /// <param name="variableName">
         /// Name of the variable related to the issue
         /// </param>
+        /// <param name="severity">
+        /// Blocking severity of the issue. `error` (default when omitted) blocks save; `warning` is a non-blocking notice.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public StepIntegrationIssue(
             global::Novu.IntegrationIssueEnum issueType,
             string message,
-            string? variableName)
+            string? variableName,
+            global::Novu.StepIssueSeverityEnum? severity)
         {
             this.IssueType = issueType;
             this.VariableName = variableName;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Severity = severity;
         }
 
         /// <summary>

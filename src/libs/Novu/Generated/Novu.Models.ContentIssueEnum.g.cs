@@ -11,6 +11,14 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        ChatCardInvalidButton,
+        /// <summary>
+        /// 
+        /// </summary>
+        ChatCardLimitExceeded,
+        /// <summary>
+        /// 
+        /// </summary>
         IllegalVariableInControlValue,
         /// <summary>
         /// 
@@ -46,6 +54,8 @@ namespace Novu
         {
             return value switch
             {
+                ContentIssueEnum.ChatCardInvalidButton => "CHAT_CARD_INVALID_BUTTON",
+                ContentIssueEnum.ChatCardLimitExceeded => "CHAT_CARD_LIMIT_EXCEEDED",
                 ContentIssueEnum.IllegalVariableInControlValue => "ILLEGAL_VARIABLE_IN_CONTROL_VALUE",
                 ContentIssueEnum.InvalidFilterArgInVariable => "INVALID_FILTER_ARG_IN_VARIABLE",
                 ContentIssueEnum.InvalidUrl => "INVALID_URL",
@@ -62,6 +72,8 @@ namespace Novu
         {
             return value switch
             {
+                "CHAT_CARD_INVALID_BUTTON" => ContentIssueEnum.ChatCardInvalidButton,
+                "CHAT_CARD_LIMIT_EXCEEDED" => ContentIssueEnum.ChatCardLimitExceeded,
                 "ILLEGAL_VARIABLE_IN_CONTROL_VALUE" => ContentIssueEnum.IllegalVariableInControlValue,
                 "INVALID_FILTER_ARG_IN_VARIABLE" => ContentIssueEnum.InvalidFilterArgInVariable,
                 "INVALID_URL" => ContentIssueEnum.InvalidUrl,
