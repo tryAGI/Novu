@@ -70039,7 +70039,7 @@
               "novu-slack",
               "telegram",
               "sendblue",
-              "novu-web-chat",
+              "novu-agent-chat",
               "fcm",
               "apns",
               "expo",
@@ -71009,7 +71009,7 @@
           "novu-slack",
           "telegram",
           "sendblue",
-          "novu-web-chat",
+          "novu-agent-chat",
           "anthropic",
           "novu-anthropic",
           "anthropic-aws",
@@ -74182,6 +74182,9 @@
           "ipPoolName": {
             "type": "string"
           },
+          "configurationSetName": {
+            "type": "string"
+          },
           "apiKeyRequestHeader": {
             "type": "string"
           },
@@ -74946,6 +74949,10 @@
             "description": "Custom data associated with this context",
             "additionalProperties": true
           },
+          "bridgeUrl": {
+            "type": "string",
+            "description": "Bridge URL override for agent connect, if configured on this context"
+          },
           "createdAt": {
             "type": "string",
             "description": "Creation timestamp"
@@ -74993,6 +75000,11 @@
               }
             },
             "additionalProperties": true
+          },
+          "bridgeUrl": {
+            "type": "string",
+            "description": "Optional bridge URL override for agent connect. When an inbound agent turn resolves this context, its bridge call is routed here instead of the agent default bridge URL. Must be a publicly reachable URL.",
+            "example": "https://tenant-acme.example.com/api/novu"
           }
         },
         "required": [
@@ -75014,6 +75026,12 @@
               }
             },
             "additionalProperties": true
+          },
+          "bridgeUrl": {
+            "type": "string",
+            "nullable": true,
+            "description": "Optional bridge URL override for agent connect. When an inbound agent turn resolves this context, its bridge call is routed here instead of the agent default bridge URL. Must be a publicly reachable URL. Pass null to clear an existing override.",
+            "example": "https://tenant-acme.example.com/api/novu"
           }
         },
         "required": [
@@ -75220,7 +75238,7 @@
           "novu-slack",
           "telegram",
           "sendblue",
-          "novu-web-chat",
+          "novu-agent-chat",
           "fcm",
           "apns",
           "expo",
@@ -78145,6 +78163,7 @@
         "description": "Component type for the UI Schema Property",
         "enum": [
           "EMAIL_EDITOR_SELECT",
+          "CHAT_EDITOR_SELECT",
           "LAYOUT_SELECT",
           "BLOCK_EDITOR",
           "EMAIL_BODY",
@@ -80635,6 +80654,14 @@
           "body": {
             "type": "string",
             "description": "Content of the chat message."
+          },
+          "editorType": {
+            "type": "string",
+            "description": "Type of editor to use for the body. When omitted, inferred from the body: Maily JSON is \"block\", otherwise \"text\".",
+            "enum": [
+              "block",
+              "text"
+            ]
           }
         }
       },
@@ -84732,7 +84759,7 @@
               "novu-slack",
               "telegram",
               "sendblue",
-              "novu-web-chat",
+              "novu-agent-chat",
               "anthropic",
               "novu-anthropic",
               "anthropic-aws",
@@ -86481,7 +86508,7 @@
               "novu-slack",
               "telegram",
               "sendblue",
-              "novu-web-chat",
+              "novu-agent-chat",
               "anthropic",
               "novu-anthropic",
               "anthropic-aws",

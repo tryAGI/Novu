@@ -23,6 +23,13 @@ namespace Novu
         public string? Body { get; set; }
 
         /// <summary>
+        /// Type of editor to use for the body. When omitted, inferred from the body: Maily JSON is "block", otherwise "text".
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("editorType")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ChatControlDtoEditorTypeJsonConverter))]
+        public global::Novu.ChatControlDtoEditorType? EditorType { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,15 +45,20 @@ namespace Novu
         /// <param name="body">
         /// Content of the chat message.
         /// </param>
+        /// <param name="editorType">
+        /// Type of editor to use for the body. When omitted, inferred from the body: Maily JSON is "block", otherwise "text".
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatControlDto(
             object? skip,
-            string? body)
+            string? body,
+            global::Novu.ChatControlDtoEditorType? editorType)
         {
             this.Skip = skip;
             this.Body = body;
+            this.EditorType = editorType;
         }
 
         /// <summary>

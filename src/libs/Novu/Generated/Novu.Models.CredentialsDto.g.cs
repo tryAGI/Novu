@@ -167,6 +167,12 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("configurationSetName")]
+        public string? ConfigurationSetName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apiKeyRequestHeader")]
         public string? ApiKeyRequestHeader { get; set; }
 
@@ -379,6 +385,7 @@ namespace Novu
         /// <param name="hmac"></param>
         /// <param name="serviceAccount"></param>
         /// <param name="ipPoolName"></param>
+        /// <param name="configurationSetName"></param>
         /// <param name="apiKeyRequestHeader"></param>
         /// <param name="secretKeyRequestHeader"></param>
         /// <param name="idPath"></param>
@@ -449,6 +456,7 @@ namespace Novu
             bool? hmac,
             string? serviceAccount,
             string? ipPoolName,
+            string? configurationSetName,
             string? apiKeyRequestHeader,
             string? secretKeyRequestHeader,
             string? idPath,
@@ -506,6 +514,7 @@ namespace Novu
             this.Hmac = hmac;
             this.ServiceAccount = serviceAccount;
             this.IpPoolName = ipPoolName;
+            this.ConfigurationSetName = configurationSetName;
             this.ApiKeyRequestHeader = apiKeyRequestHeader;
             this.SecretKeyRequestHeader = secretKeyRequestHeader;
             this.IdPath = idPath;

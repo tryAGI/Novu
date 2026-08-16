@@ -30,6 +30,12 @@ namespace Novu
         public required object Data { get; set; }
 
         /// <summary>
+        /// Bridge URL override for agent connect, if configured on this context
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bridgeUrl")]
+        public string? BridgeUrl { get; set; }
+
+        /// <summary>
         /// Creation timestamp
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createdAt")]
@@ -67,6 +73,9 @@ namespace Novu
         /// <param name="updatedAt">
         /// Last update timestamp
         /// </param>
+        /// <param name="bridgeUrl">
+        /// Bridge URL override for agent connect, if configured on this context
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -75,11 +84,13 @@ namespace Novu
             string id,
             object data,
             string createdAt,
-            string updatedAt)
+            string updatedAt,
+            string? bridgeUrl)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.BridgeUrl = bridgeUrl;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
         }
