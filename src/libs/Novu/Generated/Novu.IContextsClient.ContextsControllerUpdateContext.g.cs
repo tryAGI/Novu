@@ -54,6 +54,10 @@ namespace Novu
         /// Custom data to associate with this context. Replaces existing data.<br/>
         /// Example: {"tenantName":"Acme Corp","region":"us-east-1","settings":{"theme":"dark"}}
         /// </param>
+        /// <param name="bridgeUrl">
+        /// Optional bridge URL override for agent connect. When an inbound agent turn resolves this context, its bridge call is routed here instead of the agent default bridge URL. Must be a publicly reachable URL. Pass null to clear an existing override.<br/>
+        /// Example: https://tenant-acme.example.com/api/novu
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -61,6 +65,7 @@ namespace Novu
             string id,
             string type,
             object data,
+            string? bridgeUrl = default,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

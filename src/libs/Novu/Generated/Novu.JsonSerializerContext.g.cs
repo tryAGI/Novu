@@ -552,6 +552,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PushControlsMetadataResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PushStepResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChatControlDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChatControlDtoEditorType), TypeInfoPropertyName = "ChatControlDtoEditorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChatControlsMetadataResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChatStepResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayControlDto))]
@@ -1025,7 +1026,6 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ExecutionDetailsStatusEnum?), TypeInfoPropertyName = "NullableExecutionDetailsStatusEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ProvidersIdEnum?), TypeInfoPropertyName = "NullableProvidersIdEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ExecutionDetailsSourceEnum?), TypeInfoPropertyName = "NullableExecutionDetailsSourceEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.BuilderFieldTypeEnum?), TypeInfoPropertyName = "NullableBuilderFieldTypeEnum2")]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1046,6 +1046,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_c8c997b666659e86")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_0421199e9dafb346")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.BuilderFieldTypeEnum?), TypeInfoPropertyName = "NullableBuilderFieldTypeEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.FieldFilterPartDtoOperator?), TypeInfoPropertyName = "NullableFieldFilterPartDtoOperator2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.FieldFilterPartDtoOn?), TypeInfoPropertyName = "NullableFieldFilterPartDtoOn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepFilterDtoValue?), TypeInfoPropertyName = "NullableStepFilterDtoValue2")]
@@ -1160,6 +1161,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepIssueSeverityEnum?), TypeInfoPropertyName = "NullableStepIssueSeverityEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationIssueEnum?), TypeInfoPropertyName = "NullableIntegrationIssueEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlDtoEditorType?), TypeInfoPropertyName = "NullableEmailControlDtoEditorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChatControlDtoEditorType?), TypeInfoPropertyName = "NullableChatControlDtoEditorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayControlDtoType?), TypeInfoPropertyName = "NullableDelayControlDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DelayControlDtoUnit?), TypeInfoPropertyName = "NullableDelayControlDtoUnit2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LookBackWindowDtoUnit?), TypeInfoPropertyName = "NullableLookBackWindowDtoUnit2")]
@@ -1983,6 +1985,10 @@ namespace Novu
                     || typeToConvert == typeof(global::Novu.EmailControlDtoEditorType)
 
                     || typeToConvert == typeof(global::Novu.EmailControlDtoEditorType?)
+
+                    || typeToConvert == typeof(global::Novu.ChatControlDtoEditorType)
+
+                    || typeToConvert == typeof(global::Novu.ChatControlDtoEditorType?)
 
                     || typeToConvert == typeof(global::Novu.DelayControlDtoType)
 
@@ -3489,6 +3495,16 @@ namespace Novu
                 if (typeToConvert == typeof(global::Novu.EmailControlDtoEditorType?))
                 {
                     return new global::Novu.JsonConverters.EmailControlDtoEditorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.ChatControlDtoEditorType))
+                {
+                    return new global::Novu.JsonConverters.ChatControlDtoEditorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.ChatControlDtoEditorType?))
+                {
+                    return new global::Novu.JsonConverters.ChatControlDtoEditorTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Novu.DelayControlDtoType))

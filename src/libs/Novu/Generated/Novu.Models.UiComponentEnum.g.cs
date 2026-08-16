@@ -19,6 +19,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        ChatEditorSelect,
+        /// <summary>
+        /// 
+        /// </summary>
         Data,
         /// <summary>
         /// 
@@ -208,6 +212,7 @@ namespace Novu
             {
                 UiComponentEnum.BlockEditor => "BLOCK_EDITOR",
                 UiComponentEnum.ChatBody => "CHAT_BODY",
+                UiComponentEnum.ChatEditorSelect => "CHAT_EDITOR_SELECT",
                 UiComponentEnum.Data => "DATA",
                 UiComponentEnum.DelayAmount => "DELAY_AMOUNT",
                 UiComponentEnum.DelayCron => "DELAY_CRON",
@@ -264,6 +269,7 @@ namespace Novu
             {
                 "BLOCK_EDITOR" => UiComponentEnum.BlockEditor,
                 "CHAT_BODY" => UiComponentEnum.ChatBody,
+                "CHAT_EDITOR_SELECT" => UiComponentEnum.ChatEditorSelect,
                 "DATA" => UiComponentEnum.Data,
                 "DELAY_AMOUNT" => UiComponentEnum.DelayAmount,
                 "DELAY_CRON" => UiComponentEnum.DelayCron,

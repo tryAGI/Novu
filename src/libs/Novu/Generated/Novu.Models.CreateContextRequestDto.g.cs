@@ -35,6 +35,14 @@ namespace Novu
         public object? Data { get; set; }
 
         /// <summary>
+        /// Optional bridge URL override for agent connect. When an inbound agent turn resolves this context, its bridge call is routed here instead of the agent default bridge URL. Must be a publicly reachable URL.<br/>
+        /// Example: https://tenant-acme.example.com/api/novu
+        /// </summary>
+        /// <example>https://tenant-acme.example.com/api/novu</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bridgeUrl")]
+        public string? BridgeUrl { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,17 +63,23 @@ namespace Novu
         /// Optional custom data to associate with this context.<br/>
         /// Example: {"tenantName":"Acme Corp","region":"us-east-1","settings":{"theme":"dark"}}
         /// </param>
+        /// <param name="bridgeUrl">
+        /// Optional bridge URL override for agent connect. When an inbound agent turn resolves this context, its bridge call is routed here instead of the agent default bridge URL. Must be a publicly reachable URL.<br/>
+        /// Example: https://tenant-acme.example.com/api/novu
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateContextRequestDto(
             string type,
             string id,
-            object? data)
+            object? data,
+            string? bridgeUrl)
         {
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Data = data;
+            this.BridgeUrl = bridgeUrl;
         }
 
         /// <summary>

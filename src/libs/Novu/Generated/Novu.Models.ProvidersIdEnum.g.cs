@@ -215,6 +215,10 @@ namespace Novu
         /// <summary>
         /// 
         /// </summary>
+        NovuAgentChat,
+        /// <summary>
+        /// 
+        /// </summary>
         NovuAnthropic,
         /// <summary>
         /// 
@@ -232,10 +236,6 @@ namespace Novu
         /// 
         /// </summary>
         NovuSms,
-        /// <summary>
-        /// 
-        /// </summary>
-        NovuWebChat,
         /// <summary>
         /// 
         /// </summary>
@@ -449,12 +449,12 @@ namespace Novu
                 ProvidersIdEnum.Nexmo => "nexmo",
                 ProvidersIdEnum.Nodemailer => "nodemailer",
                 ProvidersIdEnum.Novu => "novu",
+                ProvidersIdEnum.NovuAgentChat => "novu-agent-chat",
                 ProvidersIdEnum.NovuAnthropic => "novu-anthropic",
                 ProvidersIdEnum.NovuEmail => "novu-email",
                 ProvidersIdEnum.NovuEmailAgent => "novu-email-agent",
                 ProvidersIdEnum.NovuSlack => "novu-slack",
                 ProvidersIdEnum.NovuSms => "novu-sms",
-                ProvidersIdEnum.NovuWebChat => "novu-web-chat",
                 ProvidersIdEnum.OneSignal => "one-signal",
                 ProvidersIdEnum.Opsgenie => "opsgenie",
                 ProvidersIdEnum.Outlook365 => "outlook365",
@@ -553,12 +553,12 @@ namespace Novu
                 "nexmo" => ProvidersIdEnum.Nexmo,
                 "nodemailer" => ProvidersIdEnum.Nodemailer,
                 "novu" => ProvidersIdEnum.Novu,
+                "novu-agent-chat" => ProvidersIdEnum.NovuAgentChat,
                 "novu-anthropic" => ProvidersIdEnum.NovuAnthropic,
                 "novu-email" => ProvidersIdEnum.NovuEmail,
                 "novu-email-agent" => ProvidersIdEnum.NovuEmailAgent,
                 "novu-slack" => ProvidersIdEnum.NovuSlack,
                 "novu-sms" => ProvidersIdEnum.NovuSms,
-                "novu-web-chat" => ProvidersIdEnum.NovuWebChat,
                 "one-signal" => ProvidersIdEnum.OneSignal,
                 "opsgenie" => ProvidersIdEnum.Opsgenie,
                 "outlook365" => ProvidersIdEnum.Outlook365,
