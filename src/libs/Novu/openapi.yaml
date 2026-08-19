@@ -73016,6 +73016,11 @@
             "type": "string",
             "description": "Server-minted deny action id. When omitted, self-hosted tool-approval:* is minted at persist.",
             "example": "tool-approval:deny:apr_01HZX"
+          },
+          "mcpServerName": {
+            "type": "string",
+            "description": "MCP server name when the gated tool is from an MCP server (for UI labels).",
+            "example": "GitHub"
           }
         },
         "required": [
