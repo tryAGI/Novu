@@ -60,6 +60,14 @@ namespace Novu
         public string? DenyActionId { get; set; }
 
         /// <summary>
+        /// MCP server name when the gated tool is from an MCP server (for UI labels).<br/>
+        /// Example: GitHub
+        /// </summary>
+        /// <example>GitHub</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mcpServerName")]
+        public string? McpServerName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -92,6 +100,10 @@ namespace Novu
         /// Server-minted deny action id. When omitted, self-hosted tool-approval:* is minted at persist.<br/>
         /// Example: tool-approval:deny:apr_01HZX
         /// </param>
+        /// <param name="mcpServerName">
+        /// MCP server name when the gated tool is from an MCP server (for UI labels).<br/>
+        /// Example: GitHub
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -101,7 +113,8 @@ namespace Novu
             string name,
             object? input,
             string? approveActionId,
-            string? denyActionId)
+            string? denyActionId,
+            string? mcpServerName)
         {
             this.ApprovalId = approvalId ?? throw new global::System.ArgumentNullException(nameof(approvalId));
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
@@ -109,6 +122,7 @@ namespace Novu
             this.Input = input;
             this.ApproveActionId = approveActionId;
             this.DenyActionId = denyActionId;
+            this.McpServerName = mcpServerName;
         }
 
         /// <summary>
