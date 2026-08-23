@@ -26,6 +26,14 @@ namespace Novu
         public string? Name { get; set; }
 
         /// <summary>
+        /// Additional custom data associated with the topic. Flat key-value pairs of scalars (string, number, boolean, string[]). Maximum size: 64KB.<br/>
+        /// Example: {"category":"product","priority":1}
+        /// </summary>
+        /// <example>{"category":"product","priority":1}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        public object? Data { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -42,15 +50,21 @@ namespace Novu
         /// The display name for the topic<br/>
         /// Example: Task Title
         /// </param>
+        /// <param name="data">
+        /// Additional custom data associated with the topic. Flat key-value pairs of scalars (string, number, boolean, string[]). Maximum size: 64KB.<br/>
+        /// Example: {"category":"product","priority":1}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateUpdateTopicRequestDto(
             string key,
-            string? name)
+            string? name,
+            object? data)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Name = name;
+            this.Data = data;
         }
 
         /// <summary>

@@ -14,8 +14,15 @@ namespace Novu
         /// </summary>
         /// <example>Updated Topic Name</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// Additional custom data associated with the topic. Flat key-value pairs of scalars (string, number, boolean, string[]). Maximum size: 64KB. Pass null to clear.<br/>
+        /// Example: {"category":"product","priority":1}
+        /// </summary>
+        /// <example>{"category":"product","priority":1}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        public object? Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,13 +37,19 @@ namespace Novu
         /// The display name for the topic<br/>
         /// Example: Updated Topic Name
         /// </param>
+        /// <param name="data">
+        /// Additional custom data associated with the topic. Flat key-value pairs of scalars (string, number, boolean, string[]). Maximum size: 64KB. Pass null to clear.<br/>
+        /// Example: {"category":"product","priority":1}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateTopicRequestDto(
-            string name)
+            string? name,
+            object? data)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Name = name;
+            this.Data = data;
         }
 
         /// <summary>

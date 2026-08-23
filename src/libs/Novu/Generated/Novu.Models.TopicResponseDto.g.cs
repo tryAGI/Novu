@@ -35,6 +35,14 @@ namespace Novu
         public string? Name { get; set; }
 
         /// <summary>
+        /// Additional custom data associated with the topic<br/>
+        /// Example: {"category":"product","priority":1}
+        /// </summary>
+        /// <example>{"category":"product","priority":1}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        public object? Data { get; set; }
+
+        /// <summary>
         /// The date the topic was created<br/>
         /// Example: 2023-08-15T00:00:00.000Z
         /// </summary>
@@ -71,6 +79,10 @@ namespace Novu
         /// The name of the topic<br/>
         /// Example: Product Updates
         /// </param>
+        /// <param name="data">
+        /// Additional custom data associated with the topic<br/>
+        /// Example: {"category":"product","priority":1}
+        /// </param>
         /// <param name="createdAt">
         /// The date the topic was created<br/>
         /// Example: 2023-08-15T00:00:00.000Z
@@ -86,12 +98,14 @@ namespace Novu
             string id,
             string key,
             string? name,
+            object? data,
             string? createdAt,
             string? updatedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Name = name;
+            this.Data = data;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }
