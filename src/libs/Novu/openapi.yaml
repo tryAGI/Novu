@@ -51399,7 +51399,7 @@
         "operationId": "TopicsController_updateTopic",
         "x-speakeasy-name-override": "update",
         "summary": "Update a topic",
-        "description": "Update a topic name by its unique key identifier **topicKey**",
+        "description": "Update a topic name or data by its unique key identifier **topicKey**",
         "parameters": [
           {
             "name": "topicKey",
@@ -71741,6 +71741,15 @@
             "description": "The name of the topic",
             "example": "Product Updates"
           },
+          "data": {
+            "type": "object",
+            "description": "Additional custom data associated with the topic",
+            "additionalProperties": true,
+            "example": {
+              "category": "product",
+              "priority": 1
+            }
+          },
           "createdAt": {
             "type": "string",
             "description": "The date the topic was created",
@@ -78909,6 +78918,16 @@
             "maxLength": 100,
             "description": "The display name for the topic",
             "example": "Task Title"
+          },
+          "data": {
+            "type": "object",
+            "nullable": true,
+            "description": "Additional custom data associated with the topic. Flat key-value pairs of scalars (string, number, boolean, string[]). Maximum size: 64KB.",
+            "additionalProperties": true,
+            "example": {
+              "category": "product",
+              "priority": 1
+            }
           }
         },
         "required": [
@@ -78920,13 +78939,22 @@
         "properties": {
           "name": {
             "type": "string",
+            "minLength": 0,
+            "maxLength": 100,
             "description": "The display name for the topic",
             "example": "Updated Topic Name"
+          },
+          "data": {
+            "type": "object",
+            "nullable": true,
+            "description": "Additional custom data associated with the topic. Flat key-value pairs of scalars (string, number, boolean, string[]). Maximum size: 64KB. Pass null to clear.",
+            "additionalProperties": true,
+            "example": {
+              "category": "product",
+              "priority": 1
+            }
           }
-        },
-        "required": [
-          "name"
-        ]
+        }
       },
       "DeleteTopicResponseDto": {
         "type": "object",
@@ -78958,6 +78986,15 @@
             "type": "string",
             "description": "The name of the topic",
             "example": "Product Updates"
+          },
+          "data": {
+            "type": "object",
+            "description": "Additional custom data associated with the topic",
+            "additionalProperties": true,
+            "example": {
+              "category": "product",
+              "priority": 1
+            }
           }
         },
         "required": [
