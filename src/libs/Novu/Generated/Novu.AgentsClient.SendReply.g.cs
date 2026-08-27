@@ -491,7 +491,7 @@ namespace Novu
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // 
+                            //
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -745,7 +745,7 @@ namespace Novu
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The client has sent too many requests in a given amount of time. 
+                            // The client has sent too many requests in a given amount of time.
                             if ((int)__response.StatusCode == 429)
                             {
                                 string? __content_429 = null;

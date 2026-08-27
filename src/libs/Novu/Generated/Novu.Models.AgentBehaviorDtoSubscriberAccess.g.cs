@@ -9,11 +9,11 @@ namespace Novu
     public enum AgentBehaviorDtoSubscriberAccess
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Open,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Restricted,
     }

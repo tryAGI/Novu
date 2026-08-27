@@ -10,7 +10,7 @@ namespace Novu
     public enum LayoutCreationSourceEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dashboard,
     }

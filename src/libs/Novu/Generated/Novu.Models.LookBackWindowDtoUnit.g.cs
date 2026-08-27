@@ -9,27 +9,27 @@ namespace Novu
     public enum LookBackWindowDtoUnit
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Days,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hours,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minutes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Months,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Seconds,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Weeks,
     }

@@ -9,11 +9,11 @@ namespace Novu
     public enum MessageActionStatusEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Done,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
     }

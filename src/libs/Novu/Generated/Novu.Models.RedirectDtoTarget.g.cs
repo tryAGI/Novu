@@ -9,23 +9,23 @@ namespace Novu
     public enum RedirectDtoTarget
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Blank,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Parent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Self,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Top,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnfencedTop,
     }

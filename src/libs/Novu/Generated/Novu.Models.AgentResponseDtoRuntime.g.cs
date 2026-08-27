@@ -9,11 +9,11 @@ namespace Novu
     public enum AgentResponseDtoRuntime
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Managed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SelfHosted,
     }

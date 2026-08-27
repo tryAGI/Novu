@@ -9,103 +9,103 @@ namespace Novu
     public enum SubscriberChannelDtoProviderId
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Apns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Appio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Discord,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Expo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fcm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Getstream,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GrafanaOnCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Line,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mattermost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Msteams,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NovuAgentChat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NovuSlack,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OneSignal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PushWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PusherBeams,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pushpad,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RocketChat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ryver,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sendblue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Slack,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Telegram,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebexMessaging,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WhatsappBusiness,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Zulip,
     }

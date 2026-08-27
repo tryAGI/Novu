@@ -9,11 +9,11 @@ namespace Novu
     public enum IntegrationIssueEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InboxNotConnected,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MissingIntegration,
     }

@@ -4,18 +4,18 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConfigurationsDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inboundWebhookEnabled")]
         public bool? InboundWebhookEnabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inboundWebhookSigningKey")]
         public string? InboundWebhookSigningKey { get; set; }

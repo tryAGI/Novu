@@ -10,7 +10,7 @@ namespace Novu
     public enum CreateSlackChannelEndpointDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlackChannel,
     }

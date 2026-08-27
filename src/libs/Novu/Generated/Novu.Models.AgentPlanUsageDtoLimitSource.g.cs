@@ -9,11 +9,11 @@ namespace Novu
     public enum AgentPlanUsageDtoLimitSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Plan,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         System,
     }

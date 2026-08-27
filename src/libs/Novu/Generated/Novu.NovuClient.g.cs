@@ -11,7 +11,7 @@ namespace Novu
     public sealed partial class NovuClient : global::Novu.INovuClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://api.novu.co/";
 
@@ -41,7 +41,7 @@ namespace Novu
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Novu.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -51,7 +51,7 @@ namespace Novu
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ActivityClient Activity => new ActivityClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -71,7 +71,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentsIntegrationsClient AgentsIntegrations => new AgentsIntegrationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -81,7 +81,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelConnectionsClient ChannelConnections => new ChannelConnectionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -91,7 +91,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsClient ChannelEndpoints => new ChannelEndpointsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -101,7 +101,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContextsClient Contexts => new ContextsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -121,7 +121,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DomainsAutoConfigureClient DomainsAutoConfigure => new DomainsAutoConfigureClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -131,7 +131,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DomainsRoutesClient DomainsRoutes => new DomainsRoutesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -141,7 +141,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EnvironmentVariablesClient EnvironmentVariables => new EnvironmentVariablesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -201,7 +201,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NotificationsClient Notifications => new NotificationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -221,7 +221,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubscribersCredentialsClient SubscribersCredentials => new SubscribersCredentialsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -231,7 +231,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubscribersNotificationsClient SubscribersNotifications => new SubscribersNotificationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -241,7 +241,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubscribersPreferencesClient SubscribersPreferences => new SubscribersPreferencesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -251,7 +251,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubscribersPropertiesClient SubscribersProperties => new SubscribersPropertiesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -261,7 +261,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubscribersTopicsClient SubscribersTopics => new SubscribersTopicsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -281,7 +281,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TopicsSubscribersClient TopicsSubscribers => new TopicsSubscribersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -291,7 +291,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TopicsSubscriptionsClient TopicsSubscriptions => new TopicsSubscriptionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -311,7 +311,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TranslationsGroupsClient TranslationsGroups => new TranslationsGroupsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -321,7 +321,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TranslationsMasterClient TranslationsMaster => new TranslationsMasterClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -331,7 +331,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TranslationsMaster2Client TranslationsMaster2 => new TranslationsMaster2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -351,7 +351,7 @@ namespace Novu
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WorkflowsStepsClient WorkflowsSteps => new WorkflowsStepsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

@@ -9,7 +9,7 @@ namespace Novu
     public enum WebhookPreferenceDtoWebhookPayloadWrapperObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Preference,
     }

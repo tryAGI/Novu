@@ -4,36 +4,36 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DomainConnectStatusResponseDtoReasonCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DiscoveryNotConfigured,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IncompleteConfiguration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProviderSettingsUnavailable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TemplateNotOnboarded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnsupportedProvider,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UntrustedProviderFlow,
     }

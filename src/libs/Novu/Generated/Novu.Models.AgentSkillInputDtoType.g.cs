@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AgentSkillInputDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anthropic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
     }

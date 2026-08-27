@@ -9,11 +9,11 @@ namespace Novu
     public enum ButtonTypeEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Primary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Secondary,
     }

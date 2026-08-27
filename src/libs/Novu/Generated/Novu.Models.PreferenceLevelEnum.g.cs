@@ -9,11 +9,11 @@ namespace Novu
     public enum PreferenceLevelEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Global,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Template,
     }

@@ -9,7 +9,7 @@ namespace Novu
     public enum DeleteMessageResponseDtoStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deleted,
     }

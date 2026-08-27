@@ -10,59 +10,59 @@ namespace Novu
     public enum GetChannelEndpointResponseDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GrafanaOncallIntegration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LineUser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MsTeamsChannel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MsTeamsUser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpsgenieIntegration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PagerdutyService,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Phone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlackChannel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SlackUser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TelegramChat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebexPerson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebexRoom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webhook,
     }

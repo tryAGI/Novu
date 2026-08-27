@@ -9,51 +9,51 @@ namespace Novu
     public enum UiSchemaGroupEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Delay,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Digest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Email,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HttpRequest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InApp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Layout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Push,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Skip,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Throttle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tool,
     }

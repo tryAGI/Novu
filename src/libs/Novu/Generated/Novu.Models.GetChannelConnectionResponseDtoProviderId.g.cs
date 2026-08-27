@@ -10,379 +10,379 @@ namespace Novu
     public enum GetChannelConnectionResponseDtoProviderId
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AfricasTalking,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AfroMessage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anthropic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnthropicAws,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anypost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Apns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Appio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AzureSms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bandwidth,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Braze,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BrevoSms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BulkSms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BurstSms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Clickatell,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Clicksend,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CmTelecom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Discord,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EazySms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmailWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Emailjs,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Expo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fcm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Firetext,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FortySixElks,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GenericSms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Getstream,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Grafana,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GrafanaOnCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gupshup,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Imedia,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InfobipEmail,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InfobipSms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsendSms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsendproSms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kannel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Line,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mailersend,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mailgun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mailjet,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mailtrap,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mandrill,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Maqsam,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mattermost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Messagebird,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mobishastra,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Msteams,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Netcore,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nexmo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nodemailer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Novu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NovuAgentChat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NovuAnthropic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NovuEmail,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NovuEmailAgent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NovuSlack,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NovuSms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OneSignal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Opsgenie,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Outlook365,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pagerduty,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Plivo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Plunk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Postmark,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PushWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PusherBeams,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pushpad,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Resend,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RingCentral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RocketChat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RuachSms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ryver,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sendblue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sendchamp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sendgrid,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sendinblue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ses,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Simpletexting,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sinch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Slack,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SmsCentral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sms77,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Smsmode,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sparkpost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Telegram,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Telnyx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Termii,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolWebhook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Twilio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unifonic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebexMessaging,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WhatsappBusiness,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Zulip,
     }

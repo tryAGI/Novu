@@ -9,11 +9,11 @@ namespace Novu
     public enum DigestControlDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Regular,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Timed,
     }

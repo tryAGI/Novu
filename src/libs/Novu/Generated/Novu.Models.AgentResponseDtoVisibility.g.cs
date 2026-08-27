@@ -9,11 +9,11 @@ namespace Novu
     public enum AgentResponseDtoVisibility
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Private,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Public,
     }

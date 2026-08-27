@@ -4,19 +4,19 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TestDomainRouteAgentResultDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agentId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AgentId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("httpStatus")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -29,7 +29,7 @@ namespace Novu
         public object? AgentReply { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latencyMs")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -10,7 +10,7 @@ namespace Novu
     public enum CreateWebexPersonEndpointDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebexPerson,
     }

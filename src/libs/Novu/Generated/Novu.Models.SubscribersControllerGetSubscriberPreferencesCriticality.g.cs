@@ -9,15 +9,15 @@ namespace Novu
     public enum SubscribersControllerGetSubscriberPreferencesCriticality
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Critical,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NonCritical,
     }

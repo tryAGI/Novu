@@ -4,39 +4,39 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TestDomainRouteResponseDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("matched")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Matched { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dryRun")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool DryRun { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domainStatus")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.TestDomainRouteResponseDtoDomainStatusJsonConverter))]
         public global::Novu.TestDomainRouteResponseDtoDomainStatus? DomainStatus { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mxRecordConfigured")]
         public bool? MxRecordConfigured { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.TestDomainRouteResponseDtoTypeJsonConverter))]
@@ -55,13 +55,13 @@ namespace Novu
         public object? Payload { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook")]
         public global::Novu.TestDomainRouteWebhookResultDto? Webhook { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
         public global::Novu.TestDomainRouteAgentResultDto? Agent { get; set; }

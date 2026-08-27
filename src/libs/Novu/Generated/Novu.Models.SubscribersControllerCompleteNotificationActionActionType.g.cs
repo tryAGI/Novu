@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SubscribersControllerCompleteNotificationActionActionType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Primary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Secondary,
     }

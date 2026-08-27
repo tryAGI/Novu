@@ -4,12 +4,12 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DomainDiagnosticIssueDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.DomainDiagnosticIssueDtoCodeJsonConverter))]
@@ -17,7 +17,7 @@ namespace Novu
         public required global::Novu.DomainDiagnosticIssueDtoCode Code { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.DomainDiagnosticIssueDtoSeverityJsonConverter))]
@@ -25,7 +25,7 @@ namespace Novu
         public required global::Novu.DomainDiagnosticIssueDtoSeverity Severity { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]

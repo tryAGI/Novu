@@ -10,11 +10,11 @@ namespace Novu
     public enum ThrottleControlDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dynamic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fixed,
     }

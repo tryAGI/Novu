@@ -9,7 +9,7 @@ namespace Novu
     public enum WebhookMessageFailedDtoWebhookPayloadWrapperType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MessageFailed,
     }

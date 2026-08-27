@@ -9,19 +9,19 @@ namespace Novu
     public enum ActorTypeEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SystemCustom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SystemIcon,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

@@ -4,20 +4,20 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum LayoutResponseDtoSortField
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Name,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdatedAt,
     }

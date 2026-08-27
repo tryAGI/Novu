@@ -4,24 +4,24 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessageMarkAsRequestDtoMarkAs
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Read,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Seen,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unread,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unseen,
     }

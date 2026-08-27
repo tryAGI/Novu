@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DigestRegularMetadataType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Backoff,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Regular,
     }

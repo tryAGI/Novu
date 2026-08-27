@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AgentIntegrationResponseDto
     {
@@ -16,28 +16,28 @@ namespace Novu
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_agentId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AgentId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integration")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Novu.AgentIntegrationResponseIntegrationDto Integration { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_environmentId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EnvironmentId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_organizationId")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -50,14 +50,14 @@ namespace Novu
         public object? ConnectedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createdAt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updatedAt")]
         [global::System.Text.Json.Serialization.JsonRequired]

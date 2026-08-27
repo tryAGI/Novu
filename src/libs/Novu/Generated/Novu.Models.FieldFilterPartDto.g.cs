@@ -4,26 +4,26 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class FieldFilterPartDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("field")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Field { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Value { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operator")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.FieldFilterPartDtoOperatorJsonConverter))]
@@ -31,7 +31,7 @@ namespace Novu
         public required global::Novu.FieldFilterPartDtoOperator Operator { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.FieldFilterPartDtoOnJsonConverter))]

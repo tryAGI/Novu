@@ -9,15 +9,15 @@ namespace Novu
     public enum GetWorkflowRunResponseDtoStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processing,
     }

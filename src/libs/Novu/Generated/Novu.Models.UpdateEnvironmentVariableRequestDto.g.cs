@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateEnvironmentVariableRequestDto
     {
@@ -22,13 +22,13 @@ namespace Novu
         public global::Novu.UpdateEnvironmentVariableRequestDtoType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isSecret")]
         public bool? IsSecret { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("values")]
         public global::System.Collections.Generic.IList<global::Novu.EnvironmentVariableValueDto>? Values { get; set; }

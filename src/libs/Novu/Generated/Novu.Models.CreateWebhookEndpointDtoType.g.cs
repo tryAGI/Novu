@@ -10,7 +10,7 @@ namespace Novu
     public enum CreateWebhookEndpointDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webhook,
     }

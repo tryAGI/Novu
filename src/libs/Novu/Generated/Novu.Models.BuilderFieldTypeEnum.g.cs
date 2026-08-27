@@ -4,40 +4,40 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BuilderFieldTypeEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Boolean,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Date,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Group,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         List,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MultiList,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Number,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Statement,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

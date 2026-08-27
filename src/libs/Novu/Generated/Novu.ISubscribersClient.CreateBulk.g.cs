@@ -7,7 +7,7 @@ namespace Novu
         /// <summary>
         /// Bulk create subscribers<br/>
         ///       Using this endpoint multiple subscribers can be created at once. The bulk API is limited to 500 subscribers per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -21,7 +21,7 @@ namespace Novu
         /// <summary>
         /// Bulk create subscribers<br/>
         ///       Using this endpoint multiple subscribers can be created at once. The bulk API is limited to 500 subscribers per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -35,7 +35,7 @@ namespace Novu
         /// <summary>
         /// Bulk create subscribers<br/>
         ///       Using this endpoint multiple subscribers can be created at once. The bulk API is limited to 500 subscribers per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="subscribers">
         /// An array of subscribers to be created in bulk.

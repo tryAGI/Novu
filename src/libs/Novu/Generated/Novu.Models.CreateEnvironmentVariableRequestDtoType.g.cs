@@ -9,7 +9,7 @@ namespace Novu
     public enum CreateEnvironmentVariableRequestDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         String,
     }

@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TimedConfigMonthlyType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Each,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         On,
     }

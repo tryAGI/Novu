@@ -4,19 +4,19 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateChannelConnectionRequestDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Novu.WorkspaceDto Workspace { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auth")]
         [global::System.Text.Json.Serialization.JsonRequired]

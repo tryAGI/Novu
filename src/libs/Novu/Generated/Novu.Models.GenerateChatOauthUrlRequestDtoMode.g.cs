@@ -10,11 +10,11 @@ namespace Novu
     public enum GenerateChatOauthUrlRequestDtoMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Connect,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LinkUser,
     }

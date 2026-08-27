@@ -4,12 +4,12 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GeneratePreviewResponseDtoResultVariant4Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InApp,
     }

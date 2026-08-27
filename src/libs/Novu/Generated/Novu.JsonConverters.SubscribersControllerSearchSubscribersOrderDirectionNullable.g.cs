@@ -20,7 +20,7 @@ namespace Novu.JsonConverters
                     {
                         return global::Novu.SubscribersControllerSearchSubscribersOrderDirectionExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

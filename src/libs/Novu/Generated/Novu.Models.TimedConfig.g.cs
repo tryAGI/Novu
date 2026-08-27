@@ -4,44 +4,44 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TimedConfig
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("atTime")]
         public string? AtTime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weekDays")]
         public global::System.Collections.Generic.IList<global::Novu.TimedConfigWeekDay>? WeekDays { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("monthDays")]
         public global::System.Collections.Generic.IList<string>? MonthDays { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ordinal")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.TimedConfigOrdinalJsonConverter))]
         public global::Novu.TimedConfigOrdinal? Ordinal { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ordinalValue")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.TimedConfigOrdinalValueJsonConverter))]
         public global::Novu.TimedConfigOrdinalValue? OrdinalValue { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("monthlyType")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.TimedConfigMonthlyTypeJsonConverter))]

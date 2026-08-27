@@ -10,7 +10,7 @@ namespace Novu
     public enum CreateLineUserEndpointDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LineUser,
     }

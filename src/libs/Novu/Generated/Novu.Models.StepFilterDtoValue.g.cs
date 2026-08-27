@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum StepFilterDtoValue
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         And,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Or,
     }

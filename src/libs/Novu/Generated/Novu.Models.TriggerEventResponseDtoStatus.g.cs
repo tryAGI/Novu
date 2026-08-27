@@ -9,31 +9,31 @@ namespace Novu
     public enum TriggerEventResponseDtoStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidRecipients,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoTenantFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoWorkflowActiveStepsDefined,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoWorkflowStepsDefined,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TriggerNotActive,
     }

@@ -9,15 +9,15 @@ namespace Novu
     public enum PreferenceOverrideSourceEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Subscriber,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Template,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkflowOverride,
     }

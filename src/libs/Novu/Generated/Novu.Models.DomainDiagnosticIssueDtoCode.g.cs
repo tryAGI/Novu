@@ -4,28 +4,28 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DomainDiagnosticIssueDtoCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApexCnameCollision,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DnsblListed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MxLowPriority,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MxMissing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MxWrongTarget,
     }

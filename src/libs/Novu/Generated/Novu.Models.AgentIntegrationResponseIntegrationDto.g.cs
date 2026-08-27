@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AgentIntegrationResponseIntegrationDto
     {
@@ -23,14 +23,14 @@ namespace Novu
         public required string Identifier { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerId")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -44,7 +44,7 @@ namespace Novu
         public global::Novu.ChannelTypeEnum? Channel { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active")]
         [global::System.Text.Json.Serialization.JsonRequired]

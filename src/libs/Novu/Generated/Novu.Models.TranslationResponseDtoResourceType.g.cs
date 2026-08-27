@@ -10,11 +10,11 @@ namespace Novu
     public enum TranslationResponseDtoResourceType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Layout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Workflow,
     }

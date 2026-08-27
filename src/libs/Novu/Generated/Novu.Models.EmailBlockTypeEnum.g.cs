@@ -9,11 +9,11 @@ namespace Novu
     public enum EmailBlockTypeEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Button,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

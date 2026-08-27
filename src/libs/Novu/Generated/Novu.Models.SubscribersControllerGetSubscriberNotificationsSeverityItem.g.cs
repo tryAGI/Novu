@@ -4,24 +4,24 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SubscribersControllerGetSubscriberNotificationsSeverityItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Medium,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

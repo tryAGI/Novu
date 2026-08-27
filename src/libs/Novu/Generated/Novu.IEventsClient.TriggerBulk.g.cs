@@ -8,7 +8,7 @@ namespace Novu
         /// Bulk trigger event<br/>
         ///       Using this endpoint you can trigger multiple events at once, to avoid multiple calls to the API.<br/>
         ///       The bulk API is limited to 100 events per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -23,7 +23,7 @@ namespace Novu
         /// Bulk trigger event<br/>
         ///       Using this endpoint you can trigger multiple events at once, to avoid multiple calls to the API.<br/>
         ///       The bulk API is limited to 100 events per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -38,7 +38,7 @@ namespace Novu
         /// Bulk trigger event<br/>
         ///       Using this endpoint you can trigger multiple events at once, to avoid multiple calls to the API.<br/>
         ///       The bulk API is limited to 100 events per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="events"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

@@ -10,7 +10,7 @@ namespace Novu
     public enum CreateTelegramChatEndpointDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TelegramChat,
     }

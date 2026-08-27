@@ -10,11 +10,11 @@ namespace Novu
     public enum CreateChannelConnectionRequestDtoConnectionMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shared,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Subscriber,
     }

@@ -9,51 +9,51 @@ namespace Novu
     public enum StepTypeEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Delay,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Digest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Email,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HttpRequest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InApp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Push,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Throttle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tool,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Trigger,
     }

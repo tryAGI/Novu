@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TriggerEventRequestDto
     {
@@ -83,7 +83,7 @@ namespace Novu
         public global::Novu.OneOf<string, global::Novu.TenantPayloadDto>? Tenant { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         public object? Context { get; set; }

@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateEnvironmentVariableRequestDto
     {
@@ -29,7 +29,7 @@ namespace Novu
         public bool? IsSecret { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("values")]
         public global::System.Collections.Generic.IList<global::Novu.EnvironmentVariableValueDto>? Values { get; set; }

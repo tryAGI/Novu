@@ -4,26 +4,26 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ManagedRuntimeResponseDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProviderId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integrationId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string IntegrationId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("externalAgentId")]
         [global::System.Text.Json.Serialization.JsonRequired]

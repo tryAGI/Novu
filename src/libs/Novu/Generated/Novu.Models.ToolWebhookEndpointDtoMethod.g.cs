@@ -10,15 +10,15 @@ namespace Novu
     public enum ToolWebhookEndpointDtoMethod
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Patch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Post,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Put,
     }

@@ -9,19 +9,19 @@ namespace Novu
     public enum MarkAllMessageAsRequestDtoMarkAs
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Read,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Seen,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unread,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unseen,
     }

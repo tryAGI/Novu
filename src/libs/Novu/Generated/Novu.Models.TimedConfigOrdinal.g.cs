@@ -4,32 +4,32 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TimedConfigOrdinal
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Last,
     }

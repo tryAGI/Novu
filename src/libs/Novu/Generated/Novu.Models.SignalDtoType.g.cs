@@ -9,11 +9,11 @@ namespace Novu
     public enum SignalDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Metadata,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Trigger,
     }

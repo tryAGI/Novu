@@ -9,43 +9,43 @@ namespace Novu
     public enum OrdinalValueEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Day,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Friday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Monday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Saturday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sunday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thursday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tuesday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wednesday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Weekday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Weekend,
     }

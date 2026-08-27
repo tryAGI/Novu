@@ -10,11 +10,11 @@ namespace Novu
     public enum EmailControlDtoEditorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Block,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Html,
     }

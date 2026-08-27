@@ -20,7 +20,7 @@ namespace Novu.JsonConverters
                     {
                         return global::Novu.CreateAgentRequestDtoRuntimeExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

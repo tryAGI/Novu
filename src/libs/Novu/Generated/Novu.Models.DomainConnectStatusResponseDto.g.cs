@@ -4,44 +4,44 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DomainConnectStatusResponseDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("available")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Available { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerName")]
         public string? ProviderName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerId")]
         public string? ProviderId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
         public string? Reason { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasonCode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.DomainConnectStatusResponseDtoReasonCodeJsonConverter))]
         public global::Novu.DomainConnectStatusResponseDtoReasonCode? ReasonCode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manualRecords")]
         [global::System.Text.Json.Serialization.JsonRequired]

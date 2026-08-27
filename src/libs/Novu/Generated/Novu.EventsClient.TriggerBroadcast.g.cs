@@ -709,7 +709,7 @@ namespace Novu
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The client has sent too many requests in a given amount of time. 
+                            // The client has sent too many requests in a given amount of time.
                             if ((int)__response.StatusCode == 429)
                             {
                                 string? __content_429 = null;
@@ -944,12 +944,12 @@ namespace Novu
         /// <param name="actor">
         /// It is used to display the Avatar of the provided actor's subscriber id or actor object.<br/>
         ///     If a new actor object is provided, we will create a new subscriber in our system<br/>
-        ///     
+        ///
         /// </param>
         /// <param name="tenant">
         /// It is used to specify a tenant context during trigger event.<br/>
         ///     If a new tenant object is provided, we will create a new tenant.<br/>
-        ///     
+        ///
         /// </param>
         /// <param name="context"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

@@ -9,19 +9,19 @@ namespace Novu
     public enum SyncActionEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Created,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Skipped,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Updated,
     }

@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ChannelConnectionsControllerListChannelConnectionsConnectionMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shared,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Subscriber,
     }

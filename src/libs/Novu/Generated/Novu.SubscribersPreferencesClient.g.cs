@@ -10,7 +10,7 @@ namespace Novu
     public sealed partial class SubscribersPreferencesClient : global::Novu.ISubscribersPreferencesClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://api.novu.co/";
 
@@ -40,7 +40,7 @@ namespace Novu
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Novu.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {

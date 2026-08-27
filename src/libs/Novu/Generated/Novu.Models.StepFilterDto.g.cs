@@ -4,19 +4,19 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class StepFilterDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isNegated")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsNegated { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.BuilderFieldTypeEnumJsonConverter))]
@@ -24,7 +24,7 @@ namespace Novu
         public required global::Novu.BuilderFieldTypeEnum Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.StepFilterDtoValueJsonConverter))]
@@ -32,7 +32,7 @@ namespace Novu
         public required global::Novu.StepFilterDtoValue Value { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("children")]
         [global::System.Text.Json.Serialization.JsonRequired]

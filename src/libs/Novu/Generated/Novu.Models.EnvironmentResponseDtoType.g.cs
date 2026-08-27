@@ -10,11 +10,11 @@ namespace Novu
     public enum EnvironmentResponseDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dev,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Prod,
     }

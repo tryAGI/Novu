@@ -10,7 +10,7 @@ namespace Novu
     public enum CreateMsTeamsChannelEndpointDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MsTeamsChannel,
     }

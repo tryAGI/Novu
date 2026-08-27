@@ -4,12 +4,12 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class MessageMarkAsRequestDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messageId")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
@@ -17,7 +17,7 @@ namespace Novu
         public required global::Novu.OneOf<string, global::System.Collections.Generic.IList<string>> MessageId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("markAs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.MessageMarkAsRequestDtoMarkAsJsonConverter))]

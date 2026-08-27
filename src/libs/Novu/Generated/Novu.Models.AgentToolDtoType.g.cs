@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AgentToolDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Builtin,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
     }

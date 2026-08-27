@@ -9,15 +9,15 @@ namespace Novu
     public enum WorkflowStatusEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Active,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inactive,
     }

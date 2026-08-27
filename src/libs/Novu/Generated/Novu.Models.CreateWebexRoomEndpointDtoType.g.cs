@@ -10,7 +10,7 @@ namespace Novu
     public enum CreateWebexRoomEndpointDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebexRoom,
     }

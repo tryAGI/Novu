@@ -9,15 +9,15 @@ namespace Novu
     public enum ThrottleControlDtoUnit
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Days,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hours,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minutes,
     }

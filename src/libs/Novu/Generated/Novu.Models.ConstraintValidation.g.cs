@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConstraintValidation
     {
@@ -19,7 +19,7 @@ namespace Novu
 
         /// <summary>
         /// Value that failed validation<br/>
-        /// Example: xx xx xx 
+        /// Example: xx xx xx
         /// </summary>
         /// <example>xx xx xx </example>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
@@ -41,7 +41,7 @@ namespace Novu
         /// </param>
         /// <param name="value">
         /// Value that failed validation<br/>
-        /// Example: xx xx xx 
+        /// Example: xx xx xx
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

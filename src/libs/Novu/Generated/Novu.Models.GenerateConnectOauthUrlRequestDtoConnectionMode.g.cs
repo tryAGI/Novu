@@ -10,11 +10,11 @@ namespace Novu
     public enum GenerateConnectOauthUrlRequestDtoConnectionMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shared,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Subscriber,
     }
