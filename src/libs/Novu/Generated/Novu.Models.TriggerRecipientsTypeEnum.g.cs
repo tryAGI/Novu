@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TriggerRecipientsTypeEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Subscriber,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Topic,
     }

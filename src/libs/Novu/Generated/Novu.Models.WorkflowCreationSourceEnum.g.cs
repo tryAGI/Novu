@@ -10,47 +10,47 @@ namespace Novu
     public enum WorkflowCreationSourceEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ai,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bridge,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dashboard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dropdown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Editor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmptyState,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotificationDirectory,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OnboardingDigestDemo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OnboardingGetStarted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OnboardingInApp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TemplateStore,
     }

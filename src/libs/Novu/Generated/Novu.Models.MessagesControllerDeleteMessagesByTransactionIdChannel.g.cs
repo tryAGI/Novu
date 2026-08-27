@@ -4,32 +4,32 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessagesControllerDeleteMessagesByTransactionIdChannel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Email,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InApp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Push,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tool,
     }

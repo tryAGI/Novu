@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DomainDiagnosticIssueDtoSeverity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Warn,
     }

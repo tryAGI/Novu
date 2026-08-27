@@ -9,27 +9,27 @@ namespace Novu
     public enum ExecutionDetailsStatusEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Queued,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadConfirmation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Warning,
     }

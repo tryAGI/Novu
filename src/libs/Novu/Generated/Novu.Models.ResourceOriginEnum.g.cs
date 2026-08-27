@@ -9,15 +9,15 @@ namespace Novu
     public enum ResourceOriginEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         External,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NovuCloud,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NovuCloudV1,
     }

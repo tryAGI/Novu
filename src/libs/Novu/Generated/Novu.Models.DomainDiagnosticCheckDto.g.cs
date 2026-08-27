@@ -4,12 +4,12 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DomainDiagnosticCheckDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.DomainDiagnosticCheckDtoCodeJsonConverter))]
@@ -17,7 +17,7 @@ namespace Novu
         public required global::Novu.DomainDiagnosticCheckDtoCode Code { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.DomainDiagnosticCheckDtoStatusJsonConverter))]

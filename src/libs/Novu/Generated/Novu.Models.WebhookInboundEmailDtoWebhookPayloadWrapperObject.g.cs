@@ -9,7 +9,7 @@ namespace Novu
     public enum WebhookInboundEmailDtoWebhookPayloadWrapperObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmailInbound,
     }

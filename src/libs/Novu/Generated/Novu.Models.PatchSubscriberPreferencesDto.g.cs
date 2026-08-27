@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PatchSubscriberPreferencesDto
     {
@@ -27,7 +27,7 @@ namespace Novu
         public global::Novu.ScheduleDto? Schedule { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         public object? Context { get; set; }

@@ -9,11 +9,11 @@ namespace Novu
     public enum MonthlyTypeEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Each,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         On,
     }

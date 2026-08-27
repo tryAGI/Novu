@@ -4,31 +4,31 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DigestRegularMetadata
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("amount")]
         public double? Amount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unit")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.DigestRegularMetadataUnitJsonConverter))]
         public global::Novu.DigestRegularMetadataUnit? Unit { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("digestKey")]
         public string? DigestKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.DigestRegularMetadataTypeJsonConverter))]
@@ -36,26 +36,26 @@ namespace Novu
         public required global::Novu.DigestRegularMetadataType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("backoff")]
         public bool? Backoff { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("backoffAmount")]
         public double? BackoffAmount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("backoffUnit")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.DigestRegularMetadataBackoffUnitJsonConverter))]
         public global::Novu.DigestRegularMetadataBackoffUnit? BackoffUnit { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updateMode")]
         public bool? UpdateMode { get; set; }

@@ -4,12 +4,12 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ContextsControllerUpdateContextResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         public global::Novu.GetContextResponseDto? Data { get; set; }

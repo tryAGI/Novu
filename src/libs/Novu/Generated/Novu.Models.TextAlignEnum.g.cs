@@ -9,15 +9,15 @@ namespace Novu
     public enum TextAlignEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Center,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Left,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Right,
     }

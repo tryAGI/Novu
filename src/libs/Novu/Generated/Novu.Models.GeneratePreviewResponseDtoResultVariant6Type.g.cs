@@ -4,12 +4,12 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GeneratePreviewResponseDtoResultVariant6Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Push,
     }

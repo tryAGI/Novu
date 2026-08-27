@@ -9,11 +9,11 @@ namespace Novu
     public enum MarkMessageActionAsSeenDtoStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Done,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
     }

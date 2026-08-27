@@ -4,12 +4,12 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GeneratePreviewResponseDtoResultVariant3Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Email,
     }

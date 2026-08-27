@@ -4,30 +4,30 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateAgentRequestDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active")]
         public bool? Active { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("behavior")]
         public global::Novu.AgentBehaviorDto? Behavior { get; set; }

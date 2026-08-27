@@ -57,7 +57,7 @@ namespace Novu
         /// <summary>
         /// Bulk create subscribers<br/>
         ///       Using this endpoint multiple subscribers can be created at once. The bulk API is limited to 500 subscribers per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -81,7 +81,7 @@ namespace Novu
         /// <summary>
         /// Bulk create subscribers<br/>
         ///       Using this endpoint multiple subscribers can be created at once. The bulk API is limited to 500 subscribers per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -709,7 +709,7 @@ namespace Novu
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The client has sent too many requests in a given amount of time. 
+                            // The client has sent too many requests in a given amount of time.
                             if ((int)__response.StatusCode == 429)
                             {
                                 string? __content_429 = null;
@@ -919,7 +919,7 @@ namespace Novu
         /// <summary>
         /// Bulk create subscribers<br/>
         ///       Using this endpoint multiple subscribers can be created at once. The bulk API is limited to 500 subscribers per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="subscribers">
         /// An array of subscribers to be created in bulk.

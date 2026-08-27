@@ -9,11 +9,11 @@ namespace Novu
     public enum IntegrationResponseDtoKind
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Agent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Delivery,
     }

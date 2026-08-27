@@ -9,15 +9,15 @@ namespace Novu
     public enum SignalDtoAction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Clear,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Delete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Set,
     }

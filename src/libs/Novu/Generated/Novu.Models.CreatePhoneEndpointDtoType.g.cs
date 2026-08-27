@@ -10,7 +10,7 @@ namespace Novu
     public enum CreatePhoneEndpointDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Phone,
     }

@@ -9,15 +9,15 @@ namespace Novu
     public enum ResourceTypeEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bridge,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Echo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Regular,
     }

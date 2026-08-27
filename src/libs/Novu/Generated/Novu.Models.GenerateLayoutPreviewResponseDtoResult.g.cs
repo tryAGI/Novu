@@ -4,19 +4,19 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GenerateLayoutPreviewResponseDtoResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.GenerateLayoutPreviewResponseDtoResultTypeJsonConverter))]
         public global::Novu.GenerateLayoutPreviewResponseDtoResultType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preview")]
         public global::Novu.EmailLayoutRenderOutput? Preview { get; set; }

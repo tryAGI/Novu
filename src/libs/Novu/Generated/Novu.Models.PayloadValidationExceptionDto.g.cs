@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PayloadValidationExceptionDto
     {
@@ -37,7 +37,7 @@ namespace Novu
 
         /// <summary>
         /// Value that failed validation<br/>
-        /// Example: xx xx xx 
+        /// Example: xx xx xx
         /// </summary>
         /// <example>xx xx xx </example>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
@@ -118,7 +118,7 @@ namespace Novu
         /// </param>
         /// <param name="message">
         /// Value that failed validation<br/>
-        /// Example: xx xx xx 
+        /// Example: xx xx xx
         /// </param>
         /// <param name="ctx">
         /// Optional context object for additional error details.<br/>

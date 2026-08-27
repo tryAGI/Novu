@@ -9,83 +9,83 @@ namespace Novu
     public enum EventBodyStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Accepted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Blocked,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bounced,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Clicked,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Complaint,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Created,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deferred,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Delayed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Delivered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dismissed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dropped,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Opened,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Queued,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rejected,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Spam,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Undelivered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unsubscribed,
     }

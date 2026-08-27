@@ -9,15 +9,15 @@ namespace Novu
     public enum MessageStatusEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Warning,
     }

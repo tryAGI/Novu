@@ -5,17 +5,17 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ChannelEndpointsControllerCreateChannelEndpointRequest : global::System.IEquatable<ChannelEndpointsControllerCreateChannelEndpointRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateSlackChannelEndpointDto? SlackChannel { get; init; }
@@ -24,7 +24,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SlackChannel))]
@@ -32,7 +32,7 @@ namespace Novu
         public bool IsSlackChannel => SlackChannel != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSlackChannel(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreateSlackChannelEndpointDto PickSlackChannel() => IsSlackChannel
             ? SlackChannel!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SlackChannel' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateSlackUserEndpointDto? SlackUser { get; init; }
@@ -61,7 +61,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SlackUser))]
@@ -69,7 +69,7 @@ namespace Novu
         public bool IsSlackUser => SlackUser != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSlackUser(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreateSlackUserEndpointDto PickSlackUser() => IsSlackUser
             ? SlackUser!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SlackUser' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateWebhookEndpointDto? Webhook { get; init; }
@@ -98,7 +98,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Webhook))]
@@ -106,7 +106,7 @@ namespace Novu
         public bool IsWebhook => Webhook != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebhook(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreateWebhookEndpointDto PickWebhook() => IsWebhook
             ? Webhook!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreatePhoneEndpointDto? Phone { get; init; }
@@ -135,7 +135,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Phone))]
@@ -143,7 +143,7 @@ namespace Novu
         public bool IsPhone => Phone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPhone(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreatePhoneEndpointDto PickPhone() => IsPhone
             ? Phone!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Phone' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateMsTeamsChannelEndpointDto? MsTeamsChannel { get; init; }
@@ -172,7 +172,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MsTeamsChannel))]
@@ -180,7 +180,7 @@ namespace Novu
         public bool IsMsTeamsChannel => MsTeamsChannel != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMsTeamsChannel(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreateMsTeamsChannelEndpointDto PickMsTeamsChannel() => IsMsTeamsChannel
             ? MsTeamsChannel!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MsTeamsChannel' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateMsTeamsUserEndpointDto? MsTeamsUser { get; init; }
@@ -209,7 +209,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MsTeamsUser))]
@@ -217,7 +217,7 @@ namespace Novu
         public bool IsMsTeamsUser => MsTeamsUser != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMsTeamsUser(
 #if NET6_0_OR_GREATER
@@ -230,14 +230,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreateMsTeamsUserEndpointDto PickMsTeamsUser() => IsMsTeamsUser
             ? MsTeamsUser!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MsTeamsUser' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateTelegramChatEndpointDto? TelegramChat { get; init; }
@@ -246,7 +246,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TelegramChat))]
@@ -254,7 +254,7 @@ namespace Novu
         public bool IsTelegramChat => TelegramChat != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTelegramChat(
 #if NET6_0_OR_GREATER
@@ -267,14 +267,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreateTelegramChatEndpointDto PickTelegramChat() => IsTelegramChat
             ? TelegramChat!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TelegramChat' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateWebexRoomEndpointDto? WebexRoom { get; init; }
@@ -283,7 +283,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebexRoom))]
@@ -291,7 +291,7 @@ namespace Novu
         public bool IsWebexRoom => WebexRoom != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebexRoom(
 #if NET6_0_OR_GREATER
@@ -304,14 +304,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreateWebexRoomEndpointDto PickWebexRoom() => IsWebexRoom
             ? WebexRoom!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebexRoom' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateWebexPersonEndpointDto? WebexPerson { get; init; }
@@ -320,7 +320,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebexPerson))]
@@ -328,7 +328,7 @@ namespace Novu
         public bool IsWebexPerson => WebexPerson != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebexPerson(
 #if NET6_0_OR_GREATER
@@ -341,14 +341,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreateWebexPersonEndpointDto PickWebexPerson() => IsWebexPerson
             ? WebexPerson!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebexPerson' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateLineUserEndpointDto? LineUser { get; init; }
@@ -357,7 +357,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LineUser))]
@@ -365,7 +365,7 @@ namespace Novu
         public bool IsLineUser => LineUser != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLineUser(
 #if NET6_0_OR_GREATER
@@ -378,14 +378,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreateLineUserEndpointDto PickLineUser() => IsLineUser
             ? LineUser!
             : throw new global::System.InvalidOperationException($"Expected union variant 'LineUser' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreatePagerDutyServiceEndpointDto? PagerdutyService { get; init; }
@@ -394,7 +394,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PagerdutyService))]
@@ -402,7 +402,7 @@ namespace Novu
         public bool IsPagerdutyService => PagerdutyService != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPagerdutyService(
 #if NET6_0_OR_GREATER
@@ -415,14 +415,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreatePagerDutyServiceEndpointDto PickPagerdutyService() => IsPagerdutyService
             ? PagerdutyService!
             : throw new global::System.InvalidOperationException($"Expected union variant 'PagerdutyService' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateOpsgenieIntegrationEndpointDto? OpsgenieIntegration { get; init; }
@@ -431,7 +431,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpsgenieIntegration))]
@@ -439,7 +439,7 @@ namespace Novu
         public bool IsOpsgenieIntegration => OpsgenieIntegration != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOpsgenieIntegration(
 #if NET6_0_OR_GREATER
@@ -452,14 +452,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreateOpsgenieIntegrationEndpointDto PickOpsgenieIntegration() => IsOpsgenieIntegration
             ? OpsgenieIntegration!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpsgenieIntegration' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateGrafanaOnCallIntegrationEndpointDto? GrafanaOncallIntegration { get; init; }
@@ -468,7 +468,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GrafanaOncallIntegration))]
@@ -476,7 +476,7 @@ namespace Novu
         public bool IsGrafanaOncallIntegration => GrafanaOncallIntegration != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGrafanaOncallIntegration(
 #if NET6_0_OR_GREATER
@@ -489,14 +489,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreateGrafanaOnCallIntegrationEndpointDto PickGrafanaOncallIntegration() => IsGrafanaOncallIntegration
             ? GrafanaOncallIntegration!
             : throw new global::System.InvalidOperationException($"Expected union variant 'GrafanaOncallIntegration' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CreateToolWebhookEndpointDto? ToolWebhook { get; init; }
@@ -505,7 +505,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolWebhook))]
@@ -513,7 +513,7 @@ namespace Novu
         public bool IsToolWebhook => ToolWebhook != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolWebhook(
 #if NET6_0_OR_GREATER
@@ -526,23 +526,23 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CreateToolWebhookEndpointDto PickToolWebhook() => IsToolWebhook
             ? ToolWebhook!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolWebhook' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateSlackChannelEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateSlackChannelEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreateSlackChannelEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.SlackChannel;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateSlackChannelEndpointDto? value)
         {
@@ -550,22 +550,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromSlackChannel(global::Novu.CreateSlackChannelEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateSlackUserEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateSlackUserEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreateSlackUserEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.SlackUser;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateSlackUserEndpointDto? value)
         {
@@ -573,22 +573,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromSlackUser(global::Novu.CreateSlackUserEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateWebhookEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateWebhookEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreateWebhookEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.Webhook;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateWebhookEndpointDto? value)
         {
@@ -596,22 +596,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromWebhook(global::Novu.CreateWebhookEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreatePhoneEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreatePhoneEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreatePhoneEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.Phone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreatePhoneEndpointDto? value)
         {
@@ -619,22 +619,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromPhone(global::Novu.CreatePhoneEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateMsTeamsChannelEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateMsTeamsChannelEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreateMsTeamsChannelEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.MsTeamsChannel;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateMsTeamsChannelEndpointDto? value)
         {
@@ -642,22 +642,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromMsTeamsChannel(global::Novu.CreateMsTeamsChannelEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateMsTeamsUserEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateMsTeamsUserEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreateMsTeamsUserEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.MsTeamsUser;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateMsTeamsUserEndpointDto? value)
         {
@@ -665,22 +665,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromMsTeamsUser(global::Novu.CreateMsTeamsUserEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateTelegramChatEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateTelegramChatEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreateTelegramChatEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.TelegramChat;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateTelegramChatEndpointDto? value)
         {
@@ -688,22 +688,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromTelegramChat(global::Novu.CreateTelegramChatEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateWebexRoomEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateWebexRoomEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreateWebexRoomEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.WebexRoom;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateWebexRoomEndpointDto? value)
         {
@@ -711,22 +711,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromWebexRoom(global::Novu.CreateWebexRoomEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateWebexPersonEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateWebexPersonEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreateWebexPersonEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.WebexPerson;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateWebexPersonEndpointDto? value)
         {
@@ -734,22 +734,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromWebexPerson(global::Novu.CreateWebexPersonEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateLineUserEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateLineUserEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreateLineUserEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.LineUser;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateLineUserEndpointDto? value)
         {
@@ -757,22 +757,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromLineUser(global::Novu.CreateLineUserEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreatePagerDutyServiceEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreatePagerDutyServiceEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreatePagerDutyServiceEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.PagerdutyService;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreatePagerDutyServiceEndpointDto? value)
         {
@@ -780,22 +780,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromPagerdutyService(global::Novu.CreatePagerDutyServiceEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateOpsgenieIntegrationEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateOpsgenieIntegrationEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreateOpsgenieIntegrationEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.OpsgenieIntegration;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateOpsgenieIntegrationEndpointDto? value)
         {
@@ -803,22 +803,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromOpsgenieIntegration(global::Novu.CreateOpsgenieIntegrationEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateGrafanaOnCallIntegrationEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateGrafanaOnCallIntegrationEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreateGrafanaOnCallIntegrationEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.GrafanaOncallIntegration;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateGrafanaOnCallIntegrationEndpointDto? value)
         {
@@ -826,22 +826,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromGrafanaOncallIntegration(global::Novu.CreateGrafanaOnCallIntegrationEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateToolWebhookEndpointDto value) => new ChannelEndpointsControllerCreateChannelEndpointRequest((global::Novu.CreateToolWebhookEndpointDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CreateToolWebhookEndpointDto?(ChannelEndpointsControllerCreateChannelEndpointRequest @this) => @this.ToolWebhook;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(global::Novu.CreateToolWebhookEndpointDto? value)
         {
@@ -849,12 +849,12 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChannelEndpointsControllerCreateChannelEndpointRequest FromToolWebhook(global::Novu.CreateToolWebhookEndpointDto? value) => new ChannelEndpointsControllerCreateChannelEndpointRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsControllerCreateChannelEndpointRequest(
             global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType? type,
@@ -893,7 +893,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ToolWebhook as object ??
@@ -909,11 +909,11 @@ namespace Novu
             Phone as object ??
             Webhook as object ??
             SlackUser as object ??
-            SlackChannel as object 
+            SlackChannel as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SlackChannel?.ToString() ??
@@ -929,11 +929,11 @@ namespace Novu
             PagerdutyService?.ToString() ??
             OpsgenieIntegration?.ToString() ??
             GrafanaOncallIntegration?.ToString() ??
-            ToolWebhook?.ToString() 
+            ToolWebhook?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -941,7 +941,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Novu.CreateSlackChannelEndpointDto, TResult>? slackChannel = null,
@@ -1026,7 +1026,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Novu.CreateSlackChannelEndpointDto>? slackChannel = null,
@@ -1122,7 +1122,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Novu.CreateSlackChannelEndpointDto>? slackChannel = null,
@@ -1205,7 +1205,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1250,7 +1250,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChannelEndpointsControllerCreateChannelEndpointRequest other)
         {
@@ -1268,12 +1268,12 @@ namespace Novu
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreatePagerDutyServiceEndpointDto?>.Default.Equals(PagerdutyService, other.PagerdutyService) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreateOpsgenieIntegrationEndpointDto?>.Default.Equals(OpsgenieIntegration, other.OpsgenieIntegration) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CreateGrafanaOnCallIntegrationEndpointDto?>.Default.Equals(GrafanaOncallIntegration, other.GrafanaOncallIntegration) &&
-                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateToolWebhookEndpointDto?>.Default.Equals(ToolWebhook, other.ToolWebhook) 
+                global::System.Collections.Generic.EqualityComparer<global::Novu.CreateToolWebhookEndpointDto?>.Default.Equals(ToolWebhook, other.ToolWebhook)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChannelEndpointsControllerCreateChannelEndpointRequest obj1, ChannelEndpointsControllerCreateChannelEndpointRequest obj2)
         {
@@ -1281,7 +1281,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChannelEndpointsControllerCreateChannelEndpointRequest obj1, ChannelEndpointsControllerCreateChannelEndpointRequest obj2)
         {
@@ -1289,7 +1289,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

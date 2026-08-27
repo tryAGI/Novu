@@ -10,7 +10,7 @@ namespace Novu
     public enum CreateMsTeamsUserEndpointDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MsTeamsUser,
     }

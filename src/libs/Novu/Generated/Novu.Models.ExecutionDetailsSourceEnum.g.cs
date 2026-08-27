@@ -9,19 +9,19 @@ namespace Novu
     public enum ExecutionDetailsSourceEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Credentials,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Internal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Payload,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webhook,
     }

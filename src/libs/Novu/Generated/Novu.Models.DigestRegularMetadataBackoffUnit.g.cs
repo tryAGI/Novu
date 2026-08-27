@@ -4,32 +4,32 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DigestRegularMetadataBackoffUnit
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Days,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hours,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minutes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Months,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Seconds,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Weeks,
     }

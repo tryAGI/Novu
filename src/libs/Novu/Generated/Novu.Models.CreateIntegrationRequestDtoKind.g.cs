@@ -9,11 +9,11 @@ namespace Novu
     public enum CreateIntegrationRequestDtoKind
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Agent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Delivery,
     }

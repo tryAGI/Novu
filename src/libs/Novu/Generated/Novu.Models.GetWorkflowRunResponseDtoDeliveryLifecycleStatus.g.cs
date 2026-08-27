@@ -9,35 +9,35 @@ namespace Novu
     public enum GetWorkflowRunResponseDtoDeliveryLifecycleStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Canceled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Delivered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Errored,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Interacted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Merged,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Skipped,
     }

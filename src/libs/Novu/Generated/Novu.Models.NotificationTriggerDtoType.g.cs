@@ -9,7 +9,7 @@ namespace Novu
     public enum NotificationTriggerDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Event,
     }

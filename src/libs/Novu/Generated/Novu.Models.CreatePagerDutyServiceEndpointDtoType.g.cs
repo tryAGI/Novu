@@ -10,7 +10,7 @@ namespace Novu
     public enum CreatePagerDutyServiceEndpointDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PagerdutyService,
     }

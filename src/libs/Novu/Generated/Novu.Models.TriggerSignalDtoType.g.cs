@@ -4,12 +4,12 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TriggerSignalDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Trigger,
     }

@@ -8,7 +8,7 @@ namespace Novu
         /// Cancel triggered event<br/>
         ///     Using a previously generated transactionId during the event trigger,<br/>
         ///      will cancel any active or pending workflows. This is useful to cancel active digests, delays etc...<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="transactionId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -22,7 +22,7 @@ namespace Novu
         /// Cancel triggered event<br/>
         ///     Using a previously generated transactionId during the event trigger,<br/>
         ///      will cancel any active or pending workflows. This is useful to cancel active digests, delays etc...<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="transactionId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

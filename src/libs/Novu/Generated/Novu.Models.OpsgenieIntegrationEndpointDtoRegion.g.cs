@@ -10,11 +10,11 @@ namespace Novu
     public enum OpsgenieIntegrationEndpointDtoRegion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Us,
     }

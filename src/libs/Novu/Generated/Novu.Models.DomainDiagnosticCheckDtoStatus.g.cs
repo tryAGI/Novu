@@ -4,20 +4,20 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DomainDiagnosticCheckDtoStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fail,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pass,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Skipped,
     }

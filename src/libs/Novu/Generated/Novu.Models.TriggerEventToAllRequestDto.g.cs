@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TriggerEventToAllRequestDto
     {
@@ -51,7 +51,7 @@ namespace Novu
         /// <summary>
         /// It is used to display the Avatar of the provided actor's subscriber id or actor object.<br/>
         ///     If a new actor object is provided, we will create a new subscriber in our system<br/>
-        ///     
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.SubscriberPayloadDto>))]
@@ -60,14 +60,14 @@ namespace Novu
         /// <summary>
         /// It is used to specify a tenant context during trigger event.<br/>
         ///     If a new tenant object is provided, we will create a new tenant.<br/>
-        ///     
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.TenantPayloadDto>))]
         public global::Novu.OneOf<string, global::Novu.TenantPayloadDto>? Tenant { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         public object? Context { get; set; }
@@ -104,12 +104,12 @@ namespace Novu
         /// <param name="actor">
         /// It is used to display the Avatar of the provided actor's subscriber id or actor object.<br/>
         ///     If a new actor object is provided, we will create a new subscriber in our system<br/>
-        ///     
+        ///
         /// </param>
         /// <param name="tenant">
         /// It is used to specify a tenant context during trigger event.<br/>
         ///     If a new tenant object is provided, we will create a new tenant.<br/>
-        ///     
+        ///
         /// </param>
         /// <param name="context"></param>
 #if NET7_0_OR_GREATER

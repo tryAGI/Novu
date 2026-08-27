@@ -10,7 +10,7 @@ namespace Novu
     public enum CreateOpsgenieIntegrationEndpointDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpsgenieIntegration,
     }

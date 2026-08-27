@@ -9,11 +9,11 @@ namespace Novu
     public enum CreateTranslationRequestDtoResourceType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Layout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Workflow,
     }

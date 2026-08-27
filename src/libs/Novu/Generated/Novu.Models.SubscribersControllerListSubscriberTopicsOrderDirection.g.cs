@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SubscribersControllerListSubscriberTopicsOrderDirection
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

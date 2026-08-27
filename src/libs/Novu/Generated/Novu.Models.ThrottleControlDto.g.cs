@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ThrottleControlDto
     {

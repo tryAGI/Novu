@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class NotificationStepDto
     {
@@ -76,7 +76,7 @@ namespace Novu
         public global::Novu.ReplyCallback? ReplyCallback { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variants")]
         public global::System.Collections.Generic.IList<global::Novu.NotificationStepData>? Variants { get; set; }

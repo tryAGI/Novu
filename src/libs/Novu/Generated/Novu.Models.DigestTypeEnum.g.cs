@@ -9,15 +9,15 @@ namespace Novu
     public enum DigestTypeEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Backoff,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Regular,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Timed,
     }

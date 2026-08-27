@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ActivityNotificationResponseDto
     {
@@ -67,7 +67,7 @@ namespace Novu
         public string? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("channels")]
         public global::System.Collections.Generic.IList<global::Novu.StepTypeEnum>? Channels { get; set; }

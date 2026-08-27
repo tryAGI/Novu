@@ -6,7 +6,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateTopicSubscriptionsRequestDto
     {
@@ -36,7 +36,7 @@ namespace Novu
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         public object? Context { get; set; }

@@ -58,7 +58,7 @@ namespace Novu
         /// Cancel triggered event<br/>
         ///     Using a previously generated transactionId during the event trigger,<br/>
         ///      will cancel any active or pending workflows. This is useful to cancel active digests, delays etc...<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="transactionId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -81,7 +81,7 @@ namespace Novu
         /// Cancel triggered event<br/>
         ///     Using a previously generated transactionId during the event trigger,<br/>
         ///      will cancel any active or pending workflows. This is useful to cancel active digests, delays etc...<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="transactionId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -700,7 +700,7 @@ namespace Novu
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The client has sent too many requests in a given amount of time. 
+                            // The client has sent too many requests in a given amount of time.
                             if ((int)__response.StatusCode == 429)
                             {
                                 string? __content_429 = null;

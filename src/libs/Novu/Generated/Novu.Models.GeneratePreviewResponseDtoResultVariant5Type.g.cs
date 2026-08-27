@@ -4,12 +4,12 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GeneratePreviewResponseDtoResultVariant5Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sms,
     }

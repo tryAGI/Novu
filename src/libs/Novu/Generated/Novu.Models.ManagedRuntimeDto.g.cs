@@ -4,12 +4,12 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ManagedRuntimeDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerId")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ManagedRuntimeDtoProviderIdJsonConverter))]
@@ -36,31 +36,31 @@ namespace Novu
         public string? ExternalEnvironmentId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("systemPrompt")]
         public string? SystemPrompt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         public global::System.Collections.Generic.IList<string>? Tools { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mcpServers")]
         public global::System.Collections.Generic.IList<string>? McpServers { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skills")]
         public global::System.Collections.Generic.IList<global::Novu.AgentSkillInputDto>? Skills { get; set; }

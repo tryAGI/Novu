@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ToolApprovalCardReplyContentDto
     {
@@ -18,7 +18,7 @@ namespace Novu
         public required object ToolApprovalCard { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
         public global::System.Collections.Generic.IList<global::Novu.FileRefDto>? Files { get; set; }

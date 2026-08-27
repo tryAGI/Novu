@@ -10,7 +10,7 @@ namespace Novu
     public enum MetadataSetSignalDtoAction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Set,
     }

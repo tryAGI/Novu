@@ -9,191 +9,191 @@ namespace Novu
     public enum UiComponentEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BlockEditor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatBody,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatEditorSelect,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Data,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DelayAmount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DelayCron,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DelayDynamicKey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DelayType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DelayUnit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DestinationBody,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DestinationContinueOnFailure,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DestinationEnforceSchemaValidation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DestinationHeaders,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DestinationMethod,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DestinationResponseBodySchema,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DestinationTimeout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DestinationUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DigestAmount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DigestCron,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DigestKey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DigestType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DigestUnit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DisableSanitizationSwitch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmailBody,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmailEditorSelect,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExtendToSchedule,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InAppAvatar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InAppBody,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InAppButtonDropdown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InAppDisableSanitizationSwitch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InAppPrimarySubject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LayoutEmail,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LayoutSelect,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PushBody,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PushSubject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueryEditor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SmsBody,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextFullLine,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextInlineLabel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThrottleDynamicKey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThrottleKey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThrottleThreshold,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThrottleType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThrottleUnit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThrottleWindow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolBody,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UrlTextBox,
     }

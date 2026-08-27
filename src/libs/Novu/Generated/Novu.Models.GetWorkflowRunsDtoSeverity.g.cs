@@ -9,19 +9,19 @@ namespace Novu
     public enum GetWorkflowRunsDtoSeverity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Medium,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

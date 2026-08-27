@@ -9,23 +9,23 @@ namespace Novu
     public enum DiffActionEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Added,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Modified,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Moved,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unchanged,
     }

@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DomainRouteDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Agent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webhook,
     }

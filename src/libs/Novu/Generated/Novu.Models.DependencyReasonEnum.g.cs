@@ -9,19 +9,19 @@ namespace Novu
     public enum DependencyReasonEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentExistsInTarget,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentRequiredForWorkflow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LayoutExistsInTarget,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LayoutRequiredForWorkflow,
     }

@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateChannelConnectionRequestDto
     {
@@ -25,7 +25,7 @@ namespace Novu
         public string? SubscriberId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         public object? Context { get; set; }
@@ -49,14 +49,14 @@ namespace Novu
         public required string IntegrationIdentifier { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Novu.WorkspaceDto Workspace { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auth")]
         [global::System.Text.Json.Serialization.JsonRequired]

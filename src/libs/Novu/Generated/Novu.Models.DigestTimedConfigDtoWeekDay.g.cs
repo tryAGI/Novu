@@ -4,36 +4,36 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum DigestTimedConfigDtoWeekDay
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Friday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Monday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Saturday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sunday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thursday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tuesday,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wednesday,
     }

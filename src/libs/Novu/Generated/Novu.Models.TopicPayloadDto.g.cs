@@ -4,19 +4,19 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TopicPayloadDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("topicKey")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TopicKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.TriggerRecipientsTypeEnumJsonConverter))]

@@ -58,7 +58,7 @@ namespace Novu
         /// Bulk trigger event<br/>
         ///       Using this endpoint you can trigger multiple events at once, to avoid multiple calls to the API.<br/>
         ///       The bulk API is limited to 100 events per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -83,7 +83,7 @@ namespace Novu
         /// Bulk trigger event<br/>
         ///       Using this endpoint you can trigger multiple events at once, to avoid multiple calls to the API.<br/>
         ///       The bulk API is limited to 100 events per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -711,7 +711,7 @@ namespace Novu
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The client has sent too many requests in a given amount of time. 
+                            // The client has sent too many requests in a given amount of time.
                             if ((int)__response.StatusCode == 429)
                             {
                                 string? __content_429 = null;
@@ -922,7 +922,7 @@ namespace Novu
         /// Bulk trigger event<br/>
         ///       Using this endpoint you can trigger multiple events at once, to avoid multiple calls to the API.<br/>
         ///       The bulk API is limited to 100 events per request.<br/>
-        ///     
+        ///
         /// </summary>
         /// <param name="events"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

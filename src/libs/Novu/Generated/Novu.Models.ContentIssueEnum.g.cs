@@ -9,35 +9,35 @@ namespace Novu
     public enum ContentIssueEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatCardInvalidButton,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatCardLimitExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IllegalVariableInControlValue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidFilterArgInVariable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidUrl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MissingValue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TierLimitExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnsupportedProperty,
     }

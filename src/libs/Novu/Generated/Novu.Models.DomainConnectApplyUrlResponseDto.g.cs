@@ -4,26 +4,26 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DomainConnectApplyUrlResponseDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("applyUrl")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ApplyUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerName")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProviderName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("redirectUri")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,11 +9,11 @@ namespace Novu
     public enum TranslationControllerUploadTranslationFilesRequestResourceType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Layout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Workflow,
     }

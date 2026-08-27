@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BulkUpdateSubscriberPreferencesDto
     {
@@ -16,7 +16,7 @@ namespace Novu
         public required global::System.Collections.Generic.IList<global::Novu.BulkUpdateSubscriberPreferenceItemDto> Preferences { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         public object? Context { get; set; }

@@ -10,11 +10,11 @@ namespace Novu
     public enum TranslationGroupDtoResourceType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Layout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Workflow,
     }

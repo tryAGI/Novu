@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FieldFilterPartDtoOn
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Payload,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Subscriber,
     }

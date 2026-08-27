@@ -4,24 +4,24 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WorkflowResponseDtoSortField
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LastTriggeredAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Name,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdatedAt,
     }

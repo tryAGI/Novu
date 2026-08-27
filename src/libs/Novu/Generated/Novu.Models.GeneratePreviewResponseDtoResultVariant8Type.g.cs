@@ -4,12 +4,12 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GeneratePreviewResponseDtoResultVariant8Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tool,
     }

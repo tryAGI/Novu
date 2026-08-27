@@ -9,39 +9,39 @@ namespace Novu
     public enum WorkflowRunStepsDetailsDtoStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Canceled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Delayed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Merged,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Queued,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Running,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Skipped,
     }

@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateAgentRequestDto
     {
@@ -23,7 +23,7 @@ namespace Novu
         public required string Identifier { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
@@ -35,14 +35,14 @@ namespace Novu
         public bool? Active { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("runtime")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.CreateAgentRequestDtoRuntimeJsonConverter))]
         public global::Novu.CreateAgentRequestDtoRuntime? Runtime { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("managedRuntime")]
         public global::Novu.ManagedRuntimeDto? ManagedRuntime { get; set; }

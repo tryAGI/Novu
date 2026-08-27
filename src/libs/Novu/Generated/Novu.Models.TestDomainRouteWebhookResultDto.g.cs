@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TestDomainRouteWebhookResultDto
     {
@@ -15,7 +15,7 @@ namespace Novu
         public bool? Skipped { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latencyMs")]
         [global::System.Text.Json.Serialization.JsonRequired]

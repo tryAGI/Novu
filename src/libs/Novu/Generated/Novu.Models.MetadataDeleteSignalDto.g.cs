@@ -4,19 +4,19 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class MetadataDeleteSignalDto
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.MetadataDeleteSignalDtoTypeJsonConverter))]
         public global::Novu.MetadataDeleteSignalDtoType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.MetadataDeleteSignalDtoActionJsonConverter))]

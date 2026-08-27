@@ -61,13 +61,13 @@ namespace Novu
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ActivityClient Activity { get; }
 
@@ -77,22 +77,22 @@ namespace Novu
         public AgentsClient Agents { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentsIntegrationsClient AgentsIntegrations { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelConnectionsClient ChannelConnections { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChannelEndpointsClient ChannelEndpoints { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContextsClient Contexts { get; }
 
@@ -102,17 +102,17 @@ namespace Novu
         public DomainsClient Domains { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DomainsAutoConfigureClient DomainsAutoConfigure { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DomainsRoutesClient DomainsRoutes { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EnvironmentVariablesClient EnvironmentVariables { get; }
 
@@ -142,7 +142,7 @@ namespace Novu
         public MessagesClient Messages { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NotificationsClient Notifications { get; }
 
@@ -152,27 +152,27 @@ namespace Novu
         public SubscribersClient Subscribers { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubscribersCredentialsClient SubscribersCredentials { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubscribersNotificationsClient SubscribersNotifications { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubscribersPreferencesClient SubscribersPreferences { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubscribersPropertiesClient SubscribersProperties { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubscribersTopicsClient SubscribersTopics { get; }
 
@@ -182,12 +182,12 @@ namespace Novu
         public TopicsClient Topics { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TopicsSubscribersClient TopicsSubscribers { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TopicsSubscriptionsClient TopicsSubscriptions { get; }
 
@@ -197,17 +197,17 @@ namespace Novu
         public TranslationsClient Translations { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TranslationsGroupsClient TranslationsGroups { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TranslationsMasterClient TranslationsMaster { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TranslationsMaster2Client TranslationsMaster2 { get; }
 
@@ -217,7 +217,7 @@ namespace Novu
         public WorkflowsClient Workflows { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WorkflowsStepsClient WorkflowsSteps { get; }
 

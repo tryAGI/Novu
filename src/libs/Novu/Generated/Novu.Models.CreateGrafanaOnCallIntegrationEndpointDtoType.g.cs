@@ -10,7 +10,7 @@ namespace Novu
     public enum CreateGrafanaOnCallIntegrationEndpointDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GrafanaOncallIntegration,
     }

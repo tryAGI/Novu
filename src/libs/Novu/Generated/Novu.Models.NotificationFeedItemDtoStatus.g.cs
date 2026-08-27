@@ -10,15 +10,15 @@ namespace Novu
     public enum NotificationFeedItemDtoStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Warning,
     }

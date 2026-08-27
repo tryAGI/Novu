@@ -9,11 +9,11 @@ namespace Novu
     public enum StepIssueSeverityEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Warning,
     }

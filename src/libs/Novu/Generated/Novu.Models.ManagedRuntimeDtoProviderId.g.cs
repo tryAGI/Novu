@@ -4,20 +4,20 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ManagedRuntimeDtoProviderId
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anthropic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnthropicAws,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NovuAnthropic,
     }

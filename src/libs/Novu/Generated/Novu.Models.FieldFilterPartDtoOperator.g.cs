@@ -4,64 +4,64 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FieldFilterPartDtoOperator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AllIn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnyIn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Between,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Equal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         In,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Larger,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LargerEqual,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Like,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotBetween,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotEqual,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotIn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotLike,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Smaller,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SmallerEqual,
     }

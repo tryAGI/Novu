@@ -10,11 +10,11 @@ namespace Novu
     public enum PagerDutyServiceEndpointDtoRegion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Us,
     }

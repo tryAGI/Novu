@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TranslationControllerGetSingleTranslationResourceType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Layout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Workflow,
     }

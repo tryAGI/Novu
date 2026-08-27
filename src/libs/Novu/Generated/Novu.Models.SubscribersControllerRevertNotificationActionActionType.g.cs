@@ -4,16 +4,16 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SubscribersControllerRevertNotificationActionActionType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Primary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Secondary,
     }

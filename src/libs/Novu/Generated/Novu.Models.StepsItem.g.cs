@@ -5,17 +5,17 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct StepsItem : global::System.IEquatable<StepsItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.WorkflowResponseDtoStepDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.InAppStepResponseDto? InApp { get; init; }
@@ -24,7 +24,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InApp))]
@@ -32,7 +32,7 @@ namespace Novu
         public bool IsInApp => InApp != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInApp(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.InAppStepResponseDto PickInApp() => IsInApp
             ? InApp!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InApp' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.EmailStepResponseDto? Email { get; init; }
@@ -61,7 +61,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Email))]
@@ -69,7 +69,7 @@ namespace Novu
         public bool IsEmail => Email != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEmail(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.EmailStepResponseDto PickEmail() => IsEmail
             ? Email!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Email' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.SmsStepResponseDto? Sms { get; init; }
@@ -98,7 +98,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sms))]
@@ -106,7 +106,7 @@ namespace Novu
         public bool IsSms => Sms != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSms(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.SmsStepResponseDto PickSms() => IsSms
             ? Sms!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sms' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.PushStepResponseDto? Push { get; init; }
@@ -135,7 +135,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Push))]
@@ -143,7 +143,7 @@ namespace Novu
         public bool IsPush => Push != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPush(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.PushStepResponseDto PickPush() => IsPush
             ? Push!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Push' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.ChatStepResponseDto? Chat { get; init; }
@@ -172,7 +172,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Chat))]
@@ -180,7 +180,7 @@ namespace Novu
         public bool IsChat => Chat != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChat(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.ChatStepResponseDto PickChat() => IsChat
             ? Chat!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.DelayStepResponseDto? Delay { get; init; }
@@ -209,7 +209,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Delay))]
@@ -217,7 +217,7 @@ namespace Novu
         public bool IsDelay => Delay != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDelay(
 #if NET6_0_OR_GREATER
@@ -230,14 +230,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.DelayStepResponseDto PickDelay() => IsDelay
             ? Delay!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Delay' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.DigestStepResponseDto? Digest { get; init; }
@@ -246,7 +246,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Digest))]
@@ -254,7 +254,7 @@ namespace Novu
         public bool IsDigest => Digest != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDigest(
 #if NET6_0_OR_GREATER
@@ -267,14 +267,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.DigestStepResponseDto PickDigest() => IsDigest
             ? Digest!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Digest' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.CustomStepResponseDto? Custom { get; init; }
@@ -283,7 +283,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
@@ -291,7 +291,7 @@ namespace Novu
         public bool IsCustom => Custom != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustom(
 #if NET6_0_OR_GREATER
@@ -304,14 +304,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.CustomStepResponseDto PickCustom() => IsCustom
             ? Custom!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.ThrottleStepResponseDto? Throttle { get; init; }
@@ -320,7 +320,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Throttle))]
@@ -328,7 +328,7 @@ namespace Novu
         public bool IsThrottle => Throttle != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickThrottle(
 #if NET6_0_OR_GREATER
@@ -341,14 +341,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.ThrottleStepResponseDto PickThrottle() => IsThrottle
             ? Throttle!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Throttle' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.HttpRequestStepResponseDto? HttpRequest { get; init; }
@@ -357,7 +357,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HttpRequest))]
@@ -365,7 +365,7 @@ namespace Novu
         public bool IsHttpRequest => HttpRequest != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickHttpRequest(
 #if NET6_0_OR_GREATER
@@ -378,14 +378,14 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.HttpRequestStepResponseDto PickHttpRequest() => IsHttpRequest
             ? HttpRequest!
             : throw new global::System.InvalidOperationException($"Expected union variant 'HttpRequest' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Novu.ToolStepResponseDto? Tool { get; init; }
@@ -394,7 +394,7 @@ namespace Novu
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
@@ -402,7 +402,7 @@ namespace Novu
         public bool IsTool => Tool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTool(
 #if NET6_0_OR_GREATER
@@ -415,23 +415,23 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Novu.ToolStepResponseDto PickTool() => IsTool
             ? Tool!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StepsItem(global::Novu.InAppStepResponseDto value) => new StepsItem((global::Novu.InAppStepResponseDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.InAppStepResponseDto?(StepsItem @this) => @this.InApp;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StepsItem(global::Novu.InAppStepResponseDto? value)
         {
@@ -439,22 +439,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StepsItem FromInApp(global::Novu.InAppStepResponseDto? value) => new StepsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StepsItem(global::Novu.EmailStepResponseDto value) => new StepsItem((global::Novu.EmailStepResponseDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.EmailStepResponseDto?(StepsItem @this) => @this.Email;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StepsItem(global::Novu.EmailStepResponseDto? value)
         {
@@ -462,22 +462,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StepsItem FromEmail(global::Novu.EmailStepResponseDto? value) => new StepsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StepsItem(global::Novu.SmsStepResponseDto value) => new StepsItem((global::Novu.SmsStepResponseDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.SmsStepResponseDto?(StepsItem @this) => @this.Sms;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StepsItem(global::Novu.SmsStepResponseDto? value)
         {
@@ -485,22 +485,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StepsItem FromSms(global::Novu.SmsStepResponseDto? value) => new StepsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StepsItem(global::Novu.PushStepResponseDto value) => new StepsItem((global::Novu.PushStepResponseDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.PushStepResponseDto?(StepsItem @this) => @this.Push;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StepsItem(global::Novu.PushStepResponseDto? value)
         {
@@ -508,22 +508,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StepsItem FromPush(global::Novu.PushStepResponseDto? value) => new StepsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StepsItem(global::Novu.ChatStepResponseDto value) => new StepsItem((global::Novu.ChatStepResponseDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.ChatStepResponseDto?(StepsItem @this) => @this.Chat;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StepsItem(global::Novu.ChatStepResponseDto? value)
         {
@@ -531,22 +531,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StepsItem FromChat(global::Novu.ChatStepResponseDto? value) => new StepsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StepsItem(global::Novu.DelayStepResponseDto value) => new StepsItem((global::Novu.DelayStepResponseDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.DelayStepResponseDto?(StepsItem @this) => @this.Delay;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StepsItem(global::Novu.DelayStepResponseDto? value)
         {
@@ -554,22 +554,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StepsItem FromDelay(global::Novu.DelayStepResponseDto? value) => new StepsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StepsItem(global::Novu.DigestStepResponseDto value) => new StepsItem((global::Novu.DigestStepResponseDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.DigestStepResponseDto?(StepsItem @this) => @this.Digest;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StepsItem(global::Novu.DigestStepResponseDto? value)
         {
@@ -577,22 +577,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StepsItem FromDigest(global::Novu.DigestStepResponseDto? value) => new StepsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StepsItem(global::Novu.CustomStepResponseDto value) => new StepsItem((global::Novu.CustomStepResponseDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.CustomStepResponseDto?(StepsItem @this) => @this.Custom;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StepsItem(global::Novu.CustomStepResponseDto? value)
         {
@@ -600,22 +600,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StepsItem FromCustom(global::Novu.CustomStepResponseDto? value) => new StepsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StepsItem(global::Novu.ThrottleStepResponseDto value) => new StepsItem((global::Novu.ThrottleStepResponseDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.ThrottleStepResponseDto?(StepsItem @this) => @this.Throttle;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StepsItem(global::Novu.ThrottleStepResponseDto? value)
         {
@@ -623,22 +623,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StepsItem FromThrottle(global::Novu.ThrottleStepResponseDto? value) => new StepsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StepsItem(global::Novu.HttpRequestStepResponseDto value) => new StepsItem((global::Novu.HttpRequestStepResponseDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.HttpRequestStepResponseDto?(StepsItem @this) => @this.HttpRequest;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StepsItem(global::Novu.HttpRequestStepResponseDto? value)
         {
@@ -646,22 +646,22 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StepsItem FromHttpRequest(global::Novu.HttpRequestStepResponseDto? value) => new StepsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StepsItem(global::Novu.ToolStepResponseDto value) => new StepsItem((global::Novu.ToolStepResponseDto?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Novu.ToolStepResponseDto?(StepsItem @this) => @this.Tool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StepsItem(global::Novu.ToolStepResponseDto? value)
         {
@@ -669,12 +669,12 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StepsItem FromTool(global::Novu.ToolStepResponseDto? value) => new StepsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StepsItem(
             global::Novu.WorkflowResponseDtoStepDiscriminatorType? type,
@@ -707,7 +707,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Tool as object ??
@@ -720,11 +720,11 @@ namespace Novu
             Push as object ??
             Sms as object ??
             Email as object ??
-            InApp as object 
+            InApp as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InApp?.ToString() ??
@@ -737,11 +737,11 @@ namespace Novu
             Custom?.ToString() ??
             Throttle?.ToString() ??
             HttpRequest?.ToString() ??
-            Tool?.ToString() 
+            Tool?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -749,7 +749,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Novu.InAppStepResponseDto, TResult>? inApp = null,
@@ -819,7 +819,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Novu.InAppStepResponseDto>? inApp = null,
@@ -897,7 +897,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Novu.InAppStepResponseDto>? inApp = null,
@@ -965,7 +965,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1004,7 +1004,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(StepsItem other)
         {
@@ -1019,12 +1019,12 @@ namespace Novu
                 global::System.Collections.Generic.EqualityComparer<global::Novu.CustomStepResponseDto?>.Default.Equals(Custom, other.Custom) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.ThrottleStepResponseDto?>.Default.Equals(Throttle, other.Throttle) &&
                 global::System.Collections.Generic.EqualityComparer<global::Novu.HttpRequestStepResponseDto?>.Default.Equals(HttpRequest, other.HttpRequest) &&
-                global::System.Collections.Generic.EqualityComparer<global::Novu.ToolStepResponseDto?>.Default.Equals(Tool, other.Tool) 
+                global::System.Collections.Generic.EqualityComparer<global::Novu.ToolStepResponseDto?>.Default.Equals(Tool, other.Tool)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(StepsItem obj1, StepsItem obj2)
         {
@@ -1032,7 +1032,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(StepsItem obj1, StepsItem obj2)
         {
@@ -1040,7 +1040,7 @@ namespace Novu
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

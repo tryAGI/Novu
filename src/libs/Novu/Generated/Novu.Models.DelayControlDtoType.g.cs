@@ -10,11 +10,11 @@ namespace Novu
     public enum DelayControlDtoType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Regular,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Timed,
     }

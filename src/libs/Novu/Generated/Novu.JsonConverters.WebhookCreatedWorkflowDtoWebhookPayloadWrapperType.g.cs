@@ -20,7 +20,7 @@ namespace Novu.JsonConverters
                     {
                         return global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapperTypeExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

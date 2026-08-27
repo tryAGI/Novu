@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TriggerEventResponseDto
     {
@@ -42,7 +42,7 @@ namespace Novu
         public string? ActivityFeedLink { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("jobData")]
         public object? JobData { get; set; }
