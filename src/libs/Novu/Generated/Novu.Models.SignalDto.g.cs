@@ -9,7 +9,7 @@ namespace Novu
     public sealed partial class SignalDto
     {
         /// <summary>
-        /// `metadata` updates conversation state; `trigger` fires a Novu workflow.
+        /// `metadata` updates conversation state; `trigger` fires a Novu workflow; `human` creates an ask/approve/choose/tell interaction in the current thread.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.SignalDtoTypeJsonConverter))]
@@ -59,6 +59,43 @@ namespace Novu
         public object? Payload { get; set; }
 
         /// <summary>
+        /// Human-interaction verb for `human` signals.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("kind")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.SignalDtoKindJsonConverter))]
+        public global::Novu.SignalDtoKind? Kind { get; set; }
+
+        /// <summary>
+        /// Question / action / message for `human` signals.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        public string? Prompt { get; set; }
+
+        /// <summary>
+        /// Client-minted request id for `human` signals.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("requestId")]
+        public string? RequestId { get; set; }
+
+        /// <summary>
+        /// Choice labels for `human` `choose` signals.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("options")]
+        public global::System.Collections.Generic.IList<string>? Options { get; set; }
+
+        /// <summary>
+        /// Attribution label for `human` signals.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("from")]
+        public string? From { get; set; }
+
+        /// <summary>
+        /// TTL in seconds for `human` signals.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ttlSeconds")]
+        public double? TtlSeconds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -68,7 +105,7 @@ namespace Novu
         /// Initializes a new instance of the <see cref="SignalDto" /> class.
         /// </summary>
         /// <param name="type">
-        /// `metadata` updates conversation state; `trigger` fires a Novu workflow.
+        /// `metadata` updates conversation state; `trigger` fires a Novu workflow; `human` creates an ask/approve/choose/tell interaction in the current thread.
         /// </param>
         /// <param name="action">
         /// Required for metadata signals other than the default `set`.
@@ -90,6 +127,24 @@ namespace Novu
         /// <param name="payload">
         /// Workflow payload for `trigger` signals.
         /// </param>
+        /// <param name="kind">
+        /// Human-interaction verb for `human` signals.
+        /// </param>
+        /// <param name="prompt">
+        /// Question / action / message for `human` signals.
+        /// </param>
+        /// <param name="requestId">
+        /// Client-minted request id for `human` signals.
+        /// </param>
+        /// <param name="options">
+        /// Choice labels for `human` `choose` signals.
+        /// </param>
+        /// <param name="from">
+        /// Attribution label for `human` signals.
+        /// </param>
+        /// <param name="ttlSeconds">
+        /// TTL in seconds for `human` signals.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -100,7 +155,13 @@ namespace Novu
             object? value,
             string? workflowId,
             global::Novu.OneOf<string, object, global::System.Collections.Generic.IList<global::Novu.OneOf<string, object>>>? to,
-            object? payload)
+            object? payload,
+            global::Novu.SignalDtoKind? kind,
+            string? prompt,
+            string? requestId,
+            global::System.Collections.Generic.IList<string>? options,
+            string? from,
+            double? ttlSeconds)
         {
             this.Type = type;
             this.Action = action;
@@ -109,6 +170,12 @@ namespace Novu
             this.WorkflowId = workflowId;
             this.To = to;
             this.Payload = payload;
+            this.Kind = kind;
+            this.Prompt = prompt;
+            this.RequestId = requestId;
+            this.Options = options;
+            this.From = from;
+            this.TtlSeconds = ttlSeconds;
         }
 
         /// <summary>
