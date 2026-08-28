@@ -27,6 +27,13 @@ namespace Novu
         public string? SecretKey { get; set; }
 
         /// <summary>
+        /// Email webhook: how `secretKey` is interpreted when signing webhook calls. `text` signs with the raw UTF-8 bytes; `base64`/`hex` decode it to binary first (e.g. for AWS KMS).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("hmacSecretKeyEncoding")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.CredentialsDtoHmacSecretKeyEncodingJsonConverter))]
+        public global::Novu.CredentialsDtoHmacSecretKeyEncoding? HmacSecretKeyEncoding { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
@@ -362,6 +369,9 @@ namespace Novu
         /// <param name="apiKey"></param>
         /// <param name="user"></param>
         /// <param name="secretKey"></param>
+        /// <param name="hmacSecretKeyEncoding">
+        /// Email webhook: how `secretKey` is interpreted when signing webhook calls. `text` signs with the raw UTF-8 bytes; `base64`/`hex` decode it to binary first (e.g. for AWS KMS).
+        /// </param>
         /// <param name="domain"></param>
         /// <param name="password"></param>
         /// <param name="host"></param>
@@ -433,6 +443,7 @@ namespace Novu
             string? apiKey,
             string? user,
             string? secretKey,
+            global::Novu.CredentialsDtoHmacSecretKeyEncoding? hmacSecretKeyEncoding,
             string? domain,
             string? password,
             string? host,
@@ -491,6 +502,7 @@ namespace Novu
             this.ApiKey = apiKey;
             this.User = user;
             this.SecretKey = secretKey;
+            this.HmacSecretKeyEncoding = hmacSecretKeyEncoding;
             this.Domain = domain;
             this.Password = password;
             this.Host = host;

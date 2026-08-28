@@ -4,52 +4,58 @@
 namespace Novu
 {
     /// <summary>
-    /// `metadata` updates conversation state; `trigger` fires a Novu workflow; `human` creates an ask/approve/choose/tell interaction in the current thread.
+    /// Human-interaction verb for `human` signals.
     /// </summary>
-    public enum SignalDtoType
+    public enum SignalDtoKind
     {
         /// <summary>
         ///
         /// </summary>
-        Human,
+        Approve,
         /// <summary>
         ///
         /// </summary>
-        Metadata,
+        Ask,
         /// <summary>
         ///
         /// </summary>
-        Trigger,
+        Choose,
+        /// <summary>
+        ///
+        /// </summary>
+        Tell,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class SignalDtoTypeExtensions
+    public static class SignalDtoKindExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this SignalDtoType value)
+        public static string ToValueString(this SignalDtoKind value)
         {
             return value switch
             {
-                SignalDtoType.Human => "human",
-                SignalDtoType.Metadata => "metadata",
-                SignalDtoType.Trigger => "trigger",
+                SignalDtoKind.Approve => "approve",
+                SignalDtoKind.Ask => "ask",
+                SignalDtoKind.Choose => "choose",
+                SignalDtoKind.Tell => "tell",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SignalDtoType? ToEnum(string value)
+        public static SignalDtoKind? ToEnum(string value)
         {
             return value switch
             {
-                "human" => SignalDtoType.Human,
-                "metadata" => SignalDtoType.Metadata,
-                "trigger" => SignalDtoType.Trigger,
+                "approve" => SignalDtoKind.Approve,
+                "ask" => SignalDtoKind.Ask,
+                "choose" => SignalDtoKind.Choose,
+                "tell" => SignalDtoKind.Tell,
                 _ => null,
             };
         }

@@ -10052,6 +10052,22 @@
                     ]
                   }
                 },
+                "humanApprove": {
+                  "summary": "Ask the conversation subscriber to approve",
+                  "description": "Create an approve/deny card in the current conversation thread. The verdict arrives later on `onAction` with `ctx.humanResponse`.",
+                  "value": {
+                    "conversationId": "64f5a1c2e8b7a3d9f0c1b2a3",
+                    "integrationIdentifier": "slack-support",
+                    "signals": [
+                      {
+                        "type": "human",
+                        "kind": "approve",
+                        "prompt": "Deploy v2.4.1 to production?",
+                        "requestId": "hr_7c2e1a3b-4d5f-6789-abcd-ef0123456789"
+                      }
+                    ]
+                  }
+                },
                 "triggerWorkflow": {
                   "summary": "Trigger a Novu workflow",
                   "description": "Fire a workflow from the agent turn. When `to` is omitted, Novu uses the conversation subscriber if one is resolved.",
@@ -73216,6 +73232,65 @@
           "workflowId"
         ]
       },
+      "HumanSignalDto": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "human"
+            ]
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "ask",
+              "approve",
+              "choose",
+              "tell"
+            ],
+            "description": "Interaction verb queued by `ctx.ask` / `ctx.approve` / `ctx.choose` / `ctx.tell`.",
+            "example": "approve"
+          },
+          "prompt": {
+            "type": "string",
+            "description": "Question, action description, or one-way message shown to the human.",
+            "example": "Deploy v2.4.1 to production?"
+          },
+          "requestId": {
+            "type": "string",
+            "description": "Client-minted id returned by the framework helper; echoed on `ctx.humanResponse.requestId`.",
+            "example": "hr_7c2e1a3b-4d5f-6789-abcd-ef0123456789"
+          },
+          "options": {
+            "description": "Choice labels — required for `choose`, ignored otherwise.",
+            "example": [
+              "us-east",
+              "eu-west"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "from": {
+            "type": "string",
+            "description": "Attribution label rendered in the card.",
+            "example": "deploy-bot"
+          },
+          "ttlSeconds": {
+            "type": "number",
+            "description": "Seconds until the interaction expires. Default 86400 (24h), max 259200.",
+            "example": 3600
+          }
+        },
+        "required": [
+          "type",
+          "kind",
+          "prompt",
+          "requestId"
+        ]
+      },
       "SignalDto": {
         "type": "object",
         "properties": {
@@ -73223,9 +73298,10 @@
             "type": "string",
             "enum": [
               "metadata",
-              "trigger"
+              "trigger",
+              "human"
             ],
-            "description": "`metadata` updates conversation state; `trigger` fires a Novu workflow."
+            "description": "`metadata` updates conversation state; `trigger` fires a Novu workflow; `human` creates an ask/approve/choose/tell interaction in the current thread."
           },
           "action": {
             "type": "string",
@@ -73281,6 +73357,39 @@
             "type": "object",
             "description": "Workflow payload for `trigger` signals.",
             "additionalProperties": true
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "ask",
+              "approve",
+              "choose",
+              "tell"
+            ],
+            "description": "Human-interaction verb for `human` signals."
+          },
+          "prompt": {
+            "type": "string",
+            "description": "Question / action / message for `human` signals."
+          },
+          "requestId": {
+            "type": "string",
+            "description": "Client-minted request id for `human` signals."
+          },
+          "options": {
+            "description": "Choice labels for `human` `choose` signals.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "from": {
+            "type": "string",
+            "description": "Attribution label for `human` signals."
+          },
+          "ttlSeconds": {
+            "type": "number",
+            "description": "TTL in seconds for `human` signals."
           }
         },
         "required": [
@@ -73409,7 +73518,7 @@
           },
           "signals": {
             "type": "array",
-            "description": "Side-effect signals executed during this turn: conversation metadata mutations or Novu workflow triggers.",
+            "description": "Side-effect signals executed during this turn: conversation metadata mutations, Novu workflow triggers, or human-in-the-loop interactions.",
             "items": {
               "oneOf": [
                 {
@@ -73423,6 +73532,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/TriggerSignalDto"
+                },
+                {
+                  "$ref": "#/components/schemas/HumanSignalDto"
                 }
               ]
             }
@@ -74126,6 +74238,15 @@
           },
           "secretKey": {
             "type": "string"
+          },
+          "hmacSecretKeyEncoding": {
+            "type": "string",
+            "description": "Email webhook: how `secretKey` is interpreted when signing webhook calls. `text` signs with the raw UTF-8 bytes; `base64`/`hex` decode it to binary first (e.g. for AWS KMS).",
+            "enum": [
+              "text",
+              "base64",
+              "hex"
+            ]
           },
           "domain": {
             "type": "string"
@@ -80140,8 +80261,7 @@
           },
           "preheader": {
             "type": "string",
-            "description": "One-line inbox preview text shown next to the subject.",
-            "maxLength": 84
+            "description": "One-line inbox preview text shown next to the subject."
           }
         },
         "required": [

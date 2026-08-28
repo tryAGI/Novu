@@ -111,7 +111,7 @@ namespace Novu
         /// Mark the conversation resolved. May be combined with a final `reply`.
         /// </param>
         /// <param name="signals">
-        /// Side-effect signals executed during this turn: conversation metadata mutations or Novu workflow triggers.
+        /// Side-effect signals executed during this turn: conversation metadata mutations, Novu workflow triggers, or human-in-the-loop interactions.
         /// </param>
         /// <param name="toolResults">
         /// Tool-call outcomes to persist in conversation history (typically before the assistant reply).
@@ -141,7 +141,7 @@ namespace Novu
             global::Novu.ToolApprovalRequestPayloadDto? toolApprovalRequest = default,
             global::Novu.EditPayloadDto? edit = default,
             global::Novu.ResolveDto? resolve = default,
-            global::System.Collections.Generic.IList<global::Novu.OneOf<global::Novu.MetadataSetSignalDto, global::Novu.MetadataDeleteSignalDto, global::Novu.MetadataClearSignalDto, global::Novu.TriggerSignalDto>>? signals = default,
+            global::System.Collections.Generic.IList<global::Novu.OneOf<global::Novu.MetadataSetSignalDto, global::Novu.MetadataDeleteSignalDto, global::Novu.MetadataClearSignalDto, global::Novu.TriggerSignalDto, global::Novu.HumanSignalDto>>? signals = default,
             global::System.Collections.Generic.IList<global::Novu.ToolResultDto>? toolResults = default,
             global::System.Collections.Generic.IList<global::Novu.AddReactionPayloadDto>? addReactions = default,
             global::System.Collections.Generic.IList<global::Novu.DeleteMessagePayloadDto>? deleteMessages = default,
