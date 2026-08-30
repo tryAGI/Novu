@@ -55,11 +55,11 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        NovuAgentChat,
+        NovuSlack,
         /// <summary>
         ///
         /// </summary>
-        NovuSlack,
+        NovuWebChat,
         /// <summary>
         ///
         /// </summary>
@@ -133,8 +133,8 @@ namespace Novu
                 SubscriberChannelDtoProviderId.Line => "line",
                 SubscriberChannelDtoProviderId.Mattermost => "mattermost",
                 SubscriberChannelDtoProviderId.Msteams => "msteams",
-                SubscriberChannelDtoProviderId.NovuAgentChat => "novu-agent-chat",
                 SubscriberChannelDtoProviderId.NovuSlack => "novu-slack",
+                SubscriberChannelDtoProviderId.NovuWebChat => "novu-web-chat",
                 SubscriberChannelDtoProviderId.OneSignal => "one-signal",
                 SubscriberChannelDtoProviderId.PushWebhook => "push-webhook",
                 SubscriberChannelDtoProviderId.PusherBeams => "pusher-beams",
@@ -168,8 +168,8 @@ namespace Novu
                 "line" => SubscriberChannelDtoProviderId.Line,
                 "mattermost" => SubscriberChannelDtoProviderId.Mattermost,
                 "msteams" => SubscriberChannelDtoProviderId.Msteams,
-                "novu-agent-chat" => SubscriberChannelDtoProviderId.NovuAgentChat,
                 "novu-slack" => SubscriberChannelDtoProviderId.NovuSlack,
+                "novu-web-chat" => SubscriberChannelDtoProviderId.NovuWebChat,
                 "one-signal" => SubscriberChannelDtoProviderId.OneSignal,
                 "push-webhook" => SubscriberChannelDtoProviderId.PushWebhook,
                 "pusher-beams" => SubscriberChannelDtoProviderId.PusherBeams,
