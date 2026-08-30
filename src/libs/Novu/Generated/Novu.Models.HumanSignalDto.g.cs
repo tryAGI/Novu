@@ -68,6 +68,13 @@ namespace Novu
         public double? TtlSeconds { get; set; }
 
         /// <summary>
+        /// Novu subscriberId(s) allowed to settle this interaction (max 50). First valid answer wins. When omitted, the conversation subscriber is used. Subscriber ids only — not workflow topic recipients.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("to")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        public global::Novu.OneOf<string, global::System.Collections.Generic.IList<string>>? To { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -101,6 +108,9 @@ namespace Novu
         /// Seconds until the interaction expires. Default 86400 (24h), max 259200.<br/>
         /// Example: 3600
         /// </param>
+        /// <param name="to">
+        /// Novu subscriberId(s) allowed to settle this interaction (max 50). First valid answer wins. When omitted, the conversation subscriber is used. Subscriber ids only — not workflow topic recipients.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -111,7 +121,8 @@ namespace Novu
             global::Novu.HumanSignalDtoType type,
             global::System.Collections.Generic.IList<string>? options,
             string? from,
-            double? ttlSeconds)
+            double? ttlSeconds,
+            global::Novu.OneOf<string, global::System.Collections.Generic.IList<string>>? to)
         {
             this.Type = type;
             this.Kind = kind;
@@ -120,6 +131,7 @@ namespace Novu
             this.Options = options;
             this.From = from;
             this.TtlSeconds = ttlSeconds;
+            this.To = to;
         }
 
         /// <summary>

@@ -70055,7 +70055,7 @@
               "novu-slack",
               "telegram",
               "sendblue",
-              "novu-agent-chat",
+              "novu-web-chat",
               "fcm",
               "apns",
               "expo",
@@ -71025,7 +71025,7 @@
           "novu-slack",
           "telegram",
           "sendblue",
-          "novu-agent-chat",
+          "novu-web-chat",
           "anthropic",
           "novu-anthropic",
           "anthropic-aws",
@@ -73254,11 +73254,13 @@
           },
           "prompt": {
             "type": "string",
+            "pattern": "/\\S/",
             "description": "Question, action description, or one-way message shown to the human.",
             "example": "Deploy v2.4.1 to production?"
           },
           "requestId": {
             "type": "string",
+            "pattern": "/\\S/",
             "description": "Client-minted id returned by the framework helper; echoed on `ctx.humanResponse.requestId`.",
             "example": "hr_7c2e1a3b-4d5f-6789-abcd-ef0123456789"
           },
@@ -73270,7 +73272,8 @@
             ],
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "pattern": "/\\S/"
             }
           },
           "from": {
@@ -73280,8 +73283,28 @@
           },
           "ttlSeconds": {
             "type": "number",
+            "minimum": 60,
             "description": "Seconds until the interaction expires. Default 86400 (24h), max 259200.",
             "example": 3600
+          },
+          "to": {
+            "description": "Novu subscriberId(s) allowed to settle this interaction (max 50). First valid answer wins. When omitted, the conversation subscriber is used. Subscriber ids only — not workflow topic recipients.",
+            "oneOf": [
+              {
+                "type": "string",
+                "example": "alice"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "example": [
+                  "alice",
+                  "bob"
+                ]
+              }
+            ]
           }
         },
         "required": [
@@ -73289,111 +73312,6 @@
           "kind",
           "prompt",
           "requestId"
-        ]
-      },
-      "SignalDto": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [
-              "metadata",
-              "trigger",
-              "human"
-            ],
-            "description": "`metadata` updates conversation state; `trigger` fires a Novu workflow; `human` creates an ask/approve/choose/tell interaction in the current thread."
-          },
-          "action": {
-            "type": "string",
-            "enum": [
-              "set",
-              "delete",
-              "clear"
-            ],
-            "description": "Required for metadata signals other than the default `set`."
-          },
-          "key": {
-            "type": "string",
-            "description": "Metadata key for `set` / `delete` actions.",
-            "example": "crm:ticketId"
-          },
-          "value": {
-            "type": "object",
-            "description": "Value for metadata `set` actions. JSON-serializable."
-          },
-          "workflowId": {
-            "type": "string",
-            "description": "Workflow identifier for `trigger` signals.",
-            "example": "order-shipped"
-          },
-          "to": {
-            "description": "Trigger recipients. SubscriberId string, subscriber/topic object, or array. Falls back to the conversation subscriber when omitted.",
-            "oneOf": [
-              {
-                "type": "string",
-                "example": "subscriber-123"
-              },
-              {
-                "type": "object",
-                "additionalProperties": true
-              },
-              {
-                "type": "array",
-                "items": {
-                  "oneOf": [
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "object",
-                      "additionalProperties": true
-                    }
-                  ]
-                }
-              }
-            ]
-          },
-          "payload": {
-            "type": "object",
-            "description": "Workflow payload for `trigger` signals.",
-            "additionalProperties": true
-          },
-          "kind": {
-            "type": "string",
-            "enum": [
-              "ask",
-              "approve",
-              "choose",
-              "tell"
-            ],
-            "description": "Human-interaction verb for `human` signals."
-          },
-          "prompt": {
-            "type": "string",
-            "description": "Question / action / message for `human` signals."
-          },
-          "requestId": {
-            "type": "string",
-            "description": "Client-minted request id for `human` signals."
-          },
-          "options": {
-            "description": "Choice labels for `human` `choose` signals.",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "from": {
-            "type": "string",
-            "description": "Attribution label for `human` signals."
-          },
-          "ttlSeconds": {
-            "type": "number",
-            "description": "TTL in seconds for `human` signals."
-          }
-        },
-        "required": [
-          "type"
         ]
       },
       "ToolResultDto": {
@@ -75373,7 +75291,7 @@
           "novu-slack",
           "telegram",
           "sendblue",
-          "novu-agent-chat",
+          "novu-web-chat",
           "fcm",
           "apns",
           "expo",
@@ -84921,7 +84839,7 @@
               "novu-slack",
               "telegram",
               "sendblue",
-              "novu-agent-chat",
+              "novu-web-chat",
               "anthropic",
               "novu-anthropic",
               "anthropic-aws",
@@ -86670,7 +86588,7 @@
               "novu-slack",
               "telegram",
               "sendblue",
-              "novu-agent-chat",
+              "novu-web-chat",
               "anthropic",
               "novu-anthropic",
               "anthropic-aws",
@@ -87456,6 +87374,13 @@
           },
           "to": {
             "description": "Recipient address info",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WebhookInboundEmailAddressDto"
+            }
+          },
+          "bcc": {
+            "description": "Matched SMTP envelope recipient when it is absent from the To and Cc headers",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/WebhookInboundEmailAddressDto"

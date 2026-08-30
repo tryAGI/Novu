@@ -216,10 +216,6 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        NovuAgentChat,
-        /// <summary>
-        ///
-        /// </summary>
         NovuAnthropic,
         /// <summary>
         ///
@@ -237,6 +233,10 @@ namespace Novu
         ///
         /// </summary>
         NovuSms,
+        /// <summary>
+        ///
+        /// </summary>
+        NovuWebChat,
         /// <summary>
         ///
         /// </summary>
@@ -450,12 +450,12 @@ namespace Novu
                 GetChannelEndpointResponseDtoProviderId.Nexmo => "nexmo",
                 GetChannelEndpointResponseDtoProviderId.Nodemailer => "nodemailer",
                 GetChannelEndpointResponseDtoProviderId.Novu => "novu",
-                GetChannelEndpointResponseDtoProviderId.NovuAgentChat => "novu-agent-chat",
                 GetChannelEndpointResponseDtoProviderId.NovuAnthropic => "novu-anthropic",
                 GetChannelEndpointResponseDtoProviderId.NovuEmail => "novu-email",
                 GetChannelEndpointResponseDtoProviderId.NovuEmailAgent => "novu-email-agent",
                 GetChannelEndpointResponseDtoProviderId.NovuSlack => "novu-slack",
                 GetChannelEndpointResponseDtoProviderId.NovuSms => "novu-sms",
+                GetChannelEndpointResponseDtoProviderId.NovuWebChat => "novu-web-chat",
                 GetChannelEndpointResponseDtoProviderId.OneSignal => "one-signal",
                 GetChannelEndpointResponseDtoProviderId.Opsgenie => "opsgenie",
                 GetChannelEndpointResponseDtoProviderId.Outlook365 => "outlook365",
@@ -554,12 +554,12 @@ namespace Novu
                 "nexmo" => GetChannelEndpointResponseDtoProviderId.Nexmo,
                 "nodemailer" => GetChannelEndpointResponseDtoProviderId.Nodemailer,
                 "novu" => GetChannelEndpointResponseDtoProviderId.Novu,
-                "novu-agent-chat" => GetChannelEndpointResponseDtoProviderId.NovuAgentChat,
                 "novu-anthropic" => GetChannelEndpointResponseDtoProviderId.NovuAnthropic,
                 "novu-email" => GetChannelEndpointResponseDtoProviderId.NovuEmail,
                 "novu-email-agent" => GetChannelEndpointResponseDtoProviderId.NovuEmailAgent,
                 "novu-slack" => GetChannelEndpointResponseDtoProviderId.NovuSlack,
                 "novu-sms" => GetChannelEndpointResponseDtoProviderId.NovuSms,
+                "novu-web-chat" => GetChannelEndpointResponseDtoProviderId.NovuWebChat,
                 "one-signal" => GetChannelEndpointResponseDtoProviderId.OneSignal,
                 "opsgenie" => GetChannelEndpointResponseDtoProviderId.Opsgenie,
                 "outlook365" => GetChannelEndpointResponseDtoProviderId.Outlook365,

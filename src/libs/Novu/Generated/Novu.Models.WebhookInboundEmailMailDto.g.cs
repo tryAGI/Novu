@@ -23,6 +23,12 @@ namespace Novu
         public required global::System.Collections.Generic.IList<global::Novu.WebhookInboundEmailAddressDto> To { get; set; }
 
         /// <summary>
+        /// Matched SMTP envelope recipient when it is absent from the To and Cc headers
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bcc")]
+        public global::System.Collections.Generic.IList<global::Novu.WebhookInboundEmailAddressDto>? Bcc { get; set; }
+
+        /// <summary>
         /// Email subject
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subject")]
@@ -69,6 +75,9 @@ namespace Novu
         /// <param name="messageId">
         /// Message ID header
         /// </param>
+        /// <param name="bcc">
+        /// Matched SMTP envelope recipient when it is absent from the To and Cc headers
+        /// </param>
         /// <param name="html">
         /// HTML body
         /// </param>
@@ -83,11 +92,13 @@ namespace Novu
             global::System.Collections.Generic.IList<global::Novu.WebhookInboundEmailAddressDto> to,
             string subject,
             string messageId,
+            global::System.Collections.Generic.IList<global::Novu.WebhookInboundEmailAddressDto>? bcc,
             string? html,
             string? text)
         {
             this.From = from ?? throw new global::System.ArgumentNullException(nameof(from));
             this.To = to ?? throw new global::System.ArgumentNullException(nameof(to));
+            this.Bcc = bcc;
             this.Subject = subject ?? throw new global::System.ArgumentNullException(nameof(subject));
             this.Html = html;
             this.Text = text;
