@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Novu
@@ -109,10 +111,19 @@ namespace Novu
         public required bool Primary { get; set; }
 
         /// <summary>
-        /// An array of conditions associated with the integration that may influence its behavior or processing logic.
+        /// Legacy StepFilter conditions. Ignored when `rules` is also set.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conditions")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.IList<global::Novu.StepFilterDto>? Conditions { get; set; }
+
+        /// <summary>
+        /// JSONLogic used at send time to select this integration. Takes precedence over `conditions`.<br/>
+        /// Example: {"==":[{"var":"context.tenant.id"},"acme"]}
+        /// </summary>
+        /// <example>{"==":[{"var":"context.tenant.id"},"acme"]}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rules")]
+        public object? Rules { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -168,8 +179,9 @@ namespace Novu
         /// <param name="deletedBy">
         /// The identifier of the user who performed the deletion of this integration. Useful for audit trails.
         /// </param>
-        /// <param name="conditions">
-        /// An array of conditions associated with the integration that may influence its behavior or processing logic.
+        /// <param name="rules">
+        /// JSONLogic used at send time to select this integration. Takes precedence over `conditions`.<br/>
+        /// Example: {"==":[{"var":"context.tenant.id"},"acme"]}
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -190,7 +202,7 @@ namespace Novu
             global::Novu.ConfigurationsDto? configurations,
             string? deletedAt,
             string? deletedBy,
-            global::System.Collections.Generic.IList<global::Novu.StepFilterDto>? conditions)
+            object? rules)
         {
             this.Id = id;
             this.EnvironmentId = environmentId ?? throw new global::System.ArgumentNullException(nameof(environmentId));
@@ -207,7 +219,7 @@ namespace Novu
             this.DeletedAt = deletedAt;
             this.DeletedBy = deletedBy;
             this.Primary = primary;
-            this.Conditions = conditions;
+            this.Rules = rules;
         }
 
         /// <summary>

@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Novu
@@ -65,10 +67,19 @@ namespace Novu
         public bool? Check { get; set; }
 
         /// <summary>
-        /// Conditions for the integration
+        /// Legacy StepFilter conditions. Ignored when `rules` is also set.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conditions")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.IList<global::Novu.StepFilterDto>? Conditions { get; set; }
+
+        /// <summary>
+        /// JSONLogic used at send time to select this integration. Takes precedence over `conditions`.<br/>
+        /// Example: {"==":[{"var":"context.tenant.id"},"acme"]}
+        /// </summary>
+        /// <example>{"==":[{"var":"context.tenant.id"},"acme"]}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rules")]
+        public object? Rules { get; set; }
 
         /// <summary>
         /// Configurations for the integration
@@ -112,8 +123,9 @@ namespace Novu
         /// <param name="check">
         /// Flag to check the integration status
         /// </param>
-        /// <param name="conditions">
-        /// Conditions for the integration
+        /// <param name="rules">
+        /// JSONLogic used at send time to select this integration. Takes precedence over `conditions`.<br/>
+        /// Example: {"==":[{"var":"context.tenant.id"},"acme"]}
         /// </param>
         /// <param name="configurations">
         /// Configurations for the integration
@@ -131,7 +143,7 @@ namespace Novu
             global::Novu.CredentialsDto? credentials,
             bool? active,
             bool? check,
-            global::System.Collections.Generic.IList<global::Novu.StepFilterDto>? conditions,
+            object? rules,
             object? configurations)
         {
             this.Name = name;
@@ -143,7 +155,7 @@ namespace Novu
             this.Credentials = credentials;
             this.Active = active;
             this.Check = check;
-            this.Conditions = conditions;
+            this.Rules = rules;
             this.Configurations = configurations;
         }
 
