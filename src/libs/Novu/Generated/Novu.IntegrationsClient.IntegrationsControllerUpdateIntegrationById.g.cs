@@ -1,6 +1,8 @@
 
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace Novu
 {
     public partial class IntegrationsClient
@@ -934,7 +936,10 @@ namespace Novu
         /// </param>
         /// <param name="credentials"></param>
         /// <param name="check"></param>
-        /// <param name="conditions"></param>
+        /// <param name="rules">
+        /// JSONLogic used at send time to select this integration. Takes precedence over `conditions`.<br/>
+        /// Example: {"==":[{"var":"context.tenant.id"},"acme"]}
+        /// </param>
         /// <param name="configurations">
         /// Configurations for the integration
         /// </param>
@@ -949,7 +954,7 @@ namespace Novu
             bool? active = default,
             global::Novu.CredentialsDto? credentials = default,
             bool? check = default,
-            global::System.Collections.Generic.IList<global::Novu.StepFilterDto>? conditions = default,
+            object? rules = default,
             object? configurations = default,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -962,7 +967,7 @@ namespace Novu
                 Active = active,
                 Credentials = credentials,
                 Check = check,
-                Conditions = conditions,
+                Rules = rules,
                 Configurations = configurations,
             };
 
