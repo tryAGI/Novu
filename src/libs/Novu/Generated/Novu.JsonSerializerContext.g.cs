@@ -1438,13 +1438,8 @@ namespace Novu
             return Resolver.GetTypeInfo(type, Options);
         }
 
-        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+         static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
-            var options = new global::System.Text.Json.JsonSerializerOptions
-            {
-                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-                TypeInfoResolver = Resolver,
-            };
             options.Converters.Add(new global::Novu.JsonConverters.StepsItemJsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.StepsItem2JsonConverter());
             options.Converters.Add(new global::Novu.JsonConverters.StepsItem3JsonConverter());
@@ -1524,8 +1519,17 @@ namespace Novu
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>());
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>());
             options.Converters.Add(new global::Novu.JsonConverters.UnixTimestampJsonConverter());
-
             options.Converters.Add(new LazyEnumJsonConverterFactory());
+        }
+
+        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+        {
+            var options = new global::System.Text.Json.JsonSerializerOptions
+            {
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                TypeInfoResolver = Resolver,
+            };
+            AddConverters(options);
 
             return options;
         }
