@@ -37,7 +37,7 @@ namespace Novu
 
         internal global::Novu.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::Novu.AutoSDKServerConfiguration();
 
-        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Novu.SourceGenerationContext.Default);
+        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Novu.ContextsSourceGenerationContext.Default);
 
         /// <summary>
         ///
