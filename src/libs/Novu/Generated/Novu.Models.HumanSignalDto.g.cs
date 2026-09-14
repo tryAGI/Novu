@@ -26,13 +26,11 @@ namespace Novu
         public required global::Novu.HumanSignalDtoKind Kind { get; set; }
 
         /// <summary>
-        /// Question, action description, or one-way message shown to the human.<br/>
-        /// Example: Deploy v2.4.1 to production?
+        /// Markdown, HITL chrome, or a posted Card element (`type: "card"`) from `{ render }`.
         /// </summary>
-        /// <example>Deploy v2.4.1 to production?</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("card")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Prompt { get; set; }
+        public required object Card { get; set; }
 
         /// <summary>
         /// Client-minted id returned by the framework helper; echoed on `ctx.humanResponse.requestId`.<br/>
@@ -44,12 +42,12 @@ namespace Novu
         public required string RequestId { get; set; }
 
         /// <summary>
-        /// Choice labels — required for `choose`, ignored otherwise.<br/>
-        /// Example: [us-east, eu-west]
+        /// When set, pending chrome buttons use `human:{actionIdentifier}:…` (the client `requestId` for `renderApprove`).<br/>
+        /// Example: hr_7c2e1a3b-4d5f-6789-abcd-ef0123456789
         /// </summary>
-        /// <example>[us-east, eu-west]</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("options")]
-        public global::System.Collections.Generic.IList<string>? Options { get; set; }
+        /// <example>hr_7c2e1a3b-4d5f-6789-abcd-ef0123456789</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("actionIdentifier")]
+        public string? ActionIdentifier { get; set; }
 
         /// <summary>
         /// Attribution label rendered in the card.<br/>
@@ -60,7 +58,7 @@ namespace Novu
         public string? From { get; set; }
 
         /// <summary>
-        /// Seconds until the interaction expires. Default 86400 (24h), max 259200.<br/>
+        /// Seconds until the interaction expires. Default 86400 (24h), max 432000.<br/>
         /// Example: 3600
         /// </summary>
         /// <example>3600</example>
@@ -87,25 +85,24 @@ namespace Novu
         /// Interaction verb queued by `ctx.ask` / `ctx.approve` / `ctx.choose` / `ctx.tell`.<br/>
         /// Example: approve
         /// </param>
-        /// <param name="prompt">
-        /// Question, action description, or one-way message shown to the human.<br/>
-        /// Example: Deploy v2.4.1 to production?
+        /// <param name="card">
+        /// Markdown, HITL chrome, or a posted Card element (`type: "card"`) from `{ render }`.
         /// </param>
         /// <param name="requestId">
         /// Client-minted id returned by the framework helper; echoed on `ctx.humanResponse.requestId`.<br/>
         /// Example: hr_7c2e1a3b-4d5f-6789-abcd-ef0123456789
         /// </param>
         /// <param name="type"></param>
-        /// <param name="options">
-        /// Choice labels — required for `choose`, ignored otherwise.<br/>
-        /// Example: [us-east, eu-west]
+        /// <param name="actionIdentifier">
+        /// When set, pending chrome buttons use `human:{actionIdentifier}:…` (the client `requestId` for `renderApprove`).<br/>
+        /// Example: hr_7c2e1a3b-4d5f-6789-abcd-ef0123456789
         /// </param>
         /// <param name="from">
         /// Attribution label rendered in the card.<br/>
         /// Example: deploy-bot
         /// </param>
         /// <param name="ttlSeconds">
-        /// Seconds until the interaction expires. Default 86400 (24h), max 259200.<br/>
+        /// Seconds until the interaction expires. Default 86400 (24h), max 432000.<br/>
         /// Example: 3600
         /// </param>
         /// <param name="to">
@@ -116,19 +113,19 @@ namespace Novu
 #endif
         public HumanSignalDto(
             global::Novu.HumanSignalDtoKind kind,
-            string prompt,
+            object card,
             string requestId,
             global::Novu.HumanSignalDtoType type,
-            global::System.Collections.Generic.IList<string>? options,
+            string? actionIdentifier,
             string? from,
             double? ttlSeconds,
             global::Novu.OneOf<string, global::System.Collections.Generic.IList<string>>? to)
         {
             this.Type = type;
             this.Kind = kind;
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.Card = card;
             this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
-            this.Options = options;
+            this.ActionIdentifier = actionIdentifier;
             this.From = from;
             this.TtlSeconds = ttlSeconds;
             this.To = to;

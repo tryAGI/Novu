@@ -68,6 +68,24 @@ namespace Novu
         public string? McpServerName { get; set; }
 
         /// <summary>
+        /// Novu subscriberId(s) allowed to settle this tool gate when HITL is enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("to")]
+        public object? To { get; set; }
+
+        /// <summary>
+        /// Attribution label shown on the HITL card.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("from")]
+        public string? From { get; set; }
+
+        /// <summary>
+        /// Seconds until the HITL tool-gate expires.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ttlSeconds")]
+        public double? TtlSeconds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -104,6 +122,15 @@ namespace Novu
         /// MCP server name when the gated tool is from an MCP server (for UI labels).<br/>
         /// Example: GitHub
         /// </param>
+        /// <param name="to">
+        /// Novu subscriberId(s) allowed to settle this tool gate when HITL is enabled.
+        /// </param>
+        /// <param name="from">
+        /// Attribution label shown on the HITL card.
+        /// </param>
+        /// <param name="ttlSeconds">
+        /// Seconds until the HITL tool-gate expires.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -114,7 +141,10 @@ namespace Novu
             object? input,
             string? approveActionId,
             string? denyActionId,
-            string? mcpServerName)
+            string? mcpServerName,
+            object? to,
+            string? from,
+            double? ttlSeconds)
         {
             this.ApprovalId = approvalId ?? throw new global::System.ArgumentNullException(nameof(approvalId));
             this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
@@ -123,6 +153,9 @@ namespace Novu
             this.ApproveActionId = approveActionId;
             this.DenyActionId = denyActionId;
             this.McpServerName = mcpServerName;
+            this.To = to;
+            this.From = from;
+            this.TtlSeconds = ttlSeconds;
         }
 
         /// <summary>
