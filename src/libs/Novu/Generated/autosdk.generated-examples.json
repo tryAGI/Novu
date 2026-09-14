@@ -46,17 +46,6 @@
     },
     {
       "Order": 5,
-      "Title": "Send an agent reply",
-      "Slug": "agentreplycontroller-handleagentreplyhandler",
-      "Description": "Send a message or side-effect into an existing agent conversation from your backend.\n\nUse this endpoint when you are not using \u0060@novu/framework\u0060 (for example Python, Go, PHP, .NET, or Java SDKs),\nor when a server process outside the bridge needs to post into a live conversation.\n\n**Message actions**\n- \u0060reply\u0060 \u2014 markdown, interactive card, or tool-approval card (optional \u0060files\u0060)\n- \u0060edit\u0060 \u2014 update a previously delivered message in place\n- \u0060deleteMessages\u0060 \u2014 remove rendered platform messages (history is kept)\n- \u0060addReactions\u0060 \u2014 add emoji reactions to existing messages\n\n**Turn control**\n- \u0060typing\u0060 \u2014 \u0060{ status?: string }\u0060 to set status, or \u0060\u0022stop\u0022\u0060 to clear\n- \u0060resolve\u0060 \u2014 mark the conversation resolved (optionally with a final reply)\n- \u0060error: true\u0060 \u2014 report a customer-runtime failure (cannot combine with other actions)\n\n**Signals \u0026 tools**\n- \u0060signals\u0060 \u2014 metadata set/delete/clear, or trigger a Novu workflow\n- \u0060toolResults\u0060 \u2014 persist tool outputs into conversation history\n- \u0060toolApprovalRequest\u0060 \u2014 ledger a gated tool call (pair with an approval card reply)\n\nReturns \u0060{ data: { messageId, platformThreadId } }\u0060 when a reply or edit is delivered;\notherwise \u0060{ data: null }\u0060.",
-      "Language": "http",
-      "Code": "### Send an agent reply\n# @name AgentReplyController_handleAgentReplyHandler\nPOST {{host}}/v1/agents/{{agentId}}/reply\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022conversationId\u0022: \u002264f5a1c2e8b7a3d9f0c1b2a3\u0022,\n  \u0022integrationIdentifier\u0022: \u0022slack-support\u0022,\n  \u0022addReactions\u0022: [\n    {\n      \u0022messageId\u0022: \u00221712345678.123456\u0022,\n      \u0022emojiName\u0022: \u0022white_check_mark\u0022\n    }\n  ]\n}\n\n## Responses\n# 200\n# Description: OK. When a reply or edit is delivered, \u0060data\u0060 contains the platform message identifiers. Side-effect-only requests (typing, reactions, deletes, signals without an outbound message) return \u0060data: null\u0060.\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: The agent or conversation was not found.\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "AgentReplyController_handleAgentReplyHandler",
-      "Setup": null
-    },
-    {
-      "Order": 6,
       "Title": "Update an agent",
       "Slug": "agentscontroller-updateagent",
       "Description": "Update an agent by its external identifier.",
@@ -67,7 +56,7 @@
       "Setup": null
     },
     {
-      "Order": 7,
+      "Order": 6,
       "Title": "Update an agent bridge",
       "Slug": "agentscontroller-updateagentbridge",
       "Description": "Update the bridge URL configuration for an agent. Used by the CLI to register dev tunnel URLs. Refuses to activate dev bridges on production environments.",
@@ -78,7 +67,7 @@
       "Setup": null
     },
     {
-      "Order": 8,
+      "Order": 7,
       "Title": "Create an agent integration",
       "Slug": "agentintegrationscontroller-addagentintegration",
       "Description": "Create a link between an agent (by identifier) and an integration (by integration **identifier**, not the internal _id).",
@@ -89,7 +78,7 @@
       "Setup": null
     },
     {
-      "Order": 9,
+      "Order": 8,
       "Title": "Delete an agent integration",
       "Slug": "agentintegrationscontroller-removeagentintegration",
       "Description": "Delete a specific agent-integration link by its document id.",
@@ -100,7 +89,7 @@
       "Setup": null
     },
     {
-      "Order": 10,
+      "Order": 9,
       "Title": "List agent integrations",
       "Slug": "agentintegrationscontroller-listagentintegrations",
       "Description": "Retrieve integration links for an agent identified by its external identifier. Supports cursor pagination via **after**, **before**, **limit**, **orderBy**, and **orderDirection**.",
@@ -111,7 +100,7 @@
       "Setup": null
     },
     {
-      "Order": 11,
+      "Order": 10,
       "Title": "Update an agent integration",
       "Slug": "agentintegrationscontroller-updateagentintegration",
       "Description": "Update which integration a link points to (by integration **identifier**, not the internal _id).",
@@ -122,7 +111,7 @@
       "Setup": null
     },
     {
-      "Order": 12,
+      "Order": 11,
       "Title": "Create a channel connection",
       "Slug": "channelconnectionscontroller-createchannelconnection",
       "Description": "Create a new channel connection for a resource for given integration. Only one channel connection is allowed per resource and integration.",
@@ -133,7 +122,7 @@
       "Setup": null
     },
     {
-      "Order": 13,
+      "Order": 12,
       "Title": "Delete a channel connection",
       "Slug": "channelconnectionscontroller-deletechannelconnection",
       "Description": "Delete a specific channel connection by its unique identifier.",
@@ -144,7 +133,7 @@
       "Setup": null
     },
     {
-      "Order": 14,
+      "Order": 13,
       "Title": "List all channel connections",
       "Slug": "channelconnectionscontroller-listchannelconnections",
       "Description": "List all channel connections for a resource.",
@@ -155,7 +144,7 @@
       "Setup": null
     },
     {
-      "Order": 15,
+      "Order": 14,
       "Title": "Retrieve a channel connection",
       "Slug": "channelconnectionscontroller-getchannelconnectionbyidentifier",
       "Description": "Retrieve a specific channel connection by its unique identifier.",
@@ -166,7 +155,7 @@
       "Setup": null
     },
     {
-      "Order": 16,
+      "Order": 15,
       "Title": "Update a channel connection",
       "Slug": "channelconnectionscontroller-updatechannelconnection",
       "Description": "Update an existing channel connection by its unique identifier.",
@@ -177,7 +166,7 @@
       "Setup": null
     },
     {
-      "Order": 17,
+      "Order": 16,
       "Title": "Create a channel endpoint",
       "Slug": "channelendpointscontroller-createchannelendpoint",
       "Description": "Create a new channel endpoint for a resource.",
@@ -188,7 +177,7 @@
       "Setup": null
     },
     {
-      "Order": 18,
+      "Order": 17,
       "Title": "Delete a channel endpoint",
       "Slug": "channelendpointscontroller-deletechannelendpoint",
       "Description": "Delete a specific channel endpoint by its unique identifier.",
@@ -199,7 +188,7 @@
       "Setup": null
     },
     {
-      "Order": 19,
+      "Order": 18,
       "Title": "List all channel endpoints",
       "Slug": "channelendpointscontroller-listchannelendpoints",
       "Description": "List all channel endpoints for a resource based on query filters.",
@@ -210,7 +199,7 @@
       "Setup": null
     },
     {
-      "Order": 20,
+      "Order": 19,
       "Title": "Retrieve a channel endpoint",
       "Slug": "channelendpointscontroller-getchannelendpoint",
       "Description": "Retrieve a specific channel endpoint by its unique identifier.",
@@ -221,7 +210,7 @@
       "Setup": null
     },
     {
-      "Order": 21,
+      "Order": 20,
       "Title": "Update a channel endpoint",
       "Slug": "channelendpointscontroller-updatechannelendpoint",
       "Description": "Update an existing channel endpoint by its unique identifier.",
@@ -232,7 +221,7 @@
       "Setup": null
     },
     {
-      "Order": 22,
+      "Order": 21,
       "Title": "Create a context",
       "Slug": "contextscontroller-createcontext",
       "Description": "Create a new context with the specified type, id, and data. Returns 409 if context already exists.\n      **type** and **id** are required fields, **data** is optional, if the context already exists, it returns the 409 response",
@@ -243,7 +232,7 @@
       "Setup": null
     },
     {
-      "Order": 23,
+      "Order": 22,
       "Title": "Delete a context",
       "Slug": "contextscontroller-deletecontext",
       "Description": "Delete a context by its type and id.\n      **type** and **id** are required fields, if the context does not exist, it returns the 404 response",
@@ -254,7 +243,7 @@
       "Setup": null
     },
     {
-      "Order": 24,
+      "Order": 23,
       "Title": "Retrieve a context",
       "Slug": "contextscontroller-getcontext",
       "Description": "Retrieve a specific context by its type and id.\n      **type** and **id** are required fields, if the context does not exist, it returns the 404 response",
@@ -265,7 +254,7 @@
       "Setup": null
     },
     {
-      "Order": 25,
+      "Order": 24,
       "Title": "List all contexts",
       "Slug": "contextscontroller-listcontexts",
       "Description": "Retrieve a paginated list of all contexts, optionally filtered by type and key pattern.\n      **type** and **id** are optional fields, if provided, only contexts with the matching type and id will be returned.\n      **search** is an optional field, if provided, only contexts with the matching key pattern will be returned.\n      Checkout all possible parameters in the query section below for more details",
@@ -276,7 +265,7 @@
       "Setup": null
     },
     {
-      "Order": 26,
+      "Order": 25,
       "Title": "Update a context",
       "Slug": "contextscontroller-updatecontext",
       "Description": "Update the data of an existing context.\n      **type** and **id** are required fields, **data** is required. Only the data field is updated, the rest of the context is not affected.\n      If the context does not exist, it returns the 404 response",
@@ -287,7 +276,7 @@
       "Setup": null
     },
     {
-      "Order": 27,
+      "Order": 26,
       "Title": "Create a domain",
       "Slug": "domainscontroller-createdomain",
       "Description": "Registers a new inbound-email domain. The response includes the DNS records customers must add at their DNS provider before the domain can receive mail.",
@@ -298,7 +287,7 @@
       "Setup": null
     },
     {
-      "Order": 28,
+      "Order": 27,
       "Title": "Delete a domain",
       "Slug": "domainscontroller-deletedomain",
       "Description": "Removes the domain and cascades the deletion to all of its routes. Inbound mail for that domain stops being processed immediately.",
@@ -309,7 +298,7 @@
       "Setup": null
     },
     {
-      "Order": 29,
+      "Order": 28,
       "Title": "Diagnose inbound DNS for a domain",
       "Slug": "domainscontroller-diagnosedomain",
       "Description": "Runs live DNS checks for inbound email readiness (MX correctness, apex CNAME collision, and common DNS blocklists for the Novu mail host). Returns structured issues with plain-language fixes.",
@@ -320,7 +309,7 @@
       "Setup": null
     },
     {
-      "Order": 30,
+      "Order": 29,
       "Title": "List domains for an environment",
       "Slug": "domainscontroller-listdomains",
       "Description": "Returns a paginated list of inbound-email domains in the current environment. Supports cursor pagination and a name contains filter.",
@@ -331,7 +320,7 @@
       "Setup": null
     },
     {
-      "Order": 31,
+      "Order": 30,
       "Title": "Retrieve a domain by name",
       "Slug": "domainscontroller-getdomain",
       "Description": "Returns the domain configuration and the DNS records that must be in place. This is a pure read; call \u0060domains.verify\u0060 to refresh verification status from DNS.",
@@ -342,7 +331,7 @@
       "Setup": null
     },
     {
-      "Order": 32,
+      "Order": 31,
       "Title": "Update a domain",
       "Slug": "domainscontroller-updatedomain",
       "Description": "Updates optional domain fields. When \u0060data\u0060 is provided, it replaces the entire metadata object; omit \u0060data\u0060 to leave it unchanged.",
@@ -353,7 +342,7 @@
       "Setup": null
     },
     {
-      "Order": 33,
+      "Order": 32,
       "Title": "Verify a domain",
       "Slug": "domainscontroller-verifydomain",
       "Description": "Performs a live DNS lookup to refresh the MX record status of the domain and updates the verification status accordingly. Returns the latest domain configuration.",
@@ -364,7 +353,7 @@
       "Setup": null
     },
     {
-      "Order": 34,
+      "Order": 33,
       "Title": "Retrieve auto-configuration availability",
       "Slug": "domainscontroller-getdomainautoconfigure",
       "Description": "Returns whether DNS auto-configuration (Domain Connect) is available for this domain. When \u0060available\u0060 is \u0060false\u0060, \u0060manualRecords\u0060 lists the DNS records the customer must add manually.",
@@ -375,7 +364,7 @@
       "Setup": null
     },
     {
-      "Order": 35,
+      "Order": 34,
       "Title": "Start DNS auto-configuration",
       "Slug": "domainscontroller-startdomainautoconfigure",
       "Description": "Generates a signed redirect URL the customer can follow to apply Novu DNS records at their DNS provider. After the provider completes the flow, it redirects back to \u0060redirectUri\u0060.",
@@ -386,7 +375,7 @@
       "Setup": null
     },
     {
-      "Order": 36,
+      "Order": 35,
       "Title": "Create a route",
       "Slug": "domainscontroller-createdomainroute",
       "Description": "Creates a route on the domain that forwards inbound mail addressed to \u0060\u003Caddress\u003E@\u003Cdomain\u003E\u0060 to either a webhook or an agent. Each address on a domain may only have a single route.",
@@ -397,7 +386,7 @@
       "Setup": null
     },
     {
-      "Order": 37,
+      "Order": 36,
       "Title": "Delete a route",
       "Slug": "domainscontroller-deletedomainroute",
       "Description": "Removes the route bound to \u0060\u003Caddress\u003E@\u003Cdomain\u003E\u0060. Inbound mail for that address will no longer be processed.",
@@ -408,7 +397,7 @@
       "Setup": null
     },
     {
-      "Order": 38,
+      "Order": 37,
       "Title": "List routes for a domain",
       "Slug": "domainscontroller-listdomainroutes",
       "Description": "Returns a paginated list of routes attached to the domain. Optionally filter by an agent identifier to find routes pointing to a specific agent.",
@@ -419,7 +408,7 @@
       "Setup": null
     },
     {
-      "Order": 39,
+      "Order": 38,
       "Title": "Retrieve a route by address",
       "Slug": "domainscontroller-getdomainroute",
       "Description": "Returns the route bound to \u0060\u003Caddress\u003E@\u003Cdomain\u003E\u0060. Use \u0060*\u0060 as the address to retrieve the wildcard route for the domain.",
@@ -430,7 +419,7 @@
       "Setup": null
     },
     {
-      "Order": 40,
+      "Order": 39,
       "Title": "Test an inbound route",
       "Slug": "domainscontroller-testdomainroute",
       "Description": "Sends a synthetic inbound email through the same delivery path as production (outbound webhooks for webhook routes, signed HTTP to the agent for agent routes). Use \u0060dryRun: true\u0060 to preview the payload without delivering.",
@@ -441,7 +430,7 @@
       "Setup": null
     },
     {
-      "Order": 41,
+      "Order": 40,
       "Title": "Update a route",
       "Slug": "domainscontroller-updatedomainroute",
       "Description": "Updates the destination of the route bound to \u0060\u003Caddress\u003E@\u003Cdomain\u003E\u0060. The address itself is the resource identity and cannot be changed; delete and recreate the route to rename it.",
@@ -452,7 +441,7 @@
       "Setup": null
     },
     {
-      "Order": 42,
+      "Order": 41,
       "Title": "Create a variable",
       "Slug": "environmentvariablescontroller-createenvironmentvariable",
       "Description": "Creates a new environment variable. Keys must be uppercase with underscores only (e.g. BASE_URL). Secret variables are encrypted at rest and masked in API responses.",
@@ -463,7 +452,7 @@
       "Setup": null
     },
     {
-      "Order": 43,
+      "Order": 42,
       "Title": "Delete environment variable",
       "Slug": "environmentvariablescontroller-deleteenvironmentvariable",
       "Description": "Deletes an environment variable by key.",
@@ -474,7 +463,7 @@
       "Setup": null
     },
     {
-      "Order": 44,
+      "Order": 43,
       "Title": "List all variables",
       "Slug": "environmentvariablescontroller-listenvironmentvariables",
       "Description": "Returns all environment variables for the current organization. Secret values are masked.",
@@ -485,7 +474,7 @@
       "Setup": null
     },
     {
-      "Order": 45,
+      "Order": 44,
       "Title": "Update a variable",
       "Slug": "environmentvariablescontroller-updateenvironmentvariable",
       "Description": "Updates an existing environment variable. Providing \u0060values\u0060 merges them into the existing per-environment values by \u0060_environmentId\u0060; envs not present in the request keep their stored value. Submitting the masked secret placeholder (the value returned by read endpoints for secret variables) as a real value is rejected.",
@@ -496,7 +485,7 @@
       "Setup": null
     },
     {
-      "Order": 46,
+      "Order": 45,
       "Title": "Get environment variable",
       "Slug": "environmentvariablescontroller-getenvironmentvariable",
       "Description": "Returns a single environment variable by key. Secret values are masked.",
@@ -507,7 +496,7 @@
       "Setup": null
     },
     {
-      "Order": 47,
+      "Order": 46,
       "Title": "Retrieve a variable usage",
       "Slug": "environmentvariablescontroller-getenvironmentvariableusage",
       "Description": "Returns the workflows that reference this environment variable via \u0060{{env.KEY}}\u0060 in their step controls. **variableId** is required.",
@@ -518,7 +507,7 @@
       "Setup": null
     },
     {
-      "Order": 48,
+      "Order": 47,
       "Title": "Create an environment",
       "Slug": "environmentscontrollerv1-createenvironment",
       "Description": "Creates a new environment within the current organization. \n    Environments allow you to manage different stages of your application development lifecycle.\n    Each environment has its own set of API keys and configurations.",
@@ -529,7 +518,7 @@
       "Setup": null
     },
     {
-      "Order": 49,
+      "Order": 48,
       "Title": "Delete an environment",
       "Slug": "environmentscontrollerv1-deleteenvironment",
       "Description": "Delete an environment by its unique identifier **environmentId**. \n    This action is irreversible and will remove the environment and all its associated data.",
@@ -540,7 +529,7 @@
       "Setup": null
     },
     {
-      "Order": 50,
+      "Order": 49,
       "Title": "Compare resources between environments",
       "Slug": "environmentscontroller-diffenvironment",
       "Description": "Compares workflows and other resources between the source and target environments, returning detailed diff information including additions, modifications, and deletions.",
@@ -551,7 +540,7 @@
       "Setup": null
     },
     {
-      "Order": 51,
+      "Order": 50,
       "Title": "List environment tags",
       "Slug": "environmentscontroller-getenvironmenttags",
       "Description": "Retrieve all unique tags used in workflows within the specified environment. These tags can be used for filtering workflows.",
@@ -562,7 +551,7 @@
       "Setup": null
     },
     {
-      "Order": 52,
+      "Order": 51,
       "Title": "List all environments",
       "Slug": "environmentscontrollerv1-listmyenvironments",
       "Description": "This API returns a list of environments for the current organization. \n    Each environment contains its configuration, API keys (if user has access), and metadata.",
@@ -573,7 +562,7 @@
       "Setup": null
     },
     {
-      "Order": 53,
+      "Order": 52,
       "Title": "Publish resources to target environment",
       "Slug": "environmentscontroller-publishenvironment",
       "Description": "Publishes all workflows and resources from the source environment to the target environment. Optionally specify specific resources to publish or use dryRun mode to preview changes.",
@@ -584,7 +573,7 @@
       "Setup": null
     },
     {
-      "Order": 54,
+      "Order": 53,
       "Title": "Update an environment",
       "Slug": "environmentscontrollerv1-updatemyenvironment",
       "Description": "Update an environment by its unique identifier **environmentId**. \n    You can modify the environment name, identifier, color, and other configuration settings.",
@@ -595,7 +584,7 @@
       "Setup": null
     },
     {
-      "Order": 55,
+      "Order": 54,
       "Title": "Cancel triggered event",
       "Slug": "eventscontroller-cancel",
       "Description": "Using a previously generated transactionId during the event trigger,\n     will cancel any active or pending workflows. This is useful to cancel active digests, delays etc...",
@@ -606,7 +595,7 @@
       "Setup": null
     },
     {
-      "Order": 56,
+      "Order": 55,
       "Title": "Trigger event",
       "Slug": "eventscontroller-trigger",
       "Description": "Trigger event is the main (and only) way to send notifications to subscribers. The trigger identifier is used to match the particular workflow associated with it. Maximum number of recipients can be 100. Additional information can be passed according the body interface below.\n    To prevent duplicate triggers, you can optionally pass a **transactionId** in the request body. If the same **transactionId** is used again, the trigger will be ignored. The retention period depends on your billing tier.",
@@ -617,7 +606,7 @@
       "Setup": null
     },
     {
-      "Order": 57,
+      "Order": 56,
       "Title": "Broadcast event to all",
       "Slug": "eventscontroller-broadcasteventtoall",
       "Description": "Trigger a broadcast event to all existing subscribers, could be used to send announcements, etc.\n      In the future could be used to trigger events to a subset of subscribers based on defined filters.",
@@ -628,7 +617,7 @@
       "Setup": null
     },
     {
-      "Order": 58,
+      "Order": 57,
       "Title": "Bulk trigger event",
       "Slug": "eventscontroller-triggerbulk",
       "Description": "Using this endpoint you can trigger multiple events at once, to avoid multiple calls to the API.\n      The bulk API is limited to 100 events per request.",
@@ -639,7 +628,7 @@
       "Setup": null
     },
     {
-      "Order": 59,
+      "Order": 58,
       "Title": "Issue a short-lived mobile setup link for an existing integration",
       "Slug": "integrationscontroller-createintegrationmobilelink",
       "Description": "Returns an opaque, single-use setup token plus a mobile URL for configuring an existing chat integration. Telegram is the only supported provider initially.",
@@ -650,7 +639,7 @@
       "Setup": null
     },
     {
-      "Order": 60,
+      "Order": 59,
       "Title": "Generate OAuth URL for a workspace/tenant connection",
       "Slug": "integrationscontroller-generateconnectoauthurl",
       "Description": "Generate an OAuth URL that creates a workspace or tenant-level channel connection (Slack workspace install, MS Teams admin consent, or Webex integration authorization).\n    The generated URL expires after 5 minutes.",
@@ -661,7 +650,7 @@
       "Setup": null
     },
     {
-      "Order": 61,
+      "Order": 60,
       "Title": "Generate OAuth URL to link a subscriber user identity",
       "Slug": "integrationscontroller-generatelinkuseroauthurl",
       "Description": "Generate an OAuth URL that links a specific subscriber to their chat identity (Slack user ID, MS Teams user OID, or Webex person).\n    The generated URL expires after 5 minutes.",
@@ -672,7 +661,7 @@
       "Setup": null
     },
     {
-      "Order": 62,
+      "Order": 61,
       "Title": "Auto-configure an integration for inbound webhooks",
       "Slug": "integrationscontroller-autoconfigureintegration",
       "Description": "Auto-configure an integration by its unique key identifier **integrationId** for inbound webhook support. \n    This will automatically generate required webhook signing keys and configure webhook endpoints. Only integration metadata is returned, credentials field is returned as an empty object.",
@@ -683,7 +672,7 @@
       "Setup": null
     },
     {
-      "Order": 63,
+      "Order": 62,
       "Title": "Configure a chat integration webhook",
       "Slug": "integrationscontroller-configureintegrationwebhook",
       "Description": "Registers the Novu webhook URL with the chat provider for the specified integration. Telegram is the only supported provider initially.",
@@ -694,7 +683,7 @@
       "Setup": null
     },
     {
-      "Order": 64,
+      "Order": 63,
       "Title": "Create an integration",
       "Slug": "integrationscontroller-createintegration",
       "Description": "Create an integration for the current environment the user is based on the API key provided. \n    Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.",
@@ -705,7 +694,7 @@
       "Setup": null
     },
     {
-      "Order": 65,
+      "Order": 64,
       "Title": "List all integrations",
       "Slug": "integrationscontroller-listintegrations",
       "Description": "List all the channels integrations created in the organization. Only integration metadata is returned, credentials field is returned as an empty object.",
@@ -716,7 +705,7 @@
       "Setup": null
     },
     {
-      "Order": 66,
+      "Order": 65,
       "Title": "Delete an integration",
       "Slug": "integrationscontroller-removeintegration",
       "Description": "Delete an integration by its unique key identifier **integrationId**. \n    This action is irreversible. Only integration metadata is returned, credentials field is returned as empty object.",
@@ -727,7 +716,7 @@
       "Setup": null
     },
     {
-      "Order": 67,
+      "Order": 66,
       "Title": "Update an integration",
       "Slug": "integrationscontroller-updateintegrationbyid",
       "Description": "Update an integration by its unique key identifier **integrationId**. \n    Each provider supports different credentials, check the provider documentation for more details. Only integration metadata is returned, credentials field is returned as an empty object.",
@@ -738,7 +727,7 @@
       "Setup": null
     },
     {
-      "Order": 68,
+      "Order": 67,
       "Title": "Issue a URL to link a subscriber chat identity",
       "Slug": "integrationscontroller-linkchannelendpoint",
       "Description": "Returns a provider-specific URL the subscriber opens to link their chat identity. The integration provider is resolved from integrationIdentifier; Telegram returns a deep link.",
@@ -749,7 +738,7 @@
       "Setup": null
     },
     {
-      "Order": 69,
+      "Order": 68,
       "Title": "List active integrations",
       "Slug": "integrationscontroller-getactiveintegrations",
       "Description": "List all the active integrations created in the organization. Only integration metadata is returned, credentials field is returned as an empty object.",
@@ -760,7 +749,7 @@
       "Setup": null
     },
     {
-      "Order": 70,
+      "Order": 69,
       "Title": "Update integration as primary",
       "Slug": "integrationscontroller-setintegrationasprimary",
       "Description": "Update an integration as **primary** by its unique key identifier **integrationId**. \n    This API will set the integration as primary for that channel in the current environment. \n    Primary integration is used to deliver notification for sms and email channels in the workflow. \n    Only integration metadata is returned, credentials field is returned as an empty object.",
@@ -771,7 +760,7 @@
       "Setup": null
     },
     {
-      "Order": 71,
+      "Order": 70,
       "Title": "Duplicate a layout",
       "Slug": "layoutscontroller-duplicate",
       "Description": "Duplicates a layout by its unique identifier **layoutId**. This will create a new layout with the content of the original layout.",
@@ -782,7 +771,7 @@
       "Setup": null
     },
     {
-      "Order": 72,
+      "Order": 71,
       "Title": "Generate layout preview",
       "Slug": "layoutscontroller-generatepreview",
       "Description": "Generates a preview for a layout by its unique identifier **layoutId**",
@@ -793,7 +782,7 @@
       "Setup": null
     },
     {
-      "Order": 73,
+      "Order": 72,
       "Title": "Create a layout",
       "Slug": "layoutscontroller-create",
       "Description": "Creates a new layout in the Novu Cloud environment",
@@ -804,7 +793,7 @@
       "Setup": null
     },
     {
-      "Order": 74,
+      "Order": 73,
       "Title": "Delete a layout",
       "Slug": "layoutscontroller-delete",
       "Description": "Removes a specific layout by its unique identifier **layoutId**",
@@ -815,7 +804,7 @@
       "Setup": null
     },
     {
-      "Order": 75,
+      "Order": 74,
       "Title": "Retrieve a layout",
       "Slug": "layoutscontroller-get",
       "Description": "Fetches details of a specific layout by its unique identifier **layoutId**",
@@ -826,7 +815,7 @@
       "Setup": null
     },
     {
-      "Order": 76,
+      "Order": 75,
       "Title": "List all layouts",
       "Slug": "layoutscontroller-list",
       "Description": "Retrieves a list of layouts with optional filtering and pagination",
@@ -837,7 +826,7 @@
       "Setup": null
     },
     {
-      "Order": 77,
+      "Order": 76,
       "Title": "Update a layout",
       "Slug": "layoutscontroller-update",
       "Description": "Updates the details of an existing layout, here **layoutId** is the identifier of the layout",
@@ -848,7 +837,7 @@
       "Setup": null
     },
     {
-      "Order": 78,
+      "Order": 77,
       "Title": "Get layout usage",
       "Slug": "layoutscontroller-getusage",
       "Description": "Retrieves information about workflows that use the specified layout by its unique identifier **layoutId**",
@@ -859,7 +848,7 @@
       "Setup": null
     },
     {
-      "Order": 79,
+      "Order": 78,
       "Title": "Delete messages by transactionId",
       "Slug": "messagescontroller-deletemessagesbytransactionid",
       "Description": "Delete multiple messages from the Novu platform using **transactionId** of triggered event. \n    This API supports filtering by **channel** and delete all messages associated with the **transactionId**.",
@@ -870,7 +859,7 @@
       "Setup": null
     },
     {
-      "Order": 80,
+      "Order": 79,
       "Title": "Delete a message",
       "Slug": "messagescontroller-deletemessage",
       "Description": "Delete a message entity from the Novu platform by **messageId**. \n    This action is irreversible. **messageId** is required and of mongodbId type.",
@@ -881,7 +870,7 @@
       "Setup": null
     },
     {
-      "Order": 81,
+      "Order": 80,
       "Title": "List all messages",
       "Slug": "messagescontroller-getmessages",
       "Description": "List all messages for the current environment. \n    This API supports filtering by **channel**, **subscriberId**, and **transactionId**. \n    This API returns a paginated list of messages.",
@@ -892,7 +881,7 @@
       "Setup": null
     },
     {
-      "Order": 82,
+      "Order": 81,
       "Title": "Retrieve an event",
       "Slug": "notificationscontroller-getnotification",
       "Description": "Retrieve an event by its unique key identifier **notificationId**. \n    Here **notificationId** is of mongodbId type. \n    This API returns the event details - execution logs, status, actual notification (message) generated by each workflow step.",
@@ -903,7 +892,7 @@
       "Setup": null
     },
     {
-      "Order": 83,
+      "Order": 82,
       "Title": "List all events",
       "Slug": "notificationscontroller-listnotifications",
       "Description": "List all notification events (triggered events) for the current environment. \n    This API supports filtering by **channels**, **templates**, **emails**, **subscriberIds**, **transactionId**, **topicKey**, **severity**, **contextKeys**. \n    Checkout all available filters in the query section.\n    This API returns event triggers, to list each channel notifications, check messages APIs.",
@@ -914,7 +903,7 @@
       "Setup": null
     },
     {
-      "Order": 84,
+      "Order": 83,
       "Title": "Create a subscriber",
       "Slug": "subscriberscontroller-createsubscriber",
       "Description": "Create a subscriber with the subscriber attributes. \n      **subscriberId** is a required field, rest other fields are optional, if the subscriber already exists, it will be updated",
@@ -925,7 +914,7 @@
       "Setup": null
     },
     {
-      "Order": 85,
+      "Order": 84,
       "Title": "Bulk create subscribers",
       "Slug": "subscribersv1controller-bulkcreatesubscribers",
       "Description": "Using this endpoint multiple subscribers can be created at once. The bulk API is limited to 500 subscribers per request.",
@@ -936,7 +925,7 @@
       "Setup": null
     },
     {
-      "Order": 86,
+      "Order": 85,
       "Title": "Delete a subscriber",
       "Slug": "subscriberscontroller-removesubscriber",
       "Description": "Deletes a subscriber entity from the Novu platform along with associated messages, preferences, and topic subscriptions. \n      **subscriberId** is a required field.",
@@ -947,7 +936,7 @@
       "Setup": null
     },
     {
-      "Order": 87,
+      "Order": 86,
       "Title": "Update a subscriber",
       "Slug": "subscriberscontroller-patchsubscriber",
       "Description": "Update a subscriber by its unique key identifier **subscriberId**. \n    **subscriberId** is a required field, rest other fields are optional",
@@ -958,7 +947,7 @@
       "Setup": null
     },
     {
-      "Order": 88,
+      "Order": 87,
       "Title": "Retrieve a subscriber",
       "Slug": "subscriberscontroller-getsubscriber",
       "Description": "Retrieve a subscriber by its unique key identifier **subscriberId**. \n    **subscriberId** field is required.",
@@ -969,7 +958,7 @@
       "Setup": null
     },
     {
-      "Order": 89,
+      "Order": 88,
       "Title": "Search subscribers",
       "Slug": "subscriberscontroller-searchsubscribers",
       "Description": "Search subscribers by their **email**, **phone**, **subscriberId** and **name**. \n    The search is case sensitive and supports pagination.Checkout all available filters in the query section.",
@@ -980,7 +969,7 @@
       "Setup": null
     },
     {
-      "Order": 90,
+      "Order": 89,
       "Title": "Upsert provider credentials",
       "Slug": "subscribersv1controller-modifysubscriberchannel",
       "Description": "Upsert credentials for a provider such as **slack** and **FCM**. \n      **providerId** is required field. This API creates **deviceTokens** or appends to the existing ones.",
@@ -991,7 +980,7 @@
       "Setup": null
     },
     {
-      "Order": 91,
+      "Order": 90,
       "Title": "Delete provider credentials",
       "Slug": "subscribersv1controller-deletesubscribercredentials",
       "Description": "Delete subscriber credentials for a provider such as **slack** and **FCM** by **providerId**. \n    This action is irreversible and will remove the credentials for the provider for particular **subscriberId**.",
@@ -1002,7 +991,7 @@
       "Setup": null
     },
     {
-      "Order": 92,
+      "Order": 91,
       "Title": "Update provider credentials",
       "Slug": "subscribersv1controller-updatesubscriberchannel",
       "Description": "Update credentials for a provider such as **slack** and **FCM**. \n      **providerId** is required field. This API creates the **deviceTokens** or replaces the existing ones.",
@@ -1013,7 +1002,7 @@
       "Setup": null
     },
     {
-      "Order": 93,
+      "Order": 92,
       "Title": "Archive a notification",
       "Slug": "subscriberscontroller-archivenotification",
       "Description": "Archive a specific in-app (inbox) notification by its unique identifier **notificationId**.",
@@ -1024,7 +1013,7 @@
       "Setup": null
     },
     {
-      "Order": 94,
+      "Order": 93,
       "Title": "Archive all notifications",
       "Slug": "subscriberscontroller-archiveallnotifications",
       "Description": "Archive all in-app (inbox) notifications matching the specified filters. Supports context-based filtering.",
@@ -1035,7 +1024,7 @@
       "Setup": null
     },
     {
-      "Order": 95,
+      "Order": 94,
       "Title": "Archive all read notifications",
       "Slug": "subscriberscontroller-archiveallreadnotifications",
       "Description": "Archive all read in-app (inbox) notifications matching the specified filters. Supports context-based filtering.",
@@ -1046,7 +1035,7 @@
       "Setup": null
     },
     {
-      "Order": 96,
+      "Order": 95,
       "Title": "Complete a notification action",
       "Slug": "subscriberscontroller-completenotificationaction",
       "Description": "Mark a single in-app (inbox) notification\u0027s action (primary or secondary) as completed by its unique identifier **notificationId** and action type **actionType**.",
@@ -1057,7 +1046,7 @@
       "Setup": null
     },
     {
-      "Order": 97,
+      "Order": 96,
       "Title": "Retrieve subscriber notifications count",
       "Slug": "subscriberscontroller-getsubscribernotificationscount",
       "Description": "Retrieve count of in-app (inbox) notifications for a subscriber by its unique key identifier **subscriberId**. \n    Supports multiple filters to count in-app (inbox) notifications by different criteria, including context keys.",
@@ -1068,7 +1057,7 @@
       "Setup": null
     },
     {
-      "Order": 98,
+      "Order": 97,
       "Title": "Delete a notification",
       "Slug": "subscriberscontroller-deletenotification",
       "Description": "Delete a specific in-app (inbox) notification permanently by its unique identifier **notificationId**.",
@@ -1079,7 +1068,7 @@
       "Setup": null
     },
     {
-      "Order": 99,
+      "Order": 98,
       "Title": "Delete all notifications",
       "Slug": "subscriberscontroller-deleteallnotifications",
       "Description": "Permanently delete all in-app (inbox) notifications matching the specified filters. Supports context-based filtering.",
@@ -1090,7 +1079,7 @@
       "Setup": null
     },
     {
-      "Order": 100,
+      "Order": 99,
       "Title": "Retrieve subscriber notifications",
       "Slug": "subscriberscontroller-getsubscribernotifications",
       "Description": "Retrieve in-app (inbox) notifications for a subscriber by its unique key identifier **subscriberId**. \n    Supports filtering by tags, read/archived/snoozed/seen state, data attributes, severity, date range, and context keys.",
@@ -1101,7 +1090,7 @@
       "Setup": null
     },
     {
-      "Order": 101,
+      "Order": 100,
       "Title": "Mark all notifications as read",
       "Slug": "subscriberscontroller-markallnotificationsasread",
       "Description": "Mark all in-app (inbox) notifications matching the specified filters as read. Supports context-based filtering.",
@@ -1112,7 +1101,7 @@
       "Setup": null
     },
     {
-      "Order": 102,
+      "Order": 101,
       "Title": "Mark a notification as read",
       "Slug": "subscriberscontroller-marknotificationasread",
       "Description": "Mark a specific in-app (inbox) notification as read by its unique identifier **notificationId**.",
@@ -1123,7 +1112,7 @@
       "Setup": null
     },
     {
-      "Order": 103,
+      "Order": 102,
       "Title": "Mark notifications as seen",
       "Slug": "subscriberscontroller-marknotificationsasseen",
       "Description": "Mark specific and multiple in-app (inbox) notifications as seen. Supports context-based filtering.",
@@ -1134,7 +1123,7 @@
       "Setup": null
     },
     {
-      "Order": 104,
+      "Order": 103,
       "Title": "Mark a notification as unread",
       "Slug": "subscriberscontroller-marknotificationasunread",
       "Description": "Mark a specific in-app (inbox) notification as unread by its unique identifier **notificationId**.",
@@ -1145,7 +1134,7 @@
       "Setup": null
     },
     {
-      "Order": 105,
+      "Order": 104,
       "Title": "Revert a notification action",
       "Slug": "subscriberscontroller-revertnotificationaction",
       "Description": "Revert a single in-app (inbox) notification\u0027s action (primary or secondary) to pending state by its unique identifier **notificationId** and action type **actionType**.",
@@ -1156,7 +1145,7 @@
       "Setup": null
     },
     {
-      "Order": 106,
+      "Order": 105,
       "Title": "Snooze a notification",
       "Slug": "subscriberscontroller-snoozenotification",
       "Description": "Snooze a specific in-app (inbox) notification by its unique identifier **notificationId** until a specified time.",
@@ -1167,7 +1156,7 @@
       "Setup": null
     },
     {
-      "Order": 107,
+      "Order": 106,
       "Title": "Unarchive a notification",
       "Slug": "subscriberscontroller-unarchivenotification",
       "Description": "Unarchive a specific in-app (inbox) notification by its unique identifier **notificationId**.",
@@ -1178,7 +1167,7 @@
       "Setup": null
     },
     {
-      "Order": 108,
+      "Order": 107,
       "Title": "Unsnooze a notification",
       "Slug": "subscriberscontroller-unsnoozenotification",
       "Description": "Unsnooze a specific in-app (inbox) notification by its unique identifier **notificationId**.",
@@ -1189,7 +1178,7 @@
       "Setup": null
     },
     {
-      "Order": 109,
+      "Order": 108,
       "Title": "Bulk update subscriber preferences",
       "Slug": "subscriberscontroller-bulkupdatesubscriberpreferences",
       "Description": "Bulk update subscriber preferences by its unique key identifier **subscriberId**. \n    This API allows updating multiple workflow preferences in a single request.",
@@ -1200,7 +1189,7 @@
       "Setup": null
     },
     {
-      "Order": 110,
+      "Order": 109,
       "Title": "Retrieve subscriber preferences",
       "Slug": "subscriberscontroller-getsubscriberpreferences",
       "Description": "Retrieve subscriber channel preferences by its unique key identifier **subscriberId**. \n    This API returns all five channels preferences for all workflows and global preferences.",
@@ -1211,7 +1200,7 @@
       "Setup": null
     },
     {
-      "Order": 111,
+      "Order": 110,
       "Title": "Update subscriber preferences",
       "Slug": "subscriberscontroller-updatesubscriberpreferences",
       "Description": "Update subscriber preferences by its unique key identifier **subscriberId**. \n    **workflowId** is optional field, if provided, this API will update that workflow preference, \n    otherwise it will update global preferences",
@@ -1222,7 +1211,7 @@
       "Setup": null
     },
     {
-      "Order": 112,
+      "Order": 111,
       "Title": "Update subscriber online status",
       "Slug": "subscribersv1controller-updatesubscriberonlineflag",
       "Description": "Update the subscriber online status by its unique key identifier **subscriberId**",
@@ -1233,7 +1222,7 @@
       "Setup": null
     },
     {
-      "Order": 113,
+      "Order": 112,
       "Title": "Retrieve subscriber subscriptions",
       "Slug": "subscriberscontroller-listsubscribertopics",
       "Description": "Retrieve subscriber\u0027s topic subscriptions by its unique key identifier **subscriberId**. \n    Checkout all available filters in the query section.",
@@ -1244,7 +1233,7 @@
       "Setup": null
     },
     {
-      "Order": 114,
+      "Order": 113,
       "Title": "Create a topic",
       "Slug": "topicscontroller-upserttopic",
       "Description": "Creates a new topic if it does not exist, or updates an existing topic if it already exists. Use ?failIfExists=true to prevent updates.",
@@ -1255,7 +1244,7 @@
       "Setup": null
     },
     {
-      "Order": 115,
+      "Order": 114,
       "Title": "Retrieve a topic",
       "Slug": "topicscontroller-gettopic",
       "Description": "Retrieve a topic by its unique key identifier **topicKey**",
@@ -1266,7 +1255,7 @@
       "Setup": null
     },
     {
-      "Order": 116,
+      "Order": 115,
       "Title": "List all topics",
       "Slug": "topicscontroller-listtopics",
       "Description": "This api returns a paginated list of topics.\n    Topics can be filtered by **key**, **name**, or **includeCursor** to paginate through the list. \n    Checkout all available filters in the query section.",
@@ -1277,7 +1266,7 @@
       "Setup": null
     },
     {
-      "Order": 117,
+      "Order": 116,
       "Title": "Delete a topic",
       "Slug": "topicscontroller-deletetopic",
       "Description": "Delete a topic by its unique key identifier **topicKey**. \n    This action is irreversible and will remove all subscriptions to the topic.",
@@ -1288,7 +1277,7 @@
       "Setup": null
     },
     {
-      "Order": 118,
+      "Order": 117,
       "Title": "Update a topic",
       "Slug": "topicscontroller-updatetopic",
       "Description": "Update a topic name or data by its unique key identifier **topicKey**",
@@ -1299,7 +1288,7 @@
       "Setup": null
     },
     {
-      "Order": 119,
+      "Order": 118,
       "Title": "Check topic subscriber",
       "Slug": "topicsv1controller-gettopicsubscriber",
       "Description": "Check if a subscriber belongs to a certain topic",
@@ -1310,7 +1299,7 @@
       "Setup": null
     },
     {
-      "Order": 120,
+      "Order": 119,
       "Title": "Create topic subscriptions",
       "Slug": "topicscontroller-createtopicsubscriptions",
       "Description": "This api will create subscription for subscriberIds for a topic. \n      Its like subscribing to a common interest group. if topic does not exist, it will be created.",
@@ -1321,7 +1310,7 @@
       "Setup": null
     },
     {
-      "Order": 121,
+      "Order": 120,
       "Title": "Delete topic subscriptions",
       "Slug": "topicscontroller-deletetopicsubscriptions",
       "Description": "Delete subscriptions for subscriberIds for a topic.",
@@ -1332,7 +1321,7 @@
       "Setup": null
     },
     {
-      "Order": 122,
+      "Order": 121,
       "Title": "Retrieve a topic subscription",
       "Slug": "topicscontroller-gettopicsubscription",
       "Description": "Retrieve a subscription by its unique identifier for a topic.",
@@ -1343,7 +1332,7 @@
       "Setup": null
     },
     {
-      "Order": 123,
+      "Order": 122,
       "Title": "List topic subscriptions",
       "Slug": "topicscontroller-listtopicsubscriptions",
       "Description": "List all subscriptions of subscribers for a topic.\n    Checkout all available filters in the query section.",
@@ -1354,7 +1343,7 @@
       "Setup": null
     },
     {
-      "Order": 124,
+      "Order": 123,
       "Title": "Update a topic subscription",
       "Slug": "topicscontroller-updatetopicsubscription",
       "Description": "Update a subscription by its unique identifier for a topic. You can update the preferences and name associated with the subscription.",
@@ -1365,7 +1354,7 @@
       "Setup": null
     },
     {
-      "Order": 125,
+      "Order": 124,
       "Title": "Retrieve a translation",
       "Slug": "translationcontroller-getsingletranslation",
       "Description": "Retrieve a specific translation by resource type, resource ID and locale",
@@ -1376,7 +1365,7 @@
       "Setup": null
     },
     {
-      "Order": 126,
+      "Order": 125,
       "Title": "Delete a translation group",
       "Slug": "translationcontroller-deletetranslationgroupendpoint",
       "Description": "Delete an entire translation group and all its translations",
@@ -1387,7 +1376,7 @@
       "Setup": null
     },
     {
-      "Order": 127,
+      "Order": 126,
       "Title": "Retrieve a translation group",
       "Slug": "translationcontroller-gettranslationgroupendpoint",
       "Description": "Retrieves a single translation group by resource type (workflow, layout) and resource ID (workflowId, layoutId)",
@@ -1398,7 +1387,7 @@
       "Setup": null
     },
     {
-      "Order": 128,
+      "Order": 127,
       "Title": "Retrieve master translations JSON",
       "Slug": "translationcontroller-getmasterjsonendpoint",
       "Description": "Retrieve all translations for a locale in master JSON format organized by resourceId (workflowId)",
@@ -1409,7 +1398,7 @@
       "Setup": null
     },
     {
-      "Order": 129,
+      "Order": 128,
       "Title": "Delete a workflow",
       "Slug": "workflowcontroller-removeworkflow",
       "Description": "Removes a specific workflow by its unique identifier **workflowId**",
@@ -1420,7 +1409,7 @@
       "Setup": null
     },
     {
-      "Order": 130,
+      "Order": 129,
       "Title": "Retrieve a workflow",
       "Slug": "workflowcontroller-getworkflow",
       "Description": "Fetches details of a specific workflow by its unique identifier **workflowId**",
@@ -1431,7 +1420,7 @@
       "Setup": null
     },
     {
-      "Order": 131,
+      "Order": 130,
       "Title": "List all workflows",
       "Slug": "workflowcontroller-searchworkflows",
       "Description": "Retrieves a list of workflows with optional filtering and pagination",
@@ -1442,7 +1431,7 @@
       "Setup": null
     },
     {
-      "Order": 132,
+      "Order": 131,
       "Title": "Update a workflow",
       "Slug": "workflowcontroller-patchworkflow",
       "Description": "Partially updates a workflow by its unique identifier **workflowId**",
@@ -1453,7 +1442,7 @@
       "Setup": null
     },
     {
-      "Order": 133,
+      "Order": 132,
       "Title": "Sync a workflow",
       "Slug": "workflowcontroller-sync",
       "Description": "Synchronizes a workflow to the target environment",
@@ -1464,7 +1453,7 @@
       "Setup": null
     },
     {
-      "Order": 134,
+      "Order": 133,
       "Title": "Create a workflow",
       "Slug": "workflowcontroller-create",
       "Description": "Creates a new workflow in the Novu Cloud environment",
@@ -1475,7 +1464,7 @@
       "Setup": null
     },
     {
-      "Order": 135,
+      "Order": 134,
       "Title": "Update a workflow",
       "Slug": "workflowcontroller-update",
       "Description": "Updates the details of an existing workflow, here **workflowId** is the identifier of the workflow",
@@ -1486,7 +1475,7 @@
       "Setup": null
     },
     {
-      "Order": 136,
+      "Order": 135,
       "Title": "Generate a step preview",
       "Slug": "workflowcontroller-generatepreview",
       "Description": "Generates a preview for a specific workflow step by its unique identifier **stepId**",
@@ -1497,7 +1486,7 @@
       "Setup": null
     },
     {
-      "Order": 137,
+      "Order": 136,
       "Title": "Retrieve workflow step",
       "Slug": "workflowcontroller-getworkflowstepdata",
       "Description": "Retrieves data for a specific step in a workflow",
