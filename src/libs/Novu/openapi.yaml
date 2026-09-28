@@ -70044,6 +70044,7 @@
             "enum": [
               "slack",
               "discord",
+              "google-chat",
               "msteams",
               "webex-messaging",
               "mattermost",
@@ -70058,6 +70059,7 @@
               "novu-slack",
               "telegram",
               "sendblue",
+              "photon-imessage",
               "novu-web-chat",
               "fcm",
               "apns",
@@ -70249,7 +70251,7 @@
       },
       "SeverityLevelEnum": {
         "type": "string",
-        "description": "Severity of the workflow",
+        "description": "Workflow severity",
         "enum": [
           "high",
           "medium",
@@ -70614,7 +70616,7 @@
       },
       "ChannelTypeEnum": {
         "type": "string",
-        "description": "Channel type through which the message is sent",
+        "description": "Channel the message was sent on",
         "enum": [
           "in_app",
           "email",
@@ -70677,7 +70679,7 @@
       },
       "ResourceOriginEnum": {
         "type": "string",
-        "description": "Origin of the layout",
+        "description": "Workflow origin",
         "enum": [
           "novu-cloud",
           "novu-cloud-v1",
@@ -71014,6 +71016,7 @@
           "novu",
           "slack",
           "discord",
+          "google-chat",
           "msteams",
           "webex-messaging",
           "mattermost",
@@ -71028,6 +71031,7 @@
           "novu-slack",
           "telegram",
           "sendblue",
+          "photon-imessage",
           "novu-web-chat",
           "anthropic",
           "novu-anthropic",
@@ -72256,6 +72260,16 @@
             ],
             "type": "string",
             "description": "Controls whether the agent accepts inbound messages from senders not yet linked to a subscriber, across all channels. \"open\" on managed agents auto-creates a lightweight subscriber so the agent can reply; on custom-code / self-hosted agents, the turn is forwarded to the bridge with a null subscriber. \"restricted\" rejects unknown senders with a managed denial reply (any runtime). Optional on update (partial PATCH). Persisted agents always have a value — managed create defaults to \"open\"; self-hosted create defaults to \"restricted\"."
+          },
+          "replyPolicy": {
+            "enum": [
+              "mention_only",
+              "auto_reply",
+              "smart"
+            ],
+            "type": "string",
+            "description": "How the agent replies in shared rooms. \"mention_only\" requires an @mention in every shared room. \"auto_reply\" replies to unmentioned follow-ups in a nested Slack or Teams thread after the agent has joined. \"smart\" behaves like auto_reply while one person is talking to the agent in a thread, then requires an @mention there once someone else or another agent joins, or the incumbent @mentions another teammate. Create persists \"smart\". An omitted field on existing agents still means \"auto_reply\". DMs always reply without a mention. Optional on update (partial PATCH).",
+            "default": "auto_reply"
           }
         }
       },
@@ -75364,6 +75378,7 @@
         "enum": [
           "slack",
           "discord",
+          "google-chat",
           "msteams",
           "webex-messaging",
           "mattermost",
@@ -75378,6 +75393,7 @@
           "novu-slack",
           "telegram",
           "sendblue",
+          "photon-imessage",
           "novu-web-chat",
           "fcm",
           "apns",
@@ -77450,7 +77466,7 @@
       },
       "PreferenceLevelEnum": {
         "type": "string",
-        "description": "The level of the preference (global or template)",
+        "description": "Whether this preference is global or workflow-specific",
         "enum": [
           "global",
           "template"
@@ -78291,7 +78307,7 @@
       },
       "ResourceTypeEnum": {
         "type": "string",
-        "description": "Type of the layout",
+        "description": "Resource type",
         "enum": [
           "REGULAR",
           "ECHO",
@@ -78441,40 +78457,6 @@
           }
         }
       },
-      "EmailControlsDto": {
-        "type": "object",
-        "properties": {
-          "body": {
-            "type": "string",
-            "description": "Body of the layout."
-          },
-          "editorType": {
-            "type": "string",
-            "description": "Editor type of the layout.",
-            "enum": [
-              "html",
-              "block"
-            ]
-          }
-        },
-        "required": [
-          "body",
-          "editorType"
-        ]
-      },
-      "LayoutControlValuesDto": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "description": "Email layout controls",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EmailControlsDto"
-              }
-            ]
-          }
-        }
-      },
       "LayoutControlsDto": {
         "type": "object",
         "properties": {
@@ -78492,17 +78474,11 @@
             ]
           },
           "values": {
+            "type": "object",
             "description": "Email layout controls",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/LayoutControlValuesDto"
-              }
-            ]
+            "additionalProperties": true
           }
-        },
-        "required": [
-          "values"
-        ]
+        }
       },
       "LayoutResponseDto": {
         "type": "object",
@@ -78615,6 +78591,40 @@
           "layoutId",
           "name"
         ]
+      },
+      "EmailControlsDto": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "string",
+            "description": "Body of the layout."
+          },
+          "editorType": {
+            "type": "string",
+            "description": "Editor type of the layout.",
+            "enum": [
+              "html",
+              "block"
+            ]
+          }
+        },
+        "required": [
+          "body",
+          "editorType"
+        ]
+      },
+      "LayoutControlValuesDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "description": "Email layout controls",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EmailControlsDto"
+              }
+            ]
+          }
+        }
       },
       "UpdateLayoutDto": {
         "type": "object",
@@ -79940,9 +79950,35 @@
           }
         }
       },
+      "WorkflowIssueTypeEnum": {
+        "type": "string",
+        "enum": [
+          "MISSING_VALUE",
+          "MAX_LENGTH_ACCESSED",
+          "WORKFLOW_ID_ALREADY_EXISTS",
+          "DUPLICATED_VALUE",
+          "LIMIT_REACHED"
+        ]
+      },
       "RuntimeIssueDto": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "issueType": {
+            "$ref": "#/components/schemas/WorkflowIssueTypeEnum"
+          },
+          "variableName": {
+            "type": "string",
+            "description": "Variable associated with the issue"
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable issue message"
+          }
+        },
+        "required": [
+          "issueType",
+          "message"
+        ]
       },
       "ControlsMetadataDto": {
         "type": "object",
@@ -79959,6 +79995,11 @@
                 "$ref": "#/components/schemas/UiSchema"
               }
             ]
+          },
+          "values": {
+            "type": "object",
+            "description": "Resolved control values for the step",
+            "additionalProperties": true
           }
         }
       },
@@ -80292,16 +80333,14 @@
           },
           "values": {
             "description": "Control values specific to Email",
+            "additionalProperties": true,
             "allOf": [
               {
                 "$ref": "#/components/schemas/EmailControlDto"
               }
             ]
           }
-        },
-        "required": [
-          "values"
-        ]
+        }
       },
       "EmailStepResponseDto": {
         "type": "object",
@@ -80474,16 +80513,14 @@
           },
           "values": {
             "description": "Control values specific to SMS",
+            "additionalProperties": true,
             "allOf": [
               {
                 "$ref": "#/components/schemas/SmsControlDto"
               }
             ]
           }
-        },
-        "required": [
-          "values"
-        ]
+        }
       },
       "SmsStepResponseDto": {
         "type": "object",
@@ -80660,16 +80697,14 @@
           },
           "values": {
             "description": "Control values specific to Push",
+            "additionalProperties": true,
             "allOf": [
               {
                 "$ref": "#/components/schemas/PushControlDto"
               }
             ]
           }
-        },
-        "required": [
-          "values"
-        ]
+        }
       },
       "PushStepResponseDto": {
         "type": "object",
@@ -80850,16 +80885,14 @@
           },
           "values": {
             "description": "Control values specific to Chat",
+            "additionalProperties": true,
             "allOf": [
               {
                 "$ref": "#/components/schemas/ChatControlDto"
               }
             ]
           }
-        },
-        "required": [
-          "values"
-        ]
+        }
       },
       "ChatStepResponseDto": {
         "type": "object",
@@ -81061,16 +81094,14 @@
           },
           "values": {
             "description": "Control values specific to Delay",
+            "additionalProperties": true,
             "allOf": [
               {
                 "$ref": "#/components/schemas/DelayControlDto"
               }
             ]
           }
-        },
-        "required": [
-          "values"
-        ]
+        }
       },
       "DelayStepResponseDto": {
         "type": "object",
@@ -81306,16 +81337,14 @@
           },
           "values": {
             "description": "Control values specific to Digest",
+            "additionalProperties": true,
             "allOf": [
               {
                 "$ref": "#/components/schemas/DigestControlDto"
               }
             ]
           }
-        },
-        "required": [
-          "values"
-        ]
+        }
       },
       "DigestStepResponseDto": {
         "type": "object",
@@ -81525,16 +81554,14 @@
           },
           "values": {
             "description": "Control values specific to Throttle",
+            "additionalProperties": true,
             "allOf": [
               {
                 "$ref": "#/components/schemas/ThrottleControlDto"
               }
             ]
           }
-        },
-        "required": [
-          "values"
-        ]
+        }
       },
       "ThrottleStepResponseDto": {
         "type": "object",
@@ -81675,16 +81702,14 @@
           },
           "values": {
             "description": "Control values specific to Custom step",
+            "additionalProperties": true,
             "allOf": [
               {
                 "$ref": "#/components/schemas/CustomControlDto"
               }
             ]
           }
-        },
-        "required": [
-          "values"
-        ]
+        }
       },
       "CustomStepResponseDto": {
         "type": "object",
@@ -81893,16 +81918,14 @@
           },
           "values": {
             "description": "Control values specific to HTTP Request step",
+            "additionalProperties": true,
             "allOf": [
               {
                 "$ref": "#/components/schemas/HttpRequestControlDto"
               }
             ]
           }
-        },
-        "required": [
-          "values"
-        ]
+        }
       },
       "HttpRequestStepResponseDto": {
         "type": "object",
@@ -82136,16 +82159,14 @@
           },
           "values": {
             "description": "Control values specific to In-App",
+            "additionalProperties": true,
             "allOf": [
               {
                 "$ref": "#/components/schemas/InAppControlDto"
               }
             ]
           }
-        },
-        "required": [
-          "values"
-        ]
+        }
       },
       "InAppStepResponseDto": {
         "type": "object",
@@ -82318,16 +82339,14 @@
           },
           "values": {
             "description": "Control values specific to Tool",
+            "additionalProperties": true,
             "allOf": [
               {
                 "$ref": "#/components/schemas/ToolControlDto"
               }
             ]
           }
-        },
-        "required": [
-          "values"
-        ]
+        }
       },
       "ToolStepResponseDto": {
         "type": "object",
@@ -82476,6 +82495,11 @@
             "type": "boolean",
             "description": "A flag specifying if the preference is read-only. If true, the preference cannot be changed by the Subscriber.",
             "default": false
+          },
+          "condition": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "JsonLogic condition controlling whether this preference applies"
           }
         },
         "required": [
@@ -82560,7 +82584,7 @@
       },
       "WorkflowStatusEnum": {
         "type": "string",
-        "description": "Status of the workflow",
+        "description": "Workflow status",
         "enum": [
           "ACTIVE",
           "INACTIVE",
@@ -82732,7 +82756,10 @@
             "type": "object",
             "description": "Runtime issues for workflow creation and update",
             "additionalProperties": {
-              "$ref": "#/components/schemas/RuntimeIssueDto"
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/RuntimeIssueDto"
+              }
             }
           },
           "lastTriggeredAt": {
@@ -84912,6 +84939,7 @@
               "novu",
               "slack",
               "discord",
+              "google-chat",
               "msteams",
               "webex-messaging",
               "mattermost",
@@ -84926,6 +84954,7 @@
               "novu-slack",
               "telegram",
               "sendblue",
+              "photon-imessage",
               "novu-web-chat",
               "anthropic",
               "novu-anthropic",
@@ -86661,6 +86690,7 @@
               "novu",
               "slack",
               "discord",
+              "google-chat",
               "msteams",
               "webex-messaging",
               "mattermost",
@@ -86675,6 +86705,7 @@
               "novu-slack",
               "telegram",
               "sendblue",
+              "photon-imessage",
               "novu-web-chat",
               "anthropic",
               "novu-anthropic",
@@ -87257,111 +87288,788 @@
           "event"
         ]
       },
-      "WebhookMessageDto": {
+      "MessageWebhookActorSubscriberDto": {
         "type": "object",
         "properties": {
-          "object": {
+          "_id": {
+            "type": "string",
+            "description": "Database identifier of the actor subscriber"
+          },
+          "subscriberId": {
+            "type": "string",
+            "description": "External subscriber identifier of the actor"
+          },
+          "firstName": {
+            "type": "string",
+            "description": "First name of the actor"
+          },
+          "lastName": {
+            "type": "string",
+            "description": "Last name of the actor"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email of the actor"
+          },
+          "phone": {
+            "type": "string",
+            "description": "Phone number of the actor"
+          },
+          "avatar": {
+            "type": "string",
+            "description": "Avatar URL of the actor"
+          },
+          "locale": {
+            "type": "string",
+            "description": "Locale of the actor"
+          },
+          "data": {
             "type": "object",
-            "description": "Current message state"
+            "additionalProperties": true,
+            "description": "Custom actor subscriber data"
           }
         },
         "required": [
-          "object"
+          "_id",
+          "subscriberId"
         ]
       },
-      "MessageFailedPushDto": {
+      "MessageWebhookStatusEnum": {
+        "type": "string",
+        "description": "Delivery status stored on the message",
+        "enum": [
+          "sent",
+          "error",
+          "warning"
+        ]
+      },
+      "MessageWebhookChannelDataDto": {
         "type": "object",
         "properties": {
-          "isInvalidToken": {
+          "type": {
+            "type": "string",
+            "description": "Channel endpoint type, for example `slack_channel` or `webhook`"
+          },
+          "identifier": {
+            "type": "string",
+            "description": "Identifier of the channel endpoint"
+          },
+          "endpoint": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Provider-specific endpoint payload. Secrets such as tokens are redacted when present."
+          },
+          "token": {
+            "type": "string",
+            "description": "Redacted provider token when required by the endpoint type"
+          },
+          "subscriberTenantId": {
+            "type": "string",
+            "description": "Microsoft Teams tenant identifier"
+          },
+          "clientId": {
+            "type": "string",
+            "description": "Microsoft Teams client identifier"
+          }
+        },
+        "required": [
+          "type",
+          "identifier",
+          "endpoint"
+        ]
+      },
+      "MessageWebhookResponseDto": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "Database identifier of the message"
+          },
+          "_templateId": {
+            "type": "string",
+            "description": "Database identifier of the workflow that produced the message"
+          },
+          "_environmentId": {
+            "type": "string",
+            "description": "Environment identifier"
+          },
+          "_organizationId": {
+            "type": "string",
+            "description": "Organization identifier"
+          },
+          "_notificationId": {
+            "type": "string",
+            "description": "Database identifier of the notification"
+          },
+          "subscriberId": {
+            "type": "string",
+            "description": "Subscriber identifier supplied by the producer. Direct send and Inbox events use the external subscriber identifier."
+          },
+          "actorSubscriber": {
+            "$ref": "#/components/schemas/MessageWebhookActorSubscriberDto"
+          },
+          "templateIdentifier": {
+            "type": "string",
+            "description": "Workflow identifier used when triggering the workflow"
+          },
+          "workflowId": {
+            "type": "string",
+            "description": "Same as `templateIdentifier`. Included for correlation with workflow events."
+          },
+          "stepId": {
+            "type": "string",
+            "description": "Step identifier used when correlating with workflow steps"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Creation timestamp"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "Last updated timestamp"
+          },
+          "archivedAt": {
+            "type": "string",
+            "description": "Archive timestamp"
+          },
+          "archived": {
             "type": "boolean",
-            "description": "Is invalid token"
+            "description": "Whether the message is archived"
+          },
+          "transactionId": {
+            "type": "string",
+            "description": "Trigger transaction identifier"
+          },
+          "channel": {
+            "$ref": "#/components/schemas/ChannelTypeEnum"
+          },
+          "seen": {
+            "type": "boolean",
+            "description": "Whether the message has been seen"
+          },
+          "read": {
+            "type": "boolean",
+            "description": "Whether the message has been read"
+          },
+          "snoozedUntil": {
+            "type": "string",
+            "description": "When set, the Inbox message is snoozed until this timestamp"
+          },
+          "deliveredAt": {
+            "description": "Delivery timestamps recorded for the message",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "providerId": {
+            "type": "string",
+            "description": "Provider identifier that delivered the message"
+          },
+          "lastSeenDate": {
+            "type": "string",
+            "description": "Last time the message was seen"
+          },
+          "firstSeenDate": {
+            "type": "string",
+            "description": "First time the message was seen"
+          },
+          "lastReadDate": {
+            "type": "string",
+            "description": "Last time the message was read"
+          },
+          "status": {
+            "$ref": "#/components/schemas/MessageWebhookStatusEnum"
+          },
+          "errorId": {
+            "type": "string",
+            "description": "Provider or internal error identifier when delivery failed"
+          },
+          "errorText": {
+            "type": "string",
+            "description": "Provider or internal error text when delivery failed"
+          },
+          "contextKeys": {
+            "description": "Context keys associated with the message",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "providerResponseId": {
+            "type": "string",
+            "description": "Provider response identifier for the send attempt"
           },
           "deviceToken": {
             "type": "string",
-            "description": "Device token"
+            "description": "Device token used for a push send"
+          },
+          "webhookUrl": {
+            "type": "string",
+            "description": "Deprecated, use `channelData`. Chat webhook URL used for the send."
+          },
+          "channelData": {
+            "$ref": "#/components/schemas/MessageWebhookChannelDataDto"
           }
         },
         "required": [
-          "isInvalidToken",
+          "_id",
+          "_templateId",
+          "_environmentId",
+          "_organizationId",
+          "_notificationId",
+          "subscriberId",
+          "templateIdentifier",
+          "workflowId",
+          "createdAt",
+          "updatedAt",
+          "archived",
+          "transactionId",
+          "channel",
+          "seen",
+          "read",
+          "providerId",
+          "status"
+        ]
+      },
+      "MessageWebhookPushFailureReasonEnum": {
+        "type": "string",
+        "description": "Why the push send failed",
+        "enum": [
+          "token_invalid",
+          "generic_error"
+        ]
+      },
+      "MessageWebhookPushErrorDto": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "$ref": "#/components/schemas/MessageWebhookPushFailureReasonEnum"
+          },
+          "deviceToken": {
+            "type": "string",
+            "description": "Device token that failed"
+          }
+        },
+        "required": [
+          "reason",
           "deviceToken"
         ]
       },
-      "MessageFailedErrorDto": {
+      "MessageWebhookErrorDto": {
         "type": "object",
         "properties": {
           "message": {
             "type": "string",
-            "description": "Error message"
+            "description": "Error message from the provider or send attempt"
           },
           "push": {
-            "description": "Push error",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/MessageFailedPushDto"
-              }
-            ]
+            "$ref": "#/components/schemas/MessageWebhookPushErrorDto"
           }
         },
         "required": [
-          "message",
-          "push"
+          "message"
         ]
       },
-      "WebhookMessageFailedDto": {
+      "MessageWebhookPayloadWithErrorDto": {
         "type": "object",
         "properties": {
           "object": {
-            "type": "object",
-            "description": "Current message state"
+            "$ref": "#/components/schemas/MessageWebhookResponseDto"
           },
           "error": {
-            "description": "Error message",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/MessageFailedErrorDto"
-              }
-            ]
-          }
-        },
-        "required": [
-          "object",
-          "error"
-        ]
-      },
-      "WebhookCreatedWorkflowDto": {
-        "type": "object",
-        "properties": {
-          "object": {
-            "description": "Current workflow state",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/WorkflowResponseDto"
-              }
-            ]
+            "$ref": "#/components/schemas/MessageWebhookErrorDto"
           }
         },
         "required": [
           "object"
         ]
       },
-      "WebhookUpdatedWorkflowDto": {
+      "MessageWebhookPayloadDto": {
         "type": "object",
         "properties": {
           "object": {
-            "description": "Current workflow state",
+            "$ref": "#/components/schemas/MessageWebhookResponseDto"
+          }
+        },
+        "required": [
+          "object"
+        ]
+      },
+      "WorkflowCreatedWebhookPayloadDto": {
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/WorkflowResponseDto"
+          }
+        },
+        "required": [
+          "object"
+        ]
+      },
+      "PreferenceChannelsDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "boolean",
+            "description": "Whether email notifications are enabled"
+          },
+          "sms": {
+            "type": "boolean",
+            "description": "Whether SMS notifications are enabled"
+          },
+          "in_app": {
+            "type": "boolean",
+            "description": "Whether Inbox notifications are enabled"
+          },
+          "chat": {
+            "type": "boolean",
+            "description": "Whether chat notifications are enabled"
+          },
+          "push": {
+            "type": "boolean",
+            "description": "Whether push notifications are enabled"
+          },
+          "tool": {
+            "type": "boolean",
+            "description": "Whether tool notifications are enabled"
+          }
+        }
+      },
+      "WorkflowWebhookReplyCallbackDto": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "type": "boolean",
+            "description": "Whether reply callbacks are enabled"
+          },
+          "url": {
+            "type": "string",
+            "description": "Reply callback URL"
+          }
+        },
+        "required": [
+          "active",
+          "url"
+        ]
+      },
+      "PersistedWorkflowStepWebhookDto": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "Database identifier of the step"
+          },
+          "uuid": {
+            "type": "string",
+            "description": "Stable UUID of the step"
+          },
+          "stepId": {
+            "type": "string",
+            "description": "Step identifier used when triggering and correlating events"
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the step"
+          },
+          "_templateId": {
+            "type": "string",
+            "description": "Database identifier of the message template for this step"
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether the step is active"
+          },
+          "replyCallback": {
+            "$ref": "#/components/schemas/WorkflowWebhookReplyCallbackDto"
+          },
+          "template": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Persisted message template for this step"
+          },
+          "filters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "description": "Step filters"
+          },
+          "_parentId": {
+            "type": "string",
+            "description": "Parent step identifier"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Digest, delay, or throttle metadata"
+          },
+          "shouldStopOnFail": {
+            "type": "boolean",
+            "description": "Whether execution should stop if this step fails"
+          },
+          "bridgeUrl": {
+            "type": "string",
+            "description": "Bridge URL for framework-backed steps"
+          },
+          "controlVariables": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Control values stored on the step in non-production environments"
+          },
+          "controls": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Control schemas stored on the step"
+          },
+          "issues": {
+            "$ref": "#/components/schemas/StepIssuesDto"
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "description": "Step variants"
+          }
+        },
+        "required": [
+          "_templateId"
+        ]
+      },
+      "TriggerTypeEnum": {
+        "type": "string",
+        "description": "Trigger type",
+        "enum": [
+          "event"
+        ]
+      },
+      "TemplateVariableTypeEnum": {
+        "type": "string",
+        "description": "Variable value type",
+        "enum": [
+          "String",
+          "Array",
+          "Boolean"
+        ]
+      },
+      "WorkflowWebhookTriggerVariableDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Variable name"
+          },
+          "value": {
+            "type": "object",
+            "description": "Default variable value"
+          },
+          "type": {
+            "$ref": "#/components/schemas/TemplateVariableTypeEnum"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "WorkflowWebhookSubscriberVariableDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Subscriber variable name"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "TriggerContextTypeEnum": {
+        "type": "string",
+        "description": "Reserved context type",
+        "enum": [
+          "tenant",
+          "actor"
+        ]
+      },
+      "WorkflowWebhookReservedVariableDto": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/TriggerContextTypeEnum"
+          },
+          "variables": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowWebhookTriggerVariableDto"
+            }
+          }
+        },
+        "required": [
+          "type",
+          "variables"
+        ]
+      },
+      "WorkflowWebhookTriggerDto": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/TriggerTypeEnum"
+          },
+          "identifier": {
+            "type": "string",
+            "description": "Trigger identifier used when firing the workflow"
+          },
+          "variables": {
+            "description": "Payload variables declared on the trigger",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowWebhookTriggerVariableDto"
+            }
+          },
+          "subscriberVariables": {
+            "description": "Subscriber variables declared on the trigger",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowWebhookSubscriberVariableDto"
+            }
+          },
+          "reservedVariables": {
+            "description": "Reserved variables declared on the trigger",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowWebhookReservedVariableDto"
+            }
+          }
+        },
+        "required": [
+          "type",
+          "identifier",
+          "variables"
+        ]
+      },
+      "PersistedWorkflowWebhookDto": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "Database identifier of the workflow"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the workflow"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the workflow"
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether the workflow is active"
+          },
+          "draft": {
+            "type": "boolean",
+            "description": "Whether the workflow is a draft"
+          },
+          "preferenceSettings": {
+            "$ref": "#/components/schemas/PreferenceChannelsDto"
+          },
+          "critical": {
+            "type": "boolean",
+            "description": "Whether the workflow ignores subscriber preferences"
+          },
+          "tags": {
+            "description": "Tags assigned to the workflow",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "steps": {
+            "description": "Persisted workflow steps",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PersistedWorkflowStepWebhookDto"
+            }
+          },
+          "_organizationId": {
+            "type": "object",
+            "description": "Organization identifier"
+          },
+          "_creatorId": {
+            "type": "string",
+            "description": "User who created the workflow"
+          },
+          "_environmentId": {
+            "type": "object",
+            "description": "Environment identifier"
+          },
+          "triggers": {
+            "description": "Workflow triggers",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowWebhookTriggerDto"
+            }
+          },
+          "_notificationGroupId": {
+            "type": "string",
+            "description": "Notification group identifier"
+          },
+          "_parentId": {
+            "type": "string",
+            "description": "Parent workflow identifier"
+          },
+          "deleted": {
+            "type": "boolean",
+            "description": "Deletion state captured before workflow.deleted is processed. The deleted event normally carries `false` here."
+          },
+          "deletedAt": {
+            "type": "string",
+            "description": "Soft-delete timestamp"
+          },
+          "deletedBy": {
+            "type": "string",
+            "description": "User who deleted the workflow"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Creation timestamp"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "Last updated timestamp"
+          },
+          "_updatedBy": {
+            "type": "string",
+            "description": "User who last updated the workflow"
+          },
+          "updatedBy": {
+            "$ref": "#/components/schemas/UserResponseDto"
+          },
+          "isBlueprint": {
+            "type": "boolean",
+            "description": "Whether the workflow is a blueprint"
+          },
+          "blueprintId": {
+            "type": "string",
+            "description": "Blueprint identifier"
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Custom workflow data"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ResourceTypeEnum"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/ResourceOriginEnum"
+          },
+          "rawData": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Raw workflow data retained for legacy workflows"
+          },
+          "payloadSchema": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Payload JSON Schema for the workflow"
+          },
+          "validatePayload": {
+            "type": "boolean",
+            "description": "Whether payload schema validation is enabled"
+          },
+          "isTranslationEnabled": {
+            "type": "boolean",
+            "description": "Whether translations are enabled for this workflow"
+          },
+          "agent": {
+            "nullable": true,
             "allOf": [
               {
-                "$ref": "#/components/schemas/WorkflowResponseDto"
+                "$ref": "#/components/schemas/WorkflowAgentConfigDto"
               }
             ]
           },
-          "previousObject": {
-            "description": "Previous state of the workflow",
+          "issues": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/RuntimeIssueDto"
+              }
+            },
+            "description": "Runtime issues recorded on the workflow"
+          },
+          "status": {
+            "$ref": "#/components/schemas/WorkflowStatusEnum"
+          },
+          "lastTriggeredAt": {
+            "type": "string",
+            "description": "Timestamp of the last workflow trigger"
+          },
+          "lastPublishedAt": {
+            "type": "string",
+            "description": "Timestamp of the last workflow publication"
+          },
+          "_lastPublishedBy": {
+            "type": "string",
+            "description": "User who last published the workflow"
+          },
+          "lastPublishedBy": {
+            "$ref": "#/components/schemas/UserResponseDto"
+          },
+          "userPreferences": {
+            "nullable": true,
+            "description": "User-specific preferences included by workflow patch events",
             "allOf": [
               {
-                "$ref": "#/components/schemas/WorkflowResponseDto"
+                "$ref": "#/components/schemas/WorkflowPreferencesDto"
               }
             ]
+          },
+          "defaultPreferences": {
+            "description": "Default preferences included by workflow patch events",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/WorkflowPreferencesDto"
+              }
+            ]
+          },
+          "severity": {
+            "$ref": "#/components/schemas/SeverityLevelEnum"
+          }
+        },
+        "required": [
+          "_id",
+          "name",
+          "description",
+          "active",
+          "draft",
+          "preferenceSettings",
+          "critical",
+          "tags",
+          "steps",
+          "_organizationId",
+          "_creatorId",
+          "_environmentId",
+          "triggers",
+          "_notificationGroupId",
+          "deleted",
+          "isBlueprint",
+          "issues"
+        ]
+      },
+      "WorkflowUpdatedWebhookPayloadDto": {
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/WorkflowResponseDto"
+          },
+          "previousObject": {
+            "$ref": "#/components/schemas/PersistedWorkflowWebhookDto"
           }
         },
         "required": [
@@ -87369,32 +88077,195 @@
           "previousObject"
         ]
       },
-      "WebhookDeletedWorkflowDto": {
+      "WorkflowDeletedWebhookPayloadDto": {
         "type": "object",
         "properties": {
           "object": {
-            "description": "Current workflow state",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/WorkflowResponseDto"
-              }
-            ]
+            "$ref": "#/components/schemas/PersistedWorkflowWebhookDto"
           }
         },
         "required": [
           "object"
         ]
       },
-      "WebhookPreferenceDto": {
+      "WorkflowPublishedWebhookPayloadDto": {
         "type": "object",
         "properties": {
           "object": {
+            "$ref": "#/components/schemas/WorkflowResponseDto"
+          },
+          "previousObject": {
+            "$ref": "#/components/schemas/WorkflowResponseDto"
+          }
+        },
+        "required": [
+          "object",
+          "previousObject"
+        ]
+      },
+      "PreferenceWebhookWorkflowDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Database identifier of the workflow"
+          },
+          "identifier": {
+            "type": "string",
+            "description": "Workflow identifier used when triggering the workflow. May be absent for subscription preferences."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the workflow"
+          },
+          "critical": {
+            "type": "boolean",
+            "description": "Whether the workflow ignores subscriber preferences"
+          },
+          "severity": {
+            "$ref": "#/components/schemas/SeverityLevelEnum"
+          },
+          "tags": {
+            "description": "Tags assigned to the workflow",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "data": {
             "type": "object",
-            "description": "Current preference state"
+            "additionalProperties": true,
+            "description": "Custom workflow data"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "critical",
+          "severity"
+        ]
+      },
+      "PreferenceWebhookTimeRangeDto": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "description": "Start of the delivery window"
+          },
+          "end": {
+            "type": "string",
+            "description": "End of the delivery window"
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ]
+      },
+      "PreferenceWebhookDayScheduleDto": {
+        "type": "object",
+        "properties": {
+          "isEnabled": {
+            "type": "boolean",
+            "description": "Whether delivery is enabled on this weekday"
+          },
+          "hours": {
+            "description": "Delivery windows for this weekday",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PreferenceWebhookTimeRangeDto"
+            }
+          }
+        },
+        "required": [
+          "isEnabled"
+        ]
+      },
+      "PreferenceWebhookWeeklyScheduleDto": {
+        "type": "object",
+        "properties": {
+          "monday": {
+            "$ref": "#/components/schemas/PreferenceWebhookDayScheduleDto"
+          },
+          "tuesday": {
+            "$ref": "#/components/schemas/PreferenceWebhookDayScheduleDto"
+          },
+          "wednesday": {
+            "$ref": "#/components/schemas/PreferenceWebhookDayScheduleDto"
+          },
+          "thursday": {
+            "$ref": "#/components/schemas/PreferenceWebhookDayScheduleDto"
+          },
+          "friday": {
+            "$ref": "#/components/schemas/PreferenceWebhookDayScheduleDto"
+          },
+          "saturday": {
+            "$ref": "#/components/schemas/PreferenceWebhookDayScheduleDto"
+          },
+          "sunday": {
+            "$ref": "#/components/schemas/PreferenceWebhookDayScheduleDto"
+          }
+        }
+      },
+      "PreferenceWebhookScheduleDto": {
+        "type": "object",
+        "properties": {
+          "isEnabled": {
+            "type": "boolean",
+            "description": "Whether the delivery schedule is enabled"
+          },
+          "weeklySchedule": {
+            "$ref": "#/components/schemas/PreferenceWebhookWeeklyScheduleDto"
+          }
+        },
+        "required": [
+          "isEnabled"
+        ]
+      },
+      "PreferenceWebhookObjectDto": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "$ref": "#/components/schemas/PreferenceLevelEnum"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether notifications are enabled"
+          },
+          "channels": {
+            "$ref": "#/components/schemas/PreferenceChannelsDto"
+          },
+          "subscriptionId": {
+            "type": "string",
+            "description": "Topic subscription identifier"
+          },
+          "workflow": {
+            "$ref": "#/components/schemas/PreferenceWebhookWorkflowDto"
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/PreferenceWebhookScheduleDto"
+          },
+          "condition": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "JsonLogic condition controlling whether this preference applies"
+          }
+        },
+        "required": [
+          "level",
+          "enabled",
+          "channels"
+        ]
+      },
+      "PreferenceWebhookPayloadDto": {
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/PreferenceWebhookObjectDto"
           },
           "subscriberId": {
             "type": "string",
-            "description": "Subscriber ID"
+            "description": "Identifier of the subscriber whose preference changed"
           }
         },
         "required": [
@@ -87402,75 +88273,146 @@
           "subscriberId"
         ]
       },
-      "WebhookInboundEmailDomainDto": {
+      "InboundEmailWebhookDomainDto": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
-            "description": "Domain ID"
+            "description": "Database identifier of the domain that received the email"
           },
           "name": {
             "type": "string",
-            "description": "Domain name"
+            "description": "Domain name, for example `mail.yourcompany.com`"
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Custom data configured on the domain"
           }
         },
         "required": [
           "id",
-          "name"
+          "name",
+          "data"
         ]
       },
-      "WebhookInboundEmailRouteDto": {
+      "InboundEmailWebhookRouteDto": {
         "type": "object",
         "properties": {
           "address": {
             "type": "string",
-            "description": "Route address (local part of the email address)"
+            "description": "Route address, meaning the local part of the receiving email address"
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Custom data configured on the route, for example a tenant identifier"
           }
         },
         "required": [
-          "address"
+          "address",
+          "data"
         ]
       },
-      "WebhookInboundEmailAddressDto": {
+      "InboundEmailWebhookAddressDto": {
         "type": "object",
         "properties": {
-          "name": {
-            "type": "string",
-            "description": "Display name"
-          },
           "address": {
             "type": "string",
             "description": "Email address"
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name"
           }
         },
         "required": [
-          "name",
-          "address"
+          "address",
+          "name"
         ]
       },
-      "WebhookInboundEmailMailDto": {
+      "InboundEmailWebhookAttachmentContentDto": {
         "type": "object",
         "properties": {
-          "from": {
-            "description": "Sender address info",
+          "type": {
+            "type": "string",
+            "enum": [
+              "Buffer"
+            ],
+            "description": "Legacy Node.js buffer marker"
+          },
+          "data": {
+            "description": "Raw attachment bytes",
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          }
+        },
+        "required": [
+          "type",
+          "data"
+        ]
+      },
+      "InboundEmailWebhookAttachmentDto": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string",
+            "description": "File name of the attachment"
+          },
+          "contentType": {
+            "type": "string",
+            "description": "MIME type of the attachment"
+          },
+          "size": {
+            "type": "number",
+            "description": "File size in bytes"
+          },
+          "url": {
+            "type": "string",
+            "description": "Presigned download URL. Absent on self-hosted deployments without S3, where `content` carries the bytes instead."
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp when `url` stops being valid. Present when Novu signed the URL for webhook delivery."
+          },
+          "content": {
+            "nullable": true,
+            "description": "Deprecated, use `url`. Raw content in the legacy `{ type: \"Buffer\", data: number[] }` format, or `null` when rehydration failed.",
             "allOf": [
               {
-                "$ref": "#/components/schemas/WebhookInboundEmailAddressDto"
+                "$ref": "#/components/schemas/InboundEmailWebhookAttachmentContentDto"
               }
             ]
           },
-          "to": {
-            "description": "Recipient address info",
+          "contentBytes": {
+            "type": "number",
+            "description": "Deprecated, use `size`"
+          }
+        },
+        "required": [
+          "filename",
+          "contentType",
+          "size"
+        ]
+      },
+      "InboundEmailWebhookMailDto": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "description": "Sender addresses",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/WebhookInboundEmailAddressDto"
+              "$ref": "#/components/schemas/InboundEmailWebhookAddressDto"
             }
           },
-          "bcc": {
-            "description": "Matched SMTP envelope recipient when it is absent from the To and Cc headers",
+          "to": {
+            "description": "Recipient addresses",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/WebhookInboundEmailAddressDto"
+              "$ref": "#/components/schemas/InboundEmailWebhookAddressDto"
             }
           },
           "subject": {
@@ -87487,50 +88429,114 @@
           },
           "messageId": {
             "type": "string",
-            "description": "Message ID header"
+            "description": "Value of the `Message-ID` header"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "description": "Raw mail headers, keyed by lowercase header name"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "Timestamp taken from the `Date` header, or `null` when the header is invalid"
+          },
+          "inReplyTo": {
+            "type": "string",
+            "description": "Value of the `In-Reply-To` header, set on replies"
+          },
+          "references": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "description": "Value of the `References` header, delivered as a single value or a list depending on the sender"
+          },
+          "cc": {
+            "description": "Carbon copy addresses, when the sender set any",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InboundEmailWebhookAddressDto"
+            }
+          },
+          "bcc": {
+            "description": "Matched SMTP envelope recipient when it is absent from the To and Cc headers. Omitted otherwise.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InboundEmailWebhookAddressDto"
+            }
+          },
+          "attachments": {
+            "description": "Attachments found on the email",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InboundEmailWebhookAttachmentDto"
+            }
           }
         },
         "required": [
           "from",
           "to",
           "subject",
-          "messageId"
+          "html",
+          "text",
+          "messageId",
+          "headers",
+          "date",
+          "attachments"
         ]
       },
-      "WebhookInboundEmailDto": {
+      "InboundEmailWebhookObjectDto": {
         "type": "object",
         "properties": {
           "domain": {
-            "description": "Domain that received the email",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/WebhookInboundEmailDomainDto"
-              }
-            ]
+            "$ref": "#/components/schemas/InboundEmailWebhookDomainDto"
           },
           "route": {
-            "description": "Matched route info",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/WebhookInboundEmailRouteDto"
-              }
-            ]
+            "$ref": "#/components/schemas/InboundEmailWebhookRouteDto"
           },
           "mail": {
-            "description": "Inbound email details",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/WebhookInboundEmailMailDto"
-              }
-            ]
+            "$ref": "#/components/schemas/InboundEmailWebhookMailDto"
           }
         },
         "required": [
           "domain",
+          "route",
           "mail"
         ]
       },
-      "WebhookMessageDtoWebhookPayloadWrapper": {
+      "InboundEmailWebhookPayloadDto": {
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/InboundEmailWebhookObjectDto"
+          }
+        },
+        "required": [
+          "object"
+        ]
+      },
+      "message_sentWebhookPayloadWrapper": {
         "type": "object",
         "properties": {
           "id": {
@@ -87545,12 +88551,7 @@
             "description": "The type of the webhook event."
           },
           "data": {
-            "description": "The actual event data payload.",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/WebhookMessageDto"
-              }
-            ]
+            "$ref": "#/components/schemas/MessageWebhookPayloadWithErrorDto"
           },
           "timestamp": {
             "type": "string",
@@ -87559,7 +88560,7 @@
           },
           "environmentId": {
             "type": "string",
-            "description": "The ID of the environment associated with the event."
+            "description": "The identifier of the environment associated with the event."
           },
           "object": {
             "type": "string",
@@ -87570,6 +88571,7 @@
           }
         },
         "required": [
+          "id",
           "type",
           "data",
           "timestamp",
@@ -87577,7 +88579,7 @@
           "object"
         ]
       },
-      "WebhookMessageFailedDtoWebhookPayloadWrapper": {
+      "message_failedWebhookPayloadWrapper": {
         "type": "object",
         "properties": {
           "id": {
@@ -87592,12 +88594,7 @@
             "description": "The type of the webhook event."
           },
           "data": {
-            "description": "The actual event data payload.",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/WebhookMessageFailedDto"
-              }
-            ]
+            "$ref": "#/components/schemas/MessageWebhookPayloadWithErrorDto"
           },
           "timestamp": {
             "type": "string",
@@ -87606,7 +88603,7 @@
           },
           "environmentId": {
             "type": "string",
-            "description": "The ID of the environment associated with the event."
+            "description": "The identifier of the environment associated with the event."
           },
           "object": {
             "type": "string",
@@ -87617,6 +88614,7 @@
           }
         },
         "required": [
+          "id",
           "type",
           "data",
           "timestamp",
@@ -87624,7 +88622,394 @@
           "object"
         ]
       },
-      "WebhookCreatedWorkflowDtoWebhookPayloadWrapper": {
+      "message_deliveredWebhookPayloadWrapper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the webhook event (evt_✱)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "message.delivered"
+            ],
+            "description": "The type of the webhook event."
+          },
+          "data": {
+            "$ref": "#/components/schemas/MessageWebhookPayloadDto"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp of when the event occurred."
+          },
+          "environmentId": {
+            "type": "string",
+            "description": "The identifier of the environment associated with the event."
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "message"
+            ],
+            "description": "The type of object the event relates to."
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "data",
+          "timestamp",
+          "environmentId",
+          "object"
+        ]
+      },
+      "message_seenWebhookPayloadWrapper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the webhook event (evt_✱)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "message.seen"
+            ],
+            "description": "The type of the webhook event."
+          },
+          "data": {
+            "$ref": "#/components/schemas/MessageWebhookPayloadDto"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp of when the event occurred."
+          },
+          "environmentId": {
+            "type": "string",
+            "description": "The identifier of the environment associated with the event."
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "message"
+            ],
+            "description": "The type of object the event relates to."
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "data",
+          "timestamp",
+          "environmentId",
+          "object"
+        ]
+      },
+      "message_readWebhookPayloadWrapper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the webhook event (evt_✱)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "message.read"
+            ],
+            "description": "The type of the webhook event."
+          },
+          "data": {
+            "$ref": "#/components/schemas/MessageWebhookPayloadDto"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp of when the event occurred."
+          },
+          "environmentId": {
+            "type": "string",
+            "description": "The identifier of the environment associated with the event."
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "message"
+            ],
+            "description": "The type of object the event relates to."
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "data",
+          "timestamp",
+          "environmentId",
+          "object"
+        ]
+      },
+      "message_unreadWebhookPayloadWrapper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the webhook event (evt_✱)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "message.unread"
+            ],
+            "description": "The type of the webhook event."
+          },
+          "data": {
+            "$ref": "#/components/schemas/MessageWebhookPayloadDto"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp of when the event occurred."
+          },
+          "environmentId": {
+            "type": "string",
+            "description": "The identifier of the environment associated with the event."
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "message"
+            ],
+            "description": "The type of object the event relates to."
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "data",
+          "timestamp",
+          "environmentId",
+          "object"
+        ]
+      },
+      "message_archivedWebhookPayloadWrapper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the webhook event (evt_✱)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "message.archived"
+            ],
+            "description": "The type of the webhook event."
+          },
+          "data": {
+            "$ref": "#/components/schemas/MessageWebhookPayloadDto"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp of when the event occurred."
+          },
+          "environmentId": {
+            "type": "string",
+            "description": "The identifier of the environment associated with the event."
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "message"
+            ],
+            "description": "The type of object the event relates to."
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "data",
+          "timestamp",
+          "environmentId",
+          "object"
+        ]
+      },
+      "message_unarchivedWebhookPayloadWrapper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the webhook event (evt_✱)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "message.unarchived"
+            ],
+            "description": "The type of the webhook event."
+          },
+          "data": {
+            "$ref": "#/components/schemas/MessageWebhookPayloadDto"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp of when the event occurred."
+          },
+          "environmentId": {
+            "type": "string",
+            "description": "The identifier of the environment associated with the event."
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "message"
+            ],
+            "description": "The type of object the event relates to."
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "data",
+          "timestamp",
+          "environmentId",
+          "object"
+        ]
+      },
+      "message_snoozedWebhookPayloadWrapper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the webhook event (evt_✱)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "message.snoozed"
+            ],
+            "description": "The type of the webhook event."
+          },
+          "data": {
+            "$ref": "#/components/schemas/MessageWebhookPayloadDto"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp of when the event occurred."
+          },
+          "environmentId": {
+            "type": "string",
+            "description": "The identifier of the environment associated with the event."
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "message"
+            ],
+            "description": "The type of object the event relates to."
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "data",
+          "timestamp",
+          "environmentId",
+          "object"
+        ]
+      },
+      "message_unsnoozedWebhookPayloadWrapper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the webhook event (evt_✱)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "message.unsnoozed"
+            ],
+            "description": "The type of the webhook event."
+          },
+          "data": {
+            "$ref": "#/components/schemas/MessageWebhookPayloadDto"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp of when the event occurred."
+          },
+          "environmentId": {
+            "type": "string",
+            "description": "The identifier of the environment associated with the event."
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "message"
+            ],
+            "description": "The type of object the event relates to."
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "data",
+          "timestamp",
+          "environmentId",
+          "object"
+        ]
+      },
+      "message_deletedWebhookPayloadWrapper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the webhook event (evt_✱)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "message.deleted"
+            ],
+            "description": "The type of the webhook event."
+          },
+          "data": {
+            "$ref": "#/components/schemas/MessageWebhookPayloadDto"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp of when the event occurred."
+          },
+          "environmentId": {
+            "type": "string",
+            "description": "The identifier of the environment associated with the event."
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "message"
+            ],
+            "description": "The type of object the event relates to."
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "data",
+          "timestamp",
+          "environmentId",
+          "object"
+        ]
+      },
+      "workflow_createdWebhookPayloadWrapper": {
         "type": "object",
         "properties": {
           "id": {
@@ -87639,12 +89024,7 @@
             "description": "The type of the webhook event."
           },
           "data": {
-            "description": "The actual event data payload.",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/WebhookCreatedWorkflowDto"
-              }
-            ]
+            "$ref": "#/components/schemas/WorkflowCreatedWebhookPayloadDto"
           },
           "timestamp": {
             "type": "string",
@@ -87653,7 +89033,7 @@
           },
           "environmentId": {
             "type": "string",
-            "description": "The ID of the environment associated with the event."
+            "description": "The identifier of the environment associated with the event."
           },
           "object": {
             "type": "string",
@@ -87664,6 +89044,7 @@
           }
         },
         "required": [
+          "id",
           "type",
           "data",
           "timestamp",
@@ -87671,7 +89052,7 @@
           "object"
         ]
       },
-      "WebhookUpdatedWorkflowDtoWebhookPayloadWrapper": {
+      "workflow_updatedWebhookPayloadWrapper": {
         "type": "object",
         "properties": {
           "id": {
@@ -87686,12 +89067,7 @@
             "description": "The type of the webhook event."
           },
           "data": {
-            "description": "The actual event data payload.",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/WebhookUpdatedWorkflowDto"
-              }
-            ]
+            "$ref": "#/components/schemas/WorkflowUpdatedWebhookPayloadDto"
           },
           "timestamp": {
             "type": "string",
@@ -87700,7 +89076,7 @@
           },
           "environmentId": {
             "type": "string",
-            "description": "The ID of the environment associated with the event."
+            "description": "The identifier of the environment associated with the event."
           },
           "object": {
             "type": "string",
@@ -87711,6 +89087,7 @@
           }
         },
         "required": [
+          "id",
           "type",
           "data",
           "timestamp",
@@ -87718,7 +89095,7 @@
           "object"
         ]
       },
-      "WebhookDeletedWorkflowDtoWebhookPayloadWrapper": {
+      "workflow_deletedWebhookPayloadWrapper": {
         "type": "object",
         "properties": {
           "id": {
@@ -87733,12 +89110,7 @@
             "description": "The type of the webhook event."
           },
           "data": {
-            "description": "The actual event data payload.",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/WebhookDeletedWorkflowDto"
-              }
-            ]
+            "$ref": "#/components/schemas/WorkflowDeletedWebhookPayloadDto"
           },
           "timestamp": {
             "type": "string",
@@ -87747,7 +89119,7 @@
           },
           "environmentId": {
             "type": "string",
-            "description": "The ID of the environment associated with the event."
+            "description": "The identifier of the environment associated with the event."
           },
           "object": {
             "type": "string",
@@ -87758,6 +89130,7 @@
           }
         },
         "required": [
+          "id",
           "type",
           "data",
           "timestamp",
@@ -87765,7 +89138,50 @@
           "object"
         ]
       },
-      "WebhookPreferenceDtoWebhookPayloadWrapper": {
+      "workflow_publishedWebhookPayloadWrapper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the webhook event (evt_✱)."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "workflow.published"
+            ],
+            "description": "The type of the webhook event."
+          },
+          "data": {
+            "$ref": "#/components/schemas/WorkflowPublishedWebhookPayloadDto"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO timestamp of when the event occurred."
+          },
+          "environmentId": {
+            "type": "string",
+            "description": "The identifier of the environment associated with the event."
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "workflow"
+            ],
+            "description": "The type of object the event relates to."
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "data",
+          "timestamp",
+          "environmentId",
+          "object"
+        ]
+      },
+      "preference_updatedWebhookPayloadWrapper": {
         "type": "object",
         "properties": {
           "id": {
@@ -87780,12 +89196,7 @@
             "description": "The type of the webhook event."
           },
           "data": {
-            "description": "The actual event data payload.",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/WebhookPreferenceDto"
-              }
-            ]
+            "$ref": "#/components/schemas/PreferenceWebhookPayloadDto"
           },
           "timestamp": {
             "type": "string",
@@ -87794,7 +89205,7 @@
           },
           "environmentId": {
             "type": "string",
-            "description": "The ID of the environment associated with the event."
+            "description": "The identifier of the environment associated with the event."
           },
           "object": {
             "type": "string",
@@ -87805,6 +89216,7 @@
           }
         },
         "required": [
+          "id",
           "type",
           "data",
           "timestamp",
@@ -87812,7 +89224,7 @@
           "object"
         ]
       },
-      "WebhookInboundEmailDtoWebhookPayloadWrapper": {
+      "email_receivedWebhookPayloadWrapper": {
         "type": "object",
         "properties": {
           "id": {
@@ -87827,12 +89239,7 @@
             "description": "The type of the webhook event."
           },
           "data": {
-            "description": "The actual event data payload.",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/WebhookInboundEmailDto"
-              }
-            ]
+            "$ref": "#/components/schemas/InboundEmailWebhookPayloadDto"
           },
           "timestamp": {
             "type": "string",
@@ -87841,7 +89248,7 @@
           },
           "environmentId": {
             "type": "string",
-            "description": "The ID of the environment associated with the event."
+            "description": "The identifier of the environment associated with the event."
           },
           "object": {
             "type": "string",
@@ -87852,6 +89259,7 @@
           }
         },
         "required": [
+          "id",
           "type",
           "data",
           "timestamp",
@@ -87947,6 +89355,7 @@
   "x-webhooks": {
     "message.sent": {
       "post": {
+        "operationId": "message.sent",
         "summary": "Event: message.sent",
         "description": "This webhook is triggered when a `message` event (`message.sent`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -87955,7 +89364,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookMessageDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/message_sentWebhookPayloadWrapper"
               }
             }
           }
@@ -87972,6 +89381,7 @@
     },
     "message.failed": {
       "post": {
+        "operationId": "message.failed",
         "summary": "Event: message.failed",
         "description": "This webhook is triggered when a `message` event (`message.failed`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -87980,7 +89390,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookMessageFailedDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/message_failedWebhookPayloadWrapper"
               }
             }
           }
@@ -87997,6 +89407,7 @@
     },
     "message.delivered": {
       "post": {
+        "operationId": "message.delivered",
         "summary": "Event: message.delivered",
         "description": "This webhook is triggered when a `message` event (`message.delivered`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88005,7 +89416,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookMessageDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/message_deliveredWebhookPayloadWrapper"
               }
             }
           }
@@ -88022,6 +89433,7 @@
     },
     "message.seen": {
       "post": {
+        "operationId": "message.seen",
         "summary": "Event: message.seen",
         "description": "This webhook is triggered when a `message` event (`message.seen`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88030,7 +89442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookMessageDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/message_seenWebhookPayloadWrapper"
               }
             }
           }
@@ -88047,6 +89459,7 @@
     },
     "message.read": {
       "post": {
+        "operationId": "message.read",
         "summary": "Event: message.read",
         "description": "This webhook is triggered when a `message` event (`message.read`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88055,7 +89468,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookMessageDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/message_readWebhookPayloadWrapper"
               }
             }
           }
@@ -88072,6 +89485,7 @@
     },
     "message.unread": {
       "post": {
+        "operationId": "message.unread",
         "summary": "Event: message.unread",
         "description": "This webhook is triggered when a `message` event (`message.unread`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88080,7 +89494,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookMessageDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/message_unreadWebhookPayloadWrapper"
               }
             }
           }
@@ -88097,6 +89511,7 @@
     },
     "message.archived": {
       "post": {
+        "operationId": "message.archived",
         "summary": "Event: message.archived",
         "description": "This webhook is triggered when a `message` event (`message.archived`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88105,7 +89520,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookMessageDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/message_archivedWebhookPayloadWrapper"
               }
             }
           }
@@ -88122,6 +89537,7 @@
     },
     "message.unarchived": {
       "post": {
+        "operationId": "message.unarchived",
         "summary": "Event: message.unarchived",
         "description": "This webhook is triggered when a `message` event (`message.unarchived`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88130,7 +89546,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookMessageDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/message_unarchivedWebhookPayloadWrapper"
               }
             }
           }
@@ -88147,6 +89563,7 @@
     },
     "message.snoozed": {
       "post": {
+        "operationId": "message.snoozed",
         "summary": "Event: message.snoozed",
         "description": "This webhook is triggered when a `message` event (`message.snoozed`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88155,7 +89572,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookMessageDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/message_snoozedWebhookPayloadWrapper"
               }
             }
           }
@@ -88172,6 +89589,7 @@
     },
     "message.unsnoozed": {
       "post": {
+        "operationId": "message.unsnoozed",
         "summary": "Event: message.unsnoozed",
         "description": "This webhook is triggered when a `message` event (`message.unsnoozed`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88180,7 +89598,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookMessageDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/message_unsnoozedWebhookPayloadWrapper"
               }
             }
           }
@@ -88197,6 +89615,7 @@
     },
     "message.deleted": {
       "post": {
+        "operationId": "message.deleted",
         "summary": "Event: message.deleted",
         "description": "This webhook is triggered when a `message` event (`message.deleted`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88205,7 +89624,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookMessageDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/message_deletedWebhookPayloadWrapper"
               }
             }
           }
@@ -88222,6 +89641,7 @@
     },
     "workflow.created": {
       "post": {
+        "operationId": "workflow.created",
         "summary": "Event: workflow.created",
         "description": "This webhook is triggered when a `workflow` event (`workflow.created`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88230,7 +89650,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookCreatedWorkflowDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/workflow_createdWebhookPayloadWrapper"
               }
             }
           }
@@ -88247,6 +89667,7 @@
     },
     "workflow.updated": {
       "post": {
+        "operationId": "workflow.updated",
         "summary": "Event: workflow.updated",
         "description": "This webhook is triggered when a `workflow` event (`workflow.updated`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88255,7 +89676,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookUpdatedWorkflowDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/workflow_updatedWebhookPayloadWrapper"
               }
             }
           }
@@ -88272,6 +89693,7 @@
     },
     "workflow.deleted": {
       "post": {
+        "operationId": "workflow.deleted",
         "summary": "Event: workflow.deleted",
         "description": "This webhook is triggered when a `workflow` event (`workflow.deleted`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88280,7 +89702,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookDeletedWorkflowDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/workflow_deletedWebhookPayloadWrapper"
               }
             }
           }
@@ -88297,6 +89719,7 @@
     },
     "workflow.published": {
       "post": {
+        "operationId": "workflow.published",
         "summary": "Event: workflow.published",
         "description": "This webhook is triggered when a `workflow` event (`workflow.published`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88305,7 +89728,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookUpdatedWorkflowDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/workflow_publishedWebhookPayloadWrapper"
               }
             }
           }
@@ -88322,6 +89745,7 @@
     },
     "preference.updated": {
       "post": {
+        "operationId": "preference.updated",
         "summary": "Event: preference.updated",
         "description": "This webhook is triggered when a `preference` event (`preference.updated`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88330,7 +89754,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookPreferenceDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/preference_updatedWebhookPayloadWrapper"
               }
             }
           }
@@ -88347,6 +89771,7 @@
     },
     "email.received": {
       "post": {
+        "operationId": "email.received",
         "summary": "Event: email.received",
         "description": "This webhook is triggered when a `email_inbound` event (`email.received`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.",
         "requestBody": {
@@ -88355,7 +89780,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookInboundEmailDtoWebhookPayloadWrapper"
+                "$ref": "#/components/schemas/email_receivedWebhookPayloadWrapper"
               }
             }
           }

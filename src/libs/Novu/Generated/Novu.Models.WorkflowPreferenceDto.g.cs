@@ -25,6 +25,12 @@ namespace Novu
         public required bool ReadOnly { get; set; }
 
         /// <summary>
+        /// JsonLogic condition controlling whether this preference applies
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("condition")]
+        public object? Condition { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -41,15 +47,20 @@ namespace Novu
         /// A flag specifying if the preference is read-only. If true, the preference cannot be changed by the Subscriber.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="condition">
+        /// JsonLogic condition controlling whether this preference applies
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WorkflowPreferenceDto(
             bool enabled,
-            bool readOnly)
+            bool readOnly,
+            object? condition)
         {
             this.Enabled = enabled;
             this.ReadOnly = readOnly;
+            this.Condition = condition;
         }
 
         /// <summary>

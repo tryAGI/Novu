@@ -70,7 +70,7 @@ namespace Novu
         public string? LayoutIdentifier { get; set; }
 
         /// <summary>
-        /// Severity of the workflow
+        /// Workflow severity
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.SeverityLevelEnumJsonConverter))]
@@ -98,7 +98,7 @@ namespace Novu
         /// Example: {"sendgrid":{"templateId":"1234567890"}}
         /// </param>
         /// <param name="severity">
-        /// Severity of the workflow
+        /// Workflow severity
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

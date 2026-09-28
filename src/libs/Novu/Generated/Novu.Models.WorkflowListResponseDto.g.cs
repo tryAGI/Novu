@@ -75,7 +75,7 @@ namespace Novu
         public required string Slug { get; set; }
 
         /// <summary>
-        /// Status of the workflow
+        /// Workflow status
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.WorkflowStatusEnumJsonConverter))]
@@ -83,7 +83,7 @@ namespace Novu
         public required global::Novu.WorkflowStatusEnum Status { get; set; }
 
         /// <summary>
-        /// Origin of the layout
+        /// Workflow origin
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("origin")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ResourceOriginEnumJsonConverter))]
@@ -144,10 +144,10 @@ namespace Novu
         /// Workflow slug
         /// </param>
         /// <param name="status">
-        /// Status of the workflow
+        /// Workflow status
         /// </param>
         /// <param name="origin">
-        /// Origin of the layout
+        /// Workflow origin
         /// </param>
         /// <param name="stepTypeOverviews">
         /// Overview of step types in the workflow

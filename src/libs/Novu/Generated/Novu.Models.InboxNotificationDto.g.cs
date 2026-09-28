@@ -126,7 +126,7 @@ namespace Novu
         public global::Novu.InboxActionDto? SecondaryAction { get; set; }
 
         /// <summary>
-        /// Channel type through which the message is sent
+        /// Channel the message was sent on
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("channelType")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ChannelTypeEnumJsonConverter))]
@@ -158,7 +158,7 @@ namespace Novu
         public global::Novu.NotificationWorkflowDto? Workflow { get; set; }
 
         /// <summary>
-        /// Severity of the workflow
+        /// Workflow severity
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.SeverityLevelEnumJsonConverter))]
@@ -202,10 +202,10 @@ namespace Novu
         /// ISO timestamp when the notification was created
         /// </param>
         /// <param name="channelType">
-        /// Channel type through which the message is sent
+        /// Channel the message was sent on
         /// </param>
         /// <param name="severity">
-        /// Severity of the workflow
+        /// Workflow severity
         /// </param>
         /// <param name="subject">
         /// Subject of the notification

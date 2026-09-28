@@ -71,7 +71,7 @@ namespace Novu
         public required string CreatedAt { get; set; }
 
         /// <summary>
-        /// Origin of the layout
+        /// Workflow origin
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("origin")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ResourceOriginEnumJsonConverter))]
@@ -79,7 +79,7 @@ namespace Novu
         public required global::Novu.ResourceOriginEnum Origin { get; set; }
 
         /// <summary>
-        /// Type of the layout
+        /// Resource type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ResourceTypeEnumJsonConverter))]
@@ -133,10 +133,10 @@ namespace Novu
         /// Creation timestamp
         /// </param>
         /// <param name="origin">
-        /// Origin of the layout
+        /// Workflow origin
         /// </param>
         /// <param name="type">
-        /// Type of the layout
+        /// Resource type
         /// </param>
         /// <param name="controls">
         /// Controls metadata for the layout

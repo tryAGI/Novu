@@ -49,7 +49,7 @@ namespace Novu
         public object? Data { get; set; }
 
         /// <summary>
-        /// Severity of the workflow
+        /// Workflow severity
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.SeverityLevelEnumJsonConverter))]
@@ -78,7 +78,7 @@ namespace Novu
         /// Whether this workflow is marked as critical
         /// </param>
         /// <param name="severity">
-        /// Severity of the workflow
+        /// Workflow severity
         /// </param>
         /// <param name="tags">
         /// Tags associated with the workflow

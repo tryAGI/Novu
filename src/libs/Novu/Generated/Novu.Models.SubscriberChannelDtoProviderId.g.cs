@@ -39,6 +39,10 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
+        GoogleChat,
+        /// <summary>
+        ///
+        /// </summary>
         GrafanaOnCall,
         /// <summary>
         ///
@@ -64,6 +68,10 @@ namespace Novu
         ///
         /// </summary>
         OneSignal,
+        /// <summary>
+        ///
+        /// </summary>
+        PhotonImessage,
         /// <summary>
         ///
         /// </summary>
@@ -129,6 +137,7 @@ namespace Novu
                 SubscriberChannelDtoProviderId.Expo => "expo",
                 SubscriberChannelDtoProviderId.Fcm => "fcm",
                 SubscriberChannelDtoProviderId.Getstream => "getstream",
+                SubscriberChannelDtoProviderId.GoogleChat => "google-chat",
                 SubscriberChannelDtoProviderId.GrafanaOnCall => "grafana-on-call",
                 SubscriberChannelDtoProviderId.Line => "line",
                 SubscriberChannelDtoProviderId.Mattermost => "mattermost",
@@ -136,6 +145,7 @@ namespace Novu
                 SubscriberChannelDtoProviderId.NovuSlack => "novu-slack",
                 SubscriberChannelDtoProviderId.NovuWebChat => "novu-web-chat",
                 SubscriberChannelDtoProviderId.OneSignal => "one-signal",
+                SubscriberChannelDtoProviderId.PhotonImessage => "photon-imessage",
                 SubscriberChannelDtoProviderId.PushWebhook => "push-webhook",
                 SubscriberChannelDtoProviderId.PusherBeams => "pusher-beams",
                 SubscriberChannelDtoProviderId.Pushpad => "pushpad",
@@ -164,6 +174,7 @@ namespace Novu
                 "expo" => SubscriberChannelDtoProviderId.Expo,
                 "fcm" => SubscriberChannelDtoProviderId.Fcm,
                 "getstream" => SubscriberChannelDtoProviderId.Getstream,
+                "google-chat" => SubscriberChannelDtoProviderId.GoogleChat,
                 "grafana-on-call" => SubscriberChannelDtoProviderId.GrafanaOnCall,
                 "line" => SubscriberChannelDtoProviderId.Line,
                 "mattermost" => SubscriberChannelDtoProviderId.Mattermost,
@@ -171,6 +182,7 @@ namespace Novu
                 "novu-slack" => SubscriberChannelDtoProviderId.NovuSlack,
                 "novu-web-chat" => SubscriberChannelDtoProviderId.NovuWebChat,
                 "one-signal" => SubscriberChannelDtoProviderId.OneSignal,
+                "photon-imessage" => SubscriberChannelDtoProviderId.PhotonImessage,
                 "push-webhook" => SubscriberChannelDtoProviderId.PushWebhook,
                 "pusher-beams" => SubscriberChannelDtoProviderId.PusherBeams,
                 "pushpad" => SubscriberChannelDtoProviderId.Pushpad,

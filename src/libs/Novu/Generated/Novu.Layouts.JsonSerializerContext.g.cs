@@ -40,13 +40,13 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Novu.UiSchemaProperty>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiSchemaGroupEnum), TypeInfoPropertyName = "UiSchemaGroupEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiSchema))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDtoEditorType), TypeInfoPropertyName = "EmailControlsDtoEditorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutControlValuesDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutControlsDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutCreationSourceEnum), TypeInfoPropertyName = "LayoutCreationSourceEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateLayoutDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDtoEditorType), TypeInfoPropertyName = "EmailControlsDtoEditorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutControlValuesDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateLayoutDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DuplicateLayoutDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.LayoutResponseDto>))]
@@ -79,8 +79,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiComponentEnum?), TypeInfoPropertyName = "NullableUiComponentEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AnyOf<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>?), TypeInfoPropertyName = "NullableAnyOfStringDoubleBooleanObjectIListAnyOfStringDoubleBooleanObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiSchemaGroupEnum?), TypeInfoPropertyName = "NullableUiSchemaGroupEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDtoEditorType?), TypeInfoPropertyName = "NullableEmailControlsDtoEditorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutCreationSourceEnum?), TypeInfoPropertyName = "NullableLayoutCreationSourceEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDtoEditorType?), TypeInfoPropertyName = "NullableEmailControlsDtoEditorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DirectionEnum?), TypeInfoPropertyName = "NullableDirectionEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutResponseDtoSortField?), TypeInfoPropertyName = "NullableLayoutResponseDtoSortField2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateLayoutPreviewResponseDtoResultType?), TypeInfoPropertyName = "NullableGenerateLayoutPreviewResponseDtoResultType2")]
@@ -154,6 +154,8 @@ namespace Novu
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
             options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
             options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
             options.Converters.Add(new global::Novu.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
@@ -196,13 +198,13 @@ namespace Novu
 
                     || typeToConvert == typeof(global::Novu.UiSchemaGroupEnum?)
 
-                    || typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType)
-
-                    || typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType?)
-
                     || typeToConvert == typeof(global::Novu.LayoutCreationSourceEnum)
 
                     || typeToConvert == typeof(global::Novu.LayoutCreationSourceEnum?)
+
+                    || typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType)
+
+                    || typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType?)
 
                     || typeToConvert == typeof(global::Novu.DirectionEnum)
 
@@ -271,16 +273,6 @@ namespace Novu
                     return new global::Novu.JsonConverters.UiSchemaGroupEnumNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType))
-                {
-                    return new global::Novu.JsonConverters.EmailControlsDtoEditorTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType?))
-                {
-                    return new global::Novu.JsonConverters.EmailControlsDtoEditorTypeNullableJsonConverter();
-                }
-
                 if (typeToConvert == typeof(global::Novu.LayoutCreationSourceEnum))
                 {
                     return new global::Novu.JsonConverters.LayoutCreationSourceEnumJsonConverter();
@@ -289,6 +281,16 @@ namespace Novu
                 if (typeToConvert == typeof(global::Novu.LayoutCreationSourceEnum?))
                 {
                     return new global::Novu.JsonConverters.LayoutCreationSourceEnumNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType))
+                {
+                    return new global::Novu.JsonConverters.EmailControlsDtoEditorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType?))
+                {
+                    return new global::Novu.JsonConverters.EmailControlsDtoEditorTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Novu.DirectionEnum))

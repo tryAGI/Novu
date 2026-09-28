@@ -24,8 +24,7 @@ namespace Novu
         /// Control values specific to Push
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("values")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Novu.PushControlDto Values { get; set; }
+        public global::Novu.PushControlDto? Values { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,26 +35,26 @@ namespace Novu
         /// <summary>
         /// Initializes a new instance of the <see cref="PushControlsMetadataResponseDto" /> class.
         /// </summary>
-        /// <param name="values">
-        /// Control values specific to Push
-        /// </param>
         /// <param name="dataSchema">
         /// JSON Schema for data
         /// </param>
         /// <param name="uiSchema">
         /// UI Schema for rendering
         /// </param>
+        /// <param name="values">
+        /// Control values specific to Push
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PushControlsMetadataResponseDto(
-            global::Novu.PushControlDto values,
             object? dataSchema,
-            global::Novu.UiSchema? uiSchema)
+            global::Novu.UiSchema? uiSchema,
+            global::Novu.PushControlDto? values)
         {
             this.DataSchema = dataSchema;
             this.UiSchema = uiSchema;
-            this.Values = values ?? throw new global::System.ArgumentNullException(nameof(values));
+            this.Values = values;
         }
 
         /// <summary>

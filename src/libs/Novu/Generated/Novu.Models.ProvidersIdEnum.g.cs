@@ -119,6 +119,10 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
+        GoogleChat,
+        /// <summary>
+        ///
+        /// </summary>
         Grafana,
         /// <summary>
         ///
@@ -252,6 +256,10 @@ namespace Novu
         ///
         /// </summary>
         Pagerduty,
+        /// <summary>
+        ///
+        /// </summary>
+        PhotonImessage,
         /// <summary>
         ///
         /// </summary>
@@ -425,6 +433,7 @@ namespace Novu
                 ProvidersIdEnum.FortySixElks => "forty-six-elks",
                 ProvidersIdEnum.GenericSms => "generic-sms",
                 ProvidersIdEnum.Getstream => "getstream",
+                ProvidersIdEnum.GoogleChat => "google-chat",
                 ProvidersIdEnum.Grafana => "grafana",
                 ProvidersIdEnum.GrafanaOnCall => "grafana-on-call",
                 ProvidersIdEnum.Gupshup => "gupshup",
@@ -459,6 +468,7 @@ namespace Novu
                 ProvidersIdEnum.Opsgenie => "opsgenie",
                 ProvidersIdEnum.Outlook365 => "outlook365",
                 ProvidersIdEnum.Pagerduty => "pagerduty",
+                ProvidersIdEnum.PhotonImessage => "photon-imessage",
                 ProvidersIdEnum.Plivo => "plivo",
                 ProvidersIdEnum.Plunk => "plunk",
                 ProvidersIdEnum.Postmark => "postmark",
@@ -529,6 +539,7 @@ namespace Novu
                 "forty-six-elks" => ProvidersIdEnum.FortySixElks,
                 "generic-sms" => ProvidersIdEnum.GenericSms,
                 "getstream" => ProvidersIdEnum.Getstream,
+                "google-chat" => ProvidersIdEnum.GoogleChat,
                 "grafana" => ProvidersIdEnum.Grafana,
                 "grafana-on-call" => ProvidersIdEnum.GrafanaOnCall,
                 "gupshup" => ProvidersIdEnum.Gupshup,
@@ -563,6 +574,7 @@ namespace Novu
                 "opsgenie" => ProvidersIdEnum.Opsgenie,
                 "outlook365" => ProvidersIdEnum.Outlook365,
                 "pagerduty" => ProvidersIdEnum.Pagerduty,
+                "photon-imessage" => ProvidersIdEnum.PhotonImessage,
                 "plivo" => ProvidersIdEnum.Plivo,
                 "plunk" => ProvidersIdEnum.Plunk,
                 "postmark" => ProvidersIdEnum.Postmark,

@@ -46,6 +46,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiSchema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DirectionEnum), TypeInfoPropertyName = "DirectionEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscriberResponseDtoOptional))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowIssueTypeEnum), TypeInfoPropertyName = "WorkflowIssueTypeEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.RuntimeIssueDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ControlsMetadataDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContentIssueEnum), TypeInfoPropertyName = "ContentIssueEnum2")]
@@ -122,7 +123,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepsItem), TypeInfoPropertyName = "StepsItem2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDtoStepDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDtoStepDiscriminatorType), TypeInfoPropertyName = "WorkflowResponseDtoStepDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Novu.RuntimeIssueDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Novu.RuntimeIssueDto>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.RuntimeIssueDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InAppStepUpsertDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.InAppControlDto, object>), TypeInfoPropertyName = "OneOfInAppControlDtoObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailStepUpsertDto))]
@@ -218,6 +220,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AnyOf<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>?), TypeInfoPropertyName = "NullableAnyOfStringDoubleBooleanObjectIListAnyOfStringDoubleBooleanObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiSchemaGroupEnum?), TypeInfoPropertyName = "NullableUiSchemaGroupEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DirectionEnum?), TypeInfoPropertyName = "NullableDirectionEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowIssueTypeEnum?), TypeInfoPropertyName = "NullableWorkflowIssueTypeEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContentIssueEnum?), TypeInfoPropertyName = "NullableContentIssueEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepIssueSeverityEnum?), TypeInfoPropertyName = "NullableStepIssueSeverityEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationIssueEnum?), TypeInfoPropertyName = "NullableIntegrationIssueEnum2")]
@@ -276,6 +279,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.HttpRequestKeyValuePairDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::System.Collections.Generic.List<global::Novu.HttpRequestKeyValuePairDto>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepsItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<global::Novu.RuntimeIssueDto>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.RuntimeIssueDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepsItem2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepsItem3>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepListResponseDto>))]
@@ -362,6 +367,8 @@ namespace Novu
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.HttpRequestControlDto, object>());
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.PreviewPayloadDtoContext2>());
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9, global::Novu.GeneratePreviewResponseDtoResultVariant10>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
             options.Converters.Add(new global::Novu.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
@@ -415,6 +422,10 @@ namespace Novu
                     || typeToConvert == typeof(global::Novu.DirectionEnum)
 
                     || typeToConvert == typeof(global::Novu.DirectionEnum?)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowIssueTypeEnum)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowIssueTypeEnum?)
 
                     || typeToConvert == typeof(global::Novu.ContentIssueEnum)
 
@@ -615,6 +626,16 @@ namespace Novu
                 if (typeToConvert == typeof(global::Novu.DirectionEnum?))
                 {
                     return new global::Novu.JsonConverters.DirectionEnumNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowIssueTypeEnum))
+                {
+                    return new global::Novu.JsonConverters.WorkflowIssueTypeEnumJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowIssueTypeEnum?))
+                {
+                    return new global::Novu.JsonConverters.WorkflowIssueTypeEnumNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Novu.ContentIssueEnum))

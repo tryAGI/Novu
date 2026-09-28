@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// Status of the workflow
+    /// Workflow status
     /// </summary>
     public enum WorkflowStatusEnum
     {

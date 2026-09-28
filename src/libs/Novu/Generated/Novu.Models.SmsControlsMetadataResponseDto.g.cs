@@ -24,8 +24,7 @@ namespace Novu
         /// Control values specific to SMS
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("values")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Novu.SmsControlDto Values { get; set; }
+        public global::Novu.SmsControlDto? Values { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,26 +35,26 @@ namespace Novu
         /// <summary>
         /// Initializes a new instance of the <see cref="SmsControlsMetadataResponseDto" /> class.
         /// </summary>
-        /// <param name="values">
-        /// Control values specific to SMS
-        /// </param>
         /// <param name="dataSchema">
         /// JSON Schema for data
         /// </param>
         /// <param name="uiSchema">
         /// UI Schema for rendering
         /// </param>
+        /// <param name="values">
+        /// Control values specific to SMS
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SmsControlsMetadataResponseDto(
-            global::Novu.SmsControlDto values,
             object? dataSchema,
-            global::Novu.UiSchema? uiSchema)
+            global::Novu.UiSchema? uiSchema,
+            global::Novu.SmsControlDto? values)
         {
             this.DataSchema = dataSchema;
             this.UiSchema = uiSchema;
-            this.Values = values ?? throw new global::System.ArgumentNullException(nameof(values));
+            this.Values = values;
         }
 
         /// <summary>

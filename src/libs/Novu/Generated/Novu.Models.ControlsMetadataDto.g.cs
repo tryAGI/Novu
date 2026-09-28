@@ -21,6 +21,12 @@ namespace Novu
         public global::Novu.UiSchema? UiSchema { get; set; }
 
         /// <summary>
+        /// Resolved control values for the step
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("values")]
+        public object? Values { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,15 +41,20 @@ namespace Novu
         /// <param name="uiSchema">
         /// UI Schema for rendering
         /// </param>
+        /// <param name="values">
+        /// Resolved control values for the step
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ControlsMetadataDto(
             object? dataSchema,
-            global::Novu.UiSchema? uiSchema)
+            global::Novu.UiSchema? uiSchema,
+            object? values)
         {
             this.DataSchema = dataSchema;
             this.UiSchema = uiSchema;
+            this.Values = values;
         }
 
         /// <summary>

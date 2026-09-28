@@ -152,6 +152,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChartsResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoSubscriberAccess), TypeInfoPropertyName = "AgentBehaviorDtoSubscriberAccess2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoReplyPolicy), TypeInfoPropertyName = "AgentBehaviorDtoReplyPolicy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentToolDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentToolDtoType), TypeInfoPropertyName = "AgentToolDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentMcpServerDto))]
@@ -431,13 +432,13 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Novu.UiSchemaProperty>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiSchemaGroupEnum), TypeInfoPropertyName = "UiSchemaGroupEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiSchema))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDtoEditorType), TypeInfoPropertyName = "EmailControlsDtoEditorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutControlValuesDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutControlsDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutCreationSourceEnum), TypeInfoPropertyName = "LayoutCreationSourceEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateLayoutDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDtoEditorType), TypeInfoPropertyName = "EmailControlsDtoEditorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutControlValuesDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateLayoutDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DuplicateLayoutDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.LayoutResponseDto>))]
@@ -504,11 +505,10 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.EnvironmentVariableValueDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateEnvironmentVariableRequestDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateEnvironmentVariableRequestDtoType), TypeInfoPropertyName = "UpdateEnvironmentVariableRequestDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowIssueTypeEnum), TypeInfoPropertyName = "WorkflowIssueTypeEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.RuntimeIssueDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ControlsMetadataDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContentIssueEnum), TypeInfoPropertyName = "ContentIssueEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepIssueSeverityEnum), TypeInfoPropertyName = "StepIssueSeverityEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepContentIssueDto))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -527,6 +527,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_c8c997b666659e86")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_0421199e9dafb346")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepIssueSeverityEnum), TypeInfoPropertyName = "StepIssueSeverityEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepContentIssueDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationIssueEnum), TypeInfoPropertyName = "IntegrationIssueEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepIntegrationIssue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepIssuesDto))]
@@ -598,7 +600,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepsItem), TypeInfoPropertyName = "StepsItem2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDtoStepDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowResponseDtoStepDiscriminatorType), TypeInfoPropertyName = "WorkflowResponseDtoStepDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Novu.RuntimeIssueDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Novu.RuntimeIssueDto>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.RuntimeIssueDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InAppStepUpsertDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.InAppControlDto, object>), TypeInfoPropertyName = "OneOfInAppControlDtoObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailStepUpsertDto))]
@@ -810,41 +813,105 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EventBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EventBodyStatus), TypeInfoPropertyName = "EventBodyStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookResultDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageFailedPushDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageFailedErrorDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageFailedDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookCreatedWorkflowDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookUpdatedWorkflowDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookDeletedWorkflowDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookPreferenceDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailDomainDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailRouteDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailAddressDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailMailDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.WebhookInboundEmailAddressDto>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapper))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperType), TypeInfoPropertyName = "WebhookMessageDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperObject), TypeInfoPropertyName = "WebhookMessageDtoWebhookPayloadWrapperObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageFailedDtoWebhookPayloadWrapper))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageFailedDtoWebhookPayloadWrapperType), TypeInfoPropertyName = "WebhookMessageFailedDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageFailedDtoWebhookPayloadWrapperObject), TypeInfoPropertyName = "WebhookMessageFailedDtoWebhookPayloadWrapperObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapper))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapperType), TypeInfoPropertyName = "WebhookCreatedWorkflowDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapperObject), TypeInfoPropertyName = "WebhookCreatedWorkflowDtoWebhookPayloadWrapperObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookUpdatedWorkflowDtoWebhookPayloadWrapper))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperType), TypeInfoPropertyName = "WebhookUpdatedWorkflowDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperObject), TypeInfoPropertyName = "WebhookUpdatedWorkflowDtoWebhookPayloadWrapperObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookDeletedWorkflowDtoWebhookPayloadWrapper))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookDeletedWorkflowDtoWebhookPayloadWrapperType), TypeInfoPropertyName = "WebhookDeletedWorkflowDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookDeletedWorkflowDtoWebhookPayloadWrapperObject), TypeInfoPropertyName = "WebhookDeletedWorkflowDtoWebhookPayloadWrapperObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapper))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperType), TypeInfoPropertyName = "WebhookPreferenceDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperObject), TypeInfoPropertyName = "WebhookPreferenceDtoWebhookPayloadWrapperObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapper))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperType), TypeInfoPropertyName = "WebhookInboundEmailDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperObject), TypeInfoPropertyName = "WebhookInboundEmailDtoWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageWebhookActorSubscriberDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageWebhookStatusEnum), TypeInfoPropertyName = "MessageWebhookStatusEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageWebhookChannelDataDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageWebhookResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageWebhookPushFailureReasonEnum), TypeInfoPropertyName = "MessageWebhookPushFailureReasonEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageWebhookPushErrorDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageWebhookErrorDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageWebhookPayloadWithErrorDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageWebhookPayloadDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowCreatedWebhookPayloadDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceChannelsDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowWebhookReplyCallbackDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PersistedWorkflowStepWebhookDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TriggerTypeEnum), TypeInfoPropertyName = "TriggerTypeEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TemplateVariableTypeEnum), TypeInfoPropertyName = "TemplateVariableTypeEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowWebhookTriggerVariableDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowWebhookSubscriberVariableDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TriggerContextTypeEnum), TypeInfoPropertyName = "TriggerContextTypeEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowWebhookReservedVariableDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.WorkflowWebhookTriggerVariableDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowWebhookTriggerDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.WorkflowWebhookSubscriberVariableDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.WorkflowWebhookReservedVariableDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PersistedWorkflowWebhookDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.PersistedWorkflowStepWebhookDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.WorkflowWebhookTriggerDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowUpdatedWebhookPayloadDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowDeletedWebhookPayloadDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowPublishedWebhookPayloadDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceWebhookWorkflowDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceWebhookTimeRangeDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceWebhookDayScheduleDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.PreferenceWebhookTimeRangeDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceWebhookWeeklyScheduleDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceWebhookScheduleDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceWebhookObjectDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceWebhookPayloadDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InboundEmailWebhookDomainDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InboundEmailWebhookRouteDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InboundEmailWebhookAddressDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InboundEmailWebhookAttachmentContentDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InboundEmailWebhookAttachmentContentDtoType), TypeInfoPropertyName = "InboundEmailWebhookAttachmentContentDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InboundEmailWebhookAttachmentDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InboundEmailWebhookMailDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.InboundEmailWebhookAddressDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.InboundEmailWebhookAttachmentDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InboundEmailWebhookObjectDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InboundEmailWebhookPayloadDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSentWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSentWebhookPayloadWrapperType), TypeInfoPropertyName = "MessageSentWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSentWebhookPayloadWrapperObject), TypeInfoPropertyName = "MessageSentWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageFailedWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageFailedWebhookPayloadWrapperType), TypeInfoPropertyName = "MessageFailedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageFailedWebhookPayloadWrapperObject), TypeInfoPropertyName = "MessageFailedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageDeliveredWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageDeliveredWebhookPayloadWrapperType), TypeInfoPropertyName = "MessageDeliveredWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageDeliveredWebhookPayloadWrapperObject), TypeInfoPropertyName = "MessageDeliveredWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSeenWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSeenWebhookPayloadWrapperType), TypeInfoPropertyName = "MessageSeenWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSeenWebhookPayloadWrapperObject), TypeInfoPropertyName = "MessageSeenWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageReadWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageReadWebhookPayloadWrapperType), TypeInfoPropertyName = "MessageReadWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageReadWebhookPayloadWrapperObject), TypeInfoPropertyName = "MessageReadWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnreadWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnreadWebhookPayloadWrapperType), TypeInfoPropertyName = "MessageUnreadWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnreadWebhookPayloadWrapperObject), TypeInfoPropertyName = "MessageUnreadWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageArchivedWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageArchivedWebhookPayloadWrapperType), TypeInfoPropertyName = "MessageArchivedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageArchivedWebhookPayloadWrapperObject), TypeInfoPropertyName = "MessageArchivedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnarchivedWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnarchivedWebhookPayloadWrapperType), TypeInfoPropertyName = "MessageUnarchivedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnarchivedWebhookPayloadWrapperObject), TypeInfoPropertyName = "MessageUnarchivedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSnoozedWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSnoozedWebhookPayloadWrapperType), TypeInfoPropertyName = "MessageSnoozedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSnoozedWebhookPayloadWrapperObject), TypeInfoPropertyName = "MessageSnoozedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnsnoozedWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnsnoozedWebhookPayloadWrapperType), TypeInfoPropertyName = "MessageUnsnoozedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnsnoozedWebhookPayloadWrapperObject), TypeInfoPropertyName = "MessageUnsnoozedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageDeletedWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageDeletedWebhookPayloadWrapperType), TypeInfoPropertyName = "MessageDeletedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageDeletedWebhookPayloadWrapperObject), TypeInfoPropertyName = "MessageDeletedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowCreatedWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowCreatedWebhookPayloadWrapperType), TypeInfoPropertyName = "WorkflowCreatedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowCreatedWebhookPayloadWrapperObject), TypeInfoPropertyName = "WorkflowCreatedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowUpdatedWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowUpdatedWebhookPayloadWrapperType), TypeInfoPropertyName = "WorkflowUpdatedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowUpdatedWebhookPayloadWrapperObject), TypeInfoPropertyName = "WorkflowUpdatedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowDeletedWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowDeletedWebhookPayloadWrapperType), TypeInfoPropertyName = "WorkflowDeletedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowDeletedWebhookPayloadWrapperObject), TypeInfoPropertyName = "WorkflowDeletedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowPublishedWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowPublishedWebhookPayloadWrapperType), TypeInfoPropertyName = "WorkflowPublishedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowPublishedWebhookPayloadWrapperObject), TypeInfoPropertyName = "WorkflowPublishedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceUpdatedWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceUpdatedWebhookPayloadWrapperType), TypeInfoPropertyName = "PreferenceUpdatedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceUpdatedWebhookPayloadWrapperObject), TypeInfoPropertyName = "PreferenceUpdatedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailReceivedWebhookPayloadWrapper))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailReceivedWebhookPayloadWrapperType), TypeInfoPropertyName = "EmailReceivedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailReceivedWebhookPayloadWrapperObject), TypeInfoPropertyName = "EmailReceivedWebhookPayloadWrapperObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequest), TypeInfoPropertyName = "ChannelEndpointsControllerCreateChannelEndpointRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType), TypeInfoPropertyName = "ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType2")]
@@ -952,6 +1019,24 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerUpdateResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerGetResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerDuplicateResponse))]
+    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    ///
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListLayoutResponseDto), TypeInfoPropertyName = "ListLayoutResponseDto_Novu_ListLayoutResponseDto")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9, global::Novu.GeneratePreviewResponseDtoResultVariant10>), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant10_bd4488e3c194c3aa")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>), TypeInfoPropertyName = "ToolWebhookEndpointDto_1c828e943cdd55e4")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>), TypeInfoPropertyName = "ToolWebhookEndpointDto_0ad4135aa31c63dd")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9, global::Novu.GeneratePreviewResponseDtoResultVariant10>?), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant10_688240e711d712de")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_c8c997b666659e86")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_0421199e9dafb346")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerGeneratePreviewResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerGetUsageResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessagesControllerDeleteMessageResponse))]
@@ -1019,24 +1104,6 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestTimedConfigDtoWeekDay?), TypeInfoPropertyName = "NullableDigestTimedConfigDtoWeekDay2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DigestMetadataDtoUnit?), TypeInfoPropertyName = "NullableDigestMetadataDtoUnit2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ExecutionDetailsStatusEnum?), TypeInfoPropertyName = "NullableExecutionDetailsStatusEnum2")]
-    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
-    {
-    }
-
-    /// <summary>
-    ///
-    /// </summary>
-    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
-    )]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListLayoutResponseDto), TypeInfoPropertyName = "ListLayoutResponseDto_Novu_ListLayoutResponseDto")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9, global::Novu.GeneratePreviewResponseDtoResultVariant10>), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant10_bd4488e3c194c3aa")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>), TypeInfoPropertyName = "ToolWebhookEndpointDto_1c828e943cdd55e4")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>), TypeInfoPropertyName = "ToolWebhookEndpointDto_0ad4135aa31c63dd")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9, global::Novu.GeneratePreviewResponseDtoResultVariant10>?), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant10_688240e711d712de")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_c8c997b666659e86")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_0421199e9dafb346")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ProvidersIdEnum?), TypeInfoPropertyName = "NullableProvidersIdEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ExecutionDetailsSourceEnum?), TypeInfoPropertyName = "NullableExecutionDetailsSourceEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.BuilderFieldTypeEnum?), TypeInfoPropertyName = "NullableBuilderFieldTypeEnum2")]
@@ -1055,6 +1122,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoDeliveryLifecycleStatus?), TypeInfoPropertyName = "NullableGetWorkflowRunResponseDtoDeliveryLifecycleStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoSeverity?), TypeInfoPropertyName = "NullableGetWorkflowRunResponseDtoSeverity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoSubscriberAccess?), TypeInfoPropertyName = "NullableAgentBehaviorDtoSubscriberAccess2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoReplyPolicy?), TypeInfoPropertyName = "NullableAgentBehaviorDtoReplyPolicy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentToolDtoType?), TypeInfoPropertyName = "NullableAgentToolDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentResponseDtoRuntime?), TypeInfoPropertyName = "NullableAgentResponseDtoRuntime2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentResponseDtoVisibility?), TypeInfoPropertyName = "NullableAgentResponseDtoVisibility2")]
@@ -1138,8 +1206,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiComponentEnum?), TypeInfoPropertyName = "NullableUiComponentEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AnyOf<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>?), TypeInfoPropertyName = "NullableAnyOfStringDoubleBooleanObjectIListAnyOfStringDoubleBooleanObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UiSchemaGroupEnum?), TypeInfoPropertyName = "NullableUiSchemaGroupEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDtoEditorType?), TypeInfoPropertyName = "NullableEmailControlsDtoEditorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutCreationSourceEnum?), TypeInfoPropertyName = "NullableLayoutCreationSourceEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlsDtoEditorType?), TypeInfoPropertyName = "NullableEmailControlsDtoEditorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DirectionEnum?), TypeInfoPropertyName = "NullableDirectionEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutResponseDtoSortField?), TypeInfoPropertyName = "NullableLayoutResponseDtoSortField2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GenerateLayoutPreviewResponseDtoResultType?), TypeInfoPropertyName = "NullableGenerateLayoutPreviewResponseDtoResultType2")]
@@ -1151,6 +1219,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EnvironmentVariableResponseDtoType?), TypeInfoPropertyName = "NullableEnvironmentVariableResponseDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateEnvironmentVariableRequestDtoType?), TypeInfoPropertyName = "NullableCreateEnvironmentVariableRequestDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateEnvironmentVariableRequestDtoType?), TypeInfoPropertyName = "NullableUpdateEnvironmentVariableRequestDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowIssueTypeEnum?), TypeInfoPropertyName = "NullableWorkflowIssueTypeEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContentIssueEnum?), TypeInfoPropertyName = "NullableContentIssueEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepIssueSeverityEnum?), TypeInfoPropertyName = "NullableStepIssueSeverityEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationIssueEnum?), TypeInfoPropertyName = "NullableIntegrationIssueEnum2")]
@@ -1241,20 +1310,46 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationResponseDtoResourceType?), TypeInfoPropertyName = "NullableTranslationResponseDtoResourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationGroupDtoResourceType?), TypeInfoPropertyName = "NullableTranslationGroupDtoResourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EventBodyStatus?), TypeInfoPropertyName = "NullableEventBodyStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableWebhookMessageDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableWebhookMessageDtoWebhookPayloadWrapperObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageFailedDtoWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableWebhookMessageFailedDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookMessageFailedDtoWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableWebhookMessageFailedDtoWebhookPayloadWrapperObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableWebhookCreatedWorkflowDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableWebhookCreatedWorkflowDtoWebhookPayloadWrapperObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableWebhookUpdatedWorkflowDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableWebhookUpdatedWorkflowDtoWebhookPayloadWrapperObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookDeletedWorkflowDtoWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableWebhookDeletedWorkflowDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookDeletedWorkflowDtoWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableWebhookDeletedWorkflowDtoWebhookPayloadWrapperObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableWebhookPreferenceDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableWebhookPreferenceDtoWebhookPayloadWrapperObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableWebhookInboundEmailDtoWebhookPayloadWrapperType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableWebhookInboundEmailDtoWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageWebhookStatusEnum?), TypeInfoPropertyName = "NullableMessageWebhookStatusEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageWebhookPushFailureReasonEnum?), TypeInfoPropertyName = "NullableMessageWebhookPushFailureReasonEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TriggerTypeEnum?), TypeInfoPropertyName = "NullableTriggerTypeEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TemplateVariableTypeEnum?), TypeInfoPropertyName = "NullableTemplateVariableTypeEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TriggerContextTypeEnum?), TypeInfoPropertyName = "NullableTriggerContextTypeEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.InboundEmailWebhookAttachmentContentDtoType?), TypeInfoPropertyName = "NullableInboundEmailWebhookAttachmentContentDtoType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSentWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableMessageSentWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSentWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableMessageSentWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageFailedWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableMessageFailedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageFailedWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableMessageFailedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageDeliveredWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableMessageDeliveredWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageDeliveredWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableMessageDeliveredWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSeenWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableMessageSeenWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSeenWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableMessageSeenWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageReadWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableMessageReadWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageReadWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableMessageReadWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnreadWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableMessageUnreadWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnreadWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableMessageUnreadWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageArchivedWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableMessageArchivedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageArchivedWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableMessageArchivedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnarchivedWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableMessageUnarchivedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnarchivedWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableMessageUnarchivedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSnoozedWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableMessageSnoozedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageSnoozedWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableMessageSnoozedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnsnoozedWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableMessageUnsnoozedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageUnsnoozedWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableMessageUnsnoozedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageDeletedWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableMessageDeletedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MessageDeletedWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableMessageDeletedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowCreatedWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableWorkflowCreatedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowCreatedWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableWorkflowCreatedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowUpdatedWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableWorkflowUpdatedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowUpdatedWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableWorkflowUpdatedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowDeletedWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableWorkflowDeletedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowDeletedWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableWorkflowDeletedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowPublishedWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableWorkflowPublishedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowPublishedWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableWorkflowPublishedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceUpdatedWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullablePreferenceUpdatedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.PreferenceUpdatedWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullablePreferenceUpdatedWebhookPayloadWrapperObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailReceivedWebhookPayloadWrapperType?), TypeInfoPropertyName = "NullableEmailReceivedWebhookPayloadWrapperType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailReceivedWebhookPayloadWrapperObject?), TypeInfoPropertyName = "NullableEmailReceivedWebhookPayloadWrapperObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequest?), TypeInfoPropertyName = "NullableChannelEndpointsControllerCreateChannelEndpointRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType?), TypeInfoPropertyName = "NullableChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerUploadTranslationFilesRequestResourceType?), TypeInfoPropertyName = "NullableTranslationControllerUploadTranslationFilesRequestResourceType2")]
@@ -1370,6 +1465,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.HttpRequestKeyValuePairDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::System.Collections.Generic.List<global::Novu.HttpRequestKeyValuePairDto>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepsItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<global::Novu.RuntimeIssueDto>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.RuntimeIssueDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepsItem2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepsItem3>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.StepListResponseDto>))]
@@ -1384,7 +1481,14 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.ResourceDiffResultDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.GetChannelConnectionResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.GetChannelEndpointResponseDto>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.WebhookInboundEmailAddressDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.WorkflowWebhookTriggerVariableDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.WorkflowWebhookSubscriberVariableDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.WorkflowWebhookReservedVariableDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.PersistedWorkflowStepWebhookDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.WorkflowWebhookTriggerDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.PreferenceWebhookTimeRangeDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.InboundEmailWebhookAddressDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.InboundEmailWebhookAttachmentDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<byte[]>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.ChannelTypeEnum>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.SubscribersControllerGetSubscriberNotificationsSeverityItem>))]
@@ -1512,6 +1616,8 @@ namespace Novu
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::Novu.CreateToolWebhookEndpointDtoContext2>());
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>());
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
             options.Converters.Add(new global::Novu.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
@@ -1669,6 +1775,10 @@ namespace Novu
                     || typeToConvert == typeof(global::Novu.AgentBehaviorDtoSubscriberAccess)
 
                     || typeToConvert == typeof(global::Novu.AgentBehaviorDtoSubscriberAccess?)
+
+                    || typeToConvert == typeof(global::Novu.AgentBehaviorDtoReplyPolicy)
+
+                    || typeToConvert == typeof(global::Novu.AgentBehaviorDtoReplyPolicy?)
 
                     || typeToConvert == typeof(global::Novu.AgentToolDtoType)
 
@@ -1938,13 +2048,13 @@ namespace Novu
 
                     || typeToConvert == typeof(global::Novu.UiSchemaGroupEnum?)
 
-                    || typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType)
-
-                    || typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType?)
-
                     || typeToConvert == typeof(global::Novu.LayoutCreationSourceEnum)
 
                     || typeToConvert == typeof(global::Novu.LayoutCreationSourceEnum?)
+
+                    || typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType)
+
+                    || typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType?)
 
                     || typeToConvert == typeof(global::Novu.DirectionEnum)
 
@@ -1973,6 +2083,10 @@ namespace Novu
                     || typeToConvert == typeof(global::Novu.UpdateEnvironmentVariableRequestDtoType)
 
                     || typeToConvert == typeof(global::Novu.UpdateEnvironmentVariableRequestDtoType?)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowIssueTypeEnum)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowIssueTypeEnum?)
 
                     || typeToConvert == typeof(global::Novu.ContentIssueEnum)
 
@@ -2210,61 +2324,165 @@ namespace Novu
 
                     || typeToConvert == typeof(global::Novu.EventBodyStatus?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperType)
+                    || typeToConvert == typeof(global::Novu.MessageWebhookStatusEnum)
 
-                    || typeToConvert == typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperType?)
+                    || typeToConvert == typeof(global::Novu.MessageWebhookStatusEnum?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperObject)
+                    || typeToConvert == typeof(global::Novu.MessageWebhookPushFailureReasonEnum)
 
-                    || typeToConvert == typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperObject?)
+                    || typeToConvert == typeof(global::Novu.MessageWebhookPushFailureReasonEnum?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookMessageFailedDtoWebhookPayloadWrapperType)
+                    || typeToConvert == typeof(global::Novu.TriggerTypeEnum)
 
-                    || typeToConvert == typeof(global::Novu.WebhookMessageFailedDtoWebhookPayloadWrapperType?)
+                    || typeToConvert == typeof(global::Novu.TriggerTypeEnum?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookMessageFailedDtoWebhookPayloadWrapperObject)
+                    || typeToConvert == typeof(global::Novu.TemplateVariableTypeEnum)
 
-                    || typeToConvert == typeof(global::Novu.WebhookMessageFailedDtoWebhookPayloadWrapperObject?)
+                    || typeToConvert == typeof(global::Novu.TemplateVariableTypeEnum?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapperType)
+                    || typeToConvert == typeof(global::Novu.TriggerContextTypeEnum)
 
-                    || typeToConvert == typeof(global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapperType?)
+                    || typeToConvert == typeof(global::Novu.TriggerContextTypeEnum?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapperObject)
+                    || typeToConvert == typeof(global::Novu.InboundEmailWebhookAttachmentContentDtoType)
 
-                    || typeToConvert == typeof(global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapperObject?)
+                    || typeToConvert == typeof(global::Novu.InboundEmailWebhookAttachmentContentDtoType?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperType)
+                    || typeToConvert == typeof(global::Novu.MessageSentWebhookPayloadWrapperType)
 
-                    || typeToConvert == typeof(global::Novu.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperType?)
+                    || typeToConvert == typeof(global::Novu.MessageSentWebhookPayloadWrapperType?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperObject)
+                    || typeToConvert == typeof(global::Novu.MessageSentWebhookPayloadWrapperObject)
 
-                    || typeToConvert == typeof(global::Novu.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperObject?)
+                    || typeToConvert == typeof(global::Novu.MessageSentWebhookPayloadWrapperObject?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookDeletedWorkflowDtoWebhookPayloadWrapperType)
+                    || typeToConvert == typeof(global::Novu.MessageFailedWebhookPayloadWrapperType)
 
-                    || typeToConvert == typeof(global::Novu.WebhookDeletedWorkflowDtoWebhookPayloadWrapperType?)
+                    || typeToConvert == typeof(global::Novu.MessageFailedWebhookPayloadWrapperType?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookDeletedWorkflowDtoWebhookPayloadWrapperObject)
+                    || typeToConvert == typeof(global::Novu.MessageFailedWebhookPayloadWrapperObject)
 
-                    || typeToConvert == typeof(global::Novu.WebhookDeletedWorkflowDtoWebhookPayloadWrapperObject?)
+                    || typeToConvert == typeof(global::Novu.MessageFailedWebhookPayloadWrapperObject?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperType)
+                    || typeToConvert == typeof(global::Novu.MessageDeliveredWebhookPayloadWrapperType)
 
-                    || typeToConvert == typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperType?)
+                    || typeToConvert == typeof(global::Novu.MessageDeliveredWebhookPayloadWrapperType?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperObject)
+                    || typeToConvert == typeof(global::Novu.MessageDeliveredWebhookPayloadWrapperObject)
 
-                    || typeToConvert == typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperObject?)
+                    || typeToConvert == typeof(global::Novu.MessageDeliveredWebhookPayloadWrapperObject?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperType)
+                    || typeToConvert == typeof(global::Novu.MessageSeenWebhookPayloadWrapperType)
 
-                    || typeToConvert == typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperType?)
+                    || typeToConvert == typeof(global::Novu.MessageSeenWebhookPayloadWrapperType?)
 
-                    || typeToConvert == typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperObject)
+                    || typeToConvert == typeof(global::Novu.MessageSeenWebhookPayloadWrapperObject)
 
-                    || typeToConvert == typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperObject?)
+                    || typeToConvert == typeof(global::Novu.MessageSeenWebhookPayloadWrapperObject?)
+
+                    || typeToConvert == typeof(global::Novu.MessageReadWebhookPayloadWrapperType)
+
+                    || typeToConvert == typeof(global::Novu.MessageReadWebhookPayloadWrapperType?)
+
+                    || typeToConvert == typeof(global::Novu.MessageReadWebhookPayloadWrapperObject)
+
+                    || typeToConvert == typeof(global::Novu.MessageReadWebhookPayloadWrapperObject?)
+
+                    || typeToConvert == typeof(global::Novu.MessageUnreadWebhookPayloadWrapperType)
+
+                    || typeToConvert == typeof(global::Novu.MessageUnreadWebhookPayloadWrapperType?)
+
+                    || typeToConvert == typeof(global::Novu.MessageUnreadWebhookPayloadWrapperObject)
+
+                    || typeToConvert == typeof(global::Novu.MessageUnreadWebhookPayloadWrapperObject?)
+
+                    || typeToConvert == typeof(global::Novu.MessageArchivedWebhookPayloadWrapperType)
+
+                    || typeToConvert == typeof(global::Novu.MessageArchivedWebhookPayloadWrapperType?)
+
+                    || typeToConvert == typeof(global::Novu.MessageArchivedWebhookPayloadWrapperObject)
+
+                    || typeToConvert == typeof(global::Novu.MessageArchivedWebhookPayloadWrapperObject?)
+
+                    || typeToConvert == typeof(global::Novu.MessageUnarchivedWebhookPayloadWrapperType)
+
+                    || typeToConvert == typeof(global::Novu.MessageUnarchivedWebhookPayloadWrapperType?)
+
+                    || typeToConvert == typeof(global::Novu.MessageUnarchivedWebhookPayloadWrapperObject)
+
+                    || typeToConvert == typeof(global::Novu.MessageUnarchivedWebhookPayloadWrapperObject?)
+
+                    || typeToConvert == typeof(global::Novu.MessageSnoozedWebhookPayloadWrapperType)
+
+                    || typeToConvert == typeof(global::Novu.MessageSnoozedWebhookPayloadWrapperType?)
+
+                    || typeToConvert == typeof(global::Novu.MessageSnoozedWebhookPayloadWrapperObject)
+
+                    || typeToConvert == typeof(global::Novu.MessageSnoozedWebhookPayloadWrapperObject?)
+
+                    || typeToConvert == typeof(global::Novu.MessageUnsnoozedWebhookPayloadWrapperType)
+
+                    || typeToConvert == typeof(global::Novu.MessageUnsnoozedWebhookPayloadWrapperType?)
+
+                    || typeToConvert == typeof(global::Novu.MessageUnsnoozedWebhookPayloadWrapperObject)
+
+                    || typeToConvert == typeof(global::Novu.MessageUnsnoozedWebhookPayloadWrapperObject?)
+
+                    || typeToConvert == typeof(global::Novu.MessageDeletedWebhookPayloadWrapperType)
+
+                    || typeToConvert == typeof(global::Novu.MessageDeletedWebhookPayloadWrapperType?)
+
+                    || typeToConvert == typeof(global::Novu.MessageDeletedWebhookPayloadWrapperObject)
+
+                    || typeToConvert == typeof(global::Novu.MessageDeletedWebhookPayloadWrapperObject?)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowCreatedWebhookPayloadWrapperType)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowCreatedWebhookPayloadWrapperType?)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowCreatedWebhookPayloadWrapperObject)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowCreatedWebhookPayloadWrapperObject?)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowUpdatedWebhookPayloadWrapperType)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowUpdatedWebhookPayloadWrapperType?)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowUpdatedWebhookPayloadWrapperObject)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowUpdatedWebhookPayloadWrapperObject?)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowDeletedWebhookPayloadWrapperType)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowDeletedWebhookPayloadWrapperType?)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowDeletedWebhookPayloadWrapperObject)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowDeletedWebhookPayloadWrapperObject?)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowPublishedWebhookPayloadWrapperType)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowPublishedWebhookPayloadWrapperType?)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowPublishedWebhookPayloadWrapperObject)
+
+                    || typeToConvert == typeof(global::Novu.WorkflowPublishedWebhookPayloadWrapperObject?)
+
+                    || typeToConvert == typeof(global::Novu.PreferenceUpdatedWebhookPayloadWrapperType)
+
+                    || typeToConvert == typeof(global::Novu.PreferenceUpdatedWebhookPayloadWrapperType?)
+
+                    || typeToConvert == typeof(global::Novu.PreferenceUpdatedWebhookPayloadWrapperObject)
+
+                    || typeToConvert == typeof(global::Novu.PreferenceUpdatedWebhookPayloadWrapperObject?)
+
+                    || typeToConvert == typeof(global::Novu.EmailReceivedWebhookPayloadWrapperType)
+
+                    || typeToConvert == typeof(global::Novu.EmailReceivedWebhookPayloadWrapperType?)
+
+                    || typeToConvert == typeof(global::Novu.EmailReceivedWebhookPayloadWrapperObject)
+
+                    || typeToConvert == typeof(global::Novu.EmailReceivedWebhookPayloadWrapperObject?)
 
                     || typeToConvert == typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType)
 
@@ -2709,6 +2927,16 @@ namespace Novu
                 if (typeToConvert == typeof(global::Novu.AgentBehaviorDtoSubscriberAccess?))
                 {
                     return new global::Novu.JsonConverters.AgentBehaviorDtoSubscriberAccessNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.AgentBehaviorDtoReplyPolicy))
+                {
+                    return new global::Novu.JsonConverters.AgentBehaviorDtoReplyPolicyJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.AgentBehaviorDtoReplyPolicy?))
+                {
+                    return new global::Novu.JsonConverters.AgentBehaviorDtoReplyPolicyNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Novu.AgentToolDtoType))
@@ -3381,16 +3609,6 @@ namespace Novu
                     return new global::Novu.JsonConverters.UiSchemaGroupEnumNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType))
-                {
-                    return new global::Novu.JsonConverters.EmailControlsDtoEditorTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType?))
-                {
-                    return new global::Novu.JsonConverters.EmailControlsDtoEditorTypeNullableJsonConverter();
-                }
-
                 if (typeToConvert == typeof(global::Novu.LayoutCreationSourceEnum))
                 {
                     return new global::Novu.JsonConverters.LayoutCreationSourceEnumJsonConverter();
@@ -3399,6 +3617,16 @@ namespace Novu
                 if (typeToConvert == typeof(global::Novu.LayoutCreationSourceEnum?))
                 {
                     return new global::Novu.JsonConverters.LayoutCreationSourceEnumNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType))
+                {
+                    return new global::Novu.JsonConverters.EmailControlsDtoEditorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.EmailControlsDtoEditorType?))
+                {
+                    return new global::Novu.JsonConverters.EmailControlsDtoEditorTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Novu.DirectionEnum))
@@ -3469,6 +3697,16 @@ namespace Novu
                 if (typeToConvert == typeof(global::Novu.UpdateEnvironmentVariableRequestDtoType?))
                 {
                     return new global::Novu.JsonConverters.UpdateEnvironmentVariableRequestDtoTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowIssueTypeEnum))
+                {
+                    return new global::Novu.JsonConverters.WorkflowIssueTypeEnumJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowIssueTypeEnum?))
+                {
+                    return new global::Novu.JsonConverters.WorkflowIssueTypeEnumNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Novu.ContentIssueEnum))
@@ -4061,144 +4299,404 @@ namespace Novu
                     return new global::Novu.JsonConverters.EventBodyStatusNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperType))
+                if (typeToConvert == typeof(global::Novu.MessageWebhookStatusEnum))
                 {
-                    return new global::Novu.JsonConverters.WebhookMessageDtoWebhookPayloadWrapperTypeJsonConverter();
+                    return new global::Novu.JsonConverters.MessageWebhookStatusEnumJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperType?))
+                if (typeToConvert == typeof(global::Novu.MessageWebhookStatusEnum?))
                 {
-                    return new global::Novu.JsonConverters.WebhookMessageDtoWebhookPayloadWrapperTypeNullableJsonConverter();
+                    return new global::Novu.JsonConverters.MessageWebhookStatusEnumNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperObject))
+                if (typeToConvert == typeof(global::Novu.MessageWebhookPushFailureReasonEnum))
                 {
-                    return new global::Novu.JsonConverters.WebhookMessageDtoWebhookPayloadWrapperObjectJsonConverter();
+                    return new global::Novu.JsonConverters.MessageWebhookPushFailureReasonEnumJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookMessageDtoWebhookPayloadWrapperObject?))
+                if (typeToConvert == typeof(global::Novu.MessageWebhookPushFailureReasonEnum?))
                 {
-                    return new global::Novu.JsonConverters.WebhookMessageDtoWebhookPayloadWrapperObjectNullableJsonConverter();
+                    return new global::Novu.JsonConverters.MessageWebhookPushFailureReasonEnumNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookMessageFailedDtoWebhookPayloadWrapperType))
+                if (typeToConvert == typeof(global::Novu.TriggerTypeEnum))
                 {
-                    return new global::Novu.JsonConverters.WebhookMessageFailedDtoWebhookPayloadWrapperTypeJsonConverter();
+                    return new global::Novu.JsonConverters.TriggerTypeEnumJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookMessageFailedDtoWebhookPayloadWrapperType?))
+                if (typeToConvert == typeof(global::Novu.TriggerTypeEnum?))
                 {
-                    return new global::Novu.JsonConverters.WebhookMessageFailedDtoWebhookPayloadWrapperTypeNullableJsonConverter();
+                    return new global::Novu.JsonConverters.TriggerTypeEnumNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookMessageFailedDtoWebhookPayloadWrapperObject))
+                if (typeToConvert == typeof(global::Novu.TemplateVariableTypeEnum))
                 {
-                    return new global::Novu.JsonConverters.WebhookMessageFailedDtoWebhookPayloadWrapperObjectJsonConverter();
+                    return new global::Novu.JsonConverters.TemplateVariableTypeEnumJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookMessageFailedDtoWebhookPayloadWrapperObject?))
+                if (typeToConvert == typeof(global::Novu.TemplateVariableTypeEnum?))
                 {
-                    return new global::Novu.JsonConverters.WebhookMessageFailedDtoWebhookPayloadWrapperObjectNullableJsonConverter();
+                    return new global::Novu.JsonConverters.TemplateVariableTypeEnumNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapperType))
+                if (typeToConvert == typeof(global::Novu.TriggerContextTypeEnum))
                 {
-                    return new global::Novu.JsonConverters.WebhookCreatedWorkflowDtoWebhookPayloadWrapperTypeJsonConverter();
+                    return new global::Novu.JsonConverters.TriggerContextTypeEnumJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapperType?))
+                if (typeToConvert == typeof(global::Novu.TriggerContextTypeEnum?))
                 {
-                    return new global::Novu.JsonConverters.WebhookCreatedWorkflowDtoWebhookPayloadWrapperTypeNullableJsonConverter();
+                    return new global::Novu.JsonConverters.TriggerContextTypeEnumNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapperObject))
+                if (typeToConvert == typeof(global::Novu.InboundEmailWebhookAttachmentContentDtoType))
                 {
-                    return new global::Novu.JsonConverters.WebhookCreatedWorkflowDtoWebhookPayloadWrapperObjectJsonConverter();
+                    return new global::Novu.JsonConverters.InboundEmailWebhookAttachmentContentDtoTypeJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookCreatedWorkflowDtoWebhookPayloadWrapperObject?))
+                if (typeToConvert == typeof(global::Novu.InboundEmailWebhookAttachmentContentDtoType?))
                 {
-                    return new global::Novu.JsonConverters.WebhookCreatedWorkflowDtoWebhookPayloadWrapperObjectNullableJsonConverter();
+                    return new global::Novu.JsonConverters.InboundEmailWebhookAttachmentContentDtoTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperType))
+                if (typeToConvert == typeof(global::Novu.MessageSentWebhookPayloadWrapperType))
                 {
-                    return new global::Novu.JsonConverters.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperTypeJsonConverter();
+                    return new global::Novu.JsonConverters.MessageSentWebhookPayloadWrapperTypeJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperType?))
+                if (typeToConvert == typeof(global::Novu.MessageSentWebhookPayloadWrapperType?))
                 {
-                    return new global::Novu.JsonConverters.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperTypeNullableJsonConverter();
+                    return new global::Novu.JsonConverters.MessageSentWebhookPayloadWrapperTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperObject))
+                if (typeToConvert == typeof(global::Novu.MessageSentWebhookPayloadWrapperObject))
                 {
-                    return new global::Novu.JsonConverters.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperObjectJsonConverter();
+                    return new global::Novu.JsonConverters.MessageSentWebhookPayloadWrapperObjectJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperObject?))
+                if (typeToConvert == typeof(global::Novu.MessageSentWebhookPayloadWrapperObject?))
                 {
-                    return new global::Novu.JsonConverters.WebhookUpdatedWorkflowDtoWebhookPayloadWrapperObjectNullableJsonConverter();
+                    return new global::Novu.JsonConverters.MessageSentWebhookPayloadWrapperObjectNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookDeletedWorkflowDtoWebhookPayloadWrapperType))
+                if (typeToConvert == typeof(global::Novu.MessageFailedWebhookPayloadWrapperType))
                 {
-                    return new global::Novu.JsonConverters.WebhookDeletedWorkflowDtoWebhookPayloadWrapperTypeJsonConverter();
+                    return new global::Novu.JsonConverters.MessageFailedWebhookPayloadWrapperTypeJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookDeletedWorkflowDtoWebhookPayloadWrapperType?))
+                if (typeToConvert == typeof(global::Novu.MessageFailedWebhookPayloadWrapperType?))
                 {
-                    return new global::Novu.JsonConverters.WebhookDeletedWorkflowDtoWebhookPayloadWrapperTypeNullableJsonConverter();
+                    return new global::Novu.JsonConverters.MessageFailedWebhookPayloadWrapperTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookDeletedWorkflowDtoWebhookPayloadWrapperObject))
+                if (typeToConvert == typeof(global::Novu.MessageFailedWebhookPayloadWrapperObject))
                 {
-                    return new global::Novu.JsonConverters.WebhookDeletedWorkflowDtoWebhookPayloadWrapperObjectJsonConverter();
+                    return new global::Novu.JsonConverters.MessageFailedWebhookPayloadWrapperObjectJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookDeletedWorkflowDtoWebhookPayloadWrapperObject?))
+                if (typeToConvert == typeof(global::Novu.MessageFailedWebhookPayloadWrapperObject?))
                 {
-                    return new global::Novu.JsonConverters.WebhookDeletedWorkflowDtoWebhookPayloadWrapperObjectNullableJsonConverter();
+                    return new global::Novu.JsonConverters.MessageFailedWebhookPayloadWrapperObjectNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperType))
+                if (typeToConvert == typeof(global::Novu.MessageDeliveredWebhookPayloadWrapperType))
                 {
-                    return new global::Novu.JsonConverters.WebhookPreferenceDtoWebhookPayloadWrapperTypeJsonConverter();
+                    return new global::Novu.JsonConverters.MessageDeliveredWebhookPayloadWrapperTypeJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperType?))
+                if (typeToConvert == typeof(global::Novu.MessageDeliveredWebhookPayloadWrapperType?))
                 {
-                    return new global::Novu.JsonConverters.WebhookPreferenceDtoWebhookPayloadWrapperTypeNullableJsonConverter();
+                    return new global::Novu.JsonConverters.MessageDeliveredWebhookPayloadWrapperTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperObject))
+                if (typeToConvert == typeof(global::Novu.MessageDeliveredWebhookPayloadWrapperObject))
                 {
-                    return new global::Novu.JsonConverters.WebhookPreferenceDtoWebhookPayloadWrapperObjectJsonConverter();
+                    return new global::Novu.JsonConverters.MessageDeliveredWebhookPayloadWrapperObjectJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookPreferenceDtoWebhookPayloadWrapperObject?))
+                if (typeToConvert == typeof(global::Novu.MessageDeliveredWebhookPayloadWrapperObject?))
                 {
-                    return new global::Novu.JsonConverters.WebhookPreferenceDtoWebhookPayloadWrapperObjectNullableJsonConverter();
+                    return new global::Novu.JsonConverters.MessageDeliveredWebhookPayloadWrapperObjectNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperType))
+                if (typeToConvert == typeof(global::Novu.MessageSeenWebhookPayloadWrapperType))
                 {
-                    return new global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperTypeJsonConverter();
+                    return new global::Novu.JsonConverters.MessageSeenWebhookPayloadWrapperTypeJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperType?))
+                if (typeToConvert == typeof(global::Novu.MessageSeenWebhookPayloadWrapperType?))
                 {
-                    return new global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperTypeNullableJsonConverter();
+                    return new global::Novu.JsonConverters.MessageSeenWebhookPayloadWrapperTypeNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperObject))
+                if (typeToConvert == typeof(global::Novu.MessageSeenWebhookPayloadWrapperObject))
                 {
-                    return new global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperObjectJsonConverter();
+                    return new global::Novu.JsonConverters.MessageSeenWebhookPayloadWrapperObjectJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Novu.WebhookInboundEmailDtoWebhookPayloadWrapperObject?))
+                if (typeToConvert == typeof(global::Novu.MessageSeenWebhookPayloadWrapperObject?))
                 {
-                    return new global::Novu.JsonConverters.WebhookInboundEmailDtoWebhookPayloadWrapperObjectNullableJsonConverter();
+                    return new global::Novu.JsonConverters.MessageSeenWebhookPayloadWrapperObjectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageReadWebhookPayloadWrapperType))
+                {
+                    return new global::Novu.JsonConverters.MessageReadWebhookPayloadWrapperTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageReadWebhookPayloadWrapperType?))
+                {
+                    return new global::Novu.JsonConverters.MessageReadWebhookPayloadWrapperTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageReadWebhookPayloadWrapperObject))
+                {
+                    return new global::Novu.JsonConverters.MessageReadWebhookPayloadWrapperObjectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageReadWebhookPayloadWrapperObject?))
+                {
+                    return new global::Novu.JsonConverters.MessageReadWebhookPayloadWrapperObjectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageUnreadWebhookPayloadWrapperType))
+                {
+                    return new global::Novu.JsonConverters.MessageUnreadWebhookPayloadWrapperTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageUnreadWebhookPayloadWrapperType?))
+                {
+                    return new global::Novu.JsonConverters.MessageUnreadWebhookPayloadWrapperTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageUnreadWebhookPayloadWrapperObject))
+                {
+                    return new global::Novu.JsonConverters.MessageUnreadWebhookPayloadWrapperObjectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageUnreadWebhookPayloadWrapperObject?))
+                {
+                    return new global::Novu.JsonConverters.MessageUnreadWebhookPayloadWrapperObjectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageArchivedWebhookPayloadWrapperType))
+                {
+                    return new global::Novu.JsonConverters.MessageArchivedWebhookPayloadWrapperTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageArchivedWebhookPayloadWrapperType?))
+                {
+                    return new global::Novu.JsonConverters.MessageArchivedWebhookPayloadWrapperTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageArchivedWebhookPayloadWrapperObject))
+                {
+                    return new global::Novu.JsonConverters.MessageArchivedWebhookPayloadWrapperObjectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageArchivedWebhookPayloadWrapperObject?))
+                {
+                    return new global::Novu.JsonConverters.MessageArchivedWebhookPayloadWrapperObjectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageUnarchivedWebhookPayloadWrapperType))
+                {
+                    return new global::Novu.JsonConverters.MessageUnarchivedWebhookPayloadWrapperTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageUnarchivedWebhookPayloadWrapperType?))
+                {
+                    return new global::Novu.JsonConverters.MessageUnarchivedWebhookPayloadWrapperTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageUnarchivedWebhookPayloadWrapperObject))
+                {
+                    return new global::Novu.JsonConverters.MessageUnarchivedWebhookPayloadWrapperObjectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageUnarchivedWebhookPayloadWrapperObject?))
+                {
+                    return new global::Novu.JsonConverters.MessageUnarchivedWebhookPayloadWrapperObjectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageSnoozedWebhookPayloadWrapperType))
+                {
+                    return new global::Novu.JsonConverters.MessageSnoozedWebhookPayloadWrapperTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageSnoozedWebhookPayloadWrapperType?))
+                {
+                    return new global::Novu.JsonConverters.MessageSnoozedWebhookPayloadWrapperTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageSnoozedWebhookPayloadWrapperObject))
+                {
+                    return new global::Novu.JsonConverters.MessageSnoozedWebhookPayloadWrapperObjectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageSnoozedWebhookPayloadWrapperObject?))
+                {
+                    return new global::Novu.JsonConverters.MessageSnoozedWebhookPayloadWrapperObjectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageUnsnoozedWebhookPayloadWrapperType))
+                {
+                    return new global::Novu.JsonConverters.MessageUnsnoozedWebhookPayloadWrapperTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageUnsnoozedWebhookPayloadWrapperType?))
+                {
+                    return new global::Novu.JsonConverters.MessageUnsnoozedWebhookPayloadWrapperTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageUnsnoozedWebhookPayloadWrapperObject))
+                {
+                    return new global::Novu.JsonConverters.MessageUnsnoozedWebhookPayloadWrapperObjectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageUnsnoozedWebhookPayloadWrapperObject?))
+                {
+                    return new global::Novu.JsonConverters.MessageUnsnoozedWebhookPayloadWrapperObjectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageDeletedWebhookPayloadWrapperType))
+                {
+                    return new global::Novu.JsonConverters.MessageDeletedWebhookPayloadWrapperTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageDeletedWebhookPayloadWrapperType?))
+                {
+                    return new global::Novu.JsonConverters.MessageDeletedWebhookPayloadWrapperTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageDeletedWebhookPayloadWrapperObject))
+                {
+                    return new global::Novu.JsonConverters.MessageDeletedWebhookPayloadWrapperObjectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.MessageDeletedWebhookPayloadWrapperObject?))
+                {
+                    return new global::Novu.JsonConverters.MessageDeletedWebhookPayloadWrapperObjectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowCreatedWebhookPayloadWrapperType))
+                {
+                    return new global::Novu.JsonConverters.WorkflowCreatedWebhookPayloadWrapperTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowCreatedWebhookPayloadWrapperType?))
+                {
+                    return new global::Novu.JsonConverters.WorkflowCreatedWebhookPayloadWrapperTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowCreatedWebhookPayloadWrapperObject))
+                {
+                    return new global::Novu.JsonConverters.WorkflowCreatedWebhookPayloadWrapperObjectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowCreatedWebhookPayloadWrapperObject?))
+                {
+                    return new global::Novu.JsonConverters.WorkflowCreatedWebhookPayloadWrapperObjectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowUpdatedWebhookPayloadWrapperType))
+                {
+                    return new global::Novu.JsonConverters.WorkflowUpdatedWebhookPayloadWrapperTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowUpdatedWebhookPayloadWrapperType?))
+                {
+                    return new global::Novu.JsonConverters.WorkflowUpdatedWebhookPayloadWrapperTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowUpdatedWebhookPayloadWrapperObject))
+                {
+                    return new global::Novu.JsonConverters.WorkflowUpdatedWebhookPayloadWrapperObjectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowUpdatedWebhookPayloadWrapperObject?))
+                {
+                    return new global::Novu.JsonConverters.WorkflowUpdatedWebhookPayloadWrapperObjectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowDeletedWebhookPayloadWrapperType))
+                {
+                    return new global::Novu.JsonConverters.WorkflowDeletedWebhookPayloadWrapperTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowDeletedWebhookPayloadWrapperType?))
+                {
+                    return new global::Novu.JsonConverters.WorkflowDeletedWebhookPayloadWrapperTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowDeletedWebhookPayloadWrapperObject))
+                {
+                    return new global::Novu.JsonConverters.WorkflowDeletedWebhookPayloadWrapperObjectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowDeletedWebhookPayloadWrapperObject?))
+                {
+                    return new global::Novu.JsonConverters.WorkflowDeletedWebhookPayloadWrapperObjectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowPublishedWebhookPayloadWrapperType))
+                {
+                    return new global::Novu.JsonConverters.WorkflowPublishedWebhookPayloadWrapperTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowPublishedWebhookPayloadWrapperType?))
+                {
+                    return new global::Novu.JsonConverters.WorkflowPublishedWebhookPayloadWrapperTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowPublishedWebhookPayloadWrapperObject))
+                {
+                    return new global::Novu.JsonConverters.WorkflowPublishedWebhookPayloadWrapperObjectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.WorkflowPublishedWebhookPayloadWrapperObject?))
+                {
+                    return new global::Novu.JsonConverters.WorkflowPublishedWebhookPayloadWrapperObjectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.PreferenceUpdatedWebhookPayloadWrapperType))
+                {
+                    return new global::Novu.JsonConverters.PreferenceUpdatedWebhookPayloadWrapperTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.PreferenceUpdatedWebhookPayloadWrapperType?))
+                {
+                    return new global::Novu.JsonConverters.PreferenceUpdatedWebhookPayloadWrapperTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.PreferenceUpdatedWebhookPayloadWrapperObject))
+                {
+                    return new global::Novu.JsonConverters.PreferenceUpdatedWebhookPayloadWrapperObjectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.PreferenceUpdatedWebhookPayloadWrapperObject?))
+                {
+                    return new global::Novu.JsonConverters.PreferenceUpdatedWebhookPayloadWrapperObjectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.EmailReceivedWebhookPayloadWrapperType))
+                {
+                    return new global::Novu.JsonConverters.EmailReceivedWebhookPayloadWrapperTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.EmailReceivedWebhookPayloadWrapperType?))
+                {
+                    return new global::Novu.JsonConverters.EmailReceivedWebhookPayloadWrapperTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.EmailReceivedWebhookPayloadWrapperObject))
+                {
+                    return new global::Novu.JsonConverters.EmailReceivedWebhookPayloadWrapperObjectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.EmailReceivedWebhookPayloadWrapperObject?))
+                {
+                    return new global::Novu.JsonConverters.EmailReceivedWebhookPayloadWrapperObjectNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType))

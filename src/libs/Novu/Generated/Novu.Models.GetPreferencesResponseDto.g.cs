@@ -9,7 +9,7 @@ namespace Novu
     public sealed partial class GetPreferencesResponseDto
     {
         /// <summary>
-        /// The level of the preference (global or template)
+        /// Whether this preference is global or workflow-specific
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.PreferenceLevelEnumJsonConverter))]
@@ -54,7 +54,7 @@ namespace Novu
         /// Initializes a new instance of the <see cref="GetPreferencesResponseDto" /> class.
         /// </summary>
         /// <param name="level">
-        /// The level of the preference (global or template)
+        /// Whether this preference is global or workflow-specific
         /// </param>
         /// <param name="enabled">
         /// Whether the preference is enabled<br/>
