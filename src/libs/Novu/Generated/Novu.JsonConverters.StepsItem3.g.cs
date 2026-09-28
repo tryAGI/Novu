@@ -140,67 +140,67 @@ namespace Novu.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.InAppStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.InAppStepUpsertDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.InAppStepUpsertDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InApp!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInApp(), typeInfo);
             }
             else if (value.IsEmail)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.EmailStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.EmailStepUpsertDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.EmailStepUpsertDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Email!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEmail(), typeInfo);
             }
             else if (value.IsSms)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.SmsStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.SmsStepUpsertDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.SmsStepUpsertDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sms!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSms(), typeInfo);
             }
             else if (value.IsPush)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.PushStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.PushStepUpsertDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.PushStepUpsertDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Push!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPush(), typeInfo);
             }
             else if (value.IsChat)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.ChatStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.ChatStepUpsertDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.ChatStepUpsertDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chat!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChat(), typeInfo);
             }
             else if (value.IsDelay)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.DelayStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.DelayStepUpsertDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.DelayStepUpsertDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Delay!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDelay(), typeInfo);
             }
             else if (value.IsDigest)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.DigestStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.DigestStepUpsertDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.DigestStepUpsertDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Digest!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDigest(), typeInfo);
             }
             else if (value.IsThrottle)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.ThrottleStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.ThrottleStepUpsertDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.ThrottleStepUpsertDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Throttle!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickThrottle(), typeInfo);
             }
             else if (value.IsTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.ToolStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.ToolStepUpsertDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.ToolStepUpsertDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTool(), typeInfo);
             }
             else if (value.IsCustom)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CustomStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CustomStepUpsertDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CustomStepUpsertDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Custom!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCustom(), typeInfo);
             }
             else if (value.IsHttpRequest)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.HttpRequestStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.HttpRequestStepUpsertDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.HttpRequestStepUpsertDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HttpRequest!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickHttpRequest(), typeInfo);
             }
         }
     }
