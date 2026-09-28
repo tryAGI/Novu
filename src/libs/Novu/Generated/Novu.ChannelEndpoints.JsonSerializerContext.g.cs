@@ -1,19 +1,14 @@
 
 #nullable enable
 
-#pragma warning disable CS0618 // Type or member is obsolete
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
-
 namespace Novu
 {
     /// <summary>
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {
-        })]
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>), TypeInfoPropertyName = "ToolWebhookEndpointDto_1c828e943cdd55e4")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>), TypeInfoPropertyName = "ToolWebhookEndpointDto_0ad4135aa31c63dd")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_c8c997b666659e86")]
