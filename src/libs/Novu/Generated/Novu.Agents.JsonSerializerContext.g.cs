@@ -28,6 +28,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelTypeEnum), TypeInfoPropertyName = "ChannelTypeEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoSubscriberAccess), TypeInfoPropertyName = "AgentBehaviorDtoSubscriberAccess2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoReplyPolicy), TypeInfoPropertyName = "AgentBehaviorDtoReplyPolicy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentToolDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentToolDtoType), TypeInfoPropertyName = "AgentToolDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentMcpServerDto))]
@@ -116,6 +117,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AnyOf<string, double?, bool?, object>?), TypeInfoPropertyName = "NullableAnyOfStringDoubleBooleanObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelTypeEnum?), TypeInfoPropertyName = "NullableChannelTypeEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoSubscriberAccess?), TypeInfoPropertyName = "NullableAgentBehaviorDtoSubscriberAccess2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoReplyPolicy?), TypeInfoPropertyName = "NullableAgentBehaviorDtoReplyPolicy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentToolDtoType?), TypeInfoPropertyName = "NullableAgentToolDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentResponseDtoRuntime?), TypeInfoPropertyName = "NullableAgentResponseDtoRuntime2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentResponseDtoVisibility?), TypeInfoPropertyName = "NullableAgentResponseDtoVisibility2")]
@@ -226,6 +228,8 @@ namespace Novu
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
             options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
             options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
             options.Converters.Add(new global::Novu.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
@@ -255,6 +259,10 @@ namespace Novu
                     || typeToConvert == typeof(global::Novu.AgentBehaviorDtoSubscriberAccess)
 
                     || typeToConvert == typeof(global::Novu.AgentBehaviorDtoSubscriberAccess?)
+
+                    || typeToConvert == typeof(global::Novu.AgentBehaviorDtoReplyPolicy)
+
+                    || typeToConvert == typeof(global::Novu.AgentBehaviorDtoReplyPolicy?)
 
                     || typeToConvert == typeof(global::Novu.AgentToolDtoType)
 
@@ -355,6 +363,16 @@ namespace Novu
                 if (typeToConvert == typeof(global::Novu.AgentBehaviorDtoSubscriberAccess?))
                 {
                     return new global::Novu.JsonConverters.AgentBehaviorDtoSubscriberAccessNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.AgentBehaviorDtoReplyPolicy))
+                {
+                    return new global::Novu.JsonConverters.AgentBehaviorDtoReplyPolicyJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.AgentBehaviorDtoReplyPolicy?))
+                {
+                    return new global::Novu.JsonConverters.AgentBehaviorDtoReplyPolicyNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Novu.AgentToolDtoType))

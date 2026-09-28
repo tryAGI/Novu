@@ -73,7 +73,7 @@ namespace Novu
         public required global::Novu.StepTypeEnum Type { get; set; }
 
         /// <summary>
-        /// Origin of the layout
+        /// Workflow origin
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("origin")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ResourceOriginEnumJsonConverter))]
@@ -137,7 +137,7 @@ namespace Novu
         /// Type of the step
         /// </param>
         /// <param name="origin">
-        /// Origin of the layout
+        /// Workflow origin
         /// </param>
         /// <param name="workflowId">
         /// Workflow identifier

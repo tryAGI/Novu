@@ -121,7 +121,7 @@ namespace Novu
         public global::System.Collections.Generic.IList<global::Novu.ActivityTopicDto>? Topics { get; set; }
 
         /// <summary>
-        /// Severity of the workflow
+        /// Workflow severity
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.SeverityLevelEnumJsonConverter))]
@@ -201,7 +201,7 @@ namespace Novu
         /// Topics of the notification
         /// </param>
         /// <param name="severity">
-        /// Severity of the workflow
+        /// Workflow severity
         /// </param>
         /// <param name="critical">
         /// Criticality of the notification

@@ -120,7 +120,7 @@ namespace Novu
         public required global::System.Collections.Generic.IList<global::Novu.StepsItem> Steps { get; set; }
 
         /// <summary>
-        /// Origin of the layout
+        /// Workflow origin
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("origin")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ResourceOriginEnumJsonConverter))]
@@ -135,7 +135,7 @@ namespace Novu
         public required global::Novu.WorkflowPreferencesResponseDto Preferences { get; set; }
 
         /// <summary>
-        /// Status of the workflow
+        /// Workflow status
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.WorkflowStatusEnumJsonConverter))]
@@ -146,7 +146,7 @@ namespace Novu
         /// Runtime issues for workflow creation and update
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issues")]
-        public global::System.Collections.Generic.Dictionary<string, global::Novu.RuntimeIssueDto>? Issues { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Novu.RuntimeIssueDto>>? Issues { get; set; }
 
         /// <summary>
         /// Timestamp of the last workflow trigger
@@ -161,7 +161,7 @@ namespace Novu
         public object? PayloadExample { get; set; }
 
         /// <summary>
-        /// Severity of the workflow
+        /// Workflow severity
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.SeverityLevelEnumJsonConverter))]
@@ -199,16 +199,16 @@ namespace Novu
         /// Steps of the workflow
         /// </param>
         /// <param name="origin">
-        /// Origin of the layout
+        /// Workflow origin
         /// </param>
         /// <param name="preferences">
         /// Preferences for the workflow
         /// </param>
         /// <param name="status">
-        /// Status of the workflow
+        /// Workflow status
         /// </param>
         /// <param name="severity">
-        /// Severity of the workflow
+        /// Workflow severity
         /// </param>
         /// <param name="description">
         /// Description of the workflow
@@ -276,7 +276,7 @@ namespace Novu
             global::Novu.UserResponseDto? updatedBy,
             string? lastPublishedAt,
             global::Novu.UserResponseDto? lastPublishedBy,
-            global::System.Collections.Generic.Dictionary<string, global::Novu.RuntimeIssueDto>? issues,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Novu.RuntimeIssueDto>>? issues,
             string? lastTriggeredAt,
             object? payloadExample)
         {

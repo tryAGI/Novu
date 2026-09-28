@@ -120,6 +120,10 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
+        GoogleChat,
+        /// <summary>
+        ///
+        /// </summary>
         Grafana,
         /// <summary>
         ///
@@ -253,6 +257,10 @@ namespace Novu
         ///
         /// </summary>
         Pagerduty,
+        /// <summary>
+        ///
+        /// </summary>
+        PhotonImessage,
         /// <summary>
         ///
         /// </summary>
@@ -426,6 +434,7 @@ namespace Novu
                 GetChannelEndpointResponseDtoProviderId.FortySixElks => "forty-six-elks",
                 GetChannelEndpointResponseDtoProviderId.GenericSms => "generic-sms",
                 GetChannelEndpointResponseDtoProviderId.Getstream => "getstream",
+                GetChannelEndpointResponseDtoProviderId.GoogleChat => "google-chat",
                 GetChannelEndpointResponseDtoProviderId.Grafana => "grafana",
                 GetChannelEndpointResponseDtoProviderId.GrafanaOnCall => "grafana-on-call",
                 GetChannelEndpointResponseDtoProviderId.Gupshup => "gupshup",
@@ -460,6 +469,7 @@ namespace Novu
                 GetChannelEndpointResponseDtoProviderId.Opsgenie => "opsgenie",
                 GetChannelEndpointResponseDtoProviderId.Outlook365 => "outlook365",
                 GetChannelEndpointResponseDtoProviderId.Pagerduty => "pagerduty",
+                GetChannelEndpointResponseDtoProviderId.PhotonImessage => "photon-imessage",
                 GetChannelEndpointResponseDtoProviderId.Plivo => "plivo",
                 GetChannelEndpointResponseDtoProviderId.Plunk => "plunk",
                 GetChannelEndpointResponseDtoProviderId.Postmark => "postmark",
@@ -530,6 +540,7 @@ namespace Novu
                 "forty-six-elks" => GetChannelEndpointResponseDtoProviderId.FortySixElks,
                 "generic-sms" => GetChannelEndpointResponseDtoProviderId.GenericSms,
                 "getstream" => GetChannelEndpointResponseDtoProviderId.Getstream,
+                "google-chat" => GetChannelEndpointResponseDtoProviderId.GoogleChat,
                 "grafana" => GetChannelEndpointResponseDtoProviderId.Grafana,
                 "grafana-on-call" => GetChannelEndpointResponseDtoProviderId.GrafanaOnCall,
                 "gupshup" => GetChannelEndpointResponseDtoProviderId.Gupshup,
@@ -564,6 +575,7 @@ namespace Novu
                 "opsgenie" => GetChannelEndpointResponseDtoProviderId.Opsgenie,
                 "outlook365" => GetChannelEndpointResponseDtoProviderId.Outlook365,
                 "pagerduty" => GetChannelEndpointResponseDtoProviderId.Pagerduty,
+                "photon-imessage" => GetChannelEndpointResponseDtoProviderId.PhotonImessage,
                 "plivo" => GetChannelEndpointResponseDtoProviderId.Plivo,
                 "plunk" => GetChannelEndpointResponseDtoProviderId.Plunk,
                 "postmark" => GetChannelEndpointResponseDtoProviderId.Postmark,

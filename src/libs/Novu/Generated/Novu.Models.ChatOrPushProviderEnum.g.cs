@@ -39,6 +39,10 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
+        GoogleChat,
+        /// <summary>
+        ///
+        /// </summary>
         GrafanaOnCall,
         /// <summary>
         ///
@@ -64,6 +68,10 @@ namespace Novu
         ///
         /// </summary>
         OneSignal,
+        /// <summary>
+        ///
+        /// </summary>
+        PhotonImessage,
         /// <summary>
         ///
         /// </summary>
@@ -129,6 +137,7 @@ namespace Novu
                 ChatOrPushProviderEnum.Expo => "expo",
                 ChatOrPushProviderEnum.Fcm => "fcm",
                 ChatOrPushProviderEnum.Getstream => "getstream",
+                ChatOrPushProviderEnum.GoogleChat => "google-chat",
                 ChatOrPushProviderEnum.GrafanaOnCall => "grafana-on-call",
                 ChatOrPushProviderEnum.Line => "line",
                 ChatOrPushProviderEnum.Mattermost => "mattermost",
@@ -136,6 +145,7 @@ namespace Novu
                 ChatOrPushProviderEnum.NovuSlack => "novu-slack",
                 ChatOrPushProviderEnum.NovuWebChat => "novu-web-chat",
                 ChatOrPushProviderEnum.OneSignal => "one-signal",
+                ChatOrPushProviderEnum.PhotonImessage => "photon-imessage",
                 ChatOrPushProviderEnum.PushWebhook => "push-webhook",
                 ChatOrPushProviderEnum.PusherBeams => "pusher-beams",
                 ChatOrPushProviderEnum.Pushpad => "pushpad",
@@ -164,6 +174,7 @@ namespace Novu
                 "expo" => ChatOrPushProviderEnum.Expo,
                 "fcm" => ChatOrPushProviderEnum.Fcm,
                 "getstream" => ChatOrPushProviderEnum.Getstream,
+                "google-chat" => ChatOrPushProviderEnum.GoogleChat,
                 "grafana-on-call" => ChatOrPushProviderEnum.GrafanaOnCall,
                 "line" => ChatOrPushProviderEnum.Line,
                 "mattermost" => ChatOrPushProviderEnum.Mattermost,
@@ -171,6 +182,7 @@ namespace Novu
                 "novu-slack" => ChatOrPushProviderEnum.NovuSlack,
                 "novu-web-chat" => ChatOrPushProviderEnum.NovuWebChat,
                 "one-signal" => ChatOrPushProviderEnum.OneSignal,
+                "photon-imessage" => ChatOrPushProviderEnum.PhotonImessage,
                 "push-webhook" => ChatOrPushProviderEnum.PushWebhook,
                 "pusher-beams" => ChatOrPushProviderEnum.PusherBeams,
                 "pushpad" => ChatOrPushProviderEnum.Pushpad,

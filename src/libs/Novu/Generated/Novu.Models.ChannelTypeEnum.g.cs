@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// Channel type through which the message is sent
+    /// Channel the message was sent on
     /// </summary>
     public enum ChannelTypeEnum
     {

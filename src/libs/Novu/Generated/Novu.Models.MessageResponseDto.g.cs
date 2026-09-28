@@ -118,7 +118,7 @@ namespace Novu
         public string? Subject { get; set; }
 
         /// <summary>
-        /// Channel type through which the message is sent
+        /// Channel the message was sent on
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("channel")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ChannelTypeEnumJsonConverter))]
@@ -262,7 +262,7 @@ namespace Novu
         /// Transaction ID associated with the message
         /// </param>
         /// <param name="channel">
-        /// Channel type through which the message is sent
+        /// Channel the message was sent on
         /// </param>
         /// <param name="read">
         /// Indicates if the message has been read

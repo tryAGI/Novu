@@ -9,7 +9,7 @@ namespace Novu
     public sealed partial class FailedWorkflowDto
     {
         /// <summary>
-        /// Type of the layout
+        /// Resource type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resourceType")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ResourceTypeEnumJsonConverter))]
@@ -53,7 +53,7 @@ namespace Novu
         /// Initializes a new instance of the <see cref="FailedWorkflowDto" /> class.
         /// </summary>
         /// <param name="resourceType">
-        /// Type of the layout
+        /// Resource type
         /// </param>
         /// <param name="resourceId">
         /// Resource ID

@@ -11,7 +11,7 @@ namespace Novu
         ///     This API returns a paginated list of messages.
         /// </summary>
         /// <param name="channel">
-        /// Channel type through which the message is sent
+        /// Channel the message was sent on
         /// </param>
         /// <param name="subscriberId"></param>
         /// <param name="transactionId"></param>
@@ -41,7 +41,7 @@ namespace Novu
         ///     This API returns a paginated list of messages.
         /// </summary>
         /// <param name="channel">
-        /// Channel type through which the message is sent
+        /// Channel the message was sent on
         /// </param>
         /// <param name="subscriberId"></param>
         /// <param name="transactionId"></param>
