@@ -47,8 +47,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.InAppStepUpsertDto PickInApp() => IsInApp
-            ? InApp!
+        public global::Novu.InAppStepUpsertDto PickInApp() => InApp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InApp' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EmailStepUpsertDto PickEmail() => IsEmail
-            ? Email!
+        public global::Novu.EmailStepUpsertDto PickEmail() => Email is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Email' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SmsStepUpsertDto PickSms() => IsSms
-            ? Sms!
+        public global::Novu.SmsStepUpsertDto PickSms() => Sms is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sms' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.PushStepUpsertDto PickPush() => IsPush
-            ? Push!
+        public global::Novu.PushStepUpsertDto PickPush() => Push is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Push' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChatStepUpsertDto PickChat() => IsChat
-            ? Chat!
+        public global::Novu.ChatStepUpsertDto PickChat() => Chat is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DelayStepUpsertDto PickDelay() => IsDelay
-            ? Delay!
+        public global::Novu.DelayStepUpsertDto PickDelay() => Delay is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Delay' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DigestStepUpsertDto PickDigest() => IsDigest
-            ? Digest!
+        public global::Novu.DigestStepUpsertDto PickDigest() => Digest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Digest' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ThrottleStepUpsertDto PickThrottle() => IsThrottle
-            ? Throttle!
+        public global::Novu.ThrottleStepUpsertDto PickThrottle() => Throttle is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Throttle' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ToolStepUpsertDto PickTool() => IsTool
-            ? Tool!
+        public global::Novu.ToolStepUpsertDto PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CustomStepUpsertDto PickCustom() => IsCustom
-            ? Custom!
+        public global::Novu.CustomStepUpsertDto PickCustom() => Custom is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.HttpRequestStepUpsertDto PickHttpRequest() => IsHttpRequest
-            ? HttpRequest!
+        public global::Novu.HttpRequestStepUpsertDto PickHttpRequest() => HttpRequest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'HttpRequest' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -770,49 +770,49 @@ namespace Novu
                 Validate();
             }
 
-            if (IsInApp && inApp != null)
+            if (InApp is { } __value0 && inApp != null)
             {
-                return inApp(InApp!);
+                return inApp(__value0);
             }
-            else if (IsEmail && email != null)
+            else if (Email is { } __value1 && email != null)
             {
-                return email(Email!);
+                return email(__value1);
             }
-            else if (IsSms && sms != null)
+            else if (Sms is { } __value2 && sms != null)
             {
-                return sms(Sms!);
+                return sms(__value2);
             }
-            else if (IsPush && push != null)
+            else if (Push is { } __value3 && push != null)
             {
-                return push(Push!);
+                return push(__value3);
             }
-            else if (IsChat && chat != null)
+            else if (Chat is { } __value4 && chat != null)
             {
-                return chat(Chat!);
+                return chat(__value4);
             }
-            else if (IsDelay && delay != null)
+            else if (Delay is { } __value5 && delay != null)
             {
-                return delay(Delay!);
+                return delay(__value5);
             }
-            else if (IsDigest && digest != null)
+            else if (Digest is { } __value6 && digest != null)
             {
-                return digest(Digest!);
+                return digest(__value6);
             }
-            else if (IsThrottle && throttle != null)
+            else if (Throttle is { } __value7 && throttle != null)
             {
-                return throttle(Throttle!);
+                return throttle(__value7);
             }
-            else if (IsTool && tool != null)
+            else if (Tool is { } __value8 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value8);
             }
-            else if (IsCustom && custom != null)
+            else if (Custom is { } __value9 && custom != null)
             {
-                return custom(Custom!);
+                return custom(__value9);
             }
-            else if (IsHttpRequest && httpRequest != null)
+            else if (HttpRequest is { } __value10 && httpRequest != null)
             {
-                return httpRequest(HttpRequest!);
+                return httpRequest(__value10);
             }
 
             return default(TResult);
@@ -850,49 +850,49 @@ namespace Novu
                 Validate();
             }
 
-            if (IsInApp)
+            if (InApp is { } __value0)
             {
-                inApp?.Invoke(InApp!);
+                inApp?.Invoke(__value0);
             }
-            else if (IsEmail)
+            else if (Email is { } __value1)
             {
-                email?.Invoke(Email!);
+                email?.Invoke(__value1);
             }
-            else if (IsSms)
+            else if (Sms is { } __value2)
             {
-                sms?.Invoke(Sms!);
+                sms?.Invoke(__value2);
             }
-            else if (IsPush)
+            else if (Push is { } __value3)
             {
-                push?.Invoke(Push!);
+                push?.Invoke(__value3);
             }
-            else if (IsChat)
+            else if (Chat is { } __value4)
             {
-                chat?.Invoke(Chat!);
+                chat?.Invoke(__value4);
             }
-            else if (IsDelay)
+            else if (Delay is { } __value5)
             {
-                delay?.Invoke(Delay!);
+                delay?.Invoke(__value5);
             }
-            else if (IsDigest)
+            else if (Digest is { } __value6)
             {
-                digest?.Invoke(Digest!);
+                digest?.Invoke(__value6);
             }
-            else if (IsThrottle)
+            else if (Throttle is { } __value7)
             {
-                throttle?.Invoke(Throttle!);
+                throttle?.Invoke(__value7);
             }
-            else if (IsTool)
+            else if (Tool is { } __value8)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value8);
             }
-            else if (IsCustom)
+            else if (Custom is { } __value9)
             {
-                custom?.Invoke(Custom!);
+                custom?.Invoke(__value9);
             }
-            else if (IsHttpRequest)
+            else if (HttpRequest is { } __value10)
             {
-                httpRequest?.Invoke(HttpRequest!);
+                httpRequest?.Invoke(__value10);
             }
         }
 
@@ -918,49 +918,49 @@ namespace Novu
                 Validate();
             }
 
-            if (IsInApp)
+            if (InApp is { } __value0)
             {
-                inApp?.Invoke(InApp!);
+                inApp?.Invoke(__value0);
             }
-            else if (IsEmail)
+            else if (Email is { } __value1)
             {
-                email?.Invoke(Email!);
+                email?.Invoke(__value1);
             }
-            else if (IsSms)
+            else if (Sms is { } __value2)
             {
-                sms?.Invoke(Sms!);
+                sms?.Invoke(__value2);
             }
-            else if (IsPush)
+            else if (Push is { } __value3)
             {
-                push?.Invoke(Push!);
+                push?.Invoke(__value3);
             }
-            else if (IsChat)
+            else if (Chat is { } __value4)
             {
-                chat?.Invoke(Chat!);
+                chat?.Invoke(__value4);
             }
-            else if (IsDelay)
+            else if (Delay is { } __value5)
             {
-                delay?.Invoke(Delay!);
+                delay?.Invoke(__value5);
             }
-            else if (IsDigest)
+            else if (Digest is { } __value6)
             {
-                digest?.Invoke(Digest!);
+                digest?.Invoke(__value6);
             }
-            else if (IsThrottle)
+            else if (Throttle is { } __value7)
             {
-                throttle?.Invoke(Throttle!);
+                throttle?.Invoke(__value7);
             }
-            else if (IsTool)
+            else if (Tool is { } __value8)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value8);
             }
-            else if (IsCustom)
+            else if (Custom is { } __value9)
             {
-                custom?.Invoke(Custom!);
+                custom?.Invoke(__value9);
             }
-            else if (IsHttpRequest)
+            else if (HttpRequest is { } __value10)
             {
-                httpRequest?.Invoke(HttpRequest!);
+                httpRequest?.Invoke(__value10);
             }
         }
 

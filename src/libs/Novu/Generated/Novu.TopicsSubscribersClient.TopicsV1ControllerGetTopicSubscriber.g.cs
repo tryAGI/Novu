@@ -153,8 +153,8 @@ namespace Novu
                 PrepareTopicsV1ControllerGetTopicSubscriberRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    externalSubscriberId: externalSubscriberId!,
-                    topicKey: topicKey!);
+                    externalSubscriberId: externalSubscriberId,
+                    topicKey: topicKey);
 
                 global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -178,7 +178,7 @@ namespace Novu
                                 pathTemplate: "$\"/v1/topics/{topicKey}/subscribers/{externalSubscriberId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -212,7 +212,7 @@ namespace Novu
                                 pathTemplate: "$\"/v1/topics/{topicKey}/subscribers/{externalSubscriberId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -253,7 +253,7 @@ namespace Novu
                                 pathTemplate: "$\"/v1/topics/{topicKey}/subscribers/{externalSubscriberId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -301,7 +301,7 @@ namespace Novu
                                 pathTemplate: "$\"/v1/topics/{topicKey}/subscribers/{externalSubscriberId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -323,7 +323,7 @@ namespace Novu
                                 pathTemplate: "$\"/v1/topics/{topicKey}/subscribers/{externalSubscriberId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

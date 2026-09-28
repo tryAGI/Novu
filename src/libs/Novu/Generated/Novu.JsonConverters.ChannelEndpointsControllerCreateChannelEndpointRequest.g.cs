@@ -167,85 +167,85 @@ namespace Novu.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateSlackChannelEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateSlackChannelEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateSlackChannelEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SlackChannel!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSlackChannel(), typeInfo);
             }
             else if (value.IsSlackUser)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateSlackUserEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateSlackUserEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateSlackUserEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SlackUser!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSlackUser(), typeInfo);
             }
             else if (value.IsWebhook)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateWebhookEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateWebhookEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateWebhookEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Webhook!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebhook(), typeInfo);
             }
             else if (value.IsPhone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreatePhoneEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreatePhoneEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreatePhoneEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPhone(), typeInfo);
             }
             else if (value.IsMsTeamsChannel)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateMsTeamsChannelEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateMsTeamsChannelEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateMsTeamsChannelEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MsTeamsChannel!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMsTeamsChannel(), typeInfo);
             }
             else if (value.IsMsTeamsUser)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateMsTeamsUserEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateMsTeamsUserEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateMsTeamsUserEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MsTeamsUser!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMsTeamsUser(), typeInfo);
             }
             else if (value.IsTelegramChat)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateTelegramChatEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateTelegramChatEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateTelegramChatEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TelegramChat!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTelegramChat(), typeInfo);
             }
             else if (value.IsWebexRoom)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateWebexRoomEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateWebexRoomEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateWebexRoomEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebexRoom!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebexRoom(), typeInfo);
             }
             else if (value.IsWebexPerson)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateWebexPersonEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateWebexPersonEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateWebexPersonEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebexPerson!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebexPerson(), typeInfo);
             }
             else if (value.IsLineUser)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateLineUserEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateLineUserEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateLineUserEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LineUser!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLineUser(), typeInfo);
             }
             else if (value.IsPagerdutyService)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreatePagerDutyServiceEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreatePagerDutyServiceEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreatePagerDutyServiceEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PagerdutyService!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPagerdutyService(), typeInfo);
             }
             else if (value.IsOpsgenieIntegration)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateOpsgenieIntegrationEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateOpsgenieIntegrationEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateOpsgenieIntegrationEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpsgenieIntegration!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpsgenieIntegration(), typeInfo);
             }
             else if (value.IsGrafanaOncallIntegration)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateGrafanaOnCallIntegrationEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateGrafanaOnCallIntegrationEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateGrafanaOnCallIntegrationEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GrafanaOncallIntegration!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGrafanaOncallIntegration(), typeInfo);
             }
             else if (value.IsToolWebhook)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateToolWebhookEndpointDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateToolWebhookEndpointDto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Novu.CreateToolWebhookEndpointDto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolWebhook!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolWebhook(), typeInfo);
             }
         }
     }

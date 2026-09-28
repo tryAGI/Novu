@@ -47,8 +47,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreateSlackChannelEndpointDto PickSlackChannel() => IsSlackChannel
-            ? SlackChannel!
+        public global::Novu.CreateSlackChannelEndpointDto PickSlackChannel() => SlackChannel is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SlackChannel' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreateSlackUserEndpointDto PickSlackUser() => IsSlackUser
-            ? SlackUser!
+        public global::Novu.CreateSlackUserEndpointDto PickSlackUser() => SlackUser is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SlackUser' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreateWebhookEndpointDto PickWebhook() => IsWebhook
-            ? Webhook!
+        public global::Novu.CreateWebhookEndpointDto PickWebhook() => Webhook is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreatePhoneEndpointDto PickPhone() => IsPhone
-            ? Phone!
+        public global::Novu.CreatePhoneEndpointDto PickPhone() => Phone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Phone' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreateMsTeamsChannelEndpointDto PickMsTeamsChannel() => IsMsTeamsChannel
-            ? MsTeamsChannel!
+        public global::Novu.CreateMsTeamsChannelEndpointDto PickMsTeamsChannel() => MsTeamsChannel is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MsTeamsChannel' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreateMsTeamsUserEndpointDto PickMsTeamsUser() => IsMsTeamsUser
-            ? MsTeamsUser!
+        public global::Novu.CreateMsTeamsUserEndpointDto PickMsTeamsUser() => MsTeamsUser is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MsTeamsUser' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreateTelegramChatEndpointDto PickTelegramChat() => IsTelegramChat
-            ? TelegramChat!
+        public global::Novu.CreateTelegramChatEndpointDto PickTelegramChat() => TelegramChat is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TelegramChat' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreateWebexRoomEndpointDto PickWebexRoom() => IsWebexRoom
-            ? WebexRoom!
+        public global::Novu.CreateWebexRoomEndpointDto PickWebexRoom() => WebexRoom is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebexRoom' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreateWebexPersonEndpointDto PickWebexPerson() => IsWebexPerson
-            ? WebexPerson!
+        public global::Novu.CreateWebexPersonEndpointDto PickWebexPerson() => WebexPerson is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebexPerson' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreateLineUserEndpointDto PickLineUser() => IsLineUser
-            ? LineUser!
+        public global::Novu.CreateLineUserEndpointDto PickLineUser() => LineUser is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LineUser' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreatePagerDutyServiceEndpointDto PickPagerdutyService() => IsPagerdutyService
-            ? PagerdutyService!
+        public global::Novu.CreatePagerDutyServiceEndpointDto PickPagerdutyService() => PagerdutyService is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PagerdutyService' but the value was {ToString()}.");
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreateOpsgenieIntegrationEndpointDto PickOpsgenieIntegration() => IsOpsgenieIntegration
-            ? OpsgenieIntegration!
+        public global::Novu.CreateOpsgenieIntegrationEndpointDto PickOpsgenieIntegration() => OpsgenieIntegration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpsgenieIntegration' but the value was {ToString()}.");
 
         /// <summary>
@@ -491,8 +491,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreateGrafanaOnCallIntegrationEndpointDto PickGrafanaOncallIntegration() => IsGrafanaOncallIntegration
-            ? GrafanaOncallIntegration!
+        public global::Novu.CreateGrafanaOnCallIntegrationEndpointDto PickGrafanaOncallIntegration() => GrafanaOncallIntegration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GrafanaOncallIntegration' but the value was {ToString()}.");
 
         /// <summary>
@@ -528,8 +528,8 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreateToolWebhookEndpointDto PickToolWebhook() => IsToolWebhook
-            ? ToolWebhook!
+        public global::Novu.CreateToolWebhookEndpointDto PickToolWebhook() => ToolWebhook is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolWebhook' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -965,61 +965,61 @@ namespace Novu
                 Validate();
             }
 
-            if (IsSlackChannel && slackChannel != null)
+            if (SlackChannel is { } __value0 && slackChannel != null)
             {
-                return slackChannel(SlackChannel!);
+                return slackChannel(__value0);
             }
-            else if (IsSlackUser && slackUser != null)
+            else if (SlackUser is { } __value1 && slackUser != null)
             {
-                return slackUser(SlackUser!);
+                return slackUser(__value1);
             }
-            else if (IsWebhook && webhook != null)
+            else if (Webhook is { } __value2 && webhook != null)
             {
-                return webhook(Webhook!);
+                return webhook(__value2);
             }
-            else if (IsPhone && phone != null)
+            else if (Phone is { } __value3 && phone != null)
             {
-                return phone(Phone!);
+                return phone(__value3);
             }
-            else if (IsMsTeamsChannel && msTeamsChannel != null)
+            else if (MsTeamsChannel is { } __value4 && msTeamsChannel != null)
             {
-                return msTeamsChannel(MsTeamsChannel!);
+                return msTeamsChannel(__value4);
             }
-            else if (IsMsTeamsUser && msTeamsUser != null)
+            else if (MsTeamsUser is { } __value5 && msTeamsUser != null)
             {
-                return msTeamsUser(MsTeamsUser!);
+                return msTeamsUser(__value5);
             }
-            else if (IsTelegramChat && telegramChat != null)
+            else if (TelegramChat is { } __value6 && telegramChat != null)
             {
-                return telegramChat(TelegramChat!);
+                return telegramChat(__value6);
             }
-            else if (IsWebexRoom && webexRoom != null)
+            else if (WebexRoom is { } __value7 && webexRoom != null)
             {
-                return webexRoom(WebexRoom!);
+                return webexRoom(__value7);
             }
-            else if (IsWebexPerson && webexPerson != null)
+            else if (WebexPerson is { } __value8 && webexPerson != null)
             {
-                return webexPerson(WebexPerson!);
+                return webexPerson(__value8);
             }
-            else if (IsLineUser && lineUser != null)
+            else if (LineUser is { } __value9 && lineUser != null)
             {
-                return lineUser(LineUser!);
+                return lineUser(__value9);
             }
-            else if (IsPagerdutyService && pagerdutyService != null)
+            else if (PagerdutyService is { } __value10 && pagerdutyService != null)
             {
-                return pagerdutyService(PagerdutyService!);
+                return pagerdutyService(__value10);
             }
-            else if (IsOpsgenieIntegration && opsgenieIntegration != null)
+            else if (OpsgenieIntegration is { } __value11 && opsgenieIntegration != null)
             {
-                return opsgenieIntegration(OpsgenieIntegration!);
+                return opsgenieIntegration(__value11);
             }
-            else if (IsGrafanaOncallIntegration && grafanaOncallIntegration != null)
+            else if (GrafanaOncallIntegration is { } __value12 && grafanaOncallIntegration != null)
             {
-                return grafanaOncallIntegration(GrafanaOncallIntegration!);
+                return grafanaOncallIntegration(__value12);
             }
-            else if (IsToolWebhook && toolWebhook != null)
+            else if (ToolWebhook is { } __value13 && toolWebhook != null)
             {
-                return toolWebhook(ToolWebhook!);
+                return toolWebhook(__value13);
             }
 
             return default(TResult);
@@ -1063,61 +1063,61 @@ namespace Novu
                 Validate();
             }
 
-            if (IsSlackChannel)
+            if (SlackChannel is { } __value0)
             {
-                slackChannel?.Invoke(SlackChannel!);
+                slackChannel?.Invoke(__value0);
             }
-            else if (IsSlackUser)
+            else if (SlackUser is { } __value1)
             {
-                slackUser?.Invoke(SlackUser!);
+                slackUser?.Invoke(__value1);
             }
-            else if (IsWebhook)
+            else if (Webhook is { } __value2)
             {
-                webhook?.Invoke(Webhook!);
+                webhook?.Invoke(__value2);
             }
-            else if (IsPhone)
+            else if (Phone is { } __value3)
             {
-                phone?.Invoke(Phone!);
+                phone?.Invoke(__value3);
             }
-            else if (IsMsTeamsChannel)
+            else if (MsTeamsChannel is { } __value4)
             {
-                msTeamsChannel?.Invoke(MsTeamsChannel!);
+                msTeamsChannel?.Invoke(__value4);
             }
-            else if (IsMsTeamsUser)
+            else if (MsTeamsUser is { } __value5)
             {
-                msTeamsUser?.Invoke(MsTeamsUser!);
+                msTeamsUser?.Invoke(__value5);
             }
-            else if (IsTelegramChat)
+            else if (TelegramChat is { } __value6)
             {
-                telegramChat?.Invoke(TelegramChat!);
+                telegramChat?.Invoke(__value6);
             }
-            else if (IsWebexRoom)
+            else if (WebexRoom is { } __value7)
             {
-                webexRoom?.Invoke(WebexRoom!);
+                webexRoom?.Invoke(__value7);
             }
-            else if (IsWebexPerson)
+            else if (WebexPerson is { } __value8)
             {
-                webexPerson?.Invoke(WebexPerson!);
+                webexPerson?.Invoke(__value8);
             }
-            else if (IsLineUser)
+            else if (LineUser is { } __value9)
             {
-                lineUser?.Invoke(LineUser!);
+                lineUser?.Invoke(__value9);
             }
-            else if (IsPagerdutyService)
+            else if (PagerdutyService is { } __value10)
             {
-                pagerdutyService?.Invoke(PagerdutyService!);
+                pagerdutyService?.Invoke(__value10);
             }
-            else if (IsOpsgenieIntegration)
+            else if (OpsgenieIntegration is { } __value11)
             {
-                opsgenieIntegration?.Invoke(OpsgenieIntegration!);
+                opsgenieIntegration?.Invoke(__value11);
             }
-            else if (IsGrafanaOncallIntegration)
+            else if (GrafanaOncallIntegration is { } __value12)
             {
-                grafanaOncallIntegration?.Invoke(GrafanaOncallIntegration!);
+                grafanaOncallIntegration?.Invoke(__value12);
             }
-            else if (IsToolWebhook)
+            else if (ToolWebhook is { } __value13)
             {
-                toolWebhook?.Invoke(ToolWebhook!);
+                toolWebhook?.Invoke(__value13);
             }
         }
 
@@ -1146,61 +1146,61 @@ namespace Novu
                 Validate();
             }
 
-            if (IsSlackChannel)
+            if (SlackChannel is { } __value0)
             {
-                slackChannel?.Invoke(SlackChannel!);
+                slackChannel?.Invoke(__value0);
             }
-            else if (IsSlackUser)
+            else if (SlackUser is { } __value1)
             {
-                slackUser?.Invoke(SlackUser!);
+                slackUser?.Invoke(__value1);
             }
-            else if (IsWebhook)
+            else if (Webhook is { } __value2)
             {
-                webhook?.Invoke(Webhook!);
+                webhook?.Invoke(__value2);
             }
-            else if (IsPhone)
+            else if (Phone is { } __value3)
             {
-                phone?.Invoke(Phone!);
+                phone?.Invoke(__value3);
             }
-            else if (IsMsTeamsChannel)
+            else if (MsTeamsChannel is { } __value4)
             {
-                msTeamsChannel?.Invoke(MsTeamsChannel!);
+                msTeamsChannel?.Invoke(__value4);
             }
-            else if (IsMsTeamsUser)
+            else if (MsTeamsUser is { } __value5)
             {
-                msTeamsUser?.Invoke(MsTeamsUser!);
+                msTeamsUser?.Invoke(__value5);
             }
-            else if (IsTelegramChat)
+            else if (TelegramChat is { } __value6)
             {
-                telegramChat?.Invoke(TelegramChat!);
+                telegramChat?.Invoke(__value6);
             }
-            else if (IsWebexRoom)
+            else if (WebexRoom is { } __value7)
             {
-                webexRoom?.Invoke(WebexRoom!);
+                webexRoom?.Invoke(__value7);
             }
-            else if (IsWebexPerson)
+            else if (WebexPerson is { } __value8)
             {
-                webexPerson?.Invoke(WebexPerson!);
+                webexPerson?.Invoke(__value8);
             }
-            else if (IsLineUser)
+            else if (LineUser is { } __value9)
             {
-                lineUser?.Invoke(LineUser!);
+                lineUser?.Invoke(__value9);
             }
-            else if (IsPagerdutyService)
+            else if (PagerdutyService is { } __value10)
             {
-                pagerdutyService?.Invoke(PagerdutyService!);
+                pagerdutyService?.Invoke(__value10);
             }
-            else if (IsOpsgenieIntegration)
+            else if (OpsgenieIntegration is { } __value11)
             {
-                opsgenieIntegration?.Invoke(OpsgenieIntegration!);
+                opsgenieIntegration?.Invoke(__value11);
             }
-            else if (IsGrafanaOncallIntegration)
+            else if (GrafanaOncallIntegration is { } __value12)
             {
-                grafanaOncallIntegration?.Invoke(GrafanaOncallIntegration!);
+                grafanaOncallIntegration?.Invoke(__value12);
             }
-            else if (IsToolWebhook)
+            else if (ToolWebhook is { } __value13)
             {
-                toolWebhook?.Invoke(ToolWebhook!);
+                toolWebhook?.Invoke(__value13);
             }
         }
 
