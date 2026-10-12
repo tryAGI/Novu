@@ -70,6 +70,12 @@ namespace Novu
         public bool? ExceedsPlanLimit { get; set; }
 
         /// <summary>
+        /// `true` when at least one person has linked their chat on this integration (it has a channel endpoint), so the agent has someone to reach there. Only returned by the list, and only when true. Email has no channel endpoints, so it never carries the flag.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("hasChannelEndpoints")]
+        public bool? HasChannelEndpoints { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -93,6 +99,9 @@ namespace Novu
         /// <param name="exceedsPlanLimit">
         /// Cloud only. `true` when this channel type (provider) falls outside the organization plan active-channel limit (by connection order). Active channels are counted per channel type, so multiple integrations of the same provider (e.g. several Slack workspaces) count as a single active channel. Over-limit channels keep their configuration but the agent will not respond on them until the plan is upgraded or older channel types are disconnected.
         /// </param>
+        /// <param name="hasChannelEndpoints">
+        /// `true` when at least one person has linked their chat on this integration (it has a channel endpoint), so the agent has someone to reach there. Only returned by the list, and only when true. Email has no channel endpoints, so it never carries the flag.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -105,7 +114,8 @@ namespace Novu
             string createdAt,
             string updatedAt,
             object? connectedAt,
-            bool? exceedsPlanLimit)
+            bool? exceedsPlanLimit,
+            bool? hasChannelEndpoints)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
@@ -116,6 +126,7 @@ namespace Novu
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
             this.ExceedsPlanLimit = exceedsPlanLimit;
+            this.HasChannelEndpoints = hasChannelEndpoints;
         }
 
         /// <summary>
