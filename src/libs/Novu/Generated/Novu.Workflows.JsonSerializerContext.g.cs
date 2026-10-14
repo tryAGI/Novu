@@ -60,6 +60,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Novu.StepIntegrationIssue>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.StepIntegrationIssue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepResponseDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, object>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailFromControlDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EmailControlDtoEditorType), TypeInfoPropertyName = "EmailControlDtoEditorType2")]

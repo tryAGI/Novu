@@ -30,6 +30,14 @@ namespace Novu
         public global::System.Collections.Generic.Dictionary<string, object>? ProviderOverrides { get; set; }
 
         /// <summary>
+        /// Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.<br/>
+        /// Example: {"tool-webhook":{"prod-alerts":{"alert_type":"incident"},"staging-alerts":{"alert_type":"test"}}}
+        /// </summary>
+        /// <example>{"tool-webhook":{"prod-alerts":{"alert_type":"incident"},"staging-alerts":{"alert_type":"test"}}}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("integrationOverrides")]
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, object>>? IntegrationOverrides { get; set; }
+
+        /// <summary>
         /// JSON Schema for variables, follows the JSON Schema standard
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variables")]
@@ -152,6 +160,10 @@ namespace Novu
         /// Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time. Keys are ChatProviderIdEnum / ToolProviderIdEnum values (e.g. `slack`, `whatsapp-business`, `pagerduty`).<br/>
         /// Example: {"slack":{"text":"{{payload.title}}","blocks":[{"type":"divider"}]},"whatsapp-business":{"type":"text","text":{"body":"{{payload.title}}"}},"pagerduty":{"severity":"warning","source":"novu","summary":"{{payload.title}}"}}
         /// </param>
+        /// <param name="integrationOverrides">
+        /// Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.<br/>
+        /// Example: {"tool-webhook":{"prod-alerts":{"alert_type":"incident"},"staging-alerts":{"alert_type":"test"}}}
+        /// </param>
         /// <param name="issues">
         /// Issues associated with the step
         /// </param>
@@ -174,12 +186,14 @@ namespace Novu
             string workflowDatabaseId,
             global::Novu.ChatControlDto? controlValues,
             global::System.Collections.Generic.Dictionary<string, object>? providerOverrides,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, object>>? integrationOverrides,
             global::Novu.StepIssuesDto? issues,
             string? stepResolverHash)
         {
             this.Controls = controls ?? throw new global::System.ArgumentNullException(nameof(controls));
             this.ControlValues = controlValues;
             this.ProviderOverrides = providerOverrides;
+            this.IntegrationOverrides = integrationOverrides;
             this.Variables = variables ?? throw new global::System.ArgumentNullException(nameof(variables));
             this.StepId = stepId ?? throw new global::System.ArgumentNullException(nameof(stepId));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

@@ -51,6 +51,14 @@ namespace Novu
         public global::System.Collections.Generic.Dictionary<string, object>? ProviderOverrides { get; set; }
 
         /// <summary>
+        /// Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied. Omit to leave unchanged; pass null to delete all integration overrides; pass an object to replace the full set.<br/>
+        /// Example: {"tool-webhook":{"prod-alerts":{"alert_type":"incident"},"staging-alerts":{"alert_type":"test"}}}
+        /// </summary>
+        /// <example>{"tool-webhook":{"prod-alerts":{"alert_type":"incident"},"staging-alerts":{"alert_type":"test"}}}</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("integrationOverrides")]
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, object>>? IntegrationOverrides { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -78,6 +86,10 @@ namespace Novu
         /// Per-provider content overrides keyed by providerId. Stored separately from controlValues and merged over the default body at send time. Keys are ChatProviderIdEnum / ToolProviderIdEnum values (e.g. `slack`, `whatsapp-business`, `pagerduty`). Omit to leave unchanged; pass null to delete all provider overrides; pass an object to replace the full set.<br/>
         /// Example: {"slack":{"text":"{{payload.title}}","blocks":[{"type":"divider"}]},"whatsapp-business":{"type":"text","text":{"body":"{{payload.title}}"}},"pagerduty":{"severity":"warning","source":"novu","summary":"{{payload.title}}"}}
         /// </param>
+        /// <param name="integrationOverrides">
+        /// Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied. Omit to leave unchanged; pass null to delete all integration overrides; pass an object to replace the full set.<br/>
+        /// Example: {"tool-webhook":{"prod-alerts":{"alert_type":"incident"},"staging-alerts":{"alert_type":"test"}}}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -87,7 +99,8 @@ namespace Novu
             string? id,
             string? stepId,
             global::Novu.OneOf<global::Novu.ToolControlDto, object>? controlValues,
-            global::System.Collections.Generic.Dictionary<string, object>? providerOverrides)
+            global::System.Collections.Generic.Dictionary<string, object>? providerOverrides,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, object>>? integrationOverrides)
         {
             this.Id = id;
             this.StepId = stepId;
@@ -95,6 +108,7 @@ namespace Novu
             this.Type = type;
             this.ControlValues = controlValues;
             this.ProviderOverrides = providerOverrides;
+            this.IntegrationOverrides = integrationOverrides;
         }
 
         /// <summary>
