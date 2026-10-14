@@ -20,6 +20,10 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
+        AgentEmailInbox,
+        /// <summary>
+        ///
+        /// </summary>
         Anthropic,
         /// <summary>
         ///
@@ -409,6 +413,7 @@ namespace Novu
             {
                 GetChannelEndpointResponseDtoProviderId.AfricasTalking => "africas-talking",
                 GetChannelEndpointResponseDtoProviderId.AfroMessage => "afro-message",
+                GetChannelEndpointResponseDtoProviderId.AgentEmailInbox => "agent-email-inbox",
                 GetChannelEndpointResponseDtoProviderId.Anthropic => "anthropic",
                 GetChannelEndpointResponseDtoProviderId.AnthropicAws => "anthropic-aws",
                 GetChannelEndpointResponseDtoProviderId.Anypost => "anypost",
@@ -515,6 +520,7 @@ namespace Novu
             {
                 "africas-talking" => GetChannelEndpointResponseDtoProviderId.AfricasTalking,
                 "afro-message" => GetChannelEndpointResponseDtoProviderId.AfroMessage,
+                "agent-email-inbox" => GetChannelEndpointResponseDtoProviderId.AgentEmailInbox,
                 "anthropic" => GetChannelEndpointResponseDtoProviderId.Anthropic,
                 "anthropic-aws" => GetChannelEndpointResponseDtoProviderId.AnthropicAws,
                 "anypost" => GetChannelEndpointResponseDtoProviderId.Anypost,

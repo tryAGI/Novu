@@ -19,6 +19,10 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
+        AgentEmailInbox,
+        /// <summary>
+        ///
+        /// </summary>
         Anthropic,
         /// <summary>
         ///
@@ -408,6 +412,7 @@ namespace Novu
             {
                 ProvidersIdEnum.AfricasTalking => "africas-talking",
                 ProvidersIdEnum.AfroMessage => "afro-message",
+                ProvidersIdEnum.AgentEmailInbox => "agent-email-inbox",
                 ProvidersIdEnum.Anthropic => "anthropic",
                 ProvidersIdEnum.AnthropicAws => "anthropic-aws",
                 ProvidersIdEnum.Anypost => "anypost",
@@ -514,6 +519,7 @@ namespace Novu
             {
                 "africas-talking" => ProvidersIdEnum.AfricasTalking,
                 "afro-message" => ProvidersIdEnum.AfroMessage,
+                "agent-email-inbox" => ProvidersIdEnum.AgentEmailInbox,
                 "anthropic" => ProvidersIdEnum.Anthropic,
                 "anthropic-aws" => ProvidersIdEnum.AnthropicAws,
                 "anypost" => ProvidersIdEnum.Anypost,

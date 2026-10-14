@@ -70967,6 +70967,7 @@
           "email-webhook",
           "braze",
           "novu-email-agent",
+          "agent-email-inbox",
           "nexmo",
           "plivo",
           "sms77",
@@ -80154,6 +80155,28 @@
             },
             "nullable": true
           },
+          "integrationOverrides": {
+            "type": "object",
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "nullable": true
+          },
           "variables": {
             "type": "object",
             "description": "JSON Schema for variables, follows the JSON Schema standard",
@@ -80396,6 +80419,28 @@
             },
             "nullable": true
           },
+          "integrationOverrides": {
+            "type": "object",
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "nullable": true
+          },
           "variables": {
             "type": "object",
             "description": "JSON Schema for variables, follows the JSON Schema standard",
@@ -80573,6 +80618,28 @@
             "additionalProperties": {
               "type": "object",
               "additionalProperties": true
+            },
+            "nullable": true
+          },
+          "integrationOverrides": {
+            "type": "object",
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
             },
             "nullable": true
           },
@@ -80757,6 +80824,28 @@
             "additionalProperties": {
               "type": "object",
               "additionalProperties": true
+            },
+            "nullable": true
+          },
+          "integrationOverrides": {
+            "type": "object",
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
             },
             "nullable": true
           },
@@ -80945,6 +81034,28 @@
             "additionalProperties": {
               "type": "object",
               "additionalProperties": true
+            },
+            "nullable": true
+          },
+          "integrationOverrides": {
+            "type": "object",
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
             },
             "nullable": true
           },
@@ -81154,6 +81265,28 @@
             "additionalProperties": {
               "type": "object",
               "additionalProperties": true
+            },
+            "nullable": true
+          },
+          "integrationOverrides": {
+            "type": "object",
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
             },
             "nullable": true
           },
@@ -81400,6 +81533,28 @@
             },
             "nullable": true
           },
+          "integrationOverrides": {
+            "type": "object",
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "nullable": true
+          },
           "variables": {
             "type": "object",
             "description": "JSON Schema for variables, follows the JSON Schema standard",
@@ -81617,6 +81772,28 @@
             },
             "nullable": true
           },
+          "integrationOverrides": {
+            "type": "object",
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "nullable": true
+          },
           "variables": {
             "type": "object",
             "description": "JSON Schema for variables, follows the JSON Schema standard",
@@ -81762,6 +81939,28 @@
             "additionalProperties": {
               "type": "object",
               "additionalProperties": true
+            },
+            "nullable": true
+          },
+          "integrationOverrides": {
+            "type": "object",
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
             },
             "nullable": true
           },
@@ -81978,6 +82177,28 @@
             "additionalProperties": {
               "type": "object",
               "additionalProperties": true
+            },
+            "nullable": true
+          },
+          "integrationOverrides": {
+            "type": "object",
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
             },
             "nullable": true
           },
@@ -82222,6 +82443,28 @@
             },
             "nullable": true
           },
+          "integrationOverrides": {
+            "type": "object",
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "nullable": true
+          },
           "variables": {
             "type": "object",
             "description": "JSON Schema for variables, follows the JSON Schema standard",
@@ -82399,6 +82642,28 @@
             "additionalProperties": {
               "type": "object",
               "additionalProperties": true
+            },
+            "nullable": true
+          },
+          "integrationOverrides": {
+            "type": "object",
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
             },
             "nullable": true
           },
@@ -83003,6 +83268,28 @@
               "type": "object",
               "additionalProperties": true
             }
+          },
+          "integrationOverrides": {
+            "type": "object",
+            "nullable": true,
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied. Omit to leave unchanged; pass null to delete all integration overrides; pass an object to replace the full set.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
           }
         },
         "required": [
@@ -83180,6 +83467,28 @@
             "additionalProperties": {
               "type": "object",
               "additionalProperties": true
+            }
+          },
+          "integrationOverrides": {
+            "type": "object",
+            "nullable": true,
+            "description": "Per-integration content overrides keyed by providerId, then by integration identifier. Each entry is merged over the matching providerOverrides entry, only for sends through that integration. Trigger-time overrides still take precedence. Entries whose integration does not exist in the environment are kept but not applied. Omit to leave unchanged; pass null to delete all integration overrides; pass an object to replace the full set.",
+            "example": {
+              "tool-webhook": {
+                "prod-alerts": {
+                  "alert_type": "incident"
+                },
+                "staging-alerts": {
+                  "alert_type": "test"
+                }
+              }
+            },
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true
+              }
             }
           }
         },
@@ -84894,6 +85203,7 @@
               "email-webhook",
               "braze",
               "novu-email-agent",
+              "agent-email-inbox",
               "nexmo",
               "plivo",
               "sms77",
@@ -86645,6 +86955,7 @@
               "email-webhook",
               "braze",
               "novu-email-agent",
+              "agent-email-inbox",
               "nexmo",
               "plivo",
               "sms77",
