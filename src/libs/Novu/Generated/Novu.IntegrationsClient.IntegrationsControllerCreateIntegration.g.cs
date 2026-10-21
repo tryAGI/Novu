@@ -971,7 +971,7 @@ namespace Novu
             bool? active = default,
             bool? check = default,
             object? rules = default,
-            object? configurations = default,
+            global::System.Collections.Generic.Dictionary<string, string>? configurations = default,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

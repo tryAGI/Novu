@@ -9,7 +9,7 @@ namespace Novu
     public sealed partial class MessageButton
     {
         /// <summary>
-        /// Type of button for the action result
+        /// Type of the button
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ButtonTypeEnumJsonConverter))]
@@ -39,7 +39,7 @@ namespace Novu
         /// Initializes a new instance of the <see cref="MessageButton" /> class.
         /// </summary>
         /// <param name="type">
-        /// Type of button for the action result
+        /// Type of the button
         /// </param>
         /// <param name="content">
         /// Content of the button

@@ -9,7 +9,7 @@ namespace Novu
     public sealed partial class ResourceToPublishDto
     {
         /// <summary>
-        /// Resource type
+        /// Type of resource to publish
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resourceType")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ResourceTypeEnumJsonConverter))]
@@ -35,7 +35,7 @@ namespace Novu
         /// Initializes a new instance of the <see cref="ResourceToPublishDto" /> class.
         /// </summary>
         /// <param name="resourceType">
-        /// Resource type
+        /// Type of resource to publish
         /// </param>
         /// <param name="resourceId">
         /// Unique identifier of the resource to publish<br/>

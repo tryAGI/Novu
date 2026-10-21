@@ -4,8 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// Source of layout creation<br/>
-    /// Default Value: dashboard
+    /// Source of layout creation
     /// </summary>
     public enum LayoutCreationSourceEnum
     {

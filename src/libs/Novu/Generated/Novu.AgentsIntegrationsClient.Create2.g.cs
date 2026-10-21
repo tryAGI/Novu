@@ -41,11 +41,13 @@ namespace Novu
         partial void PrepareCreate2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string identifier,
+            ref string novuAnalyticsSource,
             global::Novu.AddAgentIntegrationRequestDto request);
         partial void PrepareCreate2Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string identifier,
+            string novuAnalyticsSource,
             global::Novu.AddAgentIntegrationRequestDto request);
         partial void ProcessCreate2Response(
             global::System.Net.Http.HttpClient httpClient,
@@ -61,12 +63,14 @@ namespace Novu
         /// Create a link between an agent (by identifier) and an integration (by integration **identifier**, not the internal _id).
         /// </summary>
         /// <param name="identifier"></param>
+        /// <param name="novuAnalyticsSource"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Novu.AgentIntegrationsControllerAddAgentIntegrationResponse> Create2Async(
             string identifier,
+            string novuAnalyticsSource,
 
             global::Novu.AddAgentIntegrationRequestDto request,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
@@ -74,6 +78,7 @@ namespace Novu
         {
             var __response = await Create2AsResponseAsync(
                 identifier: identifier,
+                novuAnalyticsSource: novuAnalyticsSource,
 
                 request: request,
                 requestOptions: requestOptions,
@@ -87,12 +92,14 @@ namespace Novu
         /// Create a link between an agent (by identifier) and an integration (by integration **identifier**, not the internal _id).
         /// </summary>
         /// <param name="identifier"></param>
+        /// <param name="novuAnalyticsSource"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Novu.AutoSDKHttpResponse<global::Novu.AgentIntegrationsControllerAddAgentIntegrationResponse>> Create2AsResponseAsync(
             string identifier,
+            string novuAnalyticsSource,
 
             global::Novu.AddAgentIntegrationRequestDto request,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
@@ -105,6 +112,7 @@ namespace Novu
             PrepareCreate2Arguments(
                 httpClient: HttpClient,
                 identifier: ref identifier,
+                novuAnalyticsSource: ref novuAnalyticsSource,
                 request: request);
 
 
@@ -147,6 +155,9 @@ namespace Novu
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+
+                __httpRequest.Headers.TryAddWithoutValidation("Novu-Analytics-Source", novuAnalyticsSource.ToString());
+
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
                                 content: __httpRequestContentBody,
@@ -165,6 +176,7 @@ namespace Novu
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     identifier: identifier,
+                    novuAnalyticsSource: novuAnalyticsSource,
                     request: request);
 
                 global::Novu.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -923,6 +935,7 @@ namespace Novu
         /// Create a link between an agent (by identifier) and an integration (by integration **identifier**, not the internal _id).
         /// </summary>
         /// <param name="identifier"></param>
+        /// <param name="novuAnalyticsSource"></param>
         /// <param name="integrationIdentifier">
         /// The integration identifier (same as in the integration store), not the internal document _id.
         /// </param>
@@ -934,6 +947,7 @@ namespace Novu
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Novu.AgentIntegrationsControllerAddAgentIntegrationResponse> Create2Async(
             string identifier,
+            string novuAnalyticsSource,
             string? integrationIdentifier = default,
             string? providerId = default,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
@@ -947,6 +961,7 @@ namespace Novu
 
             return await Create2Async(
                 identifier: identifier,
+                novuAnalyticsSource: novuAnalyticsSource,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

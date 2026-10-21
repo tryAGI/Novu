@@ -158,7 +158,7 @@ namespace Novu
         public string? Subject { get; set; }
 
         /// <summary>
-        /// Channel the message was sent on
+        /// The channel through which the notification is sent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("channel")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ChannelTypeEnumJsonConverter))]
@@ -295,7 +295,7 @@ namespace Novu
         /// Example: This is a test notification content.
         /// </param>
         /// <param name="channel">
-        /// Channel the message was sent on
+        /// The channel through which the notification is sent.
         /// </param>
         /// <param name="read">
         /// Indicates whether the notification has been read by the subscriber.<br/>

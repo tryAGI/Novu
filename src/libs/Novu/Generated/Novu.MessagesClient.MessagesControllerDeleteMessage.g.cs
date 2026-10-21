@@ -59,7 +59,9 @@ namespace Novu
         /// Delete a message entity from the Novu platform by **messageId**. <br/>
         ///     This action is irreversible. **messageId** is required and of mongodbId type.
         /// </summary>
-        /// <param name="messageId"></param>
+        /// <param name="messageId">
+        /// Example: 507f1f77bcf86cd799439011
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
@@ -81,7 +83,9 @@ namespace Novu
         /// Delete a message entity from the Novu platform by **messageId**. <br/>
         ///     This action is irreversible. **messageId** is required and of mongodbId type.
         /// </summary>
-        /// <param name="messageId"></param>
+        /// <param name="messageId">
+        /// Example: 507f1f77bcf86cd799439011
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>

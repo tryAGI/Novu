@@ -13,7 +13,9 @@ namespace Novu
         /// <param name="criticality">
         /// Default Value: nonCritical
         /// </param>
-        /// <param name="contextKeys"></param>
+        /// <param name="contextKeys">
+        /// Example: [tenant:acme]
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
@@ -32,7 +34,9 @@ namespace Novu
         /// <param name="criticality">
         /// Default Value: nonCritical
         /// </param>
-        /// <param name="contextKeys"></param>
+        /// <param name="contextKeys">
+        /// Example: [tenant:acme]
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>

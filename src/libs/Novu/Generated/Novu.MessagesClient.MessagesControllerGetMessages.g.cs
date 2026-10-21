@@ -70,12 +70,12 @@ namespace Novu
         ///     This API supports filtering by **channel**, **subscriberId**, and **transactionId**. <br/>
         ///     This API returns a paginated list of messages.
         /// </summary>
-        /// <param name="channel">
-        /// Channel the message was sent on
-        /// </param>
+        /// <param name="channel"></param>
         /// <param name="subscriberId"></param>
         /// <param name="transactionId"></param>
-        /// <param name="contextKeys"></param>
+        /// <param name="contextKeys">
+        /// Example: [tenant:org-123, region:us-east-1]
+        /// </param>
         /// <param name="page">
         /// Default Value: 0
         /// </param>
@@ -114,12 +114,12 @@ namespace Novu
         ///     This API supports filtering by **channel**, **subscriberId**, and **transactionId**. <br/>
         ///     This API returns a paginated list of messages.
         /// </summary>
-        /// <param name="channel">
-        /// Channel the message was sent on
-        /// </param>
+        /// <param name="channel"></param>
         /// <param name="subscriberId"></param>
         /// <param name="transactionId"></param>
-        /// <param name="contextKeys"></param>
+        /// <param name="contextKeys">
+        /// Example: [tenant:org-123, region:us-east-1]
+        /// </param>
         /// <param name="page">
         /// Default Value: 0
         /// </param>

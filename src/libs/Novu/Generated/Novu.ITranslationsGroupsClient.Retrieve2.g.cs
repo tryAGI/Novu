@@ -9,7 +9,9 @@ namespace Novu
         /// Retrieves a single translation group by resource type (workflow, layout) and resource ID (workflowId, layoutId)
         /// </summary>
         /// <param name="resourceType"></param>
-        /// <param name="resourceId"></param>
+        /// <param name="resourceId">
+        /// Example: welcome-email
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
@@ -23,7 +25,9 @@ namespace Novu
         /// Retrieves a single translation group by resource type (workflow, layout) and resource ID (workflowId, layoutId)
         /// </summary>
         /// <param name="resourceType"></param>
-        /// <param name="resourceId"></param>
+        /// <param name="resourceId">
+        /// Example: welcome-email
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>

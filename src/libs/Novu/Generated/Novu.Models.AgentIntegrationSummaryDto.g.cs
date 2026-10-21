@@ -37,7 +37,7 @@ namespace Novu
         public required string Identifier { get; set; }
 
         /// <summary>
-        /// Channel the message was sent on
+        /// Delivery channel; not set for agent-runtime integrations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("channel")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ChannelTypeEnumJsonConverter))]
@@ -67,7 +67,7 @@ namespace Novu
         /// <param name="identifier"></param>
         /// <param name="active"></param>
         /// <param name="channel">
-        /// Channel the message was sent on
+        /// Delivery channel; not set for agent-runtime integrations.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

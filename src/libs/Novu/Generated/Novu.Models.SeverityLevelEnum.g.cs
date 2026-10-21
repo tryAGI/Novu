@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// Workflow severity
+    /// Override the severity of the workflow
     /// </summary>
     public enum SeverityLevelEnum
     {

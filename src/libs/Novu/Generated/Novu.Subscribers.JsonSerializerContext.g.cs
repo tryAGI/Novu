@@ -167,6 +167,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MarkSubscriberNotificationsAsSeenDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UpdateAllSubscriberNotificationsDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.MessageResponseDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenType), TypeInfoPropertyName = "SubscribersV1ControllerMarkActionAsSeenType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerSearchSubscribersOrderDirection), TypeInfoPropertyName = "SubscribersControllerSearchSubscribersOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerGetSubscriberPreferencesCriticality), TypeInfoPropertyName = "SubscribersControllerGetSubscriberPreferencesCriticality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerListSubscriberTopicsOrderDirection), TypeInfoPropertyName = "SubscribersControllerListSubscriberTopicsOrderDirection2")]
@@ -239,6 +240,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.BulkUpdateSubscriberPreferencesDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringBulkUpdateSubscriberPreferencesDtoContext22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::Novu.PatchSubscriberPreferencesDtoContext2>?), TypeInfoPropertyName = "NullableOneOfStringPatchSubscriberPreferencesDtoContext22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.RedirectDtoTarget?), TypeInfoPropertyName = "NullableRedirectDtoTarget2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenType?), TypeInfoPropertyName = "NullableSubscribersV1ControllerMarkActionAsSeenType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerSearchSubscribersOrderDirection?), TypeInfoPropertyName = "NullableSubscribersControllerSearchSubscribersOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerGetSubscriberPreferencesCriticality?), TypeInfoPropertyName = "NullableSubscribersControllerGetSubscriberPreferencesCriticality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerListSubscriberTopicsOrderDirection?), TypeInfoPropertyName = "NullableSubscribersControllerListSubscriberTopicsOrderDirection2")]
@@ -505,6 +507,10 @@ namespace Novu
                     || typeToConvert == typeof(global::Novu.RedirectDtoTarget)
 
                     || typeToConvert == typeof(global::Novu.RedirectDtoTarget?)
+
+                    || typeToConvert == typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenType)
+
+                    || typeToConvert == typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenType?)
 
                     || typeToConvert == typeof(global::Novu.SubscribersControllerSearchSubscribersOrderDirection)
 
@@ -873,6 +879,16 @@ namespace Novu
                 if (typeToConvert == typeof(global::Novu.RedirectDtoTarget?))
                 {
                     return new global::Novu.JsonConverters.RedirectDtoTargetNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenType))
+                {
+                    return new global::Novu.JsonConverters.SubscribersV1ControllerMarkActionAsSeenTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenType?))
+                {
+                    return new global::Novu.JsonConverters.SubscribersV1ControllerMarkActionAsSeenTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Novu.SubscribersControllerSearchSubscribersOrderDirection))

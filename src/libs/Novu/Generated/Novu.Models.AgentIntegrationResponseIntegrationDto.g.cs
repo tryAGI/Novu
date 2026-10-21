@@ -37,7 +37,7 @@ namespace Novu
         public required string ProviderId { get; set; }
 
         /// <summary>
-        /// Channel the message was sent on
+        /// Delivery channel; not set for agent-runtime integrations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("channel")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ChannelTypeEnumJsonConverter))]
@@ -87,7 +87,7 @@ namespace Novu
         /// <param name="providerId"></param>
         /// <param name="active"></param>
         /// <param name="channel">
-        /// Channel the message was sent on
+        /// Delivery channel; not set for agent-runtime integrations.
         /// </param>
         /// <param name="sharedInboundAddress">
         /// The Novu shared inbox address for this agent. Set whenever the cloud shared-inbox feature is enabled. The dashboard uses this as the headline inbound address and to render the shared inbox row in the inbox list.

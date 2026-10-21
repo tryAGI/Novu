@@ -13,12 +13,21 @@ namespace Novu
         /// </summary>
         /// <param name="after"></param>
         /// <param name="before"></param>
-        /// <param name="limit"></param>
+        /// <param name="limit">
+        /// Example: 10
+        /// </param>
         /// <param name="orderDirection"></param>
         /// <param name="orderBy"></param>
         /// <param name="includeCursor"></param>
-        /// <param name="id"></param>
-        /// <param name="search"></param>
+        /// <param name="type">
+        /// Example: tenant
+        /// </param>
+        /// <param name="id">
+        /// Example: tenant-prod-123
+        /// </param>
+        /// <param name="search">
+        /// Example: tenant
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
@@ -29,6 +38,7 @@ namespace Novu
             global::Novu.ContextsControllerListContextsOrderDirection? orderDirection = default,
             string? orderBy = default,
             bool? includeCursor = default,
+            string? type = default,
             string? id = default,
             string? search = default,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,
@@ -42,12 +52,21 @@ namespace Novu
         /// </summary>
         /// <param name="after"></param>
         /// <param name="before"></param>
-        /// <param name="limit"></param>
+        /// <param name="limit">
+        /// Example: 10
+        /// </param>
         /// <param name="orderDirection"></param>
         /// <param name="orderBy"></param>
         /// <param name="includeCursor"></param>
-        /// <param name="id"></param>
-        /// <param name="search"></param>
+        /// <param name="type">
+        /// Example: tenant
+        /// </param>
+        /// <param name="id">
+        /// Example: tenant-prod-123
+        /// </param>
+        /// <param name="search">
+        /// Example: tenant
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
@@ -58,6 +77,7 @@ namespace Novu
             global::Novu.ContextsControllerListContextsOrderDirection? orderDirection = default,
             string? orderBy = default,
             bool? includeCursor = default,
+            string? type = default,
             string? id = default,
             string? search = default,
             global::Novu.AutoSDKRequestOptions? requestOptions = default,

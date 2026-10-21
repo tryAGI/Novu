@@ -9,7 +9,7 @@ namespace Novu
     public sealed partial class ResourceDiffResultDto
     {
         /// <summary>
-        /// Resource type
+        /// Type of resource being compared
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resourceType")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ResourceTypeEnumJsonConverter))]
@@ -58,7 +58,7 @@ namespace Novu
         /// Initializes a new instance of the <see cref="ResourceDiffResultDto" /> class.
         /// </summary>
         /// <param name="resourceType">
-        /// Resource type
+        /// Type of resource being compared
         /// </param>
         /// <param name="changes">
         /// List of specific changes for this resource

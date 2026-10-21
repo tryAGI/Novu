@@ -62,7 +62,9 @@ namespace Novu
         ///     Supports multiple filters to count in-app (inbox) notifications by different criteria, including context keys.
         /// </summary>
         /// <param name="subscriberId"></param>
-        /// <param name="filters"></param>
+        /// <param name="filters">
+        /// Example: [{"read":false,"archived":false},{"tags":["important"]},{"tags":{"and":[{"or":["a","b"]},{"or":["c"]}]}}]
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
@@ -87,7 +89,9 @@ namespace Novu
         ///     Supports multiple filters to count in-app (inbox) notifications by different criteria, including context keys.
         /// </summary>
         /// <param name="subscriberId"></param>
-        /// <param name="filters"></param>
+        /// <param name="filters">
+        /// Example: [{"read":false,"archived":false},{"tags":["important"]},{"tags":{"and":[{"or":["a","b"]},{"or":["c"]}]}}]
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>

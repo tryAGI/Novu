@@ -88,7 +88,7 @@ namespace Novu
         public global::Novu.PreferencesRequestDto? Preferences { get; set; }
 
         /// <summary>
-        /// Workflow severity
+        /// Severity of the workflow
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.SeverityLevelEnumJsonConverter))]
@@ -143,7 +143,7 @@ namespace Novu
         /// Workflow preferences
         /// </param>
         /// <param name="severity">
-        /// Workflow severity
+        /// Severity of the workflow
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

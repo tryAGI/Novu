@@ -76,7 +76,9 @@ namespace Novu
         /// </summary>
         /// <param name="after"></param>
         /// <param name="before"></param>
-        /// <param name="limit"></param>
+        /// <param name="limit">
+        /// Example: 10
+        /// </param>
         /// <param name="orderDirection"></param>
         /// <param name="orderBy"></param>
         /// <param name="includeCursor"></param>
@@ -120,7 +122,9 @@ namespace Novu
         /// </summary>
         /// <param name="after"></param>
         /// <param name="before"></param>
-        /// <param name="limit"></param>
+        /// <param name="limit">
+        /// Example: 10
+        /// </param>
         /// <param name="orderDirection"></param>
         /// <param name="orderBy"></param>
         /// <param name="includeCursor"></param>

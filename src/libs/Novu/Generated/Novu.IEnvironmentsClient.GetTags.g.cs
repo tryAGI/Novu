@@ -8,7 +8,9 @@ namespace Novu
         /// List environment tags<br/>
         /// Retrieve all unique tags used in workflows within the specified environment. These tags can be used for filtering workflows.
         /// </summary>
-        /// <param name="environmentId"></param>
+        /// <param name="environmentId">
+        /// Example: 6615943e7ace93b0540ae377
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
@@ -20,7 +22,9 @@ namespace Novu
         /// List environment tags<br/>
         /// Retrieve all unique tags used in workflows within the specified environment. These tags can be used for filtering workflows.
         /// </summary>
-        /// <param name="environmentId"></param>
+        /// <param name="environmentId">
+        /// Example: 6615943e7ace93b0540ae377
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>

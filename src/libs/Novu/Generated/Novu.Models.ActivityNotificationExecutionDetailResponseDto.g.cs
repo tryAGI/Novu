@@ -51,7 +51,7 @@ namespace Novu
         public required bool IsTest { get; set; }
 
         /// <summary>
-        /// Provider ID of the job
+        /// Provider ID of the execution
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("providerId")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ProvidersIdEnumJsonConverter))]
@@ -102,7 +102,7 @@ namespace Novu
         /// Creation time of the execution detail
         /// </param>
         /// <param name="providerId">
-        /// Provider ID of the job
+        /// Provider ID of the execution
         /// </param>
         /// <param name="raw">
         /// Raw data of the execution

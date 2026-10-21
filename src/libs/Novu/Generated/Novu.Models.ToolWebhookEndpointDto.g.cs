@@ -23,7 +23,7 @@ namespace Novu
         /// </summary>
         /// <example>{"Authorization":"Bearer \u003Ctoken\u003E"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
-        public object? Headers { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Headers { get; set; }
 
         /// <summary>
         /// Optional HTTP method override for this webhook. Defaults to the integration-level method.<br/>
@@ -60,7 +60,7 @@ namespace Novu
 #endif
         public ToolWebhookEndpointDto(
             string url,
-            object? headers,
+            global::System.Collections.Generic.Dictionary<string, string>? headers,
             global::Novu.ToolWebhookEndpointDtoMethod? method)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
