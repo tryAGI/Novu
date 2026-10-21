@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    ///
+    /// Example: chat
     /// </summary>
     public enum ChannelConnectionsControllerListChannelConnectionsChannel
     {

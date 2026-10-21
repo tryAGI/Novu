@@ -9,7 +9,7 @@ namespace Novu
     public sealed partial class PublishEnvironmentRequestDto
     {
         /// <summary>
-        /// Source environment ID to sync from. Defaults to the Development environment if not provided.<br/>
+        /// Source environment ID. Only the Development environment is currently supported; defaults to Development if omitted.<br/>
         /// Example: 507f1f77bcf86cd799439011
         /// </summary>
         /// <example>507f1f77bcf86cd799439011</example>
@@ -39,7 +39,7 @@ namespace Novu
         /// Initializes a new instance of the <see cref="PublishEnvironmentRequestDto" /> class.
         /// </summary>
         /// <param name="sourceEnvironmentId">
-        /// Source environment ID to sync from. Defaults to the Development environment if not provided.<br/>
+        /// Source environment ID. Only the Development environment is currently supported; defaults to Development if omitted.<br/>
         /// Example: 507f1f77bcf86cd799439011
         /// </param>
         /// <param name="dryRun">

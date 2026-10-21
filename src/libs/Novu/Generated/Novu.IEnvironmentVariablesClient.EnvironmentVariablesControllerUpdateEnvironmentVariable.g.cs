@@ -8,7 +8,9 @@ namespace Novu
         /// Update a variable<br/>
         /// Updates an existing environment variable. Providing `values` merges them into the existing per-environment values by `_environmentId`; envs not present in the request keep their stored value. Submitting the masked secret placeholder (the value returned by read endpoints for secret variables) as a real value is rejected.
         /// </summary>
-        /// <param name="variableKey"></param>
+        /// <param name="variableKey">
+        /// Example: BASE_URL
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -23,7 +25,9 @@ namespace Novu
         /// Update a variable<br/>
         /// Updates an existing environment variable. Providing `values` merges them into the existing per-environment values by `_environmentId`; envs not present in the request keep their stored value. Submitting the masked secret placeholder (the value returned by read endpoints for secret variables) as a real value is rejected.
         /// </summary>
-        /// <param name="variableKey"></param>
+        /// <param name="variableKey">
+        /// Example: BASE_URL
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -38,7 +42,9 @@ namespace Novu
         /// Update a variable<br/>
         /// Updates an existing environment variable. Providing `values` merges them into the existing per-environment values by `_environmentId`; envs not present in the request keep their stored value. Submitting the masked secret placeholder (the value returned by read endpoints for secret variables) as a real value is rejected.
         /// </summary>
-        /// <param name="variableKey"></param>
+        /// <param name="variableKey">
+        /// Example: BASE_URL
+        /// </param>
         /// <param name="key">
         /// Unique key for the variable. Must start with a letter and contain only letters, digits, and underscores.
         /// </param>

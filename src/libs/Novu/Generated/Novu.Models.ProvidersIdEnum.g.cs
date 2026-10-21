@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// Provider ID of the job
+    /// Provider ID of the execution
     /// </summary>
     public enum ProvidersIdEnum
     {

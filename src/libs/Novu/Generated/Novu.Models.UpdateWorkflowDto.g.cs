@@ -80,14 +80,14 @@ namespace Novu
         public required global::Novu.PreferencesRequestDto Preferences { get; set; }
 
         /// <summary>
-        /// Workflow origin
+        /// Origin of the workflow. Accepted for backwards compatibility but ignored on update.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("origin")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ResourceOriginEnumJsonConverter))]
         public global::Novu.ResourceOriginEnum? Origin { get; set; }
 
         /// <summary>
-        /// Workflow severity
+        /// Severity of the workflow
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.SeverityLevelEnumJsonConverter))]
@@ -138,10 +138,10 @@ namespace Novu
         /// Workflow ID (allowed only for code-first workflows)
         /// </param>
         /// <param name="origin">
-        /// Workflow origin
+        /// Origin of the workflow. Accepted for backwards compatibility but ignored on update.
         /// </param>
         /// <param name="severity">
-        /// Workflow severity
+        /// Severity of the workflow
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

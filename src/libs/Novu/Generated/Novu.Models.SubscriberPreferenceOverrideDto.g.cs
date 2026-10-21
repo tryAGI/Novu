@@ -9,7 +9,7 @@ namespace Novu
     public sealed partial class SubscriberPreferenceOverrideDto
     {
         /// <summary>
-        /// Channel the message was sent on
+        /// The channel type which is overridden
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("channel")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ChannelTypeEnumJsonConverter))]
@@ -34,7 +34,7 @@ namespace Novu
         /// Initializes a new instance of the <see cref="SubscriberPreferenceOverrideDto" /> class.
         /// </summary>
         /// <param name="channel">
-        /// Channel the message was sent on
+        /// The channel type which is overridden
         /// </param>
         /// <param name="source">
         /// The source of overrides

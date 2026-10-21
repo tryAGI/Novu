@@ -67,7 +67,7 @@ namespace Novu
         public string? UpdatedAt { get; set; }
 
         /// <summary>
-        ///
+        /// Channels of the notification
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("channels")]
         public global::System.Collections.Generic.IList<global::Novu.StepTypeEnum>? Channels { get; set; }
@@ -121,7 +121,7 @@ namespace Novu
         public global::System.Collections.Generic.IList<global::Novu.ActivityTopicDto>? Topics { get; set; }
 
         /// <summary>
-        /// Workflow severity
+        /// Severity of the notification
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.SeverityLevelEnumJsonConverter))]
@@ -175,7 +175,9 @@ namespace Novu
         /// <param name="updatedAt">
         /// Last updated time of the notification
         /// </param>
-        /// <param name="channels"></param>
+        /// <param name="channels">
+        /// Channels of the notification
+        /// </param>
         /// <param name="subscriber">
         /// Subscriber of the notification
         /// </param>
@@ -201,7 +203,7 @@ namespace Novu
         /// Topics of the notification
         /// </param>
         /// <param name="severity">
-        /// Workflow severity
+        /// Severity of the notification
         /// </param>
         /// <param name="critical">
         /// Criticality of the notification

@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    ///
+    /// Example: shared
     /// </summary>
     public enum ChannelConnectionsControllerListChannelConnectionsConnectionMode
     {

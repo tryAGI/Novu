@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// Resource type
+    /// Type of the layout
     /// </summary>
     public enum ResourceTypeEnum
     {

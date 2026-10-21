@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// Whether this preference is global or workflow-specific
+    /// The level of the preference (global or template)
     /// </summary>
     public enum PreferenceLevelEnum
     {

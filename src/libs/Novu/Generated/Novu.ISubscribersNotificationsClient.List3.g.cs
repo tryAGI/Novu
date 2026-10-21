@@ -11,18 +11,26 @@ namespace Novu
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="limit">
-        /// Default Value: 10
+        /// Default Value: 10<br/>
+        /// Example: 10
         /// </param>
         /// <param name="after"></param>
-        /// <param name="offset"></param>
+        /// <param name="offset">
+        /// Example: 0
+        /// </param>
+        /// <param name="tags"></param>
         /// <param name="read"></param>
         /// <param name="archived"></param>
         /// <param name="snoozed"></param>
         /// <param name="seen"></param>
         /// <param name="data"></param>
         /// <param name="severity"></param>
-        /// <param name="createdGte"></param>
-        /// <param name="createdLte"></param>
+        /// <param name="createdGte">
+        /// Example: 1704067200000L
+        /// </param>
+        /// <param name="createdLte">
+        /// Example: 1735689599999L
+        /// </param>
         /// <param name="contextKeys"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -32,6 +40,7 @@ namespace Novu
             double? limit = default,
             string? after = default,
             double? offset = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
             bool? read = default,
             bool? archived = default,
             bool? snoozed = default,
@@ -50,18 +59,26 @@ namespace Novu
         /// </summary>
         /// <param name="subscriberId"></param>
         /// <param name="limit">
-        /// Default Value: 10
+        /// Default Value: 10<br/>
+        /// Example: 10
         /// </param>
         /// <param name="after"></param>
-        /// <param name="offset"></param>
+        /// <param name="offset">
+        /// Example: 0
+        /// </param>
+        /// <param name="tags"></param>
         /// <param name="read"></param>
         /// <param name="archived"></param>
         /// <param name="snoozed"></param>
         /// <param name="seen"></param>
         /// <param name="data"></param>
         /// <param name="severity"></param>
-        /// <param name="createdGte"></param>
-        /// <param name="createdLte"></param>
+        /// <param name="createdGte">
+        /// Example: 1704067200000L
+        /// </param>
+        /// <param name="createdLte">
+        /// Example: 1735689599999L
+        /// </param>
         /// <param name="contextKeys"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -71,6 +88,7 @@ namespace Novu
             double? limit = default,
             string? after = default,
             double? offset = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
             bool? read = default,
             bool? archived = default,
             bool? snoozed = default,

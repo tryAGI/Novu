@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// Type of the step
+    /// Channels of the notification
     /// </summary>
     public enum StepTypeEnum
     {

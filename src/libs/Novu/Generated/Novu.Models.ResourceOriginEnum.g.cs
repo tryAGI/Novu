@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// Workflow origin
+    /// Origin of the workflow
     /// </summary>
     public enum ResourceOriginEnum
     {

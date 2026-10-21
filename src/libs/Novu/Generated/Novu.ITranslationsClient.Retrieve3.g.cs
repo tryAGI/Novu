@@ -9,8 +9,12 @@ namespace Novu
         /// Retrieve a specific translation by resource type, resource ID and locale
         /// </summary>
         /// <param name="resourceType"></param>
-        /// <param name="resourceId"></param>
-        /// <param name="locale"></param>
+        /// <param name="resourceId">
+        /// Example: welcome-email
+        /// </param>
+        /// <param name="locale">
+        /// Example: en_US
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
@@ -25,8 +29,12 @@ namespace Novu
         /// Retrieve a specific translation by resource type, resource ID and locale
         /// </summary>
         /// <param name="resourceType"></param>
-        /// <param name="resourceId"></param>
-        /// <param name="locale"></param>
+        /// <param name="resourceId">
+        /// Example: welcome-email
+        /// </param>
+        /// <param name="locale">
+        /// Example: en_US
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>

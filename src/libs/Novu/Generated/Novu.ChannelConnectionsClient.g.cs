@@ -44,7 +44,7 @@ namespace Novu
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
-            get => JsonSerializerContextProvider?.Value ?? global::Novu.ChannelConnectionsSourceGenerationContext.Default;
+            get => JsonSerializerContextProvider?.Value ?? global::Novu.SourceGenerationContext.Default;
             set => JsonSerializerContextProvider = new(() => value);
         }
 

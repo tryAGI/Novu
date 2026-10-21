@@ -9,7 +9,7 @@ namespace Novu
     public sealed partial class SyncResultDto
     {
         /// <summary>
-        /// Resource type
+        /// Resource type that was synced
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resourceType")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ResourceTypeEnumJsonConverter))]
@@ -54,7 +54,7 @@ namespace Novu
         /// Initializes a new instance of the <see cref="SyncResultDto" /> class.
         /// </summary>
         /// <param name="resourceType">
-        /// Resource type
+        /// Resource type that was synced
         /// </param>
         /// <param name="successful">
         /// Successfully synced resources

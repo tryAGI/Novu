@@ -4,8 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// Source of workflow creation<br/>
-    /// Default Value: editor
+    /// Source of workflow creation
     /// </summary>
     public enum WorkflowCreationSourceEnum
     {

@@ -58,9 +58,11 @@ namespace Novu
 
         /// <summary>
         /// Publish resources to target environment<br/>
-        /// Publishes all workflows and resources from the source environment to the target environment. Optionally specify specific resources to publish or use dryRun mode to preview changes.
+        /// Publishes all workflows and resources from the development environment to the target environment. Optionally specify specific resources to publish or use dryRun mode to preview changes.
         /// </summary>
-        /// <param name="targetEnvironmentId"></param>
+        /// <param name="targetEnvironmentId">
+        /// Example: 6615943e7ace93b0540ae377
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -84,9 +86,11 @@ namespace Novu
         }
         /// <summary>
         /// Publish resources to target environment<br/>
-        /// Publishes all workflows and resources from the source environment to the target environment. Optionally specify specific resources to publish or use dryRun mode to preview changes.
+        /// Publishes all workflows and resources from the development environment to the target environment. Optionally specify specific resources to publish or use dryRun mode to preview changes.
         /// </summary>
-        /// <param name="targetEnvironmentId"></param>
+        /// <param name="targetEnvironmentId">
+        /// Example: 6615943e7ace93b0540ae377
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -925,11 +929,13 @@ namespace Novu
         }
         /// <summary>
         /// Publish resources to target environment<br/>
-        /// Publishes all workflows and resources from the source environment to the target environment. Optionally specify specific resources to publish or use dryRun mode to preview changes.
+        /// Publishes all workflows and resources from the development environment to the target environment. Optionally specify specific resources to publish or use dryRun mode to preview changes.
         /// </summary>
-        /// <param name="targetEnvironmentId"></param>
+        /// <param name="targetEnvironmentId">
+        /// Example: 6615943e7ace93b0540ae377
+        /// </param>
         /// <param name="sourceEnvironmentId">
-        /// Source environment ID to sync from. Defaults to the Development environment if not provided.<br/>
+        /// Source environment ID. Only the Development environment is currently supported; defaults to Development if omitted.<br/>
         /// Example: 507f1f77bcf86cd799439011
         /// </param>
         /// <param name="dryRun">

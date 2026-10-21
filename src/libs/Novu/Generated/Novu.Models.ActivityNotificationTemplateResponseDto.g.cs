@@ -22,7 +22,7 @@ namespace Novu
         public required string Name { get; set; }
 
         /// <summary>
-        /// Workflow origin
+        /// Origin of the workflow
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("origin")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ResourceOriginEnumJsonConverter))]
@@ -54,7 +54,7 @@ namespace Novu
         /// Unique identifier of the template
         /// </param>
         /// <param name="origin">
-        /// Workflow origin
+        /// Origin of the workflow
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

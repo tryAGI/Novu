@@ -57,7 +57,9 @@ namespace Novu
         ///     This API supports filtering by **channel** and delete all messages associated with the **transactionId**.
         /// </summary>
         /// <param name="channel"></param>
-        /// <param name="transactionId"></param>
+        /// <param name="transactionId">
+        /// Example: 507f1f77bcf86cd799439011
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
@@ -80,7 +82,9 @@ namespace Novu
         ///     This API supports filtering by **channel** and delete all messages associated with the **transactionId**.
         /// </summary>
         /// <param name="channel"></param>
-        /// <param name="transactionId"></param>
+        /// <param name="transactionId">
+        /// Example: 507f1f77bcf86cd799439011
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>

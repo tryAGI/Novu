@@ -3593,535 +3593,539 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerSearchSubscribersOrderDirection? Type890 { get; set; }
+        public global::Novu.SubscribersV1ControllerMarkActionAsSeenType? Type890 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerGetSubscriberPreferencesCriticality? Type891 { get; set; }
+        public global::Novu.SubscribersControllerSearchSubscribersOrderDirection? Type891 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerListSubscriberTopicsOrderDirection? Type892 { get; set; }
+        public global::Novu.SubscribersControllerGetSubscriberPreferencesCriticality? Type892 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Novu.SubscribersControllerGetSubscriberNotificationsSeverityItem>? Type893 { get; set; }
+        public global::Novu.SubscribersControllerListSubscriberTopicsOrderDirection? Type893 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerGetSubscriberNotificationsSeverityItem? Type894 { get; set; }
+        public global::System.Collections.Generic.IList<global::Novu.SubscribersControllerGetSubscriberNotificationsSeverityItem>? Type894 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerCompleteNotificationActionActionType? Type895 { get; set; }
+        public global::Novu.SubscribersControllerGetSubscriberNotificationsSeverityItem? Type895 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerRevertNotificationActionActionType? Type896 { get; set; }
+        public global::Novu.SubscribersControllerCompleteNotificationActionActionType? Type896 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.MessagesControllerDeleteMessagesByTransactionIdChannel? Type897 { get; set; }
+        public global::Novu.SubscribersControllerRevertNotificationActionActionType? Type897 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TopicsControllerListTopicsOrderDirection? Type898 { get; set; }
+        public global::Novu.MessagesControllerDeleteMessagesByTransactionIdChannel? Type898 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TopicsControllerListTopicSubscriptionsOrderDirection? Type899 { get; set; }
+        public global::Novu.TopicsControllerListTopicsOrderDirection? Type899 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Novu.WorkflowStatusEnum>? Type900 { get; set; }
+        public global::Novu.TopicsControllerListTopicSubscriptionsOrderDirection? Type900 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChannelConnectionsControllerListChannelConnectionsOrderDirection? Type901 { get; set; }
+        public global::System.Collections.Generic.IList<global::Novu.WorkflowStatusEnum>? Type901 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChannelConnectionsControllerListChannelConnectionsConnectionMode? Type902 { get; set; }
+        public global::Novu.ChannelConnectionsControllerListChannelConnectionsOrderDirection? Type902 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChannelConnectionsControllerListChannelConnectionsChannel? Type903 { get; set; }
+        public global::Novu.ChannelConnectionsControllerListChannelConnectionsConnectionMode? Type903 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChannelEndpointsControllerListChannelEndpointsOrderDirection? Type904 { get; set; }
+        public global::Novu.ChannelConnectionsControllerListChannelConnectionsChannel? Type904 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChannelEndpointsControllerListChannelEndpointsChannel? Type905 { get; set; }
+        public global::Novu.ChannelEndpointsControllerListChannelEndpointsOrderDirection? Type905 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TranslationControllerGetTranslationGroupEndpointResourceType? Type906 { get; set; }
+        public global::Novu.ChannelEndpointsControllerListChannelEndpointsChannel? Type906 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TranslationControllerGetSingleTranslationResourceType? Type907 { get; set; }
+        public global::Novu.TranslationControllerGetTranslationGroupEndpointResourceType? Type907 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TranslationControllerDeleteTranslationEndpointResourceType? Type908 { get; set; }
+        public global::Novu.TranslationControllerGetSingleTranslationResourceType? Type908 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TranslationControllerDeleteTranslationGroupEndpointResourceType? Type909 { get; set; }
+        public global::Novu.TranslationControllerDeleteTranslationEndpointResourceType? Type909 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EnvironmentsControllerV1CreateEnvironmentResponse? Type910 { get; set; }
+        public global::Novu.TranslationControllerDeleteTranslationGroupEndpointResourceType? Type910 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EnvironmentsControllerV1ListMyEnvironmentsResponse? Type911 { get; set; }
+        public global::Novu.EnvironmentsControllerV1CreateEnvironmentResponse? Type911 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Novu.EnvironmentResponseDto>? Type912 { get; set; }
+        public global::Novu.EnvironmentsControllerV1ListMyEnvironmentsResponse? Type912 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EnvironmentsControllerV1UpdateMyEnvironmentResponse? Type913 { get; set; }
+        public global::System.Collections.Generic.IList<global::Novu.EnvironmentResponseDto>? Type913 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EventsControllerTriggerResponse? Type914 { get; set; }
+        public global::Novu.EnvironmentsControllerV1UpdateMyEnvironmentResponse? Type914 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EventsControllerTriggerBulkResponse? Type915 { get; set; }
+        public global::Novu.EventsControllerTriggerResponse? Type915 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Novu.TriggerEventResponseDto>? Type916 { get; set; }
+        public global::Novu.EventsControllerTriggerBulkResponse? Type916 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EventsControllerBroadcastEventToAllResponse? Type917 { get; set; }
+        public global::System.Collections.Generic.IList<global::Novu.TriggerEventResponseDto>? Type917 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.NotificationsControllerGetNotificationResponse? Type918 { get; set; }
+        public global::Novu.EventsControllerBroadcastEventToAllResponse? Type918 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.AgentsControllerCreateAgentResponse? Type919 { get; set; }
+        public global::Novu.NotificationsControllerGetNotificationResponse? Type919 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.AgentsControllerListAgentsResponse? Type920 { get; set; }
+        public global::Novu.AgentsControllerCreateAgentResponse? Type920 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.AgentsControllerUpdateAgentBridgeResponse? Type921 { get; set; }
+        public global::Novu.AgentsControllerListAgentsResponse? Type921 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.AgentsControllerGetAgentResponse? Type922 { get; set; }
+        public global::Novu.AgentsControllerUpdateAgentBridgeResponse? Type922 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.AgentsControllerUpdateAgentResponse? Type923 { get; set; }
+        public global::Novu.AgentsControllerGetAgentResponse? Type923 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.AgentIntegrationsControllerAddAgentIntegrationResponse? Type924 { get; set; }
+        public global::Novu.AgentsControllerUpdateAgentResponse? Type924 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.AgentIntegrationsControllerListAgentIntegrationsResponse? Type925 { get; set; }
+        public global::Novu.AgentIntegrationsControllerAddAgentIntegrationResponse? Type925 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.AgentIntegrationsControllerUpdateAgentIntegrationResponse? Type926 { get; set; }
+        public global::Novu.AgentIntegrationsControllerListAgentIntegrationsResponse? Type926 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.AgentReplyControllerHandleAgentReplyHandlerResponse? Type927 { get; set; }
+        public global::Novu.AgentIntegrationsControllerUpdateAgentIntegrationResponse? Type927 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DomainsControllerListDomainsResponse? Type928 { get; set; }
+        public global::Novu.AgentReplyControllerHandleAgentReplyHandlerResponse? Type928 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DomainsControllerCreateDomainResponse? Type929 { get; set; }
+        public global::Novu.DomainsControllerListDomainsResponse? Type929 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DomainsControllerGetDomainResponse? Type930 { get; set; }
+        public global::Novu.DomainsControllerCreateDomainResponse? Type930 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DomainsControllerUpdateDomainResponse? Type931 { get; set; }
+        public global::Novu.DomainsControllerGetDomainResponse? Type931 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DomainsControllerVerifyDomainResponse? Type932 { get; set; }
+        public global::Novu.DomainsControllerUpdateDomainResponse? Type932 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DomainsControllerDiagnoseDomainResponse? Type933 { get; set; }
+        public global::Novu.DomainsControllerVerifyDomainResponse? Type933 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DomainsControllerListDomainRoutesResponse? Type934 { get; set; }
+        public global::Novu.DomainsControllerDiagnoseDomainResponse? Type934 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DomainsControllerCreateDomainRouteResponse? Type935 { get; set; }
+        public global::Novu.DomainsControllerListDomainRoutesResponse? Type935 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DomainsControllerGetDomainRouteResponse? Type936 { get; set; }
+        public global::Novu.DomainsControllerCreateDomainRouteResponse? Type936 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DomainsControllerUpdateDomainRouteResponse? Type937 { get; set; }
+        public global::Novu.DomainsControllerGetDomainRouteResponse? Type937 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DomainsControllerTestDomainRouteResponse? Type938 { get; set; }
+        public global::Novu.DomainsControllerUpdateDomainRouteResponse? Type938 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DomainsControllerGetDomainAutoConfigureResponse? Type939 { get; set; }
+        public global::Novu.DomainsControllerTestDomainRouteResponse? Type939 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.DomainsControllerStartDomainAutoConfigureResponse? Type940 { get; set; }
+        public global::Novu.DomainsControllerGetDomainAutoConfigureResponse? Type940 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Novu.IntegrationResponseDto>? Type941 { get; set; }
+        public global::Novu.DomainsControllerStartDomainAutoConfigureResponse? Type941 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.IntegrationsControllerCreateIntegrationResponse? Type942 { get; set; }
+        public global::System.Collections.Generic.IList<global::Novu.IntegrationResponseDto>? Type942 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.IntegrationsControllerUpdateIntegrationByIdResponse? Type943 { get; set; }
+        public global::Novu.IntegrationsControllerCreateIntegrationResponse? Type943 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.IntegrationsControllerRemoveIntegrationResponse? Type944 { get; set; }
+        public global::Novu.IntegrationsControllerUpdateIntegrationByIdResponse? Type944 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.IntegrationsControllerAutoConfigureIntegrationResponse? Type945 { get; set; }
+        public global::Novu.IntegrationsControllerRemoveIntegrationResponse? Type945 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.IntegrationsControllerSetIntegrationAsPrimaryResponse? Type946 { get; set; }
+        public global::Novu.IntegrationsControllerAutoConfigureIntegrationResponse? Type946 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.IntegrationsControllerGetChatOAuthUrlResponse? Type947 { get; set; }
+        public global::Novu.IntegrationsControllerSetIntegrationAsPrimaryResponse? Type947 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.IntegrationsControllerGenerateConnectOAuthUrlResponse? Type948 { get; set; }
+        public global::Novu.IntegrationsControllerGetChatOAuthUrlResponse? Type948 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.IntegrationsControllerGenerateLinkUserOAuthUrlResponse? Type949 { get; set; }
+        public global::Novu.IntegrationsControllerGenerateConnectOAuthUrlResponse? Type949 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.IntegrationsControllerLinkChannelEndpointResponse? Type950 { get; set; }
+        public global::Novu.IntegrationsControllerGenerateLinkUserOAuthUrlResponse? Type950 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.IntegrationsControllerConfigureIntegrationWebhookResponse? Type951 { get; set; }
+        public global::Novu.IntegrationsControllerLinkChannelEndpointResponse? Type951 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.IntegrationsControllerCreateIntegrationMobileLinkResponse? Type952 { get; set; }
+        public global::Novu.IntegrationsControllerConfigureIntegrationWebhookResponse? Type952 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ContextsControllerCreateContextResponse? Type953 { get; set; }
+        public global::Novu.IntegrationsControllerCreateIntegrationMobileLinkResponse? Type953 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ContextsControllerListContextsResponse? Type954 { get; set; }
+        public global::Novu.ContextsControllerCreateContextResponse? Type954 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ContextsControllerUpdateContextResponse? Type955 { get; set; }
+        public global::Novu.ContextsControllerListContextsResponse? Type955 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ContextsControllerGetContextResponse? Type956 { get; set; }
+        public global::Novu.ContextsControllerUpdateContextResponse? Type956 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersV1ControllerBulkCreateSubscribersResponse? Type957 { get; set; }
+        public global::Novu.ContextsControllerGetContextResponse? Type957 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersV1ControllerUpdateSubscriberChannelResponse? Type958 { get; set; }
+        public global::Novu.SubscribersV1ControllerBulkCreateSubscribersResponse? Type958 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersV1ControllerModifySubscriberChannelResponse? Type959 { get; set; }
+        public global::Novu.SubscribersV1ControllerUpdateSubscriberChannelResponse? Type959 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse? Type960 { get; set; }
+        public global::Novu.SubscribersV1ControllerModifySubscriberChannelResponse? Type960 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersV1ControllerGetNotificationsFeedResponse? Type961 { get; set; }
+        public global::Novu.SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse? Type961 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersV1ControllerGetUnseenCountResponse? Type962 { get; set; }
+        public global::Novu.SubscribersV1ControllerGetNotificationsFeedResponse? Type962 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersV1ControllerMarkMessagesAsResponse? Type963 { get; set; }
+        public global::Novu.SubscribersV1ControllerGetUnseenCountResponse? Type963 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse? Type964 { get; set; }
+        public global::Novu.SubscribersV1ControllerMarkMessagesAsResponse? Type964 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerSearchSubscribersResponse? Type965 { get; set; }
+        public global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse? Type965 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerCreateSubscriberResponse? Type966 { get; set; }
+        public global::Novu.SubscribersControllerSearchSubscribersResponse? Type966 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerGetSubscriberResponse? Type967 { get; set; }
+        public global::Novu.SubscribersControllerCreateSubscriberResponse? Type967 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerPatchSubscriberResponse? Type968 { get; set; }
+        public global::Novu.SubscribersControllerGetSubscriberResponse? Type968 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerRemoveSubscriberResponse? Type969 { get; set; }
+        public global::Novu.SubscribersControllerPatchSubscriberResponse? Type969 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerGetSubscriberPreferencesResponse? Type970 { get; set; }
+        public global::Novu.SubscribersControllerRemoveSubscriberResponse? Type970 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerUpdateSubscriberPreferencesResponse? Type971 { get; set; }
+        public global::Novu.SubscribersControllerGetSubscriberPreferencesResponse? Type971 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerBulkUpdateSubscriberPreferencesResponse? Type972 { get; set; }
+        public global::Novu.SubscribersControllerUpdateSubscriberPreferencesResponse? Type972 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Novu.GetPreferencesResponseDto>? Type973 { get; set; }
+        public global::Novu.SubscribersControllerBulkUpdateSubscriberPreferencesResponse? Type973 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerListSubscriberTopicsResponse? Type974 { get; set; }
+        public global::System.Collections.Generic.IList<global::Novu.GetPreferencesResponseDto>? Type974 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerGetSubscriberNotificationsResponse? Type975 { get; set; }
+        public global::Novu.SubscribersControllerListSubscriberTopicsResponse? Type975 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.SubscribersControllerGetSubscriberNotificationsCountResponse? Type976 { get; set; }
+        public global::Novu.SubscribersControllerGetSubscriberNotificationsResponse? Type976 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Novu.GetSubscriberNotificationsCountResponseDto>? Type977 { get; set; }
+        public global::Novu.SubscribersControllerGetSubscriberNotificationsCountResponse? Type977 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.LayoutsControllerCreateResponse? Type978 { get; set; }
+        public global::System.Collections.Generic.IList<global::Novu.GetSubscriberNotificationsCountResponseDto>? Type978 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.LayoutsControllerListResponse? Type979 { get; set; }
+        public global::Novu.LayoutsControllerCreateResponse? Type979 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.LayoutsControllerUpdateResponse? Type980 { get; set; }
+        public global::Novu.LayoutsControllerListResponse? Type980 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.LayoutsControllerGetResponse? Type981 { get; set; }
+        public global::Novu.LayoutsControllerUpdateResponse? Type981 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.LayoutsControllerDuplicateResponse? Type982 { get; set; }
+        public global::Novu.LayoutsControllerGetResponse? Type982 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.LayoutsControllerGeneratePreviewResponse? Type983 { get; set; }
+        public global::Novu.LayoutsControllerDuplicateResponse? Type983 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.LayoutsControllerGetUsageResponse? Type984 { get; set; }
+        public global::Novu.LayoutsControllerGeneratePreviewResponse? Type984 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.MessagesControllerDeleteMessageResponse? Type985 { get; set; }
+        public global::Novu.LayoutsControllerGetUsageResponse? Type985 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TopicsControllerListTopicsResponse? Type986 { get; set; }
+        public global::Novu.MessagesControllerDeleteMessageResponse? Type986 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TopicsControllerUpsertTopicResponse? Type987 { get; set; }
+        public global::Novu.TopicsControllerListTopicsResponse? Type987 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TopicsControllerUpsertTopicResponse2? Type988 { get; set; }
+        public global::Novu.TopicsControllerUpsertTopicResponse? Type988 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TopicsControllerGetTopicResponse? Type989 { get; set; }
+        public global::Novu.TopicsControllerUpsertTopicResponse2? Type989 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TopicsControllerUpdateTopicResponse? Type990 { get; set; }
+        public global::Novu.TopicsControllerGetTopicResponse? Type990 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TopicsControllerDeleteTopicResponse? Type991 { get; set; }
+        public global::Novu.TopicsControllerUpdateTopicResponse? Type991 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TopicsControllerListTopicSubscriptionsResponse? Type992 { get; set; }
+        public global::Novu.TopicsControllerDeleteTopicResponse? Type992 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TopicsControllerCreateTopicSubscriptionsResponse? Type993 { get; set; }
+        public global::Novu.TopicsControllerListTopicSubscriptionsResponse? Type993 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TopicsControllerGetTopicSubscriptionResponse? Type994 { get; set; }
+        public global::Novu.TopicsControllerCreateTopicSubscriptionsResponse? Type994 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.TopicsControllerUpdateTopicSubscriptionResponse? Type995 { get; set; }
+        public global::Novu.TopicsControllerGetTopicSubscriptionResponse? Type995 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EnvironmentVariablesControllerListEnvironmentVariablesResponse? Type996 { get; set; }
+        public global::Novu.TopicsControllerUpdateTopicSubscriptionResponse? Type996 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Novu.EnvironmentVariableResponseDto>? Type997 { get; set; }
+        public global::Novu.EnvironmentVariablesControllerListEnvironmentVariablesResponse? Type997 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EnvironmentVariablesControllerCreateEnvironmentVariableResponse? Type998 { get; set; }
+        public global::System.Collections.Generic.IList<global::Novu.EnvironmentVariableResponseDto>? Type998 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EnvironmentVariablesControllerGetEnvironmentVariableUsageResponse? Type999 { get; set; }
+        public global::Novu.EnvironmentVariablesControllerCreateEnvironmentVariableResponse? Type999 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EnvironmentVariablesControllerGetEnvironmentVariableResponse? Type1000 { get; set; }
+        public global::Novu.EnvironmentVariablesControllerGetEnvironmentVariableUsageResponse? Type1000 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EnvironmentVariablesControllerUpdateEnvironmentVariableResponse? Type1001 { get; set; }
+        public global::Novu.EnvironmentVariablesControllerGetEnvironmentVariableResponse? Type1001 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.WorkflowControllerCreateResponse? Type1002 { get; set; }
+        public global::Novu.EnvironmentVariablesControllerUpdateEnvironmentVariableResponse? Type1002 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.WorkflowControllerSearchWorkflowsResponse? Type1003 { get; set; }
+        public global::Novu.WorkflowControllerCreateResponse? Type1003 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.WorkflowControllerSyncResponse? Type1004 { get; set; }
+        public global::Novu.WorkflowControllerSearchWorkflowsResponse? Type1004 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.WorkflowControllerUpdateResponse? Type1005 { get; set; }
+        public global::Novu.WorkflowControllerSyncResponse? Type1005 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.WorkflowControllerGetWorkflowResponse? Type1006 { get; set; }
+        public global::Novu.WorkflowControllerUpdateResponse? Type1006 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.WorkflowControllerPatchWorkflowResponse? Type1007 { get; set; }
+        public global::Novu.WorkflowControllerGetWorkflowResponse? Type1007 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.WorkflowControllerGeneratePreviewResponse? Type1008 { get; set; }
+        public global::Novu.WorkflowControllerPatchWorkflowResponse? Type1008 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.WorkflowControllerGetWorkflowStepDataResponse? Type1009 { get; set; }
+        public global::Novu.WorkflowControllerGeneratePreviewResponse? Type1009 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EnvironmentsControllerGetEnvironmentTagsResponse? Type1010 { get; set; }
+        public global::Novu.WorkflowControllerGetWorkflowStepDataResponse? Type1010 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Novu.GetEnvironmentTagsDto>? Type1011 { get; set; }
+        public global::Novu.EnvironmentsControllerGetEnvironmentTagsResponse? Type1011 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EnvironmentsControllerPublishEnvironmentResponse? Type1012 { get; set; }
+        public global::System.Collections.Generic.IList<global::Novu.GetEnvironmentTagsDto>? Type1012 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.EnvironmentsControllerDiffEnvironmentResponse? Type1013 { get; set; }
+        public global::Novu.EnvironmentsControllerPublishEnvironmentResponse? Type1013 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChannelConnectionsControllerListChannelConnectionsResponse? Type1014 { get; set; }
+        public global::Novu.EnvironmentsControllerDiffEnvironmentResponse? Type1014 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChannelConnectionsControllerCreateChannelConnectionResponse? Type1015 { get; set; }
+        public global::Novu.ChannelConnectionsControllerListChannelConnectionsResponse? Type1015 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse? Type1016 { get; set; }
+        public global::Novu.ChannelConnectionsControllerCreateChannelConnectionResponse? Type1016 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChannelConnectionsControllerUpdateChannelConnectionResponse? Type1017 { get; set; }
+        public global::Novu.ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse? Type1017 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChannelEndpointsControllerListChannelEndpointsResponse? Type1018 { get; set; }
+        public global::Novu.ChannelConnectionsControllerUpdateChannelConnectionResponse? Type1018 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChannelEndpointsControllerCreateChannelEndpointResponse? Type1019 { get; set; }
+        public global::Novu.ChannelEndpointsControllerListChannelEndpointsResponse? Type1019 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChannelEndpointsControllerGetChannelEndpointResponse? Type1020 { get; set; }
+        public global::Novu.ChannelEndpointsControllerCreateChannelEndpointResponse? Type1020 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.ChannelEndpointsControllerUpdateChannelEndpointResponse? Type1021 { get; set; }
+        public global::Novu.ChannelEndpointsControllerGetChannelEndpointResponse? Type1021 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Novu.WebhookResultDto>? Type1022 { get; set; }
+        public global::Novu.ChannelEndpointsControllerUpdateChannelEndpointResponse? Type1022 { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Novu.WebhookResultDto>? Type1023 { get; set; }
 
         /// <summary>
         ///

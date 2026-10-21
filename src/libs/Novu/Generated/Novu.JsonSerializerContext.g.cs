@@ -927,6 +927,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainsOrderDirection), TypeInfoPropertyName = "DomainsControllerListDomainsOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainRoutesOrderDirection), TypeInfoPropertyName = "DomainsControllerListDomainRoutesOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContextsControllerListContextsOrderDirection), TypeInfoPropertyName = "ContextsControllerListContextsOrderDirection2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenType), TypeInfoPropertyName = "SubscribersV1ControllerMarkActionAsSeenType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerSearchSubscribersOrderDirection), TypeInfoPropertyName = "SubscribersControllerSearchSubscribersOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerGetSubscriberPreferencesCriticality), TypeInfoPropertyName = "SubscribersControllerGetSubscriberPreferencesCriticality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerListSubscriberTopicsOrderDirection), TypeInfoPropertyName = "SubscribersControllerListSubscriberTopicsOrderDirection2")]
@@ -1018,7 +1019,6 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerCreateResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerUpdateResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerGetResponse))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1037,6 +1037,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_c8c997b666659e86")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_0421199e9dafb346")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerGetResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerDuplicateResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerGeneratePreviewResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.LayoutsControllerGetUsageResponse))]
@@ -1359,6 +1360,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainsOrderDirection?), TypeInfoPropertyName = "NullableDomainsControllerListDomainsOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainRoutesOrderDirection?), TypeInfoPropertyName = "NullableDomainsControllerListDomainRoutesOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ContextsControllerListContextsOrderDirection?), TypeInfoPropertyName = "NullableContextsControllerListContextsOrderDirection2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenType?), TypeInfoPropertyName = "NullableSubscribersV1ControllerMarkActionAsSeenType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerSearchSubscribersOrderDirection?), TypeInfoPropertyName = "NullableSubscribersControllerSearchSubscribersOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerGetSubscriberPreferencesCriticality?), TypeInfoPropertyName = "NullableSubscribersControllerGetSubscriberPreferencesCriticality2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerListSubscriberTopicsOrderDirection?), TypeInfoPropertyName = "NullableSubscribersControllerListSubscriberTopicsOrderDirection2")]
@@ -2512,6 +2514,10 @@ namespace Novu
                     || typeToConvert == typeof(global::Novu.ContextsControllerListContextsOrderDirection)
 
                     || typeToConvert == typeof(global::Novu.ContextsControllerListContextsOrderDirection?)
+
+                    || typeToConvert == typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenType)
+
+                    || typeToConvert == typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenType?)
 
                     || typeToConvert == typeof(global::Novu.SubscribersControllerSearchSubscribersOrderDirection)
 
@@ -4768,6 +4774,16 @@ namespace Novu
                 if (typeToConvert == typeof(global::Novu.ContextsControllerListContextsOrderDirection?))
                 {
                     return new global::Novu.JsonConverters.ContextsControllerListContextsOrderDirectionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenType))
+                {
+                    return new global::Novu.JsonConverters.SubscribersV1ControllerMarkActionAsSeenTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenType?))
+                {
+                    return new global::Novu.JsonConverters.SubscribersV1ControllerMarkActionAsSeenTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Novu.SubscribersControllerSearchSubscribersOrderDirection))

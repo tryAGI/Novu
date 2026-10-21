@@ -6,14 +6,46 @@ namespace Novu
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class SubscribersV1ControllerMarkActionAsSeenType
+    public enum SubscribersV1ControllerMarkActionAsSeenType
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Primary,
+        /// <summary>
+        ///
+        /// </summary>
+        Secondary,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class SubscribersV1ControllerMarkActionAsSeenTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this SubscribersV1ControllerMarkActionAsSeenType value)
+        {
+            return value switch
+            {
+                SubscribersV1ControllerMarkActionAsSeenType.Primary => "primary",
+                SubscribersV1ControllerMarkActionAsSeenType.Secondary => "secondary",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static SubscribersV1ControllerMarkActionAsSeenType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "primary" => SubscribersV1ControllerMarkActionAsSeenType.Primary,
+                "secondary" => SubscribersV1ControllerMarkActionAsSeenType.Secondary,
+                _ => null,
+            };
+        }
     }
 }

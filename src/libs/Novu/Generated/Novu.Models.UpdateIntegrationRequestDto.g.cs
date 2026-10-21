@@ -65,7 +65,7 @@ namespace Novu
         /// Configurations for the integration
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configurations")]
-        public object? Configurations { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Configurations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -102,7 +102,7 @@ namespace Novu
             global::Novu.CredentialsDto? credentials,
             bool? check,
             object? rules,
-            object? configurations)
+            global::System.Collections.Generic.Dictionary<string, string>? configurations)
         {
             this.Name = name;
             this.Identifier = identifier;

@@ -70,8 +70,12 @@ namespace Novu
         /// List all workflows<br/>
         /// Retrieves a list of workflows with optional filtering and pagination
         /// </summary>
-        /// <param name="limit"></param>
-        /// <param name="offset"></param>
+        /// <param name="limit">
+        /// Example: 10
+        /// </param>
+        /// <param name="offset">
+        /// Example: 0
+        /// </param>
         /// <param name="orderDirection"></param>
         /// <param name="orderBy"></param>
         /// <param name="query"></param>
@@ -109,8 +113,12 @@ namespace Novu
         /// List all workflows<br/>
         /// Retrieves a list of workflows with optional filtering and pagination
         /// </summary>
-        /// <param name="limit"></param>
-        /// <param name="offset"></param>
+        /// <param name="limit">
+        /// Example: 10
+        /// </param>
+        /// <param name="offset">
+        /// Example: 0
+        /// </param>
         /// <param name="orderDirection"></param>
         /// <param name="orderBy"></param>
         /// <param name="query"></param>

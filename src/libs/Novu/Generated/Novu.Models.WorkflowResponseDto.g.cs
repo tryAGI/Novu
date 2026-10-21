@@ -120,7 +120,7 @@ namespace Novu
         public required global::System.Collections.Generic.IList<global::Novu.StepsItem> Steps { get; set; }
 
         /// <summary>
-        /// Workflow origin
+        /// Origin of the workflow
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("origin")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.ResourceOriginEnumJsonConverter))]
@@ -135,7 +135,7 @@ namespace Novu
         public required global::Novu.WorkflowPreferencesResponseDto Preferences { get; set; }
 
         /// <summary>
-        /// Workflow status
+        /// Status of the workflow
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.WorkflowStatusEnumJsonConverter))]
@@ -161,7 +161,7 @@ namespace Novu
         public object? PayloadExample { get; set; }
 
         /// <summary>
-        /// Workflow severity
+        /// Severity of the workflow
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.SeverityLevelEnumJsonConverter))]
@@ -199,16 +199,16 @@ namespace Novu
         /// Steps of the workflow
         /// </param>
         /// <param name="origin">
-        /// Workflow origin
+        /// Origin of the workflow
         /// </param>
         /// <param name="preferences">
         /// Preferences for the workflow
         /// </param>
         /// <param name="status">
-        /// Workflow status
+        /// Status of the workflow
         /// </param>
         /// <param name="severity">
-        /// Workflow severity
+        /// Severity of the workflow
         /// </param>
         /// <param name="description">
         /// Description of the workflow

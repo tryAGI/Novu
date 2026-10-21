@@ -12,12 +12,16 @@ namespace Novu
         /// <param name="topicKey"></param>
         /// <param name="after"></param>
         /// <param name="before"></param>
-        /// <param name="limit"></param>
+        /// <param name="limit">
+        /// Example: 10
+        /// </param>
         /// <param name="orderDirection"></param>
         /// <param name="orderBy"></param>
         /// <param name="includeCursor"></param>
         /// <param name="subscriberId"></param>
-        /// <param name="contextKeys"></param>
+        /// <param name="contextKeys">
+        /// Example: [tenant:org-123, region:us-east-1]
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>
@@ -41,12 +45,16 @@ namespace Novu
         /// <param name="topicKey"></param>
         /// <param name="after"></param>
         /// <param name="before"></param>
-        /// <param name="limit"></param>
+        /// <param name="limit">
+        /// Example: 10
+        /// </param>
         /// <param name="orderDirection"></param>
         /// <param name="orderBy"></param>
         /// <param name="includeCursor"></param>
         /// <param name="subscriberId"></param>
-        /// <param name="contextKeys"></param>
+        /// <param name="contextKeys">
+        /// Example: [tenant:org-123, region:us-east-1]
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Novu.ApiException"></exception>

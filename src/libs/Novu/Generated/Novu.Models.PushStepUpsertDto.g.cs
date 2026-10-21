@@ -28,12 +28,14 @@ namespace Novu
         public required string Name { get; set; }
 
         /// <summary>
-        /// Type of the step
+        /// Type of the step<br/>
+        /// Default Value: push
         /// </summary>
+        /// <default>global::Novu.StepTypeEnum.Push</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.StepTypeEnumJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Novu.StepTypeEnum Type { get; set; }
+        public required global::Novu.StepTypeEnum Type { get; set; } = global::Novu.StepTypeEnum.Push;
 
         /// <summary>
         /// Control values for the Push step.
@@ -55,7 +57,8 @@ namespace Novu
         /// Name of the step
         /// </param>
         /// <param name="type">
-        /// Type of the step
+        /// Type of the step<br/>
+        /// Default Value: push
         /// </param>
         /// <param name="id">
         /// Database identifier of the step. Used for updating the step.
