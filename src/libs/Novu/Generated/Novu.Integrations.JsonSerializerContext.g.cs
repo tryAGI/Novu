@@ -36,6 +36,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.StepFilterDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CredentialsDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CredentialsDtoHmacSecretKeyEncoding), TypeInfoPropertyName = "CredentialsDtoHmacSecretKeyEncoding2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CredentialsDtoAuthMethod), TypeInfoPropertyName = "CredentialsDtoAuthMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ConfigurationsDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationResponseDtoChannel), TypeInfoPropertyName = "IntegrationResponseDtoChannel2")]
@@ -87,6 +88,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.FieldFilterPartDtoOn?), TypeInfoPropertyName = "NullableFieldFilterPartDtoOn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepFilterDtoValue?), TypeInfoPropertyName = "NullableStepFilterDtoValue2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CredentialsDtoHmacSecretKeyEncoding?), TypeInfoPropertyName = "NullableCredentialsDtoHmacSecretKeyEncoding2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CredentialsDtoAuthMethod?), TypeInfoPropertyName = "NullableCredentialsDtoAuthMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationResponseDtoChannel?), TypeInfoPropertyName = "NullableIntegrationResponseDtoChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.IntegrationResponseDtoKind?), TypeInfoPropertyName = "NullableIntegrationResponseDtoKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
@@ -217,6 +219,10 @@ namespace Novu
 
                     || typeToConvert == typeof(global::Novu.CredentialsDtoHmacSecretKeyEncoding?)
 
+                    || typeToConvert == typeof(global::Novu.CredentialsDtoAuthMethod)
+
+                    || typeToConvert == typeof(global::Novu.CredentialsDtoAuthMethod?)
+
                     || typeToConvert == typeof(global::Novu.IntegrationResponseDtoChannel)
 
                     || typeToConvert == typeof(global::Novu.IntegrationResponseDtoChannel?)
@@ -298,6 +304,16 @@ namespace Novu
                 if (typeToConvert == typeof(global::Novu.CredentialsDtoHmacSecretKeyEncoding?))
                 {
                     return new global::Novu.JsonConverters.CredentialsDtoHmacSecretKeyEncodingNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.CredentialsDtoAuthMethod))
+                {
+                    return new global::Novu.JsonConverters.CredentialsDtoAuthMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.CredentialsDtoAuthMethod?))
+                {
+                    return new global::Novu.JsonConverters.CredentialsDtoAuthMethodNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Novu.IntegrationResponseDtoChannel))

@@ -74414,6 +74414,13 @@
               "hex"
             ]
           },
+          "authMethod": {
+            "type": "string",
+            "description": "Twilio: `apiKey` authenticates with `apiKey` (API Key SID) and `secretKey` (API Key Secret) on behalf of `accountSid`. When omitted, `token` (Auth Token) is used.",
+            "enum": [
+              "apiKey"
+            ]
+          },
           "domain": {
             "type": "string"
           },

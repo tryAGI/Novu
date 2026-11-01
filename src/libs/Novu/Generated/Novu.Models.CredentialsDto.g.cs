@@ -34,6 +34,13 @@ namespace Novu
         public global::Novu.CredentialsDtoHmacSecretKeyEncoding? HmacSecretKeyEncoding { get; set; }
 
         /// <summary>
+        /// Twilio: `apiKey` authenticates with `apiKey` (API Key SID) and `secretKey` (API Key Secret) on behalf of `accountSid`. When omitted, `token` (Auth Token) is used.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("authMethod")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.CredentialsDtoAuthMethodJsonConverter))]
+        public global::Novu.CredentialsDtoAuthMethod? AuthMethod { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
@@ -372,6 +379,9 @@ namespace Novu
         /// <param name="hmacSecretKeyEncoding">
         /// Email webhook: how `secretKey` is interpreted when signing webhook calls. `text` signs with the raw UTF-8 bytes; `base64`/`hex` decode it to binary first (e.g. for AWS KMS).
         /// </param>
+        /// <param name="authMethod">
+        /// Twilio: `apiKey` authenticates with `apiKey` (API Key SID) and `secretKey` (API Key Secret) on behalf of `accountSid`. When omitted, `token` (Auth Token) is used.
+        /// </param>
         /// <param name="domain"></param>
         /// <param name="password"></param>
         /// <param name="host"></param>
@@ -444,6 +454,7 @@ namespace Novu
             string? user,
             string? secretKey,
             global::Novu.CredentialsDtoHmacSecretKeyEncoding? hmacSecretKeyEncoding,
+            global::Novu.CredentialsDtoAuthMethod? authMethod,
             string? domain,
             string? password,
             string? host,
@@ -503,6 +514,7 @@ namespace Novu
             this.User = user;
             this.SecretKey = secretKey;
             this.HmacSecretKeyEncoding = hmacSecretKeyEncoding;
+            this.AuthMethod = authMethod;
             this.Domain = domain;
             this.Password = password;
             this.Host = host;
