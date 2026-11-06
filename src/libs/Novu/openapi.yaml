@@ -46056,7 +46056,7 @@
       },
       "delete": {
         "description": "Removes a specific layout by its unique identifier **layoutId**",
-        "operationId": "LayoutsController__delete",
+        "operationId": "LayoutsController_delete",
         "parameters": [
           {
             "name": "layoutId",
@@ -69831,7 +69831,7 @@
             "type": "string",
             "pattern": "^#?([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$",
             "description": "Hex color code for the environment",
-            "example": "#3498db"
+            "example": "#3498DB"
           }
         },
         "required": [
@@ -72423,7 +72423,7 @@
             "default": true
           },
           "reactionOnResolved": {
-            "type": "object",
+            "type": "string",
             "nullable": true,
             "description": "Cross-platform emoji name for resolved conversations (e.g. \"check\", \"star\"). Set to null to disable. Default: \"check\"",
             "default": "check"
@@ -73336,8 +73336,26 @@
             "example": "crm:ticketId"
           },
           "value": {
-            "type": "object",
             "description": "JSON-serializable value to store.",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "object",
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {}
+              }
+            ],
             "example": "TCK-1001"
           }
         },
@@ -73475,7 +73493,7 @@
           },
           "card": {
             "description": "Markdown, HITL chrome, or a posted Card element (`type: \"card\"`) from `{ render }`.",
-            "oneOf": [
+            "anyOf": [
               {
                 "type": "object",
                 "additionalProperties": true,

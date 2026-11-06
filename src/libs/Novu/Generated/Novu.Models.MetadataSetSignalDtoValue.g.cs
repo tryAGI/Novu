@@ -4,8 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// JSON-serializable value to store.<br/>
-    /// Example: TCK-1001
+    ///
     /// </summary>
     public sealed partial class MetadataSetSignalDtoValue
     {

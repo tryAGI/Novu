@@ -27,9 +27,9 @@ namespace Novu
 
         /// <summary>
         /// Hex color code for the environment<br/>
-        /// Example: #3498db
+        /// Example: #3498DB
         /// </summary>
-        /// <example>#3498db</example>
+        /// <example>#3498DB</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("color")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Color { get; set; }
@@ -49,7 +49,7 @@ namespace Novu
         /// </param>
         /// <param name="color">
         /// Hex color code for the environment<br/>
-        /// Example: #3498db
+        /// Example: #3498DB
         /// </param>
         /// <param name="parentId">
         /// MongoDB ObjectId of the parent environment (optional)<br/>

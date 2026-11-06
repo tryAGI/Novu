@@ -4,10 +4,9 @@
 namespace Novu
 {
     /// <summary>
-    /// Cross-platform emoji name for resolved conversations (e.g. "check", "star"). Set to null to disable. Default: "check"<br/>
-    /// Default Value: check
+    ///
     /// </summary>
-    public sealed partial class AgentBehaviorDtoReactionOnResolved
+    public sealed partial class MetadataSetSignalDtoValueItem
     {
 
         /// <summary>

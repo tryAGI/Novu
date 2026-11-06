@@ -27,6 +27,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ValidationErrorDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Novu.ConstraintValidation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelTypeEnum), TypeInfoPropertyName = "ChannelTypeEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoSubscriberAccess), TypeInfoPropertyName = "AgentBehaviorDtoSubscriberAccess2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoReplyPolicy), TypeInfoPropertyName = "AgentBehaviorDtoReplyPolicy2")]
@@ -73,6 +74,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MetadataSetSignalDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MetadataSetSignalDtoType), TypeInfoPropertyName = "MetadataSetSignalDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MetadataSetSignalDtoAction), TypeInfoPropertyName = "MetadataSetSignalDtoAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, double?, bool?, object, global::System.Collections.Generic.IList<object>>), TypeInfoPropertyName = "OneOfStringDoubleBooleanObjectIListObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MetadataDeleteSignalDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MetadataDeleteSignalDtoType), TypeInfoPropertyName = "MetadataDeleteSignalDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MetadataDeleteSignalDtoAction), TypeInfoPropertyName = "MetadataDeleteSignalDtoAction2")]
@@ -129,6 +131,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.MarkdownReplyContentDto, global::Novu.CardReplyContentDto, global::Novu.ToolApprovalCardReplyContentDto>?), TypeInfoPropertyName = "NullableOneOfMarkdownReplyContentDtoCardReplyContentDtoToolApprovalCardReplyContentDto2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MetadataSetSignalDtoType?), TypeInfoPropertyName = "NullableMetadataSetSignalDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MetadataSetSignalDtoAction?), TypeInfoPropertyName = "NullableMetadataSetSignalDtoAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, double?, bool?, object, global::System.Collections.Generic.IList<object>>?), TypeInfoPropertyName = "NullableOneOfStringDoubleBooleanObjectIListObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MetadataDeleteSignalDtoType?), TypeInfoPropertyName = "NullableMetadataDeleteSignalDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MetadataDeleteSignalDtoAction?), TypeInfoPropertyName = "NullableMetadataDeleteSignalDtoAction2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.MetadataClearSignalDtoType?), TypeInfoPropertyName = "NullableMetadataClearSignalDtoType2")]
@@ -154,6 +157,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.AgentResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.AgentIntegrationResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.FileRefDto>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, double?, bool?, object, global::System.Collections.Generic.List<object>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, object, global::System.Collections.Generic.List<global::Novu.OneOf<string, object>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.OneOf<string, object>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<string, global::System.Collections.Generic.List<string>>))]
@@ -219,6 +223,7 @@ namespace Novu
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
             options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<global::Novu.MarkdownReplyContentDto, global::Novu.CardReplyContentDto, global::Novu.ToolApprovalCardReplyContentDto>());
+            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<object>>());
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::Novu.OneOf<string, object>>>());
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, object>());
             options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
