@@ -38,8 +38,9 @@ namespace Novu
         /// </summary>
         /// <example>TCK-1001</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<object>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Value { get; set; }
+        public required global::Novu.OneOf<string, double?, bool?, object, global::System.Collections.Generic.IList<object>> Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,14 +69,14 @@ namespace Novu
 #endif
         public MetadataSetSignalDto(
             string key,
-            object value,
+            global::Novu.OneOf<string, double?, bool?, object, global::System.Collections.Generic.IList<object>> value,
             global::Novu.MetadataSetSignalDtoType type,
             global::Novu.MetadataSetSignalDtoAction? action)
         {
             this.Type = type;
             this.Action = action;
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
-            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.Value = value;
         }
 
         /// <summary>

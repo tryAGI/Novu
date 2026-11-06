@@ -20,7 +20,7 @@ namespace Novu
         /// Default Value: check
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactionOnResolved")]
-        public object? ReactionOnResolved { get; set; }
+        public string? ReactionOnResolved { get; set; }
 
         /// <summary>
         /// Controls whether the agent accepts inbound messages from senders not yet linked to a subscriber, across all channels. "open" on managed agents auto-creates a lightweight subscriber so the agent can reply; on custom-code / self-hosted agents, the turn is forwarded to the bridge with a null subscriber. "restricted" rejects unknown senders with a managed denial reply (any runtime). Optional on update (partial PATCH). Persisted agents always have a value — managed create defaults to "open"; self-hosted create defaults to "restricted".
@@ -66,7 +66,7 @@ namespace Novu
 #endif
         public AgentBehaviorDto(
             bool? acknowledgeOnReceived,
-            object? reactionOnResolved,
+            string? reactionOnResolved,
             global::Novu.AgentBehaviorDtoSubscriberAccess? subscriberAccess,
             global::Novu.AgentBehaviorDtoReplyPolicy? replyPolicy)
         {
