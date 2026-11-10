@@ -85476,6 +85476,11 @@
           "externalId": {
             "type": "string",
             "description": "User external ID"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true,
+            "description": "User email, used when the user has no name"
           }
         },
         "required": [

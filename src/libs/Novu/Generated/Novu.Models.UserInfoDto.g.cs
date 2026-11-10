@@ -35,6 +35,12 @@ namespace Novu
         public string? ExternalId { get; set; }
 
         /// <summary>
+        /// User email, used when the user has no name
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("email")]
+        public string? Email { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,6 +61,9 @@ namespace Novu
         /// <param name="externalId">
         /// User external ID
         /// </param>
+        /// <param name="email">
+        /// User email, used when the user has no name
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,12 +71,14 @@ namespace Novu
             string id,
             string firstName,
             string? lastName,
-            string? externalId)
+            string? externalId,
+            string? email)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.FirstName = firstName ?? throw new global::System.ArgumentNullException(nameof(firstName));
             this.LastName = lastName;
             this.ExternalId = externalId;
+            this.Email = email;
         }
 
         /// <summary>
