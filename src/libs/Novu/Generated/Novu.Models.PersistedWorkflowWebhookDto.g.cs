@@ -147,13 +147,13 @@ namespace Novu
         /// User who last updated the workflow
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_updatedBy")]
-        public string? UpdatedBy { get; set; }
+        public string? UpdatedById { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updatedBy")]
-        public global::Novu.UserResponseDto? UpdatedBy2 { get; set; }
+        public global::Novu.UserResponseDto? UpdatedBy { get; set; }
 
         /// <summary>
         /// Whether the workflow is a blueprint
@@ -248,13 +248,13 @@ namespace Novu
         /// User who last published the workflow
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_lastPublishedBy")]
-        public string? LastPublishedBy { get; set; }
+        public string? LastPublishedById { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lastPublishedBy")]
-        public global::Novu.UserResponseDto? LastPublishedBy2 { get; set; }
+        public global::Novu.UserResponseDto? LastPublishedBy { get; set; }
 
         /// <summary>
         /// User-specific preferences included by workflow patch events
@@ -348,10 +348,10 @@ namespace Novu
         /// <param name="updatedAt">
         /// Last updated timestamp
         /// </param>
-        /// <param name="updatedBy">
+        /// <param name="updatedById">
         /// User who last updated the workflow
         /// </param>
-        /// <param name="updatedBy2"></param>
+        /// <param name="updatedBy"></param>
         /// <param name="blueprintId">
         /// Blueprint identifier
         /// </param>
@@ -386,10 +386,10 @@ namespace Novu
         /// <param name="lastPublishedAt">
         /// Timestamp of the last workflow publication
         /// </param>
-        /// <param name="lastPublishedBy">
+        /// <param name="lastPublishedById">
         /// User who last published the workflow
         /// </param>
-        /// <param name="lastPublishedBy2"></param>
+        /// <param name="lastPublishedBy"></param>
         /// <param name="userPreferences">
         /// User-specific preferences included by workflow patch events
         /// </param>
@@ -425,8 +425,8 @@ namespace Novu
             string? deletedBy,
             string? createdAt,
             string? updatedAt,
-            string? updatedBy,
-            global::Novu.UserResponseDto? updatedBy2,
+            string? updatedById,
+            global::Novu.UserResponseDto? updatedBy,
             string? blueprintId,
             object? data,
             global::Novu.ResourceTypeEnum? type,
@@ -439,8 +439,8 @@ namespace Novu
             global::Novu.WorkflowStatusEnum? status,
             string? lastTriggeredAt,
             string? lastPublishedAt,
-            string? lastPublishedBy,
-            global::Novu.UserResponseDto? lastPublishedBy2,
+            string? lastPublishedById,
+            global::Novu.UserResponseDto? lastPublishedBy,
             global::Novu.WorkflowPreferencesDto? userPreferences,
             global::Novu.WorkflowPreferencesDto? defaultPreferences,
             global::Novu.SeverityLevelEnum? severity)
@@ -465,8 +465,8 @@ namespace Novu
             this.DeletedBy = deletedBy;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.UpdatedById = updatedById;
             this.UpdatedBy = updatedBy;
-            this.UpdatedBy2 = updatedBy2;
             this.IsBlueprint = isBlueprint;
             this.BlueprintId = blueprintId;
             this.Data = data;
@@ -481,8 +481,8 @@ namespace Novu
             this.Status = status;
             this.LastTriggeredAt = lastTriggeredAt;
             this.LastPublishedAt = lastPublishedAt;
+            this.LastPublishedById = lastPublishedById;
             this.LastPublishedBy = lastPublishedBy;
-            this.LastPublishedBy2 = lastPublishedBy2;
             this.UserPreferences = userPreferences;
             this.DefaultPreferences = defaultPreferences;
             this.Severity = severity;
