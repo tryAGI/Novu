@@ -70754,6 +70754,7 @@
         "properties": {
           "firstName": {
             "type": "string",
+            "nullable": true,
             "description": "First name of the subscriber"
           },
           "subscriberId": {
@@ -70766,14 +70767,17 @@
           },
           "lastName": {
             "type": "string",
+            "nullable": true,
             "description": "Last name of the subscriber"
           },
           "email": {
             "type": "string",
+            "nullable": true,
             "description": "Email address of the subscriber"
           },
           "phone": {
             "type": "string",
+            "nullable": true,
             "description": "Phone number of the subscriber"
           }
         },
@@ -88987,7 +88991,8 @@
           },
           "_updatedBy": {
             "type": "string",
-            "description": "User who last updated the workflow"
+            "description": "User who last updated the workflow",
+            "x-speakeasy-name-override": "updatedById"
           },
           "updatedBy": {
             "$ref": "#/components/schemas/UserResponseDto"
@@ -89076,7 +89081,8 @@
           },
           "_lastPublishedBy": {
             "type": "string",
-            "description": "User who last published the workflow"
+            "description": "User who last published the workflow",
+            "x-speakeasy-name-override": "lastPublishedById"
           },
           "lastPublishedBy": {
             "$ref": "#/components/schemas/UserResponseDto"
