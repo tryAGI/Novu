@@ -12,7 +12,7 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
-        public global::Novu.CreateWorkflowDtoStepDiscriminatorType? Type { get; }
+        public global::Novu.UpdateWorkflowDtoStepDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -677,7 +677,7 @@ namespace Novu
         ///
         /// </summary>
         public StepsItem2(
-            global::Novu.CreateWorkflowDtoStepDiscriminatorType? type,
+            global::Novu.UpdateWorkflowDtoStepDiscriminatorType? type,
             global::Novu.InAppStepUpsertDto? inApp,
             global::Novu.EmailStepUpsertDto? email,
             global::Novu.SmsStepUpsertDto? sms,
