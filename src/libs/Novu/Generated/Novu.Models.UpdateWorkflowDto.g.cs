@@ -70,7 +70,7 @@ namespace Novu
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("steps")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Novu.StepsItem3> Steps { get; set; }
+        public required global::System.Collections.Generic.IList<global::Novu.StepsItem2> Steps { get; set; }
 
         /// <summary>
         /// Workflow preferences
@@ -148,7 +148,7 @@ namespace Novu
 #endif
         public UpdateWorkflowDto(
             string name,
-            global::System.Collections.Generic.IList<global::Novu.StepsItem3> steps,
+            global::System.Collections.Generic.IList<global::Novu.StepsItem2> steps,
             global::Novu.PreferencesRequestDto preferences,
             string? description,
             global::System.Collections.Generic.IList<string>? tags,

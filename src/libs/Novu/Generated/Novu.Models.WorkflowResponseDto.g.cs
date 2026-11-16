@@ -117,7 +117,7 @@ namespace Novu
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("steps")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Novu.StepsItem> Steps { get; set; }
+        public required global::System.Collections.Generic.IList<global::Novu.StepsItem3> Steps { get; set; }
 
         /// <summary>
         /// Origin of the workflow
@@ -261,7 +261,7 @@ namespace Novu
             string slug,
             string updatedAt,
             string createdAt,
-            global::System.Collections.Generic.IList<global::Novu.StepsItem> steps,
+            global::System.Collections.Generic.IList<global::Novu.StepsItem3> steps,
             global::Novu.ResourceOriginEnum origin,
             global::Novu.WorkflowPreferencesResponseDto preferences,
             global::Novu.WorkflowStatusEnum status,

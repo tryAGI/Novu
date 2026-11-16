@@ -86,7 +86,7 @@ namespace Novu
         global::System.Threading.Tasks.Task<global::Novu.WorkflowControllerUpdateResponse> WorkflowControllerUpdateAsync(
             string workflowId,
             string name,
-            global::System.Collections.Generic.IList<global::Novu.StepsItem3> steps,
+            global::System.Collections.Generic.IList<global::Novu.StepsItem2> steps,
             global::Novu.PreferencesRequestDto preferences,
             string? description = default,
             global::System.Collections.Generic.IList<string>? tags = default,

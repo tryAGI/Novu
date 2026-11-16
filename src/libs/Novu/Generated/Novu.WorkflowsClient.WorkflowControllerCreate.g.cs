@@ -966,7 +966,7 @@ namespace Novu
         public async global::System.Threading.Tasks.Task<global::Novu.WorkflowControllerCreateResponse> WorkflowControllerCreateAsync(
             string name,
             string workflowId,
-            global::System.Collections.Generic.IList<global::Novu.StepsItem2> steps,
+            global::System.Collections.Generic.IList<global::Novu.StepsItem> steps,
             string? description = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             bool? active = default,

@@ -17,82 +17,82 @@ namespace Novu.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CreateWorkflowDtoStepDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CreateWorkflowDtoStepDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CreateWorkflowDtoStepDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.UpdateWorkflowDtoStepDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.UpdateWorkflowDtoStepDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.UpdateWorkflowDtoStepDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Novu.InAppStepUpsertDto? inApp = default;
-            if (discriminator?.Type == global::Novu.CreateWorkflowDtoStepDiscriminatorType.InApp)
+            if (discriminator?.Type == global::Novu.UpdateWorkflowDtoStepDiscriminatorType.InApp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.InAppStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.InAppStepUpsertDto> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.InAppStepUpsertDto)}");
                 inApp = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Novu.EmailStepUpsertDto? email = default;
-            if (discriminator?.Type == global::Novu.CreateWorkflowDtoStepDiscriminatorType.Email)
+            if (discriminator?.Type == global::Novu.UpdateWorkflowDtoStepDiscriminatorType.Email)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.EmailStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.EmailStepUpsertDto> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.EmailStepUpsertDto)}");
                 email = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Novu.SmsStepUpsertDto? sms = default;
-            if (discriminator?.Type == global::Novu.CreateWorkflowDtoStepDiscriminatorType.Sms)
+            if (discriminator?.Type == global::Novu.UpdateWorkflowDtoStepDiscriminatorType.Sms)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.SmsStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.SmsStepUpsertDto> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.SmsStepUpsertDto)}");
                 sms = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Novu.PushStepUpsertDto? push = default;
-            if (discriminator?.Type == global::Novu.CreateWorkflowDtoStepDiscriminatorType.Push)
+            if (discriminator?.Type == global::Novu.UpdateWorkflowDtoStepDiscriminatorType.Push)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.PushStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.PushStepUpsertDto> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.PushStepUpsertDto)}");
                 push = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Novu.ChatStepUpsertDto? chat = default;
-            if (discriminator?.Type == global::Novu.CreateWorkflowDtoStepDiscriminatorType.Chat)
+            if (discriminator?.Type == global::Novu.UpdateWorkflowDtoStepDiscriminatorType.Chat)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.ChatStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.ChatStepUpsertDto> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.ChatStepUpsertDto)}");
                 chat = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Novu.DelayStepUpsertDto? delay = default;
-            if (discriminator?.Type == global::Novu.CreateWorkflowDtoStepDiscriminatorType.Delay)
+            if (discriminator?.Type == global::Novu.UpdateWorkflowDtoStepDiscriminatorType.Delay)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.DelayStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.DelayStepUpsertDto> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.DelayStepUpsertDto)}");
                 delay = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Novu.DigestStepUpsertDto? digest = default;
-            if (discriminator?.Type == global::Novu.CreateWorkflowDtoStepDiscriminatorType.Digest)
+            if (discriminator?.Type == global::Novu.UpdateWorkflowDtoStepDiscriminatorType.Digest)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.DigestStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.DigestStepUpsertDto> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.DigestStepUpsertDto)}");
                 digest = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Novu.ThrottleStepUpsertDto? throttle = default;
-            if (discriminator?.Type == global::Novu.CreateWorkflowDtoStepDiscriminatorType.Throttle)
+            if (discriminator?.Type == global::Novu.UpdateWorkflowDtoStepDiscriminatorType.Throttle)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.ThrottleStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.ThrottleStepUpsertDto> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.ThrottleStepUpsertDto)}");
                 throttle = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Novu.ToolStepUpsertDto? tool = default;
-            if (discriminator?.Type == global::Novu.CreateWorkflowDtoStepDiscriminatorType.Tool)
+            if (discriminator?.Type == global::Novu.UpdateWorkflowDtoStepDiscriminatorType.Tool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.ToolStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.ToolStepUpsertDto> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.ToolStepUpsertDto)}");
                 tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Novu.CustomStepUpsertDto? custom = default;
-            if (discriminator?.Type == global::Novu.CreateWorkflowDtoStepDiscriminatorType.Custom)
+            if (discriminator?.Type == global::Novu.UpdateWorkflowDtoStepDiscriminatorType.Custom)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.CustomStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.CustomStepUpsertDto> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.CustomStepUpsertDto)}");
                 custom = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Novu.HttpRequestStepUpsertDto? httpRequest = default;
-            if (discriminator?.Type == global::Novu.CreateWorkflowDtoStepDiscriminatorType.HttpRequest)
+            if (discriminator?.Type == global::Novu.UpdateWorkflowDtoStepDiscriminatorType.HttpRequest)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Novu.HttpRequestStepUpsertDto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Novu.HttpRequestStepUpsertDto> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Novu.HttpRequestStepUpsertDto)}");
