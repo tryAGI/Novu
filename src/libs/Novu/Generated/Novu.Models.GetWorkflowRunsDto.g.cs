@@ -128,6 +128,12 @@ namespace Novu
         public global::System.Collections.Generic.IList<global::Novu.TopicResponseDto>? Topics { get; set; }
 
         /// <summary>
+        /// Workflow run whose active digest this run was merged into
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("digestedWorkflowRunId")]
+        public string? DigestedWorkflowRunId { get; set; }
+
+        /// <summary>
         /// Workflow run steps
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("steps")]
@@ -197,6 +203,9 @@ namespace Novu
         /// <param name="topics">
         /// Topics
         /// </param>
+        /// <param name="digestedWorkflowRunId">
+        /// Workflow run whose active digest this run was merged into
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -218,7 +227,8 @@ namespace Novu
             global::System.Collections.Generic.IList<global::Novu.WorkflowRunStepsDetailsDto> steps,
             string? subscriberId,
             global::System.Collections.Generic.IList<string>? contextKeys,
-            global::System.Collections.Generic.IList<global::Novu.TopicResponseDto>? topics)
+            global::System.Collections.Generic.IList<global::Novu.TopicResponseDto>? topics,
+            string? digestedWorkflowRunId)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.WorkflowId = workflowId ?? throw new global::System.ArgumentNullException(nameof(workflowId));
@@ -237,6 +247,7 @@ namespace Novu
             this.Critical = critical;
             this.ContextKeys = contextKeys;
             this.Topics = topics;
+            this.DigestedWorkflowRunId = digestedWorkflowRunId;
             this.Steps = steps ?? throw new global::System.ArgumentNullException(nameof(steps));
         }
 

@@ -357,13 +357,13 @@ namespace Novu
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::Novu.ErrorDto.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::Novu.ErrorDto.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -374,7 +374,7 @@ namespace Novu
 
                                 throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_400 is { Length: > 0 } ? __content_400 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
                                     responseBody: __content_400,
                                     responseObject: __value_400,
@@ -394,13 +394,13 @@ namespace Novu
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::Novu.ErrorDto.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::Novu.ErrorDto.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -411,7 +411,7 @@ namespace Novu
 
                                 throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_401 is { Length: > 0 } ? __content_401 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
@@ -431,13 +431,13 @@ namespace Novu
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::Novu.ErrorDto.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::Novu.ErrorDto.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -448,7 +448,7 @@ namespace Novu
 
                                 throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_403 is { Length: > 0 } ? __content_403 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
@@ -468,13 +468,13 @@ namespace Novu
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::Novu.ErrorDto.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::Novu.ErrorDto.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -485,7 +485,7 @@ namespace Novu
 
                                 throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_404 is { Length: > 0 } ? __content_404 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
@@ -505,13 +505,13 @@ namespace Novu
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_405 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_405 = global::Novu.ErrorDto.FromJson(__content_405, JsonSerializerContext);
+                                        __value_405 = __content_405 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_405, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_405 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_405 = global::Novu.ErrorDto.FromJson(__content_405, JsonSerializerContext);
+                                        __value_405 = __content_405 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_405, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -522,7 +522,7 @@ namespace Novu
 
                                 throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_405 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_405 is { Length: > 0 } ? __content_405 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_405,
                                     responseBody: __content_405,
                                     responseObject: __value_405,
@@ -542,13 +542,13 @@ namespace Novu
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::Novu.ErrorDto.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = __content_409 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_409, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_409 = global::Novu.ErrorDto.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = __content_409 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_409, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -559,7 +559,7 @@ namespace Novu
 
                                 throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_409 is { Length: > 0 } ? __content_409 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,
                                     responseBody: __content_409,
                                     responseObject: __value_409,
@@ -579,13 +579,13 @@ namespace Novu
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_413 = global::Novu.ErrorDto.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = __content_413 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_413, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_413 = global::Novu.ErrorDto.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = __content_413 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_413, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -596,7 +596,7 @@ namespace Novu
 
                                 throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_413 is { Length: > 0 } ? __content_413 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
                                     responseBody: __content_413,
                                     responseObject: __value_413,
@@ -616,13 +616,13 @@ namespace Novu
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_414 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_414 = global::Novu.ErrorDto.FromJson(__content_414, JsonSerializerContext);
+                                        __value_414 = __content_414 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_414, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_414 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_414 = global::Novu.ErrorDto.FromJson(__content_414, JsonSerializerContext);
+                                        __value_414 = __content_414 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_414, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -633,7 +633,7 @@ namespace Novu
 
                                 throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_414 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_414 is { Length: > 0 } ? __content_414 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_414,
                                     responseBody: __content_414,
                                     responseObject: __value_414,
@@ -653,13 +653,13 @@ namespace Novu
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_415 = global::Novu.ErrorDto.FromJson(__content_415, JsonSerializerContext);
+                                        __value_415 = __content_415 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_415, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_415 = global::Novu.ErrorDto.FromJson(__content_415, JsonSerializerContext);
+                                        __value_415 = __content_415 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_415, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -670,7 +670,7 @@ namespace Novu
 
                                 throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_415 is { Length: > 0 } ? __content_415 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_415,
                                     responseBody: __content_415,
                                     responseObject: __value_415,
@@ -690,13 +690,13 @@ namespace Novu
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::Novu.ValidationErrorDto.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::Novu.ValidationErrorDto.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::Novu.ValidationErrorDto.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::Novu.ValidationErrorDto.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -707,7 +707,7 @@ namespace Novu
 
                                 throw global::Novu.ApiException<global::Novu.ValidationErrorDto>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_422 is { Length: > 0 } ? __content_422 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
                                     responseBody: __content_422,
                                     responseObject: __value_422,
@@ -727,13 +727,13 @@ namespace Novu
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_429, typeof(string), JsonSerializerContext);
+                                        __value_429 = __content_429 is not { Length: > 0 } ? null : (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_429, typeof(string), JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_429, typeof(string), JsonSerializerContext);
+                                        __value_429 = __content_429 is not { Length: > 0 } ? null : (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_429, typeof(string), JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -744,7 +744,7 @@ namespace Novu
 
                                 throw global::Novu.ApiException<string>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_429 is { Length: > 0 } ? __content_429 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
                                     responseBody: __content_429,
                                     responseObject: __value_429,
@@ -764,13 +764,13 @@ namespace Novu
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::Novu.ErrorDto.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = __content_500 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::Novu.ErrorDto.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = __content_500 is not { Length: > 0 } ? null : global::Novu.ErrorDto.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -781,7 +781,7 @@ namespace Novu
 
                                 throw global::Novu.ApiException<global::Novu.ErrorDto>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_500 is { Length: > 0 } ? __content_500 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
                                     responseBody: __content_500,
                                     responseObject: __value_500,
@@ -801,13 +801,13 @@ namespace Novu
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_503, typeof(string), JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_503, typeof(string), JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_503, typeof(string), JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_503, typeof(string), JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -818,7 +818,7 @@ namespace Novu
 
                                 throw global::Novu.ApiException<string>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_503 is { Length: > 0 } ? __content_503 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
                                     responseBody: __content_503,
                                     responseObject: __value_503,
@@ -861,7 +861,7 @@ namespace Novu
                                 {
                                     throw global::Novu.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -906,7 +906,7 @@ namespace Novu
 
                                     throw global::Novu.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(

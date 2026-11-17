@@ -69347,7 +69347,7 @@
   "info": {
     "title": "Novu API",
     "description": "Novu REST API. Please see https://docs.novu.co/api-reference for more details.",
-    "version": "3.19.2",
+    "version": "3.20.0",
     "contact": {
       "name": "Novu Support",
       "url": "https://discord.gg/novu",
@@ -71602,6 +71602,11 @@
             "additionalProperties": true,
             "description": "Payload of the notification"
           },
+          "overrides": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Trigger overrides of the notification, as passed to the original workflow trigger"
+          },
           "tags": {
             "description": "Tags associated with the notification",
             "type": "array",
@@ -72106,6 +72111,10 @@
               "$ref": "#/components/schemas/TopicResponseDto"
             }
           },
+          "digestedWorkflowRunId": {
+            "type": "string",
+            "description": "Workflow run whose active digest this run was merged into"
+          },
           "steps": {
             "description": "Workflow run steps",
             "type": "array",
@@ -72367,6 +72376,10 @@
             "items": {
               "$ref": "#/components/schemas/TopicResponseDto"
             }
+          },
+          "digestedWorkflowRunId": {
+            "type": "string",
+            "description": "Workflow run whose active digest this run was merged into"
           },
           "steps": {
             "description": "Step runs",

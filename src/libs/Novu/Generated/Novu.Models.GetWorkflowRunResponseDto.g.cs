@@ -128,6 +128,12 @@ namespace Novu
         public global::System.Collections.Generic.IList<global::Novu.TopicResponseDto>? Topics { get; set; }
 
         /// <summary>
+        /// Workflow run whose active digest this run was merged into
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("digestedWorkflowRunId")]
+        public string? DigestedWorkflowRunId { get; set; }
+
+        /// <summary>
         /// Step runs
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("steps")]
@@ -213,6 +219,9 @@ namespace Novu
         /// <param name="topics">
         /// Topics
         /// </param>
+        /// <param name="digestedWorkflowRunId">
+        /// Workflow run whose active digest this run was merged into
+        /// </param>
         /// <param name="overrides">
         /// Trigger overrides passed to the original workflow trigger
         /// </param>
@@ -239,6 +248,7 @@ namespace Novu
             string? subscriberId,
             global::System.Collections.Generic.IList<string>? contextKeys,
             global::System.Collections.Generic.IList<global::Novu.TopicResponseDto>? topics,
+            string? digestedWorkflowRunId,
             object? overrides)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -258,6 +268,7 @@ namespace Novu
             this.Critical = critical;
             this.ContextKeys = contextKeys;
             this.Topics = topics;
+            this.DigestedWorkflowRunId = digestedWorkflowRunId;
             this.Steps = steps ?? throw new global::System.ArgumentNullException(nameof(steps));
             this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
             this.Overrides = overrides;
