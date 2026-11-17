@@ -97,6 +97,12 @@ namespace Novu
         public object? Payload { get; set; }
 
         /// <summary>
+        /// Trigger overrides of the notification, as passed to the original workflow trigger
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("overrides")]
+        public object? Overrides { get; set; }
+
+        /// <summary>
         /// Tags associated with the notification
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
@@ -190,6 +196,9 @@ namespace Novu
         /// <param name="payload">
         /// Payload of the notification
         /// </param>
+        /// <param name="overrides">
+        /// Trigger overrides of the notification, as passed to the original workflow trigger
+        /// </param>
         /// <param name="tags">
         /// Tags associated with the notification
         /// </param>
@@ -229,6 +238,7 @@ namespace Novu
             global::Novu.ActivityNotificationTemplateResponseDto? template,
             global::System.Collections.Generic.IList<global::Novu.ActivityNotificationJobResponseDto>? jobs,
             object? payload,
+            object? overrides,
             global::System.Collections.Generic.IList<string>? tags,
             object? controls,
             object? to,
@@ -251,6 +261,7 @@ namespace Novu
             this.Template = template;
             this.Jobs = jobs;
             this.Payload = payload;
+            this.Overrides = overrides;
             this.Tags = tags;
             this.Controls = controls;
             this.To = to;
