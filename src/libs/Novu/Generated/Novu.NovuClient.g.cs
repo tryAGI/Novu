@@ -263,6 +263,16 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
+        public SubscribersTokensClient SubscribersTokens => new SubscribersTokensClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
         public SubscribersTopicsClient SubscribersTopics => new SubscribersTopicsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
