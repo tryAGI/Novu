@@ -1223,6 +1223,17 @@
     },
     {
       "Order": 112,
+      "Title": "Create a subscriber login token",
+      "Slug": "subscriberscontroller-createsubscribertoken",
+      "Description": "Create a short-lived, Novu-signed login token for the subscriber identified by **subscriberId**.\n    Call it from your backend with your secret key, then pass the token to the browser, which exchanges it for an Inbox session.\n    Creating a token does not read or change the subscriber, so the subscriber does not need to exist yet.",
+      "Language": "http",
+      "Code": "### Create a subscriber login token\n# @name SubscribersController_createSubscriberToken\nPOST {{host}}/v2/subscribers/{{subscriberId}}/tokens\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022context\u0022: {},\n  \u0022subscriber\u0022: {\n    \u0022firstName\u0022: \u0022John\u0022,\n    \u0022lastName\u0022: \u0022Doe\u0022,\n    \u0022email\u0022: \u0022john.doe@example.com\u0022,\n    \u0022phone\u0022: \u0022\\u002B1234567890\u0022,\n    \u0022avatar\u0022: \u0022https://example.com/avatar.jpg\u0022,\n    \u0022locale\u0022: \u0022en-US\u0022,\n    \u0022timezone\u0022: \u0022America/New_York\u0022,\n    \u0022data\u0022: {}\n  },\n  \u0022scope\u0022: [\n    \u0022channels:shared\u0022\n  ],\n  \u0022expiresIn\u0022: 600\n}\n\n## Responses\n# 201\n# Description: Created\n# Content-Type: application/json\n# 400\n# Description: Bad Request\n# Content-Type: application/json\n# 401\n# Description: Unauthorized\n# Content-Type: application/json\n# 403\n# Description: Forbidden\n# Content-Type: application/json\n# 404\n# Description: Not Found\n# Content-Type: application/json\n# 405\n# Description: Method Not Allowed\n# Content-Type: application/json\n# 409\n# Description: Conflict\n# Content-Type: application/json\n# 413\n# Description: Payload Too Large\n# Content-Type: application/json\n# 414\n# Description: URI Too Long\n# Content-Type: application/json\n# 415\n# Description: Unsupported Media Type\n# Content-Type: application/json\n# 422\n# Description: Unprocessable Entity\n# Content-Type: application/json\n# 429\n# Description: The client has sent too many requests in a given amount of time. \n# Content-Type: application/json\n# 500\n# Description: Internal Server Error\n# Content-Type: application/json\n# 503\n# Description: The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "SubscribersController_createSubscriberToken",
+      "Setup": null
+    },
+    {
+      "Order": 113,
       "Title": "Retrieve subscriber subscriptions",
       "Slug": "subscriberscontroller-listsubscribertopics",
       "Description": "Retrieve subscriber\u0027s topic subscriptions by its unique key identifier **subscriberId**. \n    Checkout all available filters in the query section.",
@@ -1233,7 +1244,7 @@
       "Setup": null
     },
     {
-      "Order": 113,
+      "Order": 114,
       "Title": "Create a topic",
       "Slug": "topicscontroller-upserttopic",
       "Description": "Creates a new topic if it does not exist, or updates an existing topic if it already exists. Use ?failIfExists=true to prevent updates.",
@@ -1244,7 +1255,7 @@
       "Setup": null
     },
     {
-      "Order": 114,
+      "Order": 115,
       "Title": "Retrieve a topic",
       "Slug": "topicscontroller-gettopic",
       "Description": "Retrieve a topic by its unique key identifier **topicKey**",
@@ -1255,7 +1266,7 @@
       "Setup": null
     },
     {
-      "Order": 115,
+      "Order": 116,
       "Title": "List all topics",
       "Slug": "topicscontroller-listtopics",
       "Description": "This api returns a paginated list of topics.\n    Topics can be filtered by **key**, **name**, or **includeCursor** to paginate through the list. \n    Checkout all available filters in the query section.",
@@ -1266,7 +1277,7 @@
       "Setup": null
     },
     {
-      "Order": 116,
+      "Order": 117,
       "Title": "Delete a topic",
       "Slug": "topicscontroller-deletetopic",
       "Description": "Delete a topic by its unique key identifier **topicKey**. \n    This action is irreversible and will remove all subscriptions to the topic.",
@@ -1277,7 +1288,7 @@
       "Setup": null
     },
     {
-      "Order": 117,
+      "Order": 118,
       "Title": "Update a topic",
       "Slug": "topicscontroller-updatetopic",
       "Description": "Update a topic name or data by its unique key identifier **topicKey**",
@@ -1288,7 +1299,7 @@
       "Setup": null
     },
     {
-      "Order": 118,
+      "Order": 119,
       "Title": "Check topic subscriber",
       "Slug": "topicsv1controller-gettopicsubscriber",
       "Description": "Check if a subscriber belongs to a certain topic",
@@ -1299,7 +1310,7 @@
       "Setup": null
     },
     {
-      "Order": 119,
+      "Order": 120,
       "Title": "Create topic subscriptions",
       "Slug": "topicscontroller-createtopicsubscriptions",
       "Description": "This api will create subscription for subscriberIds for a topic. \n      Its like subscribing to a common interest group. if topic does not exist, it will be created.",
@@ -1310,7 +1321,7 @@
       "Setup": null
     },
     {
-      "Order": 120,
+      "Order": 121,
       "Title": "Delete topic subscriptions",
       "Slug": "topicscontroller-deletetopicsubscriptions",
       "Description": "Delete subscriptions for subscriberIds for a topic.",
@@ -1321,7 +1332,7 @@
       "Setup": null
     },
     {
-      "Order": 121,
+      "Order": 122,
       "Title": "Retrieve a topic subscription",
       "Slug": "topicscontroller-gettopicsubscription",
       "Description": "Retrieve a subscription by its unique identifier for a topic.",
@@ -1332,7 +1343,7 @@
       "Setup": null
     },
     {
-      "Order": 122,
+      "Order": 123,
       "Title": "List topic subscriptions",
       "Slug": "topicscontroller-listtopicsubscriptions",
       "Description": "List all subscriptions of subscribers for a topic.\n    Checkout all available filters in the query section.",
@@ -1343,7 +1354,7 @@
       "Setup": null
     },
     {
-      "Order": 123,
+      "Order": 124,
       "Title": "Update a topic subscription",
       "Slug": "topicscontroller-updatetopicsubscription",
       "Description": "Update a subscription by its unique identifier for a topic. You can update the preferences and name associated with the subscription.",
@@ -1354,7 +1365,7 @@
       "Setup": null
     },
     {
-      "Order": 124,
+      "Order": 125,
       "Title": "Delete a workflow",
       "Slug": "workflowcontroller-removeworkflow",
       "Description": "Removes a specific workflow by its unique identifier **workflowId**",
@@ -1365,7 +1376,7 @@
       "Setup": null
     },
     {
-      "Order": 125,
+      "Order": 126,
       "Title": "Retrieve a workflow",
       "Slug": "workflowcontroller-getworkflow",
       "Description": "Fetches details of a specific workflow by its unique identifier **workflowId**",
@@ -1376,7 +1387,7 @@
       "Setup": null
     },
     {
-      "Order": 126,
+      "Order": 127,
       "Title": "List all workflows",
       "Slug": "workflowcontroller-searchworkflows",
       "Description": "Retrieves a list of workflows with optional filtering and pagination",
@@ -1387,7 +1398,7 @@
       "Setup": null
     },
     {
-      "Order": 127,
+      "Order": 128,
       "Title": "Update a workflow",
       "Slug": "workflowcontroller-patchworkflow",
       "Description": "Partially updates a workflow by its unique identifier **workflowId**",
@@ -1398,7 +1409,7 @@
       "Setup": null
     },
     {
-      "Order": 128,
+      "Order": 129,
       "Title": "Sync a workflow",
       "Slug": "workflowcontroller-sync",
       "Description": "Synchronizes a workflow to the target environment",
@@ -1409,7 +1420,7 @@
       "Setup": null
     },
     {
-      "Order": 129,
+      "Order": 130,
       "Title": "Create a workflow",
       "Slug": "workflowcontroller-create",
       "Description": "Creates a new workflow in the Novu Cloud environment",
@@ -1420,7 +1431,7 @@
       "Setup": null
     },
     {
-      "Order": 130,
+      "Order": 131,
       "Title": "Update a workflow",
       "Slug": "workflowcontroller-update",
       "Description": "Updates the details of an existing workflow, here **workflowId** is the identifier of the workflow",
@@ -1431,7 +1442,7 @@
       "Setup": null
     },
     {
-      "Order": 131,
+      "Order": 132,
       "Title": "Generate a step preview",
       "Slug": "workflowcontroller-generatepreview",
       "Description": "Generates a preview for a specific workflow step by its unique identifier **stepId**",
@@ -1442,7 +1453,7 @@
       "Setup": null
     },
     {
-      "Order": 132,
+      "Order": 133,
       "Title": "Retrieve workflow step",
       "Slug": "workflowcontroller-getworkflowstepdata",
       "Description": "Retrieves data for a specific step in a workflow",

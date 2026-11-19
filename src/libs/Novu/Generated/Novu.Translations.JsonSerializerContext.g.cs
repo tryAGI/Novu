@@ -2,58 +2,7 @@
 #nullable enable
 
 namespace Novu
-{
-    /// <summary>
-    ///
-    /// </summary>
-    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
-    )]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.UploadTranslationsResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateTranslationRequestDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateTranslationRequestDtoResourceType), TypeInfoPropertyName = "CreateTranslationRequestDtoResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationResponseDtoResourceType), TypeInfoPropertyName = "TranslationResponseDtoResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetMasterJsonResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ImportMasterJsonRequestDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ImportMasterJsonResponseDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationGroupDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationGroupDtoResourceType), TypeInfoPropertyName = "TranslationGroupDtoResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerUploadTranslationFilesRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerUploadTranslationFilesRequestResourceType), TypeInfoPropertyName = "TranslationControllerUploadTranslationFilesRequestResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<byte[]>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerUploadMasterJsonEndpointRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerGetTranslationGroupEndpointResourceType), TypeInfoPropertyName = "TranslationControllerGetTranslationGroupEndpointResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerGetSingleTranslationResourceType), TypeInfoPropertyName = "TranslationControllerGetSingleTranslationResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerDeleteTranslationEndpointResourceType), TypeInfoPropertyName = "TranslationControllerDeleteTranslationEndpointResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerDeleteTranslationGroupEndpointResourceType), TypeInfoPropertyName = "TranslationControllerDeleteTranslationGroupEndpointResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateTranslationRequestDtoResourceType?), TypeInfoPropertyName = "NullableCreateTranslationRequestDtoResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationResponseDtoResourceType?), TypeInfoPropertyName = "NullableTranslationResponseDtoResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationGroupDtoResourceType?), TypeInfoPropertyName = "NullableTranslationGroupDtoResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerUploadTranslationFilesRequestResourceType?), TypeInfoPropertyName = "NullableTranslationControllerUploadTranslationFilesRequestResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerGetTranslationGroupEndpointResourceType?), TypeInfoPropertyName = "NullableTranslationControllerGetTranslationGroupEndpointResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerGetSingleTranslationResourceType?), TypeInfoPropertyName = "NullableTranslationControllerGetSingleTranslationResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerDeleteTranslationEndpointResourceType?), TypeInfoPropertyName = "NullableTranslationControllerDeleteTranslationEndpointResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerDeleteTranslationGroupEndpointResourceType?), TypeInfoPropertyName = "NullableTranslationControllerDeleteTranslationGroupEndpointResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<byte[]>))]
-    internal sealed partial class TranslationsSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
-    {
-    }
-    /// <summary>
+{    /// <summary>
     ///
     /// </summary>
     public sealed partial class TranslationsSourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
@@ -97,28 +46,7 @@ namespace Novu
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
-            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
-            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
-            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
-            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
-            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<object>>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::Novu.OneOf<string, object>>>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, object>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
-            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object, global::System.Collections.Generic.IList<global::Novu.AnyOf<string, double?, bool?, object>>>());
-            options.Converters.Add(new global::Novu.JsonConverters.AnyOfJsonConverter<string, double?, bool?, object>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
-            options.Converters.Add(new global::Novu.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
-            options.Converters.Add(new global::Novu.JsonConverters.UnixTimestampJsonConverter());
-            options.Converters.Add(new LazyEnumJsonConverterFactory());
+            global::Novu.SourceGenerationContext.AddConverters(options);
         }
 
         private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
@@ -131,132 +59,6 @@ namespace Novu
             AddConverters(options);
 
             return options;
-        }
-
-
-        private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
-        {
-            public override bool CanConvert(global::System.Type typeToConvert)
-            {
-                return
-                    typeToConvert == typeof(global::Novu.CreateTranslationRequestDtoResourceType)
-
-                    || typeToConvert == typeof(global::Novu.CreateTranslationRequestDtoResourceType?)
-
-                    || typeToConvert == typeof(global::Novu.TranslationResponseDtoResourceType)
-
-                    || typeToConvert == typeof(global::Novu.TranslationResponseDtoResourceType?)
-
-                    || typeToConvert == typeof(global::Novu.TranslationGroupDtoResourceType)
-
-                    || typeToConvert == typeof(global::Novu.TranslationGroupDtoResourceType?)
-
-                    || typeToConvert == typeof(global::Novu.TranslationControllerUploadTranslationFilesRequestResourceType)
-
-                    || typeToConvert == typeof(global::Novu.TranslationControllerUploadTranslationFilesRequestResourceType?)
-
-                    || typeToConvert == typeof(global::Novu.TranslationControllerGetTranslationGroupEndpointResourceType)
-
-                    || typeToConvert == typeof(global::Novu.TranslationControllerGetTranslationGroupEndpointResourceType?)
-
-                    || typeToConvert == typeof(global::Novu.TranslationControllerGetSingleTranslationResourceType)
-
-                    || typeToConvert == typeof(global::Novu.TranslationControllerGetSingleTranslationResourceType?)
-
-                    || typeToConvert == typeof(global::Novu.TranslationControllerDeleteTranslationEndpointResourceType)
-
-                    || typeToConvert == typeof(global::Novu.TranslationControllerDeleteTranslationEndpointResourceType?)
-
-                    || typeToConvert == typeof(global::Novu.TranslationControllerDeleteTranslationGroupEndpointResourceType)
-
-                    || typeToConvert == typeof(global::Novu.TranslationControllerDeleteTranslationGroupEndpointResourceType?);
-            }
-
-            public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
-                global::System.Type typeToConvert,
-                global::System.Text.Json.JsonSerializerOptions options)
-            {
-                if (typeToConvert == typeof(global::Novu.CreateTranslationRequestDtoResourceType))
-                {
-                    return new global::Novu.JsonConverters.CreateTranslationRequestDtoResourceTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.CreateTranslationRequestDtoResourceType?))
-                {
-                    return new global::Novu.JsonConverters.CreateTranslationRequestDtoResourceTypeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationResponseDtoResourceType))
-                {
-                    return new global::Novu.JsonConverters.TranslationResponseDtoResourceTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationResponseDtoResourceType?))
-                {
-                    return new global::Novu.JsonConverters.TranslationResponseDtoResourceTypeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationGroupDtoResourceType))
-                {
-                    return new global::Novu.JsonConverters.TranslationGroupDtoResourceTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationGroupDtoResourceType?))
-                {
-                    return new global::Novu.JsonConverters.TranslationGroupDtoResourceTypeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationControllerUploadTranslationFilesRequestResourceType))
-                {
-                    return new global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationControllerUploadTranslationFilesRequestResourceType?))
-                {
-                    return new global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationControllerGetTranslationGroupEndpointResourceType))
-                {
-                    return new global::Novu.JsonConverters.TranslationControllerGetTranslationGroupEndpointResourceTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationControllerGetTranslationGroupEndpointResourceType?))
-                {
-                    return new global::Novu.JsonConverters.TranslationControllerGetTranslationGroupEndpointResourceTypeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationControllerGetSingleTranslationResourceType))
-                {
-                    return new global::Novu.JsonConverters.TranslationControllerGetSingleTranslationResourceTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationControllerGetSingleTranslationResourceType?))
-                {
-                    return new global::Novu.JsonConverters.TranslationControllerGetSingleTranslationResourceTypeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationControllerDeleteTranslationEndpointResourceType))
-                {
-                    return new global::Novu.JsonConverters.TranslationControllerDeleteTranslationEndpointResourceTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationControllerDeleteTranslationEndpointResourceType?))
-                {
-                    return new global::Novu.JsonConverters.TranslationControllerDeleteTranslationEndpointResourceTypeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationControllerDeleteTranslationGroupEndpointResourceType))
-                {
-                    return new global::Novu.JsonConverters.TranslationControllerDeleteTranslationGroupEndpointResourceTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Novu.TranslationControllerDeleteTranslationGroupEndpointResourceType?))
-                {
-                    return new global::Novu.JsonConverters.TranslationControllerDeleteTranslationGroupEndpointResourceTypeNullableJsonConverter();
-                }
-                throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
-            }
         }
 
         private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
@@ -298,7 +100,7 @@ namespace Novu
             {
                 return index switch
                 {
-                    0 => new TranslationsSourceGenerationContextChunk0(new global::System.Text.Json.JsonSerializerOptions()),
+                    0 => global::Novu.SourceGenerationContext.TypeInfoResolver,
                     _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
                 };
             }

@@ -174,6 +174,11 @@ namespace Novu
         /// <summary>
         ///
         /// </summary>
+        public SubscribersTokensClient SubscribersTokens { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public SubscribersTopicsClient SubscribersTopics { get; }
 
         /// <summary>
