@@ -4,7 +4,7 @@
 namespace Novu
 {
     /// <summary>
-    /// Raw data of the execution
+    /// Raw data of the execution. Left out for API key and OAuth requests, since it can hold provider credentials.
     /// </summary>
     public sealed partial class StepExecutionDetailDtoRaw
     {

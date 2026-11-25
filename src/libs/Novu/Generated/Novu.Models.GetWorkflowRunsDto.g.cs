@@ -73,6 +73,13 @@ namespace Novu
         public required global::Novu.GetWorkflowRunsDtoDeliveryLifecycleStatus DeliveryLifecycleStatus { get; set; }
 
         /// <summary>
+        /// Why the run reached its delivery lifecycle status, e.g. preference or missing_email. Absent when no reason was recorded.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deliveryLifecycleDetail")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Novu.JsonConverters.GetWorkflowRunsDtoDeliveryLifecycleDetailJsonConverter))]
+        public global::Novu.GetWorkflowRunsDtoDeliveryLifecycleDetail? DeliveryLifecycleDetail { get; set; }
+
+        /// <summary>
         /// Trigger identifier
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triggerIdentifier")]
@@ -197,6 +204,9 @@ namespace Novu
         /// <param name="subscriberId">
         /// External subscriber identifier
         /// </param>
+        /// <param name="deliveryLifecycleDetail">
+        /// Why the run reached its delivery lifecycle status, e.g. preference or missing_email. Absent when no reason was recorded.
+        /// </param>
         /// <param name="contextKeys">
         /// Context (single or multi) in which the workflow run was executed
         /// </param>
@@ -226,6 +236,7 @@ namespace Novu
             bool critical,
             global::System.Collections.Generic.IList<global::Novu.WorkflowRunStepsDetailsDto> steps,
             string? subscriberId,
+            global::Novu.GetWorkflowRunsDtoDeliveryLifecycleDetail? deliveryLifecycleDetail,
             global::System.Collections.Generic.IList<string>? contextKeys,
             global::System.Collections.Generic.IList<global::Novu.TopicResponseDto>? topics,
             string? digestedWorkflowRunId)
@@ -239,6 +250,7 @@ namespace Novu
             this.SubscriberId = subscriberId;
             this.Status = status;
             this.DeliveryLifecycleStatus = deliveryLifecycleStatus;
+            this.DeliveryLifecycleDetail = deliveryLifecycleDetail;
             this.TriggerIdentifier = triggerIdentifier ?? throw new global::System.ArgumentNullException(nameof(triggerIdentifier));
             this.TransactionId = transactionId ?? throw new global::System.ArgumentNullException(nameof(transactionId));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));

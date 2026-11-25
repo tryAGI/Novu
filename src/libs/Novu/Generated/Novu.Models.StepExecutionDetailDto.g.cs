@@ -43,7 +43,7 @@ namespace Novu
         public string? ProviderId { get; set; }
 
         /// <summary>
-        /// Raw data of the execution
+        /// Raw data of the execution. Left out for API key and OAuth requests, since it can hold provider credentials.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("raw")]
         public object? Raw { get; set; }
@@ -73,7 +73,7 @@ namespace Novu
         /// Provider identifier
         /// </param>
         /// <param name="raw">
-        /// Raw data of the execution
+        /// Raw data of the execution. Left out for API key and OAuth requests, since it can hold provider credentials.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
