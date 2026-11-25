@@ -28,6 +28,12 @@ namespace Novu
         public object? Integration { get; set; }
 
         /// <summary>
+        /// The URL the provider sends delivery events to. Set it in the provider yourself when auto-configuration fails.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhookUrl")]
+        public string? WebhookUrl { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -45,17 +51,22 @@ namespace Novu
         /// <param name="integration">
         /// The updated configurations after auto-configuration
         /// </param>
+        /// <param name="webhookUrl">
+        /// The URL the provider sends delivery events to. Set it in the provider yourself when auto-configuration fails.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AutoConfigureIntegrationResponseDto(
             bool success,
             string? message,
-            object? integration)
+            object? integration,
+            string? webhookUrl)
         {
             this.Success = success;
             this.Message = message;
             this.Integration = integration;
+            this.WebhookUrl = webhookUrl;
         }
 
         /// <summary>

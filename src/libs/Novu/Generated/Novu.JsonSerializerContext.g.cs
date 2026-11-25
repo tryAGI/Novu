@@ -135,6 +135,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunsDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunsDtoStatus), TypeInfoPropertyName = "GetWorkflowRunsDtoStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunsDtoDeliveryLifecycleStatus), TypeInfoPropertyName = "GetWorkflowRunsDtoDeliveryLifecycleStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunsDtoDeliveryLifecycleDetail), TypeInfoPropertyName = "GetWorkflowRunsDtoDeliveryLifecycleDetail2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunsDtoSeverity), TypeInfoPropertyName = "GetWorkflowRunsDtoSeverity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.TopicResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.WorkflowRunStepsDetailsDto>))]
@@ -148,6 +149,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoStatus), TypeInfoPropertyName = "GetWorkflowRunResponseDtoStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoDeliveryLifecycleStatus), TypeInfoPropertyName = "GetWorkflowRunResponseDtoDeliveryLifecycleStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoDeliveryLifecycleDetail), TypeInfoPropertyName = "GetWorkflowRunResponseDtoDeliveryLifecycleDetail2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoSeverity), TypeInfoPropertyName = "GetWorkflowRunResponseDtoSeverity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.StepRunDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetChartsResponseDto))]
@@ -507,8 +509,6 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EnvironmentVariableResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EnvironmentVariableResponseDtoType), TypeInfoPropertyName = "EnvironmentVariableResponseDtoType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.EnvironmentVariableValueResponseDto>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EnvironmentVariableWorkflowInfoDto))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetEnvironmentVariableUsageResponseDto))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -527,6 +527,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_c8c997b666659e86")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_0421199e9dafb346")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EnvironmentVariableWorkflowInfoDto))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetEnvironmentVariableUsageResponseDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.EnvironmentVariableWorkflowInfoDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EnvironmentVariableValueDto))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.CreateEnvironmentVariableRequestDto))]
@@ -933,6 +935,11 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerUploadMasterJsonEndpointRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.ChannelTypeEnum>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ActivityControllerGetLogsSource), TypeInfoPropertyName = "ActivityControllerGetLogsSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.ActivityControllerGetWorkflowRunsStatuse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ActivityControllerGetWorkflowRunsStatuse), TypeInfoPropertyName = "ActivityControllerGetWorkflowRunsStatuse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.ActivityControllerGetWorkflowRunsSeverityItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ActivityControllerGetWorkflowRunsSeverityItem), TypeInfoPropertyName = "ActivityControllerGetWorkflowRunsSeverityItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentsControllerListAgentsOrderDirection), TypeInfoPropertyName = "AgentsControllerListAgentsOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentIntegrationsControllerListAgentIntegrationsOrderDirection), TypeInfoPropertyName = "AgentIntegrationsControllerListAgentIntegrationsOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainsOrderDirection), TypeInfoPropertyName = "DomainsControllerListDomainsOrderDirection2")]
@@ -968,6 +975,8 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Novu.TriggerEventResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.EventsControllerBroadcastEventToAllResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.NotificationsControllerGetNotificationResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ActivityControllerGetRequestTracesResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ActivityControllerGetWorkflowRunResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentsControllerCreateAgentResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentsControllerListAgentsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentsControllerUpdateAgentBridgeResponse))]
@@ -1010,15 +1019,6 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerUpdateSubscriberChannelResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerModifySubscriberChannelResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerGetNotificationsFeedResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerGetUnseenCountResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerMarkMessagesAsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerSearchSubscribersResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerCreateSubscriberResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerGetSubscriberResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerPatchSubscriberResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerRemoveSubscriberResponse))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1037,6 +1037,15 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_c8c997b666659e86")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_0421199e9dafb346")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerGetNotificationsFeedResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerGetUnseenCountResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerMarkMessagesAsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersV1ControllerMarkActionAsSeenResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerSearchSubscribersResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerCreateSubscriberResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerGetSubscriberResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerPatchSubscriberResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerRemoveSubscriberResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerGetSubscriberPreferencesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerUpdateSubscriberPreferencesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.SubscribersControllerBulkUpdateSubscriberPreferencesResponse))]
@@ -1128,11 +1137,13 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.WorkflowRunStepsDetailsDtoStatus?), TypeInfoPropertyName = "NullableWorkflowRunStepsDetailsDtoStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunsDtoStatus?), TypeInfoPropertyName = "NullableGetWorkflowRunsDtoStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunsDtoDeliveryLifecycleStatus?), TypeInfoPropertyName = "NullableGetWorkflowRunsDtoDeliveryLifecycleStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunsDtoDeliveryLifecycleDetail?), TypeInfoPropertyName = "NullableGetWorkflowRunsDtoDeliveryLifecycleDetail2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunsDtoSeverity?), TypeInfoPropertyName = "NullableGetWorkflowRunsDtoSeverity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.StepRunDtoStatus?), TypeInfoPropertyName = "NullableStepRunDtoStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoStatus?), TypeInfoPropertyName = "NullableGetWorkflowRunResponseDtoStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoDeliveryLifecycleStatus?), TypeInfoPropertyName = "NullableGetWorkflowRunResponseDtoDeliveryLifecycleStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoDeliveryLifecycleDetail?), TypeInfoPropertyName = "NullableGetWorkflowRunResponseDtoDeliveryLifecycleDetail2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.GetWorkflowRunResponseDtoSeverity?), TypeInfoPropertyName = "NullableGetWorkflowRunResponseDtoSeverity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoSubscriberAccess?), TypeInfoPropertyName = "NullableAgentBehaviorDtoSubscriberAccess2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentBehaviorDtoReplyPolicy?), TypeInfoPropertyName = "NullableAgentBehaviorDtoReplyPolicy2")]
@@ -1371,6 +1382,9 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequest?), TypeInfoPropertyName = "NullableChannelEndpointsControllerCreateChannelEndpointRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType?), TypeInfoPropertyName = "NullableChannelEndpointsControllerCreateChannelEndpointRequestDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.TranslationControllerUploadTranslationFilesRequestResourceType?), TypeInfoPropertyName = "NullableTranslationControllerUploadTranslationFilesRequestResourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ActivityControllerGetLogsSource?), TypeInfoPropertyName = "NullableActivityControllerGetLogsSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ActivityControllerGetWorkflowRunsStatuse?), TypeInfoPropertyName = "NullableActivityControllerGetWorkflowRunsStatuse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ActivityControllerGetWorkflowRunsSeverityItem?), TypeInfoPropertyName = "NullableActivityControllerGetWorkflowRunsSeverityItem2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentsControllerListAgentsOrderDirection?), TypeInfoPropertyName = "NullableAgentsControllerListAgentsOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.AgentIntegrationsControllerListAgentIntegrationsOrderDirection?), TypeInfoPropertyName = "NullableAgentIntegrationsControllerListAgentIntegrationsOrderDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.DomainsControllerListDomainsOrderDirection?), TypeInfoPropertyName = "NullableDomainsControllerListDomainsOrderDirection2")]
@@ -1512,7 +1526,27 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.InboundEmailWebhookAttachmentDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<byte[]>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.ChannelTypeEnum>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.ActivityControllerGetWorkflowRunsStatuse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.ActivityControllerGetWorkflowRunsSeverityItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.SubscribersControllerGetSubscriberNotificationsSeverityItem>))]
+    internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    ///
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.ListLayoutResponseDto), TypeInfoPropertyName = "ListLayoutResponseDto_Novu_ListLayoutResponseDto")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9, global::Novu.GeneratePreviewResponseDtoResultVariant10>), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant10_bd4488e3c194c3aa")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>), TypeInfoPropertyName = "ToolWebhookEndpointDto_1c828e943cdd55e4")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>), TypeInfoPropertyName = "ToolWebhookEndpointDto_0ad4135aa31c63dd")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<object, global::Novu.GeneratePreviewResponseDtoResultVariant2, global::Novu.GeneratePreviewResponseDtoResultVariant3, global::Novu.GeneratePreviewResponseDtoResultVariant4, global::Novu.GeneratePreviewResponseDtoResultVariant5, global::Novu.GeneratePreviewResponseDtoResultVariant6, global::Novu.GeneratePreviewResponseDtoResultVariant7, global::Novu.GeneratePreviewResponseDtoResultVariant8, global::Novu.GeneratePreviewResponseDtoResultVariant9, global::Novu.GeneratePreviewResponseDtoResultVariant10>?), TypeInfoPropertyName = "GeneratePreviewResponseDtoResultVariant10_688240e711d712de")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.MsTeamsChannelEndpointDto, global::Novu.MsTeamsUserEndpointDto, global::Novu.TelegramChatEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.LineUserEndpointDto, global::Novu.PagerDutyServiceEndpointDto, global::Novu.OpsgenieIntegrationEndpointDto, global::Novu.GrafanaOnCallIntegrationEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_c8c997b666659e86")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Novu.OneOf<global::Novu.SlackChannelEndpointDto, global::Novu.SlackUserEndpointDto, global::Novu.WebhookEndpointDto, global::Novu.PhoneEndpointDto, global::Novu.WebexRoomEndpointDto, global::Novu.WebexPersonEndpointDto, global::Novu.ToolWebhookEndpointDto>?), TypeInfoPropertyName = "ToolWebhookEndpointDto_0421199e9dafb346")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.LayoutResponseDto>), TypeInfoPropertyName = "ListLayoutResponseDto_System_Collections_Generic_List_global_Novu_LayoutResponseDto")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.WorkflowStatusEnum>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.EnvironmentResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.TriggerEventResponseDto>))]
@@ -1522,7 +1556,7 @@ namespace Novu
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.EnvironmentVariableResponseDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.GetEnvironmentTagsDto>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Novu.WebhookResultDto>))]
-    internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
+    internal sealed partial class SourceGenerationContextChunk3 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
     /// <summary>
@@ -1775,6 +1809,10 @@ namespace Novu
 
                     || typeToConvert == typeof(global::Novu.GetWorkflowRunsDtoDeliveryLifecycleStatus?)
 
+                    || typeToConvert == typeof(global::Novu.GetWorkflowRunsDtoDeliveryLifecycleDetail)
+
+                    || typeToConvert == typeof(global::Novu.GetWorkflowRunsDtoDeliveryLifecycleDetail?)
+
                     || typeToConvert == typeof(global::Novu.GetWorkflowRunsDtoSeverity)
 
                     || typeToConvert == typeof(global::Novu.GetWorkflowRunsDtoSeverity?)
@@ -1790,6 +1828,10 @@ namespace Novu
                     || typeToConvert == typeof(global::Novu.GetWorkflowRunResponseDtoDeliveryLifecycleStatus)
 
                     || typeToConvert == typeof(global::Novu.GetWorkflowRunResponseDtoDeliveryLifecycleStatus?)
+
+                    || typeToConvert == typeof(global::Novu.GetWorkflowRunResponseDtoDeliveryLifecycleDetail)
+
+                    || typeToConvert == typeof(global::Novu.GetWorkflowRunResponseDtoDeliveryLifecycleDetail?)
 
                     || typeToConvert == typeof(global::Novu.GetWorkflowRunResponseDtoSeverity)
 
@@ -2523,6 +2565,18 @@ namespace Novu
 
                     || typeToConvert == typeof(global::Novu.TranslationControllerUploadTranslationFilesRequestResourceType?)
 
+                    || typeToConvert == typeof(global::Novu.ActivityControllerGetLogsSource)
+
+                    || typeToConvert == typeof(global::Novu.ActivityControllerGetLogsSource?)
+
+                    || typeToConvert == typeof(global::Novu.ActivityControllerGetWorkflowRunsStatuse)
+
+                    || typeToConvert == typeof(global::Novu.ActivityControllerGetWorkflowRunsStatuse?)
+
+                    || typeToConvert == typeof(global::Novu.ActivityControllerGetWorkflowRunsSeverityItem)
+
+                    || typeToConvert == typeof(global::Novu.ActivityControllerGetWorkflowRunsSeverityItem?)
+
                     || typeToConvert == typeof(global::Novu.AgentsControllerListAgentsOrderDirection)
 
                     || typeToConvert == typeof(global::Novu.AgentsControllerListAgentsOrderDirection?)
@@ -2904,6 +2958,16 @@ namespace Novu
                     return new global::Novu.JsonConverters.GetWorkflowRunsDtoDeliveryLifecycleStatusNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::Novu.GetWorkflowRunsDtoDeliveryLifecycleDetail))
+                {
+                    return new global::Novu.JsonConverters.GetWorkflowRunsDtoDeliveryLifecycleDetailJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.GetWorkflowRunsDtoDeliveryLifecycleDetail?))
+                {
+                    return new global::Novu.JsonConverters.GetWorkflowRunsDtoDeliveryLifecycleDetailNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::Novu.GetWorkflowRunsDtoSeverity))
                 {
                     return new global::Novu.JsonConverters.GetWorkflowRunsDtoSeverityJsonConverter();
@@ -2942,6 +3006,16 @@ namespace Novu
                 if (typeToConvert == typeof(global::Novu.GetWorkflowRunResponseDtoDeliveryLifecycleStatus?))
                 {
                     return new global::Novu.JsonConverters.GetWorkflowRunResponseDtoDeliveryLifecycleStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.GetWorkflowRunResponseDtoDeliveryLifecycleDetail))
+                {
+                    return new global::Novu.JsonConverters.GetWorkflowRunResponseDtoDeliveryLifecycleDetailJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.GetWorkflowRunResponseDtoDeliveryLifecycleDetail?))
+                {
+                    return new global::Novu.JsonConverters.GetWorkflowRunResponseDtoDeliveryLifecycleDetailNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Novu.GetWorkflowRunResponseDtoSeverity))
@@ -4774,6 +4848,36 @@ namespace Novu
                     return new global::Novu.JsonConverters.TranslationControllerUploadTranslationFilesRequestResourceTypeNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::Novu.ActivityControllerGetLogsSource))
+                {
+                    return new global::Novu.JsonConverters.ActivityControllerGetLogsSourceJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.ActivityControllerGetLogsSource?))
+                {
+                    return new global::Novu.JsonConverters.ActivityControllerGetLogsSourceNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.ActivityControllerGetWorkflowRunsStatuse))
+                {
+                    return new global::Novu.JsonConverters.ActivityControllerGetWorkflowRunsStatuseJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.ActivityControllerGetWorkflowRunsStatuse?))
+                {
+                    return new global::Novu.JsonConverters.ActivityControllerGetWorkflowRunsStatuseNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.ActivityControllerGetWorkflowRunsSeverityItem))
+                {
+                    return new global::Novu.JsonConverters.ActivityControllerGetWorkflowRunsSeverityItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Novu.ActivityControllerGetWorkflowRunsSeverityItem?))
+                {
+                    return new global::Novu.JsonConverters.ActivityControllerGetWorkflowRunsSeverityItemNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::Novu.AgentsControllerListAgentsOrderDirection))
                 {
                     return new global::Novu.JsonConverters.AgentsControllerListAgentsOrderDirectionJsonConverter();
@@ -5020,7 +5124,7 @@ namespace Novu
         private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
         {
             private readonly object _gate = new();
-            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[3];
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[4];
 
             public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
                 global::System.Type type,
@@ -5061,6 +5165,8 @@ namespace Novu
                     1 => new SourceGenerationContextChunk1(new global::System.Text.Json.JsonSerializerOptions()),
 
                     2 => new SourceGenerationContextChunk2(new global::System.Text.Json.JsonSerializerOptions()),
+
+                    3 => new SourceGenerationContextChunk3(new global::System.Text.Json.JsonSerializerOptions()),
                     _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
                 };
             }

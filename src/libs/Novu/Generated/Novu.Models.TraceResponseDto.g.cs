@@ -43,7 +43,7 @@ namespace Novu
         public object? Message { get; set; }
 
         /// <summary>
-        /// Raw data associated with trace
+        /// Raw data associated with trace. Empty for API key and OAuth requests, since it can hold provider credentials.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rawData")]
         public object? RawData { get; set; }
@@ -141,7 +141,7 @@ namespace Novu
         /// Detailed message
         /// </param>
         /// <param name="rawData">
-        /// Raw data associated with trace
+        /// Raw data associated with trace. Empty for API key and OAuth requests, since it can hold provider credentials.
         /// </param>
         /// <param name="userId">
         /// User identifier

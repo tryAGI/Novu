@@ -44,6 +44,18 @@ namespace Novu
         public required global::Novu.StepRunDtoStatus Status { get; set; }
 
         /// <summary>
+        /// Error code recorded when the step failed, e.g. send_message_failed or job_failed
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("errorCode")]
+        public string? ErrorCode { get; set; }
+
+        /// <summary>
+        /// Error message recorded when the step failed
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("errorMessage")]
+        public string? ErrorMessage { get; set; }
+
+        /// <summary>
         /// Creation timestamp
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createdAt")]
@@ -109,6 +121,12 @@ namespace Novu
         /// <param name="providerId">
         /// Provider identifier
         /// </param>
+        /// <param name="errorCode">
+        /// Error code recorded when the step failed, e.g. send_message_failed or job_failed
+        /// </param>
+        /// <param name="errorMessage">
+        /// Error message recorded when the step failed
+        /// </param>
         /// <param name="digest">
         /// Optional digest for the job, including metadata and events
         /// </param>
@@ -127,6 +145,8 @@ namespace Novu
             global::System.DateTime updatedAt,
             global::System.Collections.Generic.IList<global::Novu.StepExecutionDetailDto> executionDetails,
             string? providerId,
+            string? errorCode,
+            string? errorMessage,
             global::Novu.DigestMetadataDto? digest,
             double? scheduleExtensionsCount)
         {
@@ -135,6 +155,8 @@ namespace Novu
             this.StepType = stepType ?? throw new global::System.ArgumentNullException(nameof(stepType));
             this.ProviderId = providerId;
             this.Status = status;
+            this.ErrorCode = errorCode;
+            this.ErrorMessage = errorMessage;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.ExecutionDetails = executionDetails ?? throw new global::System.ArgumentNullException(nameof(executionDetails));

@@ -72,6 +72,16 @@ namespace Novu
         public ActivityClient Activity { get; }
 
         /// <summary>
+        ///
+        /// </summary>
+        public ActivityRequestsClient ActivityRequests { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ActivityWorkflowRunsClient ActivityWorkflowRuns { get; }
+
+        /// <summary>
         /// Agents are conversational assistants that receive inbound messages from connected channels and respond through a custom code bridge or a managed runtime provider.
         /// </summary>
         public AgentsClient Agents { get; }
