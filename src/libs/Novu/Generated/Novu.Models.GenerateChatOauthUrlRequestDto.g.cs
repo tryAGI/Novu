@@ -38,10 +38,10 @@ namespace Novu
         public object? Context { get; set; }
 
         /// <summary>
-        /// **Slack only**: OAuth scopes to request during authorization. These define the permissions your Slack integration will have. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **Webex**: OAuth scopes to request during authorization. Defaults to: spark:messages_write, spark:rooms_read, spark:people_read, spark:memberships_read, spark:kms. **MS Teams**: This parameter is ignored. MS Teams uses admin consent with pre-configured permissions in Azure AD. Note: The generated OAuth URL expires after 5 minutes.<br/>
-        /// Example: [chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email, incoming-webhook]
+        /// **Slack only**: OAuth scopes to request during authorization. These define the permissions your Slack integration will have. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email, files:write. **Webex**: OAuth scopes to request during authorization. Defaults to: spark:messages_write, spark:rooms_read, spark:people_read, spark:memberships_read, spark:kms. **MS Teams**: This parameter is ignored. MS Teams uses admin consent with pre-configured permissions in Azure AD. Note: The generated OAuth URL expires after 5 minutes.<br/>
+        /// Example: [chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email, files:write, incoming-webhook]
         /// </summary>
-        /// <example>[chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email, incoming-webhook]</example>
+        /// <example>[chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email, files:write, incoming-webhook]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
         public global::System.Collections.Generic.IList<string>? Scope { get; set; }
 
@@ -101,8 +101,8 @@ namespace Novu
         /// </param>
         /// <param name="context"></param>
         /// <param name="scope">
-        /// **Slack only**: OAuth scopes to request during authorization. These define the permissions your Slack integration will have. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email. **Webex**: OAuth scopes to request during authorization. Defaults to: spark:messages_write, spark:rooms_read, spark:people_read, spark:memberships_read, spark:kms. **MS Teams**: This parameter is ignored. MS Teams uses admin consent with pre-configured permissions in Azure AD. Note: The generated OAuth URL expires after 5 minutes.<br/>
-        /// Example: [chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email, incoming-webhook]
+        /// **Slack only**: OAuth scopes to request during authorization. These define the permissions your Slack integration will have. If not specified, default scopes will be used: chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email, files:write. **Webex**: OAuth scopes to request during authorization. Defaults to: spark:messages_write, spark:rooms_read, spark:people_read, spark:memberships_read, spark:kms. **MS Teams**: This parameter is ignored. MS Teams uses admin consent with pre-configured permissions in Azure AD. Note: The generated OAuth URL expires after 5 minutes.<br/>
+        /// Example: [chat:write, chat:write.public, channels:read, groups:read, users:read, users:read.email, files:write, incoming-webhook]
         /// </param>
         /// <param name="userScope">
         /// **Slack only, link_user mode**: User-level OAuth scopes to request during authorization. Used when mode is "link_user" to identify the Slack user via "Sign in with Slack". If not specified, defaults to: identity.basic.<br/>
